@@ -24,6 +24,18 @@ body {
 	font-weight: 400;
 	max-width: 1200px;
 }
+#header a {
+	text-decoration: none;
+	color: white;
+    border-radius: 8px;
+	transition: color 0.5s, padding 0.5s, background 0.5s;
+	padding: 3px 10px 3px 10px;
+}
+#header a:hover {
+ 	color: #404040;
+    background-color: white;
+    padding: 3px 10px 3px 10px;
+}
 #header-buttons {
 	float: right;
 }
