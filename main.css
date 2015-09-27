@@ -46,11 +46,12 @@ body {
 	text-decoration: none;
 	background: red;
 	padding: 5px 10px 5px 10px;
-	border-radius:5px;
-	border-bottom: solid #848484 2px;
+	border-radius:10px;
+	border-bottom: solid #960000 4px;
 }
 .button-link:hover {
-	top: 1px;
+	top: 2px;
+	border-bottom: solid #960000 2px;
 }
 h1{font-weight: 600; margin: 0px; }
 h4{font-weight: 600; margin-top: 10px; }
