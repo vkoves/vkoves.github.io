@@ -1,0 +1,62 @@
+h4{
+	margin-top: 0px;
+}
+.button {
+	position: relative;
+	top: 0px;
+	font-weight: 600;
+	text-decoration: none;
+	padding: 5px 10px 5px 10px;
+	border-radius:10px;
+	border-bottom: solid 4px;
+	cursor: pointer;
+	color: white;
+}
+.button:hover {
+	top: 2px;
+	border-width: 2px;
+}
+.button-red {
+	background: red;
+	border-color: #960000;
+}
+.button-blue {
+	background: #3D3DFF;
+    border-color: #0606A9;
+}
+.button-green {
+	background: #01DA01;
+    border-color: #007D00;
+}
+.button-orange {
+	background: orange;
+    border-color: #AF7100;
+}
+.button-purple {
+	background: #B300B3;
+    border-color: #6F026F;
+}
+.expander {
+	cursor: pointer;
+	color: white;
+	width: 120px;
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px;
+	border-bottom: solid 4px #960000;
+	background: red;
+	border-color: #960000;
+	transition: width 0.3s;
+	margin-left: auto;
+	margin-right: auto;
+}
+.expander:hover{
+	width: 200px;
+}
+.expander-color{
+	margin-top: 10px;
+	transition: background 0.3s, width 0.3s, border-color 0.3s;
+}
+.expander-color:hover{
+	background: #3D3DFF;
+    border-color: #0606A9;
+}
