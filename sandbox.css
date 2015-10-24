@@ -75,3 +75,6 @@ h4{
 #night-sky{
 	width: 500px;
 }
+path {
+	transition: opacity 3s;
+}

@@ -42,11 +42,10 @@
 <script>
 $(window).load(function(){
     var svg = $("#night-sky")[0];
-
-    //it's important to add an load event listener to the object, as it will load the svg doc asynchronously
-        var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
- 		var svgRoot  = svgDoc.documentElement;
- 		$(svgRoot).find("path").css("opacity","0");
+    var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
+	var svgRoot  = svgDoc.documentElement;
+	var stars = $(svgRoot).find("path");
+	stars.css("opacity","0");
 });
 </script>
 
