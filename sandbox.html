@@ -46,7 +46,19 @@ $(window).load(function(){
 	var svgRoot  = svgDoc.documentElement;
 	var stars = $(svgRoot).find("path");
 	stars.css("opacity","0");
+	setInterval(starShine(stars), 1000);
 });
+
+function starShine(stars)
+{
+	var length = stars.length;
+	star = Math.round(Math.random() * length);
+	op = $(stars[star]).css("opacity");
+	if(op > 0)
+		$(stars[star]).css("opacity", "0");
+	else
+		$(stars[star]).css("opacity", "1");
+}
 </script>
 
 </body>
