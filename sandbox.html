@@ -57,8 +57,7 @@ $(window).load(function(){
     var svg = $("#night-sky")[0];
     var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
 	var svgRoot  = svgDoc.documentElement;
-	var stars = $(svgRoot).find("path");
-	stars.css("opacity","0");
+	stars = $(svgRoot).find("path");
 	setInterval(starShine, 1000);
 });
 </script>
