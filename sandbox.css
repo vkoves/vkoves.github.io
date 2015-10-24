@@ -76,5 +76,14 @@ h4{
 	width: 500px;
 }
 path {
-	transition: opacity 2s;
+	transition: opacity 2s, fill 5s;
+}
+ellipse{
+	transition: fill 5s;
+}
+#layer1:hover > ellipse {
+	fill: skyblue !important;
+}
+#layer1:hover > path{
+	fill: #FFFFFF !important;
 }
