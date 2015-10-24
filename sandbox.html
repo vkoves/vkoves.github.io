@@ -3,6 +3,7 @@
 	<title>Viktor K&ouml;ves</title>
 	<!-- Added Open Sans from Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<link href="main.css" rel="stylesheet">
 	<link href="sandbox.css" rel="stylesheet">
 </head>
@@ -35,5 +36,23 @@
 		Color Expander
 	</div>
 	<object id="hal" data="HAL9000.svg" type="image/svg+xml"></object>
+	<object id="night-sky" data="NightSky.svg" type="image/svg+xml"></object>
+
+
+<script>
+$(window).load(function(){
+    var svg = $("#night-sky")[0];
+
+    //it's important to add an load event listener to the object, as it will load the svg doc asynchronously
+        var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
+ 		var svgRoot  = svgDoc.documentElement;
+ 		console.log(svgDoc);
+ 		console.log(svgDoc.getElementById("path6085"));
+ 		console.log($(svgDoc).find("#path6085"));
+ 		$(svgRoot).find("").css("opacity","0");
+        $("", svgDoc).css("opacity","0");
+});
+</script>
+
 </body>
 </html>
