@@ -76,10 +76,14 @@ h4{
 	width: 500px;
 }
 path {
-	transition: opacity 2s, fill 5s;
+	transform-origin: center;
+	transition: opacity 2s, fill 10s, transform 1s;
+}
+path:hover {
+	transform: rotate(180deg);
 }
 ellipse{
-	transition: fill 5s;
+	transition: fill 10s;
 }
 #layer1:hover > ellipse {
 	fill: skyblue !important;
