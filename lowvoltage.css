@@ -1,0 +1,91 @@
+#header
+{
+	background: #3C3C3C !important;
+	border-bottom: solid #A0A000 2px;
+}
+body
+{
+    background: #2D2D2D;
+    color: white;
+}
+#icon
+{
+	width: 150px;
+	border-radius: 500px;
+	border: solid 5px #3C3C3C;
+	transition: all 0.5s;
+}
+#icon:hover
+{
+	box-shadow: 0px 0px 20px white;
+}
+.text-box
+{
+	background: #4C4C4C;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 5px 15px;
+    box-shadow: 2px 2px #5D5D5D;
+	width: 50%;
+	min-width: 600px;
+	line-height: 1.5;
+	margin-top: 20px;
+	text-align: justify;
+}
+h1
+{
+	width: 25%;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.playlist-box
+{
+	position: relative;
+	width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #464646;
+    padding: 1px 0px 5px 0px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.playlist-box iframe
+{
+	margin-bottom: 20px;
+}
+.iframe-holder
+{
+	display: none;
+}
+.playlist-box h4
+{
+	margin-bottom: 5px;
+}
+.toggle-but
+{
+	position: absolute;
+    right: 10px;
+    top: 10px;
+    color: black;
+    background: #BDBDBD;
+    border-radius: 50px;
+    width: 20px;
+    height: 22px;
+    font-size: 30px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.toggle-but:hover
+{
+	background: white;
+}
+.toggle-but div
+{
+	position: absolute;
+	top: -10px;
+	right: 1px;
+}
