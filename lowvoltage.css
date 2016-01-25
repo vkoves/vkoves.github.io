@@ -32,6 +32,7 @@ body
 	line-height: 1.5;
 	margin-top: 20px;
 	text-align: justify;
+	box-sizing: border-box;
 }
 h1
 {
@@ -88,4 +89,20 @@ h1
 	position: absolute;
 	top: -10px;
 	right: 1px;
+}
+@media (max-width: 600px)
+{
+	.text-box
+	{
+		min-width: 0;
+		width: 80%;
+	}
+	.playlist-box
+	{
+		width: 80%;
+	}
+	h1
+	{
+		width: 80%;
+	}
 }
