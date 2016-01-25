@@ -24,9 +24,16 @@
 	<img id="icon" src="icon.png">
 	<h4 class="text-box">Low Voltage is a radio show on Tuesdays from 9pm to 10pm on WIIT focusing on the softer side of Electronic music.
 		Tune in for a wide variety of music from the softer sounds of well known artists like deadmau5 and Daft Punk to
-		less recognized artists like Breakbot and R&ouml;yksopp.</h4>
-	<h2 style="margin-bottom: 0px;">Show Playlists</h2>
-	<div class="playlist-box">
+		less recognized artists like Breakbot and R&ouml;yksopp.
+	</h4>
+
+	<h2 style="margin-bottom: 0px;">Show Info & Playlists</h2>
+	<h4 class="text-box">
+		Playlists are posted the night after the show ends (usually), and shows with the playlist up will have this icon: 
+		<img class="spotify-icon" src="spotify.png">
+	</h4>
+
+	<div class="playlist-box" view="false">
 		<h4>Show 1 - 1/26/2015</h4>
 		<img class="spotify-icon" src="spotify.png">
 		<div class="toggle-but"><div>+</div></div>
@@ -35,28 +42,50 @@
 			<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A5SeLUsaWkrnGT2vDiIgLWS" width="100%" height="380" frameborder="0" allowtransparency="true"></iframe>
 		</div>
 	</div>
+
+	<!--
+	<div class="playlist-box">
+		<h4>Show 1 - 1/26/2015</h4>
+		<div class="toggle-but"><div>+</div></div>
+		<div class="iframe-holder">
+			<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A5SeLUsaWkrnGT2vDiIgLWS" width="100%" height="380" frameborder="0" allowtransparency="true"></iframe>
+		</div>
+	</div>
+
 	<div class="playlist-box">
 		<h4>Show 1 - 1/26/2015</h4>
 		<div class="toggle-but"><div>+</div></div>
 		<div class="iframe-holder">
 		</div>
 	</div>
+
 	<div class="playlist-box">
 		<h4>Show 1 - 1/26/2015</h4>
 		<div class="toggle-but"><div>+</div></div>
 		<div class="iframe-holder">
 		</div>
 	</div>
-	<div class="playlist-box">
-		<h4>Show 1 - 1/26/2015</h4>
-		<div class="toggle-but"><div>+</div></div>
-		<div class="iframe-holder">
-		</div>
-	</div>
+	-->
+
 	<script>
+	$(".playlist-box").each( function( index, element ){
+		if($(this).attr("view") == "false") //if this show hasn't passed yet
+		{
+			$(this).find(".spotify-icon").hide(); //hide the spotify icon
+			$(this).find("iframe").remove(); //and remove the playlist to prevent hax
+		}
+	});
+	$("iframe").each( function( index, element ){
+		var src = $(this).attr("src");
+		$(this).attr("alt-src", src);
+		$(this).attr("src", "");
+	});
 	$(".toggle-but").click(function()
 	{
-		$(this).parent().find(".iframe-holder").slideToggle();
+		var parent = $(this).parent();
+		parent.find(".iframe-holder").slideToggle();
+		var src = parent.find("iframe").attr("alt-src");
+		parent.find("iframe").attr("src", src);
 	});
 	</script>
 </body>

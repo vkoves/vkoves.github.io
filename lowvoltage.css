@@ -21,6 +21,7 @@ body
 }
 .text-box
 {
+	position: relative;
 	background: #4C4C4C;
     margin-left: auto;
     margin-right: auto;
@@ -33,6 +34,13 @@ body
 	margin-top: 20px;
 	text-align: justify;
 	box-sizing: border-box;
+}
+.text-box .spotify-icon
+{
+	position: absolute;
+    width: 24px;
+    bottom: 6px;
+    margin-left: 5px;
 }
 h1
 {
@@ -92,12 +100,15 @@ h1
 {
 	background: white;
 }
-.spotify-icon
+.playlist-box .spotify-icon
 {
 	position: absolute;
-    width: 24px;
     right: 35px;
     top: 9px;
+}
+.spotify-icon
+{
+    width: 24px;
 }
 .toggle-but div
 {
