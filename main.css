@@ -55,3 +55,48 @@ body {
 }
 h1{font-weight: 600; margin: 0px; }
 h4{font-weight: 600; margin-top: 10px; }
+#menu
+{
+	display: none;
+	width: 30px;
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+@media (max-width: 800px)
+{
+	#header-inside
+	{
+		width: 100%;
+	}
+}
+@media (max-width: 600px)
+{
+	body
+	{
+		transition: padding 0.5s;
+	}
+	#header
+	{
+		transition: padding 0.5s;
+		padding-bottom: 0px;
+		overflow: hidden;
+	}
+	#header-buttons
+	{
+		position: absolute;
+		top: 35px;
+		width: 100%;
+		text-align: center;
+	}
+	#header-inside
+	{
+
+	}
+	#menu
+	{
+		display: block;
+	}
+}
