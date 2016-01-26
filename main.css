@@ -87,13 +87,10 @@ h4{font-weight: 600; margin-top: 10px; }
 	#header-buttons
 	{
 		position: absolute;
-		top: 35px;
+		top: 32px;
 		width: 100%;
 		text-align: center;
-	}
-	#header-inside
-	{
-
+		font-size: 16px;
 	}
 	#menu
 	{

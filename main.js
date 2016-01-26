@@ -12,8 +12,8 @@ $(document).ready(function()
 		}
 		else
 		{
-			$("#header").css("padding-bottom", "40");
-			$("body").css("padding-top", "40");
+			$("#header").css("padding-bottom", "30");
+			$("body").css("padding-top", "30");
 		}	
 	});
 });
