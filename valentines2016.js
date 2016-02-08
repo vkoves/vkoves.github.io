@@ -29,6 +29,9 @@ var objectsArr = new Array();
 var heartsCollected = 0;
 var heartsGoal = 10;
 
+var barLength = 0;
+var barNorm = 150;
+
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 var player = {
@@ -46,6 +49,12 @@ function Item(type, x, y, width, height)
 	this.y = y || 0;
 	this.width = width || 25;
 	this.height = height || 25;
+	this.opacity = 1;
+	this.lifetime = 1;
+	this.velx = 0;
+	this.vely = 0;
+	this.scale = 1;
+	this.scaleSpeed = 0;
 }
 
 // Handle keyboard controls
@@ -78,19 +87,52 @@ function update(modifier)
 		player.x +=	player.speed * modifier;
 	}
 
-	for(object in objectsArr) //check for collisions with all object
+	for(object in objectsArr) //check for collisions with all objects and apply physics
 	{
 		var obj = objectsArr[object];
-		if(player.x <= (obj.x + obj.width)
-		&& obj.x <= (player.x + player.width)
-		&& player.y <= (obj.y + obj.height)
-		&& obj.y <= (player.y + player.height))
+
+		obj.x += obj.velx*modifier;
+		obj.y += obj.vely*modifier;
+
+		if(obj.type == "heart")
 		{
-			objectsArr.splice(object, 1); //remove object by index
-			heartsCollected++;
-			spawnHeart();
+			if(player.x <= (obj.x + obj.width)	&& obj.x <= (player.x + player.width)
+				&& player.y <= (obj.y + obj.height) && obj.y <= (player.y + player.height) && obj.scaleSpeed == 0) //only collide if it's not shrinking
+			{
+				spawnParticles(obj.x, obj.y, "heartPickup");
+				heartsCollected++;
+				obj.scaleSpeed = -3;
+				spawnHeart();
+			}
+		}
+		else if(obj.type == "particle") //fade out particles
+		{
+			obj.opacity -= (1/obj.lifetime)*modifier;
+			
+			if(obj.opacity <= 0)
+			{
+				objectsArr.splice(object, 1);
+			}
+		}
+
+		if(obj.scaleSpeed != 0) //it's shrinking!
+		{
+			obj.scale += obj.scaleSpeed * modifier;
+
+			if(obj.scale < 0)
+				objectsArr.splice(object, 1); //remove object by index
+			if(obj.scale >= 1 && obj.type == "heart") //hearts don't overscale
+				obj.scaleSpeed = 0;
 		}
 	}
+
+	//Update hearts bar
+	var barAmount = barNorm*(heartsCollected/heartsGoal);
+	if(barAmount > barLength)
+		barLength += 2*(barNorm/heartsGoal) * modifier;
+
+	if(barLength > barNorm)
+		barLength = barNorm;
 }
 
 // Draw everything
@@ -119,27 +161,39 @@ function render()
 	for(object in objectsArr)
 	{
 		var obj = objectsArr[object];
+
+		var practWidth = obj.width*obj.scale;
+		var practHeight = obj.height*obj.scale;
+		var widthDiff = (obj.width - practWidth)/2;
+		var heightDiff = (obj.height - practHeight)/2;
+
 		if(obj.type == "heart")
 		{
 			ctx.fillStyle = "white";
 			ctx.beginPath();
-			ctx.arc(obj.x+obj.width/2, obj.y+obj.width/2, obj.width/2, 0, 2*Math.PI);
+			ctx.arc(obj.x+obj.width/2, obj.y+obj.height/2, practWidth/2, 0, 2*Math.PI);
 			ctx.fill();
-			ctx.drawImage(heartImage, obj.x+4, obj.y+5, obj.width-8, obj.height-8);
+			ctx.drawImage(heartImage, obj.x+widthDiff+4, obj.y+heightDiff+5, practWidth-8, practHeight-8);
+		}
+		else if(obj.type == "particle")
+		{
+			ctx.fillStyle = "rgba(255,150,150," + obj.opacity + ")";
+			ctx.beginPath();
+			ctx.arc(obj.x+obj.width/2, obj.y+obj.height/2, practWidth/2, 0, 2*Math.PI);
+			ctx.fill();
 		}
 	}
 
 	//Draw hearts bar
+
 	ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-	ctx.fillRect(10, 10, 185, 30); //draw the background
+	ctx.fillRect(10, 10, barNorm + 35, 30); //draw the background
 	ctx.fillStyle = "red";
-	var barAmount = 150*(heartsCollected/heartsGoal);
-	if(barAmount > 150)
-		barAmount = 150;
-	ctx.fillRect(10,10,barAmount, 30);
+
+	ctx.fillRect(10,10,barLength, 30);
 	ctx.strokeStyle = "black";
-	ctx.strokeRect(10, 10, 150, 30); //draw the border
-	ctx.drawImage(heartImage, 165, 12, 25, 25);
+	ctx.strokeRect(10, 10, barNorm, 30); //draw the border
+	ctx.drawImage(heartImage, barNorm+15, 12, 25, 25);
 
 	// Score
 	ctx.fillStyle = "rgb(250, 250, 250)";
@@ -170,20 +224,35 @@ function reset()
 	spawnHeart();
 }
 
+//spawn a new heart pickup
 function spawnHeart()
 {
 	var heart = new Item('heart', player.x + 20, player.y + 20, 32, 32);
 	heart.x = Math.round(25 + (Math.random() * (canvas.width - 50)));
 	heart.y = Math.round(25 + (Math.random() * (canvas.height - 50)));
+	heart.scale = 0;
+	heart.scaleSpeed = 1.5;
 	objectsArr.push(heart);
 }
 
-function playGame()
+//spawn particles for something
+function spawnParticles(x, y, name)
 {
-	// Let's play this game!
-	then = Date.now();
-	reset();
-	main();
+	var particleCount = 10;
+	var speed = 100;
+	if(name == "heartPickup")
+	{
+		for(var i = 0; i < particleCount; i++)
+		{
+			var particle = new Item('particle', x, y, 16, 16);
+			var randAngle = Math.random()*2*Math.PI; //pick a random angle for the particle to go in
+			particle.velx = speed*Math.sin(randAngle); //and use trigonometry to set the velocities
+			particle.vely = speed*Math.cos(randAngle);
+			particle.lifetime = 2;
+			particle.scaleSpeed = 0.5;
+			objectsArr.push(particle);
+		}
+	}
 }
 
 $(document).ready(function()
@@ -211,3 +280,11 @@ $(document).ready(function()
 		$("#start-screen").showUp();
 	});
 });
+
+function playGame()
+{
+	// Let's play this game!
+	then = Date.now();
+	reset();
+	main();
+}
