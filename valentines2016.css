@@ -113,6 +113,8 @@ h2
 #viktory
 {
 	display: none;
+	opacity: 0;
+	transition: opacity 5s;
 	position: absolute;
     width: 100%;
     top: 0;

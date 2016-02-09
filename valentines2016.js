@@ -101,6 +101,9 @@ function update(modifier)
 			{
 				spawnParticles(obj.x, obj.y, "heartPickup");
 				heartsCollected++;
+				
+				if(heartsCollected == heartsGoal)
+					success();
 				obj.scaleSpeed = -3;
 				spawnHeart();
 			}
@@ -230,9 +233,19 @@ function spawnHeart()
 	var heart = new Item('heart', player.x + 20, player.y + 20, 32, 32);
 	heart.x = Math.round(25 + (Math.random() * (canvas.width - 50)));
 	heart.y = Math.round(25 + (Math.random() * (canvas.height - 50)));
+	if(vectorDistance(player.x,player.y,heart.x,heart.y) < 32)
+	{
+		spawnHeart();
+		return;
+	}
 	heart.scale = 0;
 	heart.scaleSpeed = 1.5;
 	objectsArr.push(heart);
+}
+
+function vectorDistance(x1, y1, x2, y2)
+{
+	return Math.sqrt((x1-x2)^2+(y1-y2)^2)
 }
 
 //spawn particles for something
@@ -287,4 +300,13 @@ function playGame()
 	then = Date.now();
 	reset();
 	main();
+}
+
+function success()
+{
+	console.log("YAY!");
+	$("#main").fadeOut("slow", function()
+	{
+		$("#viktory").show(function(){$(this).css("opacity",1)});
+	});
 }
