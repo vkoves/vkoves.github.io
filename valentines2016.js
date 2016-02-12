@@ -117,6 +117,23 @@ function update(modifier)
 				objectsArr.splice(object, 1);
 			}
 		}
+		else if(obj.type == "ball")
+		{
+			if(player.x <= (obj.x + obj.width)	&& obj.x <= (player.x + player.width)
+				&& player.y <= (obj.y + obj.height) && obj.y <= (player.y + player.height) && obj.scaleSpeed == 0) //only collide if it's not shrinking
+			{
+				playGame();
+			}
+
+			if((obj.x > canvas.width - obj.width && obj.velx > 0) || (obj.x < 0 && obj.velx < 0))
+			{
+				obj.velx = - obj.velx;
+			}
+			else if((obj.y > canvas.height - obj.height && obj.vely > 0) || (obj.y < 0 && obj.vely < 0))
+			{
+				obj.vely = - obj.vely;
+			}
+		}
 
 		if(obj.scaleSpeed != 0) //it's shrinking!
 		{
@@ -185,6 +202,13 @@ function render()
 			ctx.arc(obj.x+obj.width/2, obj.y+obj.height/2, practWidth/2, 0, 2*Math.PI);
 			ctx.fill();
 		}
+		else
+		{
+			ctx.fillStyle = "rgba(255,255,255," + obj.opacity + ")";
+			ctx.beginPath();
+			ctx.arc(obj.x+obj.width/2, obj.y+obj.height/2, practWidth/2, 0, 2*Math.PI);
+			ctx.fill();
+		}
 	}
 
 	//Draw hearts bar
@@ -224,7 +248,11 @@ function reset()
 {
 	player.x = canvas.width / 2;
 	player.y = canvas.height / 2;
+	objectsArr = []; //reset objects
+	heartsCollected = 0; //and reset the collected hearts
+	barLength = 0;
 	spawnHeart();
+	spawnBall();
 }
 
 //spawn a new heart pickup
@@ -243,6 +271,15 @@ function spawnHeart()
 	objectsArr.push(heart);
 }
 
+function spawnBall()
+{
+	var ball = new Item('ball', 20, 20, 32, 32);
+	ball.velx = 250;
+	ball.vely = 250;
+	objectsArr.push(ball);
+	console.log(ball);
+}
+
 function vectorDistance(x1, y1, x2, y2)
 {
 	return Math.sqrt((x1-x2)^2+(y1-y2)^2)
@@ -252,17 +289,17 @@ function vectorDistance(x1, y1, x2, y2)
 function spawnParticles(x, y, name)
 {
 	var particleCount = 10;
-	var speed = 100;
+	var speed = 50;
 	if(name == "heartPickup")
 	{
 		for(var i = 0; i < particleCount; i++)
 		{
-			var particle = new Item('particle', x, y, 16, 16);
+			var particle = new Item('particle', x, y, 8, 8);
 			var randAngle = Math.random()*2*Math.PI; //pick a random angle for the particle to go in
 			particle.velx = speed*Math.sin(randAngle); //and use trigonometry to set the velocities
 			particle.vely = speed*Math.cos(randAngle);
 			particle.lifetime = 2;
-			particle.scaleSpeed = 0.5;
+			particle.scaleSpeed = 1.5;
 			objectsArr.push(particle);
 		}
 	}
