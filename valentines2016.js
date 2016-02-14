@@ -23,11 +23,15 @@ var w = window;
 var canvas;
 var ctx;
 var then;
+
+var levelNumber = 1; //start at level 1
+var finishLevel = 3; //end at level 3
+
 var bgReady = false;
 var playerReady = false;
 var objectsArr = new Array();
 var heartsCollected = 0;
-var heartsGoal = 10;
+var heartsGoal = 15; //hearts needed to finish the level
 
 var barLength = 0;
 var barNorm = 150;
@@ -104,6 +108,7 @@ function update(modifier)
 				
 				if(heartsCollected == heartsGoal)
 					success();
+
 				obj.scaleSpeed = -3;
 				spawnHeart();
 			}
@@ -122,7 +127,7 @@ function update(modifier)
 			if(player.x <= (obj.x + obj.width)	&& obj.x <= (player.x + player.width)
 				&& player.y <= (obj.y + obj.height) && obj.y <= (player.y + player.height) && obj.scaleSpeed == 0) //only collide if it's not shrinking
 			{
-				playGame();
+				playGame(); //woops die
 			}
 
 			if((obj.x > canvas.width - obj.width && obj.velx > 0) || (obj.x < 0 && obj.velx < 0))
@@ -174,8 +179,12 @@ function render()
 	}
 	else
 	{
+		ctx.translate(player.x + (player.width/2), player.y + (player.height/2));
+		ctx.rotate(45*Math.PI/180);
 		ctx.fillStyle = "rgb(250, 0, 0)";
-		ctx.fillRect(player.x, player.y, player.width, player.height);	
+		ctx.fillRect(-(player.width/2), -(player.height/2), player.width, player.height);
+		ctx.rotate(-45*Math.PI/180);
+		ctx.translate(-player.x - (player.width/2), -player.y - (player.height/2));
 	}
 
 	for(object in objectsArr)
@@ -202,11 +211,16 @@ function render()
 			ctx.arc(obj.x+obj.width/2, obj.y+obj.height/2, practWidth/2, 0, 2*Math.PI);
 			ctx.fill();
 		}
-		else
+		else if(obj.type == "ball")
 		{
-			ctx.fillStyle = "rgba(255,255,255," + obj.opacity + ")";
+			ctx.fillStyle = "rgba(255,0,0," + obj.opacity + ")";
 			ctx.beginPath();
 			ctx.arc(obj.x+obj.width/2, obj.y+obj.height/2, practWidth/2, 0, 2*Math.PI);
+			ctx.fill();
+
+			ctx.fillStyle = "rgba(255,255,255," + obj.opacity + ")";
+			ctx.beginPath();
+			ctx.arc(obj.x+obj.width/2, obj.y+obj.height/2, practWidth/2-2, 0, 2*Math.PI);
 			ctx.fill();
 		}
 	}
@@ -227,6 +241,7 @@ function render()
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
+	ctx.fillText("Level: " + levelNumber + "/" + finishLevel, 10, 45);
 };
 
 function main() //the main action loop
@@ -252,16 +267,17 @@ function reset()
 	heartsCollected = 0; //and reset the collected hearts
 	barLength = 0;
 	spawnHeart();
-	spawnBall();
+	for(var i = 0; i < levelNumber; i++)
+		spawnBall();
 }
 
 //spawn a new heart pickup
 function spawnHeart()
 {
 	var heart = new Item('heart', player.x + 20, player.y + 20, 32, 32);
-	heart.x = Math.round(25 + (Math.random() * (canvas.width - 50)));
-	heart.y = Math.round(25 + (Math.random() * (canvas.height - 50)));
-	if(vectorDistance(player.x,player.y,heart.x,heart.y) < 32)
+	heart.x = Math.round((Math.random() * (canvas.width - 32)));
+	heart.y = Math.round((Math.random() * (canvas.height - 32)));
+	if(vectorDistance(player.x,player.y,heart.x,heart.y) < 150)
 	{
 		spawnHeart();
 		return;
@@ -274,15 +290,22 @@ function spawnHeart()
 function spawnBall()
 {
 	var ball = new Item('ball', 20, 20, 32, 32);
-	ball.velx = 250;
-	ball.vely = 250;
+	ball.x = Math.round(16 + (Math.random() * (canvas.width - 32)));
+	ball.y = Math.round(16 + (Math.random() * (canvas.height - 32)));
+	if(Math.round(Math.random()) == 1)
+		ball.velx = 250;
+	else
+		ball.velx = -250;
+	if(Math.round(Math.random()) == 1)
+		ball.vely = 250;
+	else
+		ball.vely = -250;
 	objectsArr.push(ball);
-	console.log(ball);
 }
 
 function vectorDistance(x1, y1, x2, y2)
 {
-	return Math.sqrt((x1-x2)^2+(y1-y2)^2)
+	return Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2));
 }
 
 //spawn particles for something
@@ -341,9 +364,18 @@ function playGame()
 
 function success()
 {
-	console.log("YAY!");
-	$("#main").fadeOut("slow", function()
+	levelNumber++;
+	
+	if(levelNumber > 3)
 	{
-		$("#viktory").show(function(){$(this).css("opacity",1)});
-	});
+		console.log("YAY!");
+		$("#main").fadeOut("slow", function()
+		{
+			$("#viktory").show(function(){$(this).css("opacity",1)});
+		});
+	}
+	else
+	{
+		playGame();
+	}
 }
