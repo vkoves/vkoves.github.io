@@ -1,0 +1,157 @@
+<html>
+<head>
+	<title>Viktor K&ouml;ves</title>
+	<!-- Added Open Sans from Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic' rel='stylesheet' type='text/css'>
+	<link href="main.css" rel="stylesheet">
+	<meta name="theme-color" content="#D80000">
+	<meta name="viewport" content="width=450, initial-scale=0.75">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<style>
+		.full-width { 
+			width: 100%;
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+		.two-col {
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			display: inline-block;
+			background: gainsboro;
+			padding: 15px;
+		}
+		block {
+			display: block;
+			width: 45%;
+			float: left;
+			margin-left: 2.5%;
+			margin-right: 2.5%;
+		}
+		#no-style a, #cursor-only a {
+			text-decoration: none;
+			color: black;
+		}
+		#no-style a { cursor: default; }
+		#with-color a, #with-hover a {
+			color: red;
+			text-decoration: none;
+		}
+		#with-hover a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div id="header-inside">
+			<span id="title"><a href="index.html">Viktor K&ouml;ves</a></span>
+			<div id="header-buttons">
+				<span><a href="about.html">About</a></span> |
+				<span><a href="portfolio.html">Portfolio</a></span> |
+				<span><a href="http://www.indigobox.us">IndigoBox</a></span> |
+				<span><a href="lowvoltage.html">Low Voltage</a></span>
+			</div>
+			<img id="menu" src="menu.svg">
+		</div>
+	</div>
+	<br>
+	<h1>Design</h1>
+	<h4>
+	A basic guide to some principals of design I've come up with as I've worked<br>
+	on various projects
+	</h4>
+
+	<h2>
+		Design Makes Action Obvious
+	</h2>
+	Good designs make certain things very obvious. On a well designed website, <br>
+	links look like links, and you know implicitly that you can click them. Let's <br>
+	explore that idea.
+
+	<h3>Cursors</h3>
+	Cursors are a very basic indication that something is interactive. See if you <br>
+	can find the link in these two blocks of text. The link in the left one has no <br>
+	cursor, the	one on the right does.
+
+	<div class="full-width">
+		<div class="two-col">
+			<block id="no-style">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
+				ut dapibus enim laoreet lobortis. Morbi metus quam, 
+				<a href="/" target="_blank">porttitor</a> 
+				id commodo in, 
+				sagittis non mauris. Aliquam arcu risus, lacinia sit amet rhoncus id, ullamcorper
+			</block>
+
+			<block id="cursor-only">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
+				ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit 
+				<a href="/" target="_blank">velit,</a> 
+				ut dapibus enim laoreet lobortis. Morbi metus quam, porttitor id commodo in, 
+			</block>
+		</div>
+	</div>
+
+	That wasn't very simple in both cases, but your probably were able to find the <br>
+	link in the right text. However, a cursor change alone isn't nearly enough.
+
+	<h3>Colors &amp; Standing Out</h3>
+	Links are an important part of any website, and making sure the users knows where <br>
+	they are is critical to a good user experience. If a user can't find a link to the <br>
+	information you are trying to get them to see, they get frustrated. Colors can be <br>
+	used to make links stand out, giving them contrast. Which of the links below are <br>
+	more obvious?
+
+	<div class="full-width">
+		<div class="two-col">
+			<block id="cursor-only">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
+				<a href="/" target="_blank">blandit.</a>
+				Maecenas vel 
+				ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit, 
+				nec nunc. Cras facilisis quis nisi id maximus.
+			</block>
+
+			<block id="with-color">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
+				ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit, 
+				ut dapibus enim laoreet 
+				<a href="/" target="_blank">lobortis.</a>
+				Morbi metus quam, porttitor id commodo in, 
+			</block>
+		</div>
+	</div>
+
+	<h3>Hover Effects</h3>
+	Adding contrast and proper cursors helps to make links and other interactive <br>
+	content more intuitive, and draws attention to them. However, it's also important <br>
+	to keep in mind that just because something looks different does not mean it is <br>
+	clear that it should be clicked.
+
+	<div class="full-width">
+		<div class="two-col">
+			<block id="with-color">
+				ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit, 
+				ut dapibus enim laoreet 
+				<a href="/" target="_blank">lobortis.</a>
+				Morbi metus quam, porttitor id commodo in, 
+				nec nunc. Cras facilisis quis nisi id maximus.
+			</block>
+
+			<block id="with-hover">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
+				orci, quis dapibus odio. Sed bibendum felis eget mollis 
+				<a href="/" target="_blank">blandit.</a>
+				Maecenas vel 
+				sagittis non mauris. Aliquam arcu risus, lacinia sit amet rhoncus id, ullamcorper
+				nec nunc. Cras facilisis quis nisi id maximus.
+			</block>
+		</div>
+	</div>	
+
+</body>
+</html>
