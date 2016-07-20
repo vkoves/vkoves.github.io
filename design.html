@@ -55,9 +55,10 @@
 			color: black;
 		}
 		#no-style a { cursor: text; }
-		#with-color a, #with-hover a {
-			color: red;
+		#with-color a { color: blue; }
+		#with-hover a {
 			text-decoration: none;
+			color: #d80000; 
 		}
 		#with-hover a:hover {
 			text-decoration: underline;
@@ -81,14 +82,14 @@
 			font-weight: bold;
 			cursor: pointer;
 		}
-		.button.with-hover:hover {
+		.button.with-active:active {
 			border-bottom-width: 3px;
 			margin-top: 2px;
 		}
 		.button.with-active {
 			transition: border-bottom-color 0.3s, background-color 0.3s;
 		}
-		.button.with-active:hover {
+		.button.with-hover:hover {
 			background-color: #03ad03;
 			border-bottom-color: green;
 		}
@@ -137,77 +138,15 @@
 		links look like links, and you know implicitly that you can click them. We'll 
 		explore that idea with a few examples.
 
-
-		<h3> Cursors </h3>
-		
-		Cursors are a very basic indication that something is interactive. See if you 
-		can find the link in these two blocks of text. The link in the left one has no 
-		cursor, the	one on the right does.
-
-		<div class="full-width">
-			<div class="two-col">
-				<block id="no-style">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
-					ut dapibus enim laoreet lobortis. Morbi metus quam, 
-					<a href="/" target="_blank">porttitor</a> 
-					id commodo in, 
-					sagittis non mauris. Aliquam arcu risus, lacinia sit amet rhoncus id, ullamcorper
-				</block>
-
-				<block id="cursor-only">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
-					ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit 
-					<a href="/" target="_blank">velit,</a> 
-					ut dapibus enim laoreet lobortis. Morbi metus quam, porttitor id commodo in, 
-				</block>
-			</div>
-		</div>
-
-		That wasn't very simple in both cases, but your probably were able to find the 
-		link in the right text. However, a cursor change alone isn't nearly enough. (By 
-		the way, the links were the words "porttitor" and "velit" in the left and right
-		examples, respectively)
-
-
-		<h3> Colors &amp; Contrast </h3>
-		
-		Links are an important part of any website, and making sure the users knows where 
-		they are is critical to a good user experience. If a user can't find a link to the 
-		information you are trying to get them to see, they get frustrated. Colors can be 
-		used to make links stand out, giving them contrast. Which of the links below are 
-		more obvious?
-
-		<div class="full-width">
-			<div class="two-col">
-				<block id="cursor-only">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
-					<a href="/" target="_blank">blandit.</a>
-					Maecenas vel 
-					ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit, 
-					nec nunc. Cras facilisis quis nisi id maximus.
-				</block>
-
-				<block id="with-color">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
-					ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit, 
-					ut dapibus enim laoreet 
-					<a href="/" target="_blank">lobortis.</a>
-					Morbi metus quam, porttitor id
-				</block>
-			</div>
-		</div>
-
-		It can be easily said that the link on the right is much more obvious, and much 
-		more likely to be clicked. No matter how it could have been styled, the fact that 
-		it has contrast and draws attention to itself improves the user experience.
-
-
 		<h3> Hover Effects </h3>
 		
-		Adding contrast and proper cursors helps to make links and other interactive 
-		content more intuitive, and draws attention to them. However, it's also important 
-		to keep in mind that just because something looks different does not mean it is 
-		clear that it should be clicked.
+		Links and other interactive elements should always have proper cursors indicating 
+		they are interactive, and also contrast the elements around them to draw attention.
+		We won't worry about that for links, though, as HTML and CSS by default style links
+		in a very distinct blue (which is hopefully not the color of your site's text) and
+		already has a proper cursor. This makes the link stand out natively, though it 
+		important to keep in mind that just because something looks different does not mean it
+		is clear that it should be clicked.
 
 		<div class="full-width">
 			<div class="two-col">
@@ -231,7 +170,33 @@
 
 		This might seem like a minute difference, but although both links stand out, a user 
 		knows upon hovering over the link on the right that it does something when you click 
-		it. Hover effects are an invitation to proceed.
+		it. Hover effects are an invitation to proceed. The link on the right also does not
+		start out underlined (which looks more modern) and has a color that matches the rest
+		of the site.
+
+		<!--
+		<h3>Not Going Overboard</h3>
+
+		<div class="full-width">
+			<div class="two-col">
+				<block id="with-hover">
+					ante eu ante laoreet pretium nec nec mauris. Praesent <a href="/" target="_blank">rutrum hendrerit</a> <a href="/" target="_blank">velit, 
+					ut dapibus</a> <a href="/" target="_blank">enim laoreet</a> 
+					<a href="/" target="_blank">lobortis.</a>
+					Morbi metus quam, <a href="/" target="_blank">porttitor id</a> commodo in, 
+					nec nunc. <a href="/" target="_blank">Cras facilisis quis nisi id maximus.</a>
+				</block>
+
+				<block id="with-hover">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
+					orci, quis dapibus odio. Sed bibendum felis eget mollis 
+					<a href="/" target="_blank">blandit.</a>
+					Maecenas vel 
+					nec nunc. Cras facilisis quis nisi id maximus.
+				</block>
+			</div>
+		</div>
+		-->
 
 		<h2>Tactile Design - Buttons</h2>
 		From working on a lot of different projects, I've found that lots of web developers
