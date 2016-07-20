@@ -86,19 +86,19 @@
 			border-bottom-width: 3px;
 			margin-top: 2px;
 		}
-		.button.with-active {
+		.button.with-animation {
 			transition: border-bottom-color 0.3s, background-color 0.3s;
 		}
 		.button.with-hover:hover {
 			background-color: #03ad03;
 			border-bottom-color: green;
 		}
-		.button.with-active span {
+		.button.with-animation span {
 			position: relative;
 			left: 0px;
 			transition: left 0.5s;
 		}
-		.button.with-active:active span {
+		.button.with-animation:active span {
 			left: 200%;
 		}
 		.noselect {
@@ -227,8 +227,14 @@
 		user experience focused button. It looks clickable (by having contrast) and acts clickable
 		by having a simple hover effect. We can go further to add polish though.
 		
+		<h3>Click Effects</h3>
+		<div class="button with-hover with-active">Button</div>
+		<br><br>
+		Continuing with the tactile and "physical" feel, a click event on this button that makes it
+		give the illusion of being "pushed in" makes it feel more pleasant.
+
 		<h3>Spicing Things up with Animation</h3>
-		<div class="button with-hover with-active">
+		<div class="button with-hover with-active with-animation">
 			<span class="noselect">Send Mail</span>
 		</div>
 		<br><br>
