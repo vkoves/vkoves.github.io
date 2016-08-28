@@ -3,16 +3,21 @@ $(document).ready(function()
 	//Hide the body to start
 	$("body").hide();
 
+	var linkEnding = ".html";
+	if(window.location.href.indexOf("viktorkoves.com") > -1) //if this is production
+		linkEnding = ""; //don't use the .html ending, as the GitHub server (and most servers really), will auto route to the .html with a mask
+
+
 	//Add in the header. This makes it so I don't have to update the header in each file
 	$("body").prepend(
 	'<div id="header">' +
 		'<div id="header-inside">' +
-			'<span id="title"><a href="index.html">Viktor K&ouml;ves</a></span>' +
+			'<span id="title"><a href="index' + linkEnding + '">Viktor K&ouml;ves</a></span>' +
 			'<div id="header-buttons">' +
-				'<span><a href="about.html">About</a></span> |' +
-				'<span><a href="portfolio.html">Portfolio</a></span> |' +
+				'<span><a href="about' + linkEnding + '">About</a></span> |' +
+				'<span><a href="portfolio' + linkEnding + '">Portfolio</a></span> |' +
 				'<span><a href="http://www.indigobox.us">IndigoBox</a></span> |' +
-				'<span><a href="lowvoltage.html">Low Voltage</a></span>' +
+				'<span><a href="lowvoltage' + linkEnding + '">Low Voltage</a></span>' +
 			'</div>' +
 			'<img id="menu" src="images/menu.svg">' +
 		'</div>' +
