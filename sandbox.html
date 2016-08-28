@@ -26,28 +26,27 @@
 	<object id="night-sky" data="images/NightSky.svg" type="image/svg+xml"></object>
 
 
-<script>
-var stars;
+	<script>
+	var stars;
 
-function starShine()
-{
-	var length = stars.length;
-	star = Math.round(Math.random() * length);
-	op = $(stars[star]).css("opacity");
-	if(op > 0)
-		$(stars[star]).css("opacity", "0");
-	else
-		$(stars[star]).css("opacity", "1");
-}
+	function starShine()
+	{
+		var length = stars.length;
+		star = Math.round(Math.random() * length);
+		op = $(stars[star]).css("opacity");
+		if(op > 0)
+			$(stars[star]).css("opacity", "0");
+		else
+			$(stars[star]).css("opacity", "1");
+	}
 
-$(window).load(function(){
-    var svg = $("#night-sky")[0];
-    var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
-	var svgRoot  = svgDoc.documentElement;
-	stars = $(svgRoot).find("path");
-	setInterval(starShine, 1000);
-});
-</script>
-
+	$(window).load(function(){
+		var svg = $("#night-sky")[0];
+		var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
+		var svgRoot  = svgDoc.documentElement;
+		stars = $(svgRoot).find("path");
+		setInterval(starShine, 1000);
+	});
+	</script>
 </body>
 </html>

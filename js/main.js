@@ -1,5 +1,8 @@
 $(document).ready(function()
 {
+	//Hide the body to start
+	$("body").hide();
+
 	//Add in the header. This makes it so I don't have to update the header in each file
 	$("body").prepend(
 	'<div id="header">' +
@@ -15,6 +18,7 @@ $(document).ready(function()
 		'</div>' +
 	'</div>');
 
+	//Add in content from the <head> tag so we don't need to put in the title and favicon everywhere
 	$("head").append(
 	'<title>Viktor K&ouml;ves</title> <!-- Oh what fun, an Oumlaut! -->' +
 	'<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>' +
@@ -33,6 +37,15 @@ $(document).ready(function()
 	  "ga('create', 'UA-39148744-3', 'auto');" +
 	  "ga('send', 'pageview');" +
 	"</script>");
+
+	// Talk about strange hacks. This whole configuration is a workaround
+	// for me using a basic HTML site when I'm used to framework languages,
+	// and in this case I hide the body for a moment to let CSS and things load.
+	// For some reason it seems to work with a timeout of zero milliseconds.
+	window.setTimeout(function()
+	{
+		$("body").show();
+	}, 0);
 
 	$("#menu").click(function()
 	{
