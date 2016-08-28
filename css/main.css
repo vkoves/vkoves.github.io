@@ -129,6 +129,55 @@ h4{font-weight: 600; margin-top: 10px; }
 	max-width: 90%;
 	max-height: 80%;
 }
+#overlay-controls
+{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	display: none;
+}
+#overlay-controls img
+{
+	position: fixed;
+	background: rgba(0,0,0,0.5);
+	border-radius: 50px;
+	box-sizing: border-box;
+	padding: 10px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+#overlay-controls img:hover
+{
+	background: rgba(0,0,0,1);
+}
+#overlay-controls .arrow
+{
+	width: 50px;
+}
+#overlay-controls #close
+{
+	width: 50px;
+	top: 10px;
+	right: 10px;
+}
+#overlay-controls #left
+{
+	right: 1%;
+}
+#overlay-controls #right
+{
+	left: 1%;
+}
+@media (max-width: 600px)
+{
+	.portfolio-img
+	{
+		width: 90%;
+	}
+}
+/* End Portfolio Styling */
+
+/* About Page Styling */
 .main-image
 {
 	width: 300px;
@@ -136,17 +185,18 @@ h4{font-weight: 600; margin-top: 10px; }
 	margin-bottom: 20px;
 	box-shadow: 0px 0px 10px grey;
 }
-.centered {
+/* End About Page Styling */
+
+.centered
+{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-@media (max-width: 600px)
+.vertically-centered
 {
-	.portfolio-img
-	{
-		width: 90%;
-	}
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
 }

@@ -15,7 +15,12 @@
 	<div id="portfolio-container">
 	</div>
 
-	<div id="overlay">
+	<div id="overlay" class="overlay">
+	</div>
+	<div id="overlay-controls" class="overlay">
+		<img id="close" src="images/icons/cross.svg">
+		<img id="left" class="vertically-centered arrow" src="images/icons/chevron-thin-right.svg">
+		<img id="right" class="vertically-centered arrow" src="images/icons/chevron-thin-left.svg">
 	</div>
 
 	<script>
@@ -46,41 +51,71 @@
 		// On click of portfolio image
 		$(".portfolio-img").click(function()
 		{
-			$("#overlay").fadeIn();
-			$("#overlay").html('<img class="centered" src="' + $(this).attr("src") + '">');
+			$(".overlay").fadeIn();
+			setOverlayImage($(this).attr("src"));
 			currentID = $(this).attr("data-id");
 		});
 
-		$("#overlay").click(function()
+		$("#overlay, #overlay-controls #close").click(function()
 		{
-			$("#overlay").fadeOut();
+			$(".overlay").fadeOut();
 		})
+
+		$("#overlay-controls #right").click(nextImage);
+		$("#overlay-controls #left").click(previousImage);
 
 	$("body").keydown(function(event)
 	{
 	  if(event.keyCode == 37) //left arrow
 	  {
-	  	if(currentID > 0)
-	  		currentID--;
-	  	else
-	  		currentID = portfolio.length - 1;
-
-	  	$("#overlay").html('<img class="centered" src="' + portfolio[currentID].url + '"">')
+	  	previousImage();
 	  }
 	  else if(event.keyCode == 39) //right arrow
 	  {
-	  	if(currentID < portfolio.length - 1)
+	  	nextImage();
+	  }
+	  else if(event.keyCode == 27) //escape
+	  {
+	  	$(".overlay").fadeOut();
+	  }
+	});
+
+	function setOverlayImage(url)
+	{
+		if($("#overlay img").length > 0) //if there's already an image
+		{
+			$("#overlay img").fadeOut(300, function() //fade it out
+			{
+				//then transition to new image
+			  	$("#overlay").html('<img class="centered" src="' + url + '"">');
+			  	$("#overlay img").hide().fadeIn(300);
+			});
+		}
+		else
+		{
+		  	$("#overlay").html('<img class="centered" src="' + url + '"">');
+		}
+	}
+
+	function nextImage()
+	{
+		if(currentID < portfolio.length - 1)
 	  		currentID++;
 	  	else
 	  		currentID = 0;
 
-	  	$("#overlay").html('<img class="centered" src="' + portfolio[currentID].url + '"">')
-	  }
-	  else if(event.keyCode == 27) //escape
-	  {
-	  	$("#overlay").fadeOut();
-	  }
-	});
+	  	setOverlayImage(portfolio[currentID].url);
+	}
+
+	function previousImage()
+	{
+		if(currentID > 0)
+	  		currentID--;
+	  	else
+	  		currentID = portfolio.length - 1;
+
+	  	setOverlayImage(portfolio[currentID].url);
+	}
 	</script>
 </body>
 </html>
