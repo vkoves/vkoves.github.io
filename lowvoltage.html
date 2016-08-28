@@ -3,8 +3,8 @@
 	<title>Low Voltage</title>
 	<!-- Added Open Sans from Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic' rel='stylesheet' type='text/css'>
-	<link href="main.css" rel="stylesheet">
-	<link href="lowvoltage.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/lowvoltage.css" rel="stylesheet">
 	<meta name="theme-color" content="#3C3C3C">
 	<meta name="viewport" content="width=450, initial-scale=0.75">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -36,7 +36,7 @@
 	</div>
 	<br>
 	<h1>Low Voltage</h1>
-	<img id="icon" src="icon.png">
+	<img id="icon" src="images/icon.png">
 	<h4 class="text-box">Low Voltage is a radio show on Tuesdays from 9pm to 10pm on WIIT focusing on the softer side of Electronic music.
 		Tune in for a wide variety of music from the softer sounds of well known artists like deadmau5 and Daft Punk to
 		less recognized artists like Breakbot and R&ouml;yksopp.
@@ -45,7 +45,7 @@
 	<h2 style="margin-bottom: 0px;">Show Info & Playlists</h2>
 	<h4 class="text-box">
 		Playlists are posted the night after the show ends (usually), and shows with the playlist up will have this icon:
-		<img class="spotify-icon" src="spotify.png">
+		<img class="spotify-icon" src="images/spotify.png">
 	</h4>
 
 	<script>
@@ -128,7 +128,7 @@
 	{
 		$("body").append('<div class="playlist-box" view="' + show.viewable + '">'
 		+ '<h4>Show ' + (showsArray.length - index) + ' - ' + show.date + '</h4>'
-		+ '<img class="spotify-icon" src="spotify.png">'
+		+ '<img class="spotify-icon" src="images/spotify.png">'
 		+ '<div class="toggle-but"><div>+</div></div>'
 		+ '<div class="iframe-holder">'
 			+ '<div>' + show.description + '</div>'

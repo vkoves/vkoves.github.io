@@ -16,7 +16,7 @@ backgroundImage.onload = function () {
 backgroundImage.src = "http://i.imgur.com/vwYBRko.png"
 
 var heartImage = new Image();
-heartImage.src = "heart.svg";
+heartImage.src = "images/heart.svg";
 
 // Cross-browser support for requestAnimationFrame
 var w = window;
@@ -79,7 +79,7 @@ function update(modifier)
 		player.y -=	player.speed * modifier;
 	}
 	if ((40 in keysDown || 83 in keysDown) && player.y < canvas.height - player.height) // Player holding down
-	{ 
+	{
 		player.y +=	player.speed * modifier;
 	}
 	if ((37 in keysDown || 65 in keysDown) && player.x > 0) // Player holding left
@@ -105,7 +105,7 @@ function update(modifier)
 			{
 				spawnParticles(obj.x, obj.y, "heartPickup");
 				heartsCollected++;
-				
+
 				if(heartsCollected == heartsGoal)
 					success();
 
@@ -116,7 +116,7 @@ function update(modifier)
 		else if(obj.type == "particle") //fade out particles
 		{
 			obj.opacity -= (1/obj.lifetime)*modifier;
-			
+
 			if(obj.opacity <= 0)
 			{
 				objectsArr.splice(object, 1);
@@ -335,7 +335,7 @@ $(document).ready(function()
 	canvas.width = 800;
 	canvas.height = 600;
 	$("#game-screen").append(canvas);
-	
+
 	$("#start").click(function()
 	{
 		$("#start-screen").hideUp();
@@ -365,7 +365,7 @@ function playGame()
 function success()
 {
 	levelNumber++;
-	
+
 	if(levelNumber > 3)
 	{
 		console.log("YAY!");
