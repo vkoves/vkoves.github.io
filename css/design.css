@@ -1,0 +1,101 @@
+/* Stylesheet for the design page specifically */
+#page-container {
+	text-align: left;
+	width: 90%;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+}
+h2
+{
+	font-weight: 600;
+}
+h3
+{
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+
+
+.full-width {
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.two-col {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: inline-block;
+	background: gainsboro;
+	padding: 15px;
+}
+block {
+	display: block;
+	width: 45%;
+	float: left;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+#no-style a, #cursor-only a {
+	text-decoration: none;
+	color: black;
+}
+#no-style a { cursor: text; }
+#with-color a { color: blue; }
+#with-hover a {
+	text-decoration: none;
+	color: #d80000;
+}
+#with-hover a:hover {
+	text-decoration: underline;
+}
+
+/* Button Styling */
+#bad-button {
+	background: #afafaf;
+	color: white;
+	display: inline-block;
+	padding: 5px;
+	border-radius: 5px;
+}
+.button {
+	display: inline-block;
+	padding: 5px 20px;
+	background-color: green;
+	border-bottom: solid 5px #035803;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+.button.with-active:active {
+	border-bottom-width: 3px;
+	margin-top: 2px;
+}
+.button.with-animation {
+	transition: border-bottom-color 0.3s, background-color 0.3s;
+}
+.button.with-hover:hover {
+	background-color: #03ad03;
+	border-bottom-color: green;
+}
+.button.with-animation span {
+	position: relative;
+	left: 0px;
+	transition: left 0.5s;
+}
+.button.with-animation:active span {
+	left: 200%;
+}
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currentlynot supported by any browser */
+}
