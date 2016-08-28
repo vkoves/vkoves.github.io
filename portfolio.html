@@ -51,16 +51,17 @@
 		var currentID = -1;
 
 		var portfolio = [
-			{url: "images/TSOT1-min.png"},
-			{url: "images/TSOT2-min.png"},
-			{url: "images/TSOT3-min.png"},
 			{url: "images/InClouds1-min.png"},
 			{url: "images/InClouds2-min.png"},
-			{url: "images/prototypeGame.png"},
+			{url: "images/Awakening.png"},
+			// {url: "images/prototypeGame.png"},
 			{url: "images/Lightbulb3.png"},
 			{url: "images/Lightbulb4.png"},
 			{url: "images/Lightbulb5.png"},
 			{url: "images/sparks.jpg"},
+			{url: "images/TSOT1-min.png"},
+			{url: "images/TSOT2-min.png"},
+			{url: "images/TSOT3-min.png"},
 			{url: "images/grassPlanet.jpg"},
 			{url: "images/chicagoSubwayEntrance.png"},
 		];
@@ -75,7 +76,7 @@
 		$(".portfolio-img").click(function()
 		{
 			$("#overlay").fadeIn();
-			$("#overlay").html('<img src="' + $(this).attr("src") + '">');
+			$("#overlay").html('<img class="centered" src="' + $(this).attr("src") + '">');
 			currentID = $(this).attr("data-id");
 		});
 
@@ -93,7 +94,7 @@
 	  	else
 	  		currentID = portfolio.length - 1;
 
-	  	$("#overlay").html('<img src="' + portfolio[currentID].url + '"">')
+	  	$("#overlay").html('<img class="centered" src="' + portfolio[currentID].url + '"">')
 	  }
 	  else if(event.keyCode == 39) //right arrow
 	  {
@@ -102,7 +103,7 @@
 	  	else
 	  		currentID = 0;
 
-	  	$("#overlay").html('<img src="' + portfolio[currentID].url + '"">')
+	  	$("#overlay").html('<img class="centered" src="' + portfolio[currentID].url + '"">')
 	  }
 	  else if(event.keyCode == 27) //escape
 	  {
