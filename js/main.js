@@ -4,8 +4,19 @@ $(document).ready(function()
 	$("body").hide();
 
 	var linkEnding = ".html";
+	var onProduction = false;
+
 	if(window.location.href.indexOf("viktorkoves.com") > -1) //if this is production
+	{
+		onProduction = true;
 		linkEnding = ""; //don't use the .html ending, as the GitHub server (and most servers really), will auto route to the .html with a mask
+
+		//Iterate through all local links and remove the .html ending as well
+		$(".local-link").each(function()
+		{
+			$(this).attr("href", $(this).attr("href").replace(".html", ""));
+		});
+	}
 
 
 	//Add in the header. This makes it so I don't have to update the header in each file
