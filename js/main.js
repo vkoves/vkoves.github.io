@@ -26,7 +26,7 @@ $(document).ready(function()
 			'<span id="title"><a href="index' + linkEnding + '">Viktor K&ouml;ves</a></span>' +
 			'<div id="header-buttons">' +
 				'<span><a href="about' + linkEnding + '">About</a></span> |' +
-				'<span><a href="portfolio' + linkEnding + '">Portfolio</a></span> |' +
+				'<span><a href="gallery' + linkEnding + '">Gallery</a></span> |' +
 				'<span><a href="http://www.indigobox.us">IndigoBox</a></span> |' +
 				'<span><a href="lowvoltage' + linkEnding + '">Low Voltage</a></span>' +
 			'</div>' +
