@@ -1,0 +1,74 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<br>
+	<h1>Portfolio</h1>
+	<h4>
+		These are a sampling of some of the projects I've worked on.
+	</h4>
+
+	<div class="projects-container">
+		<!-- Projects tiles go here -->
+	</div>
+
+	<script>
+		// Create projects array, an array of hashes that describe each project
+		var projects = [
+			{
+				name: "Carpe",
+				subtitle: "Scheduling made social",
+				thumbnail: "images/carpe.png",
+				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
+			},
+			{
+				name: "Christmas In Clouds",
+				subtitle: "Showing some holiday cheer",
+				thumbnail: "images/carpe.png",
+				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
+			},
+			{
+				name: "Scroll Stop",
+				subtitle: "Boosting Productivity",
+				thumbnail: "images/carpe.png",
+				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
+			},
+			{
+				name: "Lines",
+				subtitle: "Open source edge detection",
+				thumbnail: "images/carpe.png",
+				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
+			},
+			{
+				name: "indigoBox Website",
+				subtitle: "Spreading the word",
+				thumbnail: "images/carpe.png",
+				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
+			},
+			{
+				name: "The Transportation Collective",
+				subtitle: "Big data for CTA customers",
+				thumbnail: "images/carpe.png",
+				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
+			},
+		];
+
+		$(document).ready(function()
+		{
+			var project; //the current project
+			for(var i = 0; i < projects.length; i++)
+			{
+				project = projects[i];
+				$(".projects-container").append(
+				'<div class="projects-tile">' +
+					'<div class="title">' + project.name + '</div>' +
+					'<div class="sub-title">' + project.subtitle + '</div>' +
+					'<div class="thumb"><img src="' + project.thumbnail + '"></div>' +
+				'</div>');
+			}
+		});
+	</script>
+</body>
+</html>

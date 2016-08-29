@@ -98,7 +98,7 @@ h4{font-weight: 600; margin-top: 10px; }
 	}
 }
 
-/* Portfolio Page */
+/* Gallery Page */
 #portfolio-container
 {
 	width: 100%;
@@ -175,7 +175,31 @@ h4{font-weight: 600; margin-top: 10px; }
 		width: 90%;
 	}
 }
-/* End Portfolio Styling */
+/* End Gallery Styling */
+
+/* Portfolio Page Styling */
+.projects-tile
+{
+	width: 90%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: lightgrey;
+    text-align: left;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+.projects-tile .title
+{
+	font-weight: 600;
+	font-size: 26px;
+}
+.projects-tile .sub-title
+{
+	font-weight: 600;
+}
+/* End Portfolio Page Styling */
 
 /* About Page Styling */
 .main-image
