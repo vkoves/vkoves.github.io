@@ -20,37 +20,37 @@
 			{
 				name: "Carpe",
 				subtitle: "Scheduling made social",
-				thumbnail: "images/carpe.png",
+				thumbnail: "images/portfolio/carpe.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "Christmas In Clouds",
 				subtitle: "Showing some holiday cheer",
-				thumbnail: "images/carpe.png",
+				thumbnail: "images/portfolio/ChristmasInClouds.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "Scroll Stop",
 				subtitle: "Boosting Productivity",
-				thumbnail: "images/carpe.png",
+				thumbnail: "images/portfolio/ScrollStop.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "Lines",
 				subtitle: "Open source edge detection",
-				thumbnail: "images/carpe.png",
+				thumbnail: "images/portfolio/lines.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "indigoBox Website",
 				subtitle: "Spreading the word",
-				thumbnail: "images/carpe.png",
+				thumbnail: "images/portfolio/indigoBoxSite.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "The Transportation Collective",
 				subtitle: "Big data for CTA customers",
-				thumbnail: "images/carpe.png",
+				thumbnail: "images/portfolio/TransCo.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 		];
@@ -63,9 +63,14 @@
 				project = projects[i];
 				$(".projects-container").append(
 				'<div class="projects-tile">' +
+					'<div class="icons">' +
+						'<div class="icon info"></div>' +
+						'<div class="icon images"></div>' +
+						'<div class="icon tools"></div>' +
+					'</div>' +
 					'<div class="title">' + project.name + '</div>' +
 					'<div class="sub-title">' + project.subtitle + '</div>' +
-					'<div class="thumb"><img src="' + project.thumbnail + '"></div>' +
+					'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
 				'</div>');
 			}
 		});
