@@ -57,10 +57,18 @@ $(document).ready(function()
 	//Add in footer
 	$("body").append('<div class="footer">' +
 		'<div class="social-bar">' +
-			'<div class="github"></div>' +
-			'<div class="tumblr"></div>' +
-			'<div class="twitter"></div>' +
-			'<div class="linkedin"></div>' +
+			'<a href="https://github.com/vkoves" target="_blank">' +
+				'<div class="github"></div>' +
+			'</a>' +
+			'<a href="http://vkstech.tumblr.com/" target="_blank">' +
+				'<div class="tumblr"></div>' +
+			'</a>' +
+			'<a href="https://twitter.com/viktork007" target="_blank">' +
+				'<div class="twitter"></div>' +
+			'</a>' +
+			'<a href="https://www.linkedin.com/in/viktorkoves" target="_blank">' +
+				'<div class="linkedin"></div>' +
+			'</a>' +
 		'</div>' +
 	'</div>')
 
