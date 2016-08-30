@@ -15,7 +15,7 @@
 	<div id="portfolio-container">
 	</div>
 
-	<div id="overlay" class="overlay">
+	<div id="overlay-main" class="overlay overlay-transparent">
 	</div>
 	<div id="overlay-controls" class="overlay">
 		<img id="close" src="images/icons/cross.svg">
@@ -27,19 +27,72 @@
 		var currentID = -1;
 
 		var portfolio = [
-			{url: "images/InClouds1-min.png"},
-			{url: "images/InClouds2-min.png"},
-			{url: "images/Awakening.png"},
-			// {url: "images/prototypeGame.png"},
-			{url: "images/Lightbulb3.png"},
-			{url: "images/Lightbulb4.png"},
-			{url: "images/Lightbulb5.png"},
-			{url: "images/sparks.jpg"},
-			{url: "images/TSOT1-min.png"},
-			{url: "images/TSOT2-min.png"},
-			{url: "images/TSOT3-min.png"},
-			{url: "images/grassPlanet.jpg"},
-			{url: "images/chicagoSubwayEntrance.png"},
+			{
+				url: "images/InClouds1-min.png",
+				title: "In Clouds",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/InClouds2-min.png",
+				title: "In Clouds",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/Awakening.png",
+				title: "Awakening",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			/*
+			{
+				url: "images/prototypeGame.png",
+				title: "In Clouds",
+				description: "Lorem ipsum dolor sit amet"
+			}, */
+			{
+				url: "images/Lightbulb3.png",
+				title: "Lightbulbs I",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/Lightbulb4.png",
+				title: "Lightbulbs II",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/Lightbulb5.png",
+				title: "Lightbulbs III",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/sparks.jpg",
+				title: "Sparks",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/TSOT1-min.png",
+				title: "The Speed of Time",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/TSOT2-min.png",
+				title: "The Speed of Time",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/TSOT3-min.png",
+				title: "The Speed of Time",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/grassPlanet.jpg",
+				title: "Grass Planet",
+				description: "Lorem ipsum dolor sit amet"
+			},
+			{
+				url: "images/chicagoSubwayEntrance.png",
+				title: "Chicago Subway Entrance",
+				description: "Lorem ipsum dolor sit amet"
+			},
 		];
 
 		// Generate all the portfolio tiles
@@ -61,7 +114,7 @@
 			currentID = image.attr("data-id");
 		});
 
-		$("#overlay, #overlay-controls #close").click(function()
+		$("#overlay-main, #overlay-controls #close").click(function()
 		{
 			$(".overlay").fadeOut();
 		})
@@ -81,29 +134,72 @@
 	  }
 	  else if(event.keyCode == 27) //escape
 	  {
-	  	$(".overlay").fadeOut();
+	  	if($("#overlay-info:visible").length > 0)
+	  		closeInfo();
+	  	else
+		  	$(".overlay").fadeOut();
 	  }
 	});
 
 	function setOverlayImage(url)
 	{
-		if($("#overlay:visible").length > 0 && $("#overlay img").length > 0) //if there's already an image
+		if($("#overlay-main:visible").length > 0 && $("#overlay-main img").length > 0) //if there's already an image
 		{
-			$("#overlay img").fadeOut(300, function() //fade it out
+			$("#overlay-main .img-container").fadeOut(300, function() //fade it out
 			{
-				//then transition to new image
-			  	$("#overlay").html('<img class="centered" src="' + url + '"">');
-			  	$("#overlay img").hide().fadeIn(300);
+				//then transition to new image by setting it, hiding it instantly, then fadin in
+				setOverlayHTMLWithImage(url);
+			  	$("#overlay-main .img-container").hide().fadeIn(300);
 			});
 		}
 		else
 		{
-		  	$("#overlay").html('<img class="centered" src="' + url + '"">');
+			setOverlayHTMLWithImage(url);
 		}
+
+		function setOverlayHTMLWithImage(url)
+		{
+		  	$("#overlay-main").html(
+		  	'<div class="img-base centered">' +
+		  		'<div class="img-container">' +
+			  		'<img src="' + url + '">' +
+			  		'<div class="icon info"></div>' +
+		  		'</div>' +
+		  	'</div>');
+
+		  	$("#overlay-main .img-container").click(function(event)
+		  	{
+		  		event.stopPropagation();
+		  	});
+
+		  	$("#overlay-main .img-container .icon.info").click(function()
+		  	{
+		  		$("body").append('<div id="overlay-info" class="overlay-transparent">' +
+		  			'<div class="centered">' +
+			  			'<div class="title">' + portfolio[currentID].title + '</div>' +
+			  			'<div class="description">' + portfolio[currentID].description + '</div>' +
+			  		'</div>' +
+			  		'<img id="close" src="images/icons/cross.svg">' +
+		  		'</div>');
+		  		$("#overlay-info #close").click(closeInfo);
+		  		$("#overlay-info").fadeIn();
+		  	});
+		}
+	}
+
+	function closeInfo()
+	{
+		$("#overlay-info").fadeOut(function()
+		{
+			$(this).remove();
+		});
 	}
 
 	function nextImage()
 	{
+		if($("#overlay-info:visible").length > 0) //if info is showing up
+			return;
+
 		if(currentID < portfolio.length - 1)
 	  		currentID++;
 	  	else
@@ -114,6 +210,9 @@
 
 	function previousImage()
 	{
+		if($("#overlay-info:visible").length > 0) //if info is showing up
+			return;
+
 		if(currentID > 0)
 	  		currentID--;
 	  	else
