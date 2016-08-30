@@ -40,7 +40,6 @@ $(document).ready(function()
 	'<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>' +
 	'<!-- Added Open Sans from Google Fonts -->' +
 	'<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic" rel="stylesheet" type="text/css">' +
-	'<link href="css/main.css" rel="stylesheet">' +
 	'<meta name="theme-color" content="#D80000">' +
 	'<meta name="viewport" content="width=450, initial-scale=0.75">' +
 	'<meta name="google-site-verification" content="aivQX75RILmCefXvQj496cBxd8ycZ-AWTKRMQJGoyA4" />' +
