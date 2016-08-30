@@ -126,6 +126,19 @@ h4{font-weight: 600; margin-top: 10px; }
 /* End Footer Styling */
 
 /* Gallery Page */
+.icon.fullscreen
+{
+	background-image: url("../images/icons/enlarge.svg");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: calc((100% - 50px)/2);
+    top: calc((100% - 50px)/2);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
 #portfolio-container
 {
 	width: 100%;
@@ -135,11 +148,27 @@ h4{font-weight: 600; margin-top: 10px; }
 }
 .portfolio-img
 {
+	position: relative;
 	cursor: pointer;
 	width: calc(33% - 30px);
     padding: 5px;
     margin: 10px;
     box-shadow: 1px 1px 5px #887F7F;
+    display: inline-block;
+}
+.portfolio-img img
+{
+	width: 100%;
+	transition: all 0.3s;
+}
+.portfolio-img:hover > img
+{
+	filter: brightness(50%);
+	-webkit-filter: brightness(50%);
+}
+.portfolio-img:hover > .icon
+{
+	opacity: 1;
 }
 #overlay
 {

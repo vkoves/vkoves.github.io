@@ -45,11 +45,15 @@
 		// Generate all the portfolio tiles
 		portfolio.forEach(function(item, index)
 		{
-			$("#portfolio-container").append('<img data-id="' + index + '" class="portfolio-img" src=' + item.url + '>');
+			$("#portfolio-container").append(
+				'<div class="portfolio-img">' +
+					'<div class="icon fullscreen"></div>' +
+					'<img data-id="' + index + '" src=' + item.url + '>' +
+				'</div>');
 		});
 
 		// On click of portfolio image
-		$(".portfolio-img").click(function()
+		$(".portfolio-img img").click(function()
 		{
 			$(".overlay").fadeIn();
 			setOverlayImage($(this).attr("src"));
