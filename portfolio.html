@@ -63,14 +63,16 @@
 				project = projects[i];
 				$(".projects-container").append(
 				'<div class="projects-tile">' +
-					'<div class="icons">' +
-						'<div class="icon info"></div>' +
-						'<div class="icon images"></div>' +
-						'<div class="icon tools"></div>' +
-					'</div>' +
 					'<div class="title">' + project.name + '</div>' +
 					'<div class="sub-title">' + project.subtitle + '</div>' +
-					'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
+					'<div class="thumb-container">' +
+						'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
+						'<div class="icon-overlay">' +
+							'<div class="icon-container"><div class="icon info"></div>Info</div>' +
+							'<div class="icon-container"><div class="icon images"></div>Images</div>' +
+							'<div class="icon-container"><div class="icon tools"></div>Tools</div>' +
+						'</div>' +
+					'</div>' +
 				'</div>');
 			}
 		});
