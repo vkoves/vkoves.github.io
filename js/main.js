@@ -54,6 +54,16 @@ $(document).ready(function()
 	  "ga('send', 'pageview');" +
 	"</script>");
 
+	//Add in footer
+	$("body").append('<div class="footer">' +
+		'<div class="social-bar">' +
+			'<div class="github"></div>' +
+			'<div class="tumblr"></div>' +
+			'<div class="twitter"></div>' +
+			'<div class="linkedin"></div>' +
+		'</div>' +
+	'</div>')
+
 	// Talk about strange hacks. This whole configuration is a workaround
 	// for me using a basic HTML site when I'm used to framework languages,
 	// and in this case I hide the body for a moment to let CSS and things load.
@@ -69,12 +79,10 @@ $(document).ready(function()
 		if(topPadding > 0) //close
 		{
 			$("#header").css("padding-bottom", "0");
-			$("body").css("padding-top", "0");
 		}
 		else
 		{
 			$("#header").css("padding-bottom", "30");
-			$("body").css("padding-top", "30");
 		}
 	});
 });
@@ -84,6 +92,5 @@ $(window).on('resize', function()
 	if($(window).width() > 600)
 	{
 		$("#header").css("padding-bottom", "0");
-		$("body").css("padding-top", "0");
 	}
 });
