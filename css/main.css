@@ -128,7 +128,7 @@ h4{font-weight: 600; margin-top: 10px; }
 /* Gallery Page */
 .icon.fullscreen
 {
-	background-image: url("../images/icons/enlarge.svg");
+	background-image: url("../images/icons/zoom_out_map.svg");
 	background-size: 100%;
 	width: 50px;
 	height: 50px;
@@ -148,6 +148,7 @@ h4{font-weight: 600; margin-top: 10px; }
 }
 .portfolio-img
 {
+	z-index: 0;
 	position: relative;
 	cursor: pointer;
 	width: calc(33% - 30px);
@@ -179,6 +180,7 @@ h4{font-weight: 600; margin-top: 10px; }
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 #overlay img
 {
@@ -191,6 +193,7 @@ h4{font-weight: 600; margin-top: 10px; }
 	top: 0px;
 	right: 0px;
 	display: none;
+	z-index: 11;
 }
 #overlay-controls img
 {

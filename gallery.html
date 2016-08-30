@@ -53,11 +53,12 @@
 		});
 
 		// On click of portfolio image
-		$(".portfolio-img img").click(function()
+		$(".portfolio-img").click(function()
 		{
-			$(".overlay").fadeIn();
-			setOverlayImage($(this).attr("src"));
-			currentID = $(this).attr("data-id");
+			var image = $(this).find("img");
+			setOverlayImage(image.attr("src")); //set image
+			$(".overlay").fadeIn(); //then fade in
+			currentID = image.attr("data-id");
 		});
 
 		$("#overlay, #overlay-controls #close").click(function()
@@ -86,7 +87,7 @@
 
 	function setOverlayImage(url)
 	{
-		if($("#overlay img").length > 0) //if there's already an image
+		if($("#overlay:visible").length > 0 && $("#overlay img").length > 0) //if there's already an image
 		{
 			$("#overlay img").fadeOut(300, function() //fade it out
 			{
