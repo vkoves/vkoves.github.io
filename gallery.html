@@ -20,14 +20,14 @@
 	</div>
 	<div id="overlay-controls" class="overlay">
 		<img id="close" src="images/icons/cross.svg">
-		<img id="left" class="vertically-centered arrow" src="images/icons/chevron-thin-right.svg">
-		<img id="right" class="vertically-centered arrow" src="images/icons/chevron-thin-left.svg">
+		<img id="right" class="vertically-centered arrow" src="images/icons/chevron-thin-right.svg">
+		<img id="left" class="vertically-centered arrow" src="images/icons/chevron-thin-left.svg">
 	</div>
 
 	<script>
 		var currentID = -1;
 
-		var portfolio = [
+		var gallery = [
 			{
 				url: "images/InClouds1-min.png",
 				title: "In Clouds",
@@ -97,7 +97,7 @@
 		];
 
 		// Generate all the portfolio tiles
-		portfolio.forEach(function(item, index)
+		gallery.forEach(function(item, index)
 		{
 			$("#portfolio-container").append(
 				'<div class="portfolio-img">' +
@@ -175,7 +175,7 @@
 
 		  	$("#overlay-main .img-container .icon.info").click(function()
 		  	{
-		  		showInfo(portfolio[currentID].title, portfolio[currentID].description)
+		  		showInfo(gallery[currentID].title, gallery[currentID].description)
 		  	});
 		}
 	}
@@ -185,12 +185,12 @@
 		if($("#overlay-info:visible").length > 0) //if info is showing up
 			return;
 
-		if(currentID < portfolio.length - 1)
+		if(currentID < gallery.length - 1)
 	  		currentID++;
 	  	else
 	  		currentID = 0;
 
-	  	setOverlayImage(portfolio[currentID].url);
+	  	setOverlayImage(gallery[currentID].url);
 	}
 
 	function previousImage()
@@ -201,9 +201,9 @@
 		if(currentID > 0)
 	  		currentID--;
 	  	else
-	  		currentID = portfolio.length - 1;
+	  		currentID = gallery.length - 1;
 
-	  	setOverlayImage(portfolio[currentID].url);
+	  	setOverlayImage(gallery[currentID].url);
 	}
 	</script>
 </body>

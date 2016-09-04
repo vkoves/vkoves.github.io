@@ -254,14 +254,8 @@ h4{font-weight: 600; margin-top: 10px; }
 	top: 10px;
 	right: 10px;
 }
-#overlay-controls #left
-{
-	right: 1%;
-}
-#overlay-controls #right
-{
-	left: 1%;
-}
+#overlay-controls #left { left: 1%; }
+#overlay-controls #right { right: 1%; }
 @media (max-width: 600px)
 {
 	.portfolio-img
