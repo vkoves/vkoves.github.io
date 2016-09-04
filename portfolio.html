@@ -21,36 +21,42 @@
 			{
 				name: "Carpe",
 				subtitle: "Scheduling made social",
+				description: "Carpe is an online schduler designed to make organizing easier and more socially connected. With Carpe, you can follow people to see and track their schedules, so you'll stay up to date. Planning everything from lunch-time hangouts to business meetings is now faster and pain-free.",
 				thumbnail: "images/portfolio/carpe.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "Christmas In Clouds",
 				subtitle: "Showing some holiday cheer",
+				description: "Christmas In Clouds is a simple game that celebrates the beauty of winter in an idealized small town.",
 				thumbnail: "images/portfolio/ChristmasInClouds.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "Scroll Stop",
 				subtitle: "Boosting Productivity",
+				description: "Scroll Stop was born from my desire to experiment with creating Google Chrome extension, and seizing the opportunity when a friend proposed the idea for a productivity app that specifically tackled lazy loading social media and content websites by stopping you from scrolling too far. That way if you need to message people on Facebook or other social media platforms, you still can, but it will prevent you from mindlessly scrolling through your newsfeed.",
 				thumbnail: "images/portfolio/ScrollStop.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "Lines",
 				subtitle: "Open source edge detection",
+				description: "A senior project in high school, Lines was an open source edge detection program with the goal of eventually turning it into computer vision software.",
 				thumbnail: "images/portfolio/lines.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "indigoBox Website",
 				subtitle: "Spreading the word",
+				description: "indigoBox, the software studio I lead, had an old introductory website for a long time, and it took a coordinated effort that I lead amongst our team to launch our new website, which showcases all of our main products as well as all of our members.",
 				thumbnail: "images/portfolio/indigoBoxSite.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
 			{
 				name: "The Transportation Collective",
 				subtitle: "Big data for CTA customers",
+				description: "A class inter-professional project, the Transportation Collective Website was born out of the unhappy experiences that our group members had on the CTA, and the challenge we found for customers on the CTA in reporting not technical issues. We sought to use big data to improve the rider experience on the CTA, and did research and interviews with CTA riders to help develop our solution.",
 				thumbnail: "images/portfolio/TransCo.png",
 				gallery: ["images/projects/carpe1.png", "images/projects/carpe2.png"]
 			},
@@ -68,14 +74,19 @@
 					'<div class="sub-title">' + project.subtitle + '</div>' +
 					'<div class="thumb-container">' +
 						'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
-						'<div class="icon-overlay">' +
-							'<div class="icon-container"><div class="icon info"></div>Info</div>' +
-							'<div class="icon-container"><div class="icon images"></div>Images</div>' +
-							'<div class="icon-container"><div class="icon tools"></div>Tools</div>' +
+						'<div class="icon-overlay" data-project-id="' + i +'">' +
+							'<div class="icon-container info-cont"><div class="icon info"></div>Info</div>' +
+							'<div class="icon-container images-cont"><div class="icon images"></div>Images</div>' +
+							'<div class="icon-container tools-cont"><div class="icon tools"></div>Tools</div>' +
 						'</div>' +
 					'</div>' +
 				'</div>');
 			}
+			$(".icon-overlay .info-cont").click(function()
+			{
+				var project = projects[$(this).parent().attr("data-project-id")];
+				showInfo(project.name, project.description);
+			});
 		});
 	</script>
 </body>

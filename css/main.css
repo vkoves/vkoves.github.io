@@ -351,6 +351,11 @@ h4{font-weight: 600; margin-top: 10px; }
 	color: white;
 	font-weight: 600;
 	font-size: 18px;
+	cursor: pointer;
+}
+.projects-tile .icon-container:hover
+{
+	text-decoration: underline;
 }
 .projects-tile .icon-overlay
 {
