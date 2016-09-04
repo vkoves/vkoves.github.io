@@ -140,6 +140,7 @@ function Gallery(galleryData, options)
 {
 	this.galleryData = galleryData; //the gallery data
 	this.currentImageIndex; //the index of the image being displayed in the gallery data
+	this.options = options;
 	self = this; // we need a scoped version of the gallery object for reference in functions
 
 	// Create the HTML if it isnt' there already
@@ -223,11 +224,16 @@ function Gallery(galleryData, options)
 
 		function setOverlayHTMLWithImage(url)
 		{
+			var infoIcon = "";
+
+			if(options && options.showInfo)
+				infoIcon = '<div class="icon info"></div>';
+
 		  	$("#overlay-main").html(
 		  	'<div class="img-base centered">' +
 		  		'<div class="img-container">' +
 			  		'<img src="' + url + '">' +
-			  		'<div class="icon info"></div>' +
+			  		infoIcon +
 		  		'</div>' +
 		  	'</div>');
 
