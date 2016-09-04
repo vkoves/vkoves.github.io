@@ -175,25 +175,9 @@
 
 		  	$("#overlay-main .img-container .icon.info").click(function()
 		  	{
-		  		$("body").append('<div id="overlay-info" class="overlay-transparent">' +
-		  			'<div class="centered">' +
-			  			'<div class="title">' + portfolio[currentID].title + '</div>' +
-			  			'<div class="description">' + portfolio[currentID].description + '</div>' +
-			  		'</div>' +
-			  		'<img id="close" src="images/icons/cross.svg">' +
-		  		'</div>');
-		  		$("#overlay-info #close").click(closeInfo);
-		  		$("#overlay-info").fadeIn();
+		  		showInfo(portfolio[currentID].title, portfolio[currentID].description)
 		  	});
 		}
-	}
-
-	function closeInfo()
-	{
-		$("#overlay-info").fadeOut(function()
-		{
-			$(this).remove();
-		});
 	}
 
 	function nextImage()

@@ -101,3 +101,32 @@ $(window).on('resize', function()
 		$("#header").css("padding-bottom", "0");
 	}
 });
+
+/* General Functions */
+
+// Shows an overlay with text, including a title and description, to explain something.
+function showInfo(title, description)
+{
+	$("body").append('<div id="overlay-info" class="overlay-transparent">' +
+		'<div class="centered">' +
+			'<div class="title">' + title + '</div>' +
+			'<div class="description">' + description + '</div>' +
+		'</div>' +
+		'<img id="close" src="images/icons/cross.svg">' +
+	'</div>');
+	$("#overlay-info .centered").click(function(event)
+	{
+		event.stopPropagation();
+	});
+	$("#overlay-info").click(closeInfo);
+	$("#overlay-info").fadeIn();
+}
+
+// Fades out and removes the info overlay specifically
+function closeInfo()
+{
+	$("#overlay-info").fadeOut(function()
+	{
+		$(this).remove();
+	});
+}
