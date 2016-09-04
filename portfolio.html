@@ -62,9 +62,11 @@
 			},
 		];
 
+		var project; //the current project
+		var galleryInstance;
+
 		$(document).ready(function()
 		{
-			var project; //the current project
 			for(var i = 0; i < projects.length; i++)
 			{
 				project = projects[i];
@@ -82,10 +84,18 @@
 					'</div>' +
 				'</div>');
 			}
+
 			$(".icon-overlay .info-cont").click(function()
 			{
 				var project = projects[$(this).parent().attr("data-project-id")];
 				showInfo(project.name, project.description);
+			});
+
+			$(".icon-overlay .images-cont").click(function()
+			{
+				var project = projects[$(this).parent().attr("data-project-id")];
+				galleryInstance = new Gallery(project.gallery); //setup a new gallery object
+				galleryInstance.showImage(0); //and show the first image
 			});
 		});
 	</script>
