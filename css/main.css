@@ -275,6 +275,11 @@ h4{font-weight: 600; margin-top: 10px; }
 	display: inline-block;
 	margin: 0px 5px;
 	box-sizing: border-box;
+	cursor: pointer;
+}
+#overlay-controls .nav-dot:hover
+{
+	border: solid 1px white;
 }
 #overlay-controls .nav-dot.active
 {

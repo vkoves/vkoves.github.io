@@ -163,6 +163,11 @@ function Gallery(galleryData, options)
 				'<div class="gallery-nav">' + navigationDots + '</div>' +
 			'</div>'
 		);
+
+		$(".nav-dot").click(function()
+		{
+			self.showImage($(this).index()); //show the image with the same index as this dot
+		});
 	}
 
 	// Show the image with the given index in the galleryData
