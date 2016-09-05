@@ -21,7 +21,7 @@ $(document).ready(function()
 
 	//Add in the header. This makes it so I don't have to update the header in each file
 	$("body").prepend(
-	'<div id="header">' +
+	'<div id="header" class="filter-transition">' +
 		'<div id="header-inside">' +
 			'<span id="title"><a href="index' + linkEnding + '">Viktor K&ouml;ves</a></span>' +
 			'<div id="header-buttons">' +
@@ -54,7 +54,8 @@ $(document).ready(function()
 	"</script>");
 
 	//Add in footer
-	$("body").append('<div class="footer">' +
+	$("body").append(
+	'<div class="footer filter-transition">' +
 		'<div class="social-bar">' +
 			'<a href="https://github.com/vkoves" target="_blank">' +
 				'<div class="github"></div>' +
@@ -120,11 +121,13 @@ function showInfo(title, description)
 	});
 	$("#overlay-info").click(closeInfo);
 	$("#overlay-info").fadeIn();
+	setPageBlur(true);
 }
 
 // Fades out and removes the info overlay specifically
 function closeInfo()
 {
+	setPageBlur(false);
 	$("#overlay-info").fadeOut(function()
 	{
 		$(this).remove();
@@ -162,6 +165,7 @@ function Gallery(galleryData, options)
 	{
 		self.currentImageIndex = index;
 		setOverlayImage(getImageUrl(this.galleryData[index])); //set the image
+		setPageBlur(true);
 		$(".overlay").fadeIn(); //then fade in
 	}
 
@@ -194,6 +198,7 @@ function Gallery(galleryData, options)
 	// closes the gallery with a nice animation
 	this.close = function()
 	{
+		setPageBlur(false);
 		$(".overlay").fadeOut();
 	}
 
@@ -267,4 +272,12 @@ function Gallery(galleryData, options)
 			return null;
 		}
 	}
+}
+
+function setPageBlur(isBlurred)
+{
+	if(isBlurred)
+		$("#header, .page-container, .footer").addClass("blur");
+	else
+		$("#header, .page-container, .footer").removeClass("blur");
 }

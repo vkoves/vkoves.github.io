@@ -5,7 +5,7 @@
 	<script src="js/main.js"></script>
 </head>
 <body>
-	<div class="page-container">
+	<div class="page-container filter-transition">
 		<br>
 		<h1>Portfolio</h1>
 		<h4>
@@ -153,7 +153,13 @@
 				if(toolImage)
 					toolsHTML += '<div class="tool-cont"><img src="' + toolImage + '"><div class="text">' + tool + '</div></div>';
 				else
-					toolsHTML += '<div class="tool-cont"><div class="text">' + tool + '</div></div>';
+				{
+					var className = "featured-text"
+					if(tool.length < 3) //if it's a short abbreviation (e.g. C#, JS, CSS)
+						className += " large"
+
+					toolsHTML += '<div class="tool-cont"><div class="' + className + '">' + tool + '</div><div class="text">' + tool + '</div></div>';
+				}
 			}
 
 			return toolsHTML;
