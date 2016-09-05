@@ -435,11 +435,13 @@ h4{font-weight: 600; margin-top: 10px; }
 }
 .filter-transition
 {
+	/*
 	-webkit-transition: 0.5s -webkit-filter linear;
 	-moz-transition: 0.5s -moz-filter linear;
 	-moz-transition: 0.5s filter linear;
 	-ms-transition: 0.5s -ms-filter linear;
 	-o-transition: 0.5s -o-filter linear;
+	*/
 }
 .blur
 {
