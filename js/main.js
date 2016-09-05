@@ -150,6 +150,9 @@ function Gallery(galleryData, options)
 	// Create the HTML if it isnt' there already
 	if($("#overlay-main").length == 0)
 	{
+		var navigationDots = ""; // HTML for the navigation circles that show you how many images there are
+		navigationDots = '<div class="nav-dot"></div>'.repeat(galleryData.length); //repeat a single dot as many times as there are image
+
 		$("body").append(
 			'<div id="overlay-main" class="overlay overlay-transparent">' +
 			'</div>' +
@@ -157,6 +160,7 @@ function Gallery(galleryData, options)
 				'<img id="close" src="images/icons/cross.svg">' +
 				'<img id="right" class="vertically-centered arrow" src="images/icons/chevron-thin-right.svg">' +
 				'<img id="left" class="vertically-centered arrow" src="images/icons/chevron-thin-left.svg">' +
+				'<div class="gallery-nav">' + navigationDots + '</div>' +
 			'</div>'
 		);
 	}
@@ -165,6 +169,8 @@ function Gallery(galleryData, options)
 	this.showImage = function(index)
 	{
 		self.currentImageIndex = index;
+		$("#overlay-controls .nav-dot").removeClass("active");
+		$($("#overlay-controls .nav-dot")[index]).addClass("active");
 		setOverlayImage(getImageUrl(this.galleryData[index])); //set the image
 		setPageBlur(true);
 		$(".overlay").fadeIn(); //then fade in
@@ -197,10 +203,19 @@ function Gallery(galleryData, options)
 	}
 
 	// closes the gallery with a nice animation
-	this.close = function()
+	this.close = function(callback)
 	{
 		setPageBlur(false);
-		$(".overlay").fadeOut();
+		$(".overlay").fadeOut(callback);
+	}
+
+	// closes the gallery and deletes all DOM associated
+	this.destroy = function()
+	{
+		self.close(function()
+		{
+			$("#overlay-main, #overlay-controls").remove();
+		});
 	}
 
 	// Now that all methods are defined, let's map them to the DOM

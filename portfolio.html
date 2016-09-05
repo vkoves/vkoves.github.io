@@ -120,6 +120,10 @@
 			$(".icon-overlay .images-cont").click(function()
 			{
 				var project = projects[$(this).parent().attr("data-project-id")];
+
+				if(galleryInstance)
+					galleryInstance.destroy();
+
 				galleryInstance = new Gallery(project.gallery); //setup a new gallery object
 				galleryInstance.showImage(0); //and show the first image
 			});
@@ -144,7 +148,7 @@
 			  {
 			  	if(galleryInstance)
 				{
-					galleryInstance.close();
+					galleryInstance.destroy();
 					galleryInstance = null;
 				}
 				else
