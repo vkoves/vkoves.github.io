@@ -373,6 +373,21 @@ h4{font-weight: 600; margin-top: 10px; }
 .icon-overlay .info, .img-container .info { background-image: url("../images/icons/info-white.svg"); }
 .icon-overlay .images { background-image: url("../images/icons/images-white.svg"); }
 .icon-overlay .tools { background-image: url("../images/icons/tools-white.svg"); }
+.tool-cont
+{
+	text-align: center;
+	display: inline-block;
+	margin: 10px 30px;
+}
+.tool-cont img
+{
+	height: 80px;
+	min-width: 80px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 15px;
+}
+.tool-cont .text { margin-top: 5px; }
 /* End Portfolio Page Styling */
 
 /* About Page Styling */
