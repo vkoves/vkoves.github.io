@@ -221,6 +221,11 @@ h4{font-weight: 600; margin-top: 10px; }
 	font-weight: 600;
 }
 #overlay-info .description { font-size: 20px; }
+.info-cont
+{
+	width: 100%;
+	max-width: 1000px;
+}
 #overlay-controls
 {
 	position: fixed;

@@ -109,7 +109,7 @@ $(window).on('resize', function()
 function showInfo(title, description)
 {
 	$("body").append('<div id="overlay-info" class="overlay-transparent">' +
-		'<div class="centered">' +
+		'<div class="centered info-cont">' +
 			'<div class="title">' + title + '</div>' +
 			'<div class="description">' + description + '</div>' +
 		'</div>' +
@@ -139,6 +139,7 @@ function closeInfo()
 // or an array of strings if you just need to display images
 // Possible options
 //	showInfo {Boolean} - whether to show a small info icon on the bottom left. DEFAULT - false
+// TODO: Make gallery show a counter or a preview thing at the bottom
 function Gallery(galleryData, options)
 {
 	this.galleryData = galleryData; //the gallery data
