@@ -124,62 +124,34 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/js/main.js",
+			"file": "about.html",
 			"settings":
 			{
-				"buffer_size": 1715,
-				"line_ending": "Windows",
-				"name": "$(\"body\").append(\""
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nPredawn\n-------\n\n  \n  \n  :::::::   :::::::   :::::::  :::::::    ::::::   :::  :::  :::  :::::   :::\n  :::  :::  :::  :::  :::      :::  :::  :::  :::  :::  :::  :::  ::::::: :::\n  :::::::   ::::::::  ::::::   :::  :::  ::::::::  :::  :::  :::  ::: :::::::\n  :::       ::: :::   :::      :::  :::  :::  :::  ::: :::: ::::  :::   :::::\n  :::       :::  :::  :::::::  :::::::   :::  :::  ::::::::::::   :::    ::::\n  \n  \n  ==========\n  ACTIVATION\n  ==========\n  \n    \"theme\": \"predawn.sublime-theme\",\n    \"color_scheme\": \"Packages/Predawn/predawn.tmTheme\",\n  \n  ==============================\n  IMPORTANT - Sublime Text 3062+\n  ==============================\n  \n    \"theme\": \"predawn-DEV.sublime-theme\",\n  \n  ============\n  Tabs Options\n  ============\n  \n    \"predawn_tabs_active_underline\": false,\n    \"predawn_tabs_large\": false,\n    \"predawn_tabs_medium\": false,\n    \"predawn_tabs_small\": false,\n  \n  ===============\n  Sidebar Options\n  ===============\n  \n    \"predawn_sidebar_arrows\": false,\n    \"predawn_sidebar_large\": false,\n    \"predawn_sidebar_medium\": false,\n    \"predawn_sidebar_small\": false,\n    \"predawn_sidebar_xlarge\": false,\n    \"predawn_sidebar_xsmall\": false,\n    \"predawn_sidebar_narrow\": false,\n  \n  =============\n  Panel Options\n  =============\n  \n    \"predawn_findreplace_small\": false,\n    \"predawn_quick_panel_small\": false,\n  \n  \n  ===============================================================\n  I've put a lot of time and effort into making Predawn awesome.\n  If you love it, please consider helping me make it even better!\n  ===============================================================\n  \n   ___   _   _  __   __    __  __   ___\n  | _ ) | | | | \\ \\ / /   |  \\/  | | __|\n  | _ \\ | |_| |  \\ V /    | |\\/| | | _|\n  |___/  \\___/    |_|     |_|  |_| |___|\n     _        ___    ___    ___   ___   ___   ___   ___\n    /_\\      / __|  / _ \\  | __| | __| | __| | __| |__ \\\n   / _ \\    | (__  | (_) | | _|  | _|  | _|  | _|    /_/\n  /_/ \\_\\    \\___|  \\___/  |_|   |_|   |___| |___|  (_)\n  \n  https://plasso.co/s/ZezNW6UhHv/\n  \n    ___   ___\n   / _ \\ | _ \\\n  | (_) ||   /\n   \\___/ |_|_\\\n  \n  If you want to put your money to really good use:\n  \n  ===================================\n  HELP PROTECT THE POOR FROM VIOLENCE\n  ===================================\n  \n  Give to the International Justice Mission:\n  https://www.ijm.org/make-gift\n",
-			"settings":
-			{
-				"buffer_size": 2410,
-				"line_ending": "Windows",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/projects.html",
-			"settings":
-			{
-				"buffer_size": 3006,
+				"buffer_size": 1736,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/css/project-page.css",
+			"file": "main.css",
 			"settings":
 			{
-				"buffer_size": 1276,
+				"buffer_size": 2192,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/snowshoes.html",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1597,
+				"buffer_size": 2104,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/sneak-peek.html",
+			"file": "lowvoltage.html",
 			"settings":
 			{
-				"buffer_size": 1597,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/css/sneak-peek.css",
-			"settings":
-			{
-				"buffer_size": 334,
+				"buffer_size": 7509,
 				"line_ending": "Windows"
 			}
 		},
@@ -187,7 +159,23 @@
 			"file": "sandbox.html",
 			"settings":
 			{
-				"buffer_size": 2240,
+				"buffer_size": 2690,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "valentines2016.html",
+			"settings":
+			{
+				"buffer_size": 3299,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "portfolio.html",
+			"settings":
+			{
+				"buffer_size": 3272,
 				"line_ending": "Windows"
 			}
 		}
@@ -195,9 +183,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 368.0,
+		"height": 132.0,
 		"selected_items":
 		[
+			[
+				"package control: inst",
+				"Package Control: Install Package"
+			],
 			[
 				"install pac",
 				"Package Control: Install Package"
@@ -224,6 +216,18 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/design.html",
+		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/sandbox.html",
+		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/sneak-peek.html",
+		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/snowshoes.html",
+		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/css/project-page.css",
+		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/projects.html",
+		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/css/sneak-peek.css",
+		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/index.html",
+		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/js/main.js",
+		"/C/Users/Viktor/Desktop/EileenTexts3.txt",
+		"/C/Users/Viktor/Desktop/EileenTexts2.txt",
+		"/C/Users/Viktor/Desktop/EileenTexts1.txt",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/lowvoltage.css",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/lowvoltage.html",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/HAL9000.svg",
@@ -232,7 +236,6 @@
 		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/index.html",
 		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/projects/InClouds/index.html",
 		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/about.html",
-		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/projects.html",
 		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/contact.html",
 		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/css/about.css",
 		"/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/sneek-peek.html",
@@ -241,7 +244,6 @@
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/valentines2016.css",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/valentines2016.js",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/heart.svg",
-		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/sandbox.html",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/sandbox.css",
 		"/C/Users/Viktor/Documents/Viktor/Work/Ticket Mini Sites/January 6th Files/tn.js",
 		"/C/Users/Viktor/Documents/Viktor/Work/Ticket Mini Sites/January 6th Files/tn1min.js",
@@ -262,7 +264,6 @@
 		"/C/Users/Viktor/Documents/Viktor/Work/Ticket Mini Sites/Checkout/New/checkout-new.min.css",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/portfolio.html",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/about.html",
-		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/index.html",
 		"/C/Users/Viktor/Documents/GitHub/vkoves.github.io/main.js",
 		"/C/Users/Viktor/Documents/Viktor/Work/Ticket Mini Sites/January 6th Files/guarantee.css",
 		"/C/Users/Viktor/Documents/Viktor/Work/Ticket Mini Sites/January 6th Files/Production/guarantee.min.css",
@@ -293,6 +294,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"personal",
+			"blog",
 			"cover",
 			"speed = ",
 			"velx",
@@ -418,9 +421,7 @@
 			"nouislider",
 			"Seatics.PresentationLargeScreen=",
 			"Seatics.PresentationLargeScreen",
-			"getStep",
-			"ton",
-			"refUrl"
+			"getStep"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -438,29 +439,29 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/js/main.js",
+					"file": "about.html",
 					"settings":
 					{
-						"buffer_size": 1715,
+						"buffer_size": 1736,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								732,
-								732
+								982,
+								982
 							]
 						],
 						"settings":
 						{
-							"auto_name": "$(\"body\").append(\"",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"spell_check": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -471,27 +472,52 @@
 				},
 				{
 					"buffer": 1,
+					"file": "main.css",
 					"settings":
 					{
-						"buffer_size": 2410,
+						"buffer_size": 2192,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								755,
-								755
+								2014,
+								2014
 							]
 						],
 						"settings":
 						{
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"tab_width": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1998.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 2104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1112,
+								664
+							]
+						],
+						"settings":
+						{
+							"spell_check": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -500,82 +526,52 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/projects.html",
+					"buffer": 3,
+					"file": "lowvoltage.html",
 					"settings":
 					{
-						"buffer_size": 3006,
+						"buffer_size": 7509,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1448,
-								1448
+								1011,
+								1011
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 559.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/css/project-page.css",
-					"settings":
-					{
-						"buffer_size": 1276,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								891,
-								891
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 491.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/snowshoes.html",
+					"file": "sandbox.html",
 					"settings":
 					{
-						"buffer_size": 1597,
+						"buffer_size": 2690,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								346,
-								346
+								1116,
+								1116
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -585,74 +581,18 @@
 				},
 				{
 					"buffer": 5,
-					"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/sneak-peek.html",
+					"file": "valentines2016.html",
 					"settings":
 					{
-						"buffer_size": 1597,
+						"buffer_size": 3299,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								821,
-								821
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/Viktor/Documents/GitHub/indigoBox-Website/new/css/sneak-peek.css",
-					"settings":
-					{
-						"buffer_size": 334,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								187,
-								187
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "sandbox.html",
-					"settings":
-					{
-						"buffer_size": 2240,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1513,
-								1513
+								1213,
+								1213
 							]
 						],
 						"settings":
@@ -661,7 +601,34 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 606.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "portfolio.html",
+					"settings":
+					{
+						"buffer_size": 3272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								814,
+								814
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -711,8 +678,32 @@
 		"selected_items":
 		[
 			[
+				"port",
+				"portfolio.html"
+			],
+			[
 				"sandbox",
 				"sandbox.html"
+			],
+			[
+				"lowv",
+				"lowvoltage.html"
+			],
+			[
+				"des",
+				"design.html"
+			],
+			[
+				"about",
+				"about.html"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"main.cs",
+				"main.css"
 			],
 			[
 				"nai",
@@ -741,6 +732,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 236.0,
 	"status_bar_visible": true
 }

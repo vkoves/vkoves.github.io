@@ -1,29 +1,11 @@
 <html>
 <head>
-	<title>Viktor K&ouml;ves</title>
-	<!-- Added Open Sans from Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic' rel='stylesheet' type='text/css'>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<link href="main.css" rel="stylesheet">
-	<link href="sandbox.css" rel="stylesheet">
-	<meta name="theme-color" content="#D80000">
-	<meta name="viewport" content="width=450, initial-scale=0.75">
+	<link href="css/main.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="main.js"></script>
+	<script src="js/main.js"></script>
+	<link href="css/sandbox.css" rel="stylesheet">
 </head>
 <body>
-	<div id="header">
-		<div id="header-inside">
-			<span id="title"><a href="index.html">Viktor K&ouml;ves</a></span>
-			<div id="header-buttons">
-				<span><a href="about.html">About</a></span> |
-				<span><a href="portfolio.html">Portfolio</a></span> |
-				<span><a href="http://www.indigobox.us">IndigoBox</a></span> |
-				<span><a href="lowvoltage.html">Low Voltage</a></span>
-			</div>
-			<img id="menu" src="menu.svg">
-		</div>
-	</div>
 	<br>
 	<h1>Sandbox</h1>
 	<h4>A place to play with web design</h4>
@@ -41,32 +23,106 @@
 	<div class="expander expander-color">
 		Color Expander
 	</div>
-	<object id="hal" data="HAL9000.svg" type="image/svg+xml"></object>
-	<object id="night-sky" data="NightSky.svg" type="image/svg+xml"></object>
+	<object id="hal" data="images/HAL9000.svg" type="image/svg+xml"></object>
+	<object id="night-sky" data="images/NightSky.svg" type="image/svg+xml"></object>
 
 
-<script>
-var stars;
+	<h3>KITT Scanner Bar</h3>
+	<div class="scanner-cont">
+	</div>
 
-function starShine()
-{
-	var length = stars.length;
-	star = Math.round(Math.random() * length);
-	op = $(stars[star]).css("opacity");
-	if(op > 0)
-		$(stars[star]).css("opacity", "0");
-	else
-		$(stars[star]).css("opacity", "1");
-}
+	<script>
+	var stars;
 
-$(window).load(function(){
-    var svg = $("#night-sky")[0];
-    var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
-	var svgRoot  = svgDoc.documentElement;
-	stars = $(svgRoot).find("path");
-	setInterval(starShine, 1000);
-});
-</script>
+	function starShine()
+	{
+		var length = stars.length;
+		star = Math.round(Math.random() * length);
+		op = $(stars[star]).css("opacity");
+		if(op > 0)
+			$(stars[star]).css("opacity", "0");
+		else
+			$(stars[star]).css("opacity", "1");
+	}
 
+	//Wait till SVGs have loaded to do thigns
+	$(window).load(function(){
+		var svg = $("#night-sky")[0];
+		var svgDoc = svg.contentDocument; //get the inner DOM of alpha.svg
+		var svgRoot  = svgDoc.documentElement;
+		stars = $(svgRoot).find("path");
+		setInterval(starShine, 1000);
+	});
+
+	$(document).ready(function()
+	{
+		initializeScannerBar();
+	});
+
+	var segmentCount = 8;
+
+	function initializeScannerBar()
+	{
+		for(var i = 0; i < segmentCount; i++)
+		{
+			$(".scanner-cont").append(
+				'<div class="scanner-segment">' +
+				'</div>'
+			);
+		}
+
+		animateScannerBar();
+	}
+
+	function animateScannerBar()
+	{
+		var activeSegment = 0;
+		var direction = 1; //1 for forwards, -1 for backwards
+		var currSegment;
+		var delay = 125;
+
+		setInterval(animationTick, delay); //run animationTick() over and over with a delay of "delay" ms
+
+		//a single "tick" of the animation, which updates the opacity
+		//CSS transitions work on top of this to fade the opacity values in and out
+		function animationTick()
+		{
+			$(".scanner-segment").each(function(index)
+			{
+				$(this).css("opacity", segmentOpacity(index));
+			});
+
+			activeSegment += direction; //increment the active segment in the direction specified
+
+			if(activeSegment > segmentCount - 1 || activeSegment < 0) //and switch directions on edge
+			{
+				direction *= -1; //switch directions
+				activeSegment += direction;
+			}
+		}
+
+		//gets the distance between this segment number and the active segment
+		function segmentDistance(segmentIndex)
+		{
+			var distance = Math.abs(activeSegment - segmentIndex);
+			return distance;
+		}
+
+		//returns the proper opacity for a segment based on its index
+		function segmentOpacity(segmentIndex)
+		{
+			var distance = segmentDistance(segmentIndex);
+
+			if(distance == 0) //if active segment
+				return 1; //full bright
+			else if(distance == 1)
+				return 0.5;
+			else if(distance == 2)
+				return 0.25;
+			else
+				return 0;
+		}
+	}
+	</script>
 </body>
 </html>

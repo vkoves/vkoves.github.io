@@ -10,130 +10,12 @@
 -->
 <html>
 <head>
-	<title>Viktor K&ouml;ves</title>
-	<!-- Added Open Sans from Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic' rel='stylesheet' type='text/css'>
-	<link href="main.css" rel="stylesheet">
-	<meta name="theme-color" content="#D80000">
-	<meta name="viewport" content="width=450, initial-scale=0.75">
+	<link href="css/main.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="main.js"></script>
-	<style>
-		#page-container {
-			text-align: left;
-			width: 90%;
-			max-width: 900px;
-			margin-left: auto;
-			margin-right: auto;
-			padding-bottom: 50px;
-		}
-		h2
-		{
-			font-weight: 600;
-		}
-		h3
-		{
-			font-size: 1.5em;
-			margin-bottom: 10px;
-			font-weight: 500;
-		}
-
-
-		.full-width { 
-			width: 100%;
-			display: inline-block;
-			margin-bottom: 10px;
-		}
-		.two-col {
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 20px;
-			margin-bottom: 20px;
-			display: inline-block;
-			background: gainsboro;
-			padding: 15px;
-		}
-		block {
-			display: block;
-			width: 45%;
-			float: left;
-			margin-left: 2.5%;
-			margin-right: 2.5%;
-		}
-		#no-style a, #cursor-only a {
-			text-decoration: none;
-			color: black;
-		}
-		#no-style a { cursor: text; }
-		#with-color a { color: blue; }
-		#with-hover a {
-			text-decoration: none;
-			color: #d80000; 
-		}
-		#with-hover a:hover {
-			text-decoration: underline;
-		}
-
-		/* Button Styling */
-		#bad-button {
-			background: #afafaf;
-			color: white;
-			display: inline-block;
-			padding: 5px;
-			border-radius: 5px;
-		}
-		.button {
-			display: inline-block;
-			padding: 5px 20px;
-			background-color: green;
-			border-bottom: solid 5px #035803;
-			border-radius: 5px;
-			color: white;
-			font-weight: bold;
-			cursor: pointer;
-		}
-		.button.with-active:active {
-			border-bottom-width: 3px;
-			margin-top: 2px;
-		}
-		.button.with-animation {
-			transition: border-bottom-color 0.3s, background-color 0.3s;
-		}
-		.button.with-hover:hover {
-			background-color: #03ad03;
-			border-bottom-color: green;
-		}
-		.button.with-animation span {
-			position: relative;
-			left: 0px;
-			transition: left 0.5s;
-		}
-		.button.with-animation:active span {
-			left: 200%;
-		}
-		.noselect {
-			-webkit-touch-callout: none; /* iOS Safari */
-			-webkit-user-select: none;   /* Chrome/Safari/Opera */
-			-khtml-user-select: none;    /* Konqueror */
-			-moz-user-select: none;      /* Firefox */
-			-ms-user-select: none;       /* Internet Explorer/Edge */
-			user-select: none;           /* Non-prefixed version, currentlynot supported by any browser */
-		}
-	</style>
+	<script src="js/main.js"></script>
+	<link href="css/design.css" rel="stylesheet">
 </head>
 <body>
-	<div id="header">
-		<div id="header-inside">
-			<span id="title"><a href="index.html">Viktor K&ouml;ves</a></span>
-			<div id="header-buttons">
-				<span><a href="about.html">About</a></span> |
-				<span><a href="portfolio.html">Portfolio</a></span> |
-				<span><a href="http://www.indigobox.us">IndigoBox</a></span> |
-				<span><a href="lowvoltage.html">Low Voltage</a></span>
-			</div>
-			<img id="menu" src="menu.svg">
-		</div>
-	</div>
 	<div id="page-container">
 		<h1 style="margin-top: 60px;">User Experience Led Design</h1>
 		<h4>
@@ -143,43 +25,43 @@
 
 
 		<h2> Obvious Design - Links </h2>
-		
-		Good designs make certain things very obvious. On a well designed website, 
-		links look like links, and you know implicitly that you can click them. We'll 
+
+		Good designs make certain things very obvious. On a well designed website,
+		links look like links, and you know implicitly that you can click them. We'll
 		explore that idea with a few examples.
 
 		<h3> Hover Effects </h3>
-		
-		Links and other interactive elements should always have proper cursors indicating 
+
+		Links and other interactive elements should always have proper cursors indicating
 		they are interactive, and also contrast the elements around them to draw attention.
 		We won't worry about that for links, though, as HTML and CSS by default style links
 		in a very distinct blue (which is hopefully not the color of your site's text) and
-		already has a proper cursor. This makes the link stand out natively, though it 
+		already has a proper cursor. This makes the link stand out natively, though it
 		important to keep in mind that just because something looks different does not mean it
 		is clear that it should be clicked.
 
 		<div class="full-width">
 			<div class="two-col">
 				<block id="with-color">
-					ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit, 
-					ut dapibus enim laoreet 
+					ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit,
+					ut dapibus enim laoreet
 					<a href="/" target="_blank">lobortis.</a>
-					Morbi metus quam, porttitor id commodo in, 
+					Morbi metus quam, porttitor id commodo in,
 					nec nunc. Cras facilisis quis nisi id maximus.
 				</block>
 
 				<block id="with-hover">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
-					orci, quis dapibus odio. Sed bibendum felis eget mollis 
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat
+					orci, quis dapibus odio. Sed bibendum felis eget mollis
 					<a href="/" target="_blank">blandit.</a>
-					Maecenas vel 
+					Maecenas vel
 					nec nunc. Cras facilisis quis nisi id maximus.
 				</block>
 			</div>
-		</div>	
+		</div>
 
-		This might seem like a minute difference, but although both links stand out, a user 
-		knows upon hovering over the link on the right that it does something when you click 
+		This might seem like a minute difference, but although both links stand out, a user
+		knows upon hovering over the link on the right that it does something when you click
 		it. Hover effects are an invitation to proceed. The link on the right also does not
 		start out underlined (which looks more modern) and has a color that matches the rest
 		of the site.
@@ -190,18 +72,18 @@
 		<div class="full-width">
 			<div class="two-col">
 				<block id="with-hover">
-					ante eu ante laoreet pretium nec nec mauris. Praesent <a href="/" target="_blank">rutrum hendrerit</a> <a href="/" target="_blank">velit, 
-					ut dapibus</a> <a href="/" target="_blank">enim laoreet</a> 
+					ante eu ante laoreet pretium nec nec mauris. Praesent <a href="/" target="_blank">rutrum hendrerit</a> <a href="/" target="_blank">velit,
+					ut dapibus</a> <a href="/" target="_blank">enim laoreet</a>
 					<a href="/" target="_blank">lobortis.</a>
-					Morbi metus quam, <a href="/" target="_blank">porttitor id</a> commodo in, 
+					Morbi metus quam, <a href="/" target="_blank">porttitor id</a> commodo in,
 					nec nunc. <a href="/" target="_blank">Cras facilisis quis nisi id maximus.</a>
 				</block>
 
 				<block id="with-hover">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat 
-					orci, quis dapibus odio. Sed bibendum felis eget mollis 
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat
+					orci, quis dapibus odio. Sed bibendum felis eget mollis
 					<a href="/" target="_blank">blandit.</a>
-					Maecenas vel 
+					Maecenas vel
 					nec nunc. Cras facilisis quis nisi id maximus.
 				</block>
 			</div>
@@ -219,7 +101,7 @@
 		<br><br>
 		<div id="bad-button">Button</div>
 		<br><br>
-		This button looks awful, doesn't draw attention to itself, and has no hover effects. 
+		This button looks awful, doesn't draw attention to itself, and has no hover effects.
 		It doesn't even have a proper cursor indicating that it's clickable. Let's fix this.
 
 		<h3>Improving with Contrast</h3>
@@ -236,7 +118,7 @@
 		Now with a hover effect, this feels like a real button. This is the baseline of any real
 		user experience focused button. It looks clickable (by having contrast) and acts clickable
 		by having a simple hover effect. We can go further to add polish though.
-		
+
 		<h3>Click Effects</h3>
 		<div class="button with-hover with-active">Button</div>
 		<br><br>
@@ -249,7 +131,7 @@
 		</div>
 		<br><br>
 		This button now has a nicely animated color change on hover, as well as some text animation
-		that occurs when the button is clicked. The text animation is a little over the top, and 
+		that occurs when the button is clicked. The text animation is a little over the top, and
 		probably would not be used in most cases, but really makes the button come alive.
 	</div>
 </body>
