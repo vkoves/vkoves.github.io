@@ -6,6 +6,7 @@ body
 	margin: 0px;
 	padding-top: 40px;
 	padding-bottom: 60px;
+	background: #f3f3f3;
 }
 #header
 {
@@ -316,10 +317,11 @@ h4 { font-weight: 600; margin-top: 10px; }
 	width: 90%;
     max-width: 500px;
     margin: 0px 10px;
-    background: lightgrey;
     text-align: left;
     box-sizing: border-box;
     margin-bottom: 15px;
+    background: white;
+    box-shadow: 1px 1px 3px grey;
 }
 .projects-tile .title
 {
@@ -364,6 +366,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 .projects-tile .thumb-container
 {
 	position: relative;
+	overflow: hidden;
 }
 .projects-tile .thumb
 {
