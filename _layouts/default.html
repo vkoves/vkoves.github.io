@@ -3,6 +3,9 @@
 	<link href="css/main.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+	{% for stylesheet in page.stylesheets %}
+		<link href="css/{{  stylesheet }}" rel="stylesheet">
+	{% endfor %}
 </head>
 <body>
 	{% comment %} Add the page limiter class if we specify pageLimit = true on the page {% endcomment %}

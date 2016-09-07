@@ -1,11 +1,8 @@
 /* Stylesheet for the design page specifically */
-#page-container {
+.page-container
+{
 	text-align: left;
-	width: 90%;
 	max-width: 900px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 50px;
 }
 h2
 {

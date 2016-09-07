@@ -1,3 +1,10 @@
+---
+layout: default
+pageClass: "page-limiter"
+stylesheets:
+ - design.css
+---
+
 <!---
 
 	TODO
@@ -8,131 +15,119 @@
 		- Good CSS practices??? 
 
 -->
-<html>
-<head>
-	<link href="css/main.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="js/main.js"></script>
-	<link href="css/design.css" rel="stylesheet">
-</head>
-<body>
-	<div id="page-container">
-		<h1 style="margin-top: 60px;">User Experience Led Design</h1>
-		<h4>
-		A basic guide to some principals of design I've come up with as I've worked
-		on various projects
-		</h4>
+<h1 style="margin-top: 60px;">User Experience Led Design</h1>
+<h4>
+A basic guide to some principals of design I've come up with as I've worked
+on various projects
+</h4>
 
 
-		<h2> Obvious Design - Links </h2>
+<h2> Obvious Design - Links </h2>
 
-		Good designs make certain things very obvious. On a well designed website,
-		links look like links, and you know implicitly that you can click them. We'll
-		explore that idea with a few examples.
+Good designs make certain things very obvious. On a well designed website,
+links look like links, and you know implicitly that you can click them. We'll
+explore that idea with a few examples.
 
-		<h3> Hover Effects </h3>
+<h3> Hover Effects </h3>
 
-		Links and other interactive elements should always have proper cursors indicating
-		they are interactive, and also contrast the elements around them to draw attention.
-		We won't worry about that for links, though, as HTML and CSS by default style links
-		in a very distinct blue (which is hopefully not the color of your site's text) and
-		already has a proper cursor. This makes the link stand out natively, though it
-		important to keep in mind that just because something looks different does not mean it
-		is clear that it should be clicked.
+Links and other interactive elements should always have proper cursors indicating
+they are interactive, and also contrast the elements around them to draw attention.
+We won't worry about that for links, though, as HTML and CSS by default style links
+in a very distinct blue (which is hopefully not the color of your site's text) and
+already has a proper cursor. This makes the link stand out natively, though it
+important to keep in mind that just because something looks different does not mean it
+is clear that it should be clicked.
 
-		<div class="full-width">
-			<div class="two-col">
-				<block id="with-color">
-					ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit,
-					ut dapibus enim laoreet
-					<a href="/" target="_blank">lobortis.</a>
-					Morbi metus quam, porttitor id commodo in,
-					nec nunc. Cras facilisis quis nisi id maximus.
-				</block>
+<div class="full-width">
+	<div class="two-col">
+		<block id="with-color">
+			ante eu ante laoreet pretium nec nec mauris. Praesent rutrum hendrerit velit,
+			ut dapibus enim laoreet
+			<a href="/" target="_blank">lobortis.</a>
+			Morbi metus quam, porttitor id commodo in,
+			nec nunc. Cras facilisis quis nisi id maximus.
+		</block>
 
-				<block id="with-hover">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat
-					orci, quis dapibus odio. Sed bibendum felis eget mollis
-					<a href="/" target="_blank">blandit.</a>
-					Maecenas vel
-					nec nunc. Cras facilisis quis nisi id maximus.
-				</block>
-			</div>
-		</div>
-
-		This might seem like a minute difference, but although both links stand out, a user
-		knows upon hovering over the link on the right that it does something when you click
-		it. Hover effects are an invitation to proceed. The link on the right also does not
-		start out underlined (which looks more modern) and has a color that matches the rest
-		of the site.
-
-		<!--
-		<h3>Not Going Overboard</h3>
-
-		<div class="full-width">
-			<div class="two-col">
-				<block id="with-hover">
-					ante eu ante laoreet pretium nec nec mauris. Praesent <a href="/" target="_blank">rutrum hendrerit</a> <a href="/" target="_blank">velit,
-					ut dapibus</a> <a href="/" target="_blank">enim laoreet</a>
-					<a href="/" target="_blank">lobortis.</a>
-					Morbi metus quam, <a href="/" target="_blank">porttitor id</a> commodo in,
-					nec nunc. <a href="/" target="_blank">Cras facilisis quis nisi id maximus.</a>
-				</block>
-
-				<block id="with-hover">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat
-					orci, quis dapibus odio. Sed bibendum felis eget mollis
-					<a href="/" target="_blank">blandit.</a>
-					Maecenas vel
-					nec nunc. Cras facilisis quis nisi id maximus.
-				</block>
-			</div>
-		</div>
-		-->
-
-		<h2>Tactile Design - Buttons</h2>
-		From working on a lot of different projects, I've found that lots of web developers
-		actually struggle with making nice buttons. It doesn't require a lot of CSS, just a few
-		basic rules to make buttons feel and look good.
-
-		<h3>Starting Out</h3>
-		Let's begin with a basic button. I've seen lots of these working on projects where people
-		will just throw together a basic button very hastily.
-		<br><br>
-		<div id="bad-button">Button</div>
-		<br><br>
-		This button looks awful, doesn't draw attention to itself, and has no hover effects.
-		It doesn't even have a proper cursor indicating that it's clickable. Let's fix this.
-
-		<h3>Improving with Contrast</h3>
-		<div class="button">Button</div>
-		<br><br>
-		This is already a big improvement. With color changes, increasing the size of the button
-		and making the text bold, we make it a lot more obvious that this is a button. Using
-		the proper cursor also helps once the user has their mouse over the button. However, a lack
-		of a hover effect still makes it feel a bit lackluster.
-
-		<h3>Adding Hover</h3>
-		<div class="button with-hover">Button</div>
-		<br><br>
-		Now with a hover effect, this feels like a real button. This is the baseline of any real
-		user experience focused button. It looks clickable (by having contrast) and acts clickable
-		by having a simple hover effect. We can go further to add polish though.
-
-		<h3>Click Effects</h3>
-		<div class="button with-hover with-active">Button</div>
-		<br><br>
-		Continuing with the tactile and "physical" feel, a click event on this button that makes it
-		give the illusion of being "pushed in" makes it feel more pleasant.
-
-		<h3>Spicing Things up with Animation</h3>
-		<div class="button with-hover with-active with-animation">
-			<span class="noselect">Send Mail</span>
-		</div>
-		<br><br>
-		This button now has a nicely animated color change on hover, as well as some text animation
-		that occurs when the button is clicked. The text animation is a little over the top, and
-		probably would not be used in most cases, but really makes the button come alive.
+		<block id="with-hover">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat
+			orci, quis dapibus odio. Sed bibendum felis eget mollis
+			<a href="/" target="_blank">blandit.</a>
+			Maecenas vel
+			nec nunc. Cras facilisis quis nisi id maximus.
+		</block>
 	</div>
-</body>
-</html>
+</div>
+
+This might seem like a minute difference, but although both links stand out, a user
+knows upon hovering over the link on the right that it does something when you click
+it. Hover effects are an invitation to proceed. The link on the right also does not
+start out underlined (which looks more modern) and has a color that matches the rest
+of the site.
+
+<!--
+<h3>Not Going Overboard</h3>
+
+<div class="full-width">
+	<div class="two-col">
+		<block id="with-hover">
+			ante eu ante laoreet pretium nec nec mauris. Praesent <a href="/" target="_blank">rutrum hendrerit</a> <a href="/" target="_blank">velit,
+			ut dapibus</a> <a href="/" target="_blank">enim laoreet</a>
+			<a href="/" target="_blank">lobortis.</a>
+			Morbi metus quam, <a href="/" target="_blank">porttitor id</a> commodo in,
+			nec nunc. <a href="/" target="_blank">Cras facilisis quis nisi id maximus.</a>
+		</block>
+
+		<block id="with-hover">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet volutpat
+			orci, quis dapibus odio. Sed bibendum felis eget mollis
+			<a href="/" target="_blank">blandit.</a>
+			Maecenas vel
+			nec nunc. Cras facilisis quis nisi id maximus.
+		</block>
+	</div>
+</div>
+-->
+
+<h2>Tactile Design - Buttons</h2>
+From working on a lot of different projects, I've found that lots of web developers
+actually struggle with making nice buttons. It doesn't require a lot of CSS, just a few
+basic rules to make buttons feel and look good.
+
+<h3>Starting Out</h3>
+Let's begin with a basic button. I've seen lots of these working on projects where people
+will just throw together a basic button very hastily.
+<br><br>
+<div id="bad-button">Button</div>
+<br><br>
+This button looks awful, doesn't draw attention to itself, and has no hover effects.
+It doesn't even have a proper cursor indicating that it's clickable. Let's fix this.
+
+<h3>Improving with Contrast</h3>
+<div class="button">Button</div>
+<br><br>
+This is already a big improvement. With color changes, increasing the size of the button
+and making the text bold, we make it a lot more obvious that this is a button. Using
+the proper cursor also helps once the user has their mouse over the button. However, a lack
+of a hover effect still makes it feel a bit lackluster.
+
+<h3>Adding Hover</h3>
+<div class="button with-hover">Button</div>
+<br><br>
+Now with a hover effect, this feels like a real button. This is the baseline of any real
+user experience focused button. It looks clickable (by having contrast) and acts clickable
+by having a simple hover effect. We can go further to add polish though.
+
+<h3>Click Effects</h3>
+<div class="button with-hover with-active">Button</div>
+<br><br>
+Continuing with the tactile and "physical" feel, a click event on this button that makes it
+give the illusion of being "pushed in" makes it feel more pleasant.
+
+<h3>Spicing Things up with Animation</h3>
+<div class="button with-hover with-active with-animation">
+	<span class="noselect">Send Mail</span>
+</div>
+<br><br>
+This button now has a nicely animated color change on hover, as well as some text animation
+that occurs when the button is clicked. The text animation is a little over the top, and
+probably would not be used in most cases, but really makes the button come alive.
