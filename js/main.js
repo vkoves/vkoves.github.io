@@ -27,8 +27,8 @@ $(document).ready(function()
 			'<div id="header-buttons">' +
 				'<span><a href="about' + linkEnding + '">About</a></span> |' +
 				'<span><a href="gallery' + linkEnding + '">Gallery</a></span> |' +
-				'<span><a href="http://www.indigobox.us">IndigoBox</a></span> |' +
-				'<span><a href="lowvoltage' + linkEnding + '">Low Voltage</a></span>' +
+				'<span><a href="portfolio' + linkEnding + '">Portfolio</a></span> |' +
+				'<span><a href="http://www.indigobox.us">IndigoBox</a></span>' +
 			'</div>' +
 			'<img id="menu" src="images/menu.svg">' +
 		'</div>' +
