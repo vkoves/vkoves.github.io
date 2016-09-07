@@ -8,6 +8,16 @@ body
 	padding-bottom: 60px;
 	background: #f3f3f3;
 }
+.page-limiter
+{
+	width: 90%;
+	max-width: 1000px;
+	margin: 0px auto;
+}
+.page-container p
+{
+	text-align: left;
+}
 #header
 {
 	position: absolute;
@@ -457,7 +467,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 {
 	width: 300px;
 	border-radius: 1000px;
-	margin-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	box-shadow: 0px 0px 10px grey;
 }
 /* End About Page Styling */
