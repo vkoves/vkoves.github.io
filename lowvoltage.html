@@ -1,138 +1,134 @@
-<html>
-<head>
-	<link href="css/main.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="js/main.js"></script>
-	<link href="css/lowvoltage.css" rel="stylesheet">
-</head>
-<body>
-	<br>
-	<h1>Low Voltage</h1>
-	<img id="icon" src="images/icon.png">
-	<h4 class="text-box">Low Voltage is a radio show on Tuesdays from 9pm to 10pm on WIIT focusing on the softer side of Electronic music.
-		Tune in for a wide variety of music from the softer sounds of well known artists like deadmau5 and Daft Punk to
-		less recognized artists like Breakbot and R&ouml;yksopp.
-	</h4>
+---
+layout: default
+stylesheets:
+ - lowvoltage.css
+---
 
-	<h2 style="margin-bottom: 0px;">Show Info & Playlists</h2>
-	<h4 class="text-box">
-		Playlists are posted the night after the show ends (usually), and shows with the playlist up will have this icon:
-		<img class="spotify-icon" src="images/spotify.png">
-	</h4>
+<br>
+<h1>Low Voltage</h1>
+<img id="icon" src="images/icon.png">
+<h4 class="text-box">Low Voltage is a radio show on Tuesdays from 9pm to 10pm on WIIT focusing on the softer side of Electronic music.
+	Tune in for a wide variety of music from the softer sounds of well known artists like deadmau5 and Daft Punk to
+	less recognized artists like Breakbot and R&ouml;yksopp.
+</h4>
 
-	<script>
-	var showsArray = [
-		{
-			date: "5/2/2016",
-			description: "For the last show of the academic year, enjoy the combination of upbeat tracks from musicians such as Tesla Boy and the more somber and slow paced songs from other artists, such as Bon Iver and Hozier.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6ehWegYbPCkO2X8E9jkJYZ",
-			viewable: true
-		},
-		{
-			date: "4/19/2016",
-			description: "More upbeat tunes from artists like Chris Joss and duo Sylvan Esso are featured on this week's playlist of Low Voltage, one you're sure to enjoy.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6TKzFWN5FLKBvB2Dl806t1",
-			viewable: true
-		},
-		{
-			date: "4/12/2016",
-			description: "Several tunes from Breakbot's new Album \"Still Waters\" and vocal pieces from artists like The Heavy and Alabam Shakes comprise this week's show of Low Voltage",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A2ikLdWzWmFFx3FOphqGIXY",
-			viewable: true
-		},
-		{
-			date: "3/29/2016",
-			description: "Instrumental electronic songs are the focus of this weeks playlist for Low Voltage, giving you a chance to relax and focus.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A4uA4AJTFOd78BrnfArXg1e",
-			viewable: true
-		},
-		{
-			date: "3/22/2016",
-			description: "This week on Low Voltage, a playlist of vocally focused electronic tunes from artists such as Calvin Harris and Disclosure.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A7M3vxMZO3MBfpVNupIxDiP",
-			viewable: true
-		},
-		{
-			date: "3/8/2016",
-			description: "More mellow tunes from electronic musicians such as Royksopp and Daft Punk are the theme this week for Low Voltage.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A0sNZfoDl5By5GRJM3Yl7o6",
-			viewable: true
-		},
-		{
-			date: "3/1/2016",
-			description: "Soft sounds from rock bands like Steeley Dan and America are this week's specialty for Low Voltage.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6nm2Lo8aiGcgw3IKZuHFs9",
-			viewable: true
-		},
-		{
-			date: "2/23/2016",
-			description: "The upbeat and rythmic sounds of soul, from Marlena Shaw to Aretha Franklin will keep you chipper through your studies.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A5bpfHoeY1Hkcf49ve9xuqW",
-			viewable: true
-		},
-		{
-			date: "2/16/2016",
-			description: "With the mellow electronic sounds of Air and The Flashbulb, as well as the soothing jazz of Blazo, this week's Low Voltage playlist is sure to help you relax.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A10wikswWNh6ScgPhbr7Lgq",
-			viewable: true
-		},
-		{
-			date: "2/9/2016",
-			description: "Specially curated for the week of Valentine's Day, a show with romantic hits from a full spectrum of artists, including MSTRKRFT, Rudimental, Chromeo, and Tuxedo.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A4xNH1ObnRQlPrkD5tYkoUG",
-			viewable: true
-		},
-		{
-			date: "2/2/2016",
-			description: "On the second show of Low Voltage, we bring in a wide variety of songs, from electro-swing to disco, including tracks by Parov Stelar and The Knocks.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6Rqyjr8K8iDpXf5odbueUd",
-			viewable: true
-		},
-		{
-			date: "1/26/2016",
-			description: "We're starting off Low Voltage with some big artists, and big sounds, including Justice, Daft Punk, and deadmau5.",
-			iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A5SeLUsaWkrnGT2vDiIgLWS",
-			viewable: true
-		},
-	];
+<h2 style="margin-bottom: 0px;">Show Info & Playlists</h2>
+<h4 class="text-box">
+	Playlists are posted the night after the show ends (usually), and shows with the playlist up will have this icon:
+	<img class="spotify-icon" src="images/spotify.png">
+</h4>
 
-	showsArray.forEach(function(show, index)
+<script>
+var showsArray = [
 	{
-		$("body").append('<div class="playlist-box" view="' + show.viewable + '">'
-		+ '<h4>Show ' + (showsArray.length - index) + ' - ' + show.date + '</h4>'
-		+ '<img class="spotify-icon" src="images/spotify.png">'
-		+ '<div class="toggle-but"><div>+</div></div>'
-		+ '<div class="iframe-holder">'
-			+ '<div>' + show.description + '</div>'
-			+ '<iframe alt-src="' + show.iframeURL //put the iframeURL in an alt-src to prevent loading until desired (lazy loading)
-				+ '" src="" width="100%" height="380" frameborder="0" allowtransparency="true"></iframe>'
-		+ '</div>'
-		+ '</div>'
-		);
-	});
-
-	// iterate through each playlist box to hide shows are set to not viewable
-	$(".playlist-box").each( function( index, element ) {
-		if($(this).attr("view") == "false") //if this show hasn't passed yet
-		{
-			$(this).find(".spotify-icon").hide(); //hide the spotify icon
-			$(this).find("iframe").remove(); //and remove the playlist to prevent hax
-		}
-	});
-
-	// Add click action to toggle button
-	$(".toggle-but").click(function()
+		date: "5/2/2016",
+		description: "For the last show of the academic year, enjoy the combination of upbeat tracks from musicians such as Tesla Boy and the more somber and slow paced songs from other artists, such as Bon Iver and Hozier.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6ehWegYbPCkO2X8E9jkJYZ",
+		viewable: true
+	},
 	{
-		var parent = $(this).parent();
-		var iframeHolder = parent.find(".iframe-holder");
+		date: "4/19/2016",
+		description: "More upbeat tunes from artists like Chris Joss and duo Sylvan Esso are featured on this week's playlist of Low Voltage, one you're sure to enjoy.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6TKzFWN5FLKBvB2Dl806t1",
+		viewable: true
+	},
+	{
+		date: "4/12/2016",
+		description: "Several tunes from Breakbot's new Album \"Still Waters\" and vocal pieces from artists like The Heavy and Alabam Shakes comprise this week's show of Low Voltage",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A2ikLdWzWmFFx3FOphqGIXY",
+		viewable: true
+	},
+	{
+		date: "3/29/2016",
+		description: "Instrumental electronic songs are the focus of this weeks playlist for Low Voltage, giving you a chance to relax and focus.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A4uA4AJTFOd78BrnfArXg1e",
+		viewable: true
+	},
+	{
+		date: "3/22/2016",
+		description: "This week on Low Voltage, a playlist of vocally focused electronic tunes from artists such as Calvin Harris and Disclosure.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A7M3vxMZO3MBfpVNupIxDiP",
+		viewable: true
+	},
+	{
+		date: "3/8/2016",
+		description: "More mellow tunes from electronic musicians such as Royksopp and Daft Punk are the theme this week for Low Voltage.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A0sNZfoDl5By5GRJM3Yl7o6",
+		viewable: true
+	},
+	{
+		date: "3/1/2016",
+		description: "Soft sounds from rock bands like Steeley Dan and America are this week's specialty for Low Voltage.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6nm2Lo8aiGcgw3IKZuHFs9",
+		viewable: true
+	},
+	{
+		date: "2/23/2016",
+		description: "The upbeat and rythmic sounds of soul, from Marlena Shaw to Aretha Franklin will keep you chipper through your studies.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A5bpfHoeY1Hkcf49ve9xuqW",
+		viewable: true
+	},
+	{
+		date: "2/16/2016",
+		description: "With the mellow electronic sounds of Air and The Flashbulb, as well as the soothing jazz of Blazo, this week's Low Voltage playlist is sure to help you relax.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A10wikswWNh6ScgPhbr7Lgq",
+		viewable: true
+	},
+	{
+		date: "2/9/2016",
+		description: "Specially curated for the week of Valentine's Day, a show with romantic hits from a full spectrum of artists, including MSTRKRFT, Rudimental, Chromeo, and Tuxedo.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A4xNH1ObnRQlPrkD5tYkoUG",
+		viewable: true
+	},
+	{
+		date: "2/2/2016",
+		description: "On the second show of Low Voltage, we bring in a wide variety of songs, from electro-swing to disco, including tracks by Parov Stelar and The Knocks.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A6Rqyjr8K8iDpXf5odbueUd",
+		viewable: true
+	},
+	{
+		date: "1/26/2016",
+		description: "We're starting off Low Voltage with some big artists, and big sounds, including Justice, Daft Punk, and deadmau5.",
+		iframeURL: "https://embed.spotify.com/?uri=spotify%3Auser%3A1210534895%3Aplaylist%3A5SeLUsaWkrnGT2vDiIgLWS",
+		viewable: true
+	},
+];
 
-		$(".iframe-holder").not(iframeHolder).slideUp(); //hide things that are not the current one
-		iframeHolder.slideToggle(); //toggles the current thing
-		var src = parent.find("iframe").attr("alt-src");
+showsArray.forEach(function(show, index)
+{
+	$("body").append('<div class="playlist-box" view="' + show.viewable + '">'
+	+ '<h4>Show ' + (showsArray.length - index) + ' - ' + show.date + '</h4>'
+	+ '<img class="spotify-icon" src="images/spotify.png">'
+	+ '<div class="toggle-but"><div>+</div></div>'
+	+ '<div class="iframe-holder">'
+		+ '<div>' + show.description + '</div>'
+		+ '<iframe alt-src="' + show.iframeURL //put the iframeURL in an alt-src to prevent loading until desired (lazy loading)
+			+ '" src="" width="100%" height="380" frameborder="0" allowtransparency="true"></iframe>'
+	+ '</div>'
+	+ '</div>'
+	);
+});
 
-		if(parent.find("iframe").attr("src").length < 1) //only load the iframe if it is not loaded already
-			parent.find("iframe").attr("src", src);
-	});
-	</script>
-</body>
-</html>
+// iterate through each playlist box to hide shows are set to not viewable
+$(".playlist-box").each( function( index, element ) {
+	if($(this).attr("view") == "false") //if this show hasn't passed yet
+	{
+		$(this).find(".spotify-icon").hide(); //hide the spotify icon
+		$(this).find("iframe").remove(); //and remove the playlist to prevent hax
+	}
+});
+
+// Add click action to toggle button
+$(".toggle-but").click(function()
+{
+	var parent = $(this).parent();
+	var iframeHolder = parent.find(".iframe-holder");
+
+	$(".iframe-holder").not(iframeHolder).slideUp(); //hide things that are not the current one
+	iframeHolder.slideToggle(); //toggles the current thing
+	var src = parent.find("iframe").attr("alt-src");
+
+	if(parent.find("iframe").attr("src").length < 1) //only load the iframe if it is not loaded already
+		parent.find("iframe").attr("src", src);
+});
+</script>

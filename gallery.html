@@ -1,132 +1,126 @@
-<html>
-<head>
-	<link href="css/main.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="js/main.js"></script>
-</head>
-<body>
-	<div class="page-container filter-transition">
-		<br>
-		<h1>Gallery</h1>
-		<h4>
-			Some images from projects I've worked on and renders I've created.
-			<br>
-			Click an image to see a bigger version and use your arrow keys to go between images.
-		</h4>
+---
+layout: default
+pageClass: "filter-transition"
+---
 
-		<div id="portfolio-container">
-		</div>
-	</div>
+<br>
+<h1>Gallery</h1>
+<h4>
+	Some images from projects I've worked on and renders I've created.
+	<br>
+	Click an image to see a bigger version and use your arrow keys to go between images.
+</h4>
 
-	<script>
-		var currentID = -1;
+<div id="portfolio-container">
+</div>
 
-		var gallery = [
-			{
-				url: "images/InClouds1-min.png",
-				title: "In Clouds",
-				description: "In Clouds was the first game I released, and was one month game project."
-			},
-			{
-				url: "images/InClouds2-min.png",
-				title: "In Clouds",
-				description: "In Clouds was the first game I released, and was one month game project."
-			},
-			{
-				url: "images/Awakening.png",
-				title: "Awakening",
-				description: "My most complicated art piece in Blender, \"Awakening\" was presented in an exhibition at my school"
-			},
-			/*
-			{
-				url: "images/prototypeGame.png",
-				title: "In Clouds",
-				description: "Lorem ipsum dolor sit amet"
-			}, */
-			{
-				url: "images/Lightbulb3.png",
-				title: "Lightbulbs I",
-				description: "Part of a set of three, this lightbulb was one of the results of my experiments with Blenders Cycles renderer."
-			},
-			{
-				url: "images/Lightbulb4.png",
-				title: "Lightbulbs II",
-				description: "Part of a set of three, this lightbulb was one of the results of my experiments with Blenders Cycles renderer."
-			},
-			{
-				url: "images/Lightbulb5.png",
-				title: "Lightbulbs III",
-				description: "Part of a set of three, this lightbulb was one of the results of my experiments with Blenders Cycles renderer."
-			},
-			{
-				url: "images/sparks.jpg",
-				title: "Sparks",
-				description: "An experiment using advanced particle effects, motion blur, and depth of field in Blender."
-			},
-			{
-				url: "images/TSOT1-min.png",
-				title: "The Speed of Time",
-				description: "The Speed of Time was a game I developed for a few years while learning Unity, but ended up suspending."
-			},
-			{
-				url: "images/TSOT2-min.png",
-				title: "The Speed of Time",
-				description: "The Speed of Time was a game I developed for a few years while learning Unity, but ended up suspending."
-			},
-			{
-				url: "images/TSOT3-min.png",
-				title: "The Speed of Time",
-				description: "The Speed of Time was a game I developed for a few years while learning Unity, but ended up suspending."
-			},
-			{
-				url: "images/grassPlanet.jpg",
-				title: "Grass Planet",
-				description: "One of my first experiments with Blender, this piece uses particle effects to create a grass covered \"planet\""
-			},
-			{
-				url: "images/chicagoSubwayEntrance.png",
-				title: "Chicago Subway Entrance",
-				description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-			},
-		];
+<script>
+	var currentID = -1;
 
-		var galleryInstance = new Gallery(gallery, {showInfo: true});
-
-		// Generate all the portfolio tiles
-		gallery.forEach(function(item, index)
+	var gallery = [
 		{
-			$("#portfolio-container").append(
-				'<div class="portfolio-img">' +
-					'<div class="icon fullscreen"></div>' +
-					'<img data-id="' + index + '" src=' + item.url + '>' +
-				'</div>');
-		});
-
-		// On click of portfolio image
-		$(".portfolio-img").click(function()
+			url: "images/InClouds1-min.png",
+			title: "In Clouds",
+			description: "In Clouds was the first game I released, and was one month game project."
+		},
 		{
-			var image = $(this).find("img");
-			galleryInstance.showImage(image.attr("data-id"));
-		});
-
-		$("body").keydown(function(event)
+			url: "images/InClouds2-min.png",
+			title: "In Clouds",
+			description: "In Clouds was the first game I released, and was one month game project."
+		},
 		{
-		  if(event.keyCode == 37) //left arrow
-		  {
-		  	galleryInstance.previousImage();
-		  }
-		  else if(event.keyCode == 39) //right arrow
-		  {
-		  	galleryInstance.nextImage();
-		  }
-		  else if(event.keyCode == 27) //escape
-		  {
-		  	if($("#overlay-info:visible").length > 0)
-		  		closeInfo();
-		  	else
-		  		galleryInstance.close();
-		  }
-		});
-	</script>
-</body>
-</html>
+			url: "images/Awakening.png",
+			title: "Awakening",
+			description: "My most complicated art piece in Blender, \"Awakening\" was presented in an exhibition at my school"
+		},
+		/*
+		{
+			url: "images/prototypeGame.png",
+			title: "In Clouds",
+			description: "Lorem ipsum dolor sit amet"
+		}, */
+		{
+			url: "images/Lightbulb3.png",
+			title: "Lightbulbs I",
+			description: "Part of a set of three, this lightbulb was one of the results of my experiments with Blenders Cycles renderer."
+		},
+		{
+			url: "images/Lightbulb4.png",
+			title: "Lightbulbs II",
+			description: "Part of a set of three, this lightbulb was one of the results of my experiments with Blenders Cycles renderer."
+		},
+		{
+			url: "images/Lightbulb5.png",
+			title: "Lightbulbs III",
+			description: "Part of a set of three, this lightbulb was one of the results of my experiments with Blenders Cycles renderer."
+		},
+		{
+			url: "images/sparks.jpg",
+			title: "Sparks",
+			description: "An experiment using advanced particle effects, motion blur, and depth of field in Blender."
+		},
+		{
+			url: "images/TSOT1-min.png",
+			title: "The Speed of Time",
+			description: "The Speed of Time was a game I developed for a few years while learning Unity, but ended up suspending."
+		},
+		{
+			url: "images/TSOT2-min.png",
+			title: "The Speed of Time",
+			description: "The Speed of Time was a game I developed for a few years while learning Unity, but ended up suspending."
+		},
+		{
+			url: "images/TSOT3-min.png",
+			title: "The Speed of Time",
+			description: "The Speed of Time was a game I developed for a few years while learning Unity, but ended up suspending."
+		},
+		{
+			url: "images/grassPlanet.jpg",
+			title: "Grass Planet",
+			description: "One of my first experiments with Blender, this piece uses particle effects to create a grass covered \"planet\""
+		},
+		{
+			url: "images/chicagoSubwayEntrance.png",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+	];
+
+	var galleryInstance = new Gallery(gallery, {showInfo: true});
+
+	// Generate all the portfolio tiles
+	gallery.forEach(function(item, index)
+	{
+		$("#portfolio-container").append(
+			'<div class="portfolio-img">' +
+				'<div class="icon fullscreen"></div>' +
+				'<img data-id="' + index + '" src=' + item.url + '>' +
+			'</div>');
+	});
+
+	// On click of portfolio image
+	$(".portfolio-img").click(function()
+	{
+		var image = $(this).find("img");
+		galleryInstance.showImage(image.attr("data-id"));
+	});
+
+	$("body").keydown(function(event)
+	{
+	  if(event.keyCode == 37) //left arrow
+	  {
+	  	galleryInstance.previousImage();
+	  }
+	  else if(event.keyCode == 39) //right arrow
+	  {
+	  	galleryInstance.nextImage();
+	  }
+	  else if(event.keyCode == 27) //escape
+	  {
+	  	if($("#overlay-info:visible").length > 0)
+	  		closeInfo();
+	  	else
+	  		galleryInstance.close();
+	  }
+	});
+</script>

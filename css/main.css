@@ -129,6 +129,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 	bottom: 0px;
 	box-shadow: 0px 0px 5px grey;
 }
+.social-bar { font-size: 0px; }
+.social-bar a { text-decoration: none; }
 .social-bar div
 {
 	display: inline-block;
