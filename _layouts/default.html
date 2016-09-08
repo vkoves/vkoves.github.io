@@ -1,13 +1,13 @@
 <html>
 <head>
-	<link href="css/main.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
 	{% for stylesheet in page.stylesheets %}
-		<link href="css/{{  stylesheet }}" rel="stylesheet">
+		<link href="/css/{{  stylesheet }}" rel="stylesheet">
 	{% endfor %}
 	<title>Viktor K&ouml;ves</title> <!-- Oh what fun, an Oumlaut! -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 	<!-- Added Open Sans from Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic" rel="stylesheet" type="text/css">
 	<meta name="theme-color" content="#D80000">
@@ -29,12 +29,12 @@
 		<div id="header-inside">
 			<span id="title"><a href="/" class="local-link">Viktor K&ouml;ves</a></span>
 			<div id="header-buttons">
-				<span><a href="about" class="local-link">About</a></span> |
-				<span><a href="gallery" class="local-link">Gallery</a></span> |
-				<span><a href="portfolio" class="local-link">Portfolio</a></span> |
+				<span><a href="/about" class="local-link">About</a></span> |
+				<span><a href="/gallery" class="local-link">Gallery</a></span> |
+				<span><a href="/portfolio" class="local-link">Portfolio</a></span> |
 				<span><a href="http://www.indigobox.us">IndigoBox</a></span>
 			</div>
-			<img id="menu" src="images/menu.svg">
+			<img id="menu" src="/images/menu.svg">
 		</div>
 	</div>
 
