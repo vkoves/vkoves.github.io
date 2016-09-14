@@ -1,0 +1,10 @@
+#all-posts
+{
+	float: left;
+}
+.post-date
+{
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+}

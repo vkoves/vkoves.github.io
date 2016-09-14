@@ -10,6 +10,10 @@
 	{% for script in page.scripts %}
 		<script src="/js/{{ script }}"></script>
 	{% endfor %}
+	{% if page.isPost %}
+		<link href="/css/post.css" rel="stylesheet">
+	{% endif %}
+	{{ stylesheets }}
 	<title>Viktor K&ouml;ves</title> <!-- Oh what fun, an Oumlaut! -->
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 	<!-- Added Open Sans from Google Fonts -->
@@ -43,6 +47,13 @@
 	</div>
 
 	<div class="page-container {{ page.pageClass }}">
+		{% if page.isPost %}
+			<a href="/posts" id="all-posts">Back to All Posts</a>
+			<br>
+			<h1>{{ page.title }}</h1>
+			<span class="post-date">Posted {{ page.date | date: "%B %d, %Y" }}</span>
+		{% endif %}
+
 		{{ content }}
 	</div>
 

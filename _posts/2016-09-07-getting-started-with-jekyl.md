@@ -1,7 +1,7 @@
 ---
 layout: default
+isPost: true
 ---
-# Getting Started with Jekyll
 
 {% highlight html linenos %}
 <html>
