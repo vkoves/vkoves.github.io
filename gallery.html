@@ -9,12 +9,14 @@ pageClass: "filter-transition"
 	<br>
 	Click an image to see a bigger version and use your arrow keys to go between images.
 </h4>
-
+<div id="projects" class="toggle-button active">Project Photos</div>
+<div id="hobby" class="toggle-button">Hobby Photos</div> 
 <div id="portfolio-container">
 </div>
 
 <script>
 	var currentID = -1;
+	var galleryInstance;
 
 	var gallery = [
 		{
@@ -32,12 +34,6 @@ pageClass: "filter-transition"
 			title: "Awakening",
 			description: "My most complicated art piece in Blender, \"Awakening\" was presented in an exhibition at my school"
 		},
-		/*
-		{
-			url: "images/prototypeGame.png",
-			title: "In Clouds",
-			description: "Lorem ipsum dolor sit amet"
-		}, */
 		{
 			url: "images/Lightbulb3.png",
 			title: "Lightbulbs I",
@@ -85,13 +81,77 @@ pageClass: "filter-transition"
 		},
 	];
 
-	var galleryInstance = new Gallery(gallery, {showInfo: true});
+	var hobbyGallery = [
+		/* Hobby Photos */
+		{
+			url: "images/hobby-photos/1.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/2.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/3.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/4.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/5.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/6.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/7.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/8.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/9.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+		{
+			url: "images/hobby-photos/10.jpg",
+			title: "Chicago Subway Entrance",
+			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
+		},
+	];
 
-	// Generate all the portfolio tiles
+	galleryInstance = new Gallery(gallery, {showInfo: true});
+
+	// Generate all the projects gallery tiles
 	gallery.forEach(function(item, index)
 	{
 		$("#portfolio-container").append(
-			'<div class="portfolio-img">' +
+			'<div class="portfolio-img projects">' +
+				'<div class="icon fullscreen"></div>' +
+				'<img data-id="' + index + '" src=' + item.url + '>' +
+			'</div>');
+	});
+
+	// Generate all hobby gallery tiles
+	hobbyGallery.forEach(function(item, index)
+	{
+		$("#portfolio-container").append(
+			'<div class="portfolio-img hobby">' +
 				'<div class="icon fullscreen"></div>' +
 				'<img data-id="' + index + '" src=' + item.url + '>' +
 			'</div>');
@@ -121,5 +181,25 @@ pageClass: "filter-transition"
 	  	else
 	  		galleryInstance.close();
 	  }
+	});
+
+	$(".toggle-button#projects").click(function()
+	{
+		$(".portfolio-img").hide();
+		$(".portfolio-img.projects").css("display", "inline-block");
+		$(".toggle-button").removeClass("active");
+		$(this).addClass("active");
+		galleryInstance.destroy();
+		galleryInstance = new Gallery(gallery, {showInfo: true});;
+	});
+
+	$(".toggle-button#hobby").click(function()
+	{
+		$(".portfolio-img").hide();
+		$(".portfolio-img.hobby").css("display", "inline-block");
+		$(".toggle-button").removeClass("active");
+		$(this).addClass("active");
+		galleryInstance.destroy();
+		galleryInstance = new Gallery(hobbyGallery);
 	});
 </script>

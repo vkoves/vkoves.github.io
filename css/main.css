@@ -184,6 +184,8 @@ h4 { font-weight: 600; margin-top: 10px; }
     box-shadow: 1px 1px 5px #887F7F;
     display: inline-block;
 }
+/* Hobby Photos hidden by default */
+.portfolio-img.hobby { display: none; }
 .portfolio-img img
 {
 	width: 100%;
@@ -318,6 +320,21 @@ h4 { font-weight: 600; margin-top: 10px; }
 	bottom: 0px;
 	height: 30px;
 	position: absolute;
+}
+.toggle-button
+{
+	display: inline-block;
+	background-color: lightgrey;
+	padding: 3px 15px;
+	border-radius: 5px;
+	color: #272727;
+	font-weight: 600;
+	cursor: pointer;
+}
+.toggle-button.active
+{
+	background-color: #d80000;
+	color: white;
 }
 @media (max-width: 600px)
 {
