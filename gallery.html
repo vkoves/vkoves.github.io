@@ -11,7 +11,7 @@ pageClass: "filter-transition"
 </h4>
 <div id="projects" class="toggle-button active">Project Photos</div>
 <div id="hobby" class="toggle-button">Hobby Photos</div> 
-<div id="portfolio-container">
+<div id="gallery-container">
 </div>
 
 <script>
@@ -102,8 +102,8 @@ pageClass: "filter-transition"
 	// Generate all the projects gallery tiles
 	gallery.forEach(function(item, index)
 	{
-		$("#portfolio-container").append(
-			'<div class="portfolio-img projects">' +
+		$("#gallery-container").append(
+			'<div class="gallery-img projects">' +
 				'<div class="icon fullscreen"></div>' +
 				'<img data-id="' + index + '" src=' + item.url + '>' +
 			'</div>');
@@ -112,15 +112,15 @@ pageClass: "filter-transition"
 	// Generate all hobby gallery tiles
 	hobbyGallery.forEach(function(item, index)
 	{
-		$("#portfolio-container").append(
-			'<div class="portfolio-img hobby">' +
+		$("#gallery-container").append(
+			'<div class="gallery-img hobby">' +
 				'<div class="icon fullscreen"></div>' +
 				'<img data-id="' + index + '" src=' + item + '>' +
 			'</div>');
 	});
 
-	// On click of portfolio image
-	$(".portfolio-img").click(function()
+	// On click of gallery image
+	$(".gallery-img").click(function()
 	{
 		var image = $(this).find("img");
 		galleryInstance.showImage(image.attr("data-id"));
@@ -147,8 +147,8 @@ pageClass: "filter-transition"
 
 	$(".toggle-button#projects").click(function()
 	{
-		$(".portfolio-img").hide();
-		$(".portfolio-img.projects").css("display", "inline-block");
+		$(".gallery-img").hide();
+		$(".gallery-img.projects").css("display", "inline-block");
 		$(".toggle-button").removeClass("active");
 		$(this).addClass("active");
 		galleryInstance.destroy();
@@ -158,8 +158,8 @@ pageClass: "filter-transition"
 
 	$(".toggle-button#hobby").click(function()
 	{
-		$(".portfolio-img").hide();
-		$(".portfolio-img.hobby").css("display", "inline-block");
+		$(".gallery-img").hide();
+		$(".gallery-img.hobby").css("display", "inline-block");
 		$(".toggle-button").removeClass("active");
 		$(this).addClass("active");
 		galleryInstance.destroy();

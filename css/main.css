@@ -166,14 +166,14 @@ h4 { font-weight: 600; margin-top: 10px; }
     transition: opacity 0.3s;
     z-index: 1;
 }
-#portfolio-container
+#gallery-container
 {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1200px;
 }
-.portfolio-img
+.gallery-img
 {
 	z-index: 0;
 	position: relative;
@@ -185,18 +185,18 @@ h4 { font-weight: 600; margin-top: 10px; }
     display: inline-block;
 }
 /* Hobby Photos hidden by default */
-.portfolio-img.hobby { display: none; }
-.portfolio-img img
+.gallery-img.hobby { display: none; }
+.gallery-img img
 {
 	width: 100%;
 	transition: all 0.3s;
 }
-.portfolio-img:hover > img
+.gallery-img:hover > img
 {
 	filter: brightness(50%);
 	-webkit-filter: brightness(50%);
 }
-.portfolio-img:hover > .icon
+.gallery-img:hover > .icon
 {
 	opacity: 1;
 }
@@ -338,7 +338,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 @media (max-width: 600px)
 {
-	.portfolio-img
+	.gallery-img
 	{
 		width: 90%;
 	}
