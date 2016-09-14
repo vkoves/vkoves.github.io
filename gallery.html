@@ -202,4 +202,7 @@ pageClass: "filter-transition"
 		galleryInstance.destroy();
 		galleryInstance = new Gallery(hobbyGallery);
 	});
+
+	if(window.location.href.indexOf("#hobby-photos") > -1) // viewing hobby by default
+		$(".toggle-button#hobby").click();
 </script>

@@ -1,5 +1,8 @@
 var delay = 5000; //the delay in animation
-var imageTitles = ["Programmer <br><a href='portfolio.html'>Portfolio</a>", "Photographer", "Artist <br><a href='gallery.html'>Gallery</a>", "Web Developer <br><a href='portfolio.html'>Portfolio</a>"];
+var imageTitles = ["Programmer <br><a href='portfolio'>Portfolio</a>",
+					"Photographer <br><a href='gallery#hobby-photos'>Hobby Photos</a>",
+					"Artist <br><a href='gallery'>Gallery</a>",
+					"Web Developer <br><a href='portfolio'>Portfolio</a>"];
 var imageURLs = ["/images/home/programmer.png", "/images/home/photographer.jpg", "/images/home/artist.png", "/images/home/web-developer.png"];
 var currentIndex = 0;
 var interval;
