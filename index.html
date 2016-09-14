@@ -4,19 +4,27 @@ pageClass: "page-limiter"
 stylesheets:
  - index.css
 scripts:
+ - index.js
  - jquery.bgswitcher.js
 ---
 
 {% comment %} 
 Use jQuery BGSwitcher https://github.com/rewish/jquery-bgswitcher
 {% endcomment %}
-<h1>I'm Viktor K&ouml;ves</h1>
-<h4>
-	I'm a software engineer who makes websites for a living, and games and art for fun. <br>
-	I lead <a href="http://www.indigobox.us">indigoBox Studios</a>, a Chicago based software collective.
-	<br>
-	<br>
-	I'm still working on this website, but you can check out a <a class="local-link" href="gallery.html">gallery of my work</a> or <a class="local-link" href="about.html">learn a bit more about me!</a>
-</h4>
+<div class="overlay-text">
+	<h1>I'm Viktor K&ouml;ves</h1>
+	<h4>
+		I'm a software engineer who makes websites for a living, and games and art for fun. <br>
+		I lead <a href="http://www.indigobox.us">indigoBox Studios</a>, a Chicago based software collective.
+		<br>
+		<br>
+		I'm still working on this website, but you can check out a <a class="local-link" href="gallery.html">gallery of my work</a> or <a class="local-link" href="about.html">learn a bit more about me!</a>
+	</h4>
+</div>
+<div class="photo-texts">
+	<div class="photo-text active">Programmer</div>
+	<div class="photo-text disabled">Programmer</div>
+</div>
 <div class="background-container">
+	<div class="inner">
 </div>
