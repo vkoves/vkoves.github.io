@@ -83,56 +83,18 @@ pageClass: "filter-transition"
 
 	var hobbyGallery = [
 		/* Hobby Photos */
-		{
-			url: "images/hobby-photos/1.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/2.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/3.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/4.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/5.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/6.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/7.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/8.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/9.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
-		{
-			url: "images/hobby-photos/10.jpg",
-			title: "Chicago Subway Entrance",
-			description: "Using reference photos I took in downtown Chicago, I modelled this iconic Chicago subway entrance"
-		},
+		"images/hobby-photos/1.jpg",
+		"images/hobby-photos/2.jpg",
+		"images/hobby-photos/3.jpg",
+		"images/hobby-photos/4.jpg",
+		"images/hobby-photos/5.jpg",
+		"images/hobby-photos/6.jpg",
+		"images/hobby-photos/7.jpg",
+		"images/hobby-photos/8.jpg",
+		"images/hobby-photos/9.jpg",
+		"images/hobby-photos/10.jpg",
+		"images/hobby-photos/11.jpg",
+		"images/hobby-photos/12.jpg",
 	];
 
 	galleryInstance = new Gallery(gallery, {showInfo: true});
@@ -153,7 +115,7 @@ pageClass: "filter-transition"
 		$("#portfolio-container").append(
 			'<div class="portfolio-img hobby">' +
 				'<div class="icon fullscreen"></div>' +
-				'<img data-id="' + index + '" src=' + item.url + '>' +
+				'<img data-id="' + index + '" src=' + item + '>' +
 			'</div>');
 	});
 
