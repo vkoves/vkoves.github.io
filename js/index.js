@@ -7,7 +7,7 @@ var interval;
 $(document).ready(function() {
 	$(".background-container .inner").bgswitcher({
 	  images: imageURLs,
-	  interval: delay
+	  start: false // don't loop default, loop using our setInterval for consistency
 	});
 
 	$(".photo-text.active").html(imageTitles[currentIndex]); //set active text to first value manually, since we don't need animation
@@ -18,6 +18,7 @@ $(document).ready(function() {
 
 function animateText()
 {
+	$(".background-container .inner").bgswitcher("next");
 	$(".photo-text.disabled").html(imageTitles[currentIndex]);
 	$(".photo-text.active").fadeOut(function()
 	{
