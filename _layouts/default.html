@@ -40,7 +40,7 @@
 				<span><a href="/about" class="local-link">About</a></span> |
 				<span><a href="/gallery" class="local-link">Gallery</a></span> |
 				<span><a href="/portfolio" class="local-link">Portfolio</a></span> |
-				<span><a href="/posts">Blog</a></span>
+				<span><a href="/blog">Blog</a></span>
 			</div>
 			<img id="menu" src="/images/menu.svg">
 		</div>
@@ -48,7 +48,7 @@
 
 	<div class="page-container {{ page.pageClass }}">
 		{% if page.isPost %}
-			<a href="/posts" id="all-posts">Back to All Posts</a>
+			<a href="/blog" id="all-posts">Back to All Posts</a>
 			<br>
 			<h1>{{ page.title }}</h1>
 			<span class="post-date">Posted {{ page.date | date: "%B %d, %Y" }}</span>
