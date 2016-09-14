@@ -152,7 +152,8 @@ pageClass: "filter-transition"
 		$(".toggle-button").removeClass("active");
 		$(this).addClass("active");
 		galleryInstance.destroy();
-		galleryInstance = new Gallery(gallery, {showInfo: true});;
+		galleryInstance = new Gallery(gallery, {showInfo: true});
+		location.hash = ""; //clear the hash
 	});
 
 	$(".toggle-button#hobby").click(function()
@@ -163,6 +164,7 @@ pageClass: "filter-transition"
 		$(this).addClass("active");
 		galleryInstance.destroy();
 		galleryInstance = new Gallery(hobbyGallery);
+		location.hash = "#hobby-photos"; //update the hash for easy sharing
 	});
 
 	if(window.location.href.indexOf("#hobby-photos") > -1) // viewing hobby by default
