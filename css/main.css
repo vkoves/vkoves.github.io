@@ -30,6 +30,7 @@ body
 	top: 0px;
 	text-align: left;
 	background: #D80000;
+	z-index: 5;
 }
 #header-inside
 {
