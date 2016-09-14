@@ -200,127 +200,6 @@ h4 { font-weight: 600; margin-top: 10px; }
 {
 	opacity: 1;
 }
-.overlay-transparent
-{
-	display: none;
-	position: fixed;
-    background: rgba(0,0,0,0.75);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-.img-base { width: 100%; }
-.img-container
-{
-	display: inline;
-	position: relative;
-}
-#overlay-main .icon
-{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    bottom: 4px;
-    right: -1px;
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: 60% 50%;
-    background-color: rgba(0,0,0,0.95);
-    cursor: pointer;
-    border-top-left-radius: 15px;
-    opacity: 0.5;
-    transition: opacity 0.3s;
-}
-#overlay-main .icon:hover { opacity: 1; }
-#overlay-main img
-{
-	max-width: 90vw;
-	max-height: 80vh;
-}
-#overlay-info
-{
-	z-index: 20;
-	color: white;
-}
-#overlay-info .title
-{
-	font-size: 36px;
-	font-weight: 600;
-}
-#overlay-info .description { font-size: 20px; }
-.info-cont
-{
-	width: 100%;
-	max-width: 1000px;
-}
-#overlay-controls
-{
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	display: none;
-	z-index: 11;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-/* Make the images (arrows and close) and nav-dots still take pointer events */
-#overlay-controls img, #overlay-controls .nav-dot { pointer-events: auto; }
-#overlay-controls img, #overlay-info #close
-{
-	position: fixed;
-	background: rgba(0,0,0,0.5);
-	border-radius: 50px;
-	box-sizing: border-box;
-	padding: 10px;
-	cursor: pointer;
-	transition: background 0.3s;
-}
-#overlay-controls img:hover
-{
-	background: rgba(0,0,0,1);
-}
-#overlay-controls .arrow
-{
-	width: 50px;
-}
-#overlay-controls #close, #overlay-info #close
-{
-	z-index: 25;
-	width: 50px;
-	top: 10px;
-	right: 10px;
-}
-#overlay-controls #left { left: 1%; }
-#overlay-controls #right { right: 1%; }
-#overlay-controls .nav-dot
-{
-	background-color: black;
-	width: 10px;
-	height: 10px;
-	border-radius: 100%;
-	display: inline-block;
-	margin: 0px 5px;
-	box-sizing: border-box;
-	cursor: pointer;
-}
-#overlay-controls .nav-dot:hover
-{
-	border: solid 1px white;
-}
-#overlay-controls .nav-dot.active
-{
-	background-color: white;
-}
-#overlay-controls .gallery-nav
-{
-	width: 100vw;
-	bottom: 0px;
-	height: 30px;
-	position: absolute;
-}
 .toggle-button
 {
 	display: inline-block;
@@ -498,6 +377,129 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 /* End About Page Styling */
 
+/* Gallery Plugin Styling */
+.overlay-transparent
+{
+	display: none;
+	position: fixed;
+    background: rgba(0,0,0,0.75);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.img-base { width: 100%; }
+.img-container
+{
+	display: inline;
+	position: relative;
+}
+#overlay-main .icon
+{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 4px;
+    right: -1px;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 60% 50%;
+    background-color: rgba(0,0,0,0.95);
+    cursor: pointer;
+    border-top-left-radius: 15px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+#overlay-main .icon:hover { opacity: 1; }
+#overlay-main img
+{
+	max-width: 90vw;
+	max-height: 80vh;
+}
+#overlay-info
+{
+	z-index: 20;
+	color: white;
+}
+#overlay-info .title
+{
+	font-size: 36px;
+	font-weight: 600;
+}
+#overlay-info .description { font-size: 20px; }
+.info-cont
+{
+	width: 100%;
+	max-width: 1000px;
+}
+#overlay-controls
+{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	display: none;
+	z-index: 11;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+/* Make the images (arrows and close) and nav-dots still take pointer events */
+#overlay-controls img, #overlay-controls .nav-dot { pointer-events: auto; }
+#overlay-controls img, #overlay-info #close
+{
+	position: fixed;
+	background: rgba(0,0,0,0.5);
+	border-radius: 50px;
+	box-sizing: border-box;
+	padding: 10px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+#overlay-controls img:hover
+{
+	background: rgba(0,0,0,1);
+}
+#overlay-controls .arrow
+{
+	width: 50px;
+}
+#overlay-controls #close, #overlay-info #close
+{
+	z-index: 25;
+	width: 50px;
+	top: 10px;
+	right: 10px;
+}
+#overlay-controls #left { left: 1%; }
+#overlay-controls #right { right: 1%; }
+#overlay-controls .nav-dot
+{
+	background-color: black;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	display: inline-block;
+	margin: 0px 5px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+#overlay-controls .nav-dot:hover
+{
+	border: solid 1px white;
+}
+#overlay-controls .nav-dot.active
+{
+	background-color: white;
+}
+#overlay-controls .gallery-nav
+{
+	width: 100vw;
+	bottom: 0px;
+	height: 30px;
+	position: absolute;
+}
+/* End Gallery Plugin Styling */
 
 /****************************/
 /****** GENERIC CLASSES *****/
