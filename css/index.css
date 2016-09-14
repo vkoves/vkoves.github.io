@@ -1,8 +1,12 @@
+.page-container
+{
+	width: 100%;
+	max-width: none;
+}
 .overlay-text
 {
-	position: absolute;
 	width: 100vw;
-	top: 100px;
+	margin-top: 50px;
 	left: 0;
 	max-width: none;
 	padding: 15px;
@@ -32,9 +36,15 @@
 	background-position: center center !important;
 	background-size: cover !important;
 }
-h4 a
+/* Make links in the overlay red for readability and theming */
+.overlay-text a
 {
 	color: #d80000;
+}
+.photo-texts
+{
+	position: relative;
+	margin-top: 10vh;
 }
 .photo-text
 {
