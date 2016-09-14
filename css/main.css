@@ -533,3 +533,4 @@ h4 { font-weight: 600; margin-top: 10px; }
 	filter: blur(5px);
 	-webkit-filter: blur(5px);
 }
+.left-align { text-align: left; }

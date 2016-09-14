@@ -8,3 +8,22 @@
 	width: 100%;
 	text-align: left;
 }
+
+/* Post List Styling on the Posts page */
+.post-list
+{
+	list-style: none;
+}
+.post-listing
+{
+	text-align: left;
+}
+.post-listing a
+{
+	color: black;
+	text-decoration: none;
+}
+.post-listing .title { font-size: 24px; }
+.post-listing .date { float: right; }
+.post-listing .excerpt p { margin: 0px; }
+/* End post list styling */
