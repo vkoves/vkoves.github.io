@@ -19,9 +19,12 @@ stylesheets:
     <li class="post-listing">
       <a href="{{ post.url }}">
       	<span class="title">{{ post.title }}</span>
-      	<span class="date">{{ post.date | date: "%B %d, %Y" }}</span>
-      	<span class="excerpt">{{ post.excerpt }}</span>
       </a>
+      {% for category in post.categories %}
+        <span class="category">{{ category }}</span>
+      {% endfor %}
+      <span class="date">{{ post.date | date: "%B %d, %Y" }}</span>
+      <span class="excerpt">{{ post.excerpt }}</span>
     </li>
   {% endfor %}
 </ul>

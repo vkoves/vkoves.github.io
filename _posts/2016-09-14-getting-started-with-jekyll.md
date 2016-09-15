@@ -1,6 +1,9 @@
 ---
 layout: default
 isPost: true
+category: 
+ - Jekyll
+ - Coding Tips
 ---
 
 Working with Jekyll is a whole lot easier than dealing with tons and tons
