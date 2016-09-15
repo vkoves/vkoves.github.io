@@ -29,6 +29,12 @@
 	width: 100%;
 	text-align: left;
 }
+hr
+{
+	background: lightgrey;
+	border: none;
+	height: 1px;
+}
 
 /* Post List Styling on the Posts page */
 .post-list
