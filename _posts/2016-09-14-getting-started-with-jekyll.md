@@ -51,7 +51,7 @@ scripts:
 ---
 {% endhighlight %}
 
-This example is actually taken from my <i>index.html</i> page on this site,
+This example is actually taken from my <code class="inline">index.html</code> page on this site,
 which imports an index stylesheet and javascript file, as well as a jQuery
 plugin. This makes it really easy for me to import CSS and JS files just
 from their name.
@@ -80,7 +80,7 @@ custom, non text-based pages, like the homepage and the gallery.
 
 One of the main advantages of working in Ruby on Rails, one of the web frameworks
 that I end up using most often, is the ability to create comments using embedded
-Ruby code that never end up being outputted to the HTML. In the <i>.erb</i>
+Ruby code that never end up being outputted to the HTML. In the <code class="inline">.erb</code>
 templating language, that looks something like this:
 
 {% highlight html linenos %}

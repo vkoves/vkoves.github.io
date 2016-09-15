@@ -535,3 +535,13 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 .left-align { text-align: left; }
 .no-bold { font-weight: normal; }
+code.inline
+{
+	font-family: monospace;
+	background: white;
+	font-size: 110%;
+	padding: 2px 5px;
+	background-color: #ffe8ec;
+	color: #d80000;
+	border-radius: 5px;
+}
