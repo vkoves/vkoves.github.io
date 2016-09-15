@@ -48,13 +48,30 @@
 
 	<div class="page-container {{ page.pageClass }}">
 		{% if page.isPost %}
-			<a href="/blog" id="all-posts">Back to All Posts</a>
+			<a href="/blog" id="all-posts" class="red-button">&larr; Back to All Posts</a>
 			<br>
 			<h1>{{ page.title }}</h1>
 			<span class="post-date">Posted {{ page.date | date: "%B %d, %Y" }}</span>
 		{% endif %}
 
 		{{ content }}
+
+
+		{% if page.isPost %}
+		<div class="post-controls">
+			{% if page.previous %}
+				<a href="{{ page.previous.url }}" class="red-button">&larr; Previous</a>
+			{% else %}
+				<span class="red-button disabled">&larr; Previous</span>
+			{% endif %}
+
+			{% if page.next %}
+				<a href="{{ page.next.url }}" class="red-button">Next &rarr;</a>
+			{% else %}
+				<span class="red-button disabled">Next &rarr;</span>
+			{% endif %}
+		</div>
+		{% endif %}
 	</div>
 
 	{% comment %} Site wide footer {% endcomment %}
