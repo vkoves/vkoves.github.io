@@ -20,6 +20,9 @@ stylesheets:
       <a href="{{ post.url }}">
       	<span class="title">{{ post.title }}</span>
       </a>
+      {% if post.draft %}
+        <span class="category" style="display: inline-block">Draft</span>
+      {% endif %}
       {% for category in post.categories %}
         <span class="category">{{ category }}</span>
       {% endfor %}
