@@ -31,7 +31,8 @@
 	margin-right: 10px;
 }
 .post-listing .category {
-	display: inline-block;
+	display: none;
+	/*display: inline-block;*/
 	background: gainsboro;
 	padding: 2px 10px;
 	margin-top: 8px;
