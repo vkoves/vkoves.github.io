@@ -39,6 +39,7 @@ hr
 /* Post List Styling on the Posts page */
 .post-list
 {
+	padding-left: 0px; 
 	list-style: none;
 }
 .post-listing
