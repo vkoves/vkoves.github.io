@@ -28,7 +28,7 @@
 	height: 100% !important;
 	-webkit-filter: brightness(50%) blur(5px);
 	filter: brightness(50%) blur(5px);
-	background-position: center center !important;
+	background-position: top center !important;
 	background-size: cover !important;
 }
 /* Make links in the overlay red for readability and theming */
@@ -70,4 +70,5 @@
 .photo-text a:hover
 {
 	background-color: #d8d8d8;
+	text-shadow: none;
 }
