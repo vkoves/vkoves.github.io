@@ -544,7 +544,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 .left-align { text-align: left; }
 .no-bold { font-weight: normal; }
-code.inline
+code.inline, code.highlighter-rouge
 {
 	font-family: monospace;
 	background: white;
