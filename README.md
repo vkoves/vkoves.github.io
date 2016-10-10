@@ -4,4 +4,8 @@ My personal website, used for everything from showcasing work to prototyping and
 
 ## Features
 - Gallery - Powered by jQuery and some nifty CSS3, this animated gallery shows off some visual parts of my work, including a way to view titles and descriptions.
-- Portfolio - Still WIP, but each project will have it's own gallery and description.
+- Portfolio - List of projects, each with its own gallery of images, description, and set of tools
+- Blog - Jekyll powered blog
+
+## Notable Pages
+- [Apollo](http://viktorkoves.com/apollo) - Spotify API powered tool for learning more about songs
