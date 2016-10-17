@@ -10,7 +10,7 @@ that look, and is it practical?
 
 ## Traditional Documentation
 
-From what I've seen most good documentation basically takes the form of summary
+From what I've seen, most good documentation basically takes the form of summary
 statements at the start of functions, giving a description of what the function
 does overall. Classic JSDoc comments are a commonplace example of this. Here's
 an example of that style of comment:
@@ -120,7 +120,7 @@ function jump()
     }
   }
 }
-{% endhighlight %}
+{% endhighlight %}  
 
 Although this function is documented very thoroughly (there's a comment on every
 line that isn't a bracket), the comments are not necessarily always useful. While
@@ -172,4 +172,7 @@ function jump()
 This combination of a block comment explaining the overall function purpose
 with inline comments creates a readable function for all use cases, whether
 someone is working with the function, or working on the function, they can
-get the information they need with relative ease.
+get the information they need with relative ease. This form of documentation
+is what I end up using in most of my projects for this reason.
+
+Have other ways you document your code that you think might be better? Let me know!
