@@ -6,7 +6,8 @@ categories: Coding
 
 When writing styling, it can be a challenge to write styling that's readable,
 but proper use of classes, different HTML tags, and organization in your styling
-can help. 
+can help. This article should be common knowledge to those well versed in "proper"
+CSS use, but for those who may have picked it up over time, I hope it can be useful.
 
 For this I'll be dealing mostly with SCSS, as that's what I use most often,
 but this is directly applicable to CSS as well.
@@ -150,7 +151,7 @@ header
     {
         font-size: 12px;
     }
-    .mmobile-menu-icon
+    .mobile-menu-icon
     {
         width: 50px;
         height: 50px;
@@ -158,3 +159,7 @@ header
 }
 {% endhighlight %}
 
+This styling is modular and easy to read thanks to the its use of proper CSS classes.
+This type of styling should be obvious, but I've seen a few projects where a lot of the
+styling uses just the HTML tags that are in the DOM like in the first example, even though
+CSS classes are also present.
