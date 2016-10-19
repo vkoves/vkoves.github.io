@@ -437,6 +437,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 	background: rgba(0,0,0,1);
 }
 #overlay-info .description { font-size: 20px; }
+#overlay-info .description a {
+	color: #D80000;
+	text-decoration: none;
+}
 .info-cont
 {
 	width: 100%;
