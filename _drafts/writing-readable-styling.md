@@ -67,11 +67,11 @@ div:first-of-type
 }
 {% endhighlight %}
 
-This is technically correct, but has two main problems - *britleness* and *readability*.
+This is technically correct, but has two main problems - *brittleness* and *readability*.
 
 What do I mean by saying this code is brittle? Styling is meant to be compartmentalized,
 but reusable in a wide variety of scenarios. This styling makes assumptions about the 
-layout of the doucment that can be extremely dangerous, and make it so any small change
+layout of the document that can be extremely dangerous, and make it so any small change
 made to the HTML, even in just the order of elements, will break this styling. Although
 you could say it's fair to assume the header is the first div on the page, consider what
 would happen if a notification has to be displayed which shows up above the header, like
