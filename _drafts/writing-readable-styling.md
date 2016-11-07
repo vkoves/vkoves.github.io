@@ -4,13 +4,13 @@ isPost: true
 categories: Coding
 ---
 
-When writing styling, it can be a challenge to write styling that's readable,
-but proper use of classes, different HTML tags, and organization in your styling
-can help. This article should be common knowledge to those well versed in "proper"
-CSS use, but for those who may have picked it up over time, I hope it can be useful.
+When writing styling, it can be a challenge to write styling that's readable, modular, 
+and functional, especially if you're just learning CSS. So how can you write readable styling?
 
-For this I'll be dealing mostly with SCSS, as that's what I use most often,
-but this is directly applicable to CSS as well.
+This article should be common knowledge to those well versed in "proper"
+CSS use, but for those who may have picked it up over time, I hope it can be useful. 
+It is worth noting that for this piece I'll be dealing mostly with SCSS, as that's 
+what I use most often, but these techniques are directly applicable to ordinary CSS as well.
 
 To start, lets give some simple example HTML for a website's header, with a logo
 and some basic navigation buttons, which is shown below.
