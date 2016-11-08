@@ -35,6 +35,11 @@
 .overlay-text a
 {
 	color: #d80000;
+	text-decoration: none;
+}
+.overlay-text a:hover
+{
+	text-decoration: underline;
 }
 .photo-texts
 {
