@@ -18,12 +18,20 @@
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 	<!-- Added Open Sans from Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic" rel="stylesheet" type="text/css">
-	<meta name="theme-color" content="#D80000">
+	{% if page.metadata %}
+		<meta name="theme-color" content="{{ page.metadata[0].theme_color }}">
+		<meta name="description" content="{{ page.metadata[0].description }}">
+		<meta property="og:description" content="{{ page.metadata[0].description }}" />
+		<meta property="og:image" content="{{ page.metadata[0].image }}" />
+	{% else %}
+		<meta name="theme-color" content="#D80000">
+		<meta name="description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
+		<meta property="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast." />
+		<meta property="og:image" content="http://viktorkoves.com/images/logo.png" />
+	{% endif %}
+	
 	<meta name="viewport" content="width=450, initial-scale=0.75">
 	<meta name="google-site-verification" content="aivQX75RILmCefXvQj496cBxd8ycZ-AWTKRMQJGoyA4" />
-	<meta name="description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
-	<meta property="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast." />
-	<meta property="og:image" content="http://viktorkoves.com/images/logo.png" />
 	<!-- Google Analytics -->
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

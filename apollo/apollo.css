@@ -2,8 +2,12 @@
 {
 	font-family: 'Montserrat', sans-serif;
 	color: #1d1d1d;
-	margin-top: 10px;
+	margin-top: 0px;
 }
+
+/* Customize the header color */
+#header { background-color: rgb(90, 0, 93); }
+.footer { display: none; } /* Remove footer */
 
 /* Add basic pill button styling */
 .apollo-btn
@@ -29,6 +33,9 @@
 /* Make grey if disabled */
 .apollo-btn.disabled { background-color: #c5c5c5; }
 
+/***************************/
+/***** PREAUTH STYLING *****/
+/***************************/
 /* Make main Apollo text very large with no bottom margin */
 .main-title
 {
@@ -41,34 +48,97 @@
 	margin-top: 10px;
 	font-weight: normal;
 }
+.pre-authorize .page-limiter { max-width: 1200px; }
 .pre-authorize .description-text
 {
 	line-height: 1.5;
 	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
 	text-align: left;
 }
-.pre-authorize .screenshot
+.pre-authorize .section
 {
-	width: 44%;
-	margin: 0% 2% 0% 2%;
-	box-shadow: 0px 0px 3px grey;
+	margin: 30px auto;
+	padding: 60px 0px;
 }
+.pre-authorize .section:last-of-type { padding-bottom: 0px } /* Remove bottom padding on last section, since body already has it */
+.pre-authorize .section.has-background
+{
+	background: linear-gradient(#673ab7, purple);
+	/*background-color: #673AB7;*/
+	color: white;
+}
+.pre-authorize .section h1
+{
+	text-align: left;
+	width: 80%;
+	margin-top: 40px;
+}
+.pre-authorize .section:not(.has-background) h1
+{
+	color: #673AB7;
+}
+.pre-authorize .section .screenshot
+{
+	width: 38%;
+	display: inline-block;
+}
+.pre-authorize .section .text
+{
+	width: 58%;
+	display: inline-block;
+	vertical-align: top;
+}
+.pre-authorize .section .text.right-text h1,
+.pre-authorize .section .text.right-text h3
+{
+	margin-left: 20%;
+}
+
 .pre-authorize .caption
 {
 	margin-bottom: 20px;
 	color: #3c3c3c;
 	margin-top: 5px;
 }
+.pre-authorize .banner
+{
+	background: linear-gradient(purple, #673ab7);
+	color: white;
+	padding: 40px;
+	margin-bottom: 30px;
+}
+/* Style button for logging in */
+#spotify-authorize
+{
+	font-size: 18px;
+	background-color: transparent;
+	border: solid 2px white;
+	transition: background-color 0.2s;
+	padding: 8px 40px;
+	margin: 20px 0px 40px 0px;
+}
+#spotify-authorize:hover { background-color: rgba(255, 255, 255, 0.1); }
+#spotify-authorize img
+{
+	float: left;
+	height: 21px;
+	margin-right: 10px;
+}
+#spotify-authorize span { line-height: 21px; }
+/***************************/
+/*** END PREAUTH STYLING ***/
+/***************************/
 
 /* Hide feature-rich panel by default (wait till auth) */
-.post-authorize { display: none; }
+.post-authorize {
+	display: none;
+	margin-top: 10px;
+}
 
 /* Style the top menu */
 .menu-bar
 {
-	display: none;
+	/*display: none;*/
 	margin-bottom: 20px;
 	height: 70px;
 	background-color: #dadada;
@@ -84,7 +154,6 @@
 	height: 100%;
 	cursor: pointer;
 	float: left;
-	bprder
 }
 .menu-option:hover
 {
@@ -338,8 +407,18 @@ input[type="text"]
 	display: inline-block;
 	position: relative;
 	padding-bottom: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .col-title:hover > .col-desc { display: block; }
+.col-title .std-dev {
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	margin: 5px auto 0px auto;
+	color: #272727;
+}
 .col-desc {
 	position: absolute;
 	width: 250%;
@@ -391,12 +470,23 @@ input[type="text"]
 	height: 0%;
 	transition: height 1s;
 }
+.fill.fill-1, .fill.fill-2 {
+	width: 40%;
+}
+.fill.fill-1 { background-color: #8b4df9; }
+.fill.fill-2 { left: 50%; }
+
 .graph-col .value {
 	position: absolute;
 	width: 100%;
 	bottom: 100%;
 	font-weight: 600;
 	font-size: 1.25em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.value.value-1, .value.value-2 { 
+    font-size: 0.8em;
 }
 /* End Graph Styling */
 
@@ -428,3 +518,19 @@ input[type="text"]
 .two-track-cont .album-image-cont { margin: 0% 14.8%; } /* Give space between albums */
 .two-track-cont .album-image-cont img { margin-top: 20%; } /* Need larger margins when showing two albums */
 /* End Compare Songs Styling */
+
+/* Album and Playlist Analysis Styling */
+.album-module, .playlist-module { display: none; }
+/* End Album and Playlist Analysis Styling */
+
+/* Generic Styling */
+.zero-top
+{
+	padding-top: 0px;
+	margin-top: 0px;
+}
+.zero-bot
+{
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
