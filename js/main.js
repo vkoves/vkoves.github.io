@@ -174,6 +174,9 @@ function Gallery(galleryData, options)
 			if(options && options.showInfo)
 				infoIcon = '<div class="icon info"></div>';
 
+			if(url.indexOf("/thumbs") > -1) // if this is a thumbnail
+				url = url.replace("/thumbs",""); // use the full size image
+
 		  	$("#overlay-main").html(
 		  	'<div class="img-base centered">' +
 		  		'<div class="img-container">' +
