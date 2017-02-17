@@ -5,11 +5,12 @@ rvm:
   - 2.3.0
 
 install: bundle install # Install needed gems
-script: jekyll build && htmlproofer ./_site --assume-extension --allow-hash-href # Build with Jekyll & test with HTML Proofer
+script: jekyll build && htmlproofer ./_site --assume-extension --allow-hash-href --http-status-ignore "999" # Build with Jekyll & test with HTML Proofer
 
 # In particular these HTML Proofer parameters
 # --assume-extension    - Fix needing the .html extension on links
 # --allow-hash-href     - Fix href="#" being marked as invalid
+# --http-status-ignore "999" - Ignore broken links with no error (caused by LinkedIn)
 
 env:
   global:
