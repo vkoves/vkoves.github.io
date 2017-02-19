@@ -1,5 +1,7 @@
 markdown: kramdown
 highlighter: rouge
+permalink: /:year/:month/:day/:title
+
 # Define some defaults
 defaults:
   -
