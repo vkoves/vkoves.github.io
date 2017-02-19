@@ -559,3 +559,22 @@ code.inline, code.highlighter-rouge
 	color: #d80000;
 	border-radius: 5px;
 }
+
+/* Code for fluid full width video from CSS Tricks:
+https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+.video-cont { max-width: 700px; }
+.videoWrapper
+{
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+.videoWrapper.slides { padding-top: 29px; }
+.videoWrapper iframe
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
