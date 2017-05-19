@@ -46,19 +46,19 @@
 		<!-- Social Media Title for Twitter & Open Graph -->
 		{% if page.title %}
 			<meta name="twitter:title" content="{{page.title}} - Viktor K&ouml;ves">
-			<meta name="og:title" content="{{page.title}} - Viktor K&ouml;ves">
+			<meta property="og:title" content="{{page.title}} - Viktor K&ouml;ves">
 		{% else %}
 			<meta name="twitter:title" content="Viktor K&ouml;ves">
-			<meta name="og:title" content="Viktor K&ouml;ves">
+			<meta property="og:title" content="Viktor K&ouml;ves">
 		{% endif %}
 
 		<!-- Social Media Description for Twitter & Open Graph -->
 		{% if page.excerpt %}
 			<meta name="twitter:description" content="{{page.excerpt | strip_html | strip }}">
-			<meta name="og:description" content="{{page.excerpt  | strip_html | strip }}">
+			<meta property="og:description" content="{{page.excerpt  | strip_html | strip }}">
 		{% else %}
 			<meta name="twitter:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
-			<meta name="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
+			<meta property="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
 		{% endif %}
 	{% endif %}
 
