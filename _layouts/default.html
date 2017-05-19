@@ -14,7 +14,13 @@
 		<link href="/css/post.css" rel="stylesheet">
 	{% endif %}
 	{{ stylesheets }}
-	<title>Viktor K&ouml;ves</title> <!-- Oh what fun, an Oumlaut! -->
+	<title>
+		{% if page.title %}
+			{{page.title}} - Viktor K&ouml;ves
+		{% else %}
+			Viktor K&ouml;ves
+		{% endif %}
+	</title> <!-- Oh what fun, an Oumlaut! -->
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 	<!-- Added Open Sans from Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,700,700italic,600italic,600,400italic" rel="stylesheet" type="text/css">
@@ -28,7 +34,6 @@
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="{{ page.metadata[0].og_title }}">
 		<meta property="twitter:description" content="{{ page.metadata[0].og_description }}" />
-		<meta property="og:image" content="{{ page.metadata[0].image }}" />
 	{% else %}
 		<meta name="theme-color" content="#D80000">
 		<meta name="description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
@@ -39,7 +44,15 @@
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Viktor K&ouml;ves">
 		<meta property="twitter:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast." />
-		<meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
+
+		<!-- Social Media Title for Twitter & Open Graph -->
+		{% if page.title %}
+			<meta name="twitter:title" content="{{page.title}} - Viktor K&ouml;ves">
+			<meta name="og:title" content="{{page.title}} - Viktor K&ouml;ves">
+		{% else %}
+			<meta name="twitter:title" content="Viktor K&ouml;ves">
+			<meta name="og:title" content="Viktor K&ouml;ves">
+		{% endif %}
 	{% endif %}
 
 	<meta name="viewport" content="width=450, initial-scale=0.75">
