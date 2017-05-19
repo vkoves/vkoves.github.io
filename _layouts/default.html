@@ -37,13 +37,11 @@
 	{% else %}
 		<meta name="theme-color" content="#D80000">
 		<meta name="description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
-		<meta property="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast." />
 		<meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
 
 		<!-- Twitter Info -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Viktor K&ouml;ves">
-		<meta property="twitter:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast." />
 
 		<!-- Social Media Title for Twitter & Open Graph -->
 		{% if page.title %}
@@ -52,6 +50,15 @@
 		{% else %}
 			<meta name="twitter:title" content="Viktor K&ouml;ves">
 			<meta name="og:title" content="Viktor K&ouml;ves">
+		{% endif %}
+
+		<!-- Social Media Description for Twitter & Open Graph -->
+		{% if page.excerpt %}
+			<meta name="twitter:description" content="{{page.excerpt}}">
+			<meta name="og:description" content="{{page.excerpt}}">
+		{% else %}
+			<meta name="twitter:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
+			<meta name="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
 		{% endif %}
 	{% endif %}
 
