@@ -1,0 +1,334 @@
+/* Yeah, my comments are strange here, but only a select few saw when my comments went crazy the first time in pretty much every page.
+
+Ah, youth.
+
+*/
+
+body {
+	margin: 0;
+	font-family:'Open Sans', sans-serif;
+	color: rgb(50, 50, 50);
+}
+
+font {
+	font-family:'Open Sans', sans-serif;
+}
+
+h1  {
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+h1#main-title {
+	color: indigo;
+	font-size: 3.625em;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+p {
+	font-size: 1.25em;
+	line-height: 1.5;
+}
+
+a.dl {
+	position: relative;
+	font-size:  1.5em;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	background: #00BD00;
+	padding: 5px 20px;
+	border-radius: 5px;
+	border-bottom: solid 4px green;
+	top: 5px;
+}
+
+a.minorlink {
+	color:#EEEEEE;
+	text-decoration:none;
+	font-family:'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+a.dl:hover {
+	border-width: 2px;
+	margin-top: 2px;
+	top: 7px;
+	text-decoration:none;
+	font-family:'Open Sans', sans-serif;
+}
+
+.ext-logo {
+
+}
+
+a.minorlink:hover {
+	color:#FFAAAA;
+	text-decoration:none;
+	font-family:'Open Sans', sans-serif;
+}
+
+#intro {
+	height:90vh;
+	width:100%;
+	background-image:url(../img/bg-large.png);
+	background-size:cover;
+	background-position: center;
+	letter-spacing: 1px;
+	color:#333333;
+}
+
+#bgimg {
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:30%;
+	height:500px;
+	z-index:-1;
+	position:relative;
+}
+
+#mainIntro {
+	top:20%;
+	width:650px;
+	max-width: 100%;
+	text-align:right;
+	right:0%;
+	padding: 3.125em;
+	position:absolute;
+	background-image:url(../img/20pertrans.png);
+	z-index:5000;
+	background-repeat:repeat;
+	color:#111111;
+}
+
+#header {
+	top:0px;
+	height:70px;
+	left:0px;
+	right:0px;
+	width:100%;
+	position:fixed;
+	background-color: rgba(103, 129, 175, 0.75);
+	z-index:90015501;
+	overflow:hidden;
+}
+
+#inner {
+
+	top:18px;
+	height:50px;
+	left:2%;
+	right:5%;
+	width:100%;
+	position:fixed;
+	display:table-cell;
+	color:White;
+	font-size: 1.5em;
+}
+
+#inner img{
+	background: white;
+	border-radius: 35px;
+	position: relative;
+	top: -11px;
+	height: 110%;
+}
+
+section.two-col {
+	padding: 15em 0px;
+}
+
+section.two-col p {
+	margin: 0;
+}
+
+section.two-col h1 {
+	margin-top: 20%;
+	margin-bottom: 0.25em;
+	font-size: 2.25em;
+}
+
+section.two-col:nth-of-type(odd) {
+	background-color: #a03e32;
+	color: rgb(255, 255, 255);
+}
+
+section.two-col:nth-of-type(odd) .inner {
+	flex-direction: row-reverse;
+}
+
+section.two-col:nth-of-type(odd) .text {
+	padding-left: 64px;
+}
+
+section.two-col:nth-of-type(even) .text {
+	padding-right: 64px;
+}
+
+section.two-col .inner {
+	display: flex;
+	margin: auto;
+	width: 90%;
+	max-width: 1200px;
+	justify-content: space-between;
+}
+
+section.two-col img {
+	height: 600px;
+	max-width: 90%;
+	border: solid 0.5em #eadede;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+#download-sect {
+	width:100%;
+	background-size:100%;
+	letter-spacing: 1px;
+	background-color: #a03e32;
+	padding: 100px 0px 10px 0px;
+	color: white;
+}
+
+#download-sect a {
+	text-decoration: none;
+	color: inherit;
+}
+
+#download-sect a:hover { text-decoration: underline; }
+
+#download-sect p {
+	max-width: 1000px;
+}
+
+#download-sect .text {
+	background: border-box;
+}
+
+#download-sect p {
+	max-width: 800px;
+	text-align: left;
+}
+
+#download-sect .widget {
+	display: flex;
+	width: 95%;
+	height: 500px;
+	max-width: 1200px;
+	margin: 64px 0px;
+	color: rgb(160, 62, 51);
+	border-radius: 25px;
+	overflow: hidden;
+	justify-content: space-between;
+}
+
+#download-sect .widget > * {
+	width: 49.5%;
+	background-color: rgb(255, 255, 255);
+}
+
+#download-sect .left iframe { margin-top: 30px; }
+
+#download-sect .download-links {
+	display: flex;
+	margin-top: 120px;
+	width: 90%;
+}
+
+#download-sect .download-links a {
+	width: 33%;
+	font-weight: 600;
+	font-size: 1.25em;
+}
+
+#download-sect .download-links img {
+	height: 110px;
+	margin-bottom: 10px;
+}
+
+#buildsActual {
+	top:189%;
+	left:0px;
+	right:0px;
+	height:89%;
+	width:100%;
+	background-image:url(../img/NeverEnoughArtisticEffects.png);
+	background-size:100%;
+	letter-spacing: 1px;
+	position:absolute;
+	color:#6E6E6E;
+	overflow:hidden;
+}
+
+#collaborators {
+	top:278%;
+	left:0px;
+	right:0px;
+	height:89%;
+	width:100%;
+	background-size:100%;
+	letter-spacing: 1px;
+	position:absolute;
+	color:#111111;
+	overflow:hidden;
+}
+
+/* Mobile styling */
+
+@media (max-width: 1100px) {
+	body { font-size: 14px; }
+	section.two-col { padding: 5em 0em; }
+	section.two-col h1 { margin-top: 0; }
+	#mainIntro {
+		padding: 2em 5% 3em 5%;
+		box-sizing: border-box;
+		text-align: left;
+	}
+	#header .hide-mobile { display: none; }
+	#mainIntro br.hide-mobile { display: none; }
+	h1#main-title { font-size: 2.25em; }
+	section.two-col .inner {
+		flex-direction: column !important;
+		align-items: center;
+	}
+	section.two-col .text {
+		padding: 0 !important;
+		margin-bottom: 3em;
+	}
+	section.two-col h1 {
+		font-size: 2em;
+	}
+	section.two-col img { height: auto; }
+	#download-sect {
+		padding-top: 5em;
+	}
+	#download-sect .text > h1 {
+		margin-top: 0;
+		width: 90%;
+		text-align: left;
+	}
+	#download-sect .download-links { margin: 4em 0em; }
+	#download-sect .download-links img { height: 3.5em; }
+	#download-sect .widget {
+		flex-direction: column;
+		height: auto;
+		max-width: 90%;
+	}
+	#download-sect .right {
+		border-top: solid 0.5em #a03e33;
+	}
+	#download-sect p {
+		max-width: 90%;
+	}
+	#download-sect .widget > * {
+		width: 100%;
+		padding: 2em 0em;
+	}
+	.small-text {
+		text-align: left;
+		width: 90%;
+	}
+}
