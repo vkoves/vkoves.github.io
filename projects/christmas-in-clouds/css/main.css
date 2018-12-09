@@ -195,6 +195,7 @@ section.two-col img {
 
 #download-sect a {
 	text-decoration: none;
+	font-weight: bold;
 	color: inherit;
 }
 
