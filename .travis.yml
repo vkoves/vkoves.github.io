@@ -1,19 +1,18 @@
 # Travis configuration file
-# Environment and script configuration copied from Jekyll Continuous Integration Guide (see https://jekyllrb.com/docs/continuous-integration/)
+# Some configuration copied from Jekyll Continuous Integration Guide
+# See https://jekyllrb.com/docs/continuous-integration/travis-ci/
 language: ruby
 rvm:
   - 2.3.0
 
 install: bundle install # Install needed gems
-script: jekyll build && htmlproofer ./_site --assume-extension --allow-hash-href --http-status-ignore "999" # Build with Jekyll & test with HTML Proofer
-
-# In particular these HTML Proofer parameters
-# --assume-extension    - Fix needing the .html extension on links
-# --allow-hash-href     - Fix href="#" being marked as invalid
-# --http-status-ignore "999" - Ignore broken links with no error (caused by LinkedIn)
+script: ./ci.sh # Run continuous integration shell script
 
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+# Cache gems
+cache: bundler
 
 sudo: false # route your build to the container-based infrastructure for a faster build
