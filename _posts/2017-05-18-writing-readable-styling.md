@@ -19,7 +19,7 @@ To start, let us look at some example HTML for a website's header, with a logo
 and some basic navigation buttons, shown below.
 
 {% highlight html linenos %}
-<html>
+<html lang="en">
 <head>...</head>
 <body>
   <div>
@@ -114,7 +114,7 @@ classes specified in the HTML to style the header.
 Here is an improved HTML sample with sensical classes applied to the HTML.
 
 {% highlight html linenos %}
-<html>
+<html lang="en">
 <head>...</head>
 <body>
   <div class="header">
