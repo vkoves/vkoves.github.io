@@ -10,9 +10,12 @@ title: "Gallery"
 	<br>
 	Click an image to see a bigger version and use your arrow keys to go between images.
 </p>
-<div id="projects" class="toggle-button active">Project Photos</div>
-<div id="hobby" class="toggle-button">Hobby Photos</div>
+
+<button id="projects" class="toggle-button active" aria-pressed="true">Project Photos</button>
+<button id="hobby" class="toggle-button" aria-pressed="false">Hobby Photos</button>
+
 <div id="gallery-container">
+	<!-- Gallery images get loaded into here -->
 </div>
 
 <script>
@@ -198,8 +201,12 @@ title: "Gallery"
 	{
 		$(".gallery-img").hide();
 		$(".gallery-img.projects").css("display", "inline-block");
+
 		$(".toggle-button").removeClass("active");
+		$(".toggle-button").attr('aria-pressed', 'false');
 		$(this).addClass("active");
+		$(this).attr('aria-pressed', 'true');
+
 		galleryInstance.destroy();
 		galleryInstance = new Gallery(gallery, {showInfo: true});
 		location.hash = ""; //clear the hash
@@ -209,8 +216,12 @@ title: "Gallery"
 	{
 		$(".gallery-img").hide();
 		$(".gallery-img.hobby").css("display", "inline-block");
+
 		$(".toggle-button").removeClass("active");
+		$(".toggle-button").attr('aria-pressed', 'false');
 		$(this).addClass("active");
+		$(this).attr('aria-pressed', 'true');
+
 		galleryInstance.destroy();
 		galleryInstance = new Gallery(hobbyGallery);
 		location.hash = "#hobby-photos"; //update the hash for easy sharing
