@@ -185,6 +185,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 	z-index: 0;
 	position: relative;
 	cursor: pointer;
+	background: white;
+	border: none;
 	width: calc(33% - 30px);
     padding: 5px;
     margin: 10px;
@@ -198,12 +200,12 @@ h4 { font-weight: 600; margin-top: 10px; }
 	width: 100%;
 	transition: all 0.3s;
 }
-.gallery-img:hover > img
+.gallery-img:hover > img, .gallery-img:focus > img
 {
 	filter: brightness(50%);
 	-webkit-filter: brightness(50%);
 }
-.gallery-img:hover > .icon
+.gallery-img:hover > .icon, .gallery-img:focus > .icon
 {
 	opacity: 1;
 }

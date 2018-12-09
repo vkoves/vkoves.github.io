@@ -152,20 +152,20 @@ title: "Gallery"
 	gallery.forEach(function(item, index)
 	{
 		$("#gallery-container").append(
-			'<div class="gallery-img projects">' +
+			'<button class="gallery-img projects">' +
 				'<div class="icon fullscreen"></div>' +
 				`<img data-id="${index}" src="${item.url}" alt="${item.alt}">` +
-			'</div>');
+			'</button>');
 	});
 
 	// Generate all hobby gallery tiles
 	hobbyGallery.forEach(function(item, index)
 	{
 		$("#gallery-container").append(
-			'<div class="gallery-img hobby">' +
+			'<button class="gallery-img hobby">' +
 				'<div class="icon fullscreen"></div>' +
 				`<img data-id="${index}" src="${item.url}" alt="${item.alt}">` +
-			'</div>');
+			'</button>');
 	});
 
 	// On click of gallery image
