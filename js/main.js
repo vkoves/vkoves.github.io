@@ -95,7 +95,7 @@ function Gallery(galleryData, options)
 		self.currentImageIndex = index;
 		$("#overlay-controls .nav-dot").removeClass("active");
 		$($("#overlay-controls .nav-dot")[index]).addClass("active");
-		setOverlayImage(getImageUrl(this.galleryData[index])); //set the image
+		setOverlayImage(this.galleryData[index]); //set the image
 		setPageBlur(true);
 		$(".overlay").fadeIn(); //then fade in
 	}
@@ -151,23 +151,26 @@ function Gallery(galleryData, options)
 	/****** PRIVATE METHODS ******/
 	/*****************************/
 
-	function setOverlayImage(url)
+	function setOverlayImage(galleryItem)
 	{
+		let url = getImageUrl(galleryItem);
+		let alt = typeof galleryItem == "object" ? galleryItem.alt : undefined;
+
 		if($("#overlay-main:visible").length > 0 && $("#overlay-main img").length > 0) //if there's already an image
 		{
 			$("#overlay-main .img-container").fadeOut(300, function() //fade it out
 			{
 				//then transition to new image by setting it, hiding it instantly, then fadin in
-				setOverlayHTMLWithImage(url);
+				setOverlayHTMLWithImage(url, alt);
 			  	$("#overlay-main .img-container").hide().fadeIn(300);
 			});
 		}
 		else
 		{
-			setOverlayHTMLWithImage(url);
+			setOverlayHTMLWithImage(url, alt);
 		}
 
-		function setOverlayHTMLWithImage(url)
+		function setOverlayHTMLWithImage(url, alt = undefined)
 		{
 			var infoIcon = "";
 
@@ -180,7 +183,9 @@ function Gallery(galleryData, options)
 		  	$("#overlay-main").html(
 		  	'<div class="img-base centered">' +
 		  		'<div class="img-container">' +
-			  		'<img src="' + url + '">' +
+			  		`<img src="${url}"` +
+			  			(alt ? `alt="${alt}"` : '') + // add all tag if it exists
+			  			'>' +
 			  		infoIcon +
 		  		'</div>' +
 		  	'</div>');
