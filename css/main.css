@@ -209,6 +209,11 @@ h4 { font-weight: 600; margin-top: 10px; }
 {
 	opacity: 1;
 }
+/* Override default outline for gallery images */
+.gallery-img:focus
+{
+	outline: dashed 3px #D82F00;
+}
 .toggle-button
 {
 	display: inline-block;
