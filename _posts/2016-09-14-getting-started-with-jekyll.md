@@ -1,15 +1,15 @@
 ---
 layout: default
 isPost: true
-category: 
+category:
  - Jekyll
  - Coding Tips
 ---
 
 Working with Jekyll is a whole lot easier than dealing with tons and tons
-of very redundant (and not at all DRY) HTML code. However, there's a few 
+of very redundant (and not at all DRY) HTML code. However, there's a few
 tricks that I've come up with and used to help make life easier when using
-Jekyll. I'll be updating this as I keep working with Jekyll and find out 
+Jekyll. I'll be updating this as I keep working with Jekyll and find out
 new ways of doing things with it.
 
 <h3 class="left-align">
@@ -25,7 +25,7 @@ How do I do this? In my layout's head tag, I have something like this:
 
 {% highlight html linenos %}
 {% raw %}
-<html>
+<html lang="en">
 	<head>
 	{% for stylesheet in page.stylesheets %}
 		<link href="/css/{{  stylesheet }}" rel="stylesheet">
@@ -94,7 +94,7 @@ templating language, that looks something like this:
 </header>
 {% endhighlight %}
 
-The good thing about these Rails comments is that I can safely detail security 
+The good thing about these Rails comments is that I can safely detail security
 characteristics of my applications, give explanations of how the backend works,
 and more without giving this away to a slightly tech-savvy user who views my
 source code. However, there's no way of putting comments in HTML that don't even
