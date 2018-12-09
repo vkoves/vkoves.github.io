@@ -31,16 +31,8 @@
 	background-position: top center !important;
 	background-size: cover !important;
 }
-/* Make links in the overlay red for readability and theming */
-.overlay-text a
-{
-	color: #d80000;
-	text-decoration: none;
-}
-.overlay-text a:hover
-{
-	text-decoration: underline;
-}
+/* Make links in the overlay light-grey for readability */
+.overlay-text a { color: #c7c7c7; }
 .photo-texts
 {
 	position: relative;
