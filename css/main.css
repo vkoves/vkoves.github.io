@@ -406,7 +406,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 	display: inline;
 	position: relative;
 }
-#overlay-main .icon
+/* Style overlay info icon */
+#overlay-main .icon.info
 {
     position: absolute;
     width: 50px;
@@ -419,10 +420,21 @@ h4 { font-weight: 600; margin-top: 10px; }
     background-color: rgba(0,0,0,0.95);
     cursor: pointer;
     border-top-left-radius: 15px;
+    border: none;
     opacity: 0.5;
     transition: opacity 0.3s;
 }
-#overlay-main .icon:hover { opacity: 1; }
+/* On focus and hover make info icon fully visible */
+#overlay-main .icon.info:hover, #overlay-main .icon.info:focus
+{
+	opacity: 1;
+}
+/* And add box-shadow on focus to override outline */
+#overlay-main .icon.info:focus
+{
+	box-shadow: -2px -2px 0px 1px white;
+	outline: none;
+}
 #overlay-main img
 {
 	max-width: 90vw;
@@ -464,29 +476,41 @@ h4 { font-weight: 600; margin-top: 10px; }
 	pointer-events: none;
 }
 /* Make the images (arrows and close) and nav-dots still take pointer events */
-#overlay-controls img, #overlay-controls .nav-dot { pointer-events: auto; }
-#overlay-controls img, #overlay-info #close
+#overlay-controls button, #overlay-controls .nav-dot { pointer-events: auto; }
+
+/* Style overlay buttons */
+.over-btn
 {
 	position: fixed;
 	background: rgba(0,0,0,0.5);
+	border: none;
 	border-radius: 50px;
 	box-sizing: border-box;
 	padding: 10px;
 	cursor: pointer;
 	transition: background 0.3s;
+	width: 50px;
+	height: 50px;
 }
-#overlay-controls img:hover
+.over-btn img
+{
+	width: 100%;
+	height: 100%;
+}
+/* On hover and focus darken background */
+.over-btn:hover, .over-btn:focus
 {
 	background: rgba(0,0,0,1);
 }
-#overlay-controls .arrow
+/* On focus add white box-shadow to replace outline */
+.over-btn:focus
 {
-	width: 50px;
+	box-shadow: 0px 0px 0px 3px white;
+	outline: none;
 }
 #overlay-controls #close, #overlay-info #close
 {
 	z-index: 25;
-	width: 50px;
 	top: 10px;
 	right: 10px;
 }

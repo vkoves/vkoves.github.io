@@ -32,7 +32,9 @@ function showInfo(title, description)
 			'<div class="title">' + title + '</div>' +
 			'<div class="description">' + description + '</div>' +
 		'</div>' +
-		'<img id="close" src="images/icons/cross.svg">' +
+		'<button id="close" class="over-btn">' +
+			'<img alt="Close info overlay" src="images/icons/cross.svg">' +
+		'</button>' +
 	'</div>');
 	$("#overlay-info .centered").click(function(event)
 	{
@@ -72,14 +74,21 @@ function Gallery(galleryData, options)
 		var navigationDots = ""; // HTML for the navigation circles that show you how many images there are
 		navigationDots = '<div class="nav-dot"></div>'.repeat(galleryData.length); //repeat a single dot as many times as there are image
 
+		// Have overlay-controls first so it gets focus first
 		$("body").append(
-			'<div id="overlay-main" class="overlay overlay-transparent">' +
-			'</div>' +
 			'<div id="overlay-controls" class="overlay">' +
-				'<img id="close" src="images/icons/cross.svg">' +
-				'<img id="right" class="vertically-centered arrow" src="images/icons/chevron-thin-right.svg">' +
-				'<img id="left" class="vertically-centered arrow" src="images/icons/chevron-thin-left.svg">' +
+				'<button id="close" class="over-btn">' +
+					'<img src="images/icons/cross.svg">' +
+				'</button>' +
+				'<button id="left" class="over-btn vertically-centered">' +
+					'<img class="arrow" src="images/icons/chevron-thin-left.svg">' +
+				'</button>' +
+				'<button id="right" class="over-btn vertically-centered">' +
+					'<img class="arrow" src="images/icons/chevron-thin-right.svg">' +
+				'</button>' +
 				'<div class="gallery-nav">' + navigationDots + '</div>' +
+			'</div>' +
+			'<div id="overlay-main" class="overlay overlay-transparent">' +
 			'</div>'
 		);
 
@@ -175,7 +184,7 @@ function Gallery(galleryData, options)
 			var infoIcon = "";
 
 			if(options && options.showInfo)
-				infoIcon = '<div class="icon info"></div>';
+				infoIcon = '<button class="icon info"></button>';
 
 			if(url.indexOf("/thumbs") > -1) // if this is a thumbnail
 				url = url.replace("/thumbs",""); // use the full size image
