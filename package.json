@@ -1,0 +1,7 @@
+{
+  "name": "vkoves.github.io",
+  "version": "1.0.0",
+  "devDependencies": {
+    "sass-lint": "^1.12.1"
+  }
+}

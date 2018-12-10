@@ -1,3 +1,6 @@
+---
+---
+
 h4{
 	margin-top: 0px;
 }
@@ -22,19 +25,19 @@ h4{
 }
 .button-blue {
 	background: #3D3DFF;
-    border-color: #0606A9;
+	border-color: #0606A9;
 }
 .button-green {
 	background: #01DA01;
-    border-color: #007D00;
+	border-color: #007D00;
 }
 .button-orange {
 	background: orange;
-    border-color: #AF7100;
+	border-color: #AF7100;
 }
 .button-purple {
 	background: #B300B3;
-    border-color: #6F026F;
+	border-color: #6F026F;
 }
 .expander {
 	cursor: pointer;
@@ -58,14 +61,14 @@ h4{
 }
 .expander-color:hover{
 	background: #3D3DFF;
-    border-color: #0606A9;
+	border-color: #0606A9;
 }
 #hal{
 	width: 200px;
 }
 #g4172{
 	transform: rotate(0deg);
-    transform-origin: center;
+	transform-origin: center;
 	transition: transform 2s;
 }
 #g4172:hover {
@@ -86,27 +89,27 @@ ellipse{
 	transition: fill 10s;
 }
 #layer1:hover > ellipse {
-	fill: skyblue !important;
+	fill: skyblue;
 }
 #layer1:hover > path{
-	fill: #FFFFFF !important;
+	fill: #FFFFFF;
 }
 
 /* Scanner Bar CSS */
 .scanner-cont
 {
 	display: inline-block;
-	background: #0c0c0c;
+	background: #0C0C0C;
 	padding: 5px;
 }
 .scanner-segment
 {
 	display: inline-block;
-    width: 50px;
-    height: 20px;
-    background: red;
-    margin: 0px 1px;
-    opacity: 0;
-    transition: opacity 0.4s;
+	width: 50px;
+	height: 20px;
+	margin: 0px 1px;
+	background: red;
+	opacity: 0;
+	transition: opacity 0.4s;
 }
 /* End Scanner Bar CSS */

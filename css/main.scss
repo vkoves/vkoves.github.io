@@ -1,3 +1,6 @@
+---
+---
+
 body
 {
 	position: relative;
@@ -6,7 +9,7 @@ body
 	margin: 0px;
 	padding-top: 40px;
 	padding-bottom: 60px;
-	background: #f3f3f3;
+	background: #F3F3F3;
 	font-size: 16px;
 }
 button { font-family: 'Open Sans', sans-serif; }
@@ -55,15 +58,15 @@ button { font-family: 'Open Sans', sans-serif; }
 {
 	text-decoration: none;
 	color: white;
-    border-radius: 8px;
+	border-radius: 8px;
 	transition: color 0.3s, padding 0.3s, background 0.3s;
 	padding: 3px 10px 3px 10px;
 }
 #header a:hover
 {
- 	color: #404040;
-    background-color: white;
-    padding: 3px 10px 3px 10px;
+	color: #404040;
+	background-color: white;
+	padding: 3px 10px 3px 10px;
 }
 #header-buttons
 {
@@ -92,11 +95,11 @@ h4 { font-weight: 600; margin-top: 10px; }
 {
 	display: none;
 	width: 30px;
-    position: absolute;
-    top: -8px;
-    right: 10px;
-    padding: 5px;
-    cursor: pointer;
+	position: absolute;
+	top: -8px;
+	right: 10px;
+	padding: 5px;
+	cursor: pointer;
 }
 @media (max-width: 800px)
 {
@@ -169,10 +172,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 	height: 50px;
 	position: absolute;
 	left: calc((100% - 50px)/2);
-    top: calc((100% - 50px)/2);
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 1;
+	top: calc((100% - 50px)/2);
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: 1;
 }
 #gallery-container
 {
@@ -183,16 +186,16 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 .gallery-img
 {
+	display: inline-block;
 	z-index: 0;
 	position: relative;
 	cursor: pointer;
 	background: white;
 	border: none;
 	width: calc(33% - 30px);
-    padding: 5px;
-    margin: 10px;
-    box-shadow: 1px 1px 5px #887F7F;
-    display: inline-block;
+	padding: 5px;
+	margin: 10px;
+	box-shadow: 1px 1px 5px #887F7F;
 }
 /* Hobby Photos hidden by default */
 .gallery-img.hobby { display: none; }
@@ -229,12 +232,12 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 .toggle-button.active
 {
-	background-color: #d80000;
+	background-color: #D80000;
 	color: white;
 }
 .toggle-button:not(.active):hover
 {
-	color: #d80000;
+	color: #D80000;
 }
 @media (max-width: 600px)
 {
@@ -250,13 +253,13 @@ h4 { font-weight: 600; margin-top: 10px; }
 {
 	display: inline-block;
 	width: 90%;
-    max-width: 500px;
-    margin: 0px 10px;
-    text-align: left;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    background: white;
-    box-shadow: 1px 1px 3px grey;
+	max-width: 500px;
+	margin: 0px 10px;
+	text-align: left;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	background: white;
+	box-shadow: 1px 1px 3px grey;
 }
 .projects-tile .title
 {
@@ -357,8 +360,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 .icon-overlay .tools { background-image: url("../images/icons/tools-white.svg"); }
 .tool-cont
 {
-	text-align: center;
 	display: inline-block;
+	text-align: center;
 	margin: 10px 30px;
 }
 .tool-cont img
@@ -373,16 +376,16 @@ h4 { font-weight: 600; margin-top: 10px; }
 .tool-cont .featured-text
 {
 	font-size: 24px;
-    height: 110px;
-    padding-top: 22px;
-    box-sizing: border-box;
-    background-color: white;
-    color: #444444;
-    width: 110px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
+	height: 110px;
+	padding-top: 22px;
+	box-sizing: border-box;
+	background-color: white;
+	color: #444444;
+	width: 110px;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
 }
 .tool-cont .featured-text.large { font-size: 48px; }
 /* End Portfolio Page Styling */
@@ -403,12 +406,12 @@ h4 { font-weight: 600; margin-top: 10px; }
 {
 	display: none;
 	position: fixed;
-    background: rgba(0,0,0,0.75);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
+	background: rgba(0,0,0,0.75);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
 }
 .img-base { width: 100%; }
 .img-container
@@ -439,17 +442,17 @@ h4 { font-weight: 600; margin-top: 10px; }
 	position: absolute;
 	top: -50px;
 	right: -1px;
-    width: 50px;
-    height: 50px;
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: 60% 50%;
-    background-color: black;
-    cursor: pointer;
-    border-top-left-radius: 15px;
-    border: none;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+	width: 50px;
+	height: 50px;
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: 60% 50%;
+	background-color: black;
+	cursor: pointer;
+	border-top-left-radius: 15px;
+	border: none;
+	opacity: 0.7;
+	transition: opacity 0.3s;
 }
 /* On focus and hover make info icon fully visible */
 #overlay-main .icon.info:hover, #overlay-main .icon.info:focus
@@ -493,10 +496,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 #overlay-controls
 {
+	display: none;
 	position: fixed;
 	top: 0px;
 	right: 0px;
-	display: none;
 	z-index: 11;
 	width: 100%;
 	height: 100%;
@@ -545,11 +548,11 @@ h4 { font-weight: 600; margin-top: 10px; }
 #overlay-controls #right { right: 1%; }
 #overlay-controls .nav-dot
 {
+	display: inline-block;
 	background-color: black;
 	width: 10px;
 	height: 10px;
 	border-radius: 100%;
-	display: inline-block;
 	margin: 0px 5px;
 	box-sizing: border-box;
 	cursor: pointer;
@@ -577,16 +580,16 @@ h4 { font-weight: 600; margin-top: 10px; }
 
 .centered
 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .vertically-centered
 {
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
+	position: absolute;
+	top: 50%;
+	transform: translate(0%, -50%);
 }
 .filter-transition
 {
@@ -611,8 +614,8 @@ code.inline, code.highlighter-rouge
 	background: white;
 	font-size: 110%;
 	padding: 2px 5px;
-	background-color: #ffe8ec;
-	color: #d80000;
+	background-color: #FFE8EC;
+	color: #D80000;
 	border-radius: 5px;
 }
 
