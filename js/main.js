@@ -77,13 +77,13 @@ function Gallery(galleryData, options)
 		// Have overlay-controls first so it gets focus first
 		$("body").append(
 			'<div id="overlay-controls" class="overlay">' +
-				'<button id="close" class="over-btn">' +
+				'<button id="close" aria-label="Close overlay" class="over-btn">' +
 					'<img src="images/icons/cross.svg">' +
 				'</button>' +
-				'<button id="left" class="over-btn vertically-centered">' +
+				'<button id="left" aria-label="Previous image" class="over-btn vertically-centered">' +
 					'<img class="arrow" src="images/icons/chevron-thin-left.svg">' +
 				'</button>' +
-				'<button id="right" class="over-btn vertically-centered">' +
+				'<button id="right" aria-label="Next image" class="over-btn vertically-centered">' +
 					'<img class="arrow" src="images/icons/chevron-thin-right.svg">' +
 				'</button>' +
 				'<div class="gallery-nav">' + navigationDots + '</div>' +
