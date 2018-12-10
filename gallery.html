@@ -149,7 +149,7 @@ title: "Gallery"
 		},
 	];
 
-	galleryInstance = new Gallery(gallery, {showInfo: true});
+	galleryInstance = new Gallery(gallery, { showInfo: true });
 
 	// Generate all the projects gallery tiles
 	gallery.forEach(function(item, index)
@@ -208,7 +208,7 @@ title: "Gallery"
 		$(this).attr('aria-pressed', 'true');
 
 		galleryInstance.destroy();
-		galleryInstance = new Gallery(gallery, {showInfo: true});
+		galleryInstance = new Gallery(gallery, { showInfo: true });
 		location.hash = ""; //clear the hash
 	});
 

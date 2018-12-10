@@ -250,9 +250,10 @@ function setPageBlur(enableBlur)
 // Source: https://www.webappcessibility.com/technical/keeping-tab-focus-within-modals/
 function disableTabbingOnPage(tabbableElements) {
 	$.each(tabbableElements, function (index, elem) {
-		// Ensure not in modal or modal controls
+		// Ensure not in main modal, info modal or modal controls
 		if($(elem).parents("#overlay-controls").length == 0
-			&& $(elem).parents("#overlay-main").length == 0) {
+			&& $(elem).parents("#overlay-main").length == 0
+			&& $(elem).parents("#overlay-info").length == 0) {
 			$(elem).attr('tabindex', '-1');
 		}
 	})
