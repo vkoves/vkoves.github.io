@@ -1,60 +1,3 @@
-$(document).ready(function()
-{
-	$("#menu").click(function()
-	{
-		var topPadding = parseInt($("#header").css("padding-bottom"));
-		if(topPadding > 0) //close
-		{
-			$("#header").css("padding-bottom", "0");
-		}
-		else
-		{
-			$("#header").css("padding-bottom", "30");
-		}
-	});
-});
-
-$(window).on('resize', function()
-{
-	if($(window).width() > 600)
-	{
-		$("#header").css("padding-bottom", "0");
-	}
-});
-
-/* General Functions */
-
-// Shows an overlay with text, including a title and description, to explain something.
-function showInfo(title, description)
-{
-	$("body").append('<div id="overlay-info" class="overlay-transparent">' +
-		'<div class="centered info-cont">' +
-			'<div class="title">' + title + '</div>' +
-			'<div class="description">' + description + '</div>' +
-		'</div>' +
-		'<button id="close" class="over-btn">' +
-			'<img alt="Close info overlay" src="images/icons/cross.svg">' +
-		'</button>' +
-	'</div>');
-	$("#overlay-info .centered").click(function(event)
-	{
-		event.stopPropagation();
-	});
-	$("#overlay-info").click(closeInfo);
-	$("#overlay-info").fadeIn();
-	setPageBlur(true);
-}
-
-// Fades out and removes the info overlay specifically
-function closeInfo()
-{
-	setPageBlur(false);
-	$("#overlay-info").fadeOut(function()
-	{
-		$(this).remove();
-	});
-}
-
 // instantiates a gallery given a gallery data object, which contains info about all images to display
 // this can be either an array of hashes if you want more information in each gallery item
 // or an array of strings if you just need to display images
@@ -101,11 +44,11 @@ function Gallery(galleryData, options)
 	// Show the image with the given index in the galleryData
 	this.showImage = function(index)
 	{
+		setPageBlur(true);
 		self.currentImageIndex = index;
 		$("#overlay-controls .nav-dot").removeClass("active");
 		$($("#overlay-controls .nav-dot")[index]).addClass("active");
 		setOverlayImage(this.galleryData[index]); //set the image
-		setPageBlur(true);
 		$(".overlay").fadeIn(); //then fade in
 	}
 
@@ -229,37 +172,4 @@ function Gallery(galleryData, options)
 			return null;
 		}
 	}
-}
-
-// Blur the page and disable focus on it
-function setPageBlur(enableBlur)
-{
-	var elems = $("#header, .page-container, .footer");
-	var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]');
-
-	if (enableBlur) {
-		elems.addClass("blur");
-		disableTabbingOnPage(tabbableElements);
-	}
-	else {
-		elems.removeClass("blur");
-		reEnableTabbingOnPage(tabbableElements);
-	}
-}
-
-// Source: https://www.webappcessibility.com/technical/keeping-tab-focus-within-modals/
-function disableTabbingOnPage(tabbableElements) {
-	$.each(tabbableElements, function (index, elem) {
-		// Ensure not in modal or modal controls
-		if($(elem).parents("#overlay-controls").length == 0
-			&& $(elem).parents("#overlay-main").length == 0) {
-			$(elem).attr('tabindex', '-1');
-		}
-	})
-}
-
-function reEnableTabbingOnPage(tabbableElements) {
-	$.each(tabbableElements, function (index, elem) {
-		$(elem).attr('tabindex', '0');
-	})
 }
