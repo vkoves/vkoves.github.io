@@ -18,12 +18,12 @@
 }
 .red-button.disabled
 {
-	background-color: transparent !important;
-	color: grey !important;
+	background-color: transparent;
+	color: grey;
 }
 .red-button:hover
 {
-	background-color: #d80000;
+	background-color: #D80000;
 	color: white;
 }
 .post-date
@@ -55,7 +55,7 @@ hr
 	color: black;
 	text-decoration: none;
 }
-.post-list a:hover > span { color: #d80000; }
+.post-list a:hover > span { color: #D80000; }
 .post-listing .title
 {
 	font-size: 24px;

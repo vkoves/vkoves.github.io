@@ -45,7 +45,7 @@ block {
 #with-color a { color: blue; }
 #with-hover a {
 	text-decoration: none;
-	color: #d80000;
+	color: #D80000;
 }
 #with-hover a:hover {
 	text-decoration: underline;
@@ -53,7 +53,7 @@ block {
 
 /* Button Styling */
 #bad-button {
-	background: #afafaf;
+	background: #AFAFAF;
 	color: white;
 	display: inline-block;
 	padding: 5px;
@@ -77,7 +77,7 @@ block {
 	transition: border-bottom-color 0.3s, background-color 0.3s;
 }
 .button.with-hover:hover {
-	background-color: #03ad03;
+	background-color: #03AD03;
 	border-bottom-color: green;
 }
 .button.with-animation span {
