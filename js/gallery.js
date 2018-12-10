@@ -1,60 +1,3 @@
-$(document).ready(function()
-{
-	$("#menu").click(function()
-	{
-		var topPadding = parseInt($("#header").css("padding-bottom"));
-		if(topPadding > 0) //close
-		{
-			$("#header").css("padding-bottom", "0");
-		}
-		else
-		{
-			$("#header").css("padding-bottom", "30");
-		}
-	});
-});
-
-$(window).on('resize', function()
-{
-	if($(window).width() > 600)
-	{
-		$("#header").css("padding-bottom", "0");
-	}
-});
-
-/* General Functions */
-
-// Shows an overlay with text, including a title and description, to explain something.
-function showInfo(title, description)
-{
-	$("body").append('<div id="overlay-info" class="overlay-transparent">' +
-		'<div class="centered info-cont">' +
-			'<div class="title">' + title + '</div>' +
-			'<div class="description">' + description + '</div>' +
-		'</div>' +
-		'<button id="close" class="over-btn">' +
-			'<img alt="Close info overlay" src="images/icons/cross.svg">' +
-		'</button>' +
-	'</div>');
-	$("#overlay-info .centered").click(function(event)
-	{
-		event.stopPropagation();
-	});
-	$("#overlay-info").click(closeInfo);
-	$("#overlay-info").fadeIn();
-	setPageBlur(true);
-}
-
-// Fades out and removes the info overlay specifically
-function closeInfo()
-{
-	setPageBlur(false);
-	$("#overlay-info").fadeOut(function()
-	{
-		$(this).remove();
-	});
-}
-
 // instantiates a gallery given a gallery data object, which contains info about all images to display
 // this can be either an array of hashes if you want more information in each gallery item
 // or an array of strings if you just need to display images
@@ -77,13 +20,13 @@ function Gallery(galleryData, options)
 		// Have overlay-controls first so it gets focus first
 		$("body").append(
 			'<div id="overlay-controls" class="overlay">' +
-				'<button id="close" aria-label="Close overlay" class="over-btn">' +
+				'<button id="close" class="over-btn">' +
 					'<img src="images/icons/cross.svg">' +
 				'</button>' +
-				'<button id="left" aria-label="Previous image" class="over-btn vertically-centered">' +
+				'<button id="left" class="over-btn vertically-centered">' +
 					'<img class="arrow" src="images/icons/chevron-thin-left.svg">' +
 				'</button>' +
-				'<button id="right" aria-label="Next image" class="over-btn vertically-centered">' +
+				'<button id="right" class="over-btn vertically-centered">' +
 					'<img class="arrow" src="images/icons/chevron-thin-right.svg">' +
 				'</button>' +
 				'<div class="gallery-nav">' + navigationDots + '</div>' +
@@ -101,11 +44,11 @@ function Gallery(galleryData, options)
 	// Show the image with the given index in the galleryData
 	this.showImage = function(index)
 	{
+		setPageBlur(true);
 		self.currentImageIndex = index;
 		$("#overlay-controls .nav-dot").removeClass("active");
 		$($("#overlay-controls .nav-dot")[index]).addClass("active");
 		setOverlayImage(this.galleryData[index]); //set the image
-		setPageBlur(true);
 		$(".overlay").fadeIn(); //then fade in
 	}
 
@@ -162,34 +105,29 @@ function Gallery(galleryData, options)
 
 	function setOverlayImage(galleryItem)
 	{
+		let url = getImageUrl(galleryItem);
+		let alt = typeof galleryItem == "object" ? galleryItem.alt : undefined;
 
 		if($("#overlay-main:visible").length > 0 && $("#overlay-main img").length > 0) //if there's already an image
 		{
 			$("#overlay-main .img-container").fadeOut(300, function() //fade it out
 			{
 				//then transition to new image by setting it, hiding it instantly, then fadin in
-				setOverlayHTMLWithImage(galleryItem);
+				setOverlayHTMLWithImage(url, alt);
 			  	$("#overlay-main .img-container").hide().fadeIn(300);
 			});
 		}
 		else
 		{
-			setOverlayHTMLWithImage(galleryItem);
+			setOverlayHTMLWithImage(url, alt);
 		}
 
-		function setOverlayHTMLWithImage(galleryItem)
+		function setOverlayHTMLWithImage(url, alt = undefined)
 		{
-			var infoSect = "";
-			var url = getImageUrl(galleryItem);
-			var alt = typeof galleryItem == "object" ? galleryItem.alt : undefined;
+			var infoIcon = "";
 
-			if(options && options.showInfo) {
-				infoSect = '<div class="info-sect">' +
-					'<button class="icon info"></button>' +
-					'<div class="title">' + galleryItem.title + '</div>' +
-					'<div class="description">' + galleryItem.description + '</div>' +
-				'</div>';
-			}
+			if(options && options.showInfo)
+				infoIcon = '<button class="icon info"></button>';
 
 			if(url.indexOf("/thumbs") > -1) // if this is a thumbnail
 				url = url.replace("/thumbs",""); // use the full size image
@@ -200,7 +138,7 @@ function Gallery(galleryData, options)
 			  		`<img src="${url}"` +
 			  			(alt ? `alt="${alt}"` : '') + // add all tag if it exists
 			  			'>' +
-			  		infoSect +
+			  		infoIcon +
 		  		'</div>' +
 		  	'</div>');
 
@@ -211,7 +149,7 @@ function Gallery(galleryData, options)
 
 		  	$("#overlay-main .img-container .icon.info").click(function()
 		  	{
-		  		$('#overlay-main .info-sect').toggleClass('open')
+		  		showInfo(self.galleryData[self.currentImageIndex].title, self.galleryData[self.currentImageIndex].description)
 		  	});
 		}
 	}
@@ -234,38 +172,4 @@ function Gallery(galleryData, options)
 			return null;
 		}
 	}
-}
-
-// Blur the page and disable focus on it
-function setPageBlur(enableBlur)
-{
-	var elems = $("#header, .page-container, .footer");
-	var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]');
-
-	if (enableBlur) {
-		elems.addClass("blur");
-		disableTabbingOnPage(tabbableElements);
-	}
-	else {
-		elems.removeClass("blur");
-		reEnableTabbingOnPage(tabbableElements);
-	}
-}
-
-// Source: https://www.webappcessibility.com/technical/keeping-tab-focus-within-modals/
-function disableTabbingOnPage(tabbableElements) {
-	$.each(tabbableElements, function (index, elem) {
-		// Ensure not in main modal, info modal or modal controls
-		if($(elem).parents("#overlay-controls").length == 0
-			&& $(elem).parents("#overlay-main").length == 0
-			&& $(elem).parents("#overlay-info").length == 0) {
-			$(elem).attr('tabindex', '-1');
-		}
-	})
-}
-
-function reEnableTabbingOnPage(tabbableElements) {
-	$.each(tabbableElements, function (index, elem) {
-		$(elem).attr('tabindex', '0');
-	})
 }

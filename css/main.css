@@ -9,6 +9,7 @@ body
 	background: #f3f3f3;
 	font-size: 16px;
 }
+button { font-family: 'Open Sans', sans-serif; }
 .page-limiter
 {
 	position: relative;
@@ -185,6 +186,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 	z-index: 0;
 	position: relative;
 	cursor: pointer;
+	background: white;
+	border: none;
 	width: calc(33% - 30px);
     padding: 5px;
     margin: 10px;
@@ -198,22 +201,29 @@ h4 { font-weight: 600; margin-top: 10px; }
 	width: 100%;
 	transition: all 0.3s;
 }
-.gallery-img:hover > img
+.gallery-img:hover > img, .gallery-img:focus > img
 {
 	filter: brightness(50%);
 	-webkit-filter: brightness(50%);
 }
-.gallery-img:hover > .icon
+.gallery-img:hover > .icon, .gallery-img:focus > .icon
 {
 	opacity: 1;
+}
+/* Override default outline for gallery images */
+.gallery-img:focus
+{
+	outline: dashed 3px #D82F00;
 }
 .toggle-button
 {
 	display: inline-block;
 	background-color: lightgrey;
 	padding: 3px 15px;
+	border: none;
 	border-radius: 5px;
 	color: #272727;
+	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
 }
@@ -403,26 +413,55 @@ h4 { font-weight: 600; margin-top: 10px; }
 .img-base { width: 100%; }
 .img-container
 {
-	display: inline;
+	display: inline-block;
 	position: relative;
 }
-#overlay-main .icon
+/* Style overlay info section */
+#overlay-main .info-sect {
+	position: absolute;
+	width: 100%;
+	color: white;
+	bottom: 0px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.7);
+}
+.info-sect.open { padding: 25px 10px; }
+.info-sect:not(.open) .title, .info-sect:not(.open) .description {
+	display: none;
+}
+.info-sect .title {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 1.5em;
+}
+#overlay-main .icon.info
 {
-    position: absolute;
+	position: absolute;
+	top: -50px;
+	right: -1px;
     width: 50px;
     height: 50px;
-    bottom: 4px;
-    right: -1px;
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: 60% 50%;
-    background-color: rgba(0,0,0,0.95);
+    background-color: black;
     cursor: pointer;
     border-top-left-radius: 15px;
-    opacity: 0.5;
+    border: none;
+    opacity: 0.7;
     transition: opacity 0.3s;
 }
-#overlay-main .icon:hover { opacity: 1; }
+/* On focus and hover make info icon fully visible */
+#overlay-main .icon.info:hover, #overlay-main .icon.info:focus
+{
+	opacity: 1;
+}
+/* And add box-shadow on focus to override outline */
+#overlay-main .icon.info:focus
+{
+	box-shadow: -2px -2px 0px 1px white;
+	outline: none;
+}
 #overlay-main img
 {
 	max-width: 90vw;
@@ -464,29 +503,41 @@ h4 { font-weight: 600; margin-top: 10px; }
 	pointer-events: none;
 }
 /* Make the images (arrows and close) and nav-dots still take pointer events */
-#overlay-controls img, #overlay-controls .nav-dot { pointer-events: auto; }
-#overlay-controls img, #overlay-info #close
+#overlay-controls button, #overlay-controls .nav-dot { pointer-events: auto; }
+
+/* Style overlay buttons */
+.over-btn
 {
 	position: fixed;
 	background: rgba(0,0,0,0.5);
+	border: none;
 	border-radius: 50px;
 	box-sizing: border-box;
 	padding: 10px;
 	cursor: pointer;
 	transition: background 0.3s;
+	width: 50px;
+	height: 50px;
 }
-#overlay-controls img:hover
+.over-btn img
+{
+	width: 100%;
+	height: 100%;
+}
+/* On hover and focus darken background */
+.over-btn:hover, .over-btn:focus
 {
 	background: rgba(0,0,0,1);
 }
-#overlay-controls .arrow
+/* On focus add white box-shadow to replace outline */
+.over-btn:focus
 {
-	width: 50px;
+	box-shadow: 0px 0px 0px 3px white;
+	outline: none;
 }
 #overlay-controls #close, #overlay-info #close
 {
 	z-index: 25;
-	width: 50px;
 	top: 10px;
 	right: 10px;
 }
