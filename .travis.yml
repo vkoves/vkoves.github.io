@@ -7,7 +7,7 @@ rvm:
 
 install:
   - bundle install # Install needed gems
-  - npm -g sass-lint # Install Sass Lint (needed for ci.sh)
+  - npm install -g sass-lint # Install Sass Lint (needed for ci.sh)
 
 script: ./ci.sh # Run continuous integration shell script
 

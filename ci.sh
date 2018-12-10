@@ -15,5 +15,5 @@ jekyll build
 htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-status-ignore "999"
 
 
-# Run Sass Lint - cnfigured by .sass-lint.yml
-sass-lint
+# Run Sass Lint verbose - cnfigured by .sass-lint.yml
+sass-lint -v
