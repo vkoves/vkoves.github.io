@@ -413,25 +413,42 @@ h4 { font-weight: 600; margin-top: 10px; }
 .img-base { width: 100%; }
 .img-container
 {
-	display: inline;
+	display: inline-block;
 	position: relative;
 }
-/* Style overlay info icon */
+/* Style overlay info section */
+#overlay-main .info-sect {
+	position: absolute;
+	width: 100%;
+	color: white;
+	bottom: 0px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.7);
+}
+.info-sect.open { padding: 25px 10px; }
+.info-sect:not(.open) .title, .info-sect:not(.open) .description {
+	display: none;
+}
+.info-sect .title {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 1.5em;
+}
 #overlay-main .icon.info
 {
-    position: absolute;
+	position: absolute;
+	top: -50px;
+	right: -1px;
     width: 50px;
     height: 50px;
-    bottom: 4px;
-    right: -1px;
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: 60% 50%;
-    background-color: rgba(0,0,0,0.95);
+    background-color: black;
     cursor: pointer;
     border-top-left-radius: 15px;
     border: none;
-    opacity: 0.5;
+    opacity: 0.7;
     transition: opacity 0.3s;
 }
 /* On focus and hover make info icon fully visible */

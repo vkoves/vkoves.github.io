@@ -162,29 +162,34 @@ function Gallery(galleryData, options)
 
 	function setOverlayImage(galleryItem)
 	{
-		let url = getImageUrl(galleryItem);
-		let alt = typeof galleryItem == "object" ? galleryItem.alt : undefined;
 
 		if($("#overlay-main:visible").length > 0 && $("#overlay-main img").length > 0) //if there's already an image
 		{
 			$("#overlay-main .img-container").fadeOut(300, function() //fade it out
 			{
 				//then transition to new image by setting it, hiding it instantly, then fadin in
-				setOverlayHTMLWithImage(url, alt);
+				setOverlayHTMLWithImage(galleryItem);
 			  	$("#overlay-main .img-container").hide().fadeIn(300);
 			});
 		}
 		else
 		{
-			setOverlayHTMLWithImage(url, alt);
+			setOverlayHTMLWithImage(galleryItem);
 		}
 
-		function setOverlayHTMLWithImage(url, alt = undefined)
+		function setOverlayHTMLWithImage(galleryItem)
 		{
-			var infoIcon = "";
+			var infoSect = "";
+			var url = getImageUrl(galleryItem);
+			var alt = typeof galleryItem == "object" ? galleryItem.alt : undefined;
 
-			if(options && options.showInfo)
-				infoIcon = '<button class="icon info"></button>';
+			if(options && options.showInfo) {
+				infoSect = '<div class="info-sect">' +
+					'<button class="icon info"></button>' +
+					'<div class="title">' + galleryItem.title + '</div>' +
+					'<div class="description">' + galleryItem.description + '</div>' +
+				'</div>';
+			}
 
 			if(url.indexOf("/thumbs") > -1) // if this is a thumbnail
 				url = url.replace("/thumbs",""); // use the full size image
@@ -195,7 +200,7 @@ function Gallery(galleryData, options)
 			  		`<img src="${url}"` +
 			  			(alt ? `alt="${alt}"` : '') + // add all tag if it exists
 			  			'>' +
-			  		infoIcon +
+			  		infoSect +
 		  		'</div>' +
 		  	'</div>');
 
@@ -206,7 +211,7 @@ function Gallery(galleryData, options)
 
 		  	$("#overlay-main .img-container .icon.info").click(function()
 		  	{
-		  		showInfo(self.galleryData[self.currentImageIndex].title, self.galleryData[self.currentImageIndex].description)
+		  		$('#overlay-main .info-sect').toggleClass('open')
 		  	});
 		}
 	}
