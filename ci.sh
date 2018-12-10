@@ -1,5 +1,8 @@
 # Continuous Integration - run by Travis or can be run locally
 
+# Fail out if anything errors
+set -e
+
 # Run Jekyll build to generate site output
 jekyll build
 
