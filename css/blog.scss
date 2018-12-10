@@ -9,9 +9,9 @@
 }
 .red-button
 {
+	padding: 2px 8px;
 	text-decoration: none;
 	background-color: gainsboro;
-	padding: 2px 8px;
 	border-radius: 3px;
 	color: #101010;
 	font-weight: 600;
@@ -34,9 +34,9 @@
 }
 hr
 {
+	height: 1px;
 	background: lightgrey;
 	border: none;
-	height: 1px;
 }
 
 /* Post List Styling on the Posts page */
@@ -64,9 +64,8 @@ hr
 }
 .post-listing .category {
 	display: none;
-	/*display: inline-block;*/
-	background: gainsboro;
 	padding: 2px 10px;
+	background: gainsboro;
 	margin-top: 8px;
 	border-radius: 5px;
 	vertical-align: top;

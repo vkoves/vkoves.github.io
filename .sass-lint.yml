@@ -41,5 +41,4 @@ rules:
     -
       order:
         - display
-        - margin
       ignore-custom-properties: true

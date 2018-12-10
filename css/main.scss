@@ -186,6 +186,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 .gallery-img
 {
+	display: inline-block;
 	z-index: 0;
 	position: relative;
 	cursor: pointer;
@@ -195,7 +196,6 @@ h4 { font-weight: 600; margin-top: 10px; }
 	padding: 5px;
 	margin: 10px;
 	box-shadow: 1px 1px 5px #887F7F;
-	display: inline-block;
 }
 /* Hobby Photos hidden by default */
 .gallery-img.hobby { display: none; }
@@ -360,8 +360,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 .icon-overlay .tools { background-image: url("../images/icons/tools-white.svg"); }
 .tool-cont
 {
-	text-align: center;
 	display: inline-block;
+	text-align: center;
 	margin: 10px 30px;
 }
 .tool-cont img
@@ -496,10 +496,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 #overlay-controls
 {
+	display: none;
 	position: fixed;
 	top: 0px;
 	right: 0px;
-	display: none;
 	z-index: 11;
 	width: 100%;
 	height: 100%;
@@ -548,11 +548,11 @@ h4 { font-weight: 600; margin-top: 10px; }
 #overlay-controls #right { right: 1%; }
 #overlay-controls .nav-dot
 {
+	display: inline-block;
 	background-color: black;
 	width: 10px;
 	height: 10px;
 	border-radius: 100%;
-	display: inline-block;
 	margin: 0px 5px;
 	box-sizing: border-box;
 	cursor: pointer;

@@ -17,16 +17,16 @@ h3
 
 
 .full-width {
-	width: 100%;
 	display: inline-block;
+	width: 100%;
 	margin-bottom: 10px;
 }
 .two-col {
+	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	display: inline-block;
 	background: gainsboro;
 	padding: 15px;
 }
@@ -53,9 +53,9 @@ block {
 
 /* Button Styling */
 #bad-button {
+	display: inline-block;
 	background: #AFAFAF;
 	color: white;
-	display: inline-block;
 	padding: 5px;
 	border-radius: 5px;
 }
