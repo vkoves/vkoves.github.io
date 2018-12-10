@@ -13,3 +13,7 @@ jekyll build
 #
 # Learn more: https://github.com/gjtorikian/html-proofer#configuration
 htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-status-ignore "999"
+
+
+# Run Sass Lint - cnfigured by .sass-lint.yml
+sass-lint
