@@ -1,6 +1,8 @@
 ---
 ---
 
+@import 'colors';
+
 body
 {
 	position: relative;
@@ -9,7 +11,7 @@ body
 	margin: 0px;
 	padding-top: 40px;
 	padding-bottom: 60px;
-	background: #F3F3F3;
+	background: $off-white;
 	font-size: 16px;
 }
 button { font-family: 'Open Sans', sans-serif; }
@@ -39,7 +41,7 @@ button { font-family: 'Open Sans', sans-serif; }
 	height: 40px;
 	top: 0px;
 	text-align: left;
-	background: #D80000;
+	background: $brand-red;
 	z-index: 5;
 }
 #header-inside
@@ -50,22 +52,22 @@ button { font-family: 'Open Sans', sans-serif; }
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 18px;
-	color: white;
+	color: $white;
 	font-weight: 400;
 	max-width: 1200px;
 }
 #header a
 {
 	text-decoration: none;
-	color: white;
+	color: $white;
 	border-radius: 8px;
 	transition: color 0.3s, padding 0.3s, background 0.3s;
 	padding: 3px 10px 3px 10px;
 }
 #header a:hover
 {
-	color: #404040;
-	background-color: white;
+	color: $dark-grey;
+	background-color: $white;
 	padding: 3px 10px 3px 10px;
 }
 #header-buttons
@@ -76,7 +78,7 @@ button { font-family: 'Open Sans', sans-serif; }
 {
 	position: relative;
 	top: 0px;
-	color: white;
+	color: $white;
 	font-weight: 600;
 	text-decoration: none;
 	background: red;
@@ -142,8 +144,8 @@ h4 { font-weight: 600; margin-top: 10px; }
 	padding: 5px 0px;
 	bottom: 0px;
 	left: 0;
-	background-color: gainsboro;
-	box-shadow: 0px 0px 5px grey;
+	background-color: $mid-grey;
+	box-shadow: 0px 0px 5px $grey;
 }
 .social-bar { font-size: 0px; }
 .social-bar a { text-decoration: none; }
@@ -221,23 +223,23 @@ h4 { font-weight: 600; margin-top: 10px; }
 .toggle-button
 {
 	display: inline-block;
-	background-color: lightgrey;
+	background-color: $light-grey;
 	padding: 3px 15px;
 	border: none;
 	border-radius: 5px;
-	color: #272727;
+	color: $charcoal;
 	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
 }
 .toggle-button.active
 {
-	background-color: #D80000;
+	background-color: $brand-red;
 	color: white;
 }
 .toggle-button:not(.active):hover
 {
-	color: #D80000;
+	color: $brand-red;
 }
 @media (max-width: 600px)
 {
@@ -368,7 +370,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 {
 	height: 80px;
 	min-width: 80px;
-	background-color: white;
+	background-color: $white;
 	border-radius: 5px;
 	padding: 15px;
 }
@@ -486,7 +488,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 }
 #overlay-info .description { font-size: 20px; }
 #overlay-info .description a {
-	color: #D80000;
+	color: $brand-red;
 	text-decoration: none;
 }
 .info-cont
@@ -611,11 +613,11 @@ h4 { font-weight: 600; margin-top: 10px; }
 code.inline, code.highlighter-rouge
 {
 	font-family: monospace;
-	background: white;
+	background: $white;
 	font-size: 110%;
 	padding: 2px 5px;
-	background-color: #FFE8EC;
-	color: #D80000;
+	background-color: $light-red;
+	color: $brand-red;
 	border-radius: 5px;
 }
 
