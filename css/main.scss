@@ -15,6 +15,11 @@ body
 	font-size: 16px;
 }
 button { font-family: 'Open Sans', sans-serif; }
+
+// Helpers
+.text-center { text-align: center; }
+
+// Generic page styles
 .page-limiter
 {
 	position: relative;
@@ -26,7 +31,7 @@ button { font-family: 'Open Sans', sans-serif; }
 {
 	margin-top: 20px;
 }
-.page-container p
+.page-container p:not(.text-center)
 {
 	text-align: left;
 }
