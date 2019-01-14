@@ -1,6 +1,8 @@
 ---
 ---
 
+@import 'colors';
+
 #all-posts
 {
 	position: absolute;
@@ -19,12 +21,12 @@
 .red-button.disabled
 {
 	background-color: transparent;
-	color: grey;
+	color: $grey;
 }
 .red-button:hover
 {
-	background-color: #D80000;
-	color: white;
+	background-color: $brand-red;
+	color: $white;
 }
 .post-date
 {
@@ -35,7 +37,7 @@
 hr
 {
 	height: 1px;
-	background: lightgrey;
+	background: $light-grey;
 	border: none;
 }
 
@@ -55,7 +57,7 @@ hr
 	color: black;
 	text-decoration: none;
 }
-.post-list a:hover > span { color: #D80000; }
+.post-list a:hover > span { color: $brand-red; }
 .post-listing .title
 {
 	font-size: 24px;
@@ -65,7 +67,7 @@ hr
 .post-listing .category {
 	display: none;
 	padding: 2px 10px;
-	background: gainsboro;
+	background: $mid-grey;
 	margin-top: 8px;
 	border-radius: 5px;
 	vertical-align: top;
