@@ -7,7 +7,6 @@ body
 {
 	position: relative;
 	font-family: 'Open Sans', sans-serif;
-	text-align: center;
 	margin: 0px;
 	padding-top: 40px;
 	padding-bottom: 60px;
@@ -15,6 +14,8 @@ body
 	font-size: 16px;
 }
 button { font-family: 'Open Sans', sans-serif; }
+
+
 
 // Helpers
 .text-center { text-align: center; }
@@ -31,11 +32,7 @@ button { font-family: 'Open Sans', sans-serif; }
 {
 	margin-top: 20px;
 }
-.page-container p:not(.text-center)
-{
-	text-align: left;
-}
-.page-container .page-desc
+.page-desc, .page-title
 {
 	text-align: center;
 }
@@ -152,7 +149,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 	background-color: $mid-grey;
 	box-shadow: 0px 0px 5px $grey;
 }
-.social-bar { font-size: 0px; }
+.social-bar {
+	font-size: 0px;
+	text-align: center;
+}
 .social-bar a { text-decoration: none; }
 .social-bar div
 {
@@ -256,6 +256,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 /* End Gallery Styling */
 
 /* Portfolio Page Styling */
+.projects-container { text-align: center; }
 .projects-tile
 {
 	display: inline-block;

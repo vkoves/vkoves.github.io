@@ -4,15 +4,17 @@ pageClass: "filter-transition"
 title: "Gallery"
 ---
 
-<h1>Gallery</h1>
+<h1 class="page-title">Gallery</h1>
 <p class="page-desc">
 	Some images from projects I've worked on and renders I've created.
 	<br>
 	Click an image to see a bigger version and use your arrow keys to go between images.
 </p>
 
-<button id="projects" class="toggle-button active" aria-pressed="true">Project Photos</button>
-<button id="hobby" class="toggle-button" aria-pressed="false">Hobby Photos</button>
+<div class="text-center">
+	<button id="projects" class="toggle-button active" aria-pressed="true">Project Photos</button>
+	<button id="hobby" class="toggle-button" aria-pressed="false">Hobby Photos</button>
+</div>
 
 <div id="gallery-container">
 	<!-- Gallery images get loaded into here -->
