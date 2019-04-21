@@ -421,7 +421,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 	left: 0;
 	z-index: 10;
 }
-.img-base { width: 100%; }
+.img-base {
+	width: 100%;
+	text-align: center;
+}
 .img-container
 {
 	display: inline-block;
@@ -579,6 +582,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 	bottom: 0px;
 	height: 30px;
 	position: absolute;
+	text-align: center;
 }
 /* End Gallery Plugin Styling */
 
