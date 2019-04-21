@@ -3,7 +3,6 @@
 // or an array of strings if you just need to display images
 // Possible options
 //	showInfo {Boolean} - whether to show a small info icon on the bottom left. DEFAULT - false
-// TODO: Make gallery show a counter or a preview thing at the bottom
 function Gallery(galleryData, options)
 {
 	this.galleryData = galleryData; //the gallery data
@@ -21,13 +20,13 @@ function Gallery(galleryData, options)
 		$("body").append(
 			'<div id="overlay-controls" class="overlay">' +
 				'<button id="close" class="over-btn">' +
-					'<img src="images/icons/cross.svg">' +
+					'<img src="images/icons/cross.svg" alt="Close overlay">' +
 				'</button>' +
 				'<button id="left" class="over-btn vertically-centered">' +
-					'<img class="arrow" src="images/icons/chevron-thin-left.svg">' +
+					'<img class="arrow" src="images/icons/chevron-thin-left.svg" alt="Previous image">' +
 				'</button>' +
 				'<button id="right" class="over-btn vertically-centered">' +
-					'<img class="arrow" src="images/icons/chevron-thin-right.svg">' +
+					'<img class="arrow" src="images/icons/chevron-thin-right.svg" alt="Next image">' +
 				'</button>' +
 				'<div class="gallery-nav">' + navigationDots + '</div>' +
 			'</div>' +
@@ -44,11 +43,11 @@ function Gallery(galleryData, options)
 	// Show the image with the given index in the galleryData
 	this.showImage = function(index)
 	{
-		setPageBlur(true);
 		self.currentImageIndex = index;
 		$("#overlay-controls .nav-dot").removeClass("active");
 		$($("#overlay-controls .nav-dot")[index]).addClass("active");
 		setOverlayImage(this.galleryData[index]); //set the image
+		setPageBlur(true);
 		$(".overlay").fadeIn(); //then fade in
 	}
 
@@ -105,29 +104,34 @@ function Gallery(galleryData, options)
 
 	function setOverlayImage(galleryItem)
 	{
-		let url = getImageUrl(galleryItem);
-		let alt = typeof galleryItem == "object" ? galleryItem.alt : undefined;
 
 		if($("#overlay-main:visible").length > 0 && $("#overlay-main img").length > 0) //if there's already an image
 		{
 			$("#overlay-main .img-container").fadeOut(300, function() //fade it out
 			{
 				//then transition to new image by setting it, hiding it instantly, then fadin in
-				setOverlayHTMLWithImage(url, alt);
+				setOverlayHTMLWithImage(galleryItem);
 			  	$("#overlay-main .img-container").hide().fadeIn(300);
 			});
 		}
 		else
 		{
-			setOverlayHTMLWithImage(url, alt);
+			setOverlayHTMLWithImage(galleryItem);
 		}
 
-		function setOverlayHTMLWithImage(url, alt = undefined)
+		function setOverlayHTMLWithImage(galleryItem)
 		{
-			var infoIcon = "";
+			var infoSect = "";
+			var url = getImageUrl(galleryItem);
+			var alt = typeof galleryItem == "object" ? galleryItem.alt : undefined;
 
-			if(options && options.showInfo)
-				infoIcon = '<button class="icon info"></button>';
+			if(options && options.showInfo) {
+				infoSect = '<div class="info-sect">' +
+					'<button class="icon info" aria-label="More info"></button>' +
+					'<div class="title">' + galleryItem.title + '</div>' +
+					'<div class="description">' + galleryItem.description + '</div>' +
+				'</div>';
+			}
 
 			if(url.indexOf("/thumbs") > -1) // if this is a thumbnail
 				url = url.replace("/thumbs",""); // use the full size image
@@ -138,7 +142,7 @@ function Gallery(galleryData, options)
 			  		`<img src="${url}"` +
 			  			(alt ? `alt="${alt}"` : '') + // add all tag if it exists
 			  			'>' +
-			  		infoIcon +
+			  		infoSect +
 		  		'</div>' +
 		  	'</div>');
 
@@ -149,7 +153,7 @@ function Gallery(galleryData, options)
 
 		  	$("#overlay-main .img-container .icon.info").click(function()
 		  	{
-		  		showInfo(self.galleryData[self.currentImageIndex].title, self.galleryData[self.currentImageIndex].description)
+		  		$('#overlay-main .info-sect').toggleClass('open')
 		  	});
 		}
 	}

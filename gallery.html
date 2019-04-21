@@ -2,6 +2,8 @@
 layout: default
 pageClass: "filter-transition"
 title: "Gallery"
+scripts:
+ - gallery.js
 ---
 
 <h1 class="page-title">Gallery</h1>
@@ -10,11 +12,6 @@ title: "Gallery"
 	<br>
 	Click an image to see a bigger version and use your arrow keys to go between images.
 </p>
-
-<div class="text-center">
-	<button id="projects" class="toggle-button active" aria-pressed="true">Project Photos</button>
-	<button id="hobby" class="toggle-button" aria-pressed="false">Hobby Photos</button>
-</div>
 
 <div id="gallery-container">
 	<!-- Gallery images get loaded into here -->
@@ -99,58 +96,6 @@ title: "Gallery"
 		},
 	];
 
-	var hobbyGallery = [
-		/* Hobby Photos */
-		{
-			url: "images/hobby-photos/thumbs/1.jpg",
-			alt: "Closeup of a wrist watch"
-		},
-		{
-			url: "images/hobby-photos/thumbs/2.jpg",
-			alt: "Streetlight silhouetted on a bright cloudy sky"
-		},
-		{
-			url: "images/hobby-photos/thumbs/3.jpg",
-			alt: "Mossy rocks"
-		},
-		{
-			url: "images/hobby-photos/thumbs/4.jpg",
-			alt: "Closeup of a spider in a web"
-		},
-		{
-			url: "images/hobby-photos/thumbs/5.jpg",
-			alt: "Black and white bird with a long thin beak"
-		},
-		{
-			url: "images/hobby-photos/thumbs/6.jpg",
-			alt: "Lizard laying on a log"
-		},
-		{
-			url: "images/hobby-photos/thumbs/7.jpg",
-			alt: "A brown moth with distinctive circular spots"
-		},
-		{
-			url: "images/hobby-photos/thumbs/8.jpg",
-			alt: "A monarch butterfly on a plant"
-		},
-		{
-			url: "images/hobby-photos/thumbs/9.jpg",
-			alt: "Two rabbits on a sidewalk's edge eating grass"
-		},
-		{
-			url: "images/hobby-photos/thumbs/10.jpg",
-			alt: "Leaves in focus with a blurry background"
-		},
-		{
-			url: "images/hobby-photos/thumbs/11.jpg",
-			alt: "Park bench with blurred flowers in the background"
-		},
-		{
-			url: "images/hobby-photos/thumbs/12.jpg",
-			alt: "Bee drinking water on a rock"
-		},
-	];
-
 	galleryInstance = new Gallery(gallery, { showInfo: true });
 
 	// Generate all the projects gallery tiles
@@ -158,16 +103,6 @@ title: "Gallery"
 	{
 		$("#gallery-container").append(
 			'<button class="gallery-img projects">' +
-				'<div class="icon fullscreen"></div>' +
-				`<img data-id="${index}" src="${item.url}" alt="${item.alt}">` +
-			'</button>');
-	});
-
-	// Generate all hobby gallery tiles
-	hobbyGallery.forEach(function(item, index)
-	{
-		$("#gallery-container").append(
-			'<button class="gallery-img hobby">' +
 				'<div class="icon fullscreen"></div>' +
 				`<img data-id="${index}" src="${item.url}" alt="${item.alt}">` +
 			'</button>');
@@ -198,37 +133,4 @@ title: "Gallery"
 	  		galleryInstance.close();
 	  }
 	});
-
-	$(".toggle-button#projects").click(function()
-	{
-		$(".gallery-img").hide();
-		$(".gallery-img.projects").css("display", "inline-block");
-
-		$(".toggle-button").removeClass("active");
-		$(".toggle-button").attr('aria-pressed', 'false');
-		$(this).addClass("active");
-		$(this).attr('aria-pressed', 'true');
-
-		galleryInstance.destroy();
-		galleryInstance = new Gallery(gallery, { showInfo: true });
-		location.hash = ""; //clear the hash
-	});
-
-	$(".toggle-button#hobby").click(function()
-	{
-		$(".gallery-img").hide();
-		$(".gallery-img.hobby").css("display", "inline-block");
-
-		$(".toggle-button").removeClass("active");
-		$(".toggle-button").attr('aria-pressed', 'false');
-		$(this).addClass("active");
-		$(this).attr('aria-pressed', 'true');
-
-		galleryInstance.destroy();
-		galleryInstance = new Gallery(hobbyGallery);
-		location.hash = "#hobby-photos"; //update the hash for easy sharing
-	});
-
-	if(window.location.href.indexOf("#hobby-photos") > -1) // viewing hobby by default
-		$(".toggle-button#hobby").click();
 </script>
