@@ -75,18 +75,22 @@
 </head>
 <body>
 	{% comment %} Site wide header {% endcomment %}
-	<div id="header" class="filter-transition">
+	<header id="header" class="filter-transition">
 		<div id="header-inside">
-			<span id="title"><a href="/" class="local-link">Viktor K&ouml;ves</a></span>
+			<div class="header-main">
+				<span id="title"><a href="/" class="local-link">Viktor K&ouml;ves</a></span>
+
+				<img id="menu" src="/images/menu.svg" alt="Menu">
+			</div>
+
 			<div id="header-buttons">
 				<span><a href="/about" class="local-link">About</a></span> |
 				<span><a href="/gallery" class="local-link">Gallery</a></span> |
 				<span><a href="/portfolio" class="local-link">Portfolio</a></span> |
 				<span><a href="/blog">Blog</a></span>
 			</div>
-			<img id="menu" src="/images/menu.svg" alt="Menu">
 		</div>
-	</div>
+	</header>
 
 	<div class="page-container {{ page.pageClass }}">
 		{% if page.isPost %}
@@ -117,7 +121,7 @@
 	</div>
 
 	{% comment %} Site wide footer {% endcomment %}
-	<div class="footer filter-transition">
+	<footer class="footer filter-transition">
 		<ul class="social-bar">
 			<!-- Since these are all CSS images, add aria-label for a11y -->
 			<li>
@@ -146,6 +150,6 @@
 				</a>
 			</li>
 		</ul>
-	</div>
+	</footer>
 </body>
 </html>

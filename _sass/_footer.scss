@@ -1,0 +1,32 @@
+.footer
+{
+  position: fixed;
+  width: 100%;
+  padding: 5px 0px;
+  bottom: 0px;
+  left: 0;
+  background-color: $mid-grey;
+  box-shadow: 0px 0px 5px $grey;
+}
+.social-bar {
+  font-size: 0px;
+  text-align: center;
+  padding: 0;
+
+  li { display: inline-block; }
+}
+.social-bar a { text-decoration: none; }
+.social-bar div
+{
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  margin: 0px 5px;
+}
+.social-bar .twitter { background-image: url("../images/social-media-icons/twitter.svg"); }
+.social-bar .linkedin { background-image: url("../images/social-media-icons/linkedin.svg"); }
+.social-bar .tumblr { background-image: url("../images/social-media-icons/tumblr.svg"); }
+.social-bar .github { background-image: url("../images/social-media-icons/github.svg"); }
+.social-bar .instagram { background-image: url("../images/social-media-icons/instagram.svg"); }

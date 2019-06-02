@@ -1,0 +1,98 @@
+$header-mob-height: 7vh;
+
+#header
+{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  text-align: left;
+  background: $brand-red;
+  z-index: 5;
+  font-size: 18px;
+
+  .header-main { display: inline-block; }
+}
+#header-inside
+{
+  padding: 10px 0;
+  width: 80%;
+  margin: auto;
+  color: $white;
+  font-weight: 400;
+  max-width: 1200px;
+}
+#header a
+{
+  text-decoration: none;
+  color: $white;
+  border-radius: 8px;
+  transition: color 0.3s, padding 0.3s, background 0.3s;
+  padding: 3px 10px 3px 10px;
+}
+#header a:hover
+{
+  color: $dark-grey;
+  background-color: $white;
+  padding: 3px 10px 3px 10px;
+}
+#header-buttons
+{
+  float: right;
+}
+#menu
+{
+  display: none;
+  width: 30px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/**
+ * Tablet-ish & mobile styling
+ */
+@media (max-width: 800px)
+{
+  #header-inside
+  {
+    width: 100%;
+  }
+}
+
+/**
+ * Mobile styling
+ */
+@media (max-width: 600px)
+{
+  body { padding-top: $header-mob-height !important; }
+  #header
+  {
+    transition: padding 0.5s;
+    padding-bottom: 0px;
+    overflow: hidden;
+    height: $header-mob-height;
+    font-size: 24px;
+
+    &.-open {
+      padding-bottom: 5vh;
+    }
+    #header-inside { padding: 0; }
+    .header-main {
+      height: 100%;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  #header-buttons
+  {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  #menu
+  {
+    display: block;
+  }
+}

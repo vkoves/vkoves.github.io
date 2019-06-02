@@ -1,77 +1,77 @@
 ---
 ---
 
-@import 'colors';
+@import 'variables/colors';
 
 #all-posts
 {
-	position: absolute;
-	top: 0px;
-	left: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 .red-button
 {
-	padding: 2px 8px;
-	text-decoration: none;
-	background-color: gainsboro;
-	border-radius: 3px;
-	color: #101010;
-	font-weight: 600;
+  padding: 2px 8px;
+  text-decoration: none;
+  background-color: gainsboro;
+  border-radius: 3px;
+  color: #101010;
+  font-weight: 600;
 }
 .red-button.disabled
 {
-	background-color: transparent;
-	color: $grey;
+  background-color: transparent;
+  color: $grey;
 }
 .red-button:hover
 {
-	background-color: $brand-red;
-	color: $white;
+  background-color: $brand-red;
+  color: $white;
 }
 .post-date
 {
-	display: inline-block;
-	width: 100%;
-	text-align: left;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
 }
 hr
 {
-	height: 1px;
-	background: $light-grey;
-	border: none;
+  height: 1px;
+  background: $light-grey;
+  border: none;
 }
 
 /* Post List Styling on the Posts page */
 .post-list
 {
-	padding-left: 0px;
-	list-style: none;
+  padding-left: 0px;
+  list-style: none;
 }
 .post-listing
 {
-	text-align: left;
-	margin-top: 10px;
+  text-align: left;
+  margin-top: 10px;
 }
 .post-listing a
 {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 .post-list a:hover > span { color: $brand-red; }
 .post-listing .title
 {
-	font-size: 24px;
-	font-weight: 600;
-	margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 10px;
 }
 .post-listing .category {
-	display: none;
-	padding: 2px 10px;
-	background: $mid-grey;
-	margin-top: 8px;
-	border-radius: 5px;
-	vertical-align: top;
-	font-size: 12px;
+  display: none;
+  padding: 2px 10px;
+  background: $mid-grey;
+  margin-top: 8px;
+  border-radius: 5px;
+  vertical-align: top;
+  font-size: 12px;
 }
 .post-listing .date { float: right; }
 .post-listing .excerpt p { margin: 0px; }
