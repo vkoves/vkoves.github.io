@@ -54,11 +54,6 @@
 {
   opacity: 1;
 }
-/* Override default outline for gallery images */
-.gallery-img:focus
-{
-  outline: dashed 3px $brand-red;
-}
 @media (max-width: 600px)
 {
   .gallery-img
