@@ -57,25 +57,11 @@
 .icons .info { background-image: url("/images/icons/info.svg"); }
 .icons .images { background-image: url("/images/icons/images.svg"); }
 .icons .tools { background-image: url("/images/icons/tools.svg"); }
-.projects-tile .thumb-container
-{
-  position: relative;
-  overflow: hidden;
-}
 .projects-tile .thumb
 {
   height: 200px;
   background-size: cover;
   transition: all 0.4s;
-}
-.projects-tile .thumb-container:hover > .thumb
-{
-  filter: brightness(50%) blur(5px);
-  -webkit-filter: brightness(50%) blur(5px);
-}
-.projects-tile .thumb-container:hover > .icons-cont
-{
-  opacity: 1;
 }
 .projects-tile .icon-container
 {
