@@ -1,3 +1,4 @@
+$header-mob-height: 7vh;
 
 #header
 {
@@ -8,7 +9,6 @@
   background: $brand-red;
   z-index: 5;
   font-size: 18px;
-
 
   .header-main { display: inline-block; }
 }
@@ -63,12 +63,13 @@
  */
 @media (max-width: 600px)
 {
+  body { padding-top: $header-mob-height !important; }
   #header
   {
     transition: padding 0.5s;
     padding-bottom: 0px;
     overflow: hidden;
-    height: 7vh;
+    height: $header-mob-height;
     font-size: 24px;
 
     &.-open {
