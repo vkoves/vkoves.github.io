@@ -105,6 +105,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 	padding: 5px;
 	cursor: pointer;
 }
+
 @media (max-width: 800px)
 {
 	#header-inside
@@ -112,6 +113,7 @@ h4 { font-weight: 600; margin-top: 10px; }
 		width: 100%;
 	}
 }
+
 @media (max-width: 600px)
 {
 	body
@@ -123,6 +125,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 		transition: padding 0.5s;
 		padding-bottom: 0px;
 		overflow: hidden;
+
+		&.-open {
+			padding-bottom: 30px;
+		}
 	}
 	#header-buttons
 	{
