@@ -145,22 +145,22 @@ stylesheets:
 				'<div class="sub-title">' + project.subtitle + '</div>' +
 				'<div class="thumb-container">' +
 					'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
-					'<div class="icon-overlay" data-project-id="' + i +'">' +
-						'<div class="icon-container info-cont"><div class="icon info"></div>Info</div>' +
-						'<div class="icon-container images-cont"><div class="icon images"></div>Images</div>' +
-						'<div class="icon-container tools-cont"><div class="icon tools"></div>Tools</div>' +
-					'</div>' +
+				'</div>' +
+				'<div class="icons-cont" data-project-id="' + i +'">' +
+					'<button class="icon-container info-cont"><div class="icon info"></div>Info</button>' +
+					'<button class="icon-container images-cont"><div class="icon images"></div>Images</button>' +
+					'<button class="icon-container tools-cont"><div class="icon tools"></div>Tools</button>' +
 				'</div>' +
 			'</div>');
 		}
 
-		$(".icon-overlay .info-cont").click(function()
+		$(".icons-cont .info-cont").click(function()
 		{
 			var project = projects[$(this).parent().attr("data-project-id")];
 			showInfo(project.name, project.description);
 		});
 
-		$(".icon-overlay .images-cont").click(function()
+		$(".icons-cont .images-cont").click(function()
 		{
 			var project = projects[$(this).parent().attr("data-project-id")];
 
@@ -171,7 +171,7 @@ stylesheets:
 			galleryInstance.showImage(0); //and show the first image
 		});
 
-		$(".icon-overlay .tools-cont").click(function()
+		$(".icons-cont .tools-cont").click(function()
 		{
 			var project = projects[$(this).parent().attr("data-project-id")];
 			showInfo(project.name + " - Tools", getToolsHTML(project.tools));

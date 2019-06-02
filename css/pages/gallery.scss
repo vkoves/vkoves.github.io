@@ -1,6 +1,8 @@
 ---
 ---
 
+@import 'variables/colors';
+
 /* Gallery Page */
 .img-container .info { background-image: url("/images/icons/info-white.svg"); }
 .icon.fullscreen
@@ -51,11 +53,6 @@
 .gallery-img:hover > .icon, .gallery-img:focus > .icon
 {
   opacity: 1;
-}
-/* Override default outline for gallery images */
-.gallery-img:focus
-{
-  outline: dashed 3px #D82F00;
 }
 @media (max-width: 600px)
 {
