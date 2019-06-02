@@ -1,6 +1,8 @@
 ---
 ---
 
+@import 'variables/colors';
+
 /* Gallery Page */
 .img-container .info { background-image: url("/images/icons/info-white.svg"); }
 .icon.fullscreen
@@ -55,7 +57,7 @@
 /* Override default outline for gallery images */
 .gallery-img:focus
 {
-  outline: dashed 3px #D82F00;
+  outline: dashed 3px $brand-red;
 }
 @media (max-width: 600px)
 {

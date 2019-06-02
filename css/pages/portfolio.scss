@@ -80,7 +80,7 @@
   flex: 1;
 
   // Override default outline
-  &:focus { outline: dashed 3px #D82F00; }
+  &:focus { outline: dashed 3px $brand-red; }
   &:focus, &:hover { background-color: $mid-grey; }
 }
 .projects-tile .icons-cont .icon
