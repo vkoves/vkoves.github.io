@@ -16,17 +16,22 @@ title: "Blog"
 <ul class="post-list">
   {% for post in site.posts %}
     <li class="post-listing">
-      <a href="{{ post.url }}">
-      	<span class="title">{{ post.title }}</span>
-      </a>
-      {% if post.draft %}
-        <span class="category" style="display: inline-block">Draft</span>
-      {% endif %}
-      {% for category in post.categories %}
-        <span class="category">{{ category }}</span>
-      {% endfor %}
-      <span class="date">{{ post.date | date: "%B %d, %Y" }}</span>
-      <span class="excerpt">{{ post.excerpt }}</span>
+      <div class="post-heading">
+        <a href="{{ post.url }}">
+        	<span class="title">{{ post.title }}</span>
+        </a>
+        {% if post.draft %}
+          <span class="category" style="display: inline-block">Draft</span>
+        {% endif %}
+        {% for category in post.categories %}
+          <span class="category">{{ category }}</span>
+        {% endfor %}
+        <span class="date">{{ post.date | date: "%B %d, %Y" }}</span>
+      </div>
+
+      <div class="excerpt">
+        {{ post.excerpt }}
+      </div>
     </li>
   {% endfor %}
 </ul>
