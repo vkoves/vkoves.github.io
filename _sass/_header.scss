@@ -19,7 +19,7 @@ $header-mob-height: 7vh;
   margin: auto;
   color: $white;
   font-weight: 400;
-  max-width: 1200px;
+  max-width: $max-cont-width;
 }
 #header a
 {
