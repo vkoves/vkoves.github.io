@@ -1,0 +1,12 @@
+/**
+ * Variables for spacing (like margin and padding) and sizing (like breakpoints
+ * and content width)
+ */
+
+$max-cont-width: 1200px;
+
+// Breakpoints
+
+$mobile-max-width:  800px;                    // 800px
+$desktop-min-width: $mobile-max-width + 1;    // 801px
+

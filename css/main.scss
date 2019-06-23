@@ -1,7 +1,11 @@
 ---
 ---
 
+// Import Courgette Google Font
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
 @import 'variables/colors';
+@import 'variables/sizing';
 
 @import 'header';
 @import 'footer';
@@ -15,6 +19,7 @@ body
   padding-bottom: 60px;
   background: $off-white;
   font-size: 16px;
+  color: $charcoal;
 }
 button { font-family: 'Open Sans', sans-serif; }
 // Make buttons and links have a nice red dashed outline on focus
@@ -60,6 +65,14 @@ button, a {
   top: 2px;
   border-bottom: solid #960000 2px;
 }
+
+.brand-font {
+  font-family: 'Courgette', cursive;
+  // Courgette has no bold version, so force normal weight
+  font-weight: normal;
+}
+.brand-color { color: $brand-red; }
+
 h1 { font-weight: 600; margin: 0px; }
 h4 { font-weight: 600; margin-top: 10px; }
 

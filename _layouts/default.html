@@ -15,13 +15,20 @@
 		<link href="/css/blog.css" rel="stylesheet">
 	{% endif %}
 	{{ stylesheets }}
+
+	<!-- Show page title with my name UNLESS the title already has it -->
 	<title>
 		{% if page.title %}
-			{{page.title}} - Viktor K&ouml;ves
+			{% if page.title contains 'Viktor Köves' %}
+				{{ page.title }}
+			{% else %}
+				{{ page.title }} - Viktor Köves
+			{% endif %}
 		{% else %}
-			Viktor K&ouml;ves
+			Viktor Köves
 		{% endif %}
-	</title> <!-- Oh what fun, an Oumlaut! -->
+	</title>
+
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 	<!-- Added Open Sans from Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" type="text/css">
@@ -85,10 +92,9 @@
 			</div>
 
 			<div id="header-buttons">
-				<span><a href="/about" class="local-link">About</a></span> |
-				<span><a href="/gallery" class="local-link">Gallery</a></span> |
-				<span><a href="/portfolio" class="local-link">Portfolio</a></span> |
-				<span><a href="/blog">Blog</a></span>
+				<a href="/gallery" class="local-link">Gallery</a> |
+				<a href="/portfolio" class="local-link">Portfolio</a> |
+				<a href="/blog">Blog</a>
 			</div>
 		</div>
 	</header>

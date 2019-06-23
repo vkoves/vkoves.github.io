@@ -47,7 +47,6 @@ stylesheets:
  - index.css
 scripts:
  - index.js
- - jquery.bgswitcher.js
 ---
 {% endhighlight %}
 
