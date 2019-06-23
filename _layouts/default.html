@@ -22,17 +22,25 @@
 		<link href="/css/blog.css" rel="stylesheet">
 	{% endif %}
 
-	<!-- Show page title with my name UNLESS the title already has it -->
 	<title>
+		{% comment %}
+			Compute page title for <title> and <meta> tags. Use page title + ' - ' +
+			site title, UNLESS the page title already contains the site title, like on
+			the homepage.
+		{% endcomment %}
+
 		{% if page.title %}
-			{% if page.title contains 'Viktor Köves' %}
-				{{ page.title }}
+			{% if page.title contains site.title %}
+				{% assign pageTitle = page.title %}
 			{% else %}
-				{{ page.title }} - Viktor Köves
+				{% assign pageTitle = page.title | append: ' - ' | append: site.title %}
 			{% endif %}
 		{% else %}
-			Viktor Köves
+				{% assign pageTitle = site.title %}
 		{% endif %}
+
+		{% comment %} Output computed page title {% endcomment %}
+		{{ pageTitle }}
 	</title>
 
 	{% if page.metadata %}
@@ -47,28 +55,23 @@
 		<meta property="twitter:description" content="{{ page.metadata[0].og_description }}" />
 	{% else %}
 		<meta name="theme-color" content="#D80000">
-		<meta name="description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
+		<meta name="description" content="{{ site.description }}">
 		<meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
 
 		<!-- Twitter Info -->
 		<meta name="twitter:card" content="summary_large_image">
 
 		<!-- Social Media Title for Twitter & Open Graph -->
-		{% if page.title %}
-			<meta name="twitter:title" content="{{page.title}} - Viktor K&ouml;ves">
-			<meta property="og:title" content="{{page.title}} - Viktor K&ouml;ves">
-		{% else %}
-			<meta name="twitter:title" content="Viktor K&ouml;ves">
-			<meta property="og:title" content="Viktor K&ouml;ves">
-		{% endif %}
+		<meta name="twitter:title" content="{{ pageTitle }}">
+		<meta property="og:title" content="{{ pageTitle }}">
 
 		<!-- Social Media Description for Twitter & Open Graph -->
 		{% if page.excerpt %}
-			<meta name="twitter:description" content="{{page.excerpt | strip_html | strip }}">
-			<meta property="og:description" content="{{page.excerpt  | strip_html | strip }}">
+			<meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
+			<meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
 		{% else %}
-			<meta name="twitter:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
-			<meta property="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
+			<meta name="twitter:description" content="{{ site.description }}">
+			<meta property="og:description" content="{{ site.description }}">
 		{% endif %}
 	{% endif %}
 
@@ -97,7 +100,6 @@
 		{% endif %}
 
 		{{ content }}
-
 
 		{% if page.isPost %}
 		<div class="post-controls">

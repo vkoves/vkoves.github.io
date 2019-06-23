@@ -2,6 +2,13 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title
 
+# Site title - appended to most pages
+title: Viktor K&ouml;ves
+# Site description for meta tags
+description:
+  The personal website of Viktor K&ouml;ves - software engineer, game developer,
+  and digital design enthusiast.
+
 # Define some defaults
 defaults:
   -
