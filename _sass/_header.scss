@@ -14,8 +14,9 @@ $header-mob-height: 7vh;
 }
 #header-inside
 {
-  padding: 10px 0;
+  height: 100%;
   width: 80%;
+  padding: 10px 0;
   margin: auto;
   color: $white;
   font-weight: 400;
@@ -70,15 +71,13 @@ $header-mob-height: 7vh;
   body { padding-top: $header-mob-height !important; }
   #header
   {
-    transition: padding 0.5s;
+    transition: padding 0.25s;
     padding-bottom: 0px;
     overflow: hidden;
     height: $header-mob-height;
     font-size: 24px;
 
-    &.-open {
-      padding-bottom: 5vh;
-    }
+    &.-open { padding-bottom: 7vh; }
     #header-inside { padding: 0; }
     .header-main {
       height: 100%;
