@@ -5,16 +5,22 @@
 	<link href="/css/syntax.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="/js/main.js"></script>
+
+	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
+	<!-- Added Open Sans from Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" type="text/css">
+
 	{% for stylesheet in page.stylesheets %}
 		<link href="/css/{{  stylesheet }}" rel="stylesheet">
 	{% endfor %}
+
 	{% for script in page.scripts %}
 		<script src="/js/{{ script }}"></script>
 	{% endfor %}
+
 	{% if page.isPost %}
 		<link href="/css/blog.css" rel="stylesheet">
 	{% endif %}
-	{{ stylesheets }}
 
 	<!-- Show page title with my name UNLESS the title already has it -->
 	<title>
@@ -29,9 +35,6 @@
 		{% endif %}
 	</title>
 
-	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
-	<!-- Added Open Sans from Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" type="text/css">
 	{% if page.metadata %}
 		<meta name="theme-color" content="{{ page.metadata[0].theme_color }}">
 		<meta name="description" content="{{ page.metadata[0].description }}">
@@ -81,25 +84,11 @@
 	  ga('send', 'pageview');
 	</script>
 </head>
+
 <body>
-	{% comment %} Site wide header {% endcomment %}
-	<header id="header" class="filter-transition">
-		<div id="header-inside">
-			<div class="header-main">
-				<span id="title"><a href="/" class="local-link">Viktor K&ouml;ves</a></span>
+	{% include header.html %}
 
-				<img id="menu" src="/images/menu.svg" alt="Menu">
-			</div>
-
-			<div id="header-buttons">
-				<a href="/gallery" class="local-link">Gallery</a> |
-				<a href="/portfolio" class="local-link">Portfolio</a> |
-				<a href="/blog">Blog</a>
-			</div>
-		</div>
-	</header>
-
-	<div class="page-container {{ page.pageClass }}">
+	<main class="page-container {{ page.pageClass }}">
 		{% if page.isPost %}
 			<a href="/blog" id="all-posts" class="red-button">&larr; Back to All Posts</a>
 			<br>
@@ -125,38 +114,8 @@
 			{% endif %}
 		</div>
 		{% endif %}
-	</div>
+	</main>
 
-	{% comment %} Site wide footer {% endcomment %}
-	<footer class="footer filter-transition">
-		<ul class="social-bar">
-			<!-- Since these are all CSS images, add aria-label for a11y -->
-			<li>
-				<a href="https://github.com/vkoves" aria-label="Viktor on GitHub">
-					<div class="github"></div>
-				</a>
-			</li>
-			<li>
-				<a href="http://vkstech.tumblr.com/" aria-label="Viktor on tumblr">
-					<div class="tumblr"></div>
-				</a>
-			</li>
-			<li>
-				<a href="https://twitter.com/viktor_koves" aria-label="Viktor on Twitter">
-					<div class="twitter"></div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/viktorkoves" aria-label="Viktor on LinkedIn">
-					<div class="linkedin"></div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.instagram.com/viktor_koves/" aria-label="Viktor Instagram">
-					<div class="instagram"></div>
-				</a>
-			</li>
-		</ul>
-	</footer>
+	{% include footer.html %}
 </body>
 </html>
