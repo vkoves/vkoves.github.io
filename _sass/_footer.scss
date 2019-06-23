@@ -15,7 +15,11 @@
 
   li { display: inline-block; }
 }
-.social-bar a { text-decoration: none; }
+.social-bar a {
+  display: block;
+  text-decoration: none;
+  margin: 0px 5px;
+}
 .social-bar div
 {
   display: inline-block;
@@ -23,7 +27,6 @@
   background-repeat: no-repeat;
   width: 35px;
   height: 35px;
-  margin: 0px 5px;
 }
 .social-bar .twitter { background-image: url("../images/social-media-icons/twitter.svg"); }
 .social-bar .linkedin { background-image: url("../images/social-media-icons/linkedin.svg"); }
