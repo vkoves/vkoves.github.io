@@ -5,33 +5,44 @@
 	<link href="/css/syntax.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="/js/main.js"></script>
-	{% for stylesheet in page.stylesheets %}
-		<link href="/css/{{  stylesheet }}" rel="stylesheet">
-	{% endfor %}
-	{% for script in page.scripts %}
-		<script src="/js/{{ script }}"></script>
-	{% endfor %}
-	{% if page.isPost %}
-		<link href="/css/blog.css" rel="stylesheet">
-	{% endif %}
-	{{ stylesheets }}
-
-	<!-- Show page title with my name UNLESS the title already has it -->
-	<title>
-		{% if page.title %}
-			{% if page.title contains 'Viktor Köves' %}
-				{{ page.title }}
-			{% else %}
-				{{ page.title }} - Viktor Köves
-			{% endif %}
-		{% else %}
-			Viktor Köves
-		{% endif %}
-	</title>
 
 	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
 	<!-- Added Open Sans from Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" type="text/css">
+
+	{% for stylesheet in page.stylesheets %}
+		<link href="/css/{{  stylesheet }}" rel="stylesheet">
+	{% endfor %}
+
+	{% for script in page.scripts %}
+		<script src="/js/{{ script }}"></script>
+	{% endfor %}
+
+	{% if page.isPost %}
+		<link href="/css/blog.css" rel="stylesheet">
+	{% endif %}
+
+	<title>
+		{% comment %}
+			Compute page title for <title> and <meta> tags. Use page title + ' - ' +
+			site title, UNLESS the page title already contains the site title, like on
+			the homepage.
+		{% endcomment %}
+
+		{% if page.title %}
+			{% if page.title contains site.title %}
+				{% assign pageTitle = page.title %}
+			{% else %}
+				{% assign pageTitle = page.title | append: ' - ' | append: site.title %}
+			{% endif %}
+		{% else %}
+				{% assign pageTitle = site.title %}
+		{% endif %}
+
+		{% comment %} Output computed page title {% endcomment %}
+		{{ pageTitle }}
+	</title>
+
 	{% if page.metadata %}
 		<meta name="theme-color" content="{{ page.metadata[0].theme_color }}">
 		<meta name="description" content="{{ page.metadata[0].description }}">
@@ -44,28 +55,23 @@
 		<meta property="twitter:description" content="{{ page.metadata[0].og_description }}" />
 	{% else %}
 		<meta name="theme-color" content="#D80000">
-		<meta name="description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
+		<meta name="description" content="{{ site.description }}">
 		<meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
 
 		<!-- Twitter Info -->
 		<meta name="twitter:card" content="summary_large_image">
 
 		<!-- Social Media Title for Twitter & Open Graph -->
-		{% if page.title %}
-			<meta name="twitter:title" content="{{page.title}} - Viktor K&ouml;ves">
-			<meta property="og:title" content="{{page.title}} - Viktor K&ouml;ves">
-		{% else %}
-			<meta name="twitter:title" content="Viktor K&ouml;ves">
-			<meta property="og:title" content="Viktor K&ouml;ves">
-		{% endif %}
+		<meta name="twitter:title" content="{{ pageTitle }}">
+		<meta property="og:title" content="{{ pageTitle }}">
 
 		<!-- Social Media Description for Twitter & Open Graph -->
 		{% if page.excerpt %}
-			<meta name="twitter:description" content="{{page.excerpt | strip_html | strip }}">
-			<meta property="og:description" content="{{page.excerpt  | strip_html | strip }}">
+			<meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
+			<meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
 		{% else %}
-			<meta name="twitter:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
-			<meta property="og:description" content="The personal website of Viktor K&ouml;ves - software engineer, game developer, and digital design enthusiast.">
+			<meta name="twitter:description" content="{{ site.description }}">
+			<meta property="og:description" content="{{ site.description }}">
 		{% endif %}
 	{% endif %}
 
@@ -81,25 +87,11 @@
 	  ga('send', 'pageview');
 	</script>
 </head>
+
 <body>
-	{% comment %} Site wide header {% endcomment %}
-	<header id="header" class="filter-transition">
-		<div id="header-inside">
-			<div class="header-main">
-				<span id="title"><a href="/" class="local-link">Viktor K&ouml;ves</a></span>
+	{% include header.html %}
 
-				<img id="menu" src="/images/menu.svg" alt="Menu">
-			</div>
-
-			<div id="header-buttons">
-				<a href="/gallery" class="local-link">Gallery</a> |
-				<a href="/portfolio" class="local-link">Portfolio</a> |
-				<a href="/blog">Blog</a>
-			</div>
-		</div>
-	</header>
-
-	<div class="page-container {{ page.pageClass }}">
+	<main class="page-container {{ page.pageClass }}">
 		{% if page.isPost %}
 			<a href="/blog" id="all-posts" class="red-button">&larr; Back to All Posts</a>
 			<br>
@@ -108,7 +100,6 @@
 		{% endif %}
 
 		{{ content }}
-
 
 		{% if page.isPost %}
 		<div class="post-controls">
@@ -125,38 +116,8 @@
 			{% endif %}
 		</div>
 		{% endif %}
-	</div>
+	</main>
 
-	{% comment %} Site wide footer {% endcomment %}
-	<footer class="footer filter-transition">
-		<ul class="social-bar">
-			<!-- Since these are all CSS images, add aria-label for a11y -->
-			<li>
-				<a href="https://github.com/vkoves" aria-label="Viktor on GitHub">
-					<div class="github"></div>
-				</a>
-			</li>
-			<li>
-				<a href="http://vkstech.tumblr.com/" aria-label="Viktor on tumblr">
-					<div class="tumblr"></div>
-				</a>
-			</li>
-			<li>
-				<a href="https://twitter.com/viktor_koves" aria-label="Viktor on Twitter">
-					<div class="twitter"></div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/viktorkoves" aria-label="Viktor on LinkedIn">
-					<div class="linkedin"></div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.instagram.com/viktor_koves/" aria-label="Viktor Instagram">
-					<div class="instagram"></div>
-				</a>
-			</li>
-		</ul>
-	</footer>
+	{% include footer.html %}
 </body>
 </html>
