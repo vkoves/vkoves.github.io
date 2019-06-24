@@ -2,6 +2,7 @@
 ---
 
 @import 'variables/colors';
+@import 'variables/sizing';
 
 /* Gallery Page */
 .img-container .info { background-image: url("/images/icons/info-white.svg"); }
@@ -20,10 +21,14 @@
 }
 #gallery-container
 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+  align-items: flex-start;
 }
 .gallery-img
 {
@@ -33,31 +38,30 @@
   cursor: pointer;
   background: white;
   border: none;
-  width: calc(33% - 30px);
-  padding: 5px;
-  margin: 10px;
-  box-shadow: 1px 1px 5px #887F7F;
-}
-/* Hobby Photos hidden by default */
-.gallery-img.hobby { display: none; }
-.gallery-img img
-{
   width: 100%;
-  transition: all 0.3s;
-}
-.gallery-img:hover > img, .gallery-img:focus > img
-{
-  filter: brightness(50%);
-  -webkit-filter: brightness(50%);
-}
-.gallery-img:hover > .icon, .gallery-img:focus > .icon
-{
-  opacity: 1;
-}
-@media (max-width: 600px)
-{
-  .gallery-img
+  padding: 5px;
+  box-shadow: 1px 1px 5px #887F7F;
+
+  &:hover, &:focus {
+    > img {
+      filter: brightness(50%);
+      -webkit-filter: brightness(50%);
+    }
+    > .icon { opacity: 1; }
+  }
+  img
   {
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+  }
+}
+
+@media (max-width: $mobile-max-width)
+{
+  // Switch to one column layout
+  #gallery-container {
+    grid-template-columns: 1fr;
     width: 90%;
   }
 }
