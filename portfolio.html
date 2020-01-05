@@ -9,6 +9,7 @@ stylesheets:
 ---
 
 <h1 class="page-title">Portfolio</h1>
+
 <p class="page-desc">
 	These are a sampling of some of the projects I've worked on.
 </p>
@@ -31,26 +32,13 @@ stylesheets:
 				{ url: "images/projects/Carpe (3).jpg", alt: "Carpe page with Jack Altman's activity" },
 			],
 			tools: [
-					"Ruby on Rails",
-					"jQuery UI",
-					"jQuery",
-					"Javascript",
-					"HTML5",
-					"CSS3",
+				"Ruby on Rails",
+				"jQuery UI",
+				"jQuery",
+				"Javascript",
+				"HTML5",
+				"CSS3",
 			]
-		},
-		{
-			name: "Christmas In Clouds",
-			subtitle: "Showing some holiday cheer",
-			description: "Christmas In Clouds is a simple game that celebrates the beauty of winter in an idealized small town. <br><br> <a href='http://viktorkoves.com/projects/christmas-in-clouds'>Learn More & Try It</a>",
-			thumbnail: "images/portfolio/thumbs/ChristmasInClouds.jpg",
-			gallery: [
-				{ url: "images/projects/ChristmasInClouds (1).png", alt: "Video game paper plane flying over small town street" },
-				{ url: "images/projects/ChristmasInClouds (2).png", alt: "Video game paper plane flying over playground" },
-				{ url: "images/projects/ChristmasInClouds (3).png", alt: "Video game paper plane flying by buildings with wreaths" },
-				{ url: "images/projects/ChristmasInClouds (4).png", alt: "Video game plane flying by street light with wreath" },
-			],
-			tools: ["Unity", "Blender", "GIMP"]
 		},
 		{
 			name: "Scroll Stop",
@@ -61,7 +49,7 @@ stylesheets:
 				{ url: "images/projects/ScrollStop (1).png", alt: "Scroll stop page with settings" },
 				{ url: "images/projects/ScrollStop (2).png", alt: "indigoBox homepage with Scroll Stop inactive popup" },
 			],
-			tools: ["jQuery", "Javascript","HTML5", "CSS3"]
+			tools: [ "jQuery", "Javascript","HTML5", "CSS3" ]
 		},
 		{
 			name: "Lines",
@@ -73,7 +61,7 @@ stylesheets:
 				{ url: "images/projects/Lines (2).png", alt: "Screenshot of Lines user interface with previous town image" },
 				{ url: "images/projects/Lines (3).png", alt: "Screenshot of Lines user interface with indigoBox homepage" },
 			],
-			tools: ["C#", "Visual Studio"]
+			tools: [ "C#", "Visual Studio" ]
 		},
 		{
 			name: "indigoBox Website",
@@ -86,10 +74,11 @@ stylesheets:
 				{ url: "images/projects/indigoBoxSite (3).png", alt: "indigoBox individual project page screenshot" },
 			],
 			tools: [
-					"jQuery",
-					"Javascript",
-					"CSS3",
-					"HTML5"]
+				"jQuery",
+				"Javascript",
+				"CSS3",
+				"HTML5"
+			]
 		},
 		{
 			name: "The Transportation Collective",
@@ -105,12 +94,12 @@ stylesheets:
 				{ url: "images/projects/TransCo (10).png", alt: "TransCo CTA line graph of issues over time" },
 			],
 			tools: [
-			"Google Maps API",
-			"Google Charts",
-			"jQuery",
-			"Javascript",
-			"CSS3",
-			"HTML5",
+				"Google Maps API",
+				"Google Charts",
+				"jQuery",
+				"Javascript",
+				"CSS3",
+				"HTML5",
 			]
 		},
 		{
@@ -139,19 +128,20 @@ stylesheets:
 		for(var i = 0; i < projects.length; i++)
 		{
 			project = projects[i];
+
 			$(".projects-container").append(
-			'<div class="projects-tile">' +
-				'<div class="title">' + project.name + '</div>' +
-				'<div class="sub-title">' + project.subtitle + '</div>' +
-				'<div class="thumb-container">' +
-					'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
-				'</div>' +
-				'<div class="icons-cont" data-project-id="' + i +'">' +
-					'<button class="icon-container info-cont"><div class="icon info"></div>Info</button>' +
-					'<button class="icon-container images-cont"><div class="icon images"></div>Images</button>' +
-					'<button class="icon-container tools-cont"><div class="icon tools"></div>Tools</button>' +
-				'</div>' +
-			'</div>');
+				'<div class="projects-tile">' +
+					'<div class="title">' + project.name + '</div>' +
+					'<div class="sub-title">' + project.subtitle + '</div>' +
+					'<div class="thumb-container">' +
+						'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
+					'</div>' +
+					'<div class="icons-cont" data-project-id="' + i +'">' +
+						'<button class="icon-container info-cont"><div class="icon info"></div>Info</button>' +
+						'<button class="icon-container images-cont"><div class="icon images"></div>Images</button>' +
+						'<button class="icon-container tools-cont"><div class="icon tools"></div>Tools</button>' +
+					'</div>' +
+				'</div>');
 		}
 
 		$(".icons-cont .info-cont").click(function()
@@ -164,8 +154,9 @@ stylesheets:
 		{
 			var project = projects[$(this).parent().attr("data-project-id")];
 
-			if(galleryInstance)
+			if (galleryInstance) {
 				galleryInstance.destroy();
+			}
 
 			galleryInstance = new Gallery(project.gallery); //setup a new gallery object
 			galleryInstance.showImage(0); //and show the first image
@@ -174,22 +165,23 @@ stylesheets:
 		$(".icons-cont .tools-cont").click(function()
 		{
 			var project = projects[$(this).parent().attr("data-project-id")];
+
 			showInfo(project.name + " - Tools", getToolsHTML(project.tools));
 		});
 
 		$("body").keydown(function(event)
 		{
-		  if(event.keyCode == 37) //left arrow
+		  if (event.keyCode == 37) // left arrow
 		  {
 		  	galleryInstance.previousImage();
 		  }
-		  else if(event.keyCode == 39) //right arrow
+		  else if (event.keyCode == 39) // right arrow
 		  {
 		  	galleryInstance.nextImage();
 		  }
-		  else if(event.keyCode == 27) //escape
+		  else if (event.keyCode == 27) // escape
 		  {
-		  	if(galleryInstance)
+		  	if (galleryInstance)
 			{
 				galleryInstance.destroy();
 				galleryInstance = null;
@@ -215,13 +207,16 @@ stylesheets:
 
 			console.log(tool);
 
-			if(toolImage)
+			if (toolImage)
 				toolsHTML += '<div class="tool-cont"><img src="' + toolImage + '"><div class="text">' + tool + '</div></div>';
 			else
 			{
 				var className = "featured-text"
-				if(tool.length < 3) //if it's a short abbreviation (e.g. C#, JS, CSS)
+
+				// if it's a short abbreviation (e.g. C#, JS, CSS)
+				if (tool.length < 3) {
 					className += " large"
+				}
 
 				toolsHTML += '<div class="tool-cont"><div class="' + className + '">' + tool + '</div><div class="text">' + tool + '</div></div>';
 			}
@@ -232,9 +227,11 @@ stylesheets:
 
 	function getToolsImage(toolName)
 	{
-		if(toolName == "C#" || toolName == "Google Charts") // no images for C# or Google Charts
+		if (toolName == "C#" || toolName == "Google Charts") { // no images for C# or Google Charts
 			return null;
-		else
+		}
+		else {
 			return "images/tools/" + toolName.split(" ").join("_") + ".svg";
+		}
 	}
 </script>
