@@ -14,16 +14,20 @@ $desktop-img-size: 30rem;
   display: grid;
   grid-template-rows: $desktop-img-size;
   grid-template-columns: $desktop-img-size 1fr;
+  width: 95%;
   max-width: $max-cont-width;
   margin: 5rem auto 0;
   background-color: $off-white;
-  box-shadow: 5px 5px 3px $grey;
+  box-shadow: 2px 2px 50px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
 
   img { height: 100%; }
 }
 
 .text-cont {
-  padding: 5rem 3rem 0;
+  padding: 0 3rem;
+  align-self: center;
 
   h1 { font-size: 4rem; }
 
@@ -35,25 +39,30 @@ $desktop-img-size: 30rem;
   .tagline {
     margin-top: 0;
     margin-bottom: 2rem;
-    font-weight: bold;
+    font-weight: 600;
     color: $dark-grey;
   }
 }
 
-@media (max-width: $mobile-max-width) {
+// Switch to mobile layout on tablets and
+@media (max-width: 1000px) {
   .main-cont {
     // Switch to one column layout
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
     grid-template-columns: 1fr;
     background-color: transparent;
     width: 90%;
     box-shadow: none;
     margin-top: 0;
+    border-radius: 0;
 
     img {
       width: 100%;
       height: auto;
     }
-    .text-cont { padding: 1.25rem 0; }
+    .text-cont {
+      padding: 1.25rem 0;
+      align-self: flex-start;
+    }
   }
 }

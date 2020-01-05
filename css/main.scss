@@ -22,10 +22,21 @@ body
   color: $charcoal;
 }
 button { font-family: 'Open Sans', sans-serif; }
+
 // Make buttons and links have a nice red dashed outline on focus
 button, a {
-  &:focus {
-    outline: dashed 3px $brand-red;
+  &:focus { outline: dashed 3px $brand-red; }
+}
+
+// Make all basic links a dark red without an underline and then switch to
+// darkest red and underline on hover/focus
+a {
+  text-decoration: none;
+  color: $dark-red;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: $darkest-red;
   }
 }
 
@@ -34,8 +45,8 @@ button, a {
 
 // Generic page styles
 .page-limiter
-{
-  position: relative;
+
+{  position: relative;
   width: 90%;
   max-width: 1000px;
   margin: 0px auto;
@@ -48,6 +59,7 @@ button, a {
 {
   text-align: center;
 }
+.page-desc { margin-bottom: 30px; }
 .button-link
 {
   position: relative;
@@ -66,11 +78,8 @@ button, a {
   border-bottom: solid #960000 2px;
 }
 
-.brand-font {
-  font-family: 'Courgette', cursive;
-  // Courgette has no bold version, so force normal weight
-  font-weight: normal;
-}
+// Brand font is just bold open sans
+.brand-font { font-weight: 600; }
 .brand-color { color: $brand-red; }
 
 h1 { font-weight: 600; margin: 0px; }
