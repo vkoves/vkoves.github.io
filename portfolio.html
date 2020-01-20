@@ -131,15 +131,18 @@ stylesheets:
 
 			$(".projects-container").append(
 				'<div class="projects-tile">' +
-					'<div class="title">' + project.name + '</div>' +
+					'<h2 class="title">' + project.name + '</h2>' +
 					'<div class="sub-title">' + project.subtitle + '</div>' +
 					'<div class="thumb-container">' +
 						'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
 					'</div>' +
 					'<div class="icons-cont" data-project-id="' + i +'">' +
-						'<button class="icon-container info-cont"><div class="icon info"></div>Info</button>' +
-						'<button class="icon-container images-cont"><div class="icon images"></div>Images</button>' +
-						'<button class="icon-container tools-cont"><div class="icon tools"></div>Tools</button>' +
+						'<button class="icon-container info-cont" aria-label="' + project.name + ' - Info">' +
+							'<div class="icon info"></div>Info</button>' +
+						'<button class="icon-container images-cont" aria-label="' + project.name + ' - Images">' +
+							'<div class="icon images"></div>Images</button>' +
+						'<button class="icon-container tools-cont" aria-label="' + project.name + ' - Tools">' +
+							'<div class="icon tools"></div>Tools</button>' +
 					'</div>' +
 				'</div>');
 		}
