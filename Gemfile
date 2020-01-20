@@ -1,4 +1,6 @@
 source "https://rubygems.org"
+
+# If updated, should update travis.yml so CI will pass
 ruby '2.4.1'
 
 # Hello! This is where you manage which Jekyll version is used to run.
