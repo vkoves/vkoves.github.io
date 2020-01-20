@@ -9,6 +9,11 @@ description:
   The personal website of Viktor K&ouml;ves - software engineer, game developer,
   and digital design enthusiast.
 
+# Setup a project collection so we can dynamically load in project info without
+# JS, ensuring it's great for SEO
+collections:
+  - projects
+
 # Define some defaults
 defaults:
   -

@@ -14,18 +14,32 @@ stylesheets:
 	These are a sampling of some of the projects I've worked on.
 </p>
 
+
 <div class="projects-container">
-	<!-- Projects tiles go here -->
+	{% for project in site.projects %}
+		<div class="projects-tile">
+			<h2 class="title">{{ project.name }} </h2>
+			<div class="sub-title">{{ project.subtitle }} </div>
+			<div class="thumb-container">
+				<div class="thumb" style="background-image: url({{ project.thumbnail }})"></div>
+			</div>
+			<div class="icons-cont" data-project-id="{{ project.jsId }}">
+				<button class="icon-container info-cont" aria-label="{{ project.name }} - Info">
+					<div class="icon info"></div>Info</button>
+				<button class="icon-container images-cont" aria-label="{{ project.name }} - Images">
+					<div class="icon images"></div>Images</button>
+				<button class="icon-container tools-cont" aria-label="{{ project.name }} - Tools">
+					<div class="icon tools"></div>Tools</button>
+			</div>
+		</div>
+	{% endfor %}
 </div>
 
 <script>
 	// Create projects array, an array of hashes that describe each project
-	var projects = [
-		{
+	var projects = {
+		carpe: {
 			name: "Carpe",
-			subtitle: "Scheduling made social",
-			description: "Carpe is an online schduler designed to make organizing easier and more socially connected. With Carpe, you can follow people to see and track their schedules, so you'll stay up to date. Planning everything from lunch-time hangouts to business meetings is now faster and pain-free.",
-			thumbnail: "images/portfolio/thumbs/carpe.jpg",
 			gallery: [
 				{ url: "images/projects/Carpe (1).jpg", alt: "Carpe page with Jack Altman's schedule" },
 				{ url: "images/projects/Carpe (2).jpg", alt: "Carpe page with Jack Altman's followers" },
@@ -40,22 +54,18 @@ stylesheets:
 				"CSS3",
 			]
 		},
-		{
+		scrollStop: {
 			name: "Scroll Stop",
-			subtitle: "Boosting Productivity",
 			description: "Scroll Stop was born from my desire to experiment with creating Google Chrome extension, and seizing the opportunity when a friend proposed the idea for a productivity app that specifically tackled lazy loading social media and content websites by stopping you from scrolling too far. That way if you need to message people on Facebook or other social media platforms, you still can, but it will prevent you from mindlessly scrolling through your newsfeed.",
-			thumbnail: "images/portfolio/thumbs/ScrollStop.jpg",
 			gallery: [
 				{ url: "images/projects/ScrollStop (1).png", alt: "Scroll stop page with settings" },
 				{ url: "images/projects/ScrollStop (2).png", alt: "indigoBox homepage with Scroll Stop inactive popup" },
 			],
 			tools: [ "jQuery", "Javascript","HTML5", "CSS3" ]
 		},
-		{
+		lines: {
 			name: "Lines",
-			subtitle: "Open source edge detection",
 			description: "A senior project in high school, Lines was an open source edge detection program with the goal of eventually turning it into computer vision software.",
-			thumbnail: "images/portfolio/thumbs/lines.jpg",
 			gallery: [
 				{ url: "images/projects/Lines (1).png", alt: "Photo of video game town in full color and made of only lines" },
 				{ url: "images/projects/Lines (2).png", alt: "Screenshot of Lines user interface with previous town image" },
@@ -63,11 +73,9 @@ stylesheets:
 			],
 			tools: [ "C#", "Visual Studio" ]
 		},
-		{
+		iBWebsite: {
 			name: "indigoBox Website",
-			subtitle: "Spreading the word",
 			description: "indigoBox, the software studio I lead, had an old introductory website for a long time, and it took a coordinated effort that I lead amongst our team to launch our new website, which showcases all of our main products as well as all of our members.",
-			thumbnail: "images/portfolio/thumbs/indigoBoxSite.jpg",
 			gallery: [
 				{ url: "images/projects/indigoBoxSite (1).png", alt: "indigoBox homepage screenshot" },
 				{ url: "images/projects/indigoBoxSite (2).png", alt: "indigoBox projects page screenshot" },
@@ -80,11 +88,9 @@ stylesheets:
 				"HTML5"
 			]
 		},
-		{
+		transportCollective: {
 			name: "The Transportation Collective",
-			subtitle: "Big data for CTA customers",
 			description: "A class inter-professional project, the Transportation Collective Website was born out of the unhappy experiences that our group members had on the CTA, and the challenge we found for customers on the CTA in reporting not technical issues. We sought to use big data to improve the rider experience on the CTA, and did research and interviews with CTA riders to help develop our solution.",
-			thumbnail: "images/portfolio/thumbs/TransCo.jpg",
 			gallery: [
 				{ url: "images/projects/TransCo (2).png", alt: "TransCo CTA homepage screenshot with issue map" },
 				{ url: "images/projects/TransCo (3).png", alt: "TransCo CTA issue map closeup, showing one issue at Morgan green line stop" },
@@ -102,11 +108,9 @@ stylesheets:
 				"HTML5",
 			]
 		},
-		{
+		apollo: {
 			name: "Apollo",
-			subtitle: "Learning more about music",
 			description: "Apollo started as an experiment using the Spotify API, and can visualize some of the data that Spotify computes on tracks, such as danceability, acousticness, and more. If you want to see how it works in action, <a href='http://viktorkoves.com/apollo'>try it out</a>.",
-			thumbnail: "images/portfolio/thumbs/Apollo.jpg",
 			gallery: [
 				{ url: "images/projects/Apollo (1).png", alt: "Apollo screenshot showing graph of musical features for an album" },
 			],
@@ -118,35 +122,13 @@ stylesheets:
 				"HTML5",
 			]
 		}
-	];
+	};
 
 	var project; //the current project
 	var galleryInstance;
 
 	$(document).ready(function()
 	{
-		for(var i = 0; i < projects.length; i++)
-		{
-			project = projects[i];
-
-			$(".projects-container").append(
-				'<div class="projects-tile">' +
-					'<h2 class="title">' + project.name + '</h2>' +
-					'<div class="sub-title">' + project.subtitle + '</div>' +
-					'<div class="thumb-container">' +
-						'<div class="thumb" style="background-image: url(\'' + project.thumbnail + '\')"></div>' +
-					'</div>' +
-					'<div class="icons-cont" data-project-id="' + i +'">' +
-						'<button class="icon-container info-cont" aria-label="' + project.name + ' - Info">' +
-							'<div class="icon info"></div>Info</button>' +
-						'<button class="icon-container images-cont" aria-label="' + project.name + ' - Images">' +
-							'<div class="icon images"></div>Images</button>' +
-						'<button class="icon-container tools-cont" aria-label="' + project.name + ' - Tools">' +
-							'<div class="icon tools"></div>Tools</button>' +
-					'</div>' +
-				'</div>');
-		}
-
 		$(".icons-cont .info-cont").click(function()
 		{
 			var project = projects[$(this).parent().attr("data-project-id")];
