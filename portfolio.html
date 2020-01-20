@@ -15,7 +15,6 @@ stylesheets:
 	These are a sampling of some of the projects I've worked on.
 </p>
 
-
 <div class="projects-container">
 	{% for project in site.projects %}
 		<div class="projects-tile">
@@ -24,7 +23,7 @@ stylesheets:
 			<div class="thumb-container">
 				<div class="thumb" style="background-image: url({{ project.thumbnail }})"></div>
 			</div>
-			<div class="icons-cont" data-project-id="{{ project.jsId }}">
+			<div class="icons-cont" data-project-id="{{ forloop.index0 }}">
 				<button class="icon-container info-cont" aria-label="{{ project.name }} - Info">
 					<div class="icon info"></div>Info</button>
 				<button class="icon-container images-cont" aria-label="{{ project.name }} - Images">
@@ -35,3 +34,11 @@ stylesheets:
 		</div>
 	{% endfor %}
 </div>
+
+<!-- Add Jekyll projects collection to JS. Done here so that it doesn't
+	confuse any JS linting or require front-matter in a .js file -->
+<script>
+	/* jshint ignore:start */
+	var projects = {{ site.projects | jsonify }};
+	/* jshint ignore:end */
+</script>
