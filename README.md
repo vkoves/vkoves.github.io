@@ -25,15 +25,16 @@ This site uses Travis for CI, but you can run the CI locally by running:
 ```
 
 This will build the Jekyll site and then run it through validation with
-[HTML Proofer](https://github.com/gjtorikian/html-proofer).
+[HTML Proofer](https://github.com/gjtorikian/html-proofer),
+[stylelint](https://stylelint.io/), and
+[ESLint](https://eslint.org/).
 
 ## Features
 
-- Gallery - Powered by jQuery and some nifty CSS3, this animated gallery shows off some visual parts of my work, including a way to view titles and descriptions. The gallery images are dynamically loaded in using Javascript.
+- Gallery functionality - Powered by jQuery and some nifty CSS3, this animated gallery shows off some visual parts of my work, including a way to view titles and descriptions. The gallery images are dynamically loaded in using Javascript.
 
 - Portfolio - List of projects, each with its own gallery of images, description, and set of tools. This is also dynamically generated using Javascript instead of being stored in the DOM.
 
-- Blog - Jekyll powered blog, used for technical posts with well formatted code snippets.
 
 ## Notable Pages
 
