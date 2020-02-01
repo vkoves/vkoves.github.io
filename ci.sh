@@ -20,3 +20,6 @@ htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-sta
 
 # Run Sass Lint verbose - cnfigured by .sass-lint.yml
 sass-lint -v
+
+# Run ESLint on the js/ directory
+npx eslint js/
