@@ -1,3 +1,6 @@
+/* globals setPageBlur */
+/* exported Gallery */
+
 // instantiates a gallery given a gallery data object, which contains info about all images to display
 // this can be either an array of hashes if you want more information in each gallery item
 // or an array of strings if you just need to display images

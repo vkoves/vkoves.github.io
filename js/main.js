@@ -1,3 +1,5 @@
+/* exported showInfo, closeInfo, setPageBlur */
+
 $(document).ready(function()
 {
     $('#menu').click(function()

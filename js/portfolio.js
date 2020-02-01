@@ -1,3 +1,5 @@
+/* global projects, Gallery, showInfo, closeInfo */
+
 var galleryInstance;
 
 $(document).ready(function()
@@ -65,8 +67,6 @@ function getProject(projectId) {
 function getToolsHTML(tools)
 {
     var toolsHTML = ''; // start generating HTML for the tools to display
-    var tool; // the current tool
-    var toolImage = null;
 
     for(var i = 0; i < tools.length; i++)
     {
