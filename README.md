@@ -2,7 +2,7 @@
 
 #  Viktor Köves' Home Base [![Build Status](https://travis-ci.org/vkoves/vkoves.github.io.svg?branch=master)](https://travis-ci.org/vkoves/vkoves.github.io)
 
-My personal website, used for everything from showcasing work to prototyping and messing around with HTML. Have suggetions or feedback? Open an issue.
+My personal website, used for everything from showcasing work to prototyping and messing around with HTML. Have suggestions or feedback? Open an issue.
 
 ## Running
 
@@ -11,7 +11,7 @@ locally simply do:
 
 ```shell
 bundle install # install all gems
-jekyll serve # host the site locall
+jekyll serve # host the site locally
 ```
 
 The site should be hosted for you at `localhost:4000`.
@@ -33,7 +33,7 @@ This will build the Jekyll site and then run it through validation with
 
 - Gallery functionality - Powered by jQuery and some nifty CSS3, this animated gallery shows off some visual parts of my work, including a way to view titles and descriptions. The gallery images are dynamically loaded in using Javascript.
 
-- Portfolio - List of projects, each with its own gallery of images, description, and set of tools. This is also dynamically generated using Javascript instead of being stored in the DOM.
+- Portfolio - List of projects, each with its own gallery of images, description, and set of tools. This is generated via a Jekyll collection for SEO and performance.
 
 
 ## Notable Pages
