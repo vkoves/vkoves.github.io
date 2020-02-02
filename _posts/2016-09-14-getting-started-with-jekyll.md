@@ -1,9 +1,10 @@
 ---
 layout: default
 isPost: true
-category:
- - Jekyll
+categories:
+ - Archive
  - Coding Tips
+ - Jekyll
 ---
 
 Working with Jekyll is a whole lot easier than dealing with tons and tons

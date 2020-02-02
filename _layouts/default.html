@@ -23,7 +23,7 @@
 	{% endfor %}
 
 	{% if page.isPost %}
-		<!-- If a blog post, pull in blog & syntax highlighting CSS -->
+		<!-- If a post, pull in blog & syntax highlighting CSS -->
 		<link href="/css/blog.css" rel="stylesheet">
 		<link href="/css/syntax.css" rel="stylesheet">
 	{% endif %}
@@ -99,7 +99,7 @@
 
 	<main class="page-container {{ page.pageClass }}">
 		{% if page.isPost %}
-			<a href="/blog" id="all-posts" class="red-button">&larr; Back to All Posts</a>
+			<a href="/writing" id="all-posts" class="red-button">&larr; Back to All Posts</a>
 			<br>
 			<h1 class="page-title">{{ page.title }}</h1>
 			<span class="post-date">Posted {{ page.date | date: "%B %d, %Y" }}</span>

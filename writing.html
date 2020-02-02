@@ -2,13 +2,17 @@
 layout: default
 stylesheets:
  - blog.css
-title: "Blog"
+title: "Writing"
 ---
 
 <h1 class="page-title">Writing</h1>
 
 <ul class="post-list">
   {% for post in site.posts %}
+    {% if post.categories contains "Archive" %}
+      {% continue %}
+    {% endif %}
+
     <li class="post-listing">
       <div class="post-heading">
         <a href="{{ post.url }}">
