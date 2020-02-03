@@ -1,6 +1,8 @@
 ---
 jsId: transportCollective
 name: The Transportation Collective
+order: 6
+
 subtitle: Big data for CTA customers
 thumbnail: images/portfolio/thumbs/TransCo.jpg
 

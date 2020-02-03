@@ -1,6 +1,8 @@
 ---
 jsId: apollo
 name: Apollo
+order: 3
+
 subtitle: Learning more about music
 thumbnail: images/portfolio/thumbs/Apollo.jpg
 
