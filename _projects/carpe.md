@@ -1,12 +1,13 @@
 ---
 jsId: carpe
 name: Carpe
-
-description:
-    Carpe is an online schduler designed to make organizing easier and more socially connected. With Carpe, you can follow people to see and track their schedules, so you'll stay up to date. Planning everything from lunch-time hangouts to business meetings is now faster and pain-free.
+order: 4
 
 subtitle: Scheduling made social
 thumbnail: images/portfolio/thumbs/carpe.jpg
+
+description:
+    Carpe is an online schduler designed to make organizing easier and more socially connected. With Carpe, you can follow people to see and track their schedules, so you'll stay up to date. Planning everything from lunch-time hangouts to business meetings is now faster and pain-free.
 
 tools:
     - Ruby on Rails

@@ -91,9 +91,12 @@ function getToolsHTML(tools)
     return toolsHTML;
 }
 
+var noImageTools = [ 'C#', 'Google Charts', 'Angular' ];
+
 function getToolsImage(toolName)
 {
-    if (toolName == 'C#' || toolName == 'Google Charts') { // no images for C# or Google Charts
+    // If this is a tool with no image, return null to show text
+    if (noImageTools.indexOf(toolName) !== -1) {
         return null;
     }
     else {
