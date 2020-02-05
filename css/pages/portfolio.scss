@@ -71,7 +71,7 @@
 .icons-cont {
   display: flex;
 }
-.projects-tile .icon-container
+.icon-container
 {
   background: none;
   border: none;
@@ -86,7 +86,7 @@
   // Override default outline
   &:focus, &:hover { background-color: $mid-grey; }
 }
-.projects-tile .icons-cont .icon
+.icons-cont .icon
 {
   width: 30px;
   height: 30px;

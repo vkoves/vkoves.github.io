@@ -1,13 +1,11 @@
 ---
+layout: project
 jsId: transportCollective
 name: The Transportation Collective
 order: 6
 
 subtitle: Big data for CTA customers
 thumbnail: images/portfolio/thumbs/TransCo.jpg
-
-description:
-    A class inter-professional project, the Transportation Collective Website was born out of the unhappy experiences that our group members had on the CTA, and the challenge we found for customers on the CTA in reporting not technical issues. We sought to use big data to improve the rider experience on the CTA, and did research and interviews with CTA riders to help develop our solution.
 
 gallery:
     - { url: images/projects/TransCo (2).png, alt: TransCo CTA homepage screenshot with issue map }
@@ -24,3 +22,5 @@ tools:
     - CSS3
     - HTML5
 ---
+
+A class inter-professional project, the Transportation Collective Website was born out of the unhappy experiences that our group members had on the CTA, and the challenge we found for customers on the CTA in reporting not technical issues. We sought to use big data to improve the rider experience on the CTA, and did research and interviews with CTA riders to help develop our solution.

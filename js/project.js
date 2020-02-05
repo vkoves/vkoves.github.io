@@ -4,12 +4,6 @@ var galleryInstance;
 
 $(document).ready(function()
 {
-    $('.icons-cont .info-cont').click(function()
-    {
-        var project = getProject($(this).parent().attr('data-project-id'));
-        showInfo(project.name, project.description);
-    });
-
     $('.icons-cont .images-cont').click(function()
     {
         var project = getProject($(this).parent().attr('data-project-id'));

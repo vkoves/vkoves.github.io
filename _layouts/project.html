@@ -1,0 +1,37 @@
+---
+layout: default
+scripts:
+ - gallery.js
+ - project.js
+stylesheets:
+ - pages/portfolio.css
+---
+
+<h1>{{ page.name }}</h1>
+<span>{{ page.subtitle }}</span>
+
+{{ content }}
+
+<div class="icons-cont">
+	{% if page.gallery != null %}
+		<button class="icon-container images-cont"
+			aria-label="{{ page.name }} - Images">
+			<div class="icon images"></div>
+			Images
+		</button>
+	{% endif %}
+	<button class="icon-container tools-cont"
+		aria-label="{{ page.name }} - Tools">
+		<div class="icon tools"></div>
+		Tools
+	</button>
+</div>
+
+<!-- Add Jekyll projects collection to JS. Done here so that it doesn't
+	confuse any JS linting or require front-matter in a .js file -->
+<script>
+	/* jshint ignore:start */
+	var images = {{ page.gallery | jsonify }};
+	var tools = {{ page.tools | jsonify }};
+	/* jshint ignore:end */
+</script>
