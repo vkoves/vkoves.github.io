@@ -2,9 +2,6 @@
 layout: default
 pageClass: "page-limiter filter-transition"
 title: "Portfolio"
-scripts:
- - gallery.js
- - portfolio.js
 stylesheets:
  - pages/portfolio.css
 ---
@@ -12,7 +9,7 @@ stylesheets:
 <h1 class="page-title">Portfolio</h1>
 
 <p class="page-desc">
-	These are a sampling of some of the projects I've worked on.
+	These are a sampling of some of the companies and projects I have worked on.
 </p>
 
 {% assign ordered_projects = site.projects | sort: "order" %}
@@ -20,38 +17,15 @@ stylesheets:
 <div class="projects-container">
 	{% for project in ordered_projects %}
 		<div class="projects-tile">
-			<h2 class="title">{{ project.name }} </h2>
+			<h2 class="title">
+				<a href="{{ project.url }}">{{ project.name }}</a>
+			</h2>
 			<div class="sub-title">{{ project.subtitle }} </div>
-			<div class="thumb-container">
-				<div class="thumb" style="background-image: url({{ project.thumbnail }})"></div>
-			</div>
-			<div class="icons-cont" data-project-id="{{ forloop.index0 }}">
-				<button class="icon-container info-cont"
-					aria-label="{{ project.name }} - Info">
-					<div class="icon info"></div>
-					Info
-				</button>
-				{% if project.gallery != null %}
-					<button class="icon-container images-cont"
-						aria-label="{{ project.name }} - Images">
-						<div class="icon images"></div>
-						Images
-					</button>
-				{% endif %}
-				<button class="icon-container tools-cont"
-					aria-label="{{ project.name }} - Tools">
-					<div class="icon tools"></div>
-					Tools
-				</button>
-			</div>
+			<!-- The thumbnail is hidden as it's a duplicate link to the title, which
+				is more clear -->
+			<a href="{{ project.url }}" aria-hidden="true" tabindex="-1">
+				<img src="{{ project.thumbnail }}" alt="">
+			</a>
 		</div>
 	{% endfor %}
 </div>
-
-<!-- Add Jekyll projects collection to JS. Done here so that it doesn't
-	confuse any JS linting or require front-matter in a .js file -->
-<script>
-	/* jshint ignore:start */
-	var projects = {{ ordered_projects | jsonify }};
-	/* jshint ignore:end */
-</script>

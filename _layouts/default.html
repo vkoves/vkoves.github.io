@@ -12,12 +12,19 @@
 	<!-- Added Open Sans from Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet" type="text/css">
 
+	<!-- Pull in layout JS and CSS first so page CSS can override -->
+	{% for stylesheet in layout.stylesheets %}
+		<link href="/css/{{  stylesheet }}" rel="stylesheet">
+	{% endfor %}
 	{% for stylesheet in page.stylesheets %}
 		<link href="/css/{{  stylesheet }}" rel="stylesheet">
 	{% endfor %}
 
 	<!-- Mark all page specific JS deferred so it waits for jQuery and doesn't
 			block render -->
+	{% for script in layout.scripts %}
+		<script defer src="/js/{{ script }}"></script>
+	{% endfor %}
 	{% for script in page.scripts %}
 		<script defer src="/js/{{ script }}"></script>
 	{% endfor %}

@@ -13,9 +13,10 @@ jekyll build
 # --check_html					- Check for HTML errors using Nokogiri
 # --enforce_https				- Enforce HTTPS (since hosted on HTTPS)
 # --http-status-ignore "999,0"	- Ignore broken links with no code 999 or 0 (caused by LinkedIn and Packback)
+# --empty_alt_ignore    - Allow empty alt tags for decorative images
 #
 # Learn more: https://github.com/gjtorikian/html-proofer#configuration
-htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-status-ignore "999,0"
+htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-status-ignore "999,0" --empty_alt_ignore
 
 
 # Run Sass Lint verbose - cnfigured by .sass-lint.yml

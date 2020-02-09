@@ -1,0 +1,56 @@
+---
+layout: default
+scripts:
+ - gallery.js
+ - project.js
+stylesheets:
+ - pages/portfolio.css
+ - project.css
+---
+
+{% comment %} All the names of tools that have images {% endcomment %}
+{% assign toolsWithImages = "Angular,Blender,CSS3,GIMP,Google Maps API,HTML5,Javascript,jQuery,jQuery UI,Ruby on Rails,Spotify API, Unity" | split: ',' %}
+
+
+<h1>{{ page.name }}</h1>
+
+{{ content }}
+
+<h2>Languages & Tools Used</h2>
+
+<ul class="proj-tools-cont">
+{% for tool in page.tools %}
+	<li class="tool-cont">
+		{% if toolsWithImages contains tool %}
+			{% comment %}Image is decorative since the text is right below{% endcomment %}
+			<img src="/images/tools/{{ tool | split: ' ' | join: '_'}}.svg" alt="">
+			<div class="text">{{ tool }}</div>
+		{% else %}
+			<div class="featured-text">{{ tool }}</div>
+		{% endif %}
+	</li>
+{% endfor %}
+</ul>
+
+{% comment %}
+Show Gallery Section if there are photos via the gallery key
+{% endcomment %}
+
+{% if page.gallery != null %}
+	<h2>Gallery</h2>
+
+	<button id="proj-imgs" class="gallery-preview">
+		<!-- Don't use alt as the button is already labeled by text below -->
+		<img src="{{ page.gallery[0].url }}" alt="">
+		<div class="text">View {{ page.name }} Gallery</div>
+	</button>
+{% endif %}
+
+
+<!-- Add Jekyll projects collection to JS. Done here so that it doesn't
+	confuse any JS linting or require front-matter in a .js file -->
+<script>
+	/* jshint ignore:start */
+	var projectImages = {{ page.gallery | jsonify }};
+	/* jshint ignore:end */
+</script>
