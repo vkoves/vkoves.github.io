@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 isPost: true
 categories:
  - Archive

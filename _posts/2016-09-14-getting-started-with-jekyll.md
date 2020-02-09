@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 isPost: true
 categories:
  - Archive
@@ -43,7 +43,7 @@ Then, on each individual page, my front matter looks something like this:
 
 {% highlight html linenos %}
 ---
-layout: default
+layout: post
 stylesheets:
  - index.css
 scripts:

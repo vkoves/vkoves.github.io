@@ -29,12 +29,6 @@
 		<script defer src="/js/{{ script }}"></script>
 	{% endfor %}
 
-	{% if page.isPost %}
-		<!-- If a post, pull in blog & syntax highlighting CSS -->
-		<link href="/css/blog.css" rel="stylesheet">
-		<link href="/css/syntax.css" rel="stylesheet">
-	{% endif %}
-
 	<title>
 		{% comment %}
 			Compute page title for <title> and <meta> tags. Use page title + ' - ' +
@@ -105,32 +99,7 @@
 	{% include header.html %}
 
 	<main class="page-container {{ page.pageClass }}">
-		{% if page.isPost %}
-			<div class="all-posts-cont">
-				<a href="/writing" id="all-posts" class="red-button">Back to All Posts</a>
-			</div>
-
-			<h1 class="page-title">{{ page.title }}</h1>
-			<span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
-		{% endif %}
-
 		{{ content }}
-
-		{% if page.isPost %}
-		<div class="post-controls">
-			{% if page.previous %}
-				<a href="{{ page.previous.url }}" class="red-button">Previous Post</a>
-			{% else %}
-				<span class="red-button disabled">Previous Post</span>
-			{% endif %}
-
-			{% if page.next %}
-				<a href="{{ page.next.url }}" class="red-button">Next Post</a>
-			{% else %}
-				<span class="red-button disabled">Next Post</span>
-			{% endif %}
-		</div>
-		{% endif %}
 	</main>
 
 	{% include footer.html %}

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 isPost: true
 title: Documentation & Inclusion Lightning Talk
 categories:
