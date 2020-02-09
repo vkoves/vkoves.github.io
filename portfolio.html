@@ -21,9 +21,11 @@ stylesheets:
 				<a href="{{ project.url }}">{{ project.name }}</a>
 			</h2>
 			<div class="sub-title">{{ project.subtitle }} </div>
-			<div class="thumb-container">
-				<div class="thumb" style="background-image: url({{ project.thumbnail }})"></div>
-			</div>
+			<!-- The thumbnail is hidden as it's a duplicate link to the title, which
+				is more clear -->
+			<a href="{{ project.url }}" aria-hidden="true">
+				<img src="{{ project.thumbnail }}">
+			</a>
 		</div>
 	{% endfor %}
 </div>
