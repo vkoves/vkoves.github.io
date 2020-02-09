@@ -23,7 +23,7 @@ stylesheets:
 			<div class="sub-title">{{ project.subtitle }} </div>
 			<!-- The thumbnail is hidden as it's a duplicate link to the title, which
 				is more clear -->
-			<a href="{{ project.url }}" aria-hidden="true">
+			<a href="{{ project.url }}" aria-hidden="true" tabindex="-1">
 				<img src="{{ project.thumbnail }}" alt="">
 			</a>
 		</div>
