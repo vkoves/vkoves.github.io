@@ -1,4 +1,4 @@
-/* global projects, Gallery, showInfo, closeInfo */
+/* global Gallery, projectImages */
 
 var galleryInstance;
 
@@ -30,10 +30,6 @@ $(document).ready(function()
             {
                 galleryInstance.destroy();
                 galleryInstance = null;
-            }
-            else
-            {
-                closeInfo();
             }
         }
     });
