@@ -8,8 +8,8 @@ subtitle: Boosting productivity by reducing distractions
 thumbnail: images/portfolio/thumbs/ScrollStop.jpg
 
 gallery:
-    - { url: images/projects/scroll-stop-1.png, alt: Scroll stop page with settings }
-    - { url: images/projects/scroll-stop-2.png, alt: Twitter page with Scroll Stop active, showing it will stop scrolling  }
+    - { url: /images/projects/scroll-stop-1.png, alt: Scroll stop page with settings }
+    - { url: /images/projects/scroll-stop-2.png, alt: Twitter page with Scroll Stop active, showing it will stop scrolling  }
 tools:
     - jQuery
     - Javascript

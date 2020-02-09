@@ -8,7 +8,7 @@ subtitle: Learning more about music
 thumbnail: images/portfolio/thumbs/Apollo.jpg
 
 gallery:
-    - { url: images/projects/Apollo (1).png, alt: Apollo screenshot showing graph of musical features for an album }
+    - { url: /images/projects/Apollo (1).png, alt: Apollo screenshot showing graph of musical features for an album }
 tools:
     - Spotify API
     - jQuery

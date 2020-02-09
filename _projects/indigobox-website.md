@@ -8,9 +8,9 @@ subtitle: Spreading the word
 thumbnail: images/portfolio/thumbs/indigoBoxSite.jpg
 
 gallery:
-    - { url: images/projects/indigoBoxSite (1).png, alt: indigoBox homepage screenshot }
-    - { url: images/projects/indigoBoxSite (2).png, alt: indigoBox projects page screenshot }
-    - { url: images/projects/indigoBoxSite (3).png, alt: indigoBox individual project page screenshot }
+    - { url: /images/projects/indigoBoxSite (1).png, alt: indigoBox homepage screenshot }
+    - { url: /images/projects/indigoBoxSite (2).png, alt: indigoBox projects page screenshot }
+    - { url: /images/projects/indigoBoxSite (3).png, alt: indigoBox individual project page screenshot }
 tools:
     - jQuery
     - Javascript
