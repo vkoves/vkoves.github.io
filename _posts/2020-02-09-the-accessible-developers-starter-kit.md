@@ -20,7 +20,7 @@ have been using for the past few years to find and fix accessibility issues.
     starting point to learning about whether a site is accessible, but they
     aren't fool-proof. There are lots of things that are really important to
     accessibility like tab order and keyboard interactivity that an automated
-    tool is going to have a very hard time testing, if at all.
+    tool is going to have a very hard time testing, if it can test it at all.
   </p>
 
   <p>
@@ -40,8 +40,7 @@ notices. I actually learned about it from an auditor, who used it as a starting
 point for finding more simple failures like contrast that would take a long time
 to do manually.
 
-Here's a screenshot showing it finding an intentional contrast failure
-I put on my homepage:
+Here's a screenshot showing it finding a contrast failure I put on my homepage:
 
 ![HTML_Codesniffer error showing contrast failure](/post-assets/html-code-sniffer-example.jpg)
 
@@ -58,9 +57,11 @@ already know that it can audit a website and make recommendations for
 performance and web best practices, but it's also great as a quick accessibility
 auditor!
 
-It also gives you a score on accessibility from 1 - 100, which can help you get
+Lighthouse does a number of automated accessibility checks, and also lists out
+checks you should do manually to properly confirm your sites accessibility.
+It also gives you a score on accessibility from 1 to 100, which can help you get
 a good overall sense of if your site is mostly accessible or really
-inaccessible, which other auditing tools can make difficult to discern.
+inaccessible, which can be hard to determine with other tools.
 
 Check it out in Google Chrome's DevTools, and learn more about it at the
 [Chrome Lighthouse page][lighthouse].
@@ -108,7 +109,7 @@ information about the experience your actual users have than any tool can
 provide you, and it can also catch issues that automated tools might miss,
 especially in more dynamic interfaces.
 
-{% include linkedHeading.html heading="NVDA & ChromeVox" level=3 %}
+{% include linkedHeading.html heading="NVDA and ChromeVox" level=3 %}
 
 NVDA and ChromeVox are both screen readers, and I have used both of them to
 audit pages and to test if our screen reader users were getting the content we
@@ -116,18 +117,18 @@ were trying to communicate via properties like `aria-live`.
 
 ChromeVox is my day-to-day screen reader, as it's a Chrome extension that is
 easy to install and works on Linux (which is pretty rare). However, it's no
-longer supported, and it doesn't always properly handle certain aria tags.
+longer maintained and can handle certain aria tags incorrectly.
 
-NVDA is a free screen reader for Windows, and it's my screen reader of choice
-when I want to validate on a Windows machine. It's more popular and more
-maintained than ChromeVox, so I'd highly recommend it.
+NVDA, on the other hand, is a free screen reader for Windows, and it's my screen
+reader of choice when I want to test on a Windows machine. It's more popular
+and more maintained than ChromeVox, so I'd highly recommend it.
 
 Download NVDA or learn more at [the NVDA homepage][nvda]. Install or learn more
 about ChromeVox at [ChromeVox's Chrome Web Store page][chromevox].
 
 {% include linkedHeading.html heading="ZoomText" level=3 %}
 
-ZoomText is a tool that I actually heard about thanks to a user with lower
+ZoomText is a tool that I actually heard about thanks to a user with low
 vision, who used it to change the color scheme of websites and to magnify the
 screen beyond the browser limit of about 500%.
 
