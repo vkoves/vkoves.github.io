@@ -1,7 +1,6 @@
 ---
 layout: post
 title: The Accessible Developer's Starter Kit
-description: Test
 ---
 
 Whether you are just starting out learning about web accessibility or you are an
