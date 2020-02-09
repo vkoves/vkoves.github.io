@@ -12,7 +12,8 @@ description:
 # Setup a project collection so we can dynamically load in project info without
 # JS, ensuring it's great for SEO
 collections:
-  - projects
+  projects:
+    output: true
 
 # Define some defaults
 defaults:

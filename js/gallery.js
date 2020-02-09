@@ -23,13 +23,13 @@ function Gallery(galleryData, options)
         $('body').append(
             '<div id="overlay-controls" class="overlay">' +
                 '<button id="close" class="over-btn">' +
-                    '<img src="images/icons/cross.svg" alt="Close overlay">' +
+                    '<img src="/images/icons/cross.svg" alt="Close overlay">' +
                 '</button>' +
                 '<button id="left" class="over-btn vertically-centered">' +
-                    '<img class="arrow" src="images/icons/chevron-thin-left.svg" alt="Previous image">' +
+                    '<img class="arrow" src="/images/icons/chevron-thin-left.svg" alt="Previous image">' +
                 '</button>' +
                 '<button id="right" class="over-btn vertically-centered">' +
-                    '<img class="arrow" src="images/icons/chevron-thin-right.svg" alt="Next image">' +
+                    '<img class="arrow" src="/images/icons/chevron-thin-right.svg" alt="Next image">' +
                 '</button>' +
                 '<div class="gallery-nav">' + navigationDots + '</div>' +
             '</div>' +

@@ -18,7 +18,7 @@ $desktop-img-size: 30rem;
   max-width: $max-cont-width;
   margin: 5rem auto 0;
   background-color: $off-white;
-  box-shadow: 2px 2px 50px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 50px 5px $shadow-color;
   border-radius: 10px;
   overflow: hidden;
 

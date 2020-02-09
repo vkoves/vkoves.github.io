@@ -19,7 +19,7 @@ function showInfo(title, description)
             '<div class="description">' + description + '</div>' +
         '</div>' +
         '<button id="close" class="over-btn">' +
-            '<img alt="Close info overlay" src="images/icons/cross.svg">' +
+            '<img alt="Close info overlay" src="/images/icons/cross.svg">' +
         '</button>' +
     '</div>');
     $('#overlay-info .centered').click(function(event)
