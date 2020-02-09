@@ -1,9 +1,10 @@
 ---
-layout: default
-isPost: true
+layout: post
+categories:
+ - Archive
 ---
 
-I've found through working with other programmers that I write documentation in 
+I've found through working with other programmers that I write documentation in
 a pretty unconventional way. In my documentation, I try to convey a sense of
 progression and even sometimes a bit of a story in my documentation. So how does
 that look, and is it practical?
@@ -116,11 +117,11 @@ function jump()
     else if(jumpCount < 2) // but if the player is not touching the ground, but has not jumped twice
     {
       jumpCount++; // increment the jump count
-      player.velocity.y = 5; // and set the vertical velocity 
+      player.velocity.y = 5; // and set the vertical velocity
     }
   }
 }
-{% endhighlight %}  
+{% endhighlight %}
 
 Although this function is documented very thoroughly (there's a comment on every
 line that isn't a bracket), the comments are not necessarily always useful. While
@@ -149,7 +150,7 @@ var jumpCount = 0; //the number of times the player has jumped
  * Makes the player jump if they are touching the ground, or if they
  * are in the air but have only jumped once, allowing for double jumps.
  * As a safety measure, checks that player health is greater than zero
- * to prevent jumping from working post-mortem. 
+ * to prevent jumping from working post-mortem.
  */
 function jump()
 {
@@ -163,7 +164,7 @@ function jump()
     else if(jumpCount < 2) // but if the player is not touching the ground, but has not jumped twice
     {
       jumpCount++; // increment the jump count
-      player.velocity.y = 5; // and set the vertical velocity 
+      player.velocity.y = 5; // and set the vertical velocity
     }
   }
 }

@@ -1,11 +1,10 @@
 ---
-layout: default
-isPost: true
+layout: post
 ---
 
 In creating websites, there are a few (mostly free) tools that I have
 used on almost every website I've built. Here's a list of these tools
-and what I use them for. 
+and what I use them for.
 
 Some tools I use
 ## IcoMoon
@@ -54,7 +53,7 @@ high price) of Photoshop to be a bit too much for my needs. However, when I need
 basic image editing, GIMP serves me very well.
 
 ## InkScape
-Sometimes you need to modify SVG assets, changing their color or removing details, and 
+Sometimes you need to modify SVG assets, changing their color or removing details, and
 Inkscape is a free tool to help you with that. I usually use it after download icons
 from icomoon to match the color pallete of my website.
 
@@ -63,10 +62,10 @@ You shouldn't have to pay to host a basic website, and with GitHub Pages, you do
 to pay at all. You can host websites for your Github repositories, or create a website
 for your GitHub user for free. Lots of developers use GitHub pages to create resume sites,
 but you can use it for any website where you don't need a proper backend server. GitHub
-Pages also supports Jekyll (which powers this website!). 
+Pages also supports Jekyll (which powers this website!).
 
 ## Sublime Text
 If you are making lots of websites, you need a powerful and light-weight editor to help
 you, and Sublime Text has been my go to for a few years now. With a lot of powerful packages,
 built-in syntax for loads of languages, and useful functionality like multiple cursors and
-extensive keyboard shortcuts, I can't imagine working in anything else. 
+extensive keyboard shortcuts, I can't imagine working in anything else.

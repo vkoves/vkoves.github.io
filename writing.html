@@ -2,17 +2,21 @@
 layout: default
 stylesheets:
  - blog.css
-title: "Blog"
+title: "Writing"
 ---
 
 <h1 class="page-title">Writing</h1>
 
 <ul class="post-list">
   {% for post in site.posts %}
+    {% if post.categories contains "Archive" %}
+      {% continue %}
+    {% endif %}
+
     <li class="post-listing">
       <div class="post-heading">
-        <a href="{{ post.url }}">
-        	<span class="title">{{ post.title }}</span>
+        <a href="{{ post.url }}" class="title">
+          {{ post.title }}
         </a>
         {% if post.draft %}
           <span class="category" style="display: inline-block">Draft</span>

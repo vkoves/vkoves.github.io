@@ -1,7 +1,8 @@
 ---
-layout: default
-isPost: true
+layout: post
 title: Documentation & Inclusion Lightning Talk
+categories:
+ - Archive
 ---
 
 I gave a lightning talk at Chi Hack Night about documentation and inclusion, and this is a delayed follow up to that talk with

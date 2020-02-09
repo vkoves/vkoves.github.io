@@ -1,9 +1,9 @@
 ---
-layout: default
-isPost: true
-category:
- - Jekyll
+layout: post
+categories:
+ - Archive
  - Coding Tips
+ - Jekyll
 ---
 
 Working with Jekyll is a whole lot easier than dealing with tons and tons
@@ -42,7 +42,7 @@ Then, on each individual page, my front matter looks something like this:
 
 {% highlight html linenos %}
 ---
-layout: default
+layout: post
 stylesheets:
  - index.css
 scripts:

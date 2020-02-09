@@ -1,7 +1,8 @@
 ---
-layout: default
-isPost: true
-categories: Coding
+layout: post
+categories:
+ - Archive
+ - Coding
 ---
 
 When writing styling, it can be a challenge to create styling that is readable, modular,

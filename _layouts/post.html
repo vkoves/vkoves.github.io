@@ -1,0 +1,30 @@
+---
+layout: default
+stylesheets:
+ - syntax.css
+ - blog.css
+ - post.css
+---
+
+<div class="all-posts-cont">
+  <a href="/writing" id="all-posts" class="red-button">Back to All Writing</a>
+</div>
+
+<h1 class="page-title">{{ page.title }}</h1>
+<span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+
+{{ content }}
+
+<div class="post-controls">
+  {% if page.previous %}
+    <a href="{{ page.previous.url }}" class="red-button">Previous Post</a>
+  {% else %}
+    <span class="red-button disabled">Previous Post</span>
+  {% endif %}
+
+  {% if page.next %}
+    <a href="{{ page.next.url }}" class="red-button">Next Post</a>
+  {% else %}
+    <span class="red-button disabled">Next Post</span>
+  {% endif %}
+</div>

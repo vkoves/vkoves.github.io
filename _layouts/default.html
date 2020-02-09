@@ -29,12 +29,6 @@
 		<script defer src="/js/{{ script }}"></script>
 	{% endfor %}
 
-	{% if page.isPost %}
-		<!-- If a blog post, pull in blog & syntax highlighting CSS -->
-		<link href="/css/blog.css" rel="stylesheet">
-		<link href="/css/syntax.css" rel="stylesheet">
-	{% endif %}
-
 	<title>
 		{% comment %}
 			Compute page title for <title> and <meta> tags. Use page title + ' - ' +
@@ -104,31 +98,11 @@
 <body>
 	{% include header.html %}
 
-	<main class="page-container {{ page.pageClass }}">
-		{% if page.isPost %}
-			<a href="/blog" id="all-posts" class="red-button">&larr; Back to All Posts</a>
-			<br>
-			<h1 class="page-title">{{ page.title }}</h1>
-			<span class="post-date">Posted {{ page.date | date: "%B %d, %Y" }}</span>
-		{% endif %}
-
+	<!-- Include any CSS classes requested for the page by pageClass, and also
+		include the layout name so individual layouts can have their own stylesheet
+		with simple CSS scoping -->
+	<main class="page-container {{ page.pageClass }} {{ page.layout }}">
 		{{ content }}
-
-		{% if page.isPost %}
-		<div class="post-controls">
-			{% if page.previous %}
-				<a href="{{ page.previous.url }}" class="red-button">&larr; Previous</a>
-			{% else %}
-				<span class="red-button disabled">&larr; Previous</span>
-			{% endif %}
-
-			{% if page.next %}
-				<a href="{{ page.next.url }}" class="red-button">Next &rarr;</a>
-			{% else %}
-				<span class="red-button disabled">Next &rarr;</span>
-			{% endif %}
-		</div>
-		{% endif %}
 	</main>
 
 	{% include footer.html %}

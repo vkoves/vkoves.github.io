@@ -15,7 +15,7 @@ body
   padding-top: 40px;
   padding-bottom: 60px;
   background: $off-white;
-  font-size: 16px;
+  font-size: 18px;
   color: $charcoal;
 }
 button { font-family: 'Open Sans', sans-serif; }
@@ -35,6 +35,14 @@ a {
     text-decoration: underline;
     color: $darkest-red;
   }
+}
+
+// Move linked-heading targets up 90px to adjust for the sticky header
+.linked-heading .target {
+  display: block;
+  position: relative;
+  top: -90px;
+  visibility: hidden;
 }
 
 // Helpers
@@ -272,16 +280,6 @@ h4 { font-weight: 600; margin-top: 10px; }
   top: 50%;
   transform: translate(0%, -50%);
 }
-.filter-transition
-{
-  /*
-  -webkit-transition: 0.5s -webkit-filter linear;
-  -moz-transition: 0.5s -moz-filter linear;
-  -moz-transition: 0.5s filter linear;
-  -ms-transition: 0.5s -ms-filter linear;
-  -o-transition: 0.5s -o-filter linear;
-  */
-}
 .blur
 {
   filter: blur(5px);
@@ -293,7 +291,7 @@ code.inline, code.highlighter-rouge
 {
   font-family: monospace;
   background: $white;
-  font-size: 110%;
+  font-size: 0.9em;
   padding: 2px 5px;
   background-color: $light-red;
   color: $brand-red;
