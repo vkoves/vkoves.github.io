@@ -1,6 +1,5 @@
 ---
 layout: post
-isPost: true
 ---
 
 In creating websites, there are a few (mostly free) tools that I have

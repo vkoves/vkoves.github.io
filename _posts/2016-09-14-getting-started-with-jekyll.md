@@ -1,6 +1,5 @@
 ---
 layout: post
-isPost: true
 categories:
  - Archive
  - Coding Tips

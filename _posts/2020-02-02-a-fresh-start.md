@@ -1,6 +1,5 @@
 ---
 layout: post
-isPost: true
 ---
 
 In 2020, I want to start writing more, so I am fully refreshing my website's

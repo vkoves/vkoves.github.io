@@ -1,6 +1,5 @@
 ---
 layout: post
-isPost: true
 title: Using Semantic Inputs
 ---
 
