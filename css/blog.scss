@@ -3,30 +3,27 @@
 
 @import 'variables/colors';
 
-#all-posts
-{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
+.all-posts-cont {  margin-bottom: 30px; }
 .red-button
 {
-  padding: 2px 8px;
+  padding: 2px 15px;
   text-decoration: none;
   background-color: gainsboro;
   border-radius: 3px;
   color: #101010;
   font-weight: 600;
-}
-.red-button.disabled
-{
-  background-color: transparent;
-  color: $grey;
-}
-.red-button:hover
-{
-  background-color: $brand-red;
-  color: $white;
+
+  &.disabled
+  {
+    background-color: transparent;
+    color: $grey;
+  }
+  &:not(.disabled):hover
+  {
+    background-color: $brand-red;
+    color: $white;
+    text-decoration: none;
+  }
 }
 .post-date
 {
@@ -78,3 +75,5 @@ hr
 .post-listing .date { float: right; }
 .post-listing .excerpt p { margin: 0px; }
 /* End post list styling */
+
+.post-controls { margin-top: 60px; }
