@@ -13,7 +13,11 @@ Takes in a `heading` string and a `level` number. Ex:
 <h{{ include.level }} class="linked-heading">
   {{ heading }}
 
-  <a href="#{{ headingId }}" aria-label="Link to '{{ heading }}' heading">#</a>
+  <a href="#{{ headingId }}"
+    class="link-icon"
+    title="Link to '{{ heading }}' heading">
+    <img src="/images/icons/link-red.svg" alt="Link to '{{ heading }}' heading">
+  </a>
 
   <!-- Make the target a separate element so it can be moved -->
   <a id="{{ headingId }}" class="target"></a>
