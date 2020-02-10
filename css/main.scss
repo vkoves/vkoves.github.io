@@ -38,15 +38,25 @@ a {
 }
 
 .linked-heading {
-  .link-icon img {
-    display: inline;
-    position: relative;
-    top: 5px;
-    width: 25px;
-    height: 25px;
-    margin: 0;
+  .link-icon {
+    // Hide main (red) icon until hovering
+    &:not(:hover):not(:focus) {
+      .main { display: none; }
+    }
+    &:hover, &:focus {
+      .placeholder { display: none; }
+      .main { display: inline; }
+    }
+    img {
+      display: inline;
+      position: relative;
+      top: 5px;
+      width: 25px;
+      height: 25px;
+      margin: 0;
+    }
   }
-  &:not.link-icon { display: none; }
+
   // Move linked-heading targets up 90px to adjust for the sticky header
   .target {
     display: block;
