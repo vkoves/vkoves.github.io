@@ -16,7 +16,7 @@
   &.disabled
   {
     background-color: transparent;
-    color: $grey;
+    color: $dark-grey;
   }
   &:not(.disabled):hover
   {
@@ -71,3 +71,15 @@ hr
 /* End post list styling */
 
 .post-controls { margin: 60px 0 30px 0; }
+
+blockquote {
+  padding: 20px 30px;
+  line-height: 1.75;
+  font-style: italic;
+  color: $dark-grey;
+  margin-inline-start: 10px;
+  background-color: $off-white-dark;
+  border-left: solid 5px $brand-red;
+
+  p { margin: 0; }
+}
