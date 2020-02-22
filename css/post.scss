@@ -16,6 +16,16 @@ main.post {
     max-width: 100%;
   }
 
+  // Style code highlight blocks
+  figure.highlight {
+    margin: 0;
+
+    pre {
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  }
+
   /**
    * The notice panel is for in post warnings, alerts, or info blocks!
    */

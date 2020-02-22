@@ -15,18 +15,18 @@ Come December of 2018, however, I knew a whole lot about website accessibility a
 To do that, I set out to audit my website and make it fully WCAG 2.1 AA accessible. (Not sure what the heck WCAG is? Don't worry, I'll be writing about that soon!)
 
 
-{% include linkedHeading.html heading="Process" level=2 %}
+{% include linkedHeading.html heading="My Process" level=2 %}
 
 So how did I go about making an inaccessible website that I built years ago into something that was fully accessible and that I could be proud to show off? My process can be very simply distilled into the following steps:
 
 1. Run automated tests to discover "simple" issues
-1. Manually test with screen reader and keyboard only
+1. Manually test screen reader and keyboard usage
 1. Fix discovered issues
-1. Repeat
+1. Repeat!
 
 To start any accessibility remediation, you have to know what the issues are that you are trying to fix. I used some automated tools, like HTML Codesniffer, to find any simple accessibility failures. This included things like my gallery page not having any `alt` tags on the images and my homepage skipping from a level 1 heading (`<h1>`) to a level 4 heading (`<h4>`).
 
-You can read about more tools you can use to test your website's accessibility in [my previous article][tools-article].
+If you're not sure what tools you can use to test your site's accessibility, you should check out [my previous article on accessibility tools][tools-article].
 
 Automated tools found a good number of issues, but automated tools only cover part of what makes a site accessible, so I then proceeded to test using my site with just my keyboard, and then tested it with a screen reader. I discovered that the main functionality of my portfolio page was completely inaccessible to users who were limited to the keyboard, as some of my links only showed up on hover of the portfolio images. I also realized that my gallery overlay system did not make it clear what buttons did to screen readers.
 
@@ -67,13 +67,12 @@ There are two ways I could have fixed this issue:
 1. Use an alternate way of labelling the links, like an `aria-label`
 
 Although the first solution is preferable and makes your HTML more semantic, I
-was using SVGs for my social media icons and was planning to move them into a spritesheet, which would have been very difficult to do with an `<img>` element.
+was using SVGs for my social media icons and was planning to move them into a spritesheet, which would have been very difficult to do with an `<img>` element. Since I knew I needed to use a background image, I ended up taking the latter approach.
 
-Thus, I ended up taking the latter approach. Here's what the **faulty code** was before:
+Here's what the **faulty code** was before:
 
 {% highlight html %}
-<a href="https://www.linkedin.com/in/viktorkoves"
-  aria-label="Viktor on LinkedIn">
+<a href="https://www.linkedin.com/in/viktorkoves">
     <div class="linkedin"></div>
 </a>
 {% endhighlight %}
@@ -86,6 +85,8 @@ And here is the **corrected, accessible version**:
     <div class="linkedin"></div>
 </a>
 {% endhighlight %}
+
+The difference here is only the `aria-label` on the `<a>` tag, which now provides content for screen reader users - ensuring that when you navigate to my footer with a screen reader, you get a proper idea of where this link goes.
 
 {% include linkedHeading.html heading="What I Missed" level=2 %}
 
