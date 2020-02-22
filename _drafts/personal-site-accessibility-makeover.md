@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Personal Site's Accessibility Makeover"
+title: "How I Gave My Personal Site An Accessibility Makeover"
 ---
 
 These days, accessibility is one of my biggest passions and something that I am proud to know a lot about, but it wasn't always this way. Let me tell you how I went about fixing my old, inaccessible, personal site and making it fully accessible and WCAG compliant.
