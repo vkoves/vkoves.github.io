@@ -24,26 +24,28 @@ So how did I go about making an inaccessible website that I built years ago into
 1. Fix discovered issues
 1. Repeat!
 
-To start any accessibility remediation, you have to know what the issues are that you are trying to fix. I used some automated tools, like HTML Codesniffer, to find any simple accessibility failures. This included things like my gallery page not having any `alt` tags on the images and my homepage skipping from a level 1 heading (`<h1>`) to a level 4 heading (`<h4>`).
+To start any accessibility remediation, you have to know what the issues are that you are trying to fix. I used some automated tools, like [HTML_CodeSniffer][html-codesniffer], to find any simple accessibility failures. This included things like my gallery page not having any `alt` tags on the images and my homepage skipping from a level 1 heading (`<h1>`) to a level 4 heading (`<h4>`).
 
-If you're not sure what tools you can use to test your site's accessibility, you should check out [my previous article on accessibility tools][tools-article].
+If you're not sure what tools you should use to test your site's accessibility, you should check out [my previous article on accessibility tools][tools-article].
 
 Automated tools found a good number of issues, but automated tools only cover part of what makes a site accessible, so I then proceeded to test using my site with just my keyboard, and then tested it with a screen reader. I discovered that the main functionality of my portfolio page was completely inaccessible to users who were limited to the keyboard, as some of my links only showed up on hover of the portfolio images. I also realized that my gallery overlay system did not make it clear what buttons did to screen readers.
 
-If you are curious what all of the issues were that I found in testing my website, you can view some of the issues I found with my site in [my WCAG 2.1 AA GitHub milestone][gh-milestone].
+If you are curious what all of the issues were that I found in testing my website, you can view them in [my WCAG 2.1 AA GitHub milestone][gh-milestone].
 
 
 {% include linkedHeading.html heading="Some Example Failures" level=2 %}
 
+Following the process I laid out before found a number of accessibility issues and I want to walk you through two of them. I'll show you what errors HTML_Codesniffer showed me, what they mean, and how I fixed them.
+
 {% include linkedHeading.html heading="Color Contrast on Homepage Links" level=3 %}
 
-One of the first failures I saw was one that HTML_CodeSniffer found, which was a contrast issue on my homepage, which I documented in [GitHub issue #6](https://github.com/vkoves/vkoves.github.io/issues/6) on my personal site's repository.
+One of the first failures I saw was a contrast issue on my homepage, which I documented in [GitHub issue #6](https://github.com/vkoves/vkoves.github.io/issues/6) on my personal site's repository. Here's a screenshot of the failure from HTML_Codesniffer:
 
-![HTML_CodeSniffer error showing contrast failure](/post-assets/contrast-issue.jpg)
+![HTML_CodeSniffer error showing contrast failure due to red text on black background](/post-assets/contrast-issue.jpg)
 
 At first glance, this red on black text does not look like it's very low contrast - and to some folks it might be perfectly sufficient! However, if you look at this screenshot in greyscale, you can see the problem:
 
-![HTML_CodeSniffer error showing contrast failure in greyscale](/post-assets/contrast-issue-greyscale.jpg)
+![HTML_CodeSniffer error showing contrast failure, with greyscale filter](/post-assets/contrast-issue-greyscale.jpg)
 
 For users who have color-blindness, this pair of colors is very hard to discern, making this text really hard to read! This is because although the colors are fairly different by _hue_ they are not far apart in brightness.
 
@@ -51,13 +53,13 @@ Luckily, this issue was very easy to fix. HTML_CodeSniffer suggested a new red c
 
 {% include linkedHeading.html heading="Social Media Links Not Having Content" level=3 %}
 
-Another accessibility issue I found with HTML_CodeSniffer is the social media links in my footer not having content, which I notated in [GitHub issue #6](https://github.com/vkoves/vkoves.github.io/issues/5) on my personal site's repository. Here's a screenshot of the failure from HTML_CodeSniffer:
+Another accessibility issue HTML_CodeSniffer found is the social media links in my footer not having content, which I notated in [GitHub issue #6](https://github.com/vkoves/vkoves.github.io/issues/5) on my personal site's repository. Here's a screenshot of that failure from HTML_CodeSniffer:
 
 ![HTML_CodeSniffer error showing link without content](/post-assets/link-no-cont-issue.jpg)
 
-Reading through the text of the error, this might seem a little confusing. What do you mean this anchor element has "no link content"? It's an image!
+Reading through the text of the error, this might seem a little confusing. What does it mean by saying the anchor element has "no link content"? It's an image!
 
-In this case, what this was actually indicating was that I had used a `<div>` with a background image for my social media icons, and that was causing a very big accessibility problem. This is because although `<img>` tags have an `alt` attribute that you can use to specify text that a screen reader user will here to represent the image, you can't do that with a `<div>` element!
+In this case, what this was actually indicating was that I had used a `<div>` with a background image for my social media icons, and that was causing a very big accessibility problem. This is because although `<img>` tags have an `alt` attribute that you can use to specify text that a screen reader user will hear to represent the image, you can't do that with a `<div>` element!
 
 This meant that on my personal site, if a screen reader user tabbed down to the footer, they would hear... nothing. After all, there was nothing _in the link_ to explain what it was!
 
@@ -100,5 +102,6 @@ In closing, I think it is important to remember that no matter how hard we might
 
 
 <!-- All links for simplicity -->
+[html-codesniffer]: https://squizlabs.github.io/HTML_CodeSniffer/
 [gh-milestone]: https://github.com/vkoves/vkoves.github.io/milestone/1?closed=1
 [tools-article]: {% post_url 2020-02-09-the-accessible-developers-starter-kit %}
