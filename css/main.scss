@@ -36,9 +36,13 @@ a {
     text-decoration: underline;
     color: $darkest-red;
   }
+
 }
 
 .linked-heading {
+  // Add scrol margin so anchor adjusts for the sticky header
+  scroll-margin-top: 70px;
+
   .link-icon {
     // Hide main (red) icon until hovering
     &:not(:hover):not(:focus) {
@@ -56,14 +60,6 @@ a {
       height: 25px;
       margin: 0;
     }
-  }
-
-  // Move linked-heading targets up 90px to adjust for the sticky header
-  .target {
-    display: block;
-    position: relative;
-    top: -90px;
-    visibility: hidden;
   }
 }
 
