@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Accessible Developer's Starter Kit
+
 ---
 
 Whether you are just starting out learning about web accessibility or you are an experienced developer well aware of accessibility, I want to help. This post will show you some of the tools that I have been using for the past few years to find and fix accessibility issues.
@@ -22,14 +23,14 @@ Whether you are just starting out learning about web accessibility or you are an
 
 {% include linkedHeading.html heading="HTML_CodeSniffer" level=3 %}
 
-HTML_Codesniffer is one of my favorite tools for doing a quick accessibility check on a page as it is super fast, can target multiple accessibility standards, and makes it really easy to filter between errors, warnings, and notices. I actually learned about it from an auditor who used it as a starting point for finding more simple failures like contrast that would take a long time to do manually.
+HTML_CodeSniffer is one of my favorite tools for doing a quick accessibility check on a page as it is super fast, can target multiple accessibility standards, and makes it really easy to filter between errors, warnings, and notices. I actually learned about it from an auditor who used it as a starting point for finding more simple failures like contrast that would take a long time to do manually.
 
 Here's a screenshot showing it finding a contrast failure I put on my homepage:
 
-![HTML_Codesniffer error showing contrast failure](/post-assets/html-code-sniffer-example.jpg)
+![HTML_CodeSniffer error showing contrast failure](/post-assets/html-code-sniffer-example.jpg)
 
-HTML_Codesniffer is also surprisingly simple to install, since it's a
-"bookmarklet" that just requires you to make a bookmark with some javascript code. Try it at the [HTML_Codesniffer website][html-codesniffer]!
+HTML_CodeSniffer is also surprisingly simple to install, since it's a
+"bookmarklet" that just requires you to make a bookmark with some javascript code. Try it at the [HTML_CodeSniffer website][html-codesniffer]!
 
 
 {% include linkedHeading.html heading="Chrome DevTools' Lighthouse" level=3 %}
