@@ -8,35 +8,46 @@
 
 @import 'variables/colors';
 
-// Make images centered by default
-img {
-  display: block;
-  margin: auto;
-  max-width: 100%;
-}
-
-
-/**
- * The notice panel is for in post warnings, alerts, or info blocks!
- */
-.notice-panel {
-  padding: 15px;
-  background-color: $off-white-dark;
-  border: solid 1px $light-grey;
-  border-radius: 15px;
-
-  .notice-label {
-    font-weight: bold;
-    margin-bottom: 5px;
+main.post {
+  // Make images centered by default
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
   }
 
-  // Variant colors
-  &.-warning {
-    background-color: #FFFACE;
-    color: #42291A;
+  // Style code highlight blocks
+  figure.highlight {
+    margin: 0;
+
+    pre {
+      padding: 20px;
+      font-size: 0.9rem;
+    }
   }
 
-  // Ensure paragraphs do not give extra padding
-  p:first-of-type { margin-top: 0; }
-  p:last-of-type { margin-bottom: 0; }
+  /**
+   * The notice panel is for in post warnings, alerts, or info blocks!
+   */
+  .notice-panel {
+    padding: 15px;
+    background-color: $off-white-dark;
+    border: solid 1px $light-grey;
+    border-radius: 15px;
+
+    .notice-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    // Variant colors
+    &.-warning {
+      background-color: #FFFACE;
+      color: #42291A;
+    }
+
+    // Ensure paragraphs do not give extra padding
+    p:first-of-type { margin-top: 0; }
+    p:last-of-type { margin-bottom: 0; }
+  }
 }

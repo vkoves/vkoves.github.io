@@ -38,7 +38,7 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="723"
+     inkscape:window-width="731"
      inkscape:window-height="480"
      id="namedview9"
      showgrid="false"
@@ -57,5 +57,5 @@
      fill="#000"
      d="M544.5 223.5q66 0 112.5 47.25t46.5 113.25-46.5 113.25-112.5 47.25h-129v-61.5h129q40.5 0 69.75-29.25t29.25-69.75-29.25-69.75-69.75-29.25h-129v-61.5h129zM256.5 415.5v-63h255v63h-255zM124.5 384q0 40.5 29.25 69.75t69.75 29.25h129v61.5h-129q-66 0-112.5-47.25t-46.5-113.25 46.5-113.25 112.5-47.25h129v61.5h-129q-40.5 0-69.75 29.25t-29.25 69.75z"
      id="path5"
-     style="fill:#808080;fill-opacity:1" />
+     style="fill:#606060;fill-opacity:1" />
 </svg>

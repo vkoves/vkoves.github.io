@@ -15,16 +15,23 @@ title: "Writing"
 
     <li class="post-listing">
       <div class="post-heading">
-        <a href="{{ post.url }}" class="title">
-          {{ post.title }}
-        </a>
-        {% if post.draft %}
-          <span class="category" style="display: inline-block">Draft</span>
-        {% endif %}
+        <h2>
+          <a href="{{ post.url }}" class="title">
+            {{ post.title }}
+          </a>
+          {% if post.draft %}
+            <span class="category -draft">Draft</span>
+          {% endif %}
+        </h2>
+
         {% for category in post.categories %}
           <span class="category">{{ category }}</span>
         {% endfor %}
-        <span class="date">{{ post.date | date: "%B %d, %Y" }}</span>
+
+        <div class="date">
+          Published on
+          <time>{{ post.date | date: "%B %d, %Y" }}</time>
+        </div>
       </div>
 
       <div class="excerpt">

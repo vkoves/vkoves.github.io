@@ -7,6 +7,8 @@
 @import 'header';
 @import 'footer';
 
+html { font-size: 18px; }
+
 body
 {
   position: relative;
@@ -15,7 +17,7 @@ body
   padding-top: 40px;
   padding-bottom: 60px;
   background: $off-white;
-  font-size: 18px;
+  line-height: 1.5;
   color: $charcoal;
 }
 button { font-family: 'Open Sans', sans-serif; }
@@ -35,9 +37,13 @@ a {
     text-decoration: underline;
     color: $darkest-red;
   }
+
 }
 
 .linked-heading {
+  // Add scrol margin so anchor adjusts for the sticky header
+  scroll-margin-top: 70px;
+
   .link-icon {
     // Hide main (red) icon until hovering
     &:not(:hover):not(:focus) {
@@ -55,14 +61,6 @@ a {
       height: 25px;
       margin: 0;
     }
-  }
-
-  // Move linked-heading targets up 90px to adjust for the sticky header
-  .target {
-    display: block;
-    position: relative;
-    top: -90px;
-    visibility: hidden;
   }
 }
 
@@ -314,7 +312,6 @@ code.inline, code.highlighter-rouge
   background: $white;
   font-size: 0.9em;
   padding: 2px 5px;
-  background-color: $light-red;
   color: $brand-red;
   border-radius: 5px;
 }

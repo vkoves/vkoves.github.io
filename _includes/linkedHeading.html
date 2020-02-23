@@ -10,7 +10,7 @@ Takes in a `heading` string and a `level` number. Ex:
 {% assign heading = include.heading %}
 {% assign headingId = heading | slugify %}
 
-<h{{ include.level }} class="linked-heading">
+<h{{ include.level }} class="linked-heading" id="{{ headingId }}">
   {{ heading }}
 
   <a href="#{{ headingId }}"
@@ -19,7 +19,4 @@ Takes in a `heading` string and a `level` number. Ex:
     <img src="/images/icons/link-red.svg" class="main" alt="Link to '{{ heading }}' heading">
     <img src="/images/icons/link.svg" class="placeholder" alt="Link to '{{ heading }}' heading">
   </a>
-
-  <!-- Make the target a separate element so it can be moved -->
-  <a id="{{ headingId }}" class="target"></a>
 </h{{ include.level }}>
