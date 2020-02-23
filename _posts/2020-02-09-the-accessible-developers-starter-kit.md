@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Accessible Developer's Starter Kit
+title: The Accessible Developer&apos;s Starter Kit
 
 ---
 
@@ -25,21 +25,21 @@ Whether you are just starting out learning about web accessibility or you are an
 
 HTML_CodeSniffer is one of my favorite tools for doing a quick accessibility check on a page as it is super fast, can target multiple accessibility standards, and makes it really easy to filter between errors, warnings, and notices. I actually learned about it from an auditor who used it as a starting point for finding more simple failures like contrast that would take a long time to do manually.
 
-Here's a screenshot showing it finding a contrast failure I put on my homepage:
+Here&apos;s a screenshot showing it finding a contrast failure I put on my homepage:
 
 ![HTML_CodeSniffer error showing contrast failure](/post-assets/html-code-sniffer-example.jpg)
 
-HTML_CodeSniffer is also surprisingly simple to install, since it's a
+HTML_CodeSniffer is also surprisingly simple to install, since it&apos;s a
 "bookmarklet" that just requires you to make a bookmark with some javascript code. Try it at the [HTML_CodeSniffer website][html-codesniffer]!
 
 
 {% include linkedHeading.html heading="Chrome DevTools' Lighthouse" level=3 %}
 
-If you are interested in website performance, you have probably heard about Lighthouse, an auditing tool built into Google Chrome's DevTools. You might already know that it can audit a website and make recommendations for performance and web best practices, but it's also great as a quick accessibility auditor!
+If you are interested in website performance, you have probably heard about Lighthouse, an auditing tool built into Google Chrome&apos;s DevTools. You might already know that it can audit a website and make recommendations for performance and web best practices, but it&apos;s also great as a quick accessibility auditor!
 
 Lighthouse does a number of automated accessibility checks, and also lists out checks you should do manually to properly confirm your sites accessibility. It gives you an overall score on accessibility from 1 to 100, which can help you get a good overall sense of if your site is mostly accessible or really inaccessible, which can be hard to determine with other tools.
 
-Check it out in Google Chrome's DevTools, and learn more about it at the
+Check it out in Google Chrome&apos;s DevTools, and learn more about it at the
 [Chrome Lighthouse page][lighthouse].
 
 
@@ -56,7 +56,7 @@ Install it or learn more at the
 
 {% include linkedHeading.html heading="Contrast Ratio" level=3 %}
 
-Sometimes you just need a tool that tells you if two colors are WCAG contrast compliant, and Contrast Ratio does just that. You input two colors, and it will tell you whether the pairing is WCAG AAA compliant, AA compliant, AA compliant at certain sizes, or not compliant. It's one of my most used tools when I am designing a site!
+Sometimes you just need a tool that tells you if two colors are WCAG contrast compliant, and Contrast Ratio does just that. You input two colors, and it will tell you whether the pairing is WCAG AAA compliant, AA compliant, AA compliant at certain sizes, or not compliant. It&apos;s one of my most used tools when I am designing a site!
 
 Try it out at [contrast-ratio.com][contrast-ratio].
 
@@ -72,23 +72,22 @@ Using a screen reader or other accessibility tools is going to give you so more 
 
 NVDA and ChromeVox are both screen readers, and I have used both of them to audit pages and to test if our screen reader users were getting the content we were trying to communicate via properties like `aria-live`.
 
-ChromeVox is my day-to-day screen reader, as it's a Chrome extension that is easy to install and works on Linux (which is pretty rare). However, it's no longer maintained and can handle certain aria tags incorrectly.
+ChromeVox is my day-to-day screen reader, as it&apos;s a Chrome extension that is easy to install and works on Linux (which is pretty rare). However, it&apos;s no longer maintained and can handle certain aria tags incorrectly.
 
-NVDA, on the other hand, is a free screen reader for Windows, and it's my screen reader of choice when I want to test on a Windows machine. It's more popular and more maintained than ChromeVox.
+NVDA, on the other hand, is a free screen reader for Windows, and it&apos;s my screen reader of choice when I want to test on a Windows machine. It&apos;s more popular and more maintained than ChromeVox.
 
-Download NVDA or learn more at [the NVDA homepage][nvda]. Install or learn more about ChromeVox at [ChromeVox's Chrome Web Store page][chromevox].
+Download NVDA or learn more at [the NVDA homepage][nvda]. Install or learn more about ChromeVox at [ChromeVox&apos;s Chrome Web Store page][chromevox].
 
 {% include linkedHeading.html heading="ZoomText" level=3 %}
 
 ZoomText is a tool that I actually heard about thanks to a user with low vision, who used it to change the color scheme of websites and to magnify the screen beyond the browser limit of about 500%.
 
-It's really useful for making sure that your website properly handles different color schemes and for finding accessibility issues you might not find otherwise, like your links relying on color differences that are lost with a custom color scheme.
+It&apos;s really useful for making sure that your website properly handles different color schemes and for finding accessibility issues you might not find otherwise, like your links relying on color differences that are lost with a custom color scheme.
 
-Download it or learn more at [ZoomText's homepage][zoomtext].
+Download it or learn more at [ZoomText&apos;s homepage][zoomtext].
 
 
-Have suggestions for a tool that you love that I should try out?
-[Tweet at me!][my-twitter]
+Have suggestions for a tool that you love that I should try out? [Tweet at me!][my-twitter]
 
 
 <!-- All links for simplicity -->
