@@ -44,6 +44,20 @@ $desktop-img-size: 30rem;
   }
 }
 
+// On smaller desktop screens, shrink image
+@media (max-width: 1200px) {
+  .main-cont {
+    grid-template-columns: auto auto;
+
+    img {
+      height: 70%;
+      margin-left: 2rem;
+      align-self: center;
+    }
+    .text-cont { padding: 0 2rem; }
+  }
+}
+
 // Switch to mobile layout on tablets and
 @media (max-width: 1000px) {
   .main-cont {
@@ -55,14 +69,20 @@ $desktop-img-size: 30rem;
     box-shadow: none;
     margin-top: 0;
     border-radius: 0;
+    overflow: intial; // ensure <img> box-shadow shows
 
     img {
-      width: 100%;
+      width: 75%;
+      max-width: 400px;
       height: auto;
+      margin: auto;
+      box-shadow: 2px 4px 10px $shadow-color;
     }
     .text-cont {
       padding: 1.25rem 0;
       align-self: flex-start;
+
+      h1 { font-size: 3rem; }
     }
   }
 }
