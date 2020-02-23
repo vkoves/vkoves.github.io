@@ -1,10 +1,22 @@
 /* exported showInfo, closeInfo, setPageBlur */
 
+var OpenClass = '-open';
+
 $(document).ready(function()
 {
-    $('#menu').click(function()
+    // Mark menu as not open
+    $('#menu-btn').attr('aria-expanded', 'false');
+
+    $('#menu-btn').click(function()
     {
-        $('#header').toggleClass('-open');
+        if ($('#header').hasClass(OpenClass)) {
+            $('#header').removeClass(OpenClass);
+            $('#menu-btn').attr('aria-expanded', 'false');
+        }
+        else {
+            $('#header').addClass(OpenClass);
+            $('#menu-btn').attr('aria-expanded', 'true');
+        }
     });
 });
 

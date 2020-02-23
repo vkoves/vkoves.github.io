@@ -1,7 +1,6 @@
-$header-mob-height: 7vh;
+$header-mob-height: 72px;
 
-#header
-{
+.site-header {
   position: fixed;
   top: 0px;
   width: 100%;
@@ -18,8 +17,8 @@ $header-mob-height: 7vh;
     li { display: inline; }
   }
 }
-#header-inside
-{
+
+.header-inside {
   box-sizing: border-box;
   height: 100%;
   width: 80%;
@@ -29,43 +28,49 @@ $header-mob-height: 7vh;
   font-weight: 400;
   max-width: $max-cont-width;
 }
-#header a
-{
+
+.site-header a {
   text-decoration: none;
   color: $white;
   border-radius: 8px;
   transition: color 0.2s, padding 0.2s, background 0.2s;
   padding: 3px 10px 3px 10px;
 
-  &:focus {
-    outline: dashed 3px $white;
-  }
-  &:hover, &:focus
-  {
+  &:hover, &:focus {
     color: $dark-grey;
     background-color: $white;
     padding: 3px 10px 3px 10px;
   }
 }
-#header-buttons
-{
-  float: right;
+
+// Make header links and buttons have clear focus
+.site-header a:focus, .site-header button:focus {
+  outline: dashed 3px $white;
 }
-#menu
-{
+
+.header-buttons { float: right; }
+
+.menu-btn {
   display: none;
-  width: 30px;
-  padding: 5px;
+  box-sizing: border-box;
   cursor: pointer;
+  width: 50px;
+  padding: 5px;
+  background: none;
+  border: none;
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 /**
  * Tablet-ish & mobile styling
  */
-@media (max-width: 800px)
-{
-  #header-inside
-  {
+@media (max-width: 800px) {
+  .header-inside {
     width: 100%;
     padding: 10px;
   }
@@ -74,36 +79,40 @@ $header-mob-height: 7vh;
 /**
  * Mobile styling
  */
-@media (max-width: 600px)
-{
+@media (max-width: 600px) {
   body { padding-top: $header-mob-height !important; }
-  #header
-  {
-    transition: padding 0.25s;
-    padding-bottom: 0px;
-    overflow: hidden;
+
+  .menu-btn { display: block; }
+
+  .site-header {
     height: $header-mob-height;
+    transition: height 0.3s;
+    overflow: hidden;
     font-size: 24px;
 
-    &.-open { padding-bottom: 7vh; }
-    #header-inside { padding: 0; }
+    &:not(.-open) {
+      .header-buttons { display: none; }
+    }
+    &.-open {
+      height: $header-mob-height * 2;
+    }
+
+    .header-inside { padding: 0; }
+
+    .header-main, .header-buttons { padding: 10px 20px; }
+
     .header-main {
-      height: 100%;
-      padding: 0 15px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
   }
-  #header-buttons
-  {
-    margin: 5px 0;
+
+  .header-buttons {
     width: 100%;
+    padding-top: 0;
     text-align: center;
-    font-size: 0.9em;
-  }
-  #menu
-  {
-    display: block;
+
+    li + li { margin-left: 30px; }
   }
 }
