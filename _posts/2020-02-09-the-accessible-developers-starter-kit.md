@@ -1,7 +1,6 @@
 ---
 layout: post
 title: The Accessible Developer&apos;s Starter Kit
-
 ---
 
 Whether you are just starting out learning about web accessibility or you are an experienced developer well aware of accessibility, I want to help. This post will show you some of the tools that I have been using for the past few years to find and fix accessibility issues.
