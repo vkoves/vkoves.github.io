@@ -99,6 +99,14 @@ Notice that the Accessibility Tree shows that our "Free" input is in a "Plan" gr
 
 {% include linkedHeading.html heading="Submit Button Isn't Focusable" level=3 %}
 
+Now to tackle the submit button issue. There's a lot of ways that you could spot this issue, including using your site with a keyboard, but looking at the HTML should also be  a big clue that something is off. Here's the HTML for the submit button in the original inaccessible form demo:
+
+```html
+<div id="sign-up" class="button">
+  Sign Up
+</div>
+```
+
 {% include linkedHeading.html heading="No Form Submit Action" level=3 %}
 
 {% include linkedHeading.html heading="Fields Not Marked Required" level=3 %}
