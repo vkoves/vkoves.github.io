@@ -6,8 +6,8 @@ permalink: /:year/:month/:day/:title
 title: Viktor K&ouml;ves
 # Site description for meta tags
 description:
-  The personal website of Viktor K&ouml;ves - software engineer, game developer,
-  and digital design enthusiast.
+  The Personal Website of Viktor K&ouml;ves - Front-End Engineer & Web
+  Accessibility Specialist
 
 # Setup a project collection so we can dynamically load in project info without
 # JS, ensuring it's great for SEO
