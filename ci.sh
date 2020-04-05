@@ -16,7 +16,7 @@ jekyll build
 # --empty_alt_ignore    - Allow empty alt tags for decorative images
 #
 # Learn more: https://github.com/gjtorikian/html-proofer#configuration
-htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-status-ignore "999,0" --empty_alt_ignore
+htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-status-ignore "999,0" --empty_alt_ignore --url-ignore "/codepen.io/"
 
 
 # Run Sass Lint verbose - cnfigured by .sass-lint.yml

@@ -19,11 +19,13 @@ main.post {
   // Style code highlight blocks
   figure.highlight {
     margin: 0;
+  }
 
-    pre {
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+  figure.highlight pre, pre.highlight {
+    padding: 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: $white;
   }
 
   /**

@@ -26,7 +26,7 @@ So how did I go about making an inaccessible website that I built years ago into
 
 To start any accessibility remediation, you have to know the issues you are trying to fix. I used some automated tools, like [HTML_CodeSniffer][html-codesniffer], to find any simple accessibility failures. This included things like my gallery page not having any `alt` tags on the images and my homepage skipping from a level 1 heading (`<h1>`) to a level 4 heading (`<h4>`).
 
-If you're not sure what tools you should use to test your site&apos;s accessibility, check out [my previous article on accessibility tools][tools-article].
+If you're not sure what tools you should use to test your site&apos;s accessibility, check out [my previous article on accessibility tools][a11y-tools-article].
 
 Automated tools found a good number of issues, but they only cover part of what makes a site accessible. I then proceeded to test my site using just my keyboard, and then tested it with a screen reader. I discovered that the main functionality of my portfolio page was completely inaccessible to users who were limited to the keyboard, as some of my links only showed up on hover of the portfolio images. I also realized that my gallery overlay system did not make it clear what buttons did to screen readers.
 
@@ -92,7 +92,7 @@ The difference here is only the `aria-label` on the `<a>` tag, which now provide
 
 Despite my best efforts, using automated tools and a screen reader as a sighted user is only a best guess at what users might really need.
 
-I was very appreciative when someone reached out to me on LinkedIn and told me that they had a hard time navigating my portfolio page because I hadn't used headers to break apart the page. This is something I had completely missed in my testing! I was looking so much at automated auditing tools and full-on accessibility "failures" that I missed a huge piece of usability improvement. In this moment, I should have taken the advice that I gave in a [previous  article][tools-article]:
+I was very appreciative when someone reached out to me on LinkedIn and told me that they had a hard time navigating my portfolio page because I hadn't used headers to break apart the page. This is something I had completely missed in my testing! I was looking so much at automated auditing tools and full-on accessibility "failures" that I missed a huge piece of usability improvement. In this moment, I should have taken the advice that I gave in a [previous  article][a11y-tools-article]:
 
 > Remember that automated auditing tools are a starting point to learning about whether a site is accessible, but they aren't fool-proof. There are lots of things that are really important to accessibility like tab order and keyboard interactivity that an automated tool is going to have a very hard time testing, if it can test it at all.
 
@@ -104,5 +104,5 @@ Is there an accessibility related topic you want to learn more about? [Tweet at 
 <!-- All links for simplicity -->
 [html-codesniffer]: https://squizlabs.github.io/HTML_CodeSniffer/
 [gh-milestone]: https://github.com/vkoves/vkoves.github.io/milestone/1?closed=1
-[tools-article]: {% post_url 2020-02-09-the-accessible-developers-starter-kit %}
+[a11y-tools-article]: {% post_url 2020-02-09-the-accessible-developers-starter-kit %}
 [my-twitter]: https://twitter.com/viktor_koves
