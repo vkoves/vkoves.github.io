@@ -22,9 +22,9 @@ Let's walk through a pretty common example - a signup form. Here's an example of
 
 Now before we continue, can you poke around in this form and see what's wrong with it?
 
-{% include linkedHeading.html heading="What's Faulty About This Form" level=3 %}
+{% include linkedHeading.html heading="What's Wrong With This Form" level=3 %}
 
-From manual testing and some automated tools, you might have noticed a few issues with this form. Here are the main issues:
+From manual testing and some automated tools, you might have noticed a few issues with this form. Here are the main ones:
 
 1. The inputs aren't properly labeled, making it unclear what each field is to screen reader users
 2. The form's submit button isn't focusable, because it's a `<div>`. This means keyboard users cannot submit the form
@@ -34,7 +34,7 @@ From manual testing and some automated tools, you might have noticed a few issue
 
 {% include linkedHeading.html heading="Fixing the Faulty Form" level=2 %}
 
-Now that we know what some of the form issues are, let's see how we could fix them, issue by issue.
+Now that we know what some of the form issues are let's see how we could fix them, issue by issue.
 
 {% include linkedHeading.html heading="Inputs Aren't Properly Labeled (Text)" level=3 %}
 
@@ -103,10 +103,8 @@ Now to tackle the submit button issue. There's a lot of ways that you could spot
 </div>
 ```
 
-Since this is a clickable element, it definitely should not be a `div`! This
-element choice is what makes the form not submittable via the keyboard. A simple
-way to fix this is to change the `div` element to a `button` with
-`type="submit"`, like so:
+Since this is a clickable element, it definitely should not be a `div`! This  element choice is what makes the form not submittable by keyboard. A simple
+way to fix this is to change the `div` element to a `button` with  `type="submit"`, like so:
 
 ```html
 <button type="submit" id="sign-up" class="button">
@@ -120,9 +118,7 @@ submit button will trigger.
 
 {% include linkedHeading.html heading="Fields Not Marked Required" level=3 %}
 
-Last but certainly not least is forms not being marked required for screen
-readers. Simple by adding the `required` attribute to our required input fields,
-screen reader users will be notified which input field is required or optional.
+Last but certainly not least is the form's inputs not being marked required for screen readers. This is very simple to fix, just by adding the `required` attribute to our required input fields. This ensures screen reader users will hear which input field is required or optional.
 
 For our email input, for example, the fixed input looks like so:
 
@@ -132,8 +128,7 @@ For our email input, for example, the fixed input looks like so:
 
 {% include linkedHeading.html heading="The Fixed Accessible Form" level=2 %}
 
-Now that we have addressed all of the accessibility issues we found with the
-form, let's take a look a look at the final, accessible form:
+Now that we have addressed all of the accessibility issues we found with the form, let's take a look a look at the final, accessible form:
 
 <iframe title="Inacessible Form Made Accessible"
   src="https://codepen.io/viktorkoves/embed/yLNPZzK?height=265&theme-id=light&default-tab=result"
@@ -145,11 +140,11 @@ form, let's take a look a look at the final, accessible form:
 
 Now, we can easily use this form with just our keyboard or a screen reader.
 
-If you want to learn more about accessibility, like what tools you can use to
-get started testing for accessibility, check out my [other-articles].
+If you want to learn more about accessibility, like what tools you can use to get started testing for accessibility, check out my [other-articles]. Is there an accessibility related topic you want to learn more about? [Tweet at me!][my-twitter]
 
 <!-- All links for simplicity -->
-[mdn-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 [a11y-tools-article]: {% post_url 2020-02-09-the-accessible-developers-starter-kit %}
 [devtools-a11y-pane]: https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane
+[mdn-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+[my-twitter]: https://twitter.com/viktor_koves
 [other-articles]: /writing
