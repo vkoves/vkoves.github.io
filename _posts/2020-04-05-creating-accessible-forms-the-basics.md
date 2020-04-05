@@ -6,7 +6,7 @@ title: "Creating Accessible Forms: The Basics"
 Forms are one of the biggest ways users interact with websites, and as part of
 creating an accessible website, we need to know how to make accessible forms.
 In this post I'll show you the fundamentals of how to make a basic form
-accessibile.
+accessible.
 
 {% include linkedHeading.html heading="A Faulty Form Example" level=2 %}
 
