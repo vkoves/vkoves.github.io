@@ -3,14 +3,10 @@ layout: post
 title: "Creating Accessible Forms: The Basics"
 ---
 
-{% comment %}
-Planned parts:
-Part 1. Form Basics - <form>, <label>, <fieldset>, and submit
-Part 2. Inline Validation - inline validation with Javascript
-Part 3.
-{% endcomment %}
-
-Forms are one of the biggest ways users interact with websites, and as part of creating an accessible website, we need to know how to make accessible forms.
+Forms are one of the biggest ways users interact with websites, and as part of
+creating an accessible website, we need to know how to make accessible forms.
+In this post I'll show you the fundamentals of how to make a basic form
+accessibile.
 
 {% include linkedHeading.html heading="A Faulty Form Example" level=2 %}
 
@@ -67,7 +63,7 @@ The proper way to mark up this input is to use a `<label>` instead of a `<div>` 
 
 ```html
 <label for="email" class="label">Email*</label>
-<input id="email" type="text" required>
+<input id="email" type="text">
 ```
 
 Now if I use a screen reader I properly hear that the input is meant to be an email, and inspecting the element tree with the Accessibility pane shows this as well:
@@ -83,7 +79,7 @@ Even if we properly label our radio button, the label would only be "Free" which
 ```html
   <fieldset class="label">
     <legend>Plan*</legend>
-    <input id="plan-free" type="radio" name="plan" required>
+    <input id="plan-free" type="radio" name="plan">
     <label for="plan-free">Free</label>
 
     <input id="plan-pro" type="radio" name="plan">
@@ -97,7 +93,7 @@ This ensures that screen reader users get informed that the "Free" and "Pro" inp
 
 Notice that the Accessibility Tree shows that our "Free" input is in a "Plan" group, confirming that we've setup our `<fieldset>` correctly.
 
-{% include linkedHeading.html heading="Submit Button Isn't Focusable" level=3 %}
+{% include linkedHeading.html heading="Form Submission" level=3 %}
 
 Now to tackle the submit button issue. There's a lot of ways that you could spot this issue, including using your site with a keyboard, but looking at the HTML should also be  a big clue that something is off. Here's the HTML for the submit button in the original inaccessible form demo:
 
@@ -107,14 +103,37 @@ Now to tackle the submit button issue. There's a lot of ways that you could spot
 </div>
 ```
 
-{% include linkedHeading.html heading="No Form Submit Action" level=3 %}
+Since this is a clickable element, it definitely should not be a `div`! This
+element choice is what makes the form not submittable via the keyboard. A simple
+way to fix this is to change the `div` element to a `button` with
+`type="submit"`, like so:
+
+```html
+<button type="submit" id="sign-up" class="button">
+  Sign Up
+</button>
+```
+
+Making this button of type submit also fixes the general form submission. Now,
+if we press Enter in any of the form inputs, the Javascript associated with the
+submit button will trigger.
 
 {% include linkedHeading.html heading="Fields Not Marked Required" level=3 %}
 
+Last but certainly not least is forms not being marked required for screen
+readers. Simple by adding the `required` attribute to our required input fields,
+screen reader users will be notified which input field is required or optional.
 
+For our email input, for example, the fixed input looks like so:
+
+```html
+<input id="email" type="text" required>
+```
 
 {% include linkedHeading.html heading="The Fixed Accessible Form" level=2 %}
 
+Now that we have addressed all of the accessibility issues we found with the
+form, let's take a look a look at the final, accessible form:
 
 <iframe title="Inacessible Form Made Accessible"
   src="https://codepen.io/viktorkoves/embed/yLNPZzK?height=265&theme-id=light&default-tab=result"
@@ -124,7 +143,13 @@ Now to tackle the submit button issue. There's a lot of ways that you could spot
   (<a href='https://codepen.io/viktorkoves'>@viktorkoves</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+Now, we can easily use this form with just our keyboard or a screen reader.
+
+If you want to learn more about accessibility, like what tools you can use to
+get started testing for accessibility, check out my [other-articles].
+
 <!-- All links for simplicity -->
 [mdn-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 [a11y-tools-article]: {% post_url 2020-02-09-the-accessible-developers-starter-kit %}
 [devtools-a11y-pane]: https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane
+[other-articles]: /writing
