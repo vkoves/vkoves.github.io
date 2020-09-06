@@ -88,9 +88,7 @@ Accessibility conversations often focus on remediation - bringing inaccessible s
 
 1. **Test for accessibility yourself** - using automated tools and assistive technology, you can often emulate the experience a person with disabilities. My [article on accessibility testing tools][a11y-tools-article] can be a helpful starting point for this.
 
-**DEV.TO Only:**
-
-I hope you enjoyed this article, and that it helps you spot accessibility issues before they get out to your users. If there's an accessibility related topic you would like me to cover or if you have any feedback, leave a comment!
+I hope you enjoyed this article, and that it helps you spot accessibility issues before they get out to your users.
 
 
 [ms-inclusive-design]: https://www.microsoft.com/design/inclusive/
