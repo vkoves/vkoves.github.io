@@ -9,12 +9,13 @@
 @import 'variables/colors';
 
 main.post {
-  // Make images centered by default
-  img {
+  // Make images and videos centered by default and at most full width
+  img, video {
     display: block;
     margin: auto;
     max-width: 100%;
   }
+
 
   // Style code highlight blocks
   figure.highlight {
