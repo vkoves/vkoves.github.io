@@ -3,7 +3,7 @@ layout: post
 title: "Chipotle's Ordering Experience is Inaccessible - Here's How to Fix It"
 ---
 
-Recently, I was ordering some delivery from Chipotle, and out of curiosity I tried to tab through the menu, only to discover that I couldn't! Here's some of some of the issues that make the Chipotle ordering experience inaccessible, and how you can prevent them in your own project.
+Recently, I was ordering some delivery from Chipotle, and out of curiosity I tried to tab through the menu, only to discover that I couldn't! Here's some of the issues that make the Chipotle ordering experience inaccessible, and how you can prevent them in your own project.
 
 **A quick note before we start:** I wrote this article in September of 2020, and Chipotle may well have fixed these issues by the time you're reading this - I certainly hope so! This article is a review of the issues with their site at the time I wrote it, and I hope that by publishing some issues I've found in an actual production website I can show developers what some common accessibility issues are and how to fix them.
 
@@ -11,10 +11,8 @@ Recently, I was ordering some delivery from Chipotle, and out of curiosity I tri
 
 Let's start at the homepage. Let's say I am a user who is only using a keyboard and I want to order a burrito. Great, it's on the homepage! Let me just press Tab to get over there:
 
-<video controls>
-    <source src="/post-assets/chipotle-a11y/chipotle-home-focus.mp4"
-            type="video/mp4">
-
+<video src="/post-assets/chipotle-a11y/chipotle-home-focus.mp4"
+  controls type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
@@ -39,10 +37,8 @@ For the purpose of continuing to examine this site, let's say your friend wanted
 
 Well, let's start by trying to pick our meat by tabbing into the meat options and see what happens:
 
-<video controls>
-    <source src="/post-assets/chipotle-a11y/chipotle-burrito-focus.mp4"
-            type="video/mp4">
-
+<video src="/post-assets/chipotle-a11y/chipotle-burrito-focus.mp4"
+  controls type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
