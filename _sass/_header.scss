@@ -77,7 +77,8 @@ $header-mob-height: 72px;
 @media (max-width: 800px) {
   .header-inside {
     width: 100%;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

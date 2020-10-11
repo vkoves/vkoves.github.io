@@ -3,6 +3,11 @@
 
 @import 'variables/colors';
 
+main.page-limiter {
+  // Limit page width to 800px to make lines of text the perfect length
+  max-width: 800px;
+}
+
 .all-posts-cont {  margin-bottom: 30px; }
 
 .red-button {

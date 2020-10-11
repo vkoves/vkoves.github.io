@@ -7,7 +7,7 @@
 @import 'header';
 @import 'footer';
 
-html { font-size: 18px; }
+html { font-size: 20px; }
 
 body {
   position: relative;
@@ -18,6 +18,7 @@ body {
   line-height: 1.5;
   color: $text-grey;
 }
+
 button { font-family: 'Open Sans', sans-serif; }
 
 // Make buttons and links have a nice red dashed outline on focus
@@ -36,6 +37,8 @@ a {
     color: $darkest-red;
   }
 }
+
+p { margin: 1.5rem 0; }
 
 .linked-heading {
   // Add scrol margin so anchor adjusts for the sticky header
@@ -63,19 +66,14 @@ a {
   }
 }
 
-// Helpers
-.text-center { text-align: center; }
+/**
+ * Generic page styles
+ */
 
-// Generic page styles
-.page-limiter {
-  position: relative;
-  width: 90%;
-  max-width: 1000px;
-  margin: 0px auto;
-}
-
+// The <main> element on all pages, including full width pages
 .page-container {
   margin-top: 50px;
+  margin-bottom: 100px;
   // Use min-height to prevent the footer not being at screen bottom on pages
   // with very little content like the homepage or 404
   min-height: calc(100vh - 185px);
@@ -86,6 +84,15 @@ a {
   @media (max-width: 600px) {
     min-height: calc(100vh - 176px);
   }
+}
+
+// The <main> element on pages that don't go full width
+.page-limiter {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-desc { margin-bottom: 30px; }
@@ -111,7 +118,7 @@ a {
 .brand-font { font-weight: 600; }
 .brand-color { color: $brand-red; }
 
-h1 { font-weight: 600; margin: 0px; }
+h1 { margin: 0px; }
 h4 { font-weight: 600; margin-top: 10px; }
 
 /**
@@ -314,6 +321,10 @@ h4 { font-weight: 600; margin-top: 10px; }
 /****** GENERIC CLASSES *****/
 /****************************/
 
+.text-center { text-align: center; }
+.left-align { text-align: left; }
+.no-bold { font-weight: normal; }
+
 .centered {
   position: absolute;
   top: 50%;
@@ -332,9 +343,6 @@ h4 { font-weight: 600; margin-top: 10px; }
   filter: blur(5px);
   -webkit-filter: blur(5px);
 }
-
-.left-align { text-align: left; }
-.no-bold { font-weight: normal; }
 
 code.inline, code.highlighter-rouge {
   font-family: monospace;
