@@ -1,13 +1,13 @@
 .footer
 {
-  position: fixed;
   width: 100%;
-  padding: 5px 0px;
+  padding: 15px 0px;
   bottom: 0px;
   left: 0;
   background-color: $mid-grey;
   box-shadow: 0px 0px 5px $grey;
 }
+
 .social-bar {
   font-size: 0px;
   text-align: center;
@@ -15,30 +15,33 @@
 
   li { display: inline-block; }
 }
+
 .social-bar a {
   display: block;
   text-decoration: none;
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
-.social-bar div
+
+.social-bar .icon
 {
   display: inline-block;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
 }
 
 .social-bar .github {
   background-image: url("../images/social-media-icons/icons.svg");
   background-position: 0 0%;
 }
+
 .social-bar .twitter {
   background-image: url("../images/social-media-icons/icons.svg");
   background-position: 0 100%;
 }
+
 .social-bar .linkedin {
   background-image: url("../images/social-media-icons/icons.svg");
   background-position: 0 50%;
 }
-
