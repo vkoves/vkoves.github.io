@@ -72,17 +72,18 @@ p { margin: 1.5rem 0; }
 
 // The <main> element on all pages, including full width pages
 .page-container {
-  margin-top: 50px;
-  margin-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  box-sizing: border-box;
   // Use min-height to prevent the footer not being at screen bottom on pages
   // with very little content like the homepage or 404
-  min-height: calc(100vh - 185px);
+  min-height: calc(100vh - 135px);
 
   /**
    * Mobile styling
    */
   @media (max-width: 600px) {
-    min-height: calc(100vh - 176px);
+    min-height: calc(100vh - 146px);
   }
 }
 
