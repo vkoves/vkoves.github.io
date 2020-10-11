@@ -27,11 +27,6 @@ title: "Writing"
         {% for category in post.categories %}
           <span class="category">{{ category }}</span>
         {% endfor %}
-
-        <div class="date">
-          Published on
-          <time>{{ post.date | date: "%B %d, %Y" }}</time>
-        </div>
       </div>
 
       <div class="excerpt">

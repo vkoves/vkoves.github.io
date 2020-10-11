@@ -8,11 +8,12 @@
 @import 'variables/colors';
 @import 'variables/sizing';
 
-body {
-  background-color: $white;
-}
+body { background-color: $white; }
 
 $desktop-img-size: 30rem;
+
+// Fix margin collapse between .main-cont and .page-container
+.page-container { overflow: auto; }
 
 .main-cont {
   display: grid;
@@ -40,6 +41,7 @@ $desktop-img-size: 30rem;
     color: $dark-grey;
     font-size: 1.25rem;
   }
+
   .tagline {
     margin-top: 0;
     margin-bottom: 2rem;
@@ -58,6 +60,7 @@ $desktop-img-size: 30rem;
       margin-left: 2rem;
       align-self: center;
     }
+
     .text-cont { padding: 0 2rem; }
   }
 }
@@ -81,12 +84,16 @@ $desktop-img-size: 30rem;
       height: auto;
       margin: auto;
       box-shadow: 2px 4px 10px $shadow-color;
+      border: solid 5px $white;
     }
+
     .text-cont {
       padding: 1.25rem 0;
       align-self: flex-start;
 
-      h1 { font-size: 3rem; }
+      h1 { font-size: 2.5rem; }
+      p { font-size: 1rem; }
+      .tagline { margin-bottom: 0; }
     }
   }
 }

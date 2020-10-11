@@ -16,7 +16,7 @@ body {
   padding-top: 60px; // Add padding around header height
   background: $off-white;
   line-height: 1.5;
-  color: $charcoal;
+  color: $text-grey;
 }
 button { font-family: 'Open Sans', sans-serif; }
 
@@ -75,9 +75,17 @@ a {
 }
 
 .page-container {
-  margin-top: 30px;
-  min-height: calc(100vh - 165px);
-  overflow: auto;
+  margin-top: 50px;
+  // Use min-height to prevent the footer not being at screen bottom on pages
+  // with very little content like the homepage or 404
+  min-height: calc(100vh - 185px);
+
+  /**
+   * Mobile styling
+   */
+  @media (max-width: 600px) {
+    min-height: calc(100vh - 176px);
+  }
 }
 
 .page-desc { margin-bottom: 30px; }
@@ -106,7 +114,17 @@ a {
 h1 { font-weight: 600; margin: 0px; }
 h4 { font-weight: 600; margin-top: 10px; }
 
-/* Gallery Plugin Styling */
+/**
+ * Mobile styling
+ */
+@media (max-width: 600px) {
+  // Increase root font-size for easier viewing - scales all rem elements
+  html { font-size: 22px; }
+}
+
+/**
+ * Gallery Plugin Styling
+ */
 .overlay-transparent {
   display: none;
   position: fixed;
@@ -288,7 +306,9 @@ h4 { font-weight: 600; margin-top: 10px; }
   position: absolute;
   text-align: center;
 }
-/* End Gallery Plugin Styling */
+/**
+ * End Gallery Plugin Styling
+ */
 
 /****************************/
 /****** GENERIC CLASSES *****/
