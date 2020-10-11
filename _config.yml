@@ -6,8 +6,8 @@ permalink: /:year/:month/:day/:title
 title: Viktor K&ouml;ves
 # Site description for meta tags
 description:
-  The Personal Website of Viktor K&ouml;ves - Front-End Engineer & Web
-  Accessibility Specialist
+  I'm Viktor K&ouml;ves, a front-end engineer & web accessibility specialist who
+  can help you make an incredible and accessible website.
 
 # Setup a project collection so we can dynamically load in project info without
 # JS, ensuring it's great for SEO
