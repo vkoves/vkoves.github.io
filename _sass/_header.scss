@@ -38,7 +38,7 @@ $header-mob-height: 72px;
 
   &, &:hover, &:focus { text-decoration: none; }
 
-  &:hover, &:focus {
+  &:hover, &:focus, &.hire-me {
     color: $dark-grey;
     background-color: $white;
   }
@@ -52,6 +52,8 @@ $header-mob-height: 72px;
 }
 
 .header-buttons { float: right; }
+
+.header-buttons li + li { margin-left: 5px; }
 
 .menu-btn {
   display: none;
