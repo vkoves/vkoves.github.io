@@ -9,16 +9,14 @@
 
 html { font-size: 18px; }
 
-body
-{
+body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding-top: 60px; // Add padding around header height
   background: $off-white;
   line-height: 1.5;
-  color: $charcoal;
+  color: $text-grey;
 }
 button { font-family: 'Open Sans', sans-serif; }
 
@@ -37,22 +35,23 @@ a {
     text-decoration: underline;
     color: $darkest-red;
   }
-
 }
 
 .linked-heading {
   // Add scrol margin so anchor adjusts for the sticky header
-  scroll-margin-top: 70px;
+  scroll-margin-top: 80px;
 
   .link-icon {
     // Hide main (red) icon until hovering
     &:not(:hover):not(:focus) {
       .main { display: none; }
     }
+
     &:hover, &:focus {
       .placeholder { display: none; }
       .main { display: inline; }
     }
+
     img {
       display: inline;
       position: relative;
@@ -68,20 +67,30 @@ a {
 .text-center { text-align: center; }
 
 // Generic page styles
-.page-limiter
-
-{  position: relative;
+.page-limiter {
+  position: relative;
   width: 90%;
   max-width: 1000px;
   margin: 0px auto;
 }
-.page-container
-{
-  margin-top: 20px;
+
+.page-container {
+  margin-top: 50px;
+  // Use min-height to prevent the footer not being at screen bottom on pages
+  // with very little content like the homepage or 404
+  min-height: calc(100vh - 185px);
+
+  /**
+   * Mobile styling
+   */
+  @media (max-width: 600px) {
+    min-height: calc(100vh - 176px);
+  }
 }
+
 .page-desc { margin-bottom: 30px; }
-.button-link
-{
+
+.button-link {
   position: relative;
   top: 0px;
   color: $white;
@@ -92,8 +101,8 @@ a {
   border-radius:10px;
   border-bottom: solid #960000 4px;
 }
-.button-link:hover
-{
+
+.button-link:hover {
   top: 2px;
   border-bottom: solid #960000 2px;
 }
@@ -105,9 +114,18 @@ a {
 h1 { font-weight: 600; margin: 0px; }
 h4 { font-weight: 600; margin-top: 10px; }
 
-/* Gallery Plugin Styling */
-.overlay-transparent
-{
+/**
+ * Mobile styling
+ */
+@media (max-width: 600px) {
+  // Increase root font-size for easier viewing - scales all rem elements
+  html { font-size: 22px; }
+}
+
+/**
+ * Gallery Plugin Styling
+ */
+.overlay-transparent {
   display: none;
   position: fixed;
   background: rgba(0,0,0,0.75);
@@ -117,15 +135,17 @@ h4 { font-weight: 600; margin-top: 10px; }
   left: 0;
   z-index: 10;
 }
+
 .img-base {
   width: 100%;
   text-align: center;
 }
-.img-container
-{
+
+.img-container {
   display: inline-block;
   position: relative;
 }
+
 /* Style overlay info section */
 #overlay-main .info-sect {
   position: absolute;
@@ -135,17 +155,20 @@ h4 { font-weight: 600; margin-top: 10px; }
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.7);
 }
+
 .info-sect.open { padding: 25px 10px; }
+
 .info-sect:not(.open) .title, .info-sect:not(.open) .description {
   display: none;
 }
+
 .info-sect .title {
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 1.5em;
 }
-#overlay-main .icon.info
-{
+
+#overlay-main .icon.info {
   position: absolute;
   top: -50px;
   right: -1px;
@@ -161,48 +184,50 @@ h4 { font-weight: 600; margin-top: 10px; }
   opacity: 0.7;
   transition: opacity 0.3s;
 }
+
 /* On focus and hover make info icon fully visible */
-#overlay-main .icon.info:hover, #overlay-main .icon.info:focus
-{
+#overlay-main .icon.info:hover, #overlay-main .icon.info:focus {
   opacity: 1;
 }
+
 /* And add box-shadow on focus to override outline */
-#overlay-main .icon.info:focus
-{
+#overlay-main .icon.info:focus {
   box-shadow: -2px -2px 0px 1px white;
   outline: none;
 }
-#overlay-main img
-{
+
+#overlay-main img {
   max-width: 90vw;
   max-height: 80vh;
 }
-#overlay-info
-{
+
+#overlay-info {
   z-index: 20;
   color: white;
 }
-#overlay-info .title
-{
+
+#overlay-info .title {
   font-size: 36px;
   font-weight: 600;
 }
-#overlay-info #close:hover
-{
+
+#overlay-info #close:hover {
   background: rgba(0,0,0,1);
 }
+
 #overlay-info .description { font-size: 20px; }
+
 #overlay-info .description a {
   color: $brand-red;
   text-decoration: none;
 }
-.info-cont
-{
+
+.info-cont {
   width: 100%;
   max-width: 1000px;
 }
-#overlay-controls
-{
+
+#overlay-controls {
   display: none;
   position: fixed;
   top: 0px;
@@ -212,12 +237,12 @@ h4 { font-weight: 600; margin-top: 10px; }
   height: 100%;
   pointer-events: none;
 }
+
 /* Make the images (arrows and close) and nav-dots still take pointer events */
 #overlay-controls button, #overlay-controls .nav-dot { pointer-events: auto; }
 
 /* Style overlay buttons */
-.over-btn
-{
+.over-btn {
   position: fixed;
   background: rgba(0,0,0,0.5);
   border: none;
@@ -229,32 +254,33 @@ h4 { font-weight: 600; margin-top: 10px; }
   width: 50px;
   height: 50px;
 }
-.over-btn img
-{
+
+.over-btn img {
   width: 100%;
   height: 100%;
 }
+
 /* On hover and focus darken background */
-.over-btn:hover, .over-btn:focus
-{
+.over-btn:hover, .over-btn:focus {
   background: rgba(0,0,0,1);
 }
+
 /* On focus add white box-shadow to replace outline */
-.over-btn:focus
-{
+.over-btn:focus {
   box-shadow: 0px 0px 0px 3px white;
   outline: none;
 }
-#overlay-controls #close, #overlay-info #close
-{
+
+#overlay-controls #close, #overlay-info #close {
   z-index: 25;
   top: 10px;
   right: 10px;
 }
+
 #overlay-controls #left { left: 1%; }
 #overlay-controls #right { right: 1%; }
-#overlay-controls .nav-dot
-{
+
+#overlay-controls .nav-dot {
   display: inline-block;
   background-color: black;
   width: 10px;
@@ -264,50 +290,53 @@ h4 { font-weight: 600; margin-top: 10px; }
   box-sizing: border-box;
   cursor: pointer;
 }
-#overlay-controls .nav-dot:hover
-{
+
+#overlay-controls .nav-dot:hover {
   border: solid 1px white;
 }
-#overlay-controls .nav-dot.active
-{
+
+#overlay-controls .nav-dot.active {
   background-color: white;
 }
-#overlay-controls .gallery-nav
-{
+
+#overlay-controls .gallery-nav {
   width: 100vw;
   bottom: 0px;
   height: 30px;
   position: absolute;
   text-align: center;
 }
-/* End Gallery Plugin Styling */
+/**
+ * End Gallery Plugin Styling
+ */
 
 /****************************/
 /****** GENERIC CLASSES *****/
 /****************************/
 
-.centered
-{
+.centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.vertically-centered
-{
+
+.vertically-centered {
   position: absolute;
   top: 50%;
-  transform: translate(0%, -50%);
+  transform:
+  translate(0%, -50%);
 }
-.blur
-{
+
+.blur {
   filter: blur(5px);
   -webkit-filter: blur(5px);
 }
+
 .left-align { text-align: left; }
 .no-bold { font-weight: normal; }
-code.inline, code.highlighter-rouge
-{
+
+code.inline, code.highlighter-rouge {
   font-family: monospace;
   background: $white;
   font-size: 0.9em;
@@ -319,15 +348,16 @@ code.inline, code.highlighter-rouge
 /* Code for fluid full width video from CSS Tricks:
 https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .video-cont { max-width: 700px; }
-.videoWrapper
-{
+
+.videoWrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
+
 .videoWrapper.slides { padding-top: 29px; }
-.videoWrapper iframe
-{
+
+.videoWrapper iframe {
   position: absolute;
   top: 0;
   left: 0;

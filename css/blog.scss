@@ -4,56 +4,57 @@
 @import 'variables/colors';
 
 .all-posts-cont {  margin-bottom: 30px; }
-.red-button
-{
+
+.red-button {
   display: inline-block;
   padding: 5px 15px;
   text-decoration: none;
   background-color: $mid-grey;
   border-radius: 5px;
-  color: $charcoal;
+  color: $text-grey;
   font-weight: 600;
   transition: background-color 0.2s, color 0.2s;
 
-  &.disabled
-  {
+  &.disabled {
     background-color: transparent;
     color: $dark-grey;
   }
-  &:not(.disabled):hover, &:focus
-  {
+
+  &:not(.disabled):hover, &:focus {
     background-color: $brand-red;
     color: $white;
     text-decoration: none;
   }
 }
-.post-date
-{
+
+.post-date {
   display: inline-block;
   width: 100%;
   text-align: left;
+  color: $text-light;
 }
-hr
-{
+
+hr {
   height: 1px;
   background: $light-grey;
   border: none;
 }
 
 /* Post List Styling on the Posts page */
-.post-list
-{
+
+.post-list {
   padding-left: 0px;
   list-style: none;
 }
-.post-listing
-{
+
+.post-listing {
   text-align: left;
-  margin-top: 30px;
 
-  .post-heading { margin-bottom: 15px; }
+  + .post-listing { margin-top: 50px; }
 
-  h2 { margin-bottom: 0; }
+  .post-heading { margin-bottom: 5px; }
+
+  h2 { margin: 0; }
 
   .category {
     position: relative;
@@ -64,11 +65,6 @@ hr
     vertical-align: baseline;
     font-size: 12px;
     margin-left: 10px;
-  }
-
-  .date {
-    font-size: 0.9rem;
-    color: $dark-grey;
   }
 
   .excerpt p { margin: 0px; }

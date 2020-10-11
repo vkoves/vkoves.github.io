@@ -6,11 +6,14 @@ $light-grey:      #D3D3D3; // lightgrey
 $mid-grey:        #DCDCDC; // gainsboro
 $grey:            #808080; // grey
 $dark-grey:       #404040;
-$charcoal:        #272727;
+
+// Greys used for text
+$text-light:      #686767; // A light grey that is WCAG compliant
+$text-grey:        #272727;
 
 $shadow-color: rgba(0, 0, 0, 0.5);
 
-// Theme colors
+// Brand colors
 $light-red:     #FFE8EC;
 $brand-red:     #D80000;
 $dark-red:      #A30000;
