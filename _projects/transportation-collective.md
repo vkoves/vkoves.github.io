@@ -5,7 +5,7 @@ name: The Transportation Collective
 order: 6
 
 subtitle: Big data for CTA customers
-thumbnail: images/portfolio/thumbs/TransCo.jpg
+thumbnail: images/work/thumbs/TransCo.jpg
 
 gallery:
     - { url: /images/projects/TransCo (2).png, alt: TransCo CTA homepage screenshot with issue map }

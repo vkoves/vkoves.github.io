@@ -5,7 +5,7 @@ name: Packback
 order: 0
 
 subtitle: Advancing an accessible discussion platform
-thumbnail: images/portfolio/thumbs/packback.jpg
+thumbnail: images/work/thumbs/packback.jpg
 
 tools:
     - Angular

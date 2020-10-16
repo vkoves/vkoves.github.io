@@ -5,7 +5,7 @@ name: Carpe
 order: 4
 
 subtitle: Scheduling made social
-thumbnail: images/portfolio/thumbs/carpe.jpg
+thumbnail: images/work/thumbs/carpe.jpg
 
 tools:
     - Ruby on Rails

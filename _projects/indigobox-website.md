@@ -5,7 +5,7 @@ name: indigoBox Website
 order: 5
 
 subtitle: Spreading the word
-thumbnail: images/portfolio/thumbs/indigoBoxSite.jpg
+thumbnail: images/work/thumbs/indigoBoxSite.jpg
 
 gallery:
     - { url: /images/projects/indigoBoxSite (1).png, alt: indigoBox homepage screenshot }
