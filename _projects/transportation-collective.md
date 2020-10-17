@@ -16,9 +16,7 @@ gallery:
     - { url: /images/projects/TransCo (10).png, alt: TransCo CTA line graph of issues over time }
 tools:
     - Google Maps API
-    - Google Charts
     - jQuery
-    - Javascript
     - CSS3
     - HTML5
 ---

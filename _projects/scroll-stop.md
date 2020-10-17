@@ -12,7 +12,6 @@ gallery:
     - { url: /images/projects/scroll-stop-2.png, alt: Twitter page with Scroll Stop active, showing it will stop scrolling  }
 tools:
     - jQuery
-    - Javascript
     - HTML5
     - CSS3
 ---

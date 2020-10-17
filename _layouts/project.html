@@ -39,10 +39,10 @@ Show Gallery Section if there are photos via the gallery key
 {% if page.gallery != null %}
 	<h2>Gallery</h2>
 
-	<button id="proj-imgs" class="gallery-preview">
-		<!-- Don't use alt as the button is already labeled by text below -->
-		<img src="{{ page.gallery[0].url }}" alt="">
-		<div class="text">View {{ page.name }} Gallery</div>
+	<button id="proj-imgs" class="gallery-preview"
+		aria-label="View {{ page.name }} Gallery">
+		<img src="{{ page.gallery[0].url }}" class="main">
+		<img src="{{ page.gallery[1].url }}" class="secondary">
 	</button>
 {% endif %}
 

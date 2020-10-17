@@ -13,7 +13,6 @@ gallery:
     - { url: /images/projects/indigoBoxSite (3).png, alt: indigoBox individual project page screenshot }
 tools:
     - jQuery
-    - Javascript
     - CSS3
     - HTML5
 ---

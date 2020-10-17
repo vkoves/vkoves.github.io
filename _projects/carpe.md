@@ -11,7 +11,6 @@ tools:
     - Ruby on Rails
     - jQuery UI
     - jQuery
-    - Javascript
     - HTML5
     - CSS3
 gallery:

@@ -12,7 +12,6 @@ gallery:
 tools:
     - Spotify API
     - jQuery
-    - Javascript
     - CSS3
     - HTML5
 ---
