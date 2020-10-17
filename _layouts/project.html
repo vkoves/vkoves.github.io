@@ -41,8 +41,9 @@ Show Gallery Section if there are photos via the gallery key
 
 	<button id="proj-imgs" class="gallery-preview"
 		aria-label="View {{ page.name }} Gallery">
-		<img src="{{ page.gallery[0].url }}" class="main">
-		<img src="{{ page.gallery[1].url }}" class="secondary">
+		<!-- The button has an explicit label, so these images are only decorative -->
+		<img src="{{ page.gallery[0].url }}" alt="" class="main">
+		<img src="{{ page.gallery[1].url }}" alt="" class="secondary">
 	</button>
 {% endif %}
 
