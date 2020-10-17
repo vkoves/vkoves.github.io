@@ -7,7 +7,10 @@
 @import 'header';
 @import 'footer';
 
-html { font-size: 18px; }
+html {
+  font-size: 18px;
+  scroll-behavior: smooth; // New, animates going between anchors!
+}
 
 body {
   position: relative;
@@ -24,6 +27,21 @@ h2 { margin-top: 2rem; }
 h3 { margin-top: 1.75rem; }
 
 button { font-family: 'Open Sans', sans-serif; }
+
+// Style any heading targeted by an anchor to animate move and highlight
+:target {
+  // The delay and animation length for all our transitions
+  $animate-timing: 0.3s 0.3s;
+
+  transition:
+    box-shadow $animate-timing,
+    padding-left $animate-timing,
+    color $animate-timing;
+  padding-left: 15px;
+  box-shadow: -10px 0 $dark-red;
+  color: $dark-red;
+
+}
 
 // Make buttons and links have a nice red dashed outline on focus
 button, a {
@@ -47,6 +65,12 @@ p { margin: 1.5rem 0; }
 .linked-heading {
   // Add scrol margin so anchor adjusts for the sticky header
   scroll-margin-top: 80px;
+
+  // Flip to red icon when targeted
+  &:target .link-icon {
+    .placeholder { display: none !important; }
+    .main { display: inline !important; }
+  }
 
   .link-icon {
     // Hide main (red) icon until hovering
