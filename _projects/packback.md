@@ -7,6 +7,10 @@ order: 0
 subtitle: Advancing an accessible discussion platform
 thumbnail: images/work/thumbs/packback.jpg
 
+gallery:
+    - { url: /images/projects/Packback1.png, alt: TransCo CTA homepage screenshot with issue map }
+    - { url: /images/projects/Packback2.png, alt: TransCo CTA homepage screenshot with issue map }
+    - { url: /images/projects/Packback3.png, alt: TransCo CTA homepage screenshot with issue map }
 tools:
     - Angular
     - HTML5
