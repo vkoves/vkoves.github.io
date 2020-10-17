@@ -2,14 +2,14 @@
 layout: project
 jsId: scrollStop
 name: Scroll Stop
-order: 2
+order: 3
 
 subtitle: Boosting productivity by reducing distractions
 thumbnail: images/work/thumbs/ScrollStop.jpg
 
 gallery:
-    - { url: /images/projects/scroll-stop-1.png, alt: Scroll stop page with settings }
-    - { url: /images/projects/scroll-stop-2.png, alt: Twitter page with Scroll Stop active, showing it will stop scrolling  }
+    - { url: /images/project-photos/scroll-stop-1.png, alt: Scroll stop page with settings }
+    - { url: /images/project-photos/scroll-stop-2.png, alt: Twitter page with Scroll Stop active, showing it will stop scrolling  }
 tools:
     - jQuery
     - HTML5

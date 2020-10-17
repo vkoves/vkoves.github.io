@@ -2,19 +2,28 @@
 layout: project
 jsId: packback
 name: Packback
-order: 0
+order: 1
 
 subtitle: Advancing an accessible discussion platform
 thumbnail: images/work/thumbs/packback.jpg
 
 gallery:
-    - { url: /images/projects/Packback1.png, alt: TransCo CTA homepage screenshot with issue map }
-    - { url: /images/projects/Packback2.png, alt: TransCo CTA homepage screenshot with issue map }
-    - { url: /images/projects/Packback3.png, alt: TransCo CTA homepage screenshot with issue map }
+  - {
+      url: /images/project-photos/packback-1.png,
+      alt: Screenshot of the Packback homepage showing list of sample communities
+    }
+  - {
+      url: /images/project-photos/packback-2.png,
+      alt: Screenshot of Packback real-time feedback, showing tips on improving writing including graphs ranking writing quality
+     }
+  - {
+      url: /images/project-photos/packback-3.png,
+      alt: Screenshot of Packback avatar editor
+    }
 tools:
-    - Angular
-    - HTML5
-    - CSS3
+  - Angular
+  - HTML5
+  - CSS3
 ---
 
 In my work at Packback, I have developed features large and small, worked

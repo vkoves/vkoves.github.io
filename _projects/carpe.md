@@ -8,15 +8,15 @@ subtitle: Scheduling made social
 thumbnail: images/work/thumbs/carpe.jpg
 
 tools:
-    - Ruby on Rails
-    - jQuery UI
-    - jQuery
-    - HTML5
-    - CSS3
+  - Ruby on Rails
+  - jQuery UI
+  - jQuery
+  - HTML5
+  - CSS3
 gallery:
-    - { url: /images/projects/Carpe (1).jpg, alt: Carpe page with Jack Altman's schedule }
-    - { url: /images/projects/Carpe (2).jpg, alt: Carpe page with Jack Altman's followers }
-    - { url: /images/projects/Carpe (3).jpg, alt: Carpe page with Jack Altman's activity }
+  - { url: /images/project-photos/carpe-1.jpg, alt: Carpe page with Jack Altman's schedule }
+  - { url: /images/project-photos/carpe-2.jpg, alt: Carpe page with Jack Altman's followers }
+  - { url: /images/project-photos/carpe-3.jpg, alt: Carpe page with Jack Altman's activity }
 ---
 
 Carpe is an online scheduler designed to make organizing easier and more
