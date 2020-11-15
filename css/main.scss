@@ -33,6 +33,7 @@ button { font-family: 'Open Sans', sans-serif; }
   // The delay and animation length for all our transitions
   $animate-timing: 0.3s 0.3s;
 
+  // sass-lint:disable-block indentation
   transition:
     box-shadow $animate-timing,
     padding-left $animate-timing,
@@ -68,8 +69,8 @@ p { margin: 1.5rem 0; }
 
   // Flip to red icon when targeted
   &:target .link-icon {
-    .placeholder { display: none !important; }
-    .main { display: inline !important; }
+    .placeholder { display: none !important; }  // sass-lint:disable-line no-important
+    .main { display: inline !important; }  // sass-lint:disable-line no-important
   }
 
   .link-icon {

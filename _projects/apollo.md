@@ -1,11 +1,10 @@
 ---
 layout: project
-jsId: apollo
 name: Apollo
-order: 2
+order: 3
 
 subtitle: Learning more about music
-thumbnail: images/work/thumbs/Apollo.jpg
+thumbnail: images/project-thumbs/Apollo.jpg
 
 gallery:
   - {

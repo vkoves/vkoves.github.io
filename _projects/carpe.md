@@ -1,11 +1,10 @@
 ---
 layout: project
-jsId: carpe
 name: Carpe
 order: 4
 
 subtitle: Scheduling made social
-thumbnail: images/work/thumbs/carpe.jpg
+thumbnail: images/project-thumbs/carpe.jpg
 
 tools:
   - Ruby on Rails

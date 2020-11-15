@@ -1,11 +1,10 @@
 ---
 layout: project
-jsId: packback
 name: Packback
 order: 1
 
 subtitle: Advancing an accessible discussion platform
-thumbnail: images/work/thumbs/packback.jpg
+thumbnail: images/project-thumbs/packback.jpg
 
 gallery:
   - {

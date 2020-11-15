@@ -1,11 +1,10 @@
 ---
 layout: project
-jsId: iBWebsite
 name: indigoBox Website
 order: 5
 
 subtitle: Spreading the word
-thumbnail: images/work/thumbs/indigoBoxSite.jpg
+thumbnail: images/project-thumbs/indigoBoxSite.jpg
 
 gallery:
   - {
