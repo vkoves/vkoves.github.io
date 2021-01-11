@@ -6,6 +6,7 @@
 
 @import 'header';
 @import 'footer';
+@import 'reset';
 
 html {
   font-size: 18px;
@@ -22,9 +23,43 @@ body {
   color: $text-grey;
 }
 
-h2 { margin-top: 2rem; }
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
 
-h3 { margin-top: 1.75rem; }
+h1 { font-size: 2rem; }
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 1.33rem;
+  margin-top: 10px;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+h6 { font-size: 0.8rem; }
+
+ul, ol { padding-left: 40px; }
+ul { list-style: disc; }
+ol { list-style-type: decimal; }
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+pre { font-family: monospace; }
 
 button { font-family: 'Open Sans', sans-serif; }
 
@@ -64,6 +99,8 @@ a {
 p { margin: 1.5rem 0; }
 
 .linked-heading {
+  display: flex;
+  align-items: center;
   // Add scrol margin so anchor adjusts for the sticky header
   scroll-margin-top: 80px;
 
@@ -74,6 +111,8 @@ p { margin: 1.5rem 0; }
   }
 
   .link-icon {
+    margin-left: 5px;
+
     // Hide main (red) icon until hovering
     &:not(:hover):not(:focus) {
       .main { display: none; }
@@ -147,9 +186,6 @@ p { margin: 1.5rem 0; }
 // Brand font is just bold open sans
 .brand-font { font-weight: 600; }
 .brand-color { color: $brand-red; }
-
-h1 { margin: 0px; }
-h4 { font-weight: 600; margin-top: 10px; }
 
 /**
  * Mobile styling
