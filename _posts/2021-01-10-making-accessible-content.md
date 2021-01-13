@@ -140,7 +140,7 @@ Unfortunately, platforms that aren't as video focused don't have a great system 
 
 {% include linkedHeading.html heading="Transcripts" level=3 %}
 
-As [WebAIM's article on captions][https://webaim.org/techniques/captions/] notes, transcripts are also a helpful alternative for multimedia content, including videos. Why might someone prefer a transcript? To quote that article:
+As [WebAIM's article on captions][webaim-captions] notes, transcripts are also a helpful alternative for multimedia content, including videos. Why might someone prefer a transcript? To quote that article:
 
 > Screen reader users also may also prefer a transcript over real-time audio, since most proficient screen reader users set their assistive technology to read at a rate much faster than natural human speech.
 
@@ -176,3 +176,4 @@ This article ended up being a little longer than I planned, but I loved digging 
 [meryl-captions]: https://meryl.net/captioned-videos-complete-guide/#synchronized
 [youtube-captions]: https://support.google.com/youtube/topic/9257536?hl=en&ref_topic=9257610
 [vimeo-captions]: https://vimeo.zendesk.com/hc/en-us/articles/224968828-Captions-and-subtitles
+[webaim-captions]: https://webaim.org/techniques/captions/
