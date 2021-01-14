@@ -7,6 +7,12 @@ Accessibility isn't just for websites - it's critical for all of your content. L
 
 ## Table of Contents
 
+<div class="sr-only-cont">
+  <a href="#toc-skipped" class="sr-only red-button">
+    Skip table of contents
+  </a>
+</div>
+
 <ol class="table-of-contents">
   <li>
     <a href="#the-fundamental-principles">The Fundamental Principles</a>
@@ -74,6 +80,8 @@ Accessibility isn't just for websites - it's critical for all of your content. L
     </ol>
   </li>
 </ol>
+
+<div id="toc-skipped" class="anchor"></div>
 
 {% include linkedHeading.html heading="The Fundamental Principles" level=2 %}
 

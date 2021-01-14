@@ -104,10 +104,12 @@ a {
 
 p { margin: 1.5rem 0; }
 
-.linked-heading {
+.linked-heading, .anchor {
   // Add scrol margin so anchor adjusts for the sticky header
   scroll-margin-top: 80px;
+}
 
+.linked-heading {
   // Flip to red icon when targeted
   &:target .link-icon {
     .placeholder { display: none !important; }  // sass-lint:disable-line no-important
@@ -397,6 +399,26 @@ p { margin: 1.5rem 0; }
 .text-center { text-align: center; }
 .left-align { text-align: left; }
 .no-bold { font-weight: normal; }
+
+
+/**
+ * Hides links or text we just want for screen readers
+ */
+.sr-only-cont {
+  position: relative;
+
+  .sr-only {
+    position: absolute;
+    left: -200vw;
+    pointer-events: none;
+    background-color: $white;
+
+    &:focus {
+      left: 0;
+      pointer-events: initial;
+    }
+  }
+}
 
 .centered {
   position: absolute;
