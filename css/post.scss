@@ -30,6 +30,15 @@ main.post {
     overflow-x: auto;
   }
 
+  .table-of-contents {
+    padding-top: 10px;
+
+    &, ol { padding-left: 20px; }
+
+    ol { list-style: lower-alpha; }
+    ol ol { list-style: lower-roman; }
+  }
+
   /**
    * The notice panel is for in post warnings, alerts, or info blocks!
    */

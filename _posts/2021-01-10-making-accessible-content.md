@@ -5,6 +5,76 @@ title: "Making Accessible Content - From Social Media to Blog Posts"
 
 Accessibility isn't just for websites - it's critical for all of your content. Let's walk through some of the most fundamental accessibility principles and how they apply to content like social media posts or articles!
 
+## Table of Contents
+
+<ol class="table-of-contents">
+  <li>
+    <a href="#the-fundamental-principles">The Fundamental Principles</a>
+    <ol>
+      <li>
+        <a href="#text-alternatives">Text Alternatives</a>
+      </li>
+      <li>
+        <a href="#contrast">Contrast</a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#making-accessible-images">Making Accessible Images</a>
+    <ol>
+      <li>
+        <a href="#readable-text">Readable Text</a>
+      </li>
+      <li>
+        <a href="#alternative-alt-text">Alternative (Alt) Text</a>
+      </li>
+      <ol>
+        <li>
+          <a href="#adding-alternative-text-on-social-media">
+            Adding Alternative Text on Social Media
+          </a>
+        </li>
+      </ol>
+    </ol>
+  </li>
+  <li>
+    <a href="#making-accessible-videos">Making Accessible Videos</a>
+    <ol>
+      <li>
+        <a href="#contrast-in-videos">Contrast in Videos</a>
+      </li>
+      <li>
+        <a href="#captioning-videos">Captioning Videos</a>
+        <ol>
+          <li>
+            <a href="#caption-examples-from-ldquo-the-queen-s-gambit-rdquo">
+              Caption Examples from &ldquo;The Queen's Gambit&rdquo;
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="#captioning-videos-for-social-media">Captioning Videos for Social Media</a>
+        <ol>
+          <li>
+            <a href="#youtube-vimeo-and-other-video-platforms">
+              YouTube, Vimeo, and Other Video Platforms
+            </a>
+          </li>
+          <li>
+            <a href="#instagram-twitter-and-other-non-video-platforms">
+              Instagram, Twitter, and Other Non-Video Platforms
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="#transcripts">Transcripts</a>
+      </li>
+    </ol>
+  </li>
+</ol>
+
 {% include linkedHeading.html heading="The Fundamental Principles" level=2 %}
 
 {% include linkedHeading.html heading="Text Alternatives" level=3 %}
