@@ -13,73 +13,24 @@ Accessibility isn't just for websites - it's critical for all of your content. L
   </a>
 </div>
 
-<ol class="table-of-contents">
-  <li>
-    <a href="#the-fundamental-principles">The Fundamental Principles</a>
-    <ol>
-      <li>
-        <a href="#text-alternatives">Text Alternatives</a>
-      </li>
-      <li>
-        <a href="#contrast">Contrast</a>
-      </li>
-    </ol>
-  </li>
-  <li>
-    <a href="#making-accessible-images">Making Accessible Images</a>
-    <ol>
-      <li>
-        <a href="#readable-text">Readable Text</a>
-      </li>
-      <li>
-        <a href="#alternative-alt-text">Alternative (Alt) Text</a>
-      </li>
-      <ol>
-        <li>
-          <a href="#adding-alternative-text-on-social-media">
-            Adding Alternative Text on Social Media
-          </a>
-        </li>
-      </ol>
-    </ol>
-  </li>
-  <li>
-    <a href="#making-accessible-videos">Making Accessible Videos</a>
-    <ol>
-      <li>
-        <a href="#contrast-in-videos">Contrast in Videos</a>
-      </li>
-      <li>
-        <a href="#captioning-videos">Captioning Videos</a>
-        <ol>
-          <li>
-            <a href="#caption-examples-from-ldquo-the-queen-s-gambit-rdquo">
-              Caption Examples from &ldquo;The Queen's Gambit&rdquo;
-            </a>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <a href="#captioning-videos-for-social-media">Captioning Videos for Social Media</a>
-        <ol>
-          <li>
-            <a href="#youtube-vimeo-and-other-video-platforms">
-              YouTube, Vimeo, and Other Video Platforms
-            </a>
-          </li>
-          <li>
-            <a href="#instagram-twitter-and-other-non-video-platforms">
-              Instagram, Twitter, and Other Non-Video Platforms
-            </a>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <a href="#transcripts">Transcripts</a>
-      </li>
-    </ol>
-  </li>
-</ol>
+1. [The Fundamental Principles](#the-fundamental-principles")
+    1. [Text Alternatives](#text-alternatives")
+    1. [Contrast](#contrast")
+
+1. [Making Accessible Images](#making-accessible-images")
+    1. [Readable Text](#readable-text")
+    1. [Alternative (Alt) Text](#alternative-alt-text)
+      1. [Adding Alternative Text on Social Media](#adding-alternative-text-on-social-media)
+
+1. [Making Accessible Videos](#making-accessible-videos")
+    1. [Contrast in Videos](#contrast-in-videos")
+    1. [Captioning Videos](#captioning-videos")
+        1. [Caption Examples from & "The Queen's Gambit"](#caption-examples-from-ldquo-the-queen-s-gambit-rdquo)
+    1. [Captioning Videos for Social Media](#captioning-videos-for-social-media")
+        1. [YouTube, Vimeo, and Other Video ](#youtube-vimeo-and-other-video-platforms"Platforms)
+        1. [Instagram, Twitter, and Other ](#instagram-twitter-and-other-non-video-platforms"Non-Video Platforms)
+    1. [Transcripts](#transcripts)
+{: .table-of-contents }
 
 <div id="toc-skipped" class="anchor"></div>
 
