@@ -13,22 +13,22 @@ Accessibility isn't just for websites - it's critical for all of your content. L
   </a>
 </div>
 
-1. [The Fundamental Principles](#the-fundamental-principles")
-    1. [Text Alternatives](#text-alternatives")
-    1. [Contrast](#contrast")
+1. [The Fundamental Principles](#the-fundamental-principles)
+    1. [Text Alternatives](#text-alternatives)
+    1. [Contrast](#contrast)
 
-1. [Making Accessible Images](#making-accessible-images")
-    1. [Readable Text](#readable-text")
+1. [Making Accessible Images](#making-accessible-images)
+    1. [Readable Text](#readable-text)
     1. [Alternative (Alt) Text](#alternative-alt-text)
       1. [Adding Alternative Text on Social Media](#adding-alternative-text-on-social-media)
 
-1. [Making Accessible Videos](#making-accessible-videos")
-    1. [Contrast in Videos](#contrast-in-videos")
-    1. [Captioning Videos](#captioning-videos")
+1. [Making Accessible Videos](#making-accessible-videos)
+    1. [Contrast in Videos](#contrast-in-videos)
+    1. [Captioning Videos](#captioning-videos)
         1. [Caption Examples from & "The Queen's Gambit"](#caption-examples-from-ldquo-the-queen-s-gambit-rdquo)
-    1. [Captioning Videos for Social Media](#captioning-videos-for-social-media")
+    1. [Captioning Videos for Social Media](#captioning-videos-for-social-media)
         1. [YouTube, Vimeo, and Other Video ](#youtube-vimeo-and-other-video-platforms"Platforms)
-        1. [Instagram, Twitter, and Other ](#instagram-twitter-and-other-non-video-platforms"Non-Video Platforms)
+        1. [Instagram, Twitter, and Other Non-Video Platforms](#instagram-twitter-and-other-non-video-platforms)
     1. [Transcripts](#transcripts)
 {: .table-of-contents }
 
@@ -53,29 +53,29 @@ If you're making images with text in them, you have to ensure any text in your i
 
 Let's say we're making a marketing image for a real estate company. We might start with something like this:
 
-![Image of a suburban house with white text over it that is hard to read due to the image](/post-assets/content-a11y/img-text-poor-contrast.jpg)
+![Suburban house with white text over it that is hard to read due to the image](/post-assets/content-a11y/img-text-poor-contrast.jpg)
 
 You don't need to be an accessibility expert to look at that image and think, "that text is hard to read!" With accessibility tools, though, we can dig into how a contrast failure is specifically the issue here. If we use a color picker tool in an image editor or browser, we can grab the color at one part of the image and compare it to our text color to see if the text is contrast compliant. Let's start with a place that should have decent contrast - the dark brownish gray garage door.
 
 Indeed, if we put the color code of the text and the garage door into [contrast-ratio][contrast-ratio], we can see it's got great contrast!
 
-![Screenshot of contrast-ratio.com showing dark brown (#5d4f46) has a sufficient contrast of 7.9 with white (#fffefb)](/post-assets/content-a11y/contrast-garage.jpg)
+![Contrast-ratio.com showing dark brown (#5d4f46) has a sufficient contrast of 7.9 with white (#fffefb)](/post-assets/content-a11y/contrast-garage.jpg)
 
 That doesn't mean we're in the clear yet, though. As our intuition might tell us, there are points in this image where the background is far brighter, and that's going to cause contrast issues with our white text.
 
-If we sample the color of the reflection of the white garage door frame (directly to the left of the letter "T"), we get a drastically different result:
+If we sample the color of the reflection of the white garage door frame (directly to the left of the letter "T), we get a drastically different result:
 
-![Screenshot of contrast-ratio.com showing light gray (#b4aca9) has an insufficient contrast of 2.21 with white (#fffefb)](/post-assets/content-a11y/contrast-curb.jpg)
+![Contrast-ratio.com showing light gray (#b4aca9) has an insufficient contrast of 2.21 with white (#fffefb)](/post-assets/content-a11y/contrast-curb.jpg)
 
 This explains why the image looks unreadable! Although in some places our text is in front of a dark background and is contrast compliant, there are several points in the image where the text is blending into the background.
 
 So how might we fix this? A simple semi-transparent black background will do the trick! Here's my basic correction:
 
-![Image of a suburban house with white text over it that is easier to read thanks to a semi-transparent black background behind the text](/post-assets/content-a11y/img-text-good-contrast.jpg)
+![Suburban house with white text over it that is easier to read thanks to a semi-transparent black background behind the text](/post-assets/content-a11y/img-text-good-contrast.jpg)
 
-If we now sample that low-contrast area from before (the reflection of the white garage door frame to the left of the "T"), we get a new and improved result:
+If we now sample that low-contrast area from before (the reflection of the white garage door frame to the left of the "T), we get a new and improved result:
 
-![Screenshot of contrast-ratio.com showing dark gray (#3a3635) has a sufficient contrast of 11.83 with white (#fffefb)](/post-assets/content-a11y/contrast-background.jpg)
+![Contrast-ratio.com showing dark gray (#3a3635) has a sufficient contrast of 11.83 with white (#fffefb)](/post-assets/content-a11y/contrast-background.jpg)
 
 That's some fantastic contrast! Just by adding a semi-transparent black layer, we darkened the main image enough so that our text has sufficient contrast everywhere, making it fully readable.
 
