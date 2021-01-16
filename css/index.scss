@@ -12,53 +12,168 @@ body { background-color: $white; }
 
 $desktop-img-size: 26rem;
 
-// Fix margin collapse between .main-cont and .page-container
-.page-container { overflow: auto; }
+.page-container {
+  // Fix margin collapse between .main-cont and .page-container
+  overflow: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
+section.first-sect {
+  position: relative;
+  overflow: hidden;
+  min-height: 85vh;
+}
+
+// The main text and image container
 .main-cont {
   display: grid;
   grid-template-rows: $desktop-img-size;
   grid-template-columns: $desktop-img-size 1fr;
   width: 95%;
   max-width: $max-cont-width;
-  margin: 5rem auto 0;
+  margin: 8rem auto 8rem;
 
   h1 { font-weight: bold; }
 
-  p:first-of-type { margin-top: 0; }
+  p:first-of-type { margin: 0; }
 
-  img {
+  .img-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     height: 100%;
-    border-radius: 30px;
-    box-shadow: -6px 6px 0px $light-shadow-color;
+
+    img {
+      height: 100%;
+      border-radius: 30px;
+      box-shadow: -6px 6px 0px $light-shadow-color;
+    }
   }
 }
 
 .text-cont {
-  padding: 0 2.5rem;
+  margin-left: 5rem;
   align-self: center;
+
+  // Give each child element a background to ensure everything's readable even
+  // if a shape happens to go behind it
+  > * {
+    display: inline-block;
+    padding: 0 0.5rem;
+    background-color: $white;
+  }
 
   h1 { font-size: 3.5rem; }
 
   p {
-    max-width: 600px;
     color: $dark-grey;
     font-size: 1.1rem;
   }
 }
 
-// On smaller desktop screens, shrink image
+$default-drift-dur: 8s;
+
+.shape {
+  position: absolute;
+  z-index: -1;
+
+  &:nth-of-type(even) {
+    animation: drift1 $default-drift-dur ease-in-out 0s infinite alternate;
+  }
+  &:nth-of-type(odd) {
+    animation: drift2 $default-drift-dur ease-in-out 0s infinite alternate;
+  }
+
+  // Color variants
+  &.-blue { background-color: $brand-blue; }
+  &.-orange { background-color: $brand-orange; }
+  &.-red { background-color: $brand-red; }
+
+  &.square, &.circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  &.square { border-radius: 6px; }
+
+  &.circle {
+    border-radius: 1000px;
+
+    &.-large {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  &.triangle, &.pentagon {
+    background-repeat: no-repeat;
+  }
+
+  &.triangle {
+    background-image: url("../images/home/triangle.svg");
+    width: 80px;
+    height: 70px;
+  }
+
+  &.pentagon {
+    background-image: url("../images/home/pentagon.svg");
+    width: 80px;
+    height: 74px;
+  }
+
+  // Positioning of individual shapes
+  &#img-tri {
+    animation-duration: $default-drift-dur * 1.1;
+    left: -9%;
+    top: -10%;
+  }
+
+  &#img-pent {
+    left: 92%;
+    top: 91%;
+  }
+
+  &#sect-sq-1 {
+    left: 10%;
+    top: 80%;
+  }
+
+  &#sect-sq-2 {
+    right: 10%;
+    top: 20%;
+  }
+
+  &#sect-circ-1 {
+    animation-duration: $default-drift-dur * 0.9;
+    right: 30%;
+    bottom: 5%;
+  }
+
+  // Large circle, so drift slower
+  &#sect-circ-2 {
+    animation-duration: $default-drift-dur * 1.1;
+    right: 5%;
+    bottom: 10%;
+  }
+}
+
+
+// On smaller desktop screens, shrink image and reduce some spacing
 @media (max-width: 1200px) {
   .main-cont {
     grid-template-columns: auto auto;
 
-    img {
+    .img-cont {
       height: 70%;
       margin-left: 2rem;
       align-self: center;
     }
+  }
 
-    .text-cont { padding: 0 2rem; }
+  .text-cont {
+    margin-left: 2rem;
   }
 }
 
@@ -71,22 +186,55 @@ $desktop-img-size: 26rem;
     background-color: transparent;
     width: 90%;
     box-shadow: none;
-    margin-top: 0;
+    margin-top: 5rem;
     border-radius: 0;
     overflow: intial; // ensure <img> box-shadow shows
 
-    img {
+    .img-cont {
       width: 75%;
       max-width: 400px;
       height: auto;
       margin: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
     .text-cont {
       padding: 1.25rem 0;
+      margin: 0;
       align-self: flex-start;
 
       h1 { font-size: 2.5rem; }
     }
+  }
+
+  // Hide some shapes
+  .shape.-desktop { display: none; }
+}
+
+$x-shift: 1rem;
+$y-shift: 2rem;
+
+// Slowly drift
+@keyframes drift1 {
+  0% {
+    transform: translate(-($x-shift / 2), -($y-shift / 2));
+  }
+
+  100% {
+    transform: translate(($x-shift / 2), ($y-shift / 2));
+  }
+}
+
+@keyframes drift2 {
+  0% {
+    transform: translate(($x-shift / 2), ($y-shift / 2));
+  }
+
+  100% {
+    transform: translate(-($x-shift / 2), -($y-shift / 2));
   }
 }
