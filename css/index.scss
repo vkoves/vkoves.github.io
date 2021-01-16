@@ -22,12 +22,16 @@ $desktop-img-size: 26rem;
   width: 95%;
   max-width: $max-cont-width;
   margin: 5rem auto 0;
-  background-color: $off-white;
-  box-shadow: 2px 2px 50px 5px $shadow-color;
-  border-radius: 10px;
-  overflow: hidden;
 
-  img { height: 100%; }
+  h1 { font-weight: bold; }
+
+  p:first-of-type { margin-top: 0; }
+
+  img {
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: -6px 6px 0px $light-shadow-color;
+  }
 }
 
 .text-cont {
@@ -40,12 +44,6 @@ $desktop-img-size: 26rem;
     max-width: 600px;
     color: $dark-grey;
     font-size: 1.1rem;
-  }
-
-  .tagline {
-    margin-top: 0;
-    font-weight: 600;
-    color: $dark-grey;
   }
 }
 
@@ -82,8 +80,6 @@ $desktop-img-size: 26rem;
       max-width: 400px;
       height: auto;
       margin: auto;
-      box-shadow: 2px 4px 10px $shadow-color;
-      border: solid 5px $white;
     }
 
     .text-cont {
@@ -91,7 +87,6 @@ $desktop-img-size: 26rem;
       align-self: flex-start;
 
       h1 { font-size: 2.5rem; }
-      .tagline { margin-bottom: 0; }
     }
   }
 }
