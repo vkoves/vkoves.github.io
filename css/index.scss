@@ -13,8 +13,6 @@ body { background-color: $white; }
 
 $desktop-img-size: 26rem;
 
-.page-container { padding: 0; }
-
 section.first-sect {
   position: relative;
   overflow: hidden;
@@ -203,39 +201,11 @@ section.first-sect {
 
 
 /**
- * Declare Shape Animations
- */
-
-$x-shift: 1rem;
-$y-shift: 2rem;
-
-// Move diagonally
-@keyframes drift1 {
-  0% {
-    transform: translate(-($x-shift / 2), -($y-shift / 2));
-  }
-
-  100% {
-    transform: translate(($x-shift / 2), ($y-shift / 2));
-  }
-}
-
-@keyframes drift2 {
-  0% {
-    transform: translate(($x-shift / 2), ($y-shift / 2));
-  }
-
-  100% {
-    transform: translate(-($x-shift / 2), -($y-shift / 2));
-  }
-}
-
-$bob-dist: 1rem;
-
-/**
  * Bob up and down
  */
 @keyframes bob {
+  $bob-dist: 1rem;
+
   0% {
     transform: translate(0, -0.5 * $bob-dist);
   }

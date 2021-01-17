@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Viktor K&ouml;ves - Front-End Engineer & Web Accessibility Specialist
-pageClass: ""
+pageClass: '-no-padding'
 stylesheets:
  - index.css
 ---
@@ -9,8 +9,12 @@ stylesheets:
 <section class="first-sect">
 	<div class="main-cont">
 		<div class="img-cont">
-			<div id="img-tri" class="shape triangle"></div>
-			<div id="img-pent" class="shape pentagon"></div>
+			<div id="img-tri" class="shape triangle -svg -red">
+				{% include svgs/triangle.svg %}
+			</div>
+			<div id="img-pent" class="shape pentagon -svg -orange">
+				{% include svgs/pentagon.svg %}
+			</div>
 
 			<img src="images/headshot.jpg" alt="Headshot of Viktor Köves">
 		</div>

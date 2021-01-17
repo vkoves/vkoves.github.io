@@ -1,21 +1,28 @@
 ---
 layout: default
-title: "Work"
-pageClass: ""
+title: Work
+pageClass: '-no-padding'
 stylesheets:
  - pages/work.css
 ---
 
 <div class="shapes-hero">
-	<h1 class="page-title">Highlighted Work</h1>
+	<div class="content-limiter">
+		<h1>Highlighted Work</h1>
 
-	<div id="img-tri" class="shape triangle"></div>
-	<div id="img-pent" class="shape pentagon"></div>
-	<div id="sect-circ-1" class="shape circle"></div>
-	<div id="sect-circ-2" class="shape circle"></div>
+		<div class="shape square -white"></div>
+		<div class="shape triangle -svg -white">
+			{% include svgs/triangle.svg %}
+		</div>
+		<div class="shape pentagon -svg -white">
+			{% include svgs/pentagon.svg %}
+		</div>
+		<div class="shape circle -white"></div>
+		<div class="shape circle -large -white"></div>
+	</div>
 </div>
 
-<section class="page-limiter">
+<section class="content-limiter">
 	<div class="page-desc">
 		<p>
 			I've worked on projects large and small, from just front-end development to

@@ -164,6 +164,8 @@ p { margin: 1.5rem 0; }
   // with very little content like the homepage or 404
   min-height: calc(100vh - 135px);
 
+  &.-no-padding { padding: 0; }
+
   /**
    * Mobile styling
    */
@@ -179,6 +181,13 @@ p { margin: 1.5rem 0; }
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.content-limiter {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-cont-width;
 }
 
 .page-desc { margin-bottom: 30px; }
