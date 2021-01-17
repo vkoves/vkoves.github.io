@@ -130,10 +130,15 @@ section.first-sect {
 }
 
 /**
- * Unique styling for each section
+ * Unique styling for each section. They each have linear gradients which rotate
+ * on mobile so that the icon and text are always in front of the same color.
  */
 .hero.-moon-sect {
   background: linear-gradient(90deg, #3F3F3F, #1f1f1f);
+
+  @media (max-width: $tablet-max-width) {
+    background: linear-gradient(180deg, #3F3F3F, #1f1f1f);
+  }
 
   svg {
     #MoonOnly { animation: bob 4s ease-in-out 0s infinite alternate; }
@@ -155,6 +160,10 @@ section.first-sect {
 .hero.-a11y-sect {
   background: linear-gradient(90deg, #0042C1, #0098A2);
 
+  @media (max-width: $tablet-max-width) {
+    background: linear-gradient(180deg, #0042C1, #0098A2);
+  }
+
   .sect-inner svg {
     animation: bob 2s ease-in-out 0s infinite alternate;
     height: 15rem;
@@ -163,6 +172,10 @@ section.first-sect {
 
 .hero.-fast-sect {
   background: linear-gradient(90deg, #fa6000, #d80000);
+
+  @media (max-width: $tablet-max-width) {
+    background: linear-gradient(180deg, #fa6000, #d80000);
+  }
 }
 
 .hero.-hire-sect {
@@ -226,7 +239,7 @@ section.first-sect {
 /**
  * Tablet & Mobile - Switch to vertical layout
  */
-@media (max-width: 1200px) {
+@media (max-width: $tablet-max-width) {
   .main-cont {
     // Switch to one column layout
     grid-template-rows: auto auto;
