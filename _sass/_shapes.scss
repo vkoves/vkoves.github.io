@@ -1,0 +1,58 @@
+@import 'variables/colors';
+
+// The default duration of each shapes drift animation - each shape can then use
+// a multiplier on this to make them look random
+$def-shape-drift-dur: 8s;
+
+/**
+ * Styling for the shapes that I have drifting around on the top of the homepage
+ * and a few other pages
+ */
+.shape {
+  position: absolute;
+  z-index: -1;
+
+  &:nth-of-type(even) {
+    animation: drift1 $def-shape-drift-dur ease-in-out 0s infinite alternate;
+  }
+  &:nth-of-type(odd) {
+    animation: drift2 $def-shape-drift-dur ease-in-out 0s infinite alternate;
+  }
+
+  // Color variants
+  &.-blue { background-color: $brand-blue; }
+  &.-orange { background-color: $brand-orange; }
+  &.-red { background-color: $brand-red; }
+
+  &.square, &.circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  &.square { border-radius: 6px; }
+
+  &.circle {
+    border-radius: 1000px;
+
+    &.-large {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  &.triangle, &.pentagon {
+    background-repeat: no-repeat;
+  }
+
+  &.triangle {
+    background-image: url("../images/home/triangle.svg");
+    width: 80px;
+    height: 70px;
+  }
+
+  &.pentagon {
+    background-image: url("../images/home/pentagon.svg");
+    width: 80px;
+    height: 74px;
+  }
+}

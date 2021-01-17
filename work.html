@@ -1,35 +1,44 @@
 ---
 layout: default
-pageClass: "page-limiter"
 title: "Work"
+pageClass: ""
 stylesheets:
  - pages/work.css
 ---
 
-<h1 class="page-title">Highlighted Work</h1>
+<div class="shapes-hero">
+	<h1 class="page-title">Highlighted Work</h1>
 
-<section class="page-desc">
-	<p>
-		I've worked on projects large and small, from just front-end development to
-		taking on the entire architecture of complex websites. Below is a sampling
-		of some of the projects I have worked on.
-	</p>
-</section>
-
-{% assign ordered_projects = site.projects | sort: "order" %}
-
-<div class="projects-container">
-	{% for project in ordered_projects %}
-		<div class="projects-tile">
-			<h2 class="title">
-				<a href="{{ project.url }}">{{ project.name }}</a>
-			</h2>
-			<div class="sub-title">{{ project.subtitle }} </div>
-			<!-- The thumbnail is hidden as it's a duplicate link to the title, which
-				is more clear -->
-			<a href="{{ project.url }}" aria-hidden="true" tabindex="-1">
-				<img src="{{ project.thumbnail }}" alt="">
-			</a>
-		</div>
-	{% endfor %}
+	<div id="img-tri" class="shape triangle"></div>
+	<div id="img-pent" class="shape pentagon"></div>
+	<div id="sect-circ-1" class="shape circle"></div>
+	<div id="sect-circ-2" class="shape circle"></div>
 </div>
+
+<section class="page-limiter">
+	<div class="page-desc">
+		<p>
+			I've worked on projects large and small, from just front-end development to
+			taking on the entire architecture of complex websites. Below is a sampling
+			of some of the projects I have worked on.
+		</p>
+	</div>
+
+	{% assign ordered_projects = site.projects | sort: "order" %}
+
+	<div class="projects-container">
+		{% for project in ordered_projects %}
+			<div class="projects-tile">
+				<h2 class="title">
+					<a href="{{ project.url }}">{{ project.name }}</a>
+				</h2>
+				<div class="sub-title">{{ project.subtitle }} </div>
+				<!-- The thumbnail is hidden as it's a duplicate link to the title, which
+					is more clear -->
+				<a href="{{ project.url }}" aria-hidden="true" tabindex="-1">
+					<img src="{{ project.thumbnail }}" alt="">
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</section>

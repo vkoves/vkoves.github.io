@@ -7,6 +7,7 @@
 
 @import 'variables/colors';
 @import 'variables/sizing';
+@import 'shapes';
 
 body { background-color: $white; }
 
@@ -67,59 +68,10 @@ section.first-sect {
   }
 }
 
-$default-drift-dur: 8s;
-
+// Hand-position each of the individual shapes
 .shape {
-  position: absolute;
-  z-index: -1;
-
-  &:nth-of-type(even) {
-    animation: drift1 $default-drift-dur ease-in-out 0s infinite alternate;
-  }
-  &:nth-of-type(odd) {
-    animation: drift2 $default-drift-dur ease-in-out 0s infinite alternate;
-  }
-
-  // Color variants
-  &.-blue { background-color: $brand-blue; }
-  &.-orange { background-color: $brand-orange; }
-  &.-red { background-color: $brand-red; }
-
-  &.square, &.circle {
-    width: 80px;
-    height: 80px;
-  }
-
-  &.square { border-radius: 6px; }
-
-  &.circle {
-    border-radius: 1000px;
-
-    &.-large {
-      width: 200px;
-      height: 200px;
-    }
-  }
-
-  &.triangle, &.pentagon {
-    background-repeat: no-repeat;
-  }
-
-  &.triangle {
-    background-image: url("../images/home/triangle.svg");
-    width: 80px;
-    height: 70px;
-  }
-
-  &.pentagon {
-    background-image: url("../images/home/pentagon.svg");
-    width: 80px;
-    height: 74px;
-  }
-
-  // Positioning of individual shapes
   &#img-tri {
-    animation-duration: $default-drift-dur * 1.1;
+    animation-duration: $def-shape-drift-dur * 1.1;
     left: -9%;
     top: -10%;
   }
@@ -140,14 +92,14 @@ $default-drift-dur: 8s;
   }
 
   &#sect-circ-1 {
-    animation-duration: $default-drift-dur * 0.9;
+    animation-duration: $def-shape-drift-dur * 0.9;
     right: 30%;
     bottom: 0%;
   }
 
   // Large circle, so drift slower
   &#sect-circ-2 {
-    animation-duration: $default-drift-dur * 1.1;
+    animation-duration: $def-shape-drift-dur * 1.1;
     right: 5%;
     bottom: 10%;
   }
