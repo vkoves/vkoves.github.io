@@ -69,6 +69,14 @@ button { font-family: 'Open Sans', sans-serif; }
   h1 { font-size: 1.7rem; }
 }
 
+/**
+ * If the user has expressed their preference for  reduced motion, then don't
+ * use animations on any element.
+ */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+}
+
 // Style any heading targeted by an anchor to animate move and highlight
 :target {
   // The delay and animation length for all our transitions

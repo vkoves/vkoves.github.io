@@ -142,7 +142,7 @@ $default-drift-dur: 8s;
 
   &#sect-sq-2 {
     right: 10%;
-    top: 20%;
+    top: 10%;
   }
 
   &#sect-circ-1 {
@@ -213,7 +213,14 @@ $default-drift-dur: 8s;
 
   // Hide some shapes
   .shape.-desktop { display: none; }
+
+  // Move down the large circle
+  .shape#sect-circ-2 { bottom: 2%; }
 }
+
+/**
+ * Declare Shape Animations
+ */
 
 $x-shift: 1rem;
 $y-shift: 2rem;
