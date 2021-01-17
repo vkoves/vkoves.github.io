@@ -155,6 +155,7 @@ $default-drift-dur: 8s;
 
 .hero {
   height: 50rem;
+  padding: 0 2rem;
 
   .sect-inner {
     display: flex;
@@ -186,7 +187,7 @@ $default-drift-dur: 8s;
  * Unique styling for each section
  */
 .hero.-moon-sect {
-  background: linear-gradient(90deg, #3F3F3F, #000000);
+  background: linear-gradient(90deg, #3F3F3F, #1f1f1f);
 
   svg {
     #MoonOnly { animation: bob 4s ease-in-out 0s infinite alternate; }
@@ -211,16 +212,39 @@ $default-drift-dur: 8s;
   .sect-inner svg {
     animation: bob 2s ease-in-out 0s infinite alternate;
     height: 15rem;
-    padding-left: 5rem;
   }
 }
 
 .hero.-fast-sect {
   background: linear-gradient(90deg, #fa6000, #d80000);
+}
 
-  svg {
-    #Train, #TrainShadow {
-      animation: train-bob 0.8s ease-in-out 0s infinite alternate;
+.hero.-hire-sect {
+  .sect-inner { justify-content: center; }
+
+  .sect-inner > div { text-align: center; }
+
+  h2 {
+    color: $brand-red;
+    font-size: 4rem;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    margin-top: 3rem;
+    background: #FFFFFF;
+    border: 5px solid #D80000;
+    border-radius: 15px;
+    box-shadow: 0 4px 0 $light-shadow-color;
+    color: $brand-red;
+    font-size: 2.25rem;
+    font-weight: bold;
+
+    &:hover, &:focus {
+      color: $dark-red;
+      text-decoration: none;
+      border-color: $dark-red;
     }
   }
 }
@@ -256,7 +280,9 @@ $y-shift: 2rem;
 
 $bob-dist: 1rem;
 
-// Bob up and down
+/**
+ * Bob up and down
+ */
 @keyframes bob {
   0% {
     transform: translate(0, -0.5 * $bob-dist);
@@ -267,18 +293,10 @@ $bob-dist: 1rem;
   }
 }
 
-// Does a quick but small bob at the animation start, like a train going over a
-// bump
-@keyframes train-bob {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(0, 5px); }
-  40% { transform: translate(0, 0); }
-
-  100% { transform: translate(0, 0); }
-}
-
-// An animation for stars that keeps them fully opaque but blinks them quickly
-// at the start
+/**
+ * An animation for stars that keeps them fully opaque but blinks them quickly
+ * at the start
+ */
 @keyframes blink {
   0% { opacity: 1; }
   2% { opacity: 0; }
@@ -286,6 +304,7 @@ $bob-dist: 1rem;
   4% { opacity: 1; }
   100% { opacity: 1; }
 }
+
 
 /**
  * Smaller Desktop - shrink images and reduce some spacing
