@@ -5,9 +5,9 @@
  * Homepage (index) styling
  */
 
+@import 'variables/animation';
 @import 'variables/colors';
 @import 'variables/sizing';
-@import 'shapes';
 
 body { background-color: $white; }
 

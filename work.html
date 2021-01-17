@@ -1,26 +1,12 @@
 ---
 layout: default
 title: Work
-pageClass: '-no-padding'
+pageClass: '-no-padding-top'
 stylesheets:
  - pages/work.css
 ---
 
-<div class="shapes-hero">
-	<div class="content-limiter">
-		<h1>Highlighted Work</h1>
-
-		<div class="shape square -white"></div>
-		<div class="shape triangle -svg -white">
-			{% include svgs/triangle.svg %}
-		</div>
-		<div class="shape pentagon -svg -white">
-			{% include svgs/pentagon.svg %}
-		</div>
-		<div class="shape circle -white"></div>
-		<div class="shape circle -large -white"></div>
-	</div>
-</div>
+{% include shapesHero.html heading="Highlighted Work" level=1 %}
 
 <section class="content-limiter">
 	<div class="page-desc">

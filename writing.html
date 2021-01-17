@@ -1,13 +1,14 @@
 ---
 layout: default
+pageClass: '-no-padding-top'
 stylesheets:
  - blog.css
 title: "Writing"
 ---
 
-<h1 class="page-title">Writing</h1>
+{% include shapesHero.html heading="Writing" limiterClass="content-limiter -thin" %}
 
-<ul class="post-list">
+<ul class="post-list content-limiter -thin">
   {% for post in site.posts %}
     {% if post.categories contains "Archive" %}
       {% continue %}

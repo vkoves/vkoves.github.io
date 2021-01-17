@@ -6,6 +6,7 @@
 
 @import 'header';
 @import 'footer';
+@import 'shapes';
 @import 'reset';
 
 html {
@@ -165,6 +166,7 @@ p { margin: 1.5rem 0; }
   min-height: calc(100vh - 135px);
 
   &.-no-padding { padding: 0; }
+  &.-no-padding-top { padding-top: 0; }
 
   /**
    * Mobile styling
@@ -174,20 +176,16 @@ p { margin: 1.5rem 0; }
   }
 }
 
-// The <main> element on pages that don't go full width
-.page-limiter {
-  position: relative;
-  width: 90%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+// Size limiter class for <main> element on pages that don't go full width or
+// for containers within full-width pages
 .content-limiter {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   max-width: $max-cont-width;
+
+  &.-page { max-width: $page-width; }
+  &.-thin { max-width: $thin-width; }
 }
 
 .page-desc { margin-bottom: 30px; }
@@ -323,7 +321,7 @@ p { margin: 1.5rem 0; }
 
 .info-cont {
   width: 100%;
-  max-width: 1000px;
+  max-width: $page-width;
 }
 
 #overlay-controls {

@@ -21,4 +21,4 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
-      pageClass: "page-limiter"
+      pageClass: "content-limiter -page"

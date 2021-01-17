@@ -1,9 +1,6 @@
+@import 'variables/animation';
 @import 'variables/colors';
 @import 'variables/sizing';
-
-// The default duration of each shapes drift animation - each shape can then use
-// a multiplier on this to make them look random
-$def-shape-drift-dur: 8s;
 
 /**
  * Styling for the shapes that I have drifting around on the top of the homepage

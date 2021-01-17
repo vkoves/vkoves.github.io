@@ -1,0 +1,27 @@
+{% comment %}
+Displays a given heading with a link back to it using an anchor tag.
+
+Takes in a `heading` string. Ex:
+
+{% include shapesHero.html heading="Work" %}
+
+{% endcomment %}
+
+{% assign heading = include.heading %}
+{% assign limiterClass = include.limiterClass %}
+
+<div class="shapes-hero">
+  <div class="{{ limiterClass | default: 'content-limiter' }}">
+    <h1>{{ heading }}</h1>
+
+    <div class="shape square -white"></div>
+    <div class="shape triangle -svg -white">
+      {% include svgs/triangle.svg %}
+    </div>
+    <div class="shape pentagon -svg -white">
+      {% include svgs/pentagon.svg %}
+    </div>
+    <div class="shape circle -white"></div>
+    <div class="shape circle -large -white"></div>
+  </div>
+</div>
