@@ -12,17 +12,11 @@ body { background-color: $white; }
 
 $desktop-img-size: 26rem;
 
-.page-container {
-  // Fix margin collapse between .main-cont and .page-container
-  overflow: auto;
-  padding-top: 0;
-  padding-bottom: 0;
-}
+.page-container { padding: 0; }
 
 section.first-sect {
   position: relative;
   overflow: hidden;
-  min-height: 85vh;
 }
 
 // The main text and image container
@@ -32,11 +26,11 @@ section.first-sect {
   grid-template-columns: $desktop-img-size 1fr;
   width: 95%;
   max-width: $max-cont-width;
-  margin: 8rem auto 8rem;
+  margin: 8rem auto 14rem;
 
   h1 { font-weight: bold; }
 
-  p:first-of-type { margin: 0; }
+  p:first-of-type { margin: 10px 0 0; }
 
   .img-cont {
     display: flex;
@@ -148,7 +142,7 @@ $default-drift-dur: 8s;
   &#sect-circ-1 {
     animation-duration: $default-drift-dur * 0.9;
     right: 30%;
-    bottom: 5%;
+    bottom: 0%;
   }
 
   // Large circle, so drift slower
@@ -160,6 +154,67 @@ $default-drift-dur: 8s;
 }
 
 
+.hero {
+  height: 35rem;
+
+  // Backgrounds for each section
+  &.-moon-sect {
+    background: linear-gradient(90deg, #3F3F3F, #000000);
+
+    svg {
+      #MoonOnly { animation: bob-small 3s ease-in-out 0s infinite alternate; }
+      #Stars path {
+        animation: blink 10s ease-in-out 0s infinite;
+
+        // We have 7 stars, so give them all a random delay for blinking
+        &:nth-of-type(1) { animation-delay: 2s; }
+        &:nth-of-type(2) { animation-delay: 10s; }
+        &:nth-of-type(3) { animation-delay: 12s; }
+        &:nth-of-type(4) { animation-delay: 6s; }
+        &:nth-of-type(5) { animation-delay: 5s; }
+        &:nth-of-type(6) { animation-delay: 1s; }
+        &:nth-of-type(7) { animation-delay: 18s; }
+      }
+    }
+  }
+
+  &.-a11y-sect {
+    background: linear-gradient(90deg, #0042C1, #0098A2);
+
+    .sect-inner svg {
+      animation: bob 2s ease-in-out 0s infinite alternate;
+      height: 15rem;
+    }
+  }
+
+  &.-fast-sect {
+    background-color: $brand-red;
+
+    svg {
+      #Train, #TrainShadow {
+        animation: train-bob 0.8s ease-in-out 0s infinite alternate;
+      }
+    }
+  }
+
+  .sect-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $max-cont-width;
+    margin: auto;
+    height: 100%;
+    gap: 5rem;
+    color: $white;
+    box-sizing: border-box;
+
+    svg { height: 20rem; }
+    h2 { font-size: 2rem; }
+    p { font-size: 1.5rem; }
+    .hero-text { max-width: 650px; }
+  }
+}
+
 // On smaller desktop screens, shrink image and reduce some spacing
 @media (max-width: 1200px) {
   .main-cont {
@@ -170,11 +225,11 @@ $default-drift-dur: 8s;
       margin-left: 2rem;
       align-self: center;
     }
+
+    .text-cont { margin-left: 2rem; }
   }
 
-  .text-cont {
-    margin-left: 2rem;
-  }
+  .hero .sect-inner { padding: 5rem 3rem; }
 }
 
 // Switch to mobile layout on tablets and
@@ -186,9 +241,8 @@ $default-drift-dur: 8s;
     background-color: transparent;
     width: 90%;
     box-shadow: none;
-    margin-top: 5rem;
+    margin: 3rem auto 2rem;
     border-radius: 0;
-    overflow: intial; // ensure <img> box-shadow shows
 
     .img-cont {
       width: 75%;
@@ -196,7 +250,7 @@ $default-drift-dur: 8s;
       height: auto;
       margin: auto;
 
-      img {
+      svg {
         width: 100%;
         height: auto;
       }
@@ -216,6 +270,30 @@ $default-drift-dur: 8s;
 
   // Move down the large circle
   .shape#sect-circ-2 { bottom: 2%; }
+
+  .hero {
+    height: auto;
+
+    // The a11y image has a tall aspect ratio, so make it less wide
+    &.-a11y-sect .sect-inner svg { width: 50%; }
+
+    .sect-inner {
+      flex-direction: column;
+      padding: 5rem 2rem;
+      gap: 3rem;
+
+      h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+  }
 }
 
 /**
@@ -225,7 +303,7 @@ $default-drift-dur: 8s;
 $x-shift: 1rem;
 $y-shift: 2rem;
 
-// Slowly drift
+// Move diagonally
 @keyframes drift1 {
   0% {
     transform: translate(-($x-shift / 2), -($y-shift / 2));
@@ -244,4 +322,37 @@ $y-shift: 2rem;
   100% {
     transform: translate(-($x-shift / 2), -($y-shift / 2));
   }
+}
+
+$bob-dist: 1rem;
+
+// Bob up and down
+@keyframes bob {
+  0% {
+    transform: translate(0, -0.5 * $bob-dist);
+  }
+
+  100% {
+    transform: translate(0, 0.5 * $bob-dist);
+  }
+}
+
+// Does a quick but small bob at the animation start, like a train going over a
+// bump
+@keyframes train-bob {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(0, 5px); }
+  40% { transform: translate(0, 0); }
+
+  100% { transform: translate(0, 0); }
+}
+
+// An animation for stars that keeps them fully opaque but blinks them quickly
+// at the start
+@keyframes blink {
+  0% { opacity: 1; }
+  2% { opacity: 0; }
+
+  4% { opacity: 1; }
+  100% { opacity: 1; }
 }
