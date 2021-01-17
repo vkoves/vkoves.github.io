@@ -305,34 +305,10 @@ $bob-dist: 1rem;
   100% { opacity: 1; }
 }
 
-
-/**
- * Smaller Desktop - shrink images and reduce some spacing
- */
-@media (max-width: 1200px) {
-  .main-cont {
-    grid-template-columns: auto auto;
-
-    .img-cont {
-      height: 70%;
-      margin-left: 2rem;
-      align-self: center;
-    }
-
-    .text-cont { margin-left: 2rem; }
-  }
-
-  .hero {
-    svg { padding: 0 !important; }
-
-    .sect-inner { padding: 5rem 3rem; }
-  }
-}
-
 /**
  * Tablet & Mobile - Switch to vertical layout
  */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .main-cont {
     // Switch to one column layout
     grid-template-rows: auto auto;
@@ -348,11 +324,6 @@ $bob-dist: 1rem;
       max-width: 400px;
       height: auto;
       margin: auto;
-
-      svg {
-        width: 100%;
-        height: auto;
-      }
     }
 
     .text-cont {
@@ -374,11 +345,19 @@ $bob-dist: 1rem;
     height: auto;
 
     // The a11y image has a tall aspect ratio, so make it less wide
-    &.-a11y-sect .sect-inner svg { width: 50%; }
+    &.-a11y-sect .sect-inner svg { width: 40%; }
+
+    &.-hire-sect .sect-inner {
+      h2 { font-size: 3rem; }
+
+      a { font-size: 1.5rem; }
+    }
 
     .sect-inner {
       flex-direction: column;
-      padding: 5rem 2rem;
+      justify-content: space-around;
+      padding: 5rem 0rem;
+      min-height: 80vh;
       gap: 3rem;
 
       h2 {
@@ -386,8 +365,8 @@ $bob-dist: 1rem;
         font-size: 1.5rem;
       }
 
-      img {
-        width: 100%;
+      svg {
+        width: 80%;
         height: auto;
       }
     }
