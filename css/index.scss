@@ -153,69 +153,143 @@ $default-drift-dur: 8s;
   }
 }
 
-
 .hero {
-  height: 35rem;
-
-  // Backgrounds for each section
-  &.-moon-sect {
-    background: linear-gradient(90deg, #3F3F3F, #000000);
-
-    svg {
-      #MoonOnly { animation: bob-small 3s ease-in-out 0s infinite alternate; }
-      #Stars path {
-        animation: blink 10s ease-in-out 0s infinite;
-
-        // We have 7 stars, so give them all a random delay for blinking
-        &:nth-of-type(1) { animation-delay: 2s; }
-        &:nth-of-type(2) { animation-delay: 10s; }
-        &:nth-of-type(3) { animation-delay: 12s; }
-        &:nth-of-type(4) { animation-delay: 6s; }
-        &:nth-of-type(5) { animation-delay: 5s; }
-        &:nth-of-type(6) { animation-delay: 1s; }
-        &:nth-of-type(7) { animation-delay: 18s; }
-      }
-    }
-  }
-
-  &.-a11y-sect {
-    background: linear-gradient(90deg, #0042C1, #0098A2);
-
-    .sect-inner svg {
-      animation: bob 2s ease-in-out 0s infinite alternate;
-      height: 15rem;
-    }
-  }
-
-  &.-fast-sect {
-    background-color: $brand-red;
-
-    svg {
-      #Train, #TrainShadow {
-        animation: train-bob 0.8s ease-in-out 0s infinite alternate;
-      }
-    }
-  }
+  height: 50rem;
 
   .sect-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: $max-cont-width;
+    max-width: 1400px;
     margin: auto;
     height: 100%;
     gap: 5rem;
     color: $white;
     box-sizing: border-box;
 
-    svg { height: 20rem; }
-    h2 { font-size: 2rem; }
-    p { font-size: 1.5rem; }
-    .hero-text { max-width: 650px; }
+    .hero-text {
+      max-width: 650px;
+
+      h2 { font-size: 2rem; }
+      p { font-size: 1.5rem; }
+    }
+
+    svg {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
   }
 }
 
-// On smaller desktop screens, shrink image and reduce some spacing
+/**
+ * Unique styling for each section
+ */
+.hero.-moon-sect {
+  background: linear-gradient(90deg, #3F3F3F, #000000);
+
+  svg {
+    #MoonOnly { animation: bob 4s ease-in-out 0s infinite alternate; }
+    #Stars path {
+      animation: blink 10s ease-in-out 0s infinite;
+
+      // We have 7 stars, so give them all a random delay for blinking
+      &:nth-of-type(1) { animation-delay: 2s; }
+      &:nth-of-type(2) { animation-delay: 10s; }
+      &:nth-of-type(3) { animation-delay: 12s; }
+      &:nth-of-type(4) { animation-delay: 6s; }
+      &:nth-of-type(5) { animation-delay: 5s; }
+      &:nth-of-type(6) { animation-delay: 1s; }
+      &:nth-of-type(7) { animation-delay: 18s; }
+    }
+  }
+}
+
+.hero.-a11y-sect {
+  background: linear-gradient(90deg, #0042C1, #0098A2);
+
+  .sect-inner svg {
+    animation: bob 2s ease-in-out 0s infinite alternate;
+    height: 15rem;
+    padding-left: 5rem;
+  }
+}
+
+.hero.-fast-sect {
+  background: linear-gradient(90deg, #fa6000, #d80000);
+
+  svg {
+    #Train, #TrainShadow {
+      animation: train-bob 0.8s ease-in-out 0s infinite alternate;
+    }
+  }
+}
+
+
+/**
+ * Declare Shape Animations
+ */
+
+$x-shift: 1rem;
+$y-shift: 2rem;
+
+// Move diagonally
+@keyframes drift1 {
+  0% {
+    transform: translate(-($x-shift / 2), -($y-shift / 2));
+  }
+
+  100% {
+    transform: translate(($x-shift / 2), ($y-shift / 2));
+  }
+}
+
+@keyframes drift2 {
+  0% {
+    transform: translate(($x-shift / 2), ($y-shift / 2));
+  }
+
+  100% {
+    transform: translate(-($x-shift / 2), -($y-shift / 2));
+  }
+}
+
+$bob-dist: 1rem;
+
+// Bob up and down
+@keyframes bob {
+  0% {
+    transform: translate(0, -0.5 * $bob-dist);
+  }
+
+  100% {
+    transform: translate(0, 0.5 * $bob-dist);
+  }
+}
+
+// Does a quick but small bob at the animation start, like a train going over a
+// bump
+@keyframes train-bob {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(0, 5px); }
+  40% { transform: translate(0, 0); }
+
+  100% { transform: translate(0, 0); }
+}
+
+// An animation for stars that keeps them fully opaque but blinks them quickly
+// at the start
+@keyframes blink {
+  0% { opacity: 1; }
+  2% { opacity: 0; }
+
+  4% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/**
+ * Smaller Desktop - shrink images and reduce some spacing
+ */
 @media (max-width: 1200px) {
   .main-cont {
     grid-template-columns: auto auto;
@@ -229,10 +303,16 @@ $default-drift-dur: 8s;
     .text-cont { margin-left: 2rem; }
   }
 
-  .hero .sect-inner { padding: 5rem 3rem; }
+  .hero {
+    svg { padding: 0 !important; }
+
+    .sect-inner { padding: 5rem 3rem; }
+  }
 }
 
-// Switch to mobile layout on tablets and
+/**
+ * Tablet & Mobile - Switch to vertical layout
+ */
 @media (max-width: 1000px) {
   .main-cont {
     // Switch to one column layout
@@ -294,65 +374,4 @@ $default-drift-dur: 8s;
     }
 
   }
-}
-
-/**
- * Declare Shape Animations
- */
-
-$x-shift: 1rem;
-$y-shift: 2rem;
-
-// Move diagonally
-@keyframes drift1 {
-  0% {
-    transform: translate(-($x-shift / 2), -($y-shift / 2));
-  }
-
-  100% {
-    transform: translate(($x-shift / 2), ($y-shift / 2));
-  }
-}
-
-@keyframes drift2 {
-  0% {
-    transform: translate(($x-shift / 2), ($y-shift / 2));
-  }
-
-  100% {
-    transform: translate(-($x-shift / 2), -($y-shift / 2));
-  }
-}
-
-$bob-dist: 1rem;
-
-// Bob up and down
-@keyframes bob {
-  0% {
-    transform: translate(0, -0.5 * $bob-dist);
-  }
-
-  100% {
-    transform: translate(0, 0.5 * $bob-dist);
-  }
-}
-
-// Does a quick but small bob at the animation start, like a train going over a
-// bump
-@keyframes train-bob {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(0, 5px); }
-  40% { transform: translate(0, 0); }
-
-  100% { transform: translate(0, 0); }
-}
-
-// An animation for stars that keeps them fully opaque but blinks them quickly
-// at the start
-@keyframes blink {
-  0% { opacity: 1; }
-  2% { opacity: 0; }
-
-  4% { opacity: 1; }
-  100% { opacity: 1; }
 }
