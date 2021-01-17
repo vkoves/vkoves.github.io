@@ -28,7 +28,11 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 
-h1 { font-size: 2rem; }
+h1 {
+  font-size: 2rem;
+
+  &.-large { font-size: 3.5rem; }
+}
 
 h2 {
   font-size: 1.5rem;
@@ -66,8 +70,12 @@ pre { font-family: monospace; }
 button { font-family: 'Open Sans', sans-serif; }
 
 // Mobile styling for core elements
-@media (max-width: 600px) {
-  h1 { font-size: 1.7rem; }
+@media (max-width: $mobile-max-width) {
+  h1 {
+    font-size: 1.7rem;
+
+    &.-large { font-size: 2.5rem; }
+  }
 }
 
 /**
@@ -207,8 +215,6 @@ p { margin: 1.5rem 0; }
   border-bottom: solid #960000 2px;
 }
 
-// Brand font is just bold open sans
-.brand-font { font-weight: 600; }
 .brand-color { color: $brand-red; }
 
 /**

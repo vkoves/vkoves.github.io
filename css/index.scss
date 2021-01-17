@@ -27,8 +27,6 @@ section.first-sect {
   max-width: $max-cont-width;
   margin: 8rem auto 14rem;
 
-  h1 { font-weight: bold; }
-
   p:first-of-type { margin: 10px 0 0; }
 
   .img-cont {
@@ -57,8 +55,6 @@ section.first-sect {
     padding: 0 0.5rem;
     background-color: $white;
   }
-
-  h1 { font-size: 3.5rem; }
 
   p {
     color: $dark-grey;
@@ -246,14 +242,17 @@ section.first-sect {
       max-width: 400px;
       height: auto;
       margin: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
     .text-cont {
       padding: 1.25rem 0;
       margin: 0;
       align-self: flex-start;
-
-      h1 { font-size: 2.5rem; }
     }
   }
 
