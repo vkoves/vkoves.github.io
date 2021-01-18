@@ -22,12 +22,9 @@ $header-mob-height: 72px;
 .header-inside {
   box-sizing: border-box;
   height: 100%;
-  width: 80%;
   padding: 15px 0;
-  margin: auto;
   color: $white;
   font-weight: 400;
-  max-width: $max-cont-width;
 }
 
 .site-header a {

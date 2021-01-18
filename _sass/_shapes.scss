@@ -1,0 +1,176 @@
+@import 'variables/animation';
+@import 'variables/colors';
+@import 'variables/sizing';
+
+/**
+ * Styling for the shapes that I have drifting around on the top of the homepage
+ * and a few other pages
+ */
+.shape {
+  position: absolute;
+  z-index: -1;
+
+  &:nth-of-type(even) {
+    animation: drift1 $def-shape-drift-dur ease-in-out 0s infinite alternate;
+  }
+  &:nth-of-type(odd) {
+    animation: drift2 $def-shape-drift-dur ease-in-out 0s infinite alternate;
+  }
+
+  // Color variants for CSS shapes, where apply background-color
+  &:not(.-svg) {
+    &.-blue { background-color: $brand-blue; }
+    &.-orange { background-color: $brand-orange; }
+    &.-red { background-color: $brand-red; }
+    &.-white { background-color: $white; }
+  }
+
+  // Color variants for SVG shapes, where apply color
+  &.-svg {
+    &.-blue { color: $brand-blue; }
+    &.-orange { color: $brand-orange; }
+    &.-red { color: $brand-red; }
+    &.-white { color: $white; }
+  }
+
+  &.square, &.circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  &.square { border-radius: 6px; }
+
+  &.circle {
+    border-radius: 1000px;
+
+    &.-large {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  // The triangle and pentagon aren't easy to pull off in CSS, so they are SVGs
+  // that get inlined by Jekyll
+  &.triangle {
+    width: 80px;
+    height: 70px;
+  }
+
+  &.pentagon {
+    width: 80px;
+    height: 74px;
+  }
+}
+
+// Style the shapes-hero component, which has a few shapes floating around on a
+// red background with a white <h1>
+.shapes-hero {
+  background-color: $brand-red;
+  padding: 9.375rem 0 6.25rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+
+  // Shape positions are all relative to the text
+  .content-limiter { position: relative; }
+
+  h1 {
+    color: $white;
+    font-size: 3.5rem;
+
+    div {
+      display: block;
+      font-size: 1.5rem;
+    }
+  }
+
+  // Make shapes go on top of the red background but make them translucent
+  .shape {
+    z-index: 1;
+    opacity: 0.5;
+
+    &:nth-of-type(1) {
+      animation-duration: $def-shape-drift-dur *  1.1;
+      top: 4rem;
+      left: -15rem;
+    }
+
+    &:nth-of-type(2) {
+      top: -6rem;
+      left: -2rem;
+    }
+
+    &:nth-of-type(3) {
+      animation-duration: $def-shape-drift-dur * 0.7;
+      top: 8rem;
+      left: 40rem;
+    }
+
+
+    &:nth-of-type(4) {
+      animation-duration: $def-shape-drift-dur * 0.8;
+      top: -7rem;
+      right: 0rem;
+    }
+
+    &:nth-of-type(5) {
+      // Large circle so drift slower
+      animation-duration: $def-shape-drift-dur * 1.1;
+      top: 4rem;
+      right: -20rem;
+    }
+  }
+}
+
+/**
+ * Mobile styling for shapes and shape hero
+ */
+@media (max-width: $mobile-max-width) {
+  .shapes-hero {
+    padding: 5rem 0 3rem;
+    margin-bottom: 2rem;
+
+    .shape {
+      &:nth-of-type(2) {
+        top: -4rem;
+        left: -3rem;
+      }
+
+      &:nth-of-type(3) {
+        top: 5rem;
+        left: 18rem;
+      }
+
+      &:nth-of-type(4) {
+        top: -4rem;
+      }
+    }
+  }
+}
+
+/**
+ * Declare Shape Drift Animations
+ */
+
+$x-shift: 1rem;
+$y-shift: 2rem;
+
+// Move diagonally
+@keyframes drift1 {
+  0% {
+    transform: translate(-($x-shift / 2), -($y-shift / 2));
+  }
+
+  100% {
+    transform: translate(($x-shift / 2), ($y-shift / 2));
+  }
+}
+
+@keyframes drift2 {
+  0% {
+    transform: translate(($x-shift / 2), ($y-shift / 2));
+  }
+
+  100% {
+    transform: translate(-($x-shift / 2), -($y-shift / 2));
+  }
+}

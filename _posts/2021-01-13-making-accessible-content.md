@@ -27,7 +27,7 @@ Accessibility isn't just for websites - it's critical for all of your content. L
     1. [Captioning Videos](#captioning-videos)
         1. [Caption Examples from & "The Queen's Gambit"](#caption-examples-from-ldquo-the-queen-s-gambit-rdquo)
     1. [Captioning Videos for Social Media](#captioning-videos-for-social-media)
-        1. [YouTube, Vimeo, and Other Video ](#youtube-vimeo-and-other-video-platforms"Platforms)
+        1. [YouTube, Vimeo, and Other Video Platforms](#youtube-vimeo-and-other-video-platforms)
         1. [Instagram, Twitter, and Other Non-Video Platforms](#instagram-twitter-and-other-non-video-platforms)
     1. [Transcripts](#transcripts)
 {: .table-of-contents }

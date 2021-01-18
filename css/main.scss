@@ -6,6 +6,7 @@
 
 @import 'header';
 @import 'footer';
+@import 'shapes';
 @import 'reset';
 
 html {
@@ -27,7 +28,11 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 
-h1 { font-size: 2rem; }
+h1 {
+  font-size: 2rem;
+
+  &.-large { font-size: 3.5rem; }
+}
 
 h2 {
   font-size: 1.5rem;
@@ -65,8 +70,20 @@ pre { font-family: monospace; }
 button { font-family: 'Open Sans', sans-serif; }
 
 // Mobile styling for core elements
-@media (max-width: 600px) {
-  h1 { font-size: 1.7rem; }
+@media (max-width: $mobile-max-width) {
+  h1 {
+    font-size: 1.7rem;
+
+    &.-large { font-size: 2.5rem; }
+  }
+}
+
+/**
+ * If the user has expressed their preference for  reduced motion, then don't
+ * use animations on any element.
+ */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; } // sass-lint:disable-line no-important
 }
 
 // Style any heading targeted by an anchor to animate move and highlight
@@ -117,12 +134,12 @@ p { margin: 1.5rem 0; }
   }
 
   .link-icon {
+    display: inline-flex;
+    align-items: center;
     position: relative;
     top: 0.2em;
     height: 0.6em;
     margin-left: 0.2em;
-    display: inline-flex;
-    align-items: center;
 
     // Hide main (red) icon until hovering
     &:not(:hover):not(:focus) {
@@ -156,6 +173,9 @@ p { margin: 1.5rem 0; }
   // with very little content like the homepage or 404
   min-height: calc(100vh - 135px);
 
+  &.-no-padding { padding: 0; }
+  &.-no-padding-top { padding-top: 0; }
+
   /**
    * Mobile styling
    */
@@ -164,13 +184,16 @@ p { margin: 1.5rem 0; }
   }
 }
 
-// The <main> element on pages that don't go full width
-.page-limiter {
-  position: relative;
+// Size limiter class for <main> element on pages that don't go full width or
+// for containers within full-width pages
+.content-limiter {
   width: 90%;
-  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  max-width: $max-cont-width;
+
+  &.-page { max-width: $page-width; }
+  &.-thin { max-width: $thin-width; }
 }
 
 .page-desc { margin-bottom: 30px; }
@@ -192,8 +215,6 @@ p { margin: 1.5rem 0; }
   border-bottom: solid #960000 2px;
 }
 
-// Brand font is just bold open sans
-.brand-font { font-weight: 600; }
 .brand-color { color: $brand-red; }
 
 /**
@@ -306,7 +327,7 @@ p { margin: 1.5rem 0; }
 
 .info-cont {
   width: 100%;
-  max-width: 1000px;
+  max-width: $page-width;
 }
 
 #overlay-controls {

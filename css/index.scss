@@ -5,6 +5,7 @@
  * Homepage (index) styling
  */
 
+@import 'variables/animation';
 @import 'variables/colors';
 @import 'variables/sizing';
 
@@ -12,60 +13,233 @@ body { background-color: $white; }
 
 $desktop-img-size: 26rem;
 
-// Fix margin collapse between .main-cont and .page-container
-.page-container { overflow: auto; }
+section.first-sect {
+  position: relative;
+  overflow: hidden;
+}
 
+// The main text and image container
 .main-cont {
   display: grid;
   grid-template-rows: $desktop-img-size;
   grid-template-columns: $desktop-img-size 1fr;
   width: 95%;
   max-width: $max-cont-width;
-  margin: 5rem auto 0;
-  background-color: $off-white;
-  box-shadow: 2px 2px 50px 5px $shadow-color;
-  border-radius: 10px;
-  overflow: hidden;
+  margin: 8rem auto 14rem;
 
-  img { height: 100%; }
+  p:first-of-type { margin: 10px 0 0; }
+
+  .img-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+
+    img {
+      height: 100%;
+      border-radius: 30px;
+      box-shadow: -6px 6px 0px $light-shadow-color;
+    }
+  }
 }
 
 .text-cont {
-  padding: 0 2.5rem;
+  margin-left: 5rem;
   align-self: center;
 
-  h1 { font-size: 3.5rem; }
+  // Give each child element a background to ensure everything's readable even
+  // if a shape happens to go behind it
+  > * {
+    display: inline-block;
+    padding: 0 0.5rem;
+    background-color: $white;
+  }
 
   p {
-    max-width: 600px;
     color: $dark-grey;
     font-size: 1.1rem;
   }
+}
 
-  .tagline {
-    margin-top: 0;
-    font-weight: 600;
-    color: $dark-grey;
+// Hand-position each of the individual shapes
+.shape {
+  &#img-tri {
+    animation-duration: $def-shape-drift-dur * 1.1;
+    left: -9%;
+    top: -10%;
+  }
+
+  &#img-pent {
+    left: 92%;
+    top: 91%;
+  }
+
+  &#sect-sq-1 {
+    left: 10%;
+    top: 80%;
+  }
+
+  &#sect-sq-2 {
+    right: 10%;
+    top: 10%;
+  }
+
+  &#sect-circ-1 {
+    animation-duration: $def-shape-drift-dur * 0.9;
+    right: 30%;
+    bottom: 0%;
+  }
+
+  // Large circle, so drift slower
+  &#sect-circ-2 {
+    animation-duration: $def-shape-drift-dur * 1.1;
+    right: 5%;
+    bottom: 10%;
   }
 }
 
-// On smaller desktop screens, shrink image
-@media (max-width: 1200px) {
-  .main-cont {
-    grid-template-columns: auto auto;
+.hero {
+  height: 50rem;
+  padding: 0 2rem;
 
-    img {
-      height: 70%;
-      margin-left: 2rem;
-      align-self: center;
+  .sect-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: auto;
+    height: 100%;
+    gap: 5rem;
+    color: $white;
+    box-sizing: border-box;
+
+    .hero-text {
+      max-width: 650px;
+
+      h2 { font-size: 2rem; }
+      p { font-size: 1.5rem; }
     }
 
-    .text-cont { padding: 0 2rem; }
+    svg {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
   }
 }
 
-// Switch to mobile layout on tablets and
-@media (max-width: 1000px) {
+/**
+ * Unique styling for each section. They each have linear gradients which rotate
+ * on mobile so that the icon and text are always in front of the same color.
+ */
+.hero.-moon-sect {
+  background: linear-gradient(90deg, #3F3F3F, #1F1F1F);
+
+  @media (max-width: $tablet-max-width) {
+    background: linear-gradient(180deg, #3F3F3F, #1F1F1F);
+  }
+
+  svg {
+    #MoonOnly { animation: bob 4s ease-in-out 0s infinite alternate; }
+    #Stars path {
+      animation: blink 10s ease-in-out 0s infinite;
+
+      // We have 7 stars, so give them all a random delay for blinking
+      &:nth-of-type(1) { animation-delay: 2s; }
+      &:nth-of-type(2) { animation-delay: 10s; }
+      &:nth-of-type(3) { animation-delay: 12s; }
+      &:nth-of-type(4) { animation-delay: 6s; }
+      &:nth-of-type(5) { animation-delay: 5s; }
+      &:nth-of-type(6) { animation-delay: 1s; }
+      &:nth-of-type(7) { animation-delay: 18s; }
+    }
+  }
+}
+
+.hero.-a11y-sect {
+  background: linear-gradient(90deg, #0042C1, #0098A2);
+
+  @media (max-width: $tablet-max-width) {
+    background: linear-gradient(180deg, #0042C1, #0098A2);
+  }
+
+  .sect-inner svg {
+    animation: bob 2s ease-in-out 0s infinite alternate;
+    height: 15rem;
+  }
+}
+
+.hero.-fast-sect {
+  background: linear-gradient(90deg, #FA6000, #D80000);
+
+  @media (max-width: $tablet-max-width) {
+    background: linear-gradient(180deg, #FA6000, #D80000);
+  }
+}
+
+.hero.-hire-sect {
+  .sect-inner { justify-content: center; }
+
+  .sect-inner > div { text-align: center; }
+
+  h2 {
+    color: $brand-red;
+    font-size: 4rem;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    margin-top: 3rem;
+    background: $white;
+    border: 5px solid #D80000;
+    border-radius: 15px;
+    box-shadow: 0 4px 0 $light-shadow-color;
+    color: $brand-red;
+    font-size: 2.25rem;
+    font-weight: bold;
+
+    &:hover, &:focus {
+      color: $dark-red;
+      text-decoration: none;
+      border-color: $dark-red;
+    }
+  }
+}
+
+
+/**
+ * Bob up and down
+ */
+$bob-dist: 1rem;
+
+@keyframes bob {
+  0% {
+    transform: translate(0, -0.5 * $bob-dist);
+  }
+
+  100% {
+    transform: translate(0, 0.5 * $bob-dist);
+  }
+}
+
+/**
+ * An animation for stars that keeps them fully opaque but blinks them quickly
+ * at the start
+ */
+@keyframes blink {
+  0% { opacity: 1; }
+  2% { opacity: 0; }
+
+  4% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/**
+ * Tablet & Mobile - Switch to vertical layout
+ */
+@media (max-width: $tablet-max-width) {
   .main-cont {
     // Switch to one column layout
     grid-template-rows: auto auto;
@@ -73,25 +247,63 @@ $desktop-img-size: 26rem;
     background-color: transparent;
     width: 90%;
     box-shadow: none;
-    margin-top: 0;
+    margin: 3rem auto 2rem;
     border-radius: 0;
-    overflow: intial; // ensure <img> box-shadow shows
 
-    img {
+    .img-cont {
       width: 75%;
       max-width: 400px;
       height: auto;
       margin: auto;
-      box-shadow: 2px 4px 10px $shadow-color;
-      border: solid 5px $white;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
     .text-cont {
       padding: 1.25rem 0;
+      margin: 0;
       align-self: flex-start;
-
-      h1 { font-size: 2.5rem; }
-      .tagline { margin-bottom: 0; }
     }
+  }
+
+  // Hide some shapes
+  .shape.-desktop { display: none; }
+
+  // Move down the large circle
+  .shape#sect-circ-2 { bottom: 2%; }
+
+  .hero {
+    height: auto;
+
+    // The a11y image has a tall aspect ratio, so make it less wide
+    &.-a11y-sect .sect-inner svg { width: 40%; }
+
+    &.-hire-sect .sect-inner {
+      h2 { font-size: 3rem; }
+
+      a { font-size: 1.5rem; }
+    }
+
+    .sect-inner {
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 5rem 0rem;
+      min-height: 80vh;
+      gap: 3rem;
+
+      h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      svg {
+        width: 80%;
+        height: auto;
+      }
+    }
+
   }
 }

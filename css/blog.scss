@@ -2,10 +2,11 @@
 ---
 
 @import 'variables/colors';
+@import 'variables/sizing';
 
-main.page-limiter {
-  // Limit page width to 800px to make lines of text the perfect length
-  max-width: 800px;
+main.content-limiter.-page {
+  // Limit page width to a smaller size to make lines of text the perfect length
+  max-width: $thin-width;
 }
 
 .all-posts-cont {  margin-bottom: 30px; }

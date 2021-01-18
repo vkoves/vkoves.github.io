@@ -4,7 +4,7 @@ name: Packback
 order: 1
 
 subtitle: Advancing an accessible discussion platform
-thumbnail: images/project-thumbs/packback.jpg
+thumbnail: images/project-thumbs/packback-home.jpg
 
 gallery:
   - {

@@ -4,7 +4,7 @@ name: Scroll Stop
 order: 4
 
 subtitle: Boosting productivity by reducing distractions
-thumbnail: images/project-thumbs/ScrollStop.jpg
+thumbnail: images/project-thumbs/scroll-stop.jpg
 
 gallery:
     - { url: /images/project-photos/scroll-stop-1.png, alt: Scroll stop page with settings }

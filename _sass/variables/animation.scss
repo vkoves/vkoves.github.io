@@ -1,0 +1,7 @@
+/**
+ * A variable for any cross SCSS file animation variables, like default timing
+ */
+
+// The default duration of each shapes drift animation - each shape can then use
+// a multiplier on this to make them look random
+$def-shape-drift-dur: 8s;
