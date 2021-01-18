@@ -4,7 +4,7 @@ name: Apollo
 order: 3
 
 subtitle: Learning more about music
-thumbnail: images/project-thumbs/Apollo.jpg
+thumbnail: images/project-thumbs/apollo.jpg
 
 gallery:
   - {

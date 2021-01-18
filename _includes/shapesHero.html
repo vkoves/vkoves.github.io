@@ -11,7 +11,7 @@ Takes in a `heading` string. Ex:
 {% assign limiterClass = include.limiterClass %}
 
 <div class="shapes-hero">
-  <div class="{{ limiterClass | default: 'content-limiter' }}">
+  <div class="{{ limiterClass | default: 'content-limiter -thin' }}">
     <h1 class="-large">{{ heading }}</h1>
 
     <div class="shape square -white"></div>

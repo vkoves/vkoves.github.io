@@ -6,9 +6,9 @@ stylesheets:
  - pages/work.css
 ---
 
-{% include shapesHero.html heading="Highlighted Work" level=1 %}
+{% include shapesHero.html heading="Highlighted Work" limiterClass="content-limiter -page" %}
 
-<section class="content-limiter">
+<section class="content-limiter -page">
 	<div class="page-desc">
 		<p>
 			I've worked on projects large and small, from just front-end development to
@@ -19,19 +19,17 @@ stylesheets:
 
 	{% assign ordered_projects = site.projects | sort: "order" %}
 
-	<div class="projects-container">
-		{% for project in ordered_projects %}
-			<div class="projects-tile">
-				<h2 class="title">
-					<a href="{{ project.url }}">{{ project.name }}</a>
-				</h2>
-				<div class="sub-title">{{ project.subtitle }} </div>
-				<!-- The thumbnail is hidden as it's a duplicate link to the title, which
-					is more clear -->
-				<a href="{{ project.url }}" aria-hidden="true" tabindex="-1">
-					<img src="{{ project.thumbnail }}" alt="">
-				</a>
-			</div>
-		{% endfor %}
-	</div>
+	{% for project in ordered_projects %}
+		<div class="projects-tile">
+			<h2 class="title">
+				<a href="{{ project.url }}">{{ project.name }}</a>
+			</h2>
+			<div class="sub-title">{{ project.subtitle }} </div>
+			<!-- The thumbnail is hidden as it's a duplicate link to the title, which
+				is more clear -->
+			<a href="{{ project.url }}" aria-hidden="true" tabindex="-1">
+				<img src="{{ project.thumbnail }}" alt="">
+			</a>
+		</div>
+	{% endfor %}
 </section>
