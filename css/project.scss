@@ -84,17 +84,21 @@ h2 { margin-top: 4rem; }
   img {
     width: 100%;
     max-width: 800px;
+    max-height: 600px;
     box-shadow: 0px 4px 2px $light-shadow-color;
     border-radius: 5px;
+    object-fit: cover;
+    object-position: top;
   }
 
-  // Make second image below and offset from primary
+  // Make second image below and offset from primary as well as darkened
   img.secondary {
     position: absolute;
     top: $img-offset;
     right: 0px;
     z-index: -1;
     height: calc(100% - #{$img-offset});
+    filter: brightness(0.75);
     object-fit: cover;
     object-position: right;
   }
