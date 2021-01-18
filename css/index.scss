@@ -192,10 +192,19 @@ section.first-sect {
     min-height: 0;
   }
 
-  .sect-inner > div { text-align: center; }
+  .sect-inner > div {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  h2, a {
+    position: relative;
+    z-index: 2;
+  }
 
   h2 {
-    color: $brand-red;
+    color: $white;
     font-size: 3.5rem;
     margin: 0;
   }
@@ -217,6 +226,8 @@ section.first-sect {
       text-decoration: none;
       border-color: $dark-red;
     }
+
+    &:focus { outline-color: $white; }
   }
 }
 
@@ -305,10 +316,17 @@ $bob-dist: 1rem;
     // The a11y image has a tall aspect ratio, so make it less wide
     &.-a11y-sect .sect-inner svg { width: 40%; }
 
-    &.-hire-sect .sect-inner {
-      h2 { font-size: 3rem; }
+    &.-hire-sect {
+      &.shapes-hero .shape:nth-of-type(3) {
+        bottom: -9rem;
+        top: auto;
+      }
 
-      a { font-size: 1.5rem; }
+      .sect-inner {
+        h2 { font-size: 3rem; }
+
+        a { font-size: 1.5rem; }
+      }
     }
 
     .sect-inner {

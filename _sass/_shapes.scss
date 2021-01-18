@@ -90,7 +90,7 @@
 
     &:nth-of-type(1) {
       animation-duration: $def-shape-drift-dur *  1.1;
-      top: 4rem;
+      bottom: -3rem;
       left: -15rem;
     }
 
@@ -101,7 +101,7 @@
 
     &:nth-of-type(3) {
       animation-duration: $def-shape-drift-dur * 0.7;
-      top: 8rem;
+      bottom: -7rem;
       left: 40rem;
     }
 
@@ -115,7 +115,7 @@
     &:nth-of-type(5) {
       // Large circle so drift slower
       animation-duration: $def-shape-drift-dur * 1.1;
-      top: 4rem;
+      bottom: -10rem;
       right: -20rem;
     }
   }
