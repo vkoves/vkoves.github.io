@@ -18,7 +18,11 @@ gallery:
   - { url: /images/project-photos/carpe-3.jpg, alt: Carpe page with Jack Altman's activity }
 ---
 
-Carpe is an online scheduler designed to make organizing easier and more
-socially connected. With Carpe, you can follow people to see and track their
-schedules, so you'll stay up to date. Planning everything from lunch-time
-hangouts to business meetings is now faster and pain-free.
+Carpe was an online scheduler designed to make organizing easier and more
+socially connected. With Carpe, users could follow people to see and track their
+schedules, letting them  stay up to date. It made planning everything from lunch-time
+hangouts to business meetings faster and pain-free.
+
+Carpe was a full-stack application built from the ground up with a small team in
+Ruby on Rails and it had a robustly architected system of email and in-site
+notifications and a groups feature that let users edit a calendar together.
