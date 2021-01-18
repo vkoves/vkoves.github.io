@@ -12,9 +12,9 @@ stylesheets:
 {% assign toolsWithImages = "Angular,Blender,CSS3,GIMP,Google Maps API,HTML5,Javascript,jQuery,jQuery UI,Ruby on Rails,Spotify API,Unity,Vue" | split: ',' %}
 
 
-{% include shapesHero.html heading=page.name isProject=true %}
+{% include shapesHero.html heading=page.name limiterClass="content-limiter -page" isProject=true %}
 
-<div class="content-limiter -thin">
+<div class="content-limiter -page">
 	{{ content }}
 
 	<h2>Languages & Tools Used</h2>
