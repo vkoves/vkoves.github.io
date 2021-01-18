@@ -3,7 +3,7 @@ layout: project
 name: Packback
 order: 1
 
-subtitle: Advancing an accessible discussion platform
+subtitle: Advancing a higher-education discussion platform with animations and accessibility improvements
 thumbnail: images/project-thumbs/packback-home.jpg
 
 gallery:

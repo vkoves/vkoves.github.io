@@ -3,7 +3,7 @@ layout: project
 name: The PTD
 order: 2
 
-subtitle: Simplifying signup for property tax appeals
+subtitle: Creating a brand-new signup for property tax appeals to make custom onboarding fast and easy
 thumbnail: images/project-thumbs/ptd.jpg
 
 gallery:

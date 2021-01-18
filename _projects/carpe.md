@@ -3,7 +3,7 @@ layout: project
 name: Carpe
 order: 4
 
-subtitle: Scheduling made social
+subtitle: A full fledged calendar web-app with integrated social functionality, to make scheduling more social
 thumbnail: images/project-thumbs/carpe.jpg
 
 tools:

@@ -3,7 +3,7 @@ layout: project
 name: Apollo
 order: 3
 
-subtitle: Learning more about music
+subtitle: Leveraging the Spotify API to make music visual
 thumbnail: images/project-thumbs/apollo.jpg
 
 gallery:
