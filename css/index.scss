@@ -179,25 +179,31 @@ section.first-sect {
 }
 
 .hero.-hire-sect {
-  .sect-inner { justify-content: center; }
+  height: 40rem; // With no image, there's no reason to force height
+
+  .sect-inner {
+    justify-content: center;
+    min-height: 0;
+  }
 
   .sect-inner > div { text-align: center; }
 
   h2 {
     color: $brand-red;
-    font-size: 4rem;
+    font-size: 3.5rem;
+    margin: 0;
   }
 
   a {
     display: inline-block;
-    padding: 0.5rem 2rem;
-    margin-top: 3rem;
+    padding: 0.5rem 1.5rem;
+    margin-top: 2rem;
     background: $white;
     border: 5px solid #D80000;
     border-radius: 15px;
     box-shadow: 0 4px 0 $light-shadow-color;
     color: $brand-red;
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
 
     &:hover, &:focus {
