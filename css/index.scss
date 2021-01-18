@@ -186,6 +186,7 @@ section.first-sect {
 
 .hero.-hire-sect {
   height: 40rem; // With no image, there's no reason to force height
+  margin-bottom: 0; // negate margin from shapes-hero class
 
   .sect-inner {
     justify-content: center;
