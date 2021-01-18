@@ -9,10 +9,17 @@ Takes in a `heading` string. Ex:
 
 {% assign heading = include.heading %}
 {% assign limiterClass = include.limiterClass %}
+{% assign isProject = include.isProject %}
 
 <div class="shapes-hero">
   <div class="{{ limiterClass | default: 'content-limiter -thin' }}">
-    <h1 class="-large">{{ heading }}</h1>
+    <h1 class="-large">
+      {{ heading }}
+
+      {% if isProject %}
+        <div>Project Overview</div>
+      {% endif %}
+    </h1>
 
     <div class="shape square -white"></div>
     <div class="shape triangle -svg -white">

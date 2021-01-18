@@ -8,7 +8,11 @@
 
 @import 'variables/colors';
 
-main.project { max-width: 800px; }
+main.content-limiter.project {
+  width: 100%;
+  max-width: none;
+  padding-top: 0;
+}
 
 .proj-tools-cont {
   display: flex;

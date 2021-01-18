@@ -12,40 +12,42 @@ stylesheets:
 {% assign toolsWithImages = "Angular,Blender,CSS3,GIMP,Google Maps API,HTML5,Javascript,jQuery,jQuery UI,Ruby on Rails,Spotify API,Unity,Vue" | split: ',' %}
 
 
-<h1>{{ page.name }}</h1>
+{% include shapesHero.html heading=page.name isProject=true %}
 
-{{ content }}
+<div class="content-limiter -thin">
+	{{ content }}
 
-<h2>Languages & Tools Used</h2>
+	<h2>Languages & Tools Used</h2>
 
-<ul class="proj-tools-cont">
-{% for tool in page.tools %}
-	<li class="tool-cont">
-		{% if toolsWithImages contains tool %}
-			{% comment %}Image is decorative since the text is right below{% endcomment %}
-			<img src="/images/tools/{{ tool | split: ' ' | join: '_'}}.svg" alt="">
-			<div class="text">{{ tool }}</div>
-		{% else %}
-			<div class="featured-text">{{ tool }}</div>
-		{% endif %}
-	</li>
-{% endfor %}
-</ul>
+	<ul class="proj-tools-cont">
+	{% for tool in page.tools %}
+		<li class="tool-cont">
+			{% if toolsWithImages contains tool %}
+				{% comment %}Image is decorative since the text is right below{% endcomment %}
+				<img src="/images/tools/{{ tool | split: ' ' | join: '_'}}.svg" alt="">
+				<div class="text">{{ tool }}</div>
+			{% else %}
+				<div class="featured-text">{{ tool }}</div>
+			{% endif %}
+		</li>
+	{% endfor %}
+	</ul>
 
-{% comment %}
-Show Gallery Section if there are photos via the gallery key
-{% endcomment %}
+	{% comment %}
+	Show Gallery Section if there are photos via the gallery key
+	{% endcomment %}
 
-{% if page.gallery != null %}
-	<h2>Gallery</h2>
+	{% if page.gallery != null %}
+		<h2>Gallery</h2>
 
-	<button id="proj-imgs" class="gallery-preview"
-		aria-label="View {{ page.name }} Gallery">
-		<!-- The button has an explicit label, so these images are only decorative -->
-		<img src="{{ page.gallery[0].url }}" alt="" class="main">
-		<img src="{{ page.gallery[1].url }}" alt="" class="secondary">
-	</button>
-{% endif %}
+		<button id="proj-imgs" class="gallery-preview"
+			aria-label="View {{ page.name }} Gallery">
+			<!-- The button has an explicit label, so these images are only decorative -->
+			<img src="{{ page.gallery[0].url }}" alt="" class="main">
+			<img src="{{ page.gallery[1].url }}" alt="" class="secondary">
+		</button>
+	{% endif %}
+</div>
 
 
 <!-- Add Jekyll projects collection to JS. Done here so that it doesn't
