@@ -83,7 +83,7 @@ button { font-family: 'Open Sans', sans-serif; }
  * use animations on any element.
  */
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; }
+  * { animation: none !important; } // sass-lint:disable-line no-important
 }
 
 // Style any heading targeted by an anchor to animate move and highlight

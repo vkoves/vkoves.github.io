@@ -134,10 +134,10 @@ section.first-sect {
  * on mobile so that the icon and text are always in front of the same color.
  */
 .hero.-moon-sect {
-  background: linear-gradient(90deg, #3F3F3F, #1f1f1f);
+  background: linear-gradient(90deg, #3F3F3F, #1F1F1F);
 
   @media (max-width: $tablet-max-width) {
-    background: linear-gradient(180deg, #3F3F3F, #1f1f1f);
+    background: linear-gradient(180deg, #3F3F3F, #1F1F1F);
   }
 
   svg {
@@ -171,10 +171,10 @@ section.first-sect {
 }
 
 .hero.-fast-sect {
-  background: linear-gradient(90deg, #fa6000, #d80000);
+  background: linear-gradient(90deg, #FA6000, #D80000);
 
   @media (max-width: $tablet-max-width) {
-    background: linear-gradient(180deg, #fa6000, #d80000);
+    background: linear-gradient(180deg, #FA6000, #D80000);
   }
 }
 
@@ -192,7 +192,7 @@ section.first-sect {
     display: inline-block;
     padding: 0.5rem 2rem;
     margin-top: 3rem;
-    background: #FFFFFF;
+    background: $white;
     border: 5px solid #D80000;
     border-radius: 15px;
     box-shadow: 0 4px 0 $light-shadow-color;
@@ -212,9 +212,9 @@ section.first-sect {
 /**
  * Bob up and down
  */
-@keyframes bob {
-  $bob-dist: 1rem;
+$bob-dist: 1rem;
 
+@keyframes bob {
   0% {
     transform: translate(0, -0.5 * $bob-dist);
   }
