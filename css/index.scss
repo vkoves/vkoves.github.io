@@ -176,6 +176,12 @@ section.first-sect {
   @media (max-width: $tablet-max-width) {
     background: linear-gradient(180deg, #FA6000, #D80000);
   }
+
+  svg:hover {
+    #Train, #TrainShadow {
+      animation: train-bob 0.5s ease-in-out;
+    }
+  }
 }
 
 .hero.-hire-sect {
@@ -240,6 +246,18 @@ $bob-dist: 1rem;
 
   4% { opacity: 1; }
   100% { opacity: 1; }
+}
+
+/**
+ * Does a quick but small bob at the animation start, like a train going over a
+ * bump
+ */
+@keyframes train-bob {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(0, 5px); }
+  40% { transform: translate(0, 0); }
+
+  100% { transform: translate(0, 0); }
 }
 
 /**
