@@ -28,3 +28,6 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .projects-tile { width: 100%; }
+}
