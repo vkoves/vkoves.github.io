@@ -19,9 +19,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
   padding-top: 60px; // Add padding around header height
-  background: $off-white;
+  background-color: var(--bg-color);
   line-height: 1.5;
-  color: $text-grey;
+  color: var(--text-color);
 }
 
 h1, h2, h3, h4 {
@@ -97,8 +97,8 @@ button { font-family: 'Open Sans', sans-serif; }
     padding-left $animate-timing,
     color $animate-timing;
   padding-left: 15px;
-  box-shadow: -10px 0 $dark-red;
-  color: $dark-red;
+  box-shadow: -10px 0 var(--brand-text-color);
+  color: var(--brand-text-color);
 
 }
 
@@ -111,11 +111,11 @@ button, a {
 // darkest red and underline on hover/focus
 a {
   text-decoration: none;
-  color: $dark-red;
+  color: var(--brand-text-color);
 
   &:hover, &:focus {
     text-decoration: underline;
-    color: $darkest-red;
+    color: var(--brand-text-color-focused);
   }
 }
 
@@ -462,10 +462,10 @@ p { margin: 1.5rem 0; }
 
 code.inline, code.highlighter-rouge {
   font-family: monospace;
-  background: $white;
+  background: var(--light-bg-color);
   font-size: 0.9em;
   padding: 2px 5px;
-  color: $brand-red;
+  color: var(--brand-text-color);
   border-radius: 5px;
 }
 

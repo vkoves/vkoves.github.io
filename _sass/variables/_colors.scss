@@ -6,6 +6,7 @@ $light-grey:      #D3D3D3; // lightgrey
 $mid-grey:        #DCDCDC; // gainsboro
 $grey:            #808080; // grey
 $dark-grey:       #404040;
+$off-black:       #1f1f1f;
 
 // Greys used for text
 $text-light:      #686767; // A light grey that is WCAG compliant
@@ -20,5 +21,43 @@ $brand-red:     #D80000;
 $dark-red:      #A30000;
 $darkest-red:   #700000;
 
+$pink:          #FF8A8A;
+$pink-light:    #FFA8A8;
+
 $brand-orange: #FF7400;
 $brand-blue: #0059FF;
+
+
+/**
+ * Use CSS variables for main background and text color
+ */
+:root {
+  --bg-color: #{$off-white};
+  --light-bg-color: #{$white};
+  --bit-dark-bg-color: #{$off-white-dark};
+  --dark-bg-color: #{$mid-grey};
+  --brand-bg-color: #{$brand-red};
+
+  --text-color: #{$text-grey};
+  --text-color-faded: #{$text-light};
+  --text-color-dark: #{$dark-grey};
+  --brand-text-color: #{$dark-red};
+  --brand-text-color-focused: #{$darkest-red};
+}
+
+// Dark mode styling
+@media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #{$off-black};
+      --light-bg-color: #{$dark-grey};
+      --bit-dark-bg-color: #{$dark-grey};
+      --dark-bg-color: #{$dark-grey};
+      --brand-bg-color: #{$dark-red};
+
+      --text-color: #{$white};
+      --text-color-faded: #{$off-white-dark};
+      --text-color-dark: #{$off-white-dark};
+      --brand-text-color: #{$pink};
+      --brand-text-color-focused: #{$pink-light};
+    }
+}
