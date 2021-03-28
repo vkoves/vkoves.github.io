@@ -1,11 +1,10 @@
-.footer
-{
+.footer {
   width: 100%;
   padding: 15px 0px;
   bottom: 0px;
   left: 0;
-  background-color: $mid-grey;
-  box-shadow: 0px 0px 5px $grey;
+  background-color: var(--dark-bg-color);
+  box-shadow: 0px 0px 5px $shadow-color;
 }
 
 .social-bar {
@@ -22,13 +21,14 @@
   margin: 0px 10px;
 }
 
-.social-bar .icon
-{
+.social-bar .icon {
   display: inline-block;
   background-size: 100% auto;
   background-repeat: no-repeat;
   width: 45px;
   height: 45px;
+  background-color: $shadow-color;
+  border-radius: 10rem;
 }
 
 .social-bar .github {

@@ -101,7 +101,8 @@
 	<!-- Include any CSS classes requested for the page by pageClass, and also
 		include the layout name so individual layouts can have their own stylesheet
 		with simple CSS scoping -->
-	<main class="page-container {{ page.pageClass }} {{ page.layout }}">
+	<main id="main-content"
+		class="page-container {{ page.pageClass }} {{ page.layout }}">
 		{{ content }}
 	</main>
 

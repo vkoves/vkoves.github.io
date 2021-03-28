@@ -5,7 +5,7 @@ $header-mob-height: 72px;
   top: 0px;
   width: 100%;
   text-align: left;
-  background: $brand-red;
+  background: var(--brand-bg-color);
   z-index: 5;
   font-size: 20px;
 

@@ -65,7 +65,7 @@
 // Style the shapes-hero component, which has a few shapes floating around on a
 // red background with a white <h1>
 .shapes-hero {
-  background-color: $brand-red;
+  background-color: var(--brand-bg-color);
   padding: 9.375rem 0 6.25rem;
   margin-bottom: 3rem;
   overflow: hidden;

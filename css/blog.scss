@@ -15,19 +15,19 @@ main.content-limiter.-page {
   display: inline-block;
   padding: 5px 15px;
   text-decoration: none;
-  background-color: $mid-grey;
+  background-color: var(--dark-bg-color);
   border-radius: 5px;
-  color: $text-grey;
+  color: var(--text-color);
   font-weight: 600;
   transition: background-color 0.2s, color 0.2s;
 
   &.disabled {
     background-color: transparent;
-    color: $dark-grey;
+    color: var(--text-color-faded);
   }
 
   &:not(.disabled):hover, &:focus {
-    background-color: $brand-red;
+    background-color: var(--brand-bg-color);
     color: $white;
     text-decoration: none;
   }
@@ -37,7 +37,7 @@ main.content-limiter.-page {
   display: inline-block;
   width: 100%;
   text-align: left;
-  color: $text-light;
+  color: var(--text-color-faded);
 }
 
 hr {
@@ -89,10 +89,10 @@ blockquote {
   padding: 20px 30px;
   line-height: 1.75;
   font-style: italic;
-  color: $dark-grey;
   margin-inline-start: 10px;
-  background-color: $off-white-dark;
-  border-left: solid 5px $brand-red;
+  background-color: var(--bit-dark-bg-color);
+  color: var(--text-color-dark);
+  border-left: solid 5px var(--brand-bg-color);
 
   p { margin: 0; }
 }

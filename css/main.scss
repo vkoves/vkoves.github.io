@@ -9,6 +9,42 @@
 @import 'shapes';
 @import 'reset';
 
+/**
+ * Use CSS variables for main background and text color
+ */
+:root {
+  --bg-color: #{$off-white};
+  --light-bg-color: #{$white};
+  --intense-bg-color: #{$white};
+  --bit-dark-bg-color: #{$off-white-dark};
+  --dark-bg-color: #{$mid-grey};
+  --brand-bg-color: #{$brand-red};
+
+  --text-color: #{$text-grey};
+  --text-color-faded: #{$text-light};
+  --text-color-dark: #{$dark-grey};
+  --brand-text-color: #{$dark-red};
+  --brand-text-color-focused: #{$darkest-red};
+}
+
+// Dark mode styling
+@media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #{$mid-black};
+      --intense-bg-color: #{$off-black};
+      --light-bg-color: #{$dark-grey};
+      --bit-dark-bg-color: #{$dark-grey};
+      --dark-bg-color: #{$dark-grey};
+      --brand-bg-color: #{$dark-red};
+
+      --text-color: #{$white};
+      --text-color-faded: #{$off-white-dark};
+      --text-color-dark: #{$off-white-dark};
+      --brand-text-color: #{$pink};
+      --brand-text-color-focused: #{$pink-light};
+    }
+}
+
 html {
   font-size: 18px;
   scroll-behavior: smooth; // New, animates going between anchors!
@@ -19,9 +55,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
   padding-top: 60px; // Add padding around header height
-  background: $off-white;
+  background-color: var(--bg-color);
   line-height: 1.5;
-  color: $text-grey;
+  color: var(--text-color);
 }
 
 h1, h2, h3, h4 {
@@ -87,7 +123,7 @@ button { font-family: 'Open Sans', sans-serif; }
 }
 
 // Style any heading targeted by an anchor to animate move and highlight
-:target {
+:target:not(main) {
   // The delay and animation length for all our transitions
   $animate-timing: 0.3s 0.3s;
 
@@ -97,8 +133,8 @@ button { font-family: 'Open Sans', sans-serif; }
     padding-left $animate-timing,
     color $animate-timing;
   padding-left: 15px;
-  box-shadow: -10px 0 $dark-red;
-  color: $dark-red;
+  box-shadow: -10px 0 var(--brand-text-color);
+  color: var(--brand-text-color);
 
 }
 
@@ -111,11 +147,11 @@ button, a {
 // darkest red and underline on hover/focus
 a {
   text-decoration: none;
-  color: $dark-red;
+  color: var(--brand-text-color);
 
   &:hover, &:focus {
     text-decoration: underline;
-    color: $darkest-red;
+    color: var(--brand-text-color-focused);
   }
 }
 
@@ -462,10 +498,10 @@ p { margin: 1.5rem 0; }
 
 code.inline, code.highlighter-rouge {
   font-family: monospace;
-  background: $white;
+  background: var(--intense-bg-color);
   font-size: 0.9em;
   padding: 2px 5px;
-  color: $brand-red;
+  color: var(--brand-text-color);
   border-radius: 5px;
 }
 
