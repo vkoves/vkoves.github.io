@@ -5,7 +5,7 @@ language: ruby
 
 # Should match version in Gemfile
 rvm:
-  - 2.6.5
+  - 2.7.2
 
 install:
   - bundle install # Install needed gems
