@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "You Know Someone Who Was Homeless"
-description: "I often think we don’t realize, day to day, how close we are to the homeless adults and children we might see on the street. We also might not realize that we actually know people (whether partners, close friends, coworkers, or acquaintances) who have been homeless. For you, maybe I am that person, because for around four years when I was a teenager, I was homeless."
+excerpt: "I often think we don’t realize, day to day, how close we are to the homeless adults and children we might see on the street. We also might not realize that we actually know people (whether partners, close friends, coworkers, or acquaintances) who have been homeless. For you, maybe I am that person, because for around four years when I was a teenager, I was homeless."
 ---
 
 Many people have a complex relationship with homelessness - a mix of sympathy and disgust that I see almost every day. The attitude I see most often is, "sure, homeless people have to live _somewhere_, but why are they on my train/block/walk?" I often think we don’t realize, day to day, how close we are to the homeless adults and children we might see on the street. We also might not realize that we actually know people (whether partners, close friends, coworkers, or acquaintances) who have been homeless. For you, maybe I am that person, because for around four years when I was a teenager, I was homeless.
