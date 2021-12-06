@@ -40,7 +40,7 @@
 			{% if page.title contains site.title %}
 				{% assign pageTitle = page.title %}
 			{% else %}
-				{% assign pageTitle = page.title | append: ' - ' | append: site.title %}
+				{% assign pageTitle = page.title | append: ' | ' | append: site.title %}
 			{% endif %}
 		{% else %}
 				{% assign pageTitle = site.title %}
