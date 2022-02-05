@@ -27,25 +27,35 @@ $header-mob-height: 72px;
   font-weight: 400;
 }
 
-.site-header a {
-  color: $white;
-  border-radius: 8px;
-  transition: color 0.2s, padding 0.2s, background 0.2s;
-  padding: 5px 15px;
+.site-header {
+  a {
+    color: $white;
+    border-radius: 8px;
+    transition: color 0.2s, padding 0.2s, background 0.2s;
+    padding: 5px 15px;
 
-  &, &:hover, &:focus { text-decoration: none; }
+    &, &:hover, &:focus { text-decoration: none; }
 
-  &:hover, &:focus, &.hire-me {
-    color: $dark-grey;
-    background-color: $white;
+    &:hover, &:focus, &.hire-me {
+      color: $dark-grey;
+      background-color: $white;
+    }
+
+    &.name { font-weight: 600;  }
   }
 
-  &.name { font-weight: 600;  }
-}
+  a.skip-to-main.sr-only {
+    top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 
-// Make header links and buttons have clear focus
-.site-header a:focus, .site-header button:focus {
-  outline: dashed 3px $white;
+    &:focus { left: 45px; }
+  }
+
+  // Make header links and buttons have clear focus
+  a:focus, button:focus {
+    outline: dashed 3px $white;
+  }
 }
 
 .header-buttons { float: right; }
@@ -102,7 +112,11 @@ $header-mob-height: 72px;
 
     .header-inside { padding: 0; }
 
-    .header-main, .header-buttons { padding: 10px 20px; }
+    .header-main {
+      width: 100%;
+      padding: 10px 0;
+    }
+    .header-buttons { padding: 10px 20px; }
 
     .header-main {
       display: flex;
