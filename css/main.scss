@@ -157,8 +157,8 @@ a {
 
 p { margin: 1.5rem 0; }
 
-.linked-heading, .anchor {
-  // Add scrol margin so anchor adjusts for the sticky header
+// Add scroll margin to target elements anchor adjusts for the sticky header
+#main-content, .linked-heading, .anchor {
   scroll-margin-top: 80px;
 }
 
