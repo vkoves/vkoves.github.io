@@ -1,6 +1,6 @@
 ---
 layout: project
-name: Packback
+name: Packback Questions
 order: 1
 
 subtitle: Advancing a higher ducation discussion platform with new features, animations, and accessibility improvements
