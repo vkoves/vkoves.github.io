@@ -4,6 +4,15 @@
 
 My personal website, used for everything from showcasing work to prototyping and messing around with HTML. Have suggestions or feedback? Open an issue.
 
+## Prerequisites
+
+Since this is a Jekyll based site, your system should have Rails
+intalled (see `Gemfile` for the specific version), including bundler (installed
+via `gem install bundler`).
+
+If you don't have Ruby, you can install Ruby using [RVM](https://rvm.io/), which
+lets you use any number of Ruby versions on one machine.
+
 ## Running
 
 This project uses [Jekyll]([Jekyll](https://jekyllrb.com/)), so to run it
