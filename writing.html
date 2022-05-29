@@ -2,7 +2,7 @@
 layout: default
 pageClass: '-no-padding-top'
 stylesheets:
- - blog.css
+ - writing.css
 title: "Writing"
 ---
 
@@ -10,7 +10,7 @@ title: "Writing"
 
 <ul class="post-list content-limiter -thin">
   {% for post in site.posts %}
-    {% if post.categories contains "Archive" %}
+    {% if post.categories contains "Archive" or post.categories contains "WIP" %}
       {% continue %}
     {% endif %}
 

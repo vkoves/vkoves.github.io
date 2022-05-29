@@ -62,4 +62,37 @@ main.post {
     p:first-of-type { margin-top: 0; }
     p:last-of-type { margin-bottom: 0; }
   }
+
+  .post-date {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color-faded);
+  }
+
+  // Style blog blockquotes
+  blockquote {
+    padding: 20px 30px;
+    line-height: 1.75;
+    font-style: italic;
+    margin-inline-start: 10px;
+    background-color: var(--bit-dark-bg-color);
+    color: var(--text-color-dark);
+    border-left: solid 5px var(--brand-bg-color);
+
+    p { margin: 0; }
+  }
+
+  // Style blog images
+  p {
+    &.small {
+      font-size: 0.9rem;
+      color: $text-light;
+    }
+
+    > img:not(.no-shadow) {
+      border: solid 1px $grey;
+      box-shadow: 1px 1px 5px $shadow-color;
+    }
+  }
 }
