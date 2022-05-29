@@ -69,10 +69,10 @@ gas use was 4.65 trillion cubic feet in 2021</strong>
 ([Natural Gas Explained | EIA](https://www.eia.gov/energyexplained/natural-gas/use-of-natural-gas.php))
 
 1. From math class we know one trillion is 1,000,000,000,000 or more simply
-10^12, while one thousand is 1,000 or 10^3.
+10<sup>12</sup>, while one thousand is 1,000 or 10<sup>3</sup>.
 
 1. That means by dividing our previous 0.0551 tons CO<sub>2</sub> per thousands
-of cubic feet number by 10^3 we get that a single cubic foot of natural gas
+of cubic feet number by 10<sup>3</sup> we get that a single cubic foot of natural gas
 emits 0.0000551 metric tons of CO<sub>2</sub>.
 
 That means to get our total CO<sub>2</sub> emissions from residential natural
@@ -115,9 +115,9 @@ you are buying a new car, make it an electric vehicle.
 <p class="small">
   An obligatory aside - as an avid city biker and transit user I also have to
   mention considering ditching a car entirely. There's a lot of benefits if you
-  can make it work, and especially in a dense city cars are extremely expensive
-  and not an efficient way to move lots of people around compare to trains,
-  buses, or biking.
+  can make it work, and especially in a dense city cars (electric or otherwise)
+  are extremely expensive and not an efficient way to move lots of people around
+  compare to trains, buses, or biking.
 </p>
 
 I think all of this highlights a broader point - climate change is a
