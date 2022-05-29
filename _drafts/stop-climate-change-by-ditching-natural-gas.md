@@ -6,7 +6,7 @@ categories:
 ---
 
 At this point, I think everyone knows about climate change on one level or
-another and discussions have moved to what we should be doing about it.
+another, and discussions have moved to what we should be doing about it.
 Big companies love to ask you to take a look at your carbon footprint, while
 some activists counter that your individual impact is negligible compared to
 the emissions of large companies. I want to show you that it's a bit of both.
@@ -55,7 +55,9 @@ harmful pollutants and don't leak methane, and induction cooktops (which are
 electrically powered) even bring water to a boil faster and don't leave cooktops hot
 (["Induction Cooking - here's Why You Should Make The Switch" | Reviewed.com](https://www.reviewed.com/ovens/features/induction-101-better-cooking-through-science)).
 
-Now let me clear - home natural gas use isn't the majority of emissions worldwide,
+## Putting Your Appliances in Context
+
+Now let me be clear - home natural gas use isn't the majority of emissions in the US (or worldwide),
 but it is a significant proportion. Let's do some quick napkin math:
 
 1. From the EPA we know that there's <strong>0.0551 metric tons of CO<sub>2</sub> emitted per
@@ -85,7 +87,7 @@ Or written out:
 
 If you punch that into a calculator, you'll get back 256,215,000 metric tons of
 CO<sub>2</sub>. That means that <strong>residential natural gas use emitted approximately
- 256 million metric tons of CO<sub>2</sub>!</strong>
+ 256 million metric tons of CO<sub>2</sub> in 2021 alone!</strong>
 
 For comparison, according to
 [Our World In Data's US Emissions Data](https://ourworldindata.org/co2/country/united-states#what-are-the-country-s-annual-co2-emissions)
@@ -94,7 +96,7 @@ the US emitted 4.71 billion metric tons of CO<sub>2</sub> in 2020 (there's no da
 total. And keep in mind this emissions estimate doesn't account for natural gas
 leaks or other factors, so the true emissions are likely even higher.
 
-## So Why Should I Care About 5% Of US Emissions?
+{% include linkedHeading.html heading="So Why Should I Care About 5% Of US Emissions?" level=2 %}
 
 That 5.4% figure might leave you wondering - why should you care, and why
 did I write an article about this? There's one big reason - electrifying your home
@@ -130,7 +132,7 @@ lets us build a world with cleaner air inside and outside the home, where the
 power of the sun and the wind can get you to work, heat your home, and cook your
 food.
 
-## Some Resources to Take You Further
+{% include linkedHeading.html heading="Some Resources to Take You Further" level=2 %}
 
 If you're interested in learning more about electric appliances and electriying
 your home, I'd encourage you to check out these resources:
@@ -146,21 +148,21 @@ information on a state by state basis. If you're curious what the biggest source
 of emissions are in your state, I'd encourage you to check it out.
 
 
-## I Have Some Gripes (Counter Points)
+{% include linkedHeading.html heading="I Have Some Gripes (Counter Points)" level=2 %}
 
 Alright, alright, you read this and you have some issues with my points. Let me
 just address a few that I've seen:
 
-### Electric cooking sucks, I love cooking with gas!
+{% include linkedHeading.html heading="Electric cooking sucks, I love cooking with gas!" level=3 %}
 Check out [wtf is 'induction cooking' on YouTube][wtf-is-induction], which walks through induction cooking through a
 cook's perspective. The old school electric stoves (you know, the ones that
 glow red) often were really annoying and had lots of problems, but induction
 works totally differently and is _much_ better in a variety of ways. If you can,
 try it at a friend's house or buy a small induction cooktop to test with.
 
-### You didn't consider most US electricity comes from natural gas anyway 🙄
+{% include linkedHeading.html heading="Most US electricity comes from natural gas anyway 🙄" level=3 %}
 
-Alright no need for the eyeroll! There's a few things to unpack here, but let's
+Alright, alright, no need for the eye roll! There's a few things to unpack here, but let's
 start with the face value argument here - if the electric grid is mostly natural gas, there's no point
 switching to electric appliances. This isn't true for one simple reason - a giant
 gas power plant is going to be much more efficient at converting natural gas into energy
@@ -179,7 +181,9 @@ and less over time. (Electricity )
 related to points 1 and 2 above, if you buy a gas appliance you're not just
 emitting today, you're locking in emissions for the time until that appliance is
 replaced (often for a decade more). These so-called committed emissions already
-jeopardize us hitting our climate goals ([Committed emissions from existing energy infrastructure jeopardize 1.5°C climate target](https://www.nature.com/articles/s41586-019-1364-3))
+jeopardize us hitting our climate goals
+([Committed emissions from existing energy... | Nature](https://www.nature.com/articles/s41586-019-1364-3)),
+which is why **it's crucial we don't buy new fossil fuel powered appliances!**
 
 
 [wtf-is-induction]: https://www.youtube.com/watch?v=Xn1LUo5ra_A
