@@ -2,7 +2,7 @@
 layout: default
 stylesheets:
  - syntax.css
- - blog.css
+ - writing.css
  - post.css
 ---
 
@@ -12,6 +12,10 @@ stylesheets:
 
 <h1 class="page-title">{{ page.title }}</h1>
 <span class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</span>
+
+{% for category in page.categories %}
+  <span class="category-pill">{{ category }}</span>
+{% endfor %}
 
 {{ content }}
 

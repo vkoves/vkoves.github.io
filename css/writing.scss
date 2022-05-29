@@ -1,6 +1,10 @@
 ---
 ---
 
+/**
+ * CSS for the Writing Page - also imported on posts
+ */
+
 @import 'variables/colors';
 @import 'variables/sizing';
 
@@ -31,13 +35,6 @@ main.content-limiter.-page {
     color: $white;
     text-decoration: none;
   }
-}
-
-.post-date {
-  display: inline-block;
-  width: 100%;
-  text-align: left;
-  color: var(--text-color-faded);
 }
 
 hr {
@@ -82,23 +79,4 @@ hr {
   margin: 60px 0 30px 0;
 
   a:first-of-type { margin-right: 10px; }
-}
-
-// Style blog blockquotes
-blockquote {
-  padding: 20px 30px;
-  line-height: 1.75;
-  font-style: italic;
-  margin-inline-start: 10px;
-  background-color: var(--bit-dark-bg-color);
-  color: var(--text-color-dark);
-  border-left: solid 5px var(--brand-bg-color);
-
-  p { margin: 0; }
-}
-
-// Style blog images
-p > img {
-  border: solid 1px $grey;
-  box-shadow: 1px 1px 5px $shadow-color;
 }

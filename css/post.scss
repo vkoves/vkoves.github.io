@@ -9,6 +9,15 @@
 @import 'variables/colors';
 
 main.post {
+  .category-pill {
+    font-size: 0.75rem;
+    background: $light-grey;
+    padding: 0 0.75rem;
+    display: inline-block;
+    border-radius: 10rem;
+    margin-top: 0.5rem;
+  }
+
   // Make images and videos centered by default and at most full width
   img, video {
     display: block;
@@ -22,12 +31,22 @@ main.post {
     margin: 0;
   }
 
+  .highlight { border-radius: 5px; }
+
   figure.highlight pre, pre.highlight {
     padding: 20px;
     font-size: 0.9rem;
-    border-radius: 5px;
     overflow-x: auto;
+
+    pre.lineno {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
+
+  // Disable padding if we're using the highlighter directly as we typically
+  // have line numbers
+  figure.highlight > pre { padding: 0; }
 
   .table-of-contents {
     padding-top: 10px;
@@ -61,5 +80,38 @@ main.post {
     // Ensure paragraphs do not give extra padding
     p:first-of-type { margin-top: 0; }
     p:last-of-type { margin-bottom: 0; }
+  }
+
+  .post-date {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color-faded);
+  }
+
+  // Style blog blockquotes
+  blockquote {
+    padding: 20px 30px;
+    line-height: 1.75;
+    font-style: italic;
+    margin-inline-start: 10px;
+    background-color: var(--bit-dark-bg-color);
+    color: var(--text-color-dark);
+    border-left: solid 5px var(--brand-bg-color);
+
+    p { margin: 0; }
+  }
+
+  // Style blog images
+  p {
+    &.small {
+      font-size: 0.9rem;
+      color: $text-light;
+    }
+
+    > img:not(.no-shadow) {
+      border: solid 1px $grey;
+      box-shadow: 1px 1px 5px $shadow-color;
+    }
   }
 }
