@@ -23,6 +23,12 @@ main.post {
     display: block;
     margin: auto;
     max-width: 100%;
+
+    &.-with-background {
+      // Add background color for SVGs
+      background-color: $white;
+      padding: 1rem;
+    }
   }
 
 
@@ -106,10 +112,10 @@ main.post {
   p {
     &.small {
       font-size: 0.9rem;
-      color: $text-light;
+      color: var(--text-color-faded);
     }
 
-    > img:not(.no-shadow) {
+    > img:not(.-no-shadow) {
       border: solid 1px $grey;
       box-shadow: 1px 1px 5px $shadow-color;
     }
