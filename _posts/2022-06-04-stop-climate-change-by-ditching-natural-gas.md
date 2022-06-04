@@ -138,10 +138,11 @@ food. That sounds like a bright future worth fighting for.
 If you're interested in learning more about electric appliances and electrifying
 your home, I'd encourage you to check out these resources:
 
-- [wtf is 'induction cooking' \| Adam Ragusea (Youtube)](https://www.youtube.com/watch?v=Xn1LUo5ra_A)
 - [Electrify Everything in Your Home \| Rewiring America](https://www.rewiringamerica.org/electrify-home-guide)
 - ["Electrify" by Saul Griffith \| MIT Press](https://mitpress.mit.edu/books/electrify)
 - ["Your Induction Stove Is the First Step Toward Plugging In the Whole House" \| The New York Times](https://www.nytimes.com/2022/03/11/realestate/induction-stoves.html)
+- [Video: wtf is 'induction cooking' \| Adam Ragusea (Youtube)](https://www.youtube.com/watch?v=Xn1LUo5ra_A)
+- [Video: It’s Time To Break Up With Our Gas Stoves \| Climate Town](https://www.youtube.com/watch?v=hX2aZUav-54)
 
 
 Lastly, I want to plug [Decarbonize My State](https://decarbonizemystate.com/),
