@@ -40,7 +40,7 @@ process can have a huge impact on climate change.
 Ultimately, all of these emissions from natural gas use mean one very simple
 thing - **even on a grid powered completely by renewable energy, our  natural
 gas appliances emit dangerous greenhouse gases that warm the planet.**
-It's worth emphasizing this - even if we closed down every fossil fuel power plant
+It's worth emphasizing this - even if we closed every fossil fuel power plant
 and moved every gas car to an electric vehicle, our homes would still be
 collectively pumping colossal amounts of methane and carbon dioxide into the air.
 
@@ -192,13 +192,13 @@ try it at a friend's house or buy a small induction cooktop to test with.
 
 {% include linkedHeading.html heading="Most US electricity comes from natural gas anyway 🙄" level=3 %}
 
-Alright, alright, no need for the eye roll! There's a few things to unpack here, but let's
+Alright, alright, no need for the eye roll! There are a few things to unpack here, but let's
 start with the face value argument - that if the electric grid is mostly
 natural gas, there's no point switching to electric appliances. This isn't true for one simple reason - a giant
 gas power plant is going to be much more efficient at converting natural gas into energy
 than your home stove, and electric stoves lose less energy than gas stoves.
 
-But also, there's a few other factors that challenge this:
+But also, there are some other factors that challenge this:
 
 1. **The US energy grid already has 20% of power coming from renewables, and 20%
 from nuclear**, meaning (in rough terms) that 40% of electricity in the US is
