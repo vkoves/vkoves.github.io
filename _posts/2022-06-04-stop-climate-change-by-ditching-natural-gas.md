@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Want to Stop Climate Change? Ditch The Natural Gas
+title: Want to Stop Climate Change? Ditch Natural Gas
 ---
 
 At this point, I think everyone knows about climate change, and discussions
@@ -16,8 +16,8 @@ because these emissions come from _inside_ your home.
 
 Not sure what I'm referring to? I'm talking about natural gas home heaters,
 water heaters, stoves, and dryers. Natural gas is made primarily out of methane
-([Natural Gas Explained | EIA](https://www.eia.gov/energyexplained/natural-gas/)) a fossil fuel
-that, when burned, emits carbon dioxide and a host of other pollutants:
+([Natural Gas Explained | EIA](https://www.eia.gov/energyexplained/natural-gas/)),
+ a fossil fuel that, when burned, emits carbon dioxide and a host of other pollutants:
 
 > &ldquo;The emissions from natural gas-fired boilers and furnaces include
   nitrogen oxides (NOx), carbon monoxide (CO), and carbon dioxide
@@ -31,7 +31,7 @@ appliances (particularly your gas stove, since you spend more time around it)
 emit some of these pollutants in levels high enough to be
 harmful ([CBC News](https://www.cbc.ca/news/science/gas-stoves-air-pollution-1.6394514)).
 Methane is also an _extremely_ potent greenhouse gas by itself, estimated to have
-a greenhouse effect about 27-30 times that of carbon dioxide over 100 years
+a greenhouse effect about 27 to 30 times that of carbon dioxide over 100 years
 ([Understanding Global Warming Potentials, EPA](https://www.epa.gov/ghgemissions/understanding-global-warming-potentials)).
 That means that even a little bit of methane leaking out from your stove, the
 pipes that get natural gas to your home, or anywhere in the production
@@ -39,7 +39,7 @@ process can have a huge impact on climate change.
 
 Ultimately, all of these emissions from natural gas use mean one very simple
 thing - **even on a grid powered completely by renewable energy, our  natural
-gas appliances emit dangerous green-house gases that warm the planet.**
+gas appliances emit dangerous greenhouse gases that warm the planet.**
 It's worth emphasizing this - even if we closed down every fossil fuel power plant
 and moved every gas car to an electric vehicle, our homes would still be
 collectively pumping colossal amounts of methane and carbon dioxide into the air.
@@ -67,12 +67,12 @@ gas use was 4.65 trillion cubic feet in 2021</strong>
 1. From math class we know one trillion is 1,000,000,000,000 or more simply
 10<sup>12</sup>, while one thousand is 1,000 or 10<sup>3</sup>.
 
-1. That means by dividing our previous 0.0551 tons CO<sub>2</sub> per thousands
-of cubic feet number by 10<sup>3</sup> we get that a single cubic foot of natural gas
+1. By dividing our previous 0.0551 tons CO<sub>2</sub> per thousand cubic feet
+number by 10<sup>3</sup>, we get that a single cubic foot of natural gas
 emits 0.0000551 metric tons of CO<sub>2</sub>.
 
-That means to get our total CO<sub>2</sub> emissions from residential natural
-gas use we need to take 4.65 trillion cubic feet and multiply by
+To get our total CO<sub>2</sub> emissions from residential natural
+gas use, we need to take 4.65 trillion cubic feet and multiply by
 0.0000551 metric tons CO<sub>2</sub> per cubic foot.
 
 Or written out:
@@ -87,8 +87,8 @@ CO<sub>2</sub>. That means that <strong>residential natural gas use emitted appr
  256 million metric tons of CO<sub>2</sub> in 2021 alone!</strong>
 
 For comparison, according to
-[Our World In Data's US Emissions Page](https://ourworldindata.org/co2/country/united-states#what-are-the-country-s-annual-co2-emissions)
-the US emitted 4.71 billion metric tons of CO<sub>2</sub> in 2020 (there's no data for 2021 yet) making the
+[Our World In Data's US Emissions Page](https://ourworldindata.org/co2/country/united-states#what-are-the-country-s-annual-co2-emissions),
+the US emitted 4.71 billion metric tons of CO<sub>2</sub> in 2020 (there's no data for 2021 yet), making the
 256 million tons of CO<sub>2</sub> emitted by natural gas US 5.4% of the overall
 total. And keep in mind this emissions estimate doesn't account for natural gas
 leaks, emissions from extracting, producing, and distributing the natural gas,
@@ -99,22 +99,22 @@ or other factors, so the true emissions are even higher.
 That 5.4% figure might leave you wondering - why should you care, and why
 did I even write an article about this? Aren't there more important things to
 worry about? There's one big reason - electrifying your home appliances (for
-home-owners) is _completely in your control_. It might not be
+homeowners) is _completely in your control_. It might not be
 cheap, and we should definitely make policies providing rebates and regulating
 appliances in new construction, but the next time you are purchasing appliances
 you can choose to make them electric.
 
-And of course it's worth mentioning that if you own a gas car, that is likely
-the biggest CO<sub>2</sub> emitting machine you own, with the [average passenger car emitting
-4.6 metric tons of CO<sub>2</sub> according to the EPA](https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle).
-Considering [the average American emits around 14.2 tons of CO<sub>2</sub> a year](https://ourworldindata.org/co2/country/united-states#per-capita-how-much-co2-does-the-average-person-emit),
-that means a <strong>gas car could make up a whopping 32% of your emissions</strong>.
+Of course it's worth mentioning that if you own a gas car, that is likely
+the biggest CO<sub>2</sub>-emitting machine you own, with the [average passenger car emitting
+4.6 metric tons of CO<sub>2</sub>, according to the EPA](https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle).
+Considering that [the average American emits around 14.2 tons of CO<sub>2</sub> a year](https://ourworldindata.org/co2/country/united-states#per-capita-how-much-co2-does-the-average-person-emit), a <strong>gas car could
+make up a whopping 32% of your emissions</strong>.
 That means the next time you are buying a new car, you can have a huge climate
 impact by making it an electric vehicle!
 
 <p class="small">
-  An obligatory aside - as an avid city biker and transit user I also have to
-  mention ditching a car entirely is also an option! There's a lot of benefits if you
+  An obligatory aside - as an avid city biker and transit user, I also have to
+  mention that ditching a car entirely is also an option! There's a lot of benefits if you
   can make it work, and especially in a dense city, cars (electric or otherwise)
   are extremely expensive and not an efficient way to move lots of people around
   compared to trains, buses, or biking.
@@ -125,10 +125,10 @@ collective problem, and we need to act collectively to solve it. This includes
 all the big collective stuff, from voting on climate issues, talking to your
 friends about climate change, getting big companies to reduce their emissions,
 and calling your elected officials to support climate legislation. But it also
-means individual actions, like changing out your fossil fuel powered machines
-for electric ones and letting solar and wind power be built in your local community.
+means individual actions, like replacing your fossil-fuel-powered machines
+with electric ones and letting solar and wind power be built in your local community.
 
-Solving climate change isn't just about avoiding a terrifying future, it also
+Solving climate change isn't just about avoiding a terrifying future - it also
 lets us build a world with cleaner air inside and outside the home, where the
 power of the sun and the wind can get you to work, heat your home, and cook your
 food. That sounds like a bright future worth fighting for.
@@ -156,12 +156,12 @@ your home, I'd encourage you to check out these resources:
   </li>
  <li>
     <a href="https://www.youtube.com/watch?v=Xn1LUo5ra_A">
-      Video: wtf is 'induction cooking' | Adam Ragusea (Youtube)
+      Video: wtf is 'induction cooking' | Adam Ragusea (YouTube)
     </a>
   </li>
  <li>
     <a href="https://www.youtube.com/watch?v=hX2aZUav-54">
-      Video: It’s Time To Break Up With Our Gas Stoves | Climate Town
+      Video: It’s Time To Break Up With Our Gas Stoves | Climate Town (YouTube)
     </a>
   </li>
  <li>
@@ -174,17 +174,17 @@ your home, I'd encourage you to check out these resources:
 
 Lastly, I want to plug [Decarbonize My State](https://decarbonizemystate.com/),
 a project I've contributed to that seeks to help visualize emissions
-information on a state by state basis. If you're curious what the biggest sources
+information on a state-by-state basis. If you're curious what the biggest sources
 of emissions are in your state, I'd encourage you to check it out.
 
 
-{% include linkedHeading.html heading="I Have Some Gripes (Counter Points)" level=2 %}
+{% include linkedHeading.html heading="I Have Some Gripes (Counterpoints)" level=2 %}
 
-Alright, alright, you read this and you have some issues with my points. Let me
+Alright, alright, you've read this and you have some issues with my points. Let me
 just address a few that I've seen:
 
 {% include linkedHeading.html heading="Electric cooking sucks, I love cooking with gas!" level=3 %}
-Check out [wtf is 'induction cooking' on YouTube][wtf-is-induction], which walks through induction cooking through a
+Check out [wtf is 'induction cooking' on YouTube][wtf-is-induction], which walks through induction cooking from a
 cook's perspective. The old school electric stoves (the ones with the coils that
 glow red) often were really annoying and had lots of problems, but induction
 works totally differently and is _much_ better in a variety of ways. If you can,
@@ -193,7 +193,7 @@ try it at a friend's house or buy a small induction cooktop to test with.
 {% include linkedHeading.html heading="Most US electricity comes from natural gas anyway 🙄" level=3 %}
 
 Alright, alright, no need for the eye roll! There's a few things to unpack here, but let's
-start with the face value argument here - that if the electric grid is mostly
+start with the face value argument - that if the electric grid is mostly
 natural gas, there's no point switching to electric appliances. This isn't true for one simple reason - a giant
 gas power plant is going to be much more efficient at converting natural gas into energy
 than your home stove, and electric stoves lose less energy than gas stoves.
@@ -202,20 +202,20 @@ But also, there's a few other factors that challenge this:
 
 1. **The US energy grid already has 20% of power coming from renewables, and 20%
 from nuclear**, meaning (in rough terms) that 40% of electricity in the US is
-carbon free _today_. ([Electricity Explained | EIA][eia-electricity-explained])
+carbon-free _today_. ([Electricity Explained | EIA][eia-electricity-explained])
 
 1. **The share of energy coming from renewables is steadily increasing**
 ([Electricity Explained | EIA][eia-electricity-explained]), so the grid is getting
-cleaner all the time. This means your electric appliances get emit less
+cleaner all the time. This means your electric appliances emit less
 and less over time.
 
-1. **If you buy a gas stove or car now you're _committing_ to future emissions** -
+1. **If you buy a gas stove or car now, you're _committing_ to future emissions** -
 related to points 1 and 2 above, if you buy a gas appliance you're not just
 emitting today, you're locking in emissions for the time until that appliance is
 replaced, often for a decade more. These so-called committed emissions already
 jeopardize us hitting our climate goals
 ([Committed emissions from existing energy... | Nature](https://www.nature.com/articles/s41586-019-1364-3)),
-which is why **it's crucial we don't buy new fossil fuel powered appliances!**
+which is why **it's crucial that we don't buy new fossil-fuel-powered appliances!**
 
 
 [wtf-is-induction]: https://www.youtube.com/watch?v=Xn1LUo5ra_A
