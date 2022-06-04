@@ -34,13 +34,13 @@ Methane is also an _extremely_ potent greenhouse gas by itself, estimated to hav
 a greenhouse effect about 27-30 times that of carbon dioxide over 100 years
 ([Understanding Global Warming Potentials, EPA](https://www.epa.gov/ghgemissions/understanding-global-warming-potentials)).
 That means that even a little bit of methane leaking out from your stove, the
-pipes that get natural gas to your home, or anywhere along the production
+pipes that get natural gas to your home, or anywhere in the production
 process can have a huge impact on climate change.
 
 Ultimately, all of these emissions from natural gas use mean one very simple
 thing - **even on a grid powered completely by renewable energy, our  natural
 gas appliances emit dangerous green-house gases that warm the planet.**
-It's worth reiterating - even if we closed down every fossil fuel power plant
+It's worth emphasizing this - even if we closed down every fossil fuel power plant
 and moved every gas car to an electric vehicle, our homes would still be
 collectively pumping colossal amounts of methane and carbon dioxide into the air.
 
@@ -128,7 +128,7 @@ and calling your elected officials to support climate legislation. But it also
 means individual actions, like changing out your fossil fuel powered machines
 for electric ones and letting solar and wind power be built in your local community.
 
-Solving climate change isn't just about avoiding a terrifying future - it also
+Solving climate change isn't just about avoiding a terrifying future, it also
 lets us build a world with cleaner air inside and outside the home, where the
 power of the sun and the wind can get you to work, heat your home, and cook your
 food. That sounds like a bright future worth fighting for.
@@ -144,7 +144,7 @@ your home, I'd encourage you to check out these resources:
 
 
 Lastly, I want to plug [Decarbonize My State](https://decarbonizemystate.com/),
-a project I've contributed to that seeks to help visualize a lot of this
+a project I've contributed to that seeks to help visualize emissions
 information on a state by state basis. If you're curious what the biggest sources
 of emissions are in your state, I'd encourage you to check it out.
 
