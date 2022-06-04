@@ -203,10 +203,12 @@ But also, there's a few other factors that challenge this:
 1. **The US energy grid already has 20% of power coming from renewables, and 20%
 from nuclear**, meaning (in rough terms) that 40% of electricity in the US is
 carbon free _today_. ([Electricity Explained | EIA][eia-electricity-explained])
+
 1. **The share of energy coming from renewables is steadily increasing**
 ([Electricity Explained | EIA][eia-electricity-explained]), so the grid is getting
 cleaner all the time. This means your electric appliances get emit less
 and less over time.
+
 1. **If you buy a gas stove or car now you're _committing_ to future emissions** -
 related to points 1 and 2 above, if you buy a gas appliance you're not just
 emitting today, you're locking in emissions for the time until that appliance is
