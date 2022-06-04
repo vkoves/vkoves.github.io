@@ -138,11 +138,38 @@ food. That sounds like a bright future worth fighting for.
 If you're interested in learning more about electric appliances and electrifying
 your home, I'd encourage you to check out these resources:
 
-- [Electrify Everything in Your Home \| Rewiring America](https://www.rewiringamerica.org/electrify-home-guide)
-- ["Electrify" by Saul Griffith \| MIT Press](https://mitpress.mit.edu/books/electrify)
-- ["Your Induction Stove Is the First Step Toward Plugging In the Whole House" \| The New York Times](https://www.nytimes.com/2022/03/11/realestate/induction-stoves.html)
-- [Video: wtf is 'induction cooking' \| Adam Ragusea (Youtube)](https://www.youtube.com/watch?v=Xn1LUo5ra_A)
-- [Video: It’s Time To Break Up With Our Gas Stoves \| Climate Town](https://www.youtube.com/watch?v=hX2aZUav-54)
+<ul class="-spaced">
+ <li>
+    <a href="https://www.rewiringamerica.org/electrify-home-guide">
+      Electrify Everything in Your Home | Rewiring America
+    </a>
+  </li>
+ <li>
+    <a href="https://mitpress.mit.edu/books/electrify">
+      "Electrify" by Saul Griffith | MIT Press
+    </a>
+  </li>
+ <li>
+    <a href="https://www.nytimes.com/2022/03/11/realestate/induction-stoves.html">
+      "Your Induction Stove Is the First Step Toward Plugging In the Whole House" | The New York Times
+    </a>
+  </li>
+ <li>
+    <a href="https://www.youtube.com/watch?v=Xn1LUo5ra_A">
+      Video: wtf is 'induction cooking' | Adam Ragusea (Youtube)
+    </a>
+  </li>
+ <li>
+    <a href="https://www.youtube.com/watch?v=hX2aZUav-54">
+      Video: It’s Time To Break Up With Our Gas Stoves | Climate Town
+    </a>
+  </li>
+ <li>
+    <a href="https://open.spotify.com/episode/4bkkPjze92HHtQxStM0PcM?si=efc73f600c9f4f86">
+      Podcast: Ending Climate Change with Saul Griffith | Factually!
+    </a>
+  </li>
+</ul>
 
 
 Lastly, I want to plug [Decarbonize My State](https://decarbonizemystate.com/),

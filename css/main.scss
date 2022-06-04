@@ -95,7 +95,13 @@ h5 {
 
 h6 { font-size: 0.8rem; }
 
-ul, ol { padding-left: 40px; }
+ul, ol { padding-left: 2.5rem; }
+
+// Expose a -spaced variant with more element padding
+ul.-spaced, ol.-spaced {
+  li { margin-top: 0.5rem; }
+}
+
 ul { list-style: disc; }
 ol { list-style-type: decimal; }
 
