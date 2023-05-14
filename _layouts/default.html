@@ -1,111 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link href="/css/main.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
-	<!-- jQuery and main.js are not used for render, just interaction like the
-		mobile menu. Since main.js needs jQuery, we use defer instead of async -->
-	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script defer src="/js/main.js"></script>
+    <!-- jQuery and main.js are not used for render, just interaction like the
+        mobile menu. Since main.js needs jQuery, we use defer instead of async -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="/js/main.js"></script>
 
-	<link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
-	<!-- Added Open Sans from Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
+    <!-- Added Open Sans from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet" type="text/css">
 
-	<!-- Pull in layout JS and CSS first so page CSS can override -->
-	{% for stylesheet in layout.stylesheets %}
-		<link href="/css/{{  stylesheet }}" rel="stylesheet">
-	{% endfor %}
-	{% for stylesheet in page.stylesheets %}
-		<link href="/css/{{  stylesheet }}" rel="stylesheet">
-	{% endfor %}
+    <!-- Pull in layout JS and CSS first so page CSS can override -->
+    {% for stylesheet in layout.stylesheets %}
+        <link href="/css/{{  stylesheet }}" rel="stylesheet">
+    {% endfor %}
+    {% for stylesheet in page.stylesheets %}
+        <link href="/css/{{  stylesheet }}" rel="stylesheet">
+    {% endfor %}
 
-	<!-- Mark all page specific JS deferred so it waits for jQuery and doesn't
-			block render -->
-	{% for script in layout.scripts %}
-		<script defer src="/js/{{ script }}"></script>
-	{% endfor %}
-	{% for script in page.scripts %}
-		<script defer src="/js/{{ script }}"></script>
-	{% endfor %}
+    <!-- Mark all page specific JS deferred so it waits for jQuery and doesn't
+            block render -->
+    {% for script in layout.scripts %}
+        <script defer src="/js/{{ script }}"></script>
+    {% endfor %}
+    {% for script in page.scripts %}
+        <script defer src="/js/{{ script }}"></script>
+    {% endfor %}
 
-	<title>
-		{% comment %}
-			Compute page title for <title> and <meta> tags. Use page title + ' - ' +
-			site title, UNLESS the page title already contains the site title, like on
-			the homepage.
-		{% endcomment %}
+    <title>
+        {% comment %}
+            Compute page title for <title> and <meta> tags. Use page title + ' - ' +
+            site title, UNLESS the page title already contains the site title, like on
+            the homepage.
+        {% endcomment %}
 
-		{% if page.title %}
-			{% if page.title contains site.title %}
-				{% assign pageTitle = page.title %}
-			{% else %}
-				{% assign pageTitle = page.title | append: ' | ' | append: site.title %}
-			{% endif %}
-		{% else %}
-				{% assign pageTitle = site.title %}
-		{% endif %}
+        {% if page.title %}
+            {% if page.title contains site.title %}
+                {% assign pageTitle = page.title %}
+            {% else %}
+                {% assign pageTitle = page.title | append: ' | ' | append: site.title %}
+            {% endif %}
+        {% else %}
+                {% assign pageTitle = site.title %}
+        {% endif %}
 
-		{% comment %} Output computed page title {% endcomment %}
-		{{ pageTitle }}
-	</title>
+        {% comment %} Output computed page title {% endcomment %}
+        {{ pageTitle }}
+    </title>
 
-	{% if page.metadata %}
-		<meta name="theme-color" content="{{ page.metadata[0].theme_color }}">
-		<meta name="description" content="{{ page.metadata[0].description }}">
-		<meta property="og:description" content="{{ page.metadata[0].description }}" />
-		<meta property="og:image" content="{{ page.metadata[0].image }}" />
+    {% if page.metadata %}
+        <meta name="theme-color" content="{{ page.metadata[0].theme_color }}">
+        <meta name="description" content="{{ page.metadata[0].description }}">
+        <meta property="og:description" content="{{ page.metadata[0].description }}" />
+        <meta property="og:image" content="{{ page.metadata[0].image }}" />
 
-		<!-- Twitter Info -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="{{ page.metadata[0].og_title }}">
-		<meta property="twitter:description" content="{{ page.metadata[0].og_description }}" />
-	{% else %}
-		<meta name="theme-color" content="#D80000">
-		<meta name="description" content="{{ site.description }}">
-		<meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
+        <!-- Twitter Info -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ page.metadata[0].og_title }}">
+        <meta property="twitter:description" content="{{ page.metadata[0].og_description }}" />
+    {% else %}
+        <meta name="theme-color" content="#D80000">
+        <meta name="description" content="{{ site.description }}">
+        <meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
 
-		<!-- Twitter Info -->
-		<meta name="twitter:card" content="summary_large_image">
+        <!-- Twitter Info -->
+        <meta name="twitter:card" content="summary_large_image">
 
-		<!-- Social Media Title for Twitter & Open Graph -->
-		<meta name="twitter:title" content="{{ pageTitle }}">
-		<meta property="og:title" content="{{ pageTitle }}">
+        <!-- Social Media Title for Twitter & Open Graph -->
+        <meta name="twitter:title" content="{{ pageTitle }}">
+        <meta property="og:title" content="{{ pageTitle }}">
 
-		<!-- Social Media Description for Twitter & Open Graph -->
-		{% if page.excerpt %}
-			<meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
-			<meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
-		{% else %}
-			<meta name="twitter:description" content="{{ site.description }}">
-			<meta property="og:description" content="{{ site.description }}">
-		{% endif %}
-	{% endif %}
+        <!-- Social Media Description for Twitter & Open Graph -->
+        {% if page.excerpt %}
+            <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
+            <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
+        {% else %}
+            <meta name="twitter:description" content="{{ site.description }}">
+            <meta property="og:description" content="{{ site.description }}">
+        {% endif %}
+    {% endif %}
 
-	<meta name="viewport" content="width=450, initial-scale=0.75">
-	<meta name="google-site-verification" content="aivQX75RILmCefXvQj496cBxd8ycZ-AWTKRMQJGoyA4" />
-	<!-- Google Analytics -->
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	  ga('create', 'UA-39148744-3', 'auto');
-	  ga('send', 'pageview');
-	</script>
+    <meta name="viewport" content="width=450, initial-scale=0.75">
+    <meta name="google-site-verification" content="aivQX75RILmCefXvQj496cBxd8ycZ-AWTKRMQJGoyA4" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTB4TQN5X0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FTB4TQN5X0');
+    </script>
 </head>
 
 <body>
-	{% include header.html %}
+    {% include header.html %}
 
-	<!-- Include any CSS classes requested for the page by pageClass, and also
-		include the layout name so individual layouts can have their own stylesheet
-		with simple CSS scoping -->
-	<main id="main-content"
-		class="page-container {{ page.pageClass }} {{ page.layout }}">
-		{{ content }}
-	</main>
+    <!-- Include any CSS classes requested for the page by pageClass, and also
+        include the layout name so individual layouts can have their own stylesheet
+        with simple CSS scoping -->
+    <main id="main-content"
+        class="page-container {{ page.pageClass }} {{ page.layout }}">
+        {{ content }}
+    </main>
 
-	{% include footer.html %}
+    {% include footer.html %}
 </body>
 </html>
