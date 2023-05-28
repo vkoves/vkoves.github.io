@@ -7,41 +7,45 @@ If you've worked in software development or design for a while, you have very li
 
 ## Why We Ran User Testing
 
-So let's start with some background - at Chi Hack Night back in December 2022 we had been working on
-a climate site and wanted to make sure that it achieved all of our gaols. For us these were:
+So let's start with some background: at Chi Hack Night back in December 2022 we had been working on
+a climate site for several months and wanted to make sure that it achieved all of our goals. For us
+these were:
 
-1. Having the site functional and easy to use
-1. Help users understand their states emissions and where they come from
+1. Have the site be functional and easy to use
+1. Help users understand their state's emissions and where they come from
 1. Making users feel optimistic about climate solutions
 
-By the time we were considering user testing we had a very functional site that was showing a lot of
-information and that we thought was pretty polished, so we were hoping that user testing would
-validate those thoughts and show that we were meeting our goals. In fact, user testing revealed some
+By the time we were considering user testing we had a very functional site with a lot of useful
+information and a pretty polished UI, so we were hoping that user testing would validate those
+opinions and show that we were meeting our goals. Instead, our user testing revealed some
 huge gaps in our site that would really surprise us.
 
 ## Our User Test Setup
 
-To create our user testing setup we want to simulate how we felt people would approach our site,
-which was starting from the homepage without any specific context or background information on it.
-This was meant to match th experience if someone, say, saw a sticker with our URL on it and chose
-to visit the site.
+To create our user testing setup we wanted to simulate how we felt most people would approach our
+site, which was starting from the homepage without any specific context or background information on
+our site. This was meant to match th experience if someone, say, saw a sticker with our URL on it
+and chose to visit the site.
 
 To try and imitate this type of interaction, we gave users some basic instructions about our user
 interview, including asking them to think out loud and letting them know we wouldn't answer any
-questions, but offered no information about our site or any specific tasks. By telling them very
-little about the site and setting out no specific goals (since Decarb My State is an informational
-site) we hoped to get a better understanding of how easy our site was to use, what users were taking
-away from the site, and how the site made them feel.
+questions, but offered no information about our site or any specific tasks. We also specifically
+made sure to recruit folks who were coming to their first Chi Hack Night, and thus had never heard
+about our project before. By telling our testers very little about the site and setting no specific
+goals for them (since Decarb My State is an informational site) we hoped to get a better
+understanding of how easy our site was to use, what users were taking away from the site, and how
+the site made them feel.
 
 ## The Actual Tests
 
-We ran four user tests with our first version of the site, and we learned a lot right away. First,
-and foremost, we learned that a shocking 50% (two of the four) of users never got to our state
-details page. To provide more context, Decarb My State has a homepage with a map that links to our
-largest pages, which provide details on every single state. In the header we have our Take Action
-page (which we link at the end of each state's details page) and some supplemental pages like our
-About page and FAQ, but that one half of users essentially only experienced _the least important_
-pages on our website.
+We ran four user tests with our first version of the site, and we learned a lot right away. First
+and foremost, we learned that a shocking 50% (two of four) of testers never got to our largest page
+- the state details page. To provide more context, Decarb My State has a homepage with a map that
+links to our largest pages, which provide details on every single state, including breakdowns of
+where their emissions come from by category and very specific solutions to each category of
+emissions. In the header we have our Take Action page (which we link at the end of each state's
+details page) and some supplemental pages like our About page and FAQ, but that one half of users
+essentially only experienced _the least important_ pages on our website.
 
 ## Improving Navigation Clarity
 
