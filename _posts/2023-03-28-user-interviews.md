@@ -52,8 +52,7 @@ pages on our website.
 This was a huge miss, but it turns out there was a very simple explanation. Here's what the
 Decarb My State homepage looked like if you hovered over the state of Illinois on the map:
 
-![Decarb My State homepage showing a map of the US with different states in different colors, with a tooltip over
-Illinois that says 'Illinois 267 MMTCO2e'](/post-assets/user-stories-decarb/map-tooltip-before.webp)
+![Decarb My State homepage showing a map of the US with different states in different colors, with a tooltip over Illinois that says 'Illinois 267 MMTCO2e'](/post-assets/user-stories-decarb/map-tooltip-before.webp)
 
 <!--
   PR for old screenshots: https://github.com/chihacknight/decarbonize-my-state/pull/118
@@ -68,8 +67,7 @@ web, and with no other prompting, they thought that hovering was the _only_ avai
 We made the decision that a simple wording change to add an action verb to the tooltip would help
 users understand the map navigation UI. Here's what it looked like after our change:
 
-![Decarb My State homepage showing a map of the US with different states in different colors, with a tooltip over
-Illinois that says 'Illinois 267 MMTCO2e [newline] View Details [underlined]'](/post-assets/user-stories-decarb/map-tooltip-after.webp)s
+![Decarb My State homepage showing a map of the US with different states in different colors, with a tooltip over Illinois that says 'Illinois 267 MMTCO2e [newline] View Details [underlined]'](/post-assets/user-stories-decarb/map-tooltip-after.webp)
 
 There are a few different changes here that we stacked to make sure users understood the map was
 more interactive, since this was their entry point to our core state pages:
