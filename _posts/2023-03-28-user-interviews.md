@@ -52,7 +52,10 @@ pages on our website.
 This was a huge miss, but it turns out there was a very simple explanation. Here's what the
 Decarb My State homepage looked like if you hovered over the state of Illinois on the map:
 
-![Decarb My State homepage showing a map of the US with different states in different colors, with a tooltip over Illinois that says 'Illinois 267 MMTCO2e'](/post-assets/user-stories-decarb/map-tooltip-before.webp)
+<img src="/post-assets/user-stories-decarb/map-tooltip-before.webp"
+    loading="lazy"
+    alt='Decarb My State homepage showing a map of the US with different states in different colors,
+        with a tooltip over Illinois that says "Illinois 267 MMTCO2e"'>
 
 <!--
   PR for old screenshots: https://github.com/chihacknight/decarbonize-my-state/pull/118
@@ -67,7 +70,11 @@ web, and with no other prompting, they thought that hovering was the _only_ avai
 We made the decision that a simple wording change to add an action verb to the tooltip would help
 users understand the map navigation UI. Here's what it looked like after our change:
 
-![Decarb My State homepage showing a map of the US with different states in different colors, with a tooltip over Illinois that says 'Illinois 267 MMTCO2e [newline] View Details [underlined]'](/post-assets/user-stories-decarb/map-tooltip-after.webp)
+<img
+    src="/post-assets/user-stories-decarb/map-tooltip-after.webp"
+    loading="lazy"
+    alt='Decarb My State homepage showing a map of the US with different states in different colors,
+        with a tooltip over Illinois that says "Illinois 267 MMTCO2e [newline] View Details [underlined]'>
 
 There are a few different changes here that we stacked to make sure users understood the map was
 more interactive, since this was their entry point to our core state pages:
@@ -107,7 +114,14 @@ renewables) but that means that although we have a lot to say in the first three
 section is not really related to the main pitch of our site. To that end, here's what our "Other"
 section used to look like before:
 
-![Page showing "Other Emissions" heading with text underneath that says "The last 34% of emissions in Illinois come form other sources. This includes industry, landfills, and framing. There's no one splution to solve these problems but there are a lot of great ideas!" Followed by a list of three ideas](/post-assets/user-stories-decarb/other-before.webp)
+<img
+    src="/post-assets/user-stories-decarb/other-before.webp"
+    loading="lazy"
+    alt='Page showing "Other Emissions" heading with text underneath that says
+        "The last 34% of emissions in Illinois come form other sources. This includes industry,
+        landfills, and framing. There&apos;s no one solution to solve these problems but there are
+        a lot of great ideas!" Followed by a list of three ideas'
+    >
 
 
 This text was fine from a factual perspective, since it correctly communicates what the other
@@ -122,7 +136,18 @@ To that end, we spent a lot of time thinking through how we could tweak this sec
 that our users would understand both that there were solutions but also why we wouldn't go into more
 detail about this set of emissions. To that end, we ended up changing this section like so:
 
-![Page showing "Other Emissions" heading with text underneath that says "The last 34% of emissions in Illinois come form other sources. This includes farming, landfills, industry, and leaks from gas pipelines. There's no [one italicized] solution to solve these problems, but there are lots of great ideas:" There is then a list of five ideas with emoji, follow by the text "That doesn't mean there's no solution, it just means that clean electrification doesn't help with these problems, and you could fill a whole book with covering all of them. We need to encourage our politicians to invest in researching new solutions and implementing existing solutions to these problems!](/post-assets/user-stories-decarb/other-after.webp)
+<img
+    src="/post-assets/user-stories-decarb/other-after.webp"
+    loading="lazy"
+    alt='Page showing "Other Emissions" heading with text underneath that says "The last 34% of
+        emissions in Illinois come form other sources. This includes farming, landfills, industry,
+        and leaks from gas pipelines. There&apos;s no [one italicized] solution to solve these
+        problems, but there are lots of great ideas:" There is then a list of five ideas with emoji,
+        followed by the text "That doesn&apos;t mean there&apos;s no solution, it just means that
+        clean electrification doesn&apos;t help with these problems, and you could fill a whole book
+        with covering all of them. We need to encourage our politicians to invest in researching new
+        solutions and implementing existing solutions to these problems!'
+    >
 
 Similar to last time, there's a confluence of changes here to make sure we fully address the
 problem we saw in user testing. In particular:
