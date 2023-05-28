@@ -1,6 +1,6 @@
 ---
 layout: post
-title: User Testing for Better Websites - A Case Study with DecarbMyState
+title: User Testing for Better Websites - A Case Study with Decarb My State
 ---
 
 If you've worked in software development or design for a while, you have very likely heard about the
