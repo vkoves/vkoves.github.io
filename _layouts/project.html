@@ -9,7 +9,12 @@ stylesheets:
 ---
 
 {% comment %} All the names of tools that have images {% endcomment %}
-{% assign toolsWithImages = "Angular,Blender,CSS3,GIMP,Google Maps API,HTML5,Javascript,jQuery,jQuery UI,Ruby on Rails,Spotify API,Unity,Vue" | split: ',' %}
+{%
+  assign toolsWithImages
+    = "Angular,Blender,CSS3,GIMP,Google Maps API,HTML5,Javascript,jQuery,jQuery UI,Ruby on Rails,"
+	  | append: "Spotify API,Unity,Vue,React,Gatsby"
+	  | split: ','
+%}
 
 
 {% include shapesHero.html heading=page.name limiterClass="content-limiter -page" isProject=true %}

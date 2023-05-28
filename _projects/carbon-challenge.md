@@ -1,7 +1,7 @@
 ---
 layout: project
 name: The Carbon Challenge
-order: 1
+order: 3
 
 subtitle: A project to help build support for climate policies by clearly
   showing specific policy impacts.
