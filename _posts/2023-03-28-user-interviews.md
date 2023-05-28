@@ -3,11 +3,7 @@ layout: post
 title: User Testing for Better Websites - A Case Study with Decarb My State
 ---
 
-If you've worked in software development or design for a while, you have very likely heard about the
-value of user testing, but you may not have had opportunity to take advantage of user testing much
-in your your work yet. I want to show you some user testing we did for
-[DecarbMyState.com](https://decarbmystate.com), and how it helped make sure that our climate site was
-both easy to use but also left our users with the positive emotional impact that we were striving for.
+If you've worked in software development or design for a while, you have very likely heard about the value of user testing, but you may not have had opportunity to take advantage of user testing much in your your work yet. I want to show you some user testing we did for [DecarbMyState.com](https://decarbmystate.com), and how it helped make sure that our climate site was both easy to use but also left our users with the positive emotional impact that we were striving for.
 
 ## Why We Ran User Testing
 
