@@ -85,7 +85,7 @@ We ran some user tests after this change and found that, as hoped, users immedia
 the homepage map was a navigation tool and navigated to the state details page that we had invested
 most of our time in.
 
-## Improving our Wording to Encourage Optimism
+## Encouraging Optimism With Our Wording
 
 Our second big place for improvement came out of some of the questions we asked to close out our
 user interviews. For our site, we asked the following questions after each session was done:
@@ -123,7 +123,6 @@ _not fixable_ because we didn't have as much to say on it, and we didn't explain
 To that end, we spent a lot of time thinking through how we could tweak this section, to make sure
 that our users would understand both that there were solutions but also why we wouldn't go into more
 detail about this set of emissions. To that end, we ended up changing this section like so:
-
 
 ![Page showing "Other Emissions" heading with text underneath that says "The last 34% of emissions in Illinois come form other sources. This includes farming, landfills, industry, and leaks from gas pipelines. There's no [one italicized] solution to solve these problems, but there are lots of great ideas:" There is then a list of five ideas with emoji, follow by the text "That doesn't mean there's no solution, it just means that clean electrification doesn't help with these problems, and you could fill a whole book with covering all of them. We need to encourage our politicians to invest in researching new solutions and implementing existing solutions to these problems!](/post-assets/user-stories-decarb/other-after.webp)
 
