@@ -1,9 +1,9 @@
 ---
 layout: project
 name: Packback Questions
-order: 1
+order: 4
 
-subtitle: Advancing a higher ducation discussion platform with new features, animations, and accessibility improvements
+subtitle: Advancing a higher education discussion platform with new features, animations, and accessibility improvements
 thumbnail: images/project-thumbs/packback-home.jpg
 
 gallery:

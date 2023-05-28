@@ -1,7 +1,7 @@
 ---
 layout: project
 name: Scroll Stop
-order: 4
+order: 10
 
 subtitle: A Chrome extension that boosts productivity by reducing distractions
 thumbnail: images/project-thumbs/scroll-stop.jpg
