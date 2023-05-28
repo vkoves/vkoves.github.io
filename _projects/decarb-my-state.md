@@ -3,7 +3,8 @@ layout: project
 name: Decarb My State
 order: 1
 
-subtitle: Charting a path to zero emissions for every U.S. state
+subtitle: Charting a path to zero emissions for every U.S. state by combining disparate data sources
+  into unified stories and visualizations.
 thumbnail: images/project-thumbs/decarb-my-state.webp
 
 gallery:
