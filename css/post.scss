@@ -31,6 +31,8 @@ main.post {
     }
   }
 
+  // Add spacing between list items
+  ol li + li, ul li + li { margin-top: 0.5rem; }
 
   // Style code highlight blocks
   figure.highlight {
