@@ -39,15 +39,15 @@ the site made them feel.
 ## The Actual Tests
 
 We ran four user tests with our first version of the site, and we learned a lot right away. First
-and foremost, we learned that a shocking 50% (two of four) of testers never got to our largest page
-- the state details page. To provide more context, Decarb My State has a homepage with a map that
+and foremost, we learned that a shocking 50% (two of four) of testers never got to our largest page -
+the state details page. To provide more context, Decarb My State has a homepage with a map that
 links to our largest pages, which provide details on every single state, including breakdowns of
 where their emissions come from by category and very specific solutions to each category of
 emissions. In the header we have our Take Action page (which we link at the end of each state's
 details page) and some supplemental pages like our About page and FAQ, but that one half of users
 essentially only experienced _the least important_ pages on our website.
 
-## Improving Navigation Clarity
+### Improving Navigation Clarity
 
 This was a huge miss, but it turns out there was a very simple explanation. Here's what the
 Decarb My State homepage looked like if you hovered over the state of Illinois on the map:
@@ -90,7 +90,7 @@ We ran some user tests after this change and found, as hoped, users immediately 
 the homepage map was a navigation tool and navigated to the state details page that we had invested
 most of our time in.
 
-## Encouraging Optimism With Our Wording
+### Encouraging Optimism With Our Wording
 
 Our second big opportunity for improvement came from some of the questions we asked to close out our
 user interviews. For our site, we asked the following questions after each session was done:
