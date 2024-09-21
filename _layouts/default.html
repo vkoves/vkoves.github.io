@@ -51,7 +51,17 @@
     </title>
 
     <meta name="theme-color" content="#D80000">
-    <meta name="description" content="{{ site.description }}">
+
+    <!-- Meta Description for Search + Social Media Description for Twitter & Open Graph -->
+    {% if page.excerpt %}
+        <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
+        <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
+        <meta name="description" content="{{ page.excerpt  | strip_html | strip }}">
+    {% else %}
+        <meta name="twitter:description" content="{{ site.description }}">
+        <meta property="og:description" content="{{ site.description }}">
+        <meta name="description" content="{{ site.description }}">
+    {% endif %}
 
     <!-- If metadata.image is provided, like ebike blog post, use that -->
     {% if page.metadata.image %}
@@ -66,15 +76,6 @@
     <!-- Social Media Title for Twitter & Open Graph -->
     <meta name="twitter:title" content="{{ pageTitle }}">
     <meta property="og:title" content="{{ pageTitle }}">
-
-    <!-- Social Media Description for Twitter & Open Graph -->
-    {% if page.excerpt %}
-        <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
-        <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
-    {% else %}
-        <meta name="twitter:description" content="{{ site.description }}">
-        <meta property="og:description" content="{{ site.description }}">
-    {% endif %}
 
     <meta name="viewport" content="width=450, initial-scale=0.75">
 
