@@ -1,6 +1,9 @@
-<img src="images/favicon.ico?raw=true" align="right" width="100">
+<h1>
+  Viktor Köves' Home Base
+  <img src="images/logo.png?raw=true" align="right" width="100">
+</h1>
 
-#  Viktor Köves' Home Base [![Build Status](https://travis-ci.org/vkoves/vkoves.github.io.svg?branch=master)](https://travis-ci.org/vkoves/vkoves.github.io)
+
 
 My personal website, used for everything from showcasing work to prototyping and messing around with HTML. Have suggestions or feedback? Open an issue.
 
