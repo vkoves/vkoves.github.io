@@ -53,8 +53,12 @@
     <meta name="theme-color" content="#D80000">
 
     <!-- Meta Description for Search + Social Media Description for Twitter & Open Graph -->
-    {% if page.excerpt %}
-        <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
+    {% if page.metadata.description %}
+        <meta name="twitter:description" content="{{ page.metadata.description }}">
+        <meta property="og:description" content="{{ page.metadata.description }}">
+        <meta name="description" content="{{ page.metadata.description }}">
+    {% elsif page.excerpt %}
+        <meta name="twitter:description" content="{{ page.excerpt }}">
         <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
         <meta name="description" content="{{ page.excerpt  | strip_html | strip }}">
     {% else %}

@@ -3,6 +3,9 @@ layout: post
 title: Your First EV Could Be A Cargo E-Bike
 metadata:
   image: https://viktorkoves.com/post-assets/ebike/ebike-social-image.png
+  description:
+    EVs are here, but I want to show you that your first EV could just be a
+    cargo e-bike that can replace most car trips, and save you a boat-load of money!
 stylesheets:
  - articles/ebike-article.css
 ---
