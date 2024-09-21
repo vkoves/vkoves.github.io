@@ -91,10 +91,10 @@ main.post {
   }
 
   .post-date {
-    display: inline-block;
     width: 100%;
     text-align: left;
     color: var(--text-color-faded);
+    margin-top: 0;
   }
 
   // Style blog blockquotes

@@ -9,7 +9,7 @@ thumbnail: images/project-thumbs/decarb-my-state.webp
 
 gallery:
   - {
-      url: /images/project-photos/decarb-my-state-il-power.png,
+      url: /images/project-photos/decarb-my-state-il-power.webp,
       alt: "Decarb My State screenshot showing information on Illinois. On the left side is a stacked
         line graph showing a breakdown of Illinois' emissions into buildings (15%), transport (26%),
         power (24%), and other (34%). On the right side is a pie chart showing power generation in
@@ -17,7 +17,7 @@ gallery:
         with 18% coal and 14% natural gas power not covered by the green arc"
     }
   - {
-      url: /images/project-photos/decarb-my-state-power-plant.png,
+      url: /images/project-photos/decarb-my-state-power-plant.webp,
       alt: "Decarb My State screenshot showing details for Elwood Energy Facility, a gas power plant
         in Will County, Illinois. There is a Quick Stats section that shows the capacity, the Annual
         net generation, and the annual CO2 emissions"
