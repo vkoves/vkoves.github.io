@@ -50,36 +50,30 @@
         {{ pageTitle }}
     </title>
 
-    {% if page.metadata %}
-        <meta name="theme-color" content="{{ page.metadata[0].theme_color }}">
-        <meta name="description" content="{{ page.metadata[0].description }}">
-        <meta property="og:description" content="{{ page.metadata[0].description }}" />
-        <meta property="og:image" content="{{ page.metadata[0].image }}" />
+    <meta name="theme-color" content="#D80000">
+    <meta name="description" content="{{ site.description }}">
 
-        <!-- Twitter Info -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="{{ page.metadata[0].og_title }}">
-        <meta property="twitter:description" content="{{ page.metadata[0].og_description }}" />
+    <!-- If metadata.image is provided, like ebike blog post, use that -->
+    {% if page.metadata.image %}
+        <meta property="og:image" content="{{ page.metadata.image }}" />
     {% else %}
-        <meta name="theme-color" content="#D80000">
-        <meta name="description" content="{{ site.description }}">
         <meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
+    {% endif %}
 
-        <!-- Twitter Info -->
-        <meta name="twitter:card" content="summary_large_image">
+    <!-- Twitter Info -->
+    <meta name="twitter:card" content="summary_large_image">
 
-        <!-- Social Media Title for Twitter & Open Graph -->
-        <meta name="twitter:title" content="{{ pageTitle }}">
-        <meta property="og:title" content="{{ pageTitle }}">
+    <!-- Social Media Title for Twitter & Open Graph -->
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta property="og:title" content="{{ pageTitle }}">
 
-        <!-- Social Media Description for Twitter & Open Graph -->
-        {% if page.excerpt %}
-            <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
-            <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
-        {% else %}
-            <meta name="twitter:description" content="{{ site.description }}">
-            <meta property="og:description" content="{{ site.description }}">
-        {% endif %}
+    <!-- Social Media Description for Twitter & Open Graph -->
+    {% if page.excerpt %}
+        <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip }}">
+        <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
+    {% else %}
+        <meta name="twitter:description" content="{{ site.description }}">
+        <meta property="og:description" content="{{ site.description }}">
     {% endif %}
 
     <meta name="viewport" content="width=450, initial-scale=0.75">

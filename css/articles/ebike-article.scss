@@ -19,6 +19,19 @@ main.content-limiter.-page {
 }
 
 main.post {
+  p.caption {
+    margin-top: 0.5rem;
+    font-size: 0.825rem;
+  }
+
+  ul {
+    margin-top: 1rem;
+    padding-left: 3rem;
+
+    li + li { margin-top: 1rem; }
+    p { margin: 0; }
+  }
+
   // Default images to a Polaroid look
   img {
     border: solid 0.55rem $white !important;
@@ -41,6 +54,66 @@ main.post {
   iframe {
     display: block;
     margin: auto;
+    max-width: 100%;
+    aspect-ratio: 2 / 1;
+    height: auto;
+  }
+}
+
+table.breakdown {
+  margin: auto;
+  border: solid 1px var(--dark-bg-color);
+  background-color: var(--light-bg-color);
+  padding: 1rem;
+  font-size: 0.875rem;
+
+  caption {
+    text-align: left;
+    font-size: 0.75rem;
+  }
+
+  td, th {
+    padding: 0.5rem 1rem;
+    border-bottom: solid 1px var(--bit-dark-bg-color);
+  }
+
+  th {
+    font-size: 0.75rem;
+    padding-bottom: 0.25rem;
+    text-align: left;
+    border-bottom: solid 1px var(--text-color);
+    background-color: var(--light-bg-color);
+  }
+
+  // Line item column
+  td:first-of-type {
+    padding-right: 2rem;
+    font-weight: 600;
+  }
+  td:not(:first-of-type) { text-align: right; }
+
+  // Row before total
+  tr.last-line td {
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+  }
+
+  // Total row
+  tr.total {
+    border-top: solid 1px var(--text-color);
+    font-weight: bold;
+    line-height: 1.25;
+
+    td { padding-top: 0.5rem; }
+    .smaller {
+      font-weight: normal;
+      font-size: 0.875em;
+    }
+  }
+
+  .emoji {
+    display: inline-block;
+    margin-right: 0.5rem;
   }
 }
 
@@ -66,10 +139,12 @@ main.post {
   }
 }
 
+// Three column image container
 main.post .three-cols {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2rem;
 
   img {
     width: 35%;
@@ -126,9 +201,29 @@ main.post .three-cols {
 
 }
 
+/** Mobile styling */
 @media (max-width: 1000px) {
   main.post {
-    .two-cols { display: block; }
+    ul { padding-left: 2rem; }
+
+    img { border-width: 0.25rem !important; }
+
+    .two-cols {
+      display: block;
+
+      // Two images, charging section
+      &.-imgs {
+        img { width: 70%; }
+
+        img:first-of-type { margin-left: 2rem; }
+        img:last-of-type {
+          position: relative;
+          margin-top: -1rem;
+          margin-right: 2rem;
+        }
+      }
+      &.-img-with-caption > * { width: 100%; }
+    }
 
     .three-cols {
       flex-direction: column;
@@ -153,6 +248,15 @@ main.post .three-cols {
       float: none;
       width: 100%;
       margin: 1rem auto;
+    }
+
+    table.breakdown {
+      font-size: 0.875rem;
+      margin-left: -25px;
+      margin-right: -25px;
+
+      caption { margin-left: 0.5rem; }
+      td, th { padding: 0.3rem 0.5rem; }
     }
   }
 }
