@@ -1,7 +1,7 @@
 ---
 layout: project
 name: Decarb My State
-order: 1
+order: 3
 
 subtitle: Charting a path to zero emissions for every U.S. state by combining disparate data sources
   into unified stories and visualizations.
@@ -34,4 +34,6 @@ Decarb My State is a project that came out of Chi Hack Night, a civic hacking gr
 wanted to create a resource that would help turn climate change from a national to state level
 issue, giving folks a more local context by breaking down the sources of emissions in their
 particular state into four simple categories and then showing folks how those category's emissions
-can be decarbonized. To learn more, <a href='https://decarbmystate.com/'>check out Decarb My State</a>.
+can be decarbonized.
+
+To learn more, <a href="https://decarbmystate.com">check out Decarb My State</a>.

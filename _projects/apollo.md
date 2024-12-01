@@ -22,4 +22,6 @@ tools:
   - HTML5
 ---
 
-Apollo started as an experiment using the Spotify API, and can visualize some of the data that Spotify computes on tracks, such as danceability, acousticness, and more. If you want to see how it works in action, <a href='http://viktorkoves.com/apollo'>try it out</a>.
+Apollo started as an experiment using the Spotify API, and can visualize some of the data that Spotify computes on tracks, such as danceability, acousticness, and more.
+
+If you want to see how it works in action, <a href='http://viktorkoves.com/apollo'>try out Apollo</a>!
