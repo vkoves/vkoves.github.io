@@ -52,17 +52,14 @@
 
     <meta name="theme-color" content="#D80000">
 
-    <!-- Meta Description for Search + Social Media Description for Twitter & Open Graph -->
+    <!-- Meta Description for Search + Social Media Description for Open Graph -->
     {% if page.metadata.description %}
-        <meta name="twitter:description" content="{{ page.metadata.description }}">
         <meta property="og:description" content="{{ page.metadata.description }}">
         <meta name="description" content="{{ page.metadata.description }}">
     {% elsif page.excerpt %}
-        <meta name="twitter:description" content="{{ page.excerpt }}">
         <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
         <meta name="description" content="{{ page.excerpt  | strip_html | strip }}">
     {% else %}
-        <meta name="twitter:description" content="{{ site.description }}">
         <meta property="og:description" content="{{ site.description }}">
         <meta name="description" content="{{ site.description }}">
     {% endif %}
@@ -74,11 +71,7 @@
         <meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
     {% endif %}
 
-    <!-- Twitter Info -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Social Media Title for Twitter & Open Graph -->
-    <meta name="twitter:title" content="{{ pageTitle }}">
+    <!-- Social Media Title Open Graph -->
     <meta property="og:title" content="{{ pageTitle }}">
 
     <meta name="viewport" content="width=450, initial-scale=0.75">
