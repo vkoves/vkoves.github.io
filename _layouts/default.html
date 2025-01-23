@@ -74,7 +74,11 @@
     <!-- Social Media Title Open Graph -->
     <meta property="og:title" content="{{ pageTitle }}">
 
-    <meta name="viewport" content="width=450, initial-scale=0.75">
+    <!--
+         Use device-width and initial-scale=1 to ensure mobile performance.
+         Learn more: https://developer.chrome.com/docs/lighthouse/best-practices/viewport
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--
         Enable View Transitions.

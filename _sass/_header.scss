@@ -1,4 +1,4 @@
-$header-mob-height: 72px;
+$header-mob-height: 65px;
 
 .site-header {
   position: fixed;
@@ -66,8 +66,8 @@ $header-mob-height: 72px;
   display: none;
   box-sizing: border-box;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   padding: 5px;
   background: none;
   border: none;
@@ -105,29 +105,36 @@ $header-mob-height: 72px;
 
   .site-header {
     height: $header-mob-height;
-    transition: height 0.3s;
     overflow: hidden;
-    font-size: 24px;
+    font-size: 22px;
+    // Setup transparent border for fade in on open
+    border-bottom: solid 3px transparent;
+    // Animate height and border
+    transition: height 0.3s, border-color 0.3s;
 
     &:not(.-open) {
       .header-buttons { display: none; }
     }
     &.-open {
-      height: $header-mob-height * 2;
+      height: $header-mob-height * 2 + 5px;
+      border-color: $white;
     }
 
     .header-inside { padding: 0; }
 
     .header-main {
-      width: 100%;
-      padding: 10px 0;
-    }
-    .header-buttons { padding: 10px 20px; }
-
-    .header-main {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .header-buttons {
+      float: none;
+      padding: 15px 0 20px 0px;
+
+      li + li { margin-left: 10px; }
     }
   }
 

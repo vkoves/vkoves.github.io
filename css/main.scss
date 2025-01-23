@@ -262,14 +262,6 @@ p { margin: 1.5rem 0; }
 .brand-color { color: $brand-red; }
 
 /**
- * Mobile styling
- */
-@media (max-width: 600px) {
-  // Increase root font-size for easier viewing - scales all rem elements
-  html { font-size: 22px; }
-}
-
-/**
  * Gallery Plugin Styling
  */
 .overlay-transparent {
