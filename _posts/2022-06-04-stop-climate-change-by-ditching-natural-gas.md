@@ -172,7 +172,7 @@ your home, I'd encourage you to check out these resources:
 </ul>
 
 
-Lastly, I want to plug [Decarbonize My State](https://decarbonizemystate.com/),
+Lastly, I want to plug [Decarbonize My State](https://decarbmystate.com/),
 a project I've contributed to that seeks to help visualize emissions
 information on a state-by-state basis. If you're curious what the biggest sources
 of emissions are in your state, I'd encourage you to check it out.

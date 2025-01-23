@@ -50,7 +50,7 @@ This will build the Jekyll site and then run it through validation with
 
 ## Notable Pages
 
-- [Apollo](http://viktorkoves.com/apollo) -
+- [Apollo](https://viktorkoves.com/apollo) -
 	Spotify API powered tool for learning more about songs. It is now hosted on [its own repository](https://github.com/vkoves/apollo).
 - [Christmas In Clouds](https://viktorkoves.com/projects/christmas-in-clouds/) -
 	The homepage for a festive game I made for the holidays in the Unity game engine.
