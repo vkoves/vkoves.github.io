@@ -5,9 +5,9 @@
  * Homepage (index) styling
  */
 
-@import 'variables/animation';
-@import 'variables/colors';
-@import 'variables/sizing';
+@use 'variables/animation' as *;
+@use 'variables/colors' as *;
+@use 'variables/sizing' as *;
 
 body, .text-cont > * { background-color: var(--intense-bg-color); }
 

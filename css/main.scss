@@ -1,13 +1,13 @@
 ---
 ---
 
-@import 'variables/colors';
-@import 'variables/sizing';
+@use 'variables/colors' as *;
+@use 'variables/sizing' as *;
 
-@import 'header';
-@import 'footer';
-@import 'shapes';
-@import 'reset';
+@use 'header' as *;
+@use 'footer' as *;
+@use 'shapes' as *;
+@use 'reset' as *;
 
 /**
  * Use CSS variables for main background and text color

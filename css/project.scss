@@ -6,7 +6,7 @@
  * pages.
  */
 
-@import 'variables/colors';
+@use 'variables/colors' as *;
 
 main.content-limiter.project {
   // Make page full width for hero

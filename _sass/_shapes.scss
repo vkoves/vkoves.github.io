@@ -1,6 +1,8 @@
-@import 'variables/animation';
-@import 'variables/colors';
-@import 'variables/sizing';
+@use 'sass:math';
+
+@use 'variables/animation' as *;
+@use 'variables/colors' as *;
+@use 'variables/sizing' as *;
 
 /**
  * Styling for the shapes that I have drifting around on the top of the homepage
@@ -153,24 +155,26 @@
 
 $x-shift: 1rem;
 $y-shift: 2rem;
+$halfXShift: math.div($x-shift, 2);
+$halfYShift: math.div($y-shift, 2);
 
 // Move diagonally
 @keyframes drift1 {
   0% {
-    transform: translate(-($x-shift / 2), -($y-shift / 2));
+    transform: translate(-$halfXShift, -$halfYShift);
   }
 
   100% {
-    transform: translate(($x-shift / 2), ($y-shift / 2));
+    transform: translate($halfXShift, $halfYShift);
   }
 }
 
 @keyframes drift2 {
   0% {
-    transform: translate(($x-shift / 2), ($y-shift / 2));
+    transform: translate($halfXShift, $halfYShift);
   }
 
   100% {
-    transform: translate(-($x-shift / 2), -($y-shift / 2));
+    transform: translate(-$halfXShift, -$halfYShift);
   }
 }
