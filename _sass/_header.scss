@@ -62,11 +62,12 @@ $header-mob-height: 72px;
 
 .header-buttons li + li { margin-left: 5px; }
 
-.menu-btn {
+.mob-menu-btn {
   display: none;
   box-sizing: border-box;
   cursor: pointer;
   width: 50px;
+  height: 50px;
   padding: 5px;
   background: none;
   border: none;
@@ -95,7 +96,12 @@ $header-mob-height: 72px;
 @media (max-width: 600px) {
   body { padding-top: $header-mob-height !important; }
 
-  .menu-btn { display: block; }
+  .mob-menu-btn {
+    display: block;
+    // By setting the image via CSS, it's only loaded if this media query is hit
+    background-image: url('/images/menu.svg');
+    background-size: auto 100%;
+  }
 
   .site-header {
     height: $header-mob-height;
