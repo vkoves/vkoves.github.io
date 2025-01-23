@@ -46,7 +46,10 @@ This will build the Jekyll site and then run it through validation with
 - Gallery functionality - Powered by jQuery and some nifty CSS3, this animated gallery shows off some visual parts of my work, including a way to view titles and descriptions. The gallery images are dynamically loaded in using Javascript.
 
 - Work - List of projects, each with its own gallery of images, description, and set of tools. This is generated via a Jekyll collection for SEO and performance.
+`
+## Run Linting
 
+To run ESLint, run `yarn lint` or `yarn lint-fix` to autofix issues.
 
 ## Notable Pages
 

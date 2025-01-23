@@ -1,5 +1,42 @@
-/* globals setPageBlur */
 /* exported Gallery */
+
+/**
+ * General page functions
+ */
+
+// Blur the page and disable focus on it
+function setPageBlur(enableBlur)
+{
+    var elems = $('#header, .page-container, .footer');
+    var tabbableElements = $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]');
+
+    if (enableBlur) {
+        elems.addClass('blur');
+        disableTabbingOnPage(tabbableElements);
+    }
+    else {
+        elems.removeClass('blur');
+        reEnableTabbingOnPage(tabbableElements);
+    }
+}
+
+// Source: https://www.webappcessibility.com/technical/keeping-tab-focus-within-modals/
+function disableTabbingOnPage(tabbableElements) {
+    $.each(tabbableElements, function (index, elem) {
+    // Ensure not in main modal, info modal or modal controls
+        if($(elem).parents('#overlay-controls').length == 0
+            && $(elem).parents('#overlay-main').length == 0
+            && $(elem).parents('#overlay-info').length == 0) {
+            $(elem).attr('tabindex', '-1');
+        }
+    });
+}
+
+function reEnableTabbingOnPage(tabbableElements) {
+    $.each(tabbableElements, function (index, elem) {
+        $(elem).attr('tabindex', '0');
+    });
+}
 
 // instantiates a gallery given a gallery data object, which contains info about all images to display
 // this can be either an array of hashes if you want more information in each gallery item
