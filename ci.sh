@@ -9,7 +9,6 @@ set -e
 # Run HTML Proofer with the following parameters:
 #
 # --allow-hash-href				- Fix href="#" being marked as invalid
-# --check_html					- Check for HTML errors using Nokogiri
 # --disable-external			- Don't run external link checks - often doesn't work anyhow
 # --ignore_empty_alt            - Allow empty alt tags for decorative images
 #
