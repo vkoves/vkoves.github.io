@@ -16,7 +16,10 @@ stylesheets:
         {% include svgs/pentagon.svg %}
       </div>
 
-      <img src="images/headshot-bike.webp"
+      <!-- Load 400px image unless we're on a high density (2x) display -->
+      <img
+        src="images/headshot-bike-400p.webp"
+        srcset="images/headshot-bike.webp 2x"
         alt="Photo of Viktor Köves on his White Gazelle ebike, riding down Chicago's Lakefront trail
           past a tennis court, wearing shorts, a t-shirt and sunglasses">
     </div>
