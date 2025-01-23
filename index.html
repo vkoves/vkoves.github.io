@@ -16,7 +16,9 @@ stylesheets:
         {% include svgs/pentagon.svg %}
       </div>
 
-      <img src="images/headshot-bike.webp"
+      <!-- Load 400px image unless we're on a high density (2x) display -->
+      <img
+        srcset="images/headshot-bike-400p.webp 1x, images/headshot-bike.webp 2x"
         alt="Photo of Viktor Köves on his White Gazelle ebike, riding down Chicago's Lakefront trail
           past a tennis court, wearing shorts, a t-shirt and sunglasses">
     </div>
@@ -31,7 +33,7 @@ stylesheets:
       <p>
         Need help leveling up your web presence or accessibility?
         Drop me a line at
-        <a href="mailto:contact@viktorkoves.com">contact@viktorkoves.com</a>
+        <a href="mailto:contact@viktorkoves.com" class="-underline">contact@viktorkoves.com</a>
       </p>
     </div>
   </div>

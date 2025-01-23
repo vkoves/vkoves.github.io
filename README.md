@@ -46,11 +46,14 @@ This will build the Jekyll site and then run it through validation with
 - Gallery functionality - Powered by jQuery and some nifty CSS3, this animated gallery shows off some visual parts of my work, including a way to view titles and descriptions. The gallery images are dynamically loaded in using Javascript.
 
 - Work - List of projects, each with its own gallery of images, description, and set of tools. This is generated via a Jekyll collection for SEO and performance.
+`
+## Run Linting
 
+To run ESLint, run `yarn lint` or `yarn lint-fix` to autofix issues.
 
 ## Notable Pages
 
-- [Apollo](http://viktorkoves.com/apollo) -
+- [Apollo](https://viktorkoves.com/apollo) -
 	Spotify API powered tool for learning more about songs. It is now hosted on [its own repository](https://github.com/vkoves/apollo).
 - [Christmas In Clouds](https://viktorkoves.com/projects/christmas-in-clouds/) -
 	The homepage for a festive game I made for the holidays in the Unity game engine.

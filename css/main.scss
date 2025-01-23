@@ -1,13 +1,13 @@
 ---
 ---
 
-@import 'variables/colors';
-@import 'variables/sizing';
+@use 'variables/colors' as *;
+@use 'variables/sizing' as *;
 
-@import 'header';
-@import 'footer';
-@import 'shapes';
-@import 'reset';
+@use 'header' as *;
+@use 'footer' as *;
+@use 'shapes' as *;
+@use 'reset' as *;
 
 /**
  * Use CSS variables for main background and text color
@@ -154,8 +154,11 @@ button, a {
 // Make all basic links a dark red without an underline and then switch to
 // darkest red and underline on hover/focus
 a {
-  text-decoration: none;
+  // only hide text-decoration via color to ensure high contrast modes still have it
+  text-decoration-color: transparent;
   color: var(--brand-text-color);
+
+  &.-underline { text-decoration-color: initial; }
 
   &:hover, &:focus {
     text-decoration: underline;
@@ -260,14 +263,6 @@ p { margin: 1.5rem 0; }
 }
 
 .brand-color { color: $brand-red; }
-
-/**
- * Mobile styling
- */
-@media (max-width: 600px) {
-  // Increase root font-size for easier viewing - scales all rem elements
-  html { font-size: 22px; }
-}
 
 /**
  * Gallery Plugin Styling

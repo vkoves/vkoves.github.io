@@ -3,9 +3,7 @@
 <head>
     <link href="/css/main.css" rel="stylesheet">
 
-    <!-- jQuery and main.js are not used for render, just interaction like the
-        mobile menu. Since main.js needs jQuery, we use defer instead of async -->
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Load main.js without blocking render (via defer) -->
     <script defer src="/js/main.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="/images/favicon.ico"/>
@@ -20,13 +18,20 @@
         <link href="/css/{{  stylesheet }}" rel="stylesheet">
     {% endfor %}
 
-    <!-- Mark all page specific JS deferred so it waits for jQuery and doesn't
-            block render -->
+    <!-- Mark all page specific JS deferred so it doesn't block render -->
     {% for script in layout.scripts %}
-        <script defer src="/js/{{ script }}"></script>
+        {% if script contains 'https://' %}
+          <script defer src="{{ script }}"></script>
+        {% else %}
+          <script defer src="/js/{{ script }}"></script>
+        {% endif %}
     {% endfor %}
     {% for script in page.scripts %}
-        <script defer src="/js/{{ script }}"></script>
+        {% if script contains 'https://' %}
+          <script defer src="{{ script }}"></script>
+        {% else %}
+          <script defer src="/js/{{ script }}"></script>
+        {% endif %}
     {% endfor %}
 
     <title>
@@ -52,17 +57,14 @@
 
     <meta name="theme-color" content="#D80000">
 
-    <!-- Meta Description for Search + Social Media Description for Twitter & Open Graph -->
+    <!-- Meta Description for Search + Social Media Description for Open Graph -->
     {% if page.metadata.description %}
-        <meta name="twitter:description" content="{{ page.metadata.description }}">
         <meta property="og:description" content="{{ page.metadata.description }}">
         <meta name="description" content="{{ page.metadata.description }}">
     {% elsif page.excerpt %}
-        <meta name="twitter:description" content="{{ page.excerpt }}">
         <meta property="og:description" content="{{ page.excerpt  | strip_html | strip }}">
         <meta name="description" content="{{ page.excerpt  | strip_html | strip }}">
     {% else %}
-        <meta name="twitter:description" content="{{ site.description }}">
         <meta property="og:description" content="{{ site.description }}">
         <meta name="description" content="{{ site.description }}">
     {% endif %}
@@ -71,17 +73,17 @@
     {% if page.metadata.image %}
         <meta property="og:image" content="{{ page.metadata.image }}" />
     {% else %}
-        <meta property="og:image" content="http://viktorkoves.com/images/social-image.png" />
+        <meta property="og:image" content="https://viktorkoves.com/images/social-image.png" />
     {% endif %}
 
-    <!-- Twitter Info -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Social Media Title for Twitter & Open Graph -->
-    <meta name="twitter:title" content="{{ pageTitle }}">
+    <!-- Social Media Title Open Graph -->
     <meta property="og:title" content="{{ pageTitle }}">
 
-    <meta name="viewport" content="width=450, initial-scale=0.75">
+    <!--
+         Use device-width and initial-scale=1 to ensure mobile performance.
+         Learn more: https://developer.chrome.com/docs/lighthouse/best-practices/viewport
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--
         Enable View Transitions.

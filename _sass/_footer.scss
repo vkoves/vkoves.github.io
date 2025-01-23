@@ -1,3 +1,5 @@
+@use 'variables/colors' as *;
+
 .footer {
   width: 100%;
   padding: 15px 0px;
@@ -31,17 +33,10 @@
   border-radius: 10rem;
 }
 
-.social-bar .github {
+.social-bar .icon {
   background-image: url("../images/social-media-icons/icons.svg");
-  background-position: 0 0%;
-}
 
-.social-bar .twitter {
-  background-image: url("../images/social-media-icons/icons.svg");
-  background-position: 0 100%;
-}
-
-.social-bar .linkedin {
-  background-image: url("../images/social-media-icons/icons.svg");
-  background-position: 0 50%;
+  &.github { background-position: 0 0%; }
+  &.bluesky { background-position: 0 100%; }
+  &.linkedin { background-position: 0 50%; }
 }

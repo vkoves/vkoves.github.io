@@ -5,6 +5,10 @@ ruby "3.3.6"
 
 gem "jekyll", "4.3.4"
 
+# For safe_yaml under jekyll, see: https://github.com/dtao/safe_yaml/issues/108
+gem "csv"
+gem "base64"
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
 end

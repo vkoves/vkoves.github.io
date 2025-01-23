@@ -5,8 +5,8 @@
  * CSS for the Writing Page - also imported on posts
  */
 
-@import 'variables/colors';
-@import 'variables/sizing';
+@use 'variables/colors' as *;
+@use 'variables/sizing' as *;
 
 main.content-limiter.-page {
   // Limit page width to a smaller size to make lines of text the perfect length

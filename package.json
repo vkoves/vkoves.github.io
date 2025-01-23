@@ -1,6 +1,11 @@
 {
   "name": "vkoves.github.io",
   "version": "1.0.0",
+  "scripts": {
+    "lint": "npx eslint js/",
+    "lint-fix": "yarn lint --fix",
+    "htmlproofer": "htmlproofer ./_site --allow-hash-href  --enforce_https --disable_external --ignore-empty-alt"
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.0",
