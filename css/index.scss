@@ -217,6 +217,7 @@ section.first-sect {
     color: $brand-red;
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
 
     &:hover, &:focus {
       color: $dark-red;

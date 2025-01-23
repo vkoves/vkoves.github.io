@@ -36,7 +36,8 @@ $header-mob-height: 65px;
     transition: color 0.2s, padding 0.2s, background 0.2s;
     padding: 5px 15px;
 
-    &, &:hover, &:focus { text-decoration: none; }
+    // Accessibly hide underline so high contrast mode can bring it back
+    &, &:hover, &:focus { text-decoration-color: transparent; }
 
     &:hover, &:focus, &.hire-me {
       color: $dark-grey;
