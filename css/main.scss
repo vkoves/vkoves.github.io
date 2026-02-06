@@ -27,6 +27,11 @@
   --brand-text-color-focused: #{$darkest-red};
 }
 
+
+@view-transition {
+  navigation: auto;
+}
+
 // Dark mode styling
 @media (prefers-color-scheme: dark) {
     :root {
