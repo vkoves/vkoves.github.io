@@ -1,0 +1,229 @@
+---
+---
+
+@import 'variables/colors';
+@import 'variables/sizing';
+
+h2 {
+  border-left: 5px solid transparent;
+  padding-left: 0.5rem;
+  margin-left: -0.5rem;
+  transition: border-color 0.3s ease;
+  scroll-margin-top: 300px;
+}
+
+h2.-active-section {
+  border-color: $brand-red;
+}
+
+.trip-progress {
+  background: var(--light-bg-color);
+  border-bottom: 2px solid $mid-grey;
+  padding: 0.5rem 1rem 0.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 2px 3px #0000006b;
+  border-radius: 10rem;
+}
+
+.trip-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.trip-days__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-color-faded);
+  white-space: nowrap;
+}
+
+.trip-track {
+  position: relative;
+  height: 3.75rem;
+  flex: 1;
+
+  // Line sits at the center of the dot row: 20px icon + 4px gap + 10px (half dot) = 34px
+  &__line {
+    position: absolute;
+    top: 33px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--dark-bg-color);
+  }
+
+  &__progress {
+    position: absolute;
+    top: 33px;
+    left: 0;
+    height: 2px;
+    background: $brand-red;
+    transition: width 0.5s ease;
+  }
+
+  &__divider {
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: var(--dark-bg-color);
+    transform: translateX(-50%);
+  }
+
+  &__car {
+    position: absolute;
+    top: 1.45rem;
+    width: 3rem;
+    transform: translateX(-50%);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 3;
+  }
+}
+
+.trip-stop {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: inherit;
+
+  &:focus-visible {
+    outline: 2px solid $brand-red;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 2;
+    transition: filter 0.3s;
+  }
+
+  &:hover .trip-stop__icon {
+    filter: invert(14%) sepia(89%) saturate(4680%) hue-rotate(3deg) brightness(85%) contrast(115%);
+  }
+
+  &__dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--light-bg-color);
+    border: 2px solid var(--dark-bg-color);
+    transition: border-color 0.3s;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__label {
+    font-size: 0.65rem;
+    color: var(--text-color-faded);
+    white-space: nowrap;
+    margin-top: 0.3rem;
+    transition: color 0.3s;
+  }
+
+  &.-visited {
+    .trip-stop__dot {
+      background: $brand-red;
+      border-color: $brand-red;
+
+      &::after {
+        content: '✓';
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+      }
+    }
+
+    .trip-stop__icon {
+      filter: invert(14%) sepia(89%) saturate(4680%) hue-rotate(3deg) brightness(85%) contrast(115%);
+    }
+
+    .trip-stop__label {
+      color: var(--text-color);
+    }
+  }
+
+  &.-active {
+    .trip-stop__dot {
+      background: $brand-red;
+      border-color: $brand-red;
+      box-shadow: 0 0 0 3px rgba($brand-red, 0.2);
+    }
+
+    .trip-stop__icon {
+      filter: drop-shadow(0 0 3px rgba($brand-red, 0.4)) invert(14%) sepia(89%) saturate(4680%) hue-rotate(3deg) brightness(85%) contrast(115%);
+    }
+
+    .trip-stop__label {
+      font-weight: 700;
+      color: var(--brand-text-color);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .trip-stop__icon {
+    filter: invert(1);
+  }
+
+  // In dark mode --dark-bg-color == --light-bg-color, so use a lighter color
+  // for lines and borders to create contrast against the dark bar background
+  .trip-track__line,
+  .trip-track__divider {
+    background: var(--text-color-faded);
+  }
+
+  .trip-stop__dot {
+    border-color: var(--text-color-faded);
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .trip-progress {
+    border-radius: 0.5rem;
+    margin: 0 -0.7rem;
+  }
+
+  .trip-row {
+    padding: 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .trip-days__label {
+    width: 45%;
+    text-align: center;
+  }
+
+  // Move track below Day 1 & Day 2 labels
+  .trip-track {
+    order: 3;
+    flex-basis: 100%;
+    max-width: 90%;
+    margin: auto;
+  }
+}
