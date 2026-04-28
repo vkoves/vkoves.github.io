@@ -7,33 +7,41 @@
     preserveExif: true,
   };
 
+  // Files staged for conversion (not yet processed)
+  let pendingFiles = [];
+  // Blob URLs created for preview thumbnails — revoked on next preview update
+  let previewUrls = [];
+
   let fileIdCounter = 0;
   // Map of id -> { file, status: 'processing'|'done'|'error', result: {blob, name} | null }
   const fileEntries = new Map();
 
   // DOM refs
-  const dropZone       = document.getElementById('drop-zone');
-  const fileInput      = document.getElementById('file-input');
-  const selectFilesBtn = document.getElementById('select-files-btn');
-  const formatSelect   = document.getElementById('output-format');
-  const qualitySlider  = document.getElementById('quality-slider');
-  const qualityValue   = document.getElementById('quality-value');
-  const qualitySetting = document.getElementById('quality-setting');
-  const exifSetting    = document.getElementById('exif-setting');
-  const exifNote       = document.getElementById('exif-note');
-  const preserveExif   = document.getElementById('preserve-exif');
-  const resultsSection = document.getElementById('results-section');
-  const resultsList    = document.getElementById('results-list');
-  const downloadAllBtn = document.getElementById('download-all-btn');
+  const dropZone        = document.getElementById('drop-zone');
+  const fileInput       = document.getElementById('file-input');
+  const selectFilesBtn  = document.getElementById('select-files-btn');
+  const formatSelect    = document.getElementById('output-format');
+  const qualitySlider   = document.getElementById('quality-slider');
+  const qualityValue    = document.getElementById('quality-value');
+  const qualitySetting  = document.getElementById('quality-setting');
+  const exifSetting     = document.getElementById('exif-setting');
+  const exifNote        = document.getElementById('exif-note');
+  const preserveExifEl  = document.getElementById('preserve-exif');
+  const previewSection  = document.getElementById('preview-section');
+  const previewThumbs   = document.getElementById('preview-thumbnails');
+  const previewCount    = document.getElementById('preview-count');
+  const clearBtn        = document.getElementById('clear-btn');
+  const convertBtn      = document.getElementById('convert-btn');
+  const resultsSection  = document.getElementById('results-section');
+  const resultsList     = document.getElementById('results-list');
+  const downloadAllBtn  = document.getElementById('download-all-btn');
 
   // ── Settings ──────────────────────────────────────────────────────────────
 
   function updateExifNote() {
-    if (state.format !== 'image/jpeg') {
-      exifNote.textContent = 'EXIF can only be preserved in JPEG → JPEG conversions.';
-    } else {
-      exifNote.textContent = '';
-    }
+    exifNote.textContent = state.format !== 'image/jpeg'
+      ? 'EXIF can only be preserved in JPEG → JPEG conversions.'
+      : '';
   }
 
   formatSelect.addEventListener('change', () => {
@@ -47,16 +55,16 @@
     qualityValue.textContent = qualitySlider.value;
   });
 
-  preserveExif.addEventListener('change', () => {
-    state.preserveExif = preserveExif.checked;
+  preserveExifEl.addEventListener('change', () => {
+    state.preserveExif = preserveExifEl.checked;
   });
 
   // ── File input & drag-drop ────────────────────────────────────────────────
 
-  selectFilesBtn.addEventListener('click', () => fileInput.click());
+  dropZone.addEventListener('click', () => fileInput.click());
 
   fileInput.addEventListener('change', () => {
-    handleFiles(Array.from(fileInput.files));
+    stageFiles(Array.from(fileInput.files));
     fileInput.value = '';
   });
 
@@ -77,7 +85,7 @@
     const images = Array.from(e.dataTransfer.files).filter((f) =>
       f.type.startsWith('image/')
     );
-    handleFiles(images);
+    stageFiles(images);
   });
 
   dropZone.addEventListener('keydown', (e) => {
@@ -87,15 +95,82 @@
     }
   });
 
+  clearBtn.addEventListener('click', clearPending);
+  convertBtn.addEventListener('click', convertAll);
   downloadAllBtn.addEventListener('click', downloadAll);
 
-  // ── Processing ────────────────────────────────────────────────────────────
+  // ── Staging & preview ─────────────────────────────────────────────────────
 
-  function handleFiles(files) {
+  function stageFiles(files) {
     if (!files.length) return;
+    pendingFiles = pendingFiles.concat(files);
+    updatePreview();
+  }
+
+  function clearPending() {
+    pendingFiles = [];
+    updatePreview();
+  }
+
+  function updatePreview() {
+    // Revoke old object URLs to free memory
+    previewUrls.forEach((u) => URL.revokeObjectURL(u));
+    previewUrls = [];
+    previewThumbs.innerHTML = '';
+
+    const total = pendingFiles.length;
+
+    if (total === 0) {
+      previewSection.hidden = true;
+      convertBtn.disabled = true;
+      return;
+    }
+
+    previewSection.hidden = false;
+    convertBtn.disabled = false;
+    previewCount.textContent = `${total} image${total === 1 ? '' : 's'} selected`;
+
+    // Show up to 4 thumbnails; if total > 4 the 4th slot is an overflow badge
+    const slotCount  = Math.min(total, 4);
+    const overflow   = total > 4 ? total - 3 : 0; // how many are hidden
+
+    for (let i = 0; i < slotCount; i++) {
+      const file = pendingFiles[i];
+      const isOverflow = overflow > 0 && i === 3;
+
+      const url = URL.createObjectURL(file);
+      previewUrls.push(url);
+
+      const thumb = document.createElement('div');
+      thumb.className = 'preview-thumb' + (isOverflow ? ' -overflow' : '');
+
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = file.name;
+      thumb.appendChild(img);
+
+      if (isOverflow) {
+        const badge = document.createElement('span');
+        badge.className = 'preview-thumb__badge';
+        badge.textContent = `+${overflow}`;
+        thumb.appendChild(badge);
+      }
+
+      previewThumbs.appendChild(thumb);
+    }
+  }
+
+  // ── Conversion ────────────────────────────────────────────────────────────
+
+  function convertAll() {
+    if (!pendingFiles.length) return;
+
+    const toProcess = pendingFiles.slice();
+    clearPending(); // clear the queue immediately so users can stage another batch
+
     resultsSection.hidden = false;
 
-    files.forEach((file) => {
+    toProcess.forEach((file) => {
       const id = ++fileIdCounter;
       fileEntries.set(id, { file, status: 'processing', result: null });
       addResultRow(id, file);
@@ -208,7 +283,6 @@
     if (!ready.length) return;
 
     if (!window.JSZip) {
-      // Fallback: staggered individual downloads
       let delay = 0;
       ready.forEach((e) => {
         setTimeout(() => triggerDownload(e.result.blob, e.result.name), delay);
@@ -287,7 +361,7 @@
 
   function truncateName(name, max = 32) {
     if (name.length <= max) return name;
-    const ext  = name.match(/\.[^.]+$/)?.[0] ?? '';
+    const ext = name.match(/\.[^.]+$/)?.[0] ?? '';
     return name.slice(0, max - ext.length - 1) + '…' + ext;
   }
 
