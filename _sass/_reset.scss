@@ -45,3 +45,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* Ensure the [hidden] attribute works even when elements like <section> have
+   display: block set above by this reset. */
+[hidden] { display: none !important; }

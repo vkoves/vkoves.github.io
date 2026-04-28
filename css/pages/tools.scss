@@ -1,0 +1,49 @@
+---
+---
+
+@use 'variables/colors' as *;
+@use 'variables/sizing' as *;
+
+.tools-intro {
+  max-width: $thin-width;
+  color: var(--text-color-faded);
+  margin-bottom: 2rem;
+}
+
+.tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tool-card {
+  display: block;
+  max-width: $thin-width;
+  padding: 1.5rem;
+  border: 1px solid var(--dark-bg-color);
+  border-radius: 8px;
+  background: var(--light-bg-color);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  h2 {
+    font-size: 1.4rem;
+    color: var(--brand-text-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-color-faded);
+    font-size: 0.95rem;
+  }
+
+  &:hover {
+    border-color: var(--brand-bg-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h2 { color: var(--brand-text-color-focused); }
+  }
+}

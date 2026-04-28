@@ -30,7 +30,7 @@ The site should be hosted for you at `localhost:4000`.
 
 ## Testing
 
-This site uses Travis for CI, but you can run the CI locally by running:
+This site used to use Travis for CI, but you can run the CI locally by running:
 
 ```shell
 ./ci.sh
