@@ -425,10 +425,14 @@
    * @param {File} file
    */
   function addResultRow(id, file) {
+    const thumbUrl = URL.createObjectURL(file);
     const li = document.createElement('li');
     li.id = `result-${id}`;
     li.className = 'result-item';
     li.innerHTML = `
+      <span class="result-item__thumb">
+        <img src="${escapeHtml(thumbUrl)}" alt="" class="result-item__thumb-img">
+      </span>
       <span class="result-item__name" title="${escapeHtml(file.name)}">${escapeHtml(truncateName(file.name))}</span>
       <span class="result-item__original">${formatBytes(file.size)}</span>
       <span class="result-item__compressed">Processing…</span>
