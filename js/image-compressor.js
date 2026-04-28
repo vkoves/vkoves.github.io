@@ -21,8 +21,11 @@
   let conversionDone  = 0;
 
   // Running totals for the summary panel (accumulate across all batches)
-  let summaryOrigBytes = 0;
-  let summaryCompBytes = 0;
+  let summaryOrigBytes  = 0;
+  let summaryCompBytes  = 0;
+  let summaryFileCount  = 0;
+  let summaryMinBytes   = Infinity;
+  let summaryMaxBytes   = 0;
 
   // Sample preview state
   // Array of { file, origUrl, compUrl, origSize, compSize, settingsLabel }
@@ -53,6 +56,10 @@
   const summaryOrigEl    = document.getElementById('summary-original');
   const summaryCompEl    = document.getElementById('summary-compressed');
   const summarySavingsEl = document.getElementById('summary-savings');
+  const statsDetailEl    = document.getElementById('results-stats-detail');
+  const summaryAvgEl     = document.getElementById('summary-avg');
+  const summaryMaxEl     = document.getElementById('summary-max');
+  const summaryMinEl     = document.getElementById('summary-min');
   const toggleFilesBtn   = document.getElementById('toggle-files-btn');
   const filesTable       = document.getElementById('files-table');
   const resultsList      = document.getElementById('results-list');
@@ -72,6 +79,7 @@
 
   // ── Settings ──────────────────────────────────────────────────────────────
 
+  /** Shows a note when EXIF preservation is unavailable for the selected format. */
   function updateExifNote() {
     exifNote.textContent = state.format !== 'image/jpeg'
       ? 'EXIF can only be preserved in JPEG → JPEG conversions.'
@@ -142,17 +150,24 @@
 
   // ── Staging & preview ─────────────────────────────────────────────────────
 
+  /** Appends files to the pending queue and refreshes the preview strip. */
   function stageFiles(files) {
     if (!files.length) return;
     pendingFiles = pendingFiles.concat(files);
     updatePreview();
   }
 
+  /** Empties the pending queue and hides the preview strip. */
   function clearPending() {
     pendingFiles = [];
     updatePreview();
   }
 
+  /**
+   * Rebuilds the thumbnail strip from pendingFiles.
+   * Shows up to 4 thumbnails; if more than 4 files are pending the 4th slot
+   * becomes an overflow badge showing the hidden count.
+   */
   function updatePreview() {
     previewUrls.forEach((u) => URL.revokeObjectURL(u));
     previewUrls = [];
@@ -166,7 +181,6 @@
     updateConvertBtn();
 
     if (!hasFiles) {
-      // Hide sample results when files are cleared
       sampleList.hidden = true;
       sampleList.innerHTML = '';
       return;
@@ -174,7 +188,6 @@
 
     previewCount.textContent = `${total} image${total === 1 ? '' : 's'} selected`;
 
-    // Show up to 4 thumbnails; if total > 4 the 4th slot is an overflow badge
     const slotCount = Math.min(total, 4);
     const overflow  = total > 4 ? total - 3 : 0;
 
@@ -208,6 +221,10 @@
 
   sampleBtn.addEventListener('click', runSamplePreview);
 
+  /**
+   * Compresses up to the first 4 pending files at the current settings and
+   * populates the sample comparison list without adding them to the results.
+   */
   async function runSamplePreview() {
     const files = pendingFiles.slice(0, 4);
     if (!files.length) return;
@@ -215,7 +232,6 @@
     sampleBtn.disabled = true;
     sampleBtn.textContent = 'Processing…';
 
-    // Revoke previous sample URLs
     sampleUrls.forEach((u) => URL.revokeObjectURL(u));
     sampleUrls = [];
     sampleData = [];
@@ -238,6 +254,7 @@
     sampleBtn.textContent = 'Re-run preview';
   }
 
+  /** Renders the sample comparison list from the current sampleData. */
   function renderSampleList() {
     sampleList.innerHTML = '';
     sampleData.forEach((item, i) => {
@@ -273,6 +290,7 @@
     if (e.key === 'ArrowRight')  navigateModal(1);
   });
 
+  /** Opens the comparison modal at the given sampleData index. */
   function openModal(index) {
     modalIndex = index;
     renderModal();
@@ -281,16 +299,19 @@
     modalClose.focus();
   }
 
+  /** Closes the comparison modal and restores page scrolling. */
   function closeModal() {
     modal.hidden = true;
     document.body.style.overflow = '';
   }
 
+  /** Advances the modal by dir (+1 or -1), wrapping around. */
   function navigateModal(dir) {
     modalIndex = (modalIndex + dir + sampleData.length) % sampleData.length;
     renderModal();
   }
 
+  /** Populates modal content from the current modalIndex entry in sampleData. */
   function renderModal() {
     const item  = sampleData[modalIndex];
     const count = sampleData.length;
@@ -314,7 +335,14 @@
 
   // ── Core compression ──────────────────────────────────────────────────────
 
-  // Shared by both processFile (batch) and runSamplePreview
+  /**
+   * Compresses a File to a Blob using the current state settings.
+   * Handles EXIF extraction and re-injection for JPEG → JPEG conversions,
+   * resetting the orientation tag since the canvas already applies it.
+   *
+   * @param {File} file
+   * @returns {Promise<Blob>}
+   */
   async function compressFileToBlob(file) {
     const dataUrl = await readAsDataUrl(file);
 
@@ -345,15 +373,23 @@
     return dataUrlToBlob(outputDataUrl);
   }
 
+  /** Refreshes the before/after summary panel and per-file stats from the running totals. */
   function updateSummary() {
     summaryOrigEl.textContent = formatBytes(summaryOrigBytes);
     summaryCompEl.textContent = formatBytes(summaryCompBytes);
+
     const saved = (1 - summaryCompBytes / summaryOrigBytes) * 100;
     summarySavingsEl.textContent = saved >= 0
       ? `${saved.toFixed(1)}% smaller`
       : `${Math.abs(saved).toFixed(1)}% larger`;
+
+    summaryAvgEl.textContent = formatBytes(summaryCompBytes / summaryFileCount);
+    summaryMaxEl.textContent = formatBytes(summaryMaxBytes);
+    summaryMinEl.textContent = formatBytes(summaryMinBytes);
+    statsDetailEl.hidden = false;
   }
 
+  /** Syncs the convert button label, spinner, and disabled state with conversion progress. */
   function updateConvertBtn() {
     const isProcessing = conversionDone < conversionTotal;
     convertBtn.disabled = isProcessing || pendingFiles.length === 0;
@@ -365,6 +401,7 @@
 
   // ── Batch conversion ──────────────────────────────────────────────────────
 
+  /** Moves all pending files into the processing queue and starts compression. */
   function convertAll() {
     if (!pendingFiles.length) return;
 
@@ -382,6 +419,11 @@
     });
   }
 
+  /**
+   * Appends a result row in "Processing…" state to the results list.
+   * @param {number} id
+   * @param {File} file
+   */
   function addResultRow(id, file) {
     const li = document.createElement('li');
     li.id = `result-${id}`;
@@ -398,6 +440,11 @@
     resultsList.appendChild(li);
   }
 
+  /**
+   * Compresses a single file and updates its result row on completion.
+   * @param {number} id
+   * @param {File} file
+   */
   async function processFile(id, file) {
     try {
       const blob = await compressFileToBlob(file);
@@ -412,6 +459,12 @@
     }
   }
 
+  /**
+   * Marks a result row as successfully compressed and enables its download button.
+   * @param {number} id
+   * @param {number} originalSize  - bytes
+   * @param {number} compressedSize - bytes
+   */
   function updateRowDone(id, originalSize, compressedSize) {
     const row = document.getElementById(`result-${id}`);
     if (!row) return;
@@ -428,6 +481,9 @@
 
     summaryOrigBytes += originalSize;
     summaryCompBytes += compressedSize;
+    summaryFileCount++;
+    summaryMinBytes = Math.min(summaryMinBytes, compressedSize);
+    summaryMaxBytes = Math.max(summaryMaxBytes, compressedSize);
     updateSummary();
     resultsSection.hidden = false;
     conversionDone++;
@@ -439,6 +495,11 @@
     btn.addEventListener('click', () => downloadSingle(id));
   }
 
+  /**
+   * Marks a result row as failed and reveals the results section.
+   * @param {number} id
+   * @param {string} message
+   */
   function updateRowError(id, message) {
     const row = document.getElementById(`result-${id}`);
     if (!row) return;
@@ -453,11 +514,19 @@
 
   // ── Downloads ─────────────────────────────────────────────────────────────
 
+  /**
+   * Triggers a download for the compressed output of a single file entry.
+   * @param {number} id
+   */
   function downloadSingle(id) {
     const entry = fileEntries.get(id);
     if (entry?.result) triggerDownload(entry.result.blob, entry.result.name);
   }
 
+  /**
+   * Bundles all successfully compressed files into a ZIP and triggers a download.
+   * Falls back to staggered individual downloads if JSZip is unavailable.
+   */
   async function downloadAll() {
     const ready = [...fileEntries.values()].filter(
       (e) => e.status === 'done' && e.result
@@ -487,6 +556,11 @@
     }
   }
 
+  /**
+   * Creates a temporary anchor element to trigger a file download, then cleans up.
+   * @param {Blob} blob
+   * @param {string} filename
+   */
   function triggerDownload(blob, filename) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -500,6 +574,11 @@
 
   // ── Utilities ─────────────────────────────────────────────────────────────
 
+  /**
+   * Reads a File as a base64 data URL.
+   * @param {File} file
+   * @returns {Promise<string>}
+   */
   function readAsDataUrl(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -509,6 +588,11 @@
     });
   }
 
+  /**
+   * Loads a URL into an HTMLImageElement, resolving once decoded.
+   * @param {string} src
+   * @returns {Promise<HTMLImageElement>}
+   */
   function loadImage(src) {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -518,6 +602,11 @@
     });
   }
 
+  /**
+   * Converts a base64 data URL to a Blob.
+   * @param {string} dataUrl
+   * @returns {Blob}
+   */
   function dataUrlToBlob(dataUrl) {
     const [header, b64] = dataUrl.split(',');
     const mime = header.match(/:(.*?);/)[1];
@@ -527,6 +616,12 @@
     return new Blob([buf], { type: mime });
   }
 
+  /**
+   * Formats a byte count as a human-readable string (B, KB, MB, or GB).
+   * MB values are rounded to the nearest whole number.
+   * @param {number} n - bytes
+   * @returns {string}
+   */
   function formatBytes(n) {
     const BYTES_PER_UNIT = 1024;
     const KB = BYTES_PER_UNIT;
@@ -538,20 +633,42 @@
     return `${(n / GB).toFixed(2)} GB`;
   }
 
+  /**
+   * Returns the file extension for a given MIME type.
+   * @param {string} mime
+   * @returns {string}
+   */
   function formatToExt(mime) {
     return { 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/png': 'png' }[mime] || 'jpg';
   }
 
+  /**
+   * Replaces the extension of a filename with the given extension.
+   * @param {string} filename
+   * @param {string} ext
+   * @returns {string}
+   */
   function replaceExtension(filename, ext) {
     return filename.replace(/\.[^.]+$/, '') + '.' + ext;
   }
 
+  /**
+   * Truncates a filename to max characters, preserving the extension.
+   * @param {string} name
+   * @param {number} [max=32]
+   * @returns {string}
+   */
   function truncateName(name, max = 32) {
     if (name.length <= max) return name;
     const ext = name.match(/\.[^.]+$/)?.[0] ?? '';
     return name.slice(0, max - ext.length - 1) + '…' + ext;
   }
 
+  /**
+   * Escapes a string for safe insertion into HTML.
+   * @param {string} str
+   * @returns {string}
+   */
   function escapeHtml(str) {
     const d = document.createElement('div');
     d.textContent = str;

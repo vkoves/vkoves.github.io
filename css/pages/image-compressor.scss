@@ -236,11 +236,23 @@
 // Summary panel
 .results-summary {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1.25rem 1.5rem;
   background: var(--light-bg-color);
+}
+
+.results-summary__left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.results-summary__detail {
+  font-size: 0.85rem;
+  color: var(--text-color-faded);
+  margin: 0;
 }
 
 .results-summary__stats {

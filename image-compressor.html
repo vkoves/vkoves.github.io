@@ -99,17 +99,26 @@ stylesheets:
   <section class="compressor__results" id="results-section" hidden aria-live="polite">
 
     <div class="results-summary">
-      <div class="results-summary__stats">
-        <div class="results-stat">
-          <span class="results-stat__label">Before</span>
-          <span class="results-stat__value" id="summary-original">—</span>
+      <div class="results-summary__left">
+        <div class="results-summary__stats">
+          <div class="results-stat">
+            <span class="results-stat__label">Before</span>
+            <span class="results-stat__value" id="summary-original">—</span>
+          </div>
+          <span class="results-summary__arrow" aria-hidden="true">&#8594;</span>
+          <div class="results-stat">
+            <span class="results-stat__label">After</span>
+            <span class="results-stat__value -green" id="summary-compressed">—</span>
+          </div>
+          <span class="results-summary__savings" id="summary-savings"></span>
         </div>
-        <span class="results-summary__arrow" aria-hidden="true">&#8594;</span>
-        <div class="results-stat">
-          <span class="results-stat__label">After</span>
-          <span class="results-stat__value -green" id="summary-compressed">—</span>
-        </div>
-        <span class="results-summary__savings" id="summary-savings"></span>
+        <p class="results-summary__detail" id="results-stats-detail" hidden>
+          Avg. <strong id="summary-avg"></strong>
+          &nbsp;&middot;&nbsp;
+          Max <strong id="summary-max"></strong>
+          &nbsp;&middot;&nbsp;
+          Min <strong id="summary-min"></strong>
+        </p>
       </div>
       <button type="button" id="download-all-btn" class="btn">Download All</button>
     </div>
