@@ -1,6 +1,11 @@
 ---
 ---
 
+$success-color:      #1a8a4a;
+$success-color-dark: #3ecf7a;
+$neutral-color:      #6b7280;
+$neutral-color-dark: #4b5563;
+
 .tool-description {
   margin-bottom: 2rem;
   color: var(--text-color-faded);
@@ -281,9 +286,9 @@
     line-height: 1;
 
     &.-green {
-      color: #1a8a4a;
+      color: $success-color;
 
-      @media (prefers-color-scheme: dark) { color: #3ecf7a; }
+      @media (prefers-color-scheme: dark) { color: $success-color-dark; }
     }
   }
 }
@@ -360,6 +365,18 @@ $result-thumb-size: 48px;
 
     &:hover { background: rgba(216, 0, 0, 0.07); opacity: 1; }
     &:disabled { opacity: 0.45; cursor: not-allowed; }
+  }
+
+  &.-success {
+    background: $success-color;
+
+    @media (prefers-color-scheme: dark) { background: $success-color-dark; }
+  }
+
+  &.-neutral {
+    background: $neutral-color;
+
+    @media (prefers-color-scheme: dark) { background: $neutral-color-dark; }
   }
 }
 

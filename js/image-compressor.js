@@ -188,6 +188,15 @@
           : 'Convert';
       },
 
+      conversionComplete() {
+        return !this.isProcessing && this.resultRows.length > 0 && this.pendingFiles.length === 0;
+      },
+
+      mainBtnLabel() {
+        if (this.conversionComplete) return 'Download All';
+        return this.convertLabel;
+      },
+
       sampleBtnLabel() {
         if (this.sampleRunning) return 'Processing…';
         return this.sampleData.length > 0 ? 'Re-run preview' : 'Preview first 4 images';
@@ -414,6 +423,29 @@
       },
 
       // ── Downloads ─────────────────────────────────────────────────────────
+
+      /** Resets the entire UI back to the initial empty state. */
+      reset() {
+        this.previewUrls.forEach((u) => URL.revokeObjectURL(u));
+        this.sampleUrls.forEach((u) => URL.revokeObjectURL(u));
+        this.resultRows.forEach((r) => URL.revokeObjectURL(r.thumbUrl));
+
+        this.pendingFiles     = [];
+        this.previewUrls      = [];
+        this.previewFileCount = 0;
+        this.resultRows       = [];
+        this.summaryOrigBytes = 0;
+        this.summaryCompBytes = 0;
+        this.summaryFileCount = 0;
+        this.summaryMinBytes  = Infinity;
+        this.summaryMaxBytes  = 0;
+        this.showFilesTable   = false;
+        this.sampleData       = [];
+        this.sampleUrls       = [];
+        this.sampleRunning    = false;
+        this.modalVisible     = false;
+        this.fileIdCounter    = 0;
+      },
 
       /** @param {{ blob: Blob, name: string }} row */
       downloadSingle(row) {

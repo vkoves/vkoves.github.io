@@ -114,9 +114,15 @@ stylesheets:
   </div>
 
   <!-- 5. Convert button -->
-  <button type="button" class="btn -convert" :class="{ '-loading': isProcessing }" :disabled="convertDisabled" @click="convertAll">
+  <button
+    type="button"
+    class="btn -convert"
+    :class="{ '-loading': isProcessing, '-success': conversionComplete }"
+    :disabled="conversionComplete ? zipping : convertDisabled"
+    @click="conversionComplete ? downloadAll() : convertAll()"
+  >
     <span class="btn__spinner" aria-hidden="true"></span>
-    <span>{{ convertLabel }}</span>
+    <span>{{ mainBtnLabel }}</span>
   </button>
 
   <!-- 6. Results -->
@@ -144,8 +150,8 @@ stylesheets:
           Min <strong>{{ summaryData.min }}</strong>
         </p>
       </div>
-      <button type="button" class="btn" :disabled="zipping" @click="downloadAll">
-        {{ zipping ? 'Zipping…' : 'Download All' }}
+      <button type="button" class="btn -neutral" :disabled="isProcessing || zipping" @click="reset">
+        Reset
       </button>
     </div>
 
