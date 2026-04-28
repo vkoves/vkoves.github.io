@@ -5,6 +5,7 @@ pageClass: '-no-padding-top'
 scripts:
   - https://cdn.jsdelivr.net/npm/piexifjs@1.0.6/piexif.js
   - https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js
+  - https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js
   - image-compressor.js
 stylesheets:
   - pages/image-compressor.css
@@ -19,15 +20,21 @@ stylesheets:
   EXIF metadata is preserved when converting JPEG to JPEG.
 </p>
 
-<div class="compressor">
+{% raw %}
+<div class="compressor" id="app">
 
   <!-- 1. Drop zone -->
   <div
     class="compressor__drop-zone"
-    id="drop-zone"
+    :class="{ '-drag-over': isDragOver }"
     role="button"
     tabindex="0"
     aria-label="Drop images here or press Enter to select files"
+    @click="$refs.fileInput.click()"
+    @dragover.prevent="isDragOver = true"
+    @dragleave="onDragLeave"
+    @drop.prevent="onDrop"
+    @keydown="onDropZoneKeydown"
   >
     <div class="drop-zone__inner">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -35,18 +42,28 @@ stylesheets:
         <circle cx="8.5" cy="8.5" r="1.5"></circle>
         <polyline points="21 15 16 10 5 21"></polyline>
       </svg>
-      <p>Drop images here or <button type="button" id="select-files-btn" class="link-btn">select files</button></p>
+      <p>Drop images here or <button type="button" class="link-btn">select files</button></p>
       <p class="drop-zone__hint">Supports JPEG, PNG, WebP — select multiple files at once</p>
     </div>
-    <input type="file" id="file-input" multiple accept="image/*" class="visually-hidden" tabindex="-1" aria-hidden="true">
+    <input type="file" ref="fileInput" multiple accept="image/*" class="visually-hidden" tabindex="-1" aria-hidden="true" @change="onFileInputChange">
   </div>
 
-  <!-- 3. Preview strip (shown after files are selected) -->
-  <div class="compressor__preview" id="preview-section" hidden>
-    <div id="preview-thumbnails" class="preview-thumbnails"></div>
+  <!-- 2. Preview strip -->
+  <div class="compressor__preview" v-if="showPreview">
+    <div class="preview-thumbnails">
+      <div
+        v-for="(thumb, i) in previewThumbs"
+        :key="i"
+        class="preview-thumb"
+        :class="{ '-overflow': thumb.isOverflow }"
+      >
+        <img :src="thumb.url" alt="">
+        <span v-if="thumb.isOverflow" class="preview-thumb__badge">+{{ thumb.overflowCount }}</span>
+      </div>
+    </div>
     <div class="preview-meta">
-      <span id="preview-count" class="preview-meta__count"></span>
-      <button type="button" id="clear-btn" class="link-btn">Clear</button>
+      <span class="preview-meta__count">{{ previewFileCount }} image{{ previewFileCount === 1 ? '' : 's' }} selected</span>
+      <button type="button" class="link-btn" @click="clearPending">Clear</button>
     </div>
   </div>
 
@@ -54,80 +71,90 @@ stylesheets:
   <div class="compressor__settings">
     <div class="setting">
       <label for="output-format">Output Format</label>
-      <select id="output-format">
+      <select id="output-format" v-model="format">
         <option value="image/jpeg">JPEG</option>
         <option value="image/webp">WebP</option>
         <option value="image/png">PNG (lossless)</option>
       </select>
     </div>
 
-    <div class="setting" id="quality-setting">
-      <label for="quality-slider">
-        Quality: <span id="quality-value">80</span>%
-      </label>
-      <input type="range" id="quality-slider" min="0" max="100" value="80" step="5">
+    <div class="setting" v-if="showQuality">
+      <label for="quality-slider">Quality: {{ quality }}%</label>
+      <input type="range" id="quality-slider" v-model.number="quality" min="5" max="100" step="5">
     </div>
 
-    <div class="setting" id="exif-setting">
+    <div class="setting">
       <label class="checkbox-label">
-        <input type="checkbox" id="preserve-exif" checked>
+        <input type="checkbox" id="preserve-exif" v-model="preserveExif">
         Preserve EXIF metadata
       </label>
-      <p class="setting__note" id="exif-note"></p>
+      <p class="setting__note" v-if="exifNote">{{ exifNote }}</p>
     </div>
   </div>
 
-  <!-- 2. Sample comparison (shown when files staged) -->
-  <div class="compressor__sample" id="sample-section" hidden>
+  <!-- 4. Sample comparison -->
+  <div class="compressor__sample" v-if="showPreview">
     <div class="sample-bar">
       <div class="sample-bar__text">
         <strong>Preview compression</strong>
         <span class="sample-bar__desc">Compare the first 4 images at current settings before converting all</span>
       </div>
-      <button type="button" id="sample-btn" class="btn -secondary">Preview first 4 images</button>
+      <button type="button" class="btn -secondary" :disabled="sampleRunning" @click="runSamplePreview">
+        {{ sampleBtnLabel }}
+      </button>
     </div>
-    <ul id="sample-list" class="sample-list" hidden></ul>
+    <ul class="sample-list" v-if="sampleData.length > 0">
+      <li v-for="(item, i) in sampleData" :key="i" class="sample-item">
+        <span class="sample-item__name" :title="item.file.name">{{ truncateName(item.file.name) }}</span>
+        <span class="sample-item__sizes">{{ formatBytes(item.origSize) }} &rarr; {{ formatBytes(item.compSize) }}</span>
+        <span class="sample-item__savings" :class="{ '-increased': item.increased }">{{ item.savingsText }}</span>
+        <button type="button" class="sample-item__view btn" @click="openModal(i)">View</button>
+      </li>
+    </ul>
   </div>
 
-  <!-- 4. Convert button -->
-  <button type="button" id="convert-btn" class="btn -convert" disabled>
+  <!-- 5. Convert button -->
+  <button type="button" class="btn -convert" :class="{ '-loading': isProcessing }" :disabled="convertDisabled" @click="convertAll">
     <span class="btn__spinner" aria-hidden="true"></span>
-    <span id="convert-btn-label">Convert</span>
+    <span>{{ convertLabel }}</span>
   </button>
 
-  <!-- 5. Results -->
-  <section class="compressor__results" id="results-section" hidden aria-live="polite">
+  <!-- 6. Results -->
+  <section class="compressor__results" v-if="resultRows.length > 0" aria-live="polite">
 
     <div class="results-summary">
       <div class="results-summary__left">
-        <div class="results-summary__stats">
+        <div class="results-summary__stats" v-if="summaryData">
           <div class="results-stat">
             <span class="results-stat__label">Before</span>
-            <span class="results-stat__value" id="summary-original">—</span>
+            <span class="results-stat__value">{{ summaryData.orig }}</span>
           </div>
           <span class="results-summary__arrow" aria-hidden="true">&#8594;</span>
           <div class="results-stat">
             <span class="results-stat__label">After</span>
-            <span class="results-stat__value -green" id="summary-compressed">—</span>
+            <span class="results-stat__value -green">{{ summaryData.comp }}</span>
           </div>
-          <span class="results-summary__savings" id="summary-savings"></span>
+          <span class="results-summary__savings">{{ summaryData.savings }}</span>
         </div>
-        <p class="results-summary__detail" id="results-stats-detail" hidden>
-          Avg. <strong id="summary-avg"></strong>
+        <p class="results-summary__detail" v-if="summaryData">
+          Avg. <strong>{{ summaryData.avg }}</strong>
           &nbsp;&middot;&nbsp;
-          Max <strong id="summary-max"></strong>
+          Max <strong>{{ summaryData.max }}</strong>
           &nbsp;&middot;&nbsp;
-          Min <strong id="summary-min"></strong>
+          Min <strong>{{ summaryData.min }}</strong>
         </p>
       </div>
-      <button type="button" id="download-all-btn" class="btn">Download All</button>
+      <button type="button" class="btn" :disabled="zipping" @click="downloadAll">
+        {{ zipping ? 'Zipping…' : 'Download All' }}
+      </button>
     </div>
 
-    <button type="button" id="toggle-files-btn" class="toggle-files-btn">
-      &#9656; View Individual Files
+    <button type="button" class="toggle-files-btn" @click="showFilesTable = !showFilesTable">
+      <template v-if="!showFilesTable">&#9656; View Individual Files</template>
+      <template v-else>&#9662; Hide Individual Files</template>
     </button>
 
-    <div id="files-table" hidden>
+    <div v-if="showFilesTable">
       <div class="results-header">
         <span></span>
         <span>File</span>
@@ -136,51 +163,69 @@ stylesheets:
         <span>Savings</span>
         <span></span>
       </div>
-      <ul id="results-list" class="results-list"></ul>
+      <ul class="results-list">
+        <li
+          v-for="row in resultRows"
+          :key="row.id"
+          class="result-item"
+          :class="{ '-error': row.status === 'error' }"
+        >
+          <span class="result-item__thumb">
+            <img :src="row.thumbUrl" alt="" class="result-item__thumb-img">
+          </span>
+          <span class="result-item__name" :title="row.file.name">{{ truncateName(row.file.name) }}</span>
+          <span class="result-item__original">{{ formatBytes(row.file.size) }}</span>
+          <span class="result-item__compressed">{{ row.compressedText }}</span>
+          <span class="result-item__savings" :class="{ '-increased': row.increased }">{{ row.savingsText }}</span>
+          <span class="result-item__actions">
+            <button type="button" class="result-item__download btn" :disabled="row.status !== 'done'" @click="downloadSingle(row)">Download</button>
+          </span>
+        </li>
+      </ul>
     </div>
 
   </section>
 
-  <!-- Comparison modal -->
+  <!-- 7. Comparison modal -->
   <div
     class="comparison-modal"
-    id="comparison-modal"
-    hidden
+    v-if="modalVisible && modalItem"
     role="dialog"
     aria-modal="true"
     aria-labelledby="modal-title"
   >
-    <div class="comparison-modal__backdrop" id="modal-backdrop"></div>
+    <div class="comparison-modal__backdrop" @click="closeModal"></div>
     <div class="comparison-modal__panel">
-      <button type="button" class="comparison-modal__close" id="modal-close" aria-label="Close comparison">&times;</button>
+      <button type="button" class="comparison-modal__close" aria-label="Close comparison" @click="closeModal">&times;</button>
 
-      <h2 class="modal-title" id="modal-title"></h2>
-      <p class="modal-filename">Original Filename: <strong id="modal-filename"></strong></p>
+      <h2 class="modal-title" id="modal-title">Image {{ modalIndex + 1 }} of {{ sampleData.length }} Preview</h2>
+      <p class="modal-filename">Original Filename: <strong>{{ modalItem.file.name }}</strong></p>
 
       <div class="comparison-images">
         <div class="comparison-image">
           <p class="comparison-image__label">
-            Original <span class="comparison-image__size" id="modal-orig-size"></span>
+            Original <span class="comparison-image__size">{{ formatBytes(modalItem.origSize) }}</span>
           </p>
-          <img id="modal-orig-img" alt="Original image">
+          <img :src="modalItem.origUrl" alt="Original image">
         </div>
         <div class="comparison-image">
           <p class="comparison-image__label">
-            Compressed <span class="comparison-image__size" id="modal-comp-size"></span>
+            Compressed <span class="comparison-image__size">{{ formatBytes(modalItem.compSize) }} {{ modalSavingsText }}</span>
           </p>
-          <img id="modal-comp-img" alt="Compressed image">
+          <img :src="modalItem.compUrl" alt="Compressed image">
         </div>
       </div>
 
-      <p class="modal-settings">Settings Used: <strong id="modal-settings"></strong></p>
+      <p class="modal-settings">Settings Used: <strong>{{ modalItem.settingsLabel }}</strong></p>
 
       <div class="comparison-nav">
-        <button type="button" id="modal-prev" class="btn -secondary">&#8592; Prev</button>
-        <button type="button" id="modal-next" class="btn -secondary">Next &#8594;</button>
+        <button type="button" class="btn -secondary" :disabled="sampleData.length <= 1" @click="navigateModal(-1)">&#8592; Prev</button>
+        <button type="button" class="btn -secondary" :disabled="sampleData.length <= 1" @click="navigateModal(1)">Next &#8594;</button>
       </div>
     </div>
   </div>
 
-</div><!-- .compressor -->
+</div><!-- #app / .compressor -->
+{% endraw %}
 
 </div><!-- .content-limiter -->

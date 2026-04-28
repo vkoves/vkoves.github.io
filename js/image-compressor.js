@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  const { createApp } = Vue;
+
   // ── Utilities ─────────────────────────────────────────────────────────────
 
   /**
@@ -94,17 +96,6 @@
   }
 
   /**
-   * Escapes a string for safe insertion into HTML.
-   * @param {string} str
-   * @returns {string}
-   */
-  function escapeHtml(str) {
-    const d = document.createElement('div');
-    d.textContent = str;
-    return d.innerHTML;
-  }
-
-  /**
    * Creates a temporary anchor element to trigger a file download, then cleans up.
    * @param {Blob} blob
    * @param {string} filename
@@ -120,602 +111,378 @@
     setTimeout(() => URL.revokeObjectURL(url), 2000);
   }
 
-  // ── ComparisonModal ────────────────────────────────────────────────────────
+  // ── App ───────────────────────────────────────────────────────────────────
 
-  /** Manages the side-by-side original/compressed image comparison modal. */
-  class ComparisonModal {
-    constructor() {
-      this._modal    = document.getElementById('comparison-modal');
-      this._backdrop = document.getElementById('modal-backdrop');
-      this._closeBtn = document.getElementById('modal-close');
-      this._title    = document.getElementById('modal-title');
-      this._filename = document.getElementById('modal-filename');
-      this._origImg  = document.getElementById('modal-orig-img');
-      this._compImg  = document.getElementById('modal-comp-img');
-      this._origSize = document.getElementById('modal-orig-size');
-      this._compSize = document.getElementById('modal-comp-size');
-      this._settings = document.getElementById('modal-settings');
-      this._prevBtn  = document.getElementById('modal-prev');
-      this._nextBtn  = document.getElementById('modal-next');
+  createApp({
+    data() {
+      return {
+        // Settings
+        format:       'image/jpeg',
+        quality:      80,
+        preserveExif: true,
 
-      /** @type {Array<{file: File, origUrl: string, compUrl: string, origSize: number, compSize: number, settingsLabel: string}>} */
-      this._data  = [];
-      this._index = 0;
+        // Drop zone
+        isDragOver: false,
 
-      this._closeBtn.addEventListener('click', () => this.close());
-      this._backdrop.addEventListener('click', () => this.close());
-      this._prevBtn.addEventListener('click',  () => this._navigate(-1));
-      this._nextBtn.addEventListener('click',  () => this._navigate(1));
-      document.addEventListener('keydown', (e) => {
-        if (this._modal.hidden) return;
-        if (e.key === 'Escape')     this.close();
-        if (e.key === 'ArrowLeft')  this._navigate(-1);
-        if (e.key === 'ArrowRight') this._navigate(1);
-      });
-    }
+        // Pending files and preview strip
+        pendingFiles:     [],
+        previewUrls:      [], // object URLs for up to 4 pending files; revoked when files change
+        previewFileCount: 0,  // total pending count, kept after convertAll for the overflow badge
 
-    /**
-     * Opens the modal at the given index into the provided data array.
-     * @param {number} index
-     * @param {Array} data
-     */
-    open(index, data) {
-      this._data  = data;
-      this._index = index;
-      this._render();
-      this._modal.hidden = false;
-      document.body.style.overflow = 'hidden';
-      this._closeBtn.focus();
-    }
+        // Conversion progress
+        fileIdCounter:    0,
+        conversionTotal:  0,
+        conversionDone:   0,
 
-    /** Closes the modal and restores page scrolling. */
-    close() {
-      this._modal.hidden = true;
-      document.body.style.overflow = '';
-    }
+        // Result rows — each: { id, file, thumbUrl, status, compressedText, savingsText, increased, blob, name }
+        resultRows: [],
 
-    /** @param {number} dir - +1 or -1 */
-    _navigate(dir) {
-      this._index = (this._index + dir + this._data.length) % this._data.length;
-      this._render();
-    }
+        // Running summary totals (accumulate across batches)
+        summaryOrigBytes: 0,
+        summaryCompBytes: 0,
+        summaryFileCount: 0,
+        summaryMinBytes:  Infinity,
+        summaryMaxBytes:  0,
 
-    /** Populates modal content from the current index. */
-    _render() {
-      const item  = this._data[this._index];
-      const count = this._data.length;
+        showFilesTable: false,
+        zipping:        false,
 
-      const savedFraction = 1 - item.compSize / item.origSize;
-      const savingsText   = savedFraction >= 0
-        ? `(${(savedFraction * 100).toFixed(1)}% smaller)`
-        : `(${(Math.abs(savedFraction) * 100).toFixed(1)}% larger)`;
+        // Sample preview
+        sampleData:    [], // { file, origUrl, compUrl, origSize, compSize, settingsLabel, savingsText, increased }
+        sampleUrls:    [], // object URLs revoked on re-run
+        sampleRunning: false,
 
-      this._title.textContent    = `Image ${this._index + 1} of ${count} Preview`;
-      this._filename.textContent = item.file.name;
-      this._origImg.src          = item.origUrl;
-      this._compImg.src          = item.compUrl;
-      this._origSize.textContent = formatBytes(item.origSize);
-      this._compSize.textContent = `${formatBytes(item.compSize)} ${savingsText}`;
-      this._settings.textContent = item.settingsLabel;
+        // Comparison modal
+        modalVisible: false,
+        modalIndex:   0,
+      };
+    },
 
-      this._prevBtn.disabled = count <= 1;
-      this._nextBtn.disabled = count <= 1;
-    }
-  }
+    computed: {
+      showQuality() { return this.format !== 'image/png'; },
 
-  // ── SamplePreview ─────────────────────────────────────────────────────────
+      exifNote() {
+        return this.format !== 'image/jpeg'
+          ? 'EXIF can only be preserved in JPEG → JPEG conversions.'
+          : '';
+      },
 
-  /** Manages the "preview first 4 images" sample comparison section and list. */
-  class SamplePreview {
-    /**
-     * @param {ComparisonModal} modal
-     * @param {function(): void} onRunRequested - called when the user clicks the preview button
-     */
-    constructor(modal, onRunRequested) {
-      this._modal   = modal;
-      this._section = document.getElementById('sample-section');
-      this._btn     = document.getElementById('sample-btn');
-      this._list    = document.getElementById('sample-list');
+      showPreview() { return this.previewUrls.length > 0; },
 
-      /** @type {Array<{file: File, origUrl: string, compUrl: string, origSize: number, compSize: number, settingsLabel: string}>} */
-      this._data = [];
-      this._urls = []; // object URLs revoked on re-run
+      previewThumbs() {
+        const overflow = this.previewFileCount > 4 ? this.previewFileCount - 3 : 0;
+        return this.previewUrls.map((url, i) => ({
+          url,
+          isOverflow:    overflow > 0 && i === 3,
+          overflowCount: overflow,
+        }));
+      },
 
-      this._btn.addEventListener('click', onRunRequested);
-    }
+      isProcessing() { return this.conversionDone < this.conversionTotal; },
 
-    /** Shows or hides the whole sample section, clearing the list when hiding. */
-    setVisible(visible) {
-      this._section.hidden = !visible;
-      if (!visible) {
-        this._list.hidden    = true;
-        this._list.innerHTML = '';
-      }
-    }
+      convertDisabled() { return this.isProcessing || this.pendingFiles.length === 0; },
 
-    /**
-     * Compresses up to 4 files at the given settings and renders the comparison list.
-     * @param {File[]} files
-     * @param {{ format: string, quality: number }} state
-     * @param {function(File): Promise<Blob>} compressFn
-     */
-    async run(files, state, compressFn) {
-      if (!files.length) return;
+      convertLabel() {
+        return this.isProcessing
+          ? `Compressing… ${this.conversionDone}/${this.conversionTotal}`
+          : 'Convert';
+      },
 
-      this._btn.disabled    = true;
-      this._btn.textContent = 'Processing…';
+      sampleBtnLabel() {
+        if (this.sampleRunning) return 'Processing…';
+        return this.sampleData.length > 0 ? 'Re-run preview' : 'Preview first 4 images';
+      },
 
-      this._urls.forEach((u) => URL.revokeObjectURL(u));
-      this._urls = [];
-      this._data = [];
+      summaryData() {
+        if (this.summaryFileCount === 0) return null;
+        const saved = (1 - this.summaryCompBytes / this.summaryOrigBytes) * 100;
+        return {
+          orig:    formatBytes(this.summaryOrigBytes),
+          comp:    formatBytes(this.summaryCompBytes),
+          savings: saved >= 0 ? `${saved.toFixed(1)}% smaller` : `${Math.abs(saved).toFixed(1)}% larger`,
+          avg:     formatBytes(this.summaryCompBytes / this.summaryFileCount),
+          max:     formatBytes(this.summaryMaxBytes),
+          min:     formatBytes(this.summaryMinBytes),
+        };
+      },
 
-      const settingsLabel = state.format === 'image/png'
-        ? 'PNG (lossless)'
-        : `${Math.round(state.quality * 100)}%, ${formatToExt(state.format).toUpperCase()}`;
+      modalItem() { return this.sampleData[this.modalIndex] || null; },
 
-      for (const file of files) {
-        const blob    = await compressFn(file);
-        const origUrl = URL.createObjectURL(file);
-        const compUrl = URL.createObjectURL(blob);
-        this._urls.push(origUrl, compUrl);
-        this._data.push({ file, origUrl, compUrl, origSize: file.size, compSize: blob.size, settingsLabel });
-      }
+      modalSavingsText() {
+        if (!this.modalItem) return '';
+        const f = 1 - this.modalItem.compSize / this.modalItem.origSize;
+        return f >= 0
+          ? `(${(f * 100).toFixed(1)}% smaller)`
+          : `(${(Math.abs(f) * 100).toFixed(1)}% larger)`;
+      },
+    },
 
-      this._render();
-      this._list.hidden     = false;
-      this._btn.disabled    = false;
-      this._btn.textContent = 'Re-run preview';
-    }
+    mounted() {
+      document.addEventListener('keydown', this.onKeydown);
+    },
 
-    /** Renders the sample comparison list from the current data. */
-    _render() {
-      this._list.innerHTML = '';
-      this._data.forEach((item, i) => {
-        const savedFraction = 1 - item.compSize / item.origSize;
-        const savingsText   = savedFraction >= 0
-          ? `-${(savedFraction * 100).toFixed(1)}%`
-          : `+${(Math.abs(savedFraction) * 100).toFixed(1)}%`;
+    beforeUnmount() {
+      document.removeEventListener('keydown', this.onKeydown);
+    },
 
-        const li = document.createElement('li');
-        li.className = 'sample-item';
-        li.innerHTML = `
-          <span class="sample-item__name" title="${escapeHtml(item.file.name)}">${escapeHtml(truncateName(item.file.name))}</span>
-          <span class="sample-item__sizes">${formatBytes(item.origSize)} &rarr; ${formatBytes(item.compSize)}</span>
-          <span class="sample-item__savings${savedFraction < 0 ? ' -increased' : ''}">${savingsText}</span>
-          <button type="button" class="sample-item__view btn">View</button>
-        `;
-        li.querySelector('.sample-item__view').addEventListener('click', () =>
-          this._modal.open(i, this._data)
-        );
-        this._list.appendChild(li);
-      });
-    }
-  }
+    methods: {
+      // Expose utilities to the template
+      formatBytes,
+      truncateName,
 
-  // ── ResultsPanel ──────────────────────────────────────────────────────────
+      // ── Drop zone ──────────────────────────────────────────────────────────
 
-  /** Manages the results summary panel, individual file table, and downloads. */
-  class ResultsPanel {
-    constructor() {
-      this._section        = document.getElementById('results-section');
-      this._summaryOrigEl  = document.getElementById('summary-original');
-      this._summaryCompEl  = document.getElementById('summary-compressed');
-      this._savingsEl      = document.getElementById('summary-savings');
-      this._statsDetailEl  = document.getElementById('results-stats-detail');
-      this._avgEl          = document.getElementById('summary-avg');
-      this._maxEl          = document.getElementById('summary-max');
-      this._minEl          = document.getElementById('summary-min');
-      this._toggleBtn      = document.getElementById('toggle-files-btn');
-      this._filesTable     = document.getElementById('files-table');
-      this._list           = document.getElementById('results-list');
-      this._downloadAllBtn = document.getElementById('download-all-btn');
+      onDragLeave(e) {
+        if (!e.currentTarget.contains(e.relatedTarget)) this.isDragOver = false;
+      },
 
-      // id -> { blob: Blob, name: string } — only populated for successful conversions
-      this._entries = new Map();
-
-      // Running totals across all batches
-      this._origBytes  = 0;
-      this._compBytes  = 0;
-      this._fileCount  = 0;
-      this._minBytes   = Infinity;
-      this._maxBytes   = 0;
-
-      this._toggleBtn.addEventListener('click',      () => this._toggleTable());
-      this._downloadAllBtn.addEventListener('click', () => this._downloadAll());
-    }
-
-    /**
-     * Appends a result row in "Processing…" state for the given file.
-     * @param {number} id
-     * @param {File} file
-     */
-    addRow(id, file) {
-      const thumbUrl = URL.createObjectURL(file);
-      const li       = document.createElement('li');
-      li.id        = `result-${id}`;
-      li.className = 'result-item';
-      li.innerHTML = `
-        <span class="result-item__thumb">
-          <img src="${escapeHtml(thumbUrl)}" alt="" class="result-item__thumb-img">
-        </span>
-        <span class="result-item__name" title="${escapeHtml(file.name)}">${escapeHtml(truncateName(file.name))}</span>
-        <span class="result-item__original">${formatBytes(file.size)}</span>
-        <span class="result-item__compressed">Processing…</span>
-        <span class="result-item__savings">—</span>
-        <span class="result-item__actions">
-          <button type="button" class="result-item__download btn" data-id="${id}" disabled>Download</button>
-        </span>
-      `;
-      this._list.appendChild(li);
-    }
-
-    /**
-     * Marks a result row as successfully compressed, stores the blob, and enables download.
-     * @param {number} id
-     * @param {number} origSize - original file size in bytes
-     * @param {Blob} blob - compressed output
-     * @param {string} name - output filename
-     */
-    updateRowDone(id, origSize, blob, name) {
-      this._entries.set(id, { blob, name });
-
-      const compSize = blob.size;
-      const row      = document.getElementById(`result-${id}`);
-      if (row) {
-        const savedFraction = 1 - compSize / origSize;
-        const savingsText   = savedFraction >= 0
-          ? `-${(savedFraction * 100).toFixed(1)}%`
-          : `+${(Math.abs(savedFraction) * 100).toFixed(1)}%`;
-
-        row.querySelector('.result-item__compressed').textContent = formatBytes(compSize);
-        const savingsEl = row.querySelector('.result-item__savings');
-        savingsEl.textContent = savingsText;
-        savingsEl.classList.toggle('-increased', savedFraction < 0);
-
-        const btn = row.querySelector('.result-item__download');
-        btn.disabled = false;
-        btn.addEventListener('click', () => this._downloadSingle(id));
-      }
-
-      this._origBytes += origSize;
-      this._compBytes += compSize;
-      this._fileCount++;
-      this._minBytes = Math.min(this._minBytes, compSize);
-      this._maxBytes = Math.max(this._maxBytes, compSize);
-      this._updateSummary();
-      this._section.hidden = false;
-    }
-
-    /**
-     * Marks a result row as failed and reveals the results section.
-     * @param {number} id
-     * @param {string} message
-     */
-    updateRowError(id, message) {
-      const row = document.getElementById(`result-${id}`);
-      if (row) {
-        row.classList.add('-error');
-        row.querySelector('.result-item__compressed').textContent = 'Error';
-        row.querySelector('.result-item__savings').textContent    = message;
-      }
-      this._section.hidden = false;
-    }
-
-    /** Refreshes the summary panel from the running totals. */
-    _updateSummary() {
-      this._summaryOrigEl.textContent = formatBytes(this._origBytes);
-      this._summaryCompEl.textContent = formatBytes(this._compBytes);
-
-      const saved = (1 - this._compBytes / this._origBytes) * 100;
-      this._savingsEl.textContent = saved >= 0
-        ? `${saved.toFixed(1)}% smaller`
-        : `${Math.abs(saved).toFixed(1)}% larger`;
-
-      this._avgEl.textContent = formatBytes(this._compBytes / this._fileCount);
-      this._maxEl.textContent = formatBytes(this._maxBytes);
-      this._minEl.textContent = formatBytes(this._minBytes);
-      this._statsDetailEl.hidden = false;
-    }
-
-    /** Toggles the individual files table open/closed. */
-    _toggleTable() {
-      const expanded          = !this._filesTable.hidden;
-      this._filesTable.hidden = expanded;
-      this._toggleBtn.innerHTML = expanded
-        ? '&#9656; View Individual Files'
-        : '&#9662; Hide Individual Files';
-    }
-
-    /** @param {number} id */
-    _downloadSingle(id) {
-      const entry = this._entries.get(id);
-      if (entry) triggerDownload(entry.blob, entry.name);
-    }
-
-    /** Bundles all successfully compressed files into a ZIP and triggers a download. */
-    async _downloadAll() {
-      const ready = [...this._entries.values()];
-      if (!ready.length) return;
-
-      if (!window.JSZip) {
-        let delay = 0;
-        ready.forEach((e) => {
-          setTimeout(() => triggerDownload(e.blob, e.name), delay);
-          delay += 200;
-        });
-        return;
-      }
-
-      this._downloadAllBtn.disabled    = true;
-      this._downloadAllBtn.textContent = 'Zipping…';
-
-      try {
-        const zip = new JSZip();
-        ready.forEach((e) => zip.file(e.name, e.blob));
-        const zipBlob = await zip.generateAsync({ type: 'blob' });
-        triggerDownload(zipBlob, 'compressed-images.zip');
-      } finally {
-        this._downloadAllBtn.disabled    = false;
-        this._downloadAllBtn.textContent = 'Download All';
-      }
-    }
-  }
-
-  // ── ImageCompressorApp ────────────────────────────────────────────────────
-
-  /** Top-level controller: manages drop zone, preview strip, settings, and conversion queue. */
-  class ImageCompressorApp {
-    constructor() {
-      this._state = { format: 'image/jpeg', quality: 0.80, preserveExif: true };
-
-      this._pendingFiles    = [];
-      this._previewUrls     = [];
-      this._fileIdCounter   = 0;
-      this._conversionTotal = 0;
-      this._conversionDone  = 0;
-
-      this._modal   = new ComparisonModal();
-      this._results = new ResultsPanel();
-      this._sample  = new SamplePreview(this._modal, () =>
-        this._sample.run(
-          this._pendingFiles.slice(0, 4),
-          this._state,
-          (file) => this._compressFileToBlob(file)
-        )
-      );
-
-      // Drop zone
-      this._dropZone    = document.getElementById('drop-zone');
-      this._fileInput   = document.getElementById('file-input');
-
-      // Settings
-      this._formatSelect   = document.getElementById('output-format');
-      this._qualitySlider  = document.getElementById('quality-slider');
-      this._qualityValue   = document.getElementById('quality-value');
-      this._qualitySetting = document.getElementById('quality-setting');
-      this._exifNote       = document.getElementById('exif-note');
-      this._preserveExifEl = document.getElementById('preserve-exif');
-
-      // Preview strip
-      this._previewSection = document.getElementById('preview-section');
-      this._previewThumbs  = document.getElementById('preview-thumbnails');
-      this._previewCount   = document.getElementById('preview-count');
-      this._clearBtn       = document.getElementById('clear-btn');
-
-      // Convert button
-      this._convertBtn      = document.getElementById('convert-btn');
-      this._convertBtnLabel = document.getElementById('convert-btn-label');
-
-      this._bindEvents();
-    }
-
-    _bindEvents() {
-      // Drop zone
-      this._dropZone.addEventListener('click', () => this._fileInput.click());
-      this._fileInput.addEventListener('change', () => {
-        this._stageFiles(Array.from(this._fileInput.files));
-        this._fileInput.value = '';
-      });
-      this._dropZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        this._dropZone.classList.add('-drag-over');
-      });
-      this._dropZone.addEventListener('dragleave', (e) => {
-        if (!this._dropZone.contains(e.relatedTarget))
-          this._dropZone.classList.remove('-drag-over');
-      });
-      this._dropZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        this._dropZone.classList.remove('-drag-over');
+      onDrop(e) {
+        this.isDragOver = false;
         const images = Array.from(e.dataTransfer.files).filter((f) => f.type.startsWith('image/'));
-        this._stageFiles(images);
-      });
-      this._dropZone.addEventListener('keydown', (e) => {
+        this.stageFiles(images);
+      },
+
+      onDropZoneKeydown(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          this._fileInput.click();
+          this.$refs.fileInput.click();
         }
-      });
+      },
 
-      // Settings
-      this._formatSelect.addEventListener('change', () => {
-        this._state.format = this._formatSelect.value;
-        this._qualitySetting.hidden = this._state.format === 'image/png';
-        this._updateExifNote();
-      });
-      this._qualitySlider.addEventListener('input', () => {
-        this._state.quality          = this._qualitySlider.value / 100;
-        this._qualityValue.textContent = this._qualitySlider.value;
-      });
-      this._preserveExifEl.addEventListener('change', () => {
-        this._state.preserveExif = this._preserveExifEl.checked;
-      });
+      onFileInputChange(e) {
+        this.stageFiles(Array.from(e.target.files));
+        e.target.value = '';
+      },
 
-      // Preview strip
-      this._clearBtn.addEventListener('click', () => this._clearPending());
+      // ── Staging & preview ─────────────────────────────────────────────────
 
-      // Convert button
-      this._convertBtn.addEventListener('click', () => this._convertAll());
-    }
+      /** Appends files to the pending queue and refreshes the preview strip. */
+      stageFiles(files) {
+        if (!files.length) return;
+        const newFiles = this.pendingFiles.concat(files);
+        this.previewUrls.forEach((u) => URL.revokeObjectURL(u));
+        this.previewUrls      = newFiles.slice(0, 4).map((f) => URL.createObjectURL(f));
+        this.previewFileCount = newFiles.length;
+        this.pendingFiles     = newFiles;
+      },
 
-    /** Shows a note when EXIF preservation is unavailable for the selected format. */
-    _updateExifNote() {
-      this._exifNote.textContent = this._state.format !== 'image/jpeg'
-        ? 'EXIF can only be preserved in JPEG → JPEG conversions.'
-        : '';
-    }
+      /** Empties the pending queue and hides the preview strip. */
+      clearPending() {
+        this.previewUrls.forEach((u) => URL.revokeObjectURL(u));
+        this.previewUrls      = [];
+        this.previewFileCount = 0;
+        this.pendingFiles     = [];
+      },
 
-    /** Appends files to the pending queue and refreshes the preview strip. */
-    _stageFiles(files) {
-      if (!files.length) return;
-      this._pendingFiles = this._pendingFiles.concat(files);
-      this._updatePreview();
-    }
+      // ── Conversion ────────────────────────────────────────────────────────
 
-    /** Empties the pending queue and hides the preview strip. */
-    _clearPending() {
-      this._pendingFiles = [];
-      this._updatePreview();
-    }
+      /** Moves all pending files into the processing queue and starts compression. */
+      convertAll() {
+        if (!this.pendingFiles.length) return;
+        const toProcess   = this.pendingFiles.slice();
+        this.pendingFiles = []; // clear queue; previewUrls kept so the strip stays visible
 
-    /**
-     * Rebuilds the thumbnail strip from pendingFiles.
-     * Shows up to 4 thumbnails; if more than 4 files are pending the 4th slot
-     * becomes an overflow badge showing the hidden count.
-     */
-    _updatePreview() {
-      this._previewUrls.forEach((u) => URL.revokeObjectURL(u));
-      this._previewUrls       = [];
-      this._previewThumbs.innerHTML = '';
+        this.conversionTotal += toProcess.length;
 
-      const total    = this._pendingFiles.length;
-      const hasFiles = total > 0;
+        toProcess.forEach((file) => {
+          const id = ++this.fileIdCounter;
+          this.resultRows.push({
+            id,
+            file,
+            thumbUrl:       URL.createObjectURL(file),
+            status:         'processing',
+            compressedText: 'Processing…',
+            savingsText:    '—',
+            increased:      false,
+            blob:           null,
+            name:           null,
+          });
+          this.processFile(id, file);
+        });
+      },
 
-      this._sample.setVisible(hasFiles);
-      this._previewSection.hidden = !hasFiles;
-      this._updateConvertBtn();
-
-      if (!hasFiles) return;
-
-      this._previewCount.textContent = `${total} image${total === 1 ? '' : 's'} selected`;
-
-      const slotCount = Math.min(total, 4);
-      const overflow  = total > 4 ? total - 3 : 0;
-
-      for (let i = 0; i < slotCount; i++) {
-        const file       = this._pendingFiles[i];
-        const isOverflow = overflow > 0 && i === 3;
-
-        const url = URL.createObjectURL(file);
-        this._previewUrls.push(url);
-
-        const thumb = document.createElement('div');
-        thumb.className = 'preview-thumb' + (isOverflow ? ' -overflow' : '');
-
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = file.name;
-        thumb.appendChild(img);
-
-        if (isOverflow) {
-          const badge = document.createElement('span');
-          badge.className   = 'preview-thumb__badge';
-          badge.textContent = `+${overflow}`;
-          thumb.appendChild(badge);
-        }
-
-        this._previewThumbs.appendChild(thumb);
-      }
-    }
-
-    /** Syncs the convert button label, spinner, and disabled state with conversion progress. */
-    _updateConvertBtn() {
-      const isProcessing            = this._conversionDone < this._conversionTotal;
-      this._convertBtn.disabled     = isProcessing || this._pendingFiles.length === 0;
-      this._convertBtn.classList.toggle('-loading', isProcessing);
-      this._convertBtnLabel.textContent = isProcessing
-        ? `Compressing… ${this._conversionDone}/${this._conversionTotal}`
-        : 'Convert';
-    }
-
-    /** Moves all pending files into the processing queue and starts compression. */
-    _convertAll() {
-      if (!this._pendingFiles.length) return;
-
-      const toProcess    = this._pendingFiles.slice();
-      this._pendingFiles = []; // clear without hiding the preview strip
-
-      this._conversionTotal += toProcess.length;
-      this._updateConvertBtn();
-
-      toProcess.forEach((file) => {
-        const id = ++this._fileIdCounter;
-        this._results.addRow(id, file);
-        this._processFile(id, file);
-      });
-    }
-
-    /**
-     * Compresses a single file and updates its result row on completion.
-     * @param {number} id
-     * @param {File} file
-     */
-    async _processFile(id, file) {
-      try {
-        const blob = await this._compressFileToBlob(file);
-        const name = replaceExtension(file.name, formatToExt(this._state.format));
-        this._results.updateRowDone(id, file.size, blob, name);
-      } catch (err) {
-        this._results.updateRowError(id, err.message || 'Unknown error');
-      } finally {
-        this._conversionDone++;
-        if (this._conversionDone === this._conversionTotal) {
-          this._conversionTotal = 0;
-          this._conversionDone  = 0;
-        }
-        this._updateConvertBtn();
-      }
-    }
-
-    /**
-     * Compresses a File to a Blob using the current state settings.
-     * Handles EXIF extraction and re-injection for JPEG → JPEG conversions,
-     * resetting the orientation tag since the canvas already applies it.
-     * @param {File} file
-     * @returns {Promise<Blob>}
-     */
-    async _compressFileToBlob(file) {
-      const dataUrl = await readAsDataUrl(file);
-
-      let exifObj = null;
-      if (this._state.preserveExif && file.type === 'image/jpeg' && this._state.format === 'image/jpeg' && window.piexif) {
+      /**
+       * Compresses a single file and updates its result row on completion.
+       * @param {number} id
+       * @param {File} file
+       */
+      async processFile(id, file) {
+        const row = this.resultRows.find((r) => r.id === id);
         try {
-          exifObj = piexif.load(dataUrl);
-          // Browser auto-applies EXIF orientation when drawing to canvas, so
-          // reset tag to 1 (normal) to prevent viewers from rotating the output again.
-          if (exifObj['0th']) exifObj['0th'][piexif.ImageIFD.Orientation] = 1;
-        } catch (_) { /* no EXIF */ }
-      }
+          const blob          = await this.compressFileToBlob(file);
+          const name          = replaceExtension(file.name, formatToExt(this.format));
+          const compSize      = blob.size;
+          const savedFraction = 1 - compSize / file.size;
 
-      const img    = await loadImage(dataUrl);
-      const canvas = document.createElement('canvas');
-      canvas.width  = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      canvas.getContext('2d').drawImage(img, 0, 0);
+          if (row) {
+            row.status         = 'done';
+            row.blob           = blob;
+            row.name           = name;
+            row.compressedText = formatBytes(compSize);
+            row.savingsText    = savedFraction >= 0
+              ? `-${(savedFraction * 100).toFixed(1)}%`
+              : `+${(Math.abs(savedFraction) * 100).toFixed(1)}%`;
+            row.increased = savedFraction < 0;
+          }
 
-      const qualityArg   = this._state.format === 'image/png' ? undefined : this._state.quality;
-      let outputDataUrl  = canvas.toDataURL(this._state.format, qualityArg);
+          this.summaryOrigBytes += file.size;
+          this.summaryCompBytes += compSize;
+          this.summaryFileCount++;
+          this.summaryMinBytes = Math.min(this.summaryMinBytes, compSize);
+          this.summaryMaxBytes = Math.max(this.summaryMaxBytes, compSize);
+        } catch (err) {
+          if (row) {
+            row.status         = 'error';
+            row.compressedText = 'Error';
+            row.savingsText    = err.message || 'Unknown error';
+          }
+        } finally {
+          this.conversionDone++;
+          if (this.conversionDone === this.conversionTotal) {
+            this.conversionTotal = 0;
+            this.conversionDone  = 0;
+          }
+        }
+      },
 
-      if (exifObj && window.piexif) {
-        try { outputDataUrl = piexif.insert(piexif.dump(exifObj), outputDataUrl); } catch (_) {}
-      }
+      // ── Sample preview ────────────────────────────────────────────────────
 
-      return dataUrlToBlob(outputDataUrl);
-    }
-  }
+      /**
+       * Compresses up to the first 4 pending files at the current settings and
+       * populates the sample comparison list.
+       */
+      async runSamplePreview() {
+        const files = this.pendingFiles.slice(0, 4);
+        if (!files.length) return;
 
-  // ── Bootstrap ─────────────────────────────────────────────────────────────
+        this.sampleRunning = true;
+        this.sampleUrls.forEach((u) => URL.revokeObjectURL(u));
+        this.sampleUrls = [];
+        this.sampleData = [];
 
-  new ImageCompressorApp();
+        const settingsLabel = this.format === 'image/png'
+          ? 'PNG (lossless)'
+          : `${this.quality}%, ${formatToExt(this.format).toUpperCase()}`;
+
+        for (const file of files) {
+          const blob          = await this.compressFileToBlob(file);
+          const origUrl       = URL.createObjectURL(file);
+          const compUrl       = URL.createObjectURL(blob);
+          const savedFraction = 1 - blob.size / file.size;
+          this.sampleUrls.push(origUrl, compUrl);
+          this.sampleData.push({
+            file,
+            origUrl,
+            compUrl,
+            origSize:     file.size,
+            compSize:     blob.size,
+            settingsLabel,
+            savingsText:  savedFraction >= 0
+              ? `-${(savedFraction * 100).toFixed(1)}%`
+              : `+${(Math.abs(savedFraction) * 100).toFixed(1)}%`,
+            increased:    savedFraction < 0,
+          });
+        }
+
+        this.sampleRunning = false;
+      },
+
+      // ── Modal ─────────────────────────────────────────────────────────────
+
+      /** @param {number} index */
+      openModal(index) {
+        this.modalIndex   = index;
+        this.modalVisible = true;
+        document.body.style.overflow = 'hidden';
+      },
+
+      closeModal() {
+        this.modalVisible = false;
+        document.body.style.overflow = '';
+      },
+
+      /** @param {number} dir - +1 or -1 */
+      navigateModal(dir) {
+        this.modalIndex = (this.modalIndex + dir + this.sampleData.length) % this.sampleData.length;
+      },
+
+      onKeydown(e) {
+        if (!this.modalVisible) return;
+        if (e.key === 'Escape')     this.closeModal();
+        if (e.key === 'ArrowLeft')  this.navigateModal(-1);
+        if (e.key === 'ArrowRight') this.navigateModal(1);
+      },
+
+      // ── Downloads ─────────────────────────────────────────────────────────
+
+      /** @param {{ blob: Blob, name: string }} row */
+      downloadSingle(row) {
+        if (row.blob) triggerDownload(row.blob, row.name);
+      },
+
+      /** Bundles all completed files into a ZIP and triggers a download. */
+      async downloadAll() {
+        const ready = this.resultRows.filter((r) => r.status === 'done' && r.blob);
+        if (!ready.length) return;
+
+        if (!window.JSZip) {
+          let delay = 0;
+          ready.forEach((r) => {
+            setTimeout(() => triggerDownload(r.blob, r.name), delay);
+            delay += 200;
+          });
+          return;
+        }
+
+        this.zipping = true;
+        try {
+          const zip = new JSZip();
+          ready.forEach((r) => zip.file(r.name, r.blob));
+          const zipBlob = await zip.generateAsync({ type: 'blob' });
+          triggerDownload(zipBlob, 'compressed-images.zip');
+        } finally {
+          this.zipping = false;
+        }
+      },
+
+      // ── Core compression ──────────────────────────────────────────────────
+
+      /**
+       * Compresses a File to a Blob using the current settings.
+       * Handles EXIF extraction and re-injection for JPEG to JPEG conversions,
+       * resetting the orientation tag since the canvas already applies it.
+       * @param {File} file
+       * @returns {Promise<Blob>}
+       */
+      async compressFileToBlob(file) {
+        const dataUrl = await readAsDataUrl(file);
+
+        let exifObj = null;
+        if (this.preserveExif && file.type === 'image/jpeg' && this.format === 'image/jpeg' && window.piexif) {
+          try {
+            exifObj = piexif.load(dataUrl);
+            // Browser auto-applies EXIF orientation when drawing to canvas, so
+            // reset tag to 1 (normal) to prevent viewers from rotating the output again.
+            if (exifObj['0th']) exifObj['0th'][piexif.ImageIFD.Orientation] = 1;
+          } catch (_) { /* no EXIF */ }
+        }
+
+        const img    = await loadImage(dataUrl);
+        const canvas = document.createElement('canvas');
+        canvas.width  = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        canvas.getContext('2d').drawImage(img, 0, 0);
+
+        const qualityArg  = this.format === 'image/png' ? undefined : this.quality / 100;
+        let outputDataUrl = canvas.toDataURL(this.format, qualityArg);
+
+        if (exifObj && window.piexif) {
+          try { outputDataUrl = piexif.insert(piexif.dump(exifObj), outputDataUrl); } catch (_) {}
+        }
+
+        return dataUrlToBlob(outputDataUrl);
+      },
+    },
+  }).mount('#app');
 
 })();
