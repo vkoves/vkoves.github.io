@@ -57,7 +57,7 @@ stylesheets:
         class="preview-thumb"
         :class="{ '-overflow': thumb.isOverflow }"
       >
-        <img :src="thumb.url" alt="">
+        <img :src="thumb.url" alt="" data-proofer-ignore>
         <span v-if="thumb.isOverflow" class="preview-thumb__badge">+{{ thumb.overflowCount }}</span>
       </div>
     </div>
@@ -110,7 +110,7 @@ stylesheets:
     <ul class="sample-list" v-if="sampleExpanded && sampleData.length > 0">
       <li v-for="(item, i) in sampleData" :key="i" class="sample-item">
         <span class="sample-item__thumb">
-          <img :src="item.origUrl" alt="" class="sample-item__thumb-img">
+          <img :src="item.origUrl" alt="" class="sample-item__thumb-img" data-proofer-ignore>
         </span>
         <span class="sample-item__name" :title="item.file.name">{{ truncateName(item.file.name) }}</span>
         <span class="sample-item__sizes">{{ formatBytes(item.origSize) }} &rarr; {{ formatBytes(item.compSize) }}</span>
@@ -188,7 +188,7 @@ stylesheets:
           :class="{ '-error': row.status === 'error' }"
         >
           <span class="result-item__thumb">
-            <img :src="row.thumbUrl" alt="" class="result-item__thumb-img">
+            <img :src="row.thumbUrl" alt="" class="result-item__thumb-img" data-proofer-ignore>
           </span>
           <span class="result-item__name" :title="row.file.name">{{ truncateName(row.file.name) }}</span>
           <span class="result-item__original">{{ formatBytes(row.file.size) }}</span>
@@ -223,13 +223,13 @@ stylesheets:
           <p class="comparison-image__label">
             Original <span class="comparison-image__size">{{ formatBytes(modalItem.origSize) }}</span>
           </p>
-          <img :src="modalItem.origUrl" alt="Original image">
+          <img :src="modalItem.origUrl" alt="Original image" data-proofer-ignore>
         </div>
         <div class="comparison-image">
           <p class="comparison-image__label">
             Compressed <span class="comparison-image__size">{{ formatBytes(modalItem.compSize) }} {{ modalSavingsText }}</span>
           </p>
-          <img :src="modalItem.compUrl" alt="Compressed image">
+          <img :src="modalItem.compUrl" alt="Compressed image" data-proofer-ignore>
         </div>
       </div>
 
