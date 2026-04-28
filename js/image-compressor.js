@@ -126,6 +126,7 @@
 
         // Pending files and preview strip
         pendingFiles:     [],
+        previewFiles:     [], // File objects for the preview strip; kept after convertAll so sample preview still works
         previewUrls:      [], // object URLs for up to 4 pending files; revoked when files change
         previewFileCount: 0,  // total pending count, kept after convertAll for the overflow badge
 
@@ -144,13 +145,15 @@
         summaryMinBytes:  Infinity,
         summaryMaxBytes:  0,
 
-        showFilesTable: false,
-        zipping:        false,
+        showFilesTable:       false,
+        zipping:              false,
+        summarySettingsLabel: '',
 
         // Sample preview
-        sampleData:    [], // { file, origUrl, compUrl, origSize, compSize, settingsLabel, savingsText, increased }
-        sampleUrls:    [], // object URLs revoked on re-run
-        sampleRunning: false,
+        sampleData:     [], // { file, origUrl, compUrl, origSize, compSize, settingsLabel, savingsText, increased }
+        sampleUrls:     [], // object URLs revoked on re-run
+        sampleRunning:  false,
+        sampleExpanded: true,
 
         // Comparison modal
         modalVisible: false,
@@ -270,7 +273,8 @@
         if (!files.length) return;
         const newFiles = this.pendingFiles.concat(files);
         this.previewUrls.forEach((u) => URL.revokeObjectURL(u));
-        this.previewUrls      = newFiles.slice(0, 4).map((f) => URL.createObjectURL(f));
+        this.previewFiles     = newFiles.slice(0, 4);
+        this.previewUrls      = this.previewFiles.map((f) => URL.createObjectURL(f));
         this.previewFileCount = newFiles.length;
         this.pendingFiles     = newFiles;
       },
@@ -278,6 +282,7 @@
       /** Empties the pending queue and hides the preview strip. */
       clearPending() {
         this.previewUrls.forEach((u) => URL.revokeObjectURL(u));
+        this.previewFiles     = [];
         this.previewUrls      = [];
         this.previewFileCount = 0;
         this.pendingFiles     = [];
@@ -288,8 +293,16 @@
       /** Moves all pending files into the processing queue and starts compression. */
       convertAll() {
         if (!this.pendingFiles.length) return;
-        const toProcess   = this.pendingFiles.slice();
-        this.pendingFiles = []; // clear queue; previewUrls kept so the strip stays visible
+        const toProcess      = this.pendingFiles.slice();
+        this.pendingFiles    = []; // clear queue; previewUrls kept so the strip stays visible
+        this.sampleExpanded  = false;
+
+        const batchLabel = this.format === 'image/png'
+          ? 'PNG (lossless)'
+          : `${this.quality}% ${formatToExt(this.format).toUpperCase()}${this.preserveExif ? ' · EXIF preserved' : ''}`;
+        this.summarySettingsLabel = (this.summarySettingsLabel && this.summarySettingsLabel !== batchLabel)
+          ? 'Multiple settings'
+          : batchLabel;
 
         this.conversionTotal += toProcess.length;
 
@@ -361,7 +374,7 @@
        * populates the sample comparison list.
        */
       async runSamplePreview() {
-        const files = this.pendingFiles.slice(0, 4);
+        const files = this.previewFiles.slice(0, 4);
         if (!files.length) return;
 
         this.sampleRunning = true;
@@ -431,6 +444,7 @@
         this.resultRows.forEach((r) => URL.revokeObjectURL(r.thumbUrl));
 
         this.pendingFiles     = [];
+        this.previewFiles     = [];
         this.previewUrls      = [];
         this.previewFileCount = 0;
         this.resultRows       = [];
@@ -439,10 +453,12 @@
         this.summaryFileCount = 0;
         this.summaryMinBytes  = Infinity;
         this.summaryMaxBytes  = 0;
-        this.showFilesTable   = false;
+        this.showFilesTable       = false;
+        this.summarySettingsLabel = '';
         this.sampleData       = [];
         this.sampleUrls       = [];
         this.sampleRunning    = false;
+        this.sampleExpanded   = true;
         this.modalVisible     = false;
         this.fileIdCounter    = 0;
       },

@@ -95,6 +95,10 @@ stylesheets:
   <!-- 4. Sample comparison -->
   <div class="compressor__sample" v-if="showPreview">
     <div class="sample-bar">
+      <button type="button" class="sample-toggle-btn" @click="sampleExpanded = !sampleExpanded" aria-label="Toggle preview list">
+        <template v-if="sampleExpanded">&#9662;</template>
+        <template v-else>&#9656;</template>
+      </button>
       <div class="sample-bar__text">
         <strong>Preview compression</strong>
         <span class="sample-bar__desc">Compare the first 4 images at current settings before converting all</span>
@@ -103,8 +107,11 @@ stylesheets:
         {{ sampleBtnLabel }}
       </button>
     </div>
-    <ul class="sample-list" v-if="sampleData.length > 0">
+    <ul class="sample-list" v-if="sampleExpanded && sampleData.length > 0">
       <li v-for="(item, i) in sampleData" :key="i" class="sample-item">
+        <span class="sample-item__thumb">
+          <img :src="item.origUrl" alt="" class="sample-item__thumb-img">
+        </span>
         <span class="sample-item__name" :title="item.file.name">{{ truncateName(item.file.name) }}</span>
         <span class="sample-item__sizes">{{ formatBytes(item.origSize) }} &rarr; {{ formatBytes(item.compSize) }}</span>
         <span class="sample-item__savings" :class="{ '-increased': item.increased }">{{ item.savingsText }}</span>
@@ -130,6 +137,7 @@ stylesheets:
 
     <div class="results-summary">
       <div class="results-summary__left">
+        <p class="results-summary__title">Conversion Results</p>
         <div class="results-summary__stats" v-if="summaryData">
           <div class="results-stat">
             <span class="results-stat__label">Before</span>
@@ -148,6 +156,9 @@ stylesheets:
           Max <strong>{{ summaryData.max }}</strong>
           &nbsp;&middot;&nbsp;
           Min <strong>{{ summaryData.min }}</strong>
+        </p>
+        <p class="results-summary__settings" v-if="summarySettingsLabel">
+          Settings: <strong>{{ summarySettingsLabel }}</strong>
         </p>
       </div>
       <button type="button" class="btn -neutral" :disabled="isProcessing || zipping" @click="reset">
