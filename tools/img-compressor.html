@@ -6,9 +6,9 @@ scripts:
   - https://cdn.jsdelivr.net/npm/piexifjs@1.0.6/piexif.js
   - https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js
   - https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js
-  - image-compressor.js
+  - tools/img-compressor.js
 stylesheets:
-  - pages/image-compressor.css
+  - pages/tools/img-compressor.css
 ---
 
 {% include shapesHero.html heading="Image Compressor" limiterClass="content-limiter -page" %}
@@ -21,7 +21,7 @@ stylesheets:
 </p>
 
 {% raw %}
-<div class="compressor" id="app">
+<div class="compressor" id="app" v-cloak>
 
   <!-- 1. Drop zone -->
   <div
