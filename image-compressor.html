@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Image Compressor
-pageClass: content-limiter -page
+pageClass: '-no-padding-top'
 scripts:
   - https://cdn.jsdelivr.net/npm/piexifjs@1.0.6/piexif.js
   - https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js
@@ -10,7 +10,9 @@ stylesheets:
   - pages/image-compressor.css
 ---
 
-{% include shapesHero.html heading="Image Compressor" %}
+{% include shapesHero.html heading="Image Compressor" limiterClass="content-limiter -page" %}
+
+<div class="content-limiter -page">
 
 <p class="tool-description">
   Compress and convert images in your browser — nothing is uploaded to any server.
@@ -39,7 +41,19 @@ stylesheets:
     <input type="file" id="file-input" multiple accept="image/*" class="visually-hidden" tabindex="-1" aria-hidden="true">
   </div>
 
-  <!-- 2. Preview strip (shown after files are selected) -->
+  <!-- 2. Sample comparison (shown when files staged) -->
+  <div class="compressor__sample" id="sample-section" hidden>
+    <div class="sample-bar">
+      <div class="sample-bar__text">
+        <strong>Preview compression</strong>
+        <span class="sample-bar__desc">Compare the first 4 images at current settings before converting all</span>
+      </div>
+      <button type="button" id="sample-btn" class="btn -secondary">Preview first 4 images</button>
+    </div>
+    <ul id="sample-list" class="sample-list" hidden></ul>
+  </div>
+
+  <!-- 3. Preview strip (shown after files are selected) -->
   <div class="compressor__preview" id="preview-section" hidden>
     <div id="preview-thumbnails" class="preview-thumbnails"></div>
     <div class="preview-meta">
@@ -76,20 +90,87 @@ stylesheets:
   </div>
 
   <!-- 4. Convert button -->
-  <button type="button" id="convert-btn" class="btn -convert" disabled>Convert</button>
+  <button type="button" id="convert-btn" class="btn -convert" disabled>
+    <span class="btn__spinner" aria-hidden="true"></span>
+    <span id="convert-btn-label">Convert</span>
+  </button>
 
   <!-- 5. Results -->
   <section class="compressor__results" id="results-section" hidden aria-live="polite">
-    <div class="results-header">
-      <span>File</span>
-      <span>Original</span>
-      <span>Compressed</span>
-      <span>Savings</span>
-      <span class="results-header__actions">
-        <button type="button" id="download-all-btn" class="btn">Download All</button>
-      </span>
+
+    <div class="results-summary">
+      <div class="results-summary__stats">
+        <div class="results-stat">
+          <span class="results-stat__label">Before</span>
+          <span class="results-stat__value" id="summary-original">—</span>
+        </div>
+        <span class="results-summary__arrow" aria-hidden="true">&#8594;</span>
+        <div class="results-stat">
+          <span class="results-stat__label">After</span>
+          <span class="results-stat__value -green" id="summary-compressed">—</span>
+        </div>
+        <span class="results-summary__savings" id="summary-savings"></span>
+      </div>
+      <button type="button" id="download-all-btn" class="btn">Download All</button>
     </div>
-    <ul id="results-list" class="results-list"></ul>
+
+    <button type="button" id="toggle-files-btn" class="toggle-files-btn">
+      &#9656; View Individual Files
+    </button>
+
+    <div id="files-table" hidden>
+      <div class="results-header">
+        <span>File</span>
+        <span>Original</span>
+        <span>Compressed</span>
+        <span>Savings</span>
+        <span></span>
+      </div>
+      <ul id="results-list" class="results-list"></ul>
+    </div>
+
   </section>
 
-</div>
+  <!-- Comparison modal -->
+  <div
+    class="comparison-modal"
+    id="comparison-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="comparison-modal__backdrop" id="modal-backdrop"></div>
+    <div class="comparison-modal__panel">
+      <button type="button" class="comparison-modal__close" id="modal-close" aria-label="Close comparison">&times;</button>
+
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-filename">Original Filename: <strong id="modal-filename"></strong></p>
+
+      <div class="comparison-images">
+        <div class="comparison-image">
+          <p class="comparison-image__label">
+            Original <span class="comparison-image__size" id="modal-orig-size"></span>
+          </p>
+          <img id="modal-orig-img" alt="Original image">
+        </div>
+        <div class="comparison-image">
+          <p class="comparison-image__label">
+            Compressed <span class="comparison-image__size" id="modal-comp-size"></span>
+          </p>
+          <img id="modal-comp-img" alt="Compressed image">
+        </div>
+      </div>
+
+      <p class="modal-settings">Settings Used: <strong id="modal-settings"></strong></p>
+
+      <div class="comparison-nav">
+        <button type="button" id="modal-prev" class="btn -secondary">&#8592; Prev</button>
+        <button type="button" id="modal-next" class="btn -secondary">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- .compressor -->
+
+</div><!-- .content-limiter -->

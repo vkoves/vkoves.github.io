@@ -9,32 +9,66 @@
 
   // Files staged for conversion (not yet processed)
   let pendingFiles = [];
-  // Blob URLs created for preview thumbnails — revoked on next preview update
+  // Blob URLs for the thumbnail strip — revoked on next preview update
   let previewUrls = [];
 
   let fileIdCounter = 0;
   // Map of id -> { file, status: 'processing'|'done'|'error', result: {blob, name} | null }
   const fileEntries = new Map();
 
-  // DOM refs
+  // Conversion progress counters (reset to 0 when a batch completes)
+  let conversionTotal = 0;
+  let conversionDone  = 0;
+
+  // Running totals for the summary panel (accumulate across all batches)
+  let summaryOrigBytes = 0;
+  let summaryCompBytes = 0;
+
+  // Sample preview state
+  // Array of { file, origUrl, compUrl, origSize, compSize, settingsLabel }
+  let sampleData = [];
+  let sampleUrls = []; // object URLs to revoke on re-run
+  let modalIndex = 0;
+
+  // ── DOM refs ──────────────────────────────────────────────────────────────
+
   const dropZone        = document.getElementById('drop-zone');
   const fileInput       = document.getElementById('file-input');
-  const selectFilesBtn  = document.getElementById('select-files-btn');
   const formatSelect    = document.getElementById('output-format');
   const qualitySlider   = document.getElementById('quality-slider');
   const qualityValue    = document.getElementById('quality-value');
   const qualitySetting  = document.getElementById('quality-setting');
-  const exifSetting     = document.getElementById('exif-setting');
   const exifNote        = document.getElementById('exif-note');
   const preserveExifEl  = document.getElementById('preserve-exif');
+  const sampleSection   = document.getElementById('sample-section');
+  const sampleBtn       = document.getElementById('sample-btn');
+  const sampleList      = document.getElementById('sample-list');
   const previewSection  = document.getElementById('preview-section');
   const previewThumbs   = document.getElementById('preview-thumbnails');
   const previewCount    = document.getElementById('preview-count');
   const clearBtn        = document.getElementById('clear-btn');
   const convertBtn      = document.getElementById('convert-btn');
-  const resultsSection  = document.getElementById('results-section');
-  const resultsList     = document.getElementById('results-list');
-  const downloadAllBtn  = document.getElementById('download-all-btn');
+  const convertBtnLabel = document.getElementById('convert-btn-label');
+  const resultsSection   = document.getElementById('results-section');
+  const summaryOrigEl    = document.getElementById('summary-original');
+  const summaryCompEl    = document.getElementById('summary-compressed');
+  const summarySavingsEl = document.getElementById('summary-savings');
+  const toggleFilesBtn   = document.getElementById('toggle-files-btn');
+  const filesTable       = document.getElementById('files-table');
+  const resultsList      = document.getElementById('results-list');
+  const downloadAllBtn   = document.getElementById('download-all-btn');
+  const modal           = document.getElementById('comparison-modal');
+  const modalBackdrop   = document.getElementById('modal-backdrop');
+  const modalClose      = document.getElementById('modal-close');
+  const modalTitle      = document.getElementById('modal-title');
+  const modalFilename   = document.getElementById('modal-filename');
+  const modalOrigImg    = document.getElementById('modal-orig-img');
+  const modalCompImg    = document.getElementById('modal-comp-img');
+  const modalOrigSize   = document.getElementById('modal-orig-size');
+  const modalCompSize   = document.getElementById('modal-comp-size');
+  const modalSettings   = document.getElementById('modal-settings');
+  const modalPrev       = document.getElementById('modal-prev');
+  const modalNext       = document.getElementById('modal-next');
 
   // ── Settings ──────────────────────────────────────────────────────────────
 
@@ -98,6 +132,13 @@
   clearBtn.addEventListener('click', clearPending);
   convertBtn.addEventListener('click', convertAll);
   downloadAllBtn.addEventListener('click', downloadAll);
+  toggleFilesBtn.addEventListener('click', () => {
+    const expanded = !filesTable.hidden;
+    filesTable.hidden = expanded;
+    toggleFilesBtn.innerHTML = expanded
+      ? '&#9656; View Individual Files'
+      : '&#9662; Hide Individual Files';
+  });
 
   // ── Staging & preview ─────────────────────────────────────────────────────
 
@@ -113,26 +154,29 @@
   }
 
   function updatePreview() {
-    // Revoke old object URLs to free memory
     previewUrls.forEach((u) => URL.revokeObjectURL(u));
     previewUrls = [];
     previewThumbs.innerHTML = '';
 
     const total = pendingFiles.length;
+    const hasFiles = total > 0;
 
-    if (total === 0) {
-      previewSection.hidden = true;
-      convertBtn.disabled = true;
+    sampleSection.hidden = !hasFiles;
+    previewSection.hidden = !hasFiles;
+    updateConvertBtn();
+
+    if (!hasFiles) {
+      // Hide sample results when files are cleared
+      sampleList.hidden = true;
+      sampleList.innerHTML = '';
       return;
     }
 
-    previewSection.hidden = false;
-    convertBtn.disabled = false;
     previewCount.textContent = `${total} image${total === 1 ? '' : 's'} selected`;
 
     // Show up to 4 thumbnails; if total > 4 the 4th slot is an overflow badge
-    const slotCount  = Math.min(total, 4);
-    const overflow   = total > 4 ? total - 3 : 0; // how many are hidden
+    const slotCount = Math.min(total, 4);
+    const overflow  = total > 4 ? total - 3 : 0;
 
     for (let i = 0; i < slotCount; i++) {
       const file = pendingFiles[i];
@@ -160,15 +204,175 @@
     }
   }
 
-  // ── Conversion ────────────────────────────────────────────────────────────
+  // ── Sample preview ────────────────────────────────────────────────────────
+
+  sampleBtn.addEventListener('click', runSamplePreview);
+
+  async function runSamplePreview() {
+    const files = pendingFiles.slice(0, 4);
+    if (!files.length) return;
+
+    sampleBtn.disabled = true;
+    sampleBtn.textContent = 'Processing…';
+
+    // Revoke previous sample URLs
+    sampleUrls.forEach((u) => URL.revokeObjectURL(u));
+    sampleUrls = [];
+    sampleData = [];
+
+    const settingsLabel = state.format === 'image/png'
+      ? 'PNG (lossless)'
+      : `${Math.round(state.quality * 100)}%, ${formatToExt(state.format).toUpperCase()}`;
+
+    for (const file of files) {
+      const blob     = await compressFileToBlob(file);
+      const origUrl  = URL.createObjectURL(file);
+      const compUrl  = URL.createObjectURL(blob);
+      sampleUrls.push(origUrl, compUrl);
+      sampleData.push({ file, origUrl, compUrl, origSize: file.size, compSize: blob.size, settingsLabel });
+    }
+
+    renderSampleList();
+    sampleList.hidden = false;
+    sampleBtn.disabled = false;
+    sampleBtn.textContent = 'Re-run preview';
+  }
+
+  function renderSampleList() {
+    sampleList.innerHTML = '';
+    sampleData.forEach((item, i) => {
+      const savedFraction = 1 - item.compSize / item.origSize;
+      const savingsText = savedFraction >= 0
+        ? `-${(savedFraction * 100).toFixed(1)}%`
+        : `+${(Math.abs(savedFraction) * 100).toFixed(1)}%`;
+
+      const li = document.createElement('li');
+      li.className = 'sample-item';
+      li.innerHTML = `
+        <span class="sample-item__name" title="${escapeHtml(item.file.name)}">${escapeHtml(truncateName(item.file.name))}</span>
+        <span class="sample-item__sizes">${formatBytes(item.origSize)} &rarr; ${formatBytes(item.compSize)}</span>
+        <span class="sample-item__savings${savedFraction < 0 ? ' -increased' : ''}">${savingsText}</span>
+        <button type="button" class="sample-item__view btn">View</button>
+      `;
+      li.querySelector('.sample-item__view').addEventListener('click', () => openModal(i));
+      sampleList.appendChild(li);
+    });
+  }
+
+  // ── Comparison modal ──────────────────────────────────────────────────────
+
+  modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  modalPrev.addEventListener('click', () => navigateModal(-1));
+  modalNext.addEventListener('click', () => navigateModal(1));
+
+  document.addEventListener('keydown', (e) => {
+    if (modal.hidden) return;
+    if (e.key === 'Escape')      closeModal();
+    if (e.key === 'ArrowLeft')   navigateModal(-1);
+    if (e.key === 'ArrowRight')  navigateModal(1);
+  });
+
+  function openModal(index) {
+    modalIndex = index;
+    renderModal();
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  function navigateModal(dir) {
+    modalIndex = (modalIndex + dir + sampleData.length) % sampleData.length;
+    renderModal();
+  }
+
+  function renderModal() {
+    const item  = sampleData[modalIndex];
+    const count = sampleData.length;
+
+    const savedFraction = 1 - item.compSize / item.origSize;
+    const savingsText = savedFraction >= 0
+      ? `(${(savedFraction * 100).toFixed(1)}% smaller)`
+      : `(${(Math.abs(savedFraction) * 100).toFixed(1)}% larger)`;
+
+    modalTitle.textContent    = `Image ${modalIndex + 1} of ${count} Preview`;
+    modalFilename.textContent = item.file.name;
+    modalOrigImg.src          = item.origUrl;
+    modalCompImg.src          = item.compUrl;
+    modalOrigSize.textContent = formatBytes(item.origSize);
+    modalCompSize.textContent = `${formatBytes(item.compSize)} ${savingsText}`;
+    modalSettings.textContent = item.settingsLabel;
+
+    modalPrev.disabled = count <= 1;
+    modalNext.disabled = count <= 1;
+  }
+
+  // ── Core compression ──────────────────────────────────────────────────────
+
+  // Shared by both processFile (batch) and runSamplePreview
+  async function compressFileToBlob(file) {
+    const dataUrl = await readAsDataUrl(file);
+
+    let exifObj = null;
+    if (state.preserveExif && file.type === 'image/jpeg' && state.format === 'image/jpeg' && window.piexif) {
+      try {
+        exifObj = piexif.load(dataUrl);
+        // Browser auto-applies EXIF orientation when drawing to canvas, so
+        // the canvas pixels are already correctly rotated. Reset tag to 1
+        // (normal) to prevent viewers from rotating the output again.
+        if (exifObj['0th']) exifObj['0th'][piexif.ImageIFD.Orientation] = 1;
+      } catch (_) { /* no EXIF */ }
+    }
+
+    const img = await loadImage(dataUrl);
+    const canvas = document.createElement('canvas');
+    canvas.width  = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    canvas.getContext('2d').drawImage(img, 0, 0);
+
+    const qualityArg = state.format === 'image/png' ? undefined : state.quality;
+    let outputDataUrl = canvas.toDataURL(state.format, qualityArg);
+
+    if (exifObj && window.piexif) {
+      try { outputDataUrl = piexif.insert(piexif.dump(exifObj), outputDataUrl); } catch (_) {}
+    }
+
+    return dataUrlToBlob(outputDataUrl);
+  }
+
+  function updateSummary() {
+    summaryOrigEl.textContent = formatBytes(summaryOrigBytes);
+    summaryCompEl.textContent = formatBytes(summaryCompBytes);
+    const saved = (1 - summaryCompBytes / summaryOrigBytes) * 100;
+    summarySavingsEl.textContent = saved >= 0
+      ? `${saved.toFixed(1)}% smaller`
+      : `${Math.abs(saved).toFixed(1)}% larger`;
+  }
+
+  function updateConvertBtn() {
+    const isProcessing = conversionDone < conversionTotal;
+    convertBtn.disabled = isProcessing || pendingFiles.length === 0;
+    convertBtn.classList.toggle('-loading', isProcessing);
+    convertBtnLabel.textContent = isProcessing
+      ? `Compressing… ${conversionDone}/${conversionTotal}`
+      : 'Convert';
+  }
+
+  // ── Batch conversion ──────────────────────────────────────────────────────
 
   function convertAll() {
     if (!pendingFiles.length) return;
 
     const toProcess = pendingFiles.slice();
-    clearPending(); // clear the queue immediately so users can stage another batch
+    pendingFiles = []; // clear queue without hiding the preview strip
 
-    resultsSection.hidden = false;
+    conversionTotal += toProcess.length;
+    updateConvertBtn();
 
     toProcess.forEach((file) => {
       const id = ++fileIdCounter;
@@ -196,40 +400,7 @@
 
   async function processFile(id, file) {
     try {
-      const dataUrl = await readAsDataUrl(file);
-
-      // Extract EXIF from original JPEG if needed
-      let exifObj = null;
-      if (state.preserveExif && file.type === 'image/jpeg' && state.format === 'image/jpeg' && window.piexif) {
-        try {
-          exifObj = piexif.load(dataUrl);
-          // The browser auto-applies EXIF orientation when drawing to canvas, so
-          // the canvas output is already correctly rotated. Reset the tag to 1
-          // (normal) to prevent viewers from rotating again.
-          if (exifObj['0th']) {
-            exifObj['0th'][piexif.ImageIFD.Orientation] = 1;
-          }
-        } catch (_) { /* no EXIF */ }
-      }
-
-      // Draw to canvas at native resolution
-      const img = await loadImage(dataUrl);
-      const canvas = document.createElement('canvas');
-      canvas.width  = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      canvas.getContext('2d').drawImage(img, 0, 0);
-
-      const qualityArg = state.format === 'image/png' ? undefined : state.quality;
-      let outputDataUrl = canvas.toDataURL(state.format, qualityArg);
-
-      // Re-inject EXIF into the compressed JPEG
-      if (exifObj && window.piexif) {
-        try {
-          outputDataUrl = piexif.insert(piexif.dump(exifObj), outputDataUrl);
-        } catch (_) { /* leave without EXIF if injection fails */ }
-      }
-
-      const blob = dataUrlToBlob(outputDataUrl);
+      const blob = await compressFileToBlob(file);
       const name = replaceExtension(file.name, formatToExt(state.format));
 
       fileEntries.get(id).status = 'done';
@@ -246,15 +417,22 @@
     if (!row) return;
 
     const savedFraction = 1 - compressedSize / originalSize;
-    const savingsText =
-      savedFraction >= 0
-        ? `-${(savedFraction * 100).toFixed(1)}%`
-        : `+${(Math.abs(savedFraction) * 100).toFixed(1)}%`;
+    const savingsText = savedFraction >= 0
+      ? `-${(savedFraction * 100).toFixed(1)}%`
+      : `+${(Math.abs(savedFraction) * 100).toFixed(1)}%`;
 
     row.querySelector('.result-item__compressed').textContent = formatBytes(compressedSize);
     const savingsEl = row.querySelector('.result-item__savings');
     savingsEl.textContent = savingsText;
     savingsEl.classList.toggle('-increased', savedFraction < 0);
+
+    summaryOrigBytes += originalSize;
+    summaryCompBytes += compressedSize;
+    updateSummary();
+    resultsSection.hidden = false;
+    conversionDone++;
+    if (conversionDone === conversionTotal) { conversionTotal = 0; conversionDone = 0; }
+    updateConvertBtn();
 
     const btn = row.querySelector('.result-item__download');
     btn.disabled = false;
@@ -264,6 +442,10 @@
   function updateRowError(id, message) {
     const row = document.getElementById(`result-${id}`);
     if (!row) return;
+    resultsSection.hidden = false;
+    conversionDone++;
+    if (conversionDone === conversionTotal) { conversionTotal = 0; conversionDone = 0; }
+    updateConvertBtn();
     row.classList.add('-error');
     row.querySelector('.result-item__compressed').textContent = 'Error';
     row.querySelector('.result-item__savings').textContent = message;
@@ -346,9 +528,14 @@
   }
 
   function formatBytes(n) {
-    if (n < 1024)           return `${n} B`;
-    if (n < 1024 * 1024)    return `${(n / 1024).toFixed(1)} KB`;
-    return `${(n / (1024 * 1024)).toFixed(2)} MB`;
+    const BYTES_PER_UNIT = 1024;
+    const KB = BYTES_PER_UNIT;
+    const MB = KB * BYTES_PER_UNIT;
+    const GB = MB * BYTES_PER_UNIT;
+    if (n < KB) return `${n} B`;
+    if (n < MB) return `${(n / KB).toFixed(1)} KB`;
+    if (n < GB) return `${Math.round(n / MB)} MB`;
+    return `${(n / GB).toFixed(2)} GB`;
   }
 
   function formatToExt(mime) {
