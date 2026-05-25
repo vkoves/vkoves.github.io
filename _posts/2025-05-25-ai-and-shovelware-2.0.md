@@ -1,17 +1,26 @@
 ---
 layout: post
+pageClass: 'content-limiter -page -no-padding-top'
 title: Anyone Can Make Software Now. So Why's It Mostly Dangerous Crap?
+skipPostTitle: true
 metadata:
   image: https://viktorkoves.com/post-assets/ebike/ebike-social-image.png
   description:
     Welcome to Shovelware 2.0
 stylesheets:
- - articles/ebike-article.css
+ - articles/ai-shovelware.css
 ---
 
-<!-- # Anyone Can Make Software Now. So Why's It Mostly Dangerous Crap?
 
-Welcome to Shovelware 2.0 -->
+<div class="header">
+  <div class="content-limiter">
+    <h1>Anyone Can Make Software Now. So Why's It Mostly Dangerous Crap?</h1>
+
+    Welcome to Shovelware 2.0
+
+  </div>
+  <img src="/post-assets/ai-shovelware/shovelware-header.svg" alt="" width="100%" height="auto">
+</div>
 
 Agentic coding AI is here, and it’s transforming the software industry. But with agentic coding out now for over a year, has it felt like the software industry has really transformed? At least from my experience, although there are some really cool projects that have absolutely been built only because of new agentic coding tools, it generally feels like we’re awash in a sea of software slop. Tim Kadlec wrote a great article, [“Losing Focus”](https://timkadlec.com/remembers/2026/05/losing-focus/), that had this quote that really resonated with me:
 
@@ -66,17 +75,17 @@ In the real world, that might look like a database structure that isn’t optimi
 
 As I was writing this, I watched a video that I thought was worth mentioning \- a clip from Linus Tech Tips’ podcast, the WAN show, “[Amazon Employees Are Faking Their AI Usage](https://www.youtube.com/watch?v=Mhm1C76GhoU)”. In this part of the show, they discuss a recently covered phenomenon at Amazon, where developers are being pushed so hard to use AI (including with a token leaderboard), that they ended up creating bots to consume AI tokens (see also [Amazon employees are doing fake tasks because they're forced to use more AI and show it \- Digital Trends](https://www.digitaltrends.com/cool-tech/amazon-employees-are-doing-fake-tasks-because-theyre-forced-to-use-more-ai-and-show-it/)). Here’s an excerpt from the article:
 
-“According to a new Financial Times report, Amazon employees are using the company’s internal AI tool called “MeshClaw” for unnecessary tasks simply to inflate their AI usage scores and appear more aligned with the company’s growing AI-first culture.”
+> “According to a new Financial Times report, Amazon employees are using the company’s internal AI tool called ‘MeshClaw’ for unnecessary tasks simply to inflate their AI usage scores and appear more aligned with the company’s growing AI-first culture.”
 
 As a developer, this doesn’t surprise me. Developers are smart people tasked with automating problems and being efficient with their time, and although most can definitely see a benefit from using AI, that benefit doesn’t scale indefinitely. If you want your organization to use AI to grow faster or ship features faster, you have to use metrics that actually measure what you care about, are grounded in data, and can’t be so easily gamed. Amazon could have, for example, suggested developers use AI more to ship features 10% faster \- a goal that’s much more measurable and harder to game, and then could examine AI usage to see if it’s meeting targets. You could also set general daily usage targets, like setting goals around expecting engineers to try using AI on every task, and making sure that AI usage hits some baseline. But ultimately, AI usage isn’t the *goal* of any organization, and a crude metric around token use like this won’t lead to real improvements.
 
 It’s also worth mentioning that wasting tokens like this and using AI frivolously isn’t free \- both directly in financial terms, and indirectly in costs to our grid, our water supply, and our planet more broadly. There’s not a lot of great data on AI emissions and energy uses, but carbon credit company CNaught had this interesting call-out:
 
-“Software engineer Simon Couch recently analyzed his own Claude Code usage and found that a median coding agent session consumed approximately **41 Wh** (138 times more than a typical chat query). On a typical workday running multiple coding agents simultaneously, his estimated energy consumption reached **1,300 Wh**, equivalent to roughly 4,400 chat queries.”
+> “Software engineer Simon Couch recently analyzed his own Claude Code usage and found that a median coding agent session consumed approximately **41 Wh** (138 times more than a typical chat query). On a typical workday running multiple coding agents simultaneously, his estimated energy consumption reached **1,300 Wh**, equivalent to roughly 4,400 chat queries.”
 
 They also note that:
 
-“The newest ‘reasoning’ models like OpenAI's o1 series… can use 50-100x more energy than standard queries. A research paper… found that ‘smarter’ LLMs produce up to 50x more carbon emissions than simpler models”
+> “The newest ‘reasoning’ models like OpenAI's o1 series… can use 50-100x more energy than standard queries. A research paper… found that ‘smarter’ LLMs produce up to 50x more carbon emissions than simpler models”
 
 Source: [How Much Carbon Does AI Actually Use? And Why It's So Hard to Find Out - c/naught](https://www.cnaught.com/blog/how-much-carbon-does-ai-actually-use-and-why-its-so-hard-to-find-out)
 
