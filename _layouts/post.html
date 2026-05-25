@@ -10,7 +10,7 @@ stylesheets:
   <a href="/writing" id="all-posts" class="red-button">Back to All Writing</a>
 </div>
 
-<h1 class="page-title">{{ page.title }}</h1>
+<h1 class="page-title post-heading" id="{{ page.url }}">{{ page.title }}</h1>
 <p class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</p>
 
 {% for category in page.categories %}

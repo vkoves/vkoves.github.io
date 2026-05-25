@@ -27,10 +27,63 @@
   --brand-text-color-focused: #{$darkest-red};
 }
 
-
+// Enable view transitions for all pages, which
 @view-transition {
   navigation: auto;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes shrink-x {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.post-heading {
+  view-transition-name: match-element;
+  view-transition-class: post-title;
+}
+
+.post-heading#\/2024\/09\/21\/your-first-ev-could-be-a-cargo-ebike {
+  // animation: grow-x 0.3s;
+  view-transition-name: potato;
+}
+
+::view-transition-old(.post-title),
+::view-transition-new(.post-title) {
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+}
+
+// Style all post headings
+// ::view-transition-group(*.post-title) {
+
+// }
+
+// /* Style only the targeted-card's pseudos */
+// ::view-transition-old(*.post-title) {
+//   animation: shrink-x ease-out 0.5s forwards;
+// }
+// ::view-transition-new(*.post-title) {
+//   animation: grow-x ease-in 0.25s forwards;
+// }
+
 
 // Dark mode styling
 @media (prefers-color-scheme: dark) {
