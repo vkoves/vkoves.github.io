@@ -14,6 +14,10 @@ stylesheets:
 
 
 <div class="header">
+  <picture>
+    <source media="(min-width: 800px)" srcset="/post-assets/ai-shovelware/shovelware-header.svg">
+    <img src="/post-assets/ai-shovelware/shovelware-header-mobile.svg" alt="">
+  </picture>
   <div class="text content-limiter">
     <h1>
       <div class="line-1">Anyone Can Make Software Now.</div>
@@ -21,27 +25,24 @@ stylesheets:
     </h1>
 
     <div class="subtitle">Welcome to Shovelware 2.0</div>
-
   </div>
-  <img src="/post-assets/ai-shovelware/shovelware-header.svg" alt="" width="100%" height="auto">
 </div>
 
 **Author's note:** In the spirit of fairly critiquing AI, this article and the accompanying illustration were created entirely without AI assistance.
 
-Agentic coding AI is here, and it’s transforming the software industry. But with agentic coding out now for over a year, has it felt like the software industry has really transformed? At least from my experience, although there are some really cool projects that have absolutely been built only because of new agentic coding tools, it generally feels like we’re awash in a sea of software slop. Tim Kadlec wrote a great article, [“Losing Focus”](https://timkadlec.com/remembers/2026/05/losing-focus/), that had this quote that really resonated with me:
+Agentic coding AI is here, and it’s transforming the software industry. But with agentic coding out now for over a year, has it felt like the software industry has really transformed? From my  from vantage point, although there are some really cool projects that have been built only because of new agentic coding tools, it generally feels like we’re awash in a sea of software slop. Tim Kadlec wrote a great article, [“Losing Focus”](https://timkadlec.com/remembers/2026/05/losing-focus/), that really resonated with me, especially this quote:
 
-“I don’t think the quality of software has increased all that much in in the past 12 months. I think maybe the amount of software has, but it’s very, very hard to find software that’s reliable.”
-\- Max Scoening, Head of Product at Notion
+> “I don’t think the quality of software has increased all that much in in the past 12 months. I think maybe the amount of software has, but it’s very, very hard to find software that’s reliable.” \- Max Scoening, Head of Product at Notion
 
-I’ve been hearing a lot of stories and murmurs from folks I know around AI, and I think there’s a lot being lost in the binary divide that a lot of people seem to fall into \- either AI is bad and can do nothing right, or AI is the new future of engineering, and every company should have all their code written by AI *today*.
+I’ve been hearing a lot of stories and murmurs about AI from the people I know in tech, and I think there’s a lot being lost in the binary divide that a lot of people seem to fall into \- either AI is bad and can do nothing right, or AI is the new future of engineering, and every company should have all their code written by AI *today*.
 
-I want to posit that right now we’re in the messy middle \- an era of hype and grifters that want to sell you an AI fantasy that hasn’t been reached, which obscures the real present \- powerful AI tools that can speed up professional developers, but can lure non-developers into shipping products that aren’t nearly ready for prime-time.
+I want to posit that right now we’re in the messy middle. An era of hype and grifters that want to sell you an AI fantasy that hasn’t been reached, which obscures the real present \- powerful AI tools that can speed up professional developers, but can lure non-developers into shipping products that aren’t nearly ready for prime-time.
 
 ## My Background
 
-But first \- let me explain why you should listen to my perspective. I’ve been working professionally in software (specifically web development, focused on the frontend), for over ten years. In that time I’ve worked at a non-profit, for-profit, led a small startup, freelanced, and have led a number of open-source volunteer teams at Chi Hack Night, including right now working on [ElectrifyChicago.net](https://electrifychicago.net).
+But first, if you don’t know me, let me explain why you should listen to my perspective. I’ve been working professionally in software (specifically web development, focused on the frontend), for over ten years. In that time I’ve worked at a non-profit, a for-profit, led a small startup, freelanced, and have led a number of open-source volunteer teams at [Chi Hack Night](https://chihacknight.org), including right now working on [ElectrifyChicago.net](https://electrifychicago.net).
 
-I have a lot of experience with AI \- I have seen a number of AI code review tools, started with Gemini chat for coding help, and now have been using Claude Code for over a year. So I’m not coming into this conversation as a skeptic \- I use AI day-to-day in my work, and I know that it *can* be powerful, but it also can make terrible code that would never pass even a basic review, is full of duplication, or is hiding bugs. Before we get to that though, let’s start with the positive side of all these agentic coding tools.
+I have a lot of experience with AI. I have seen a number of AI code review tools, started with Gemini chat for coding help, and now have been using Claude Code for over a year. So I am absolutely not coming into this conversation as a skeptic \- I use AI day-to-day in my work, and I know that it *can* be powerful, but it also can make terrible code that would never pass even a basic review, is full of duplication, or is hiding bugs. Before we get to that though, let’s start with the positive side of all these agentic coding tools.
 
 ## The Good \- The Personal Software Revolution Has Arrived
 
