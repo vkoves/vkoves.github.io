@@ -5,7 +5,7 @@ title: Anyone Can Make Software Now. So Why's It Mostly Dangerous Crap?
 excerpt: Agentic coding tools have brought AI smashing into the software industry, but despite a year of waiting, there hasn't been a corresponding rise in the quality of software. Welcome to the era of Shovelware 2.0
 skipPostTitle: true
 metadata:
-  image: https://viktorkoves.com/post-assets/ebike/ebike-social-image.png
+  image: https://viktorkoves.com/post-assets/ai-shovelware/shovelware-social.png
   description:
     Welcome to Shovelware 2.0
 stylesheets:
@@ -14,14 +14,19 @@ stylesheets:
 
 
 <div class="header">
-  <div class="content-limiter">
-    <h1>Anyone Can Make Software Now. So Why's It Mostly Dangerous Crap?</h1>
+  <div class="text content-limiter">
+    <h1>
+      <div class="line-1">Anyone Can Make Software Now.</div>
+      <div class="line-2">So Why's It Mostly Dangerous Crap?</div>
+    </h1>
 
-    Welcome to Shovelware 2.0
+    <div class="subtitle">Welcome to Shovelware 2.0</div>
 
   </div>
   <img src="/post-assets/ai-shovelware/shovelware-header.svg" alt="" width="100%" height="auto">
 </div>
+
+**Author's note:** In the spirit of fairly critiquing AI, this article and the accompanying illustration were created entirely without AI assistance.
 
 Agentic coding AI is here, and it’s transforming the software industry. But with agentic coding out now for over a year, has it felt like the software industry has really transformed? At least from my experience, although there are some really cool projects that have absolutely been built only because of new agentic coding tools, it generally feels like we’re awash in a sea of software slop. Tim Kadlec wrote a great article, [“Losing Focus”](https://timkadlec.com/remembers/2026/05/losing-focus/), that had this quote that really resonated with me:
 
@@ -34,7 +39,7 @@ I want to posit that right now we’re in the messy middle \- an era of hype and
 
 ## My Background
 
-But first \- let me explain why you should listen to my perspective. I’ve been working professionally in software (specifically web development, focused on the frontend), for over ten years. In that time I’ve worked at a non-profit, for-profit, led a small startup, freelanced, and have led a number of open-source volunteer teams at Chi Hack Night, including right now working on [ElectrifyChicago.net](http://ElectrifyChicago.net).
+But first \- let me explain why you should listen to my perspective. I’ve been working professionally in software (specifically web development, focused on the frontend), for over ten years. In that time I’ve worked at a non-profit, for-profit, led a small startup, freelanced, and have led a number of open-source volunteer teams at Chi Hack Night, including right now working on [ElectrifyChicago.net](https://electrifychicago.net).
 
 I have a lot of experience with AI \- I have seen a number of AI code review tools, started with Gemini chat for coding help, and now have been using Claude Code for over a year. So I’m not coming into this conversation as a skeptic \- I use AI day-to-day in my work, and I know that it *can* be powerful, but it also can make terrible code that would never pass even a basic review, is full of duplication, or is hiding bugs. Before we get to that though, let’s start with the positive side of all these agentic coding tools.
 

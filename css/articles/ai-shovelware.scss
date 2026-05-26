@@ -13,7 +13,7 @@
     top: 0;
   }
 
-  div {
+  .text {
     position: relative;
     margin: 200px auto 0 auto;
     text-shadow: 2px 2px black;
@@ -23,5 +23,8 @@
     border-radius: 15px;
     max-width: 800px;
     z-index: 1;
+    font-size: 1.5rem;
+
+    .line-2 { font-size: 0.825em; }
   }
 }
