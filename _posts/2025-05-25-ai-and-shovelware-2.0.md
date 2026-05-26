@@ -28,7 +28,9 @@ stylesheets:
   </div>
 </div>
 
-**Author's note:** In the spirit of fairly critiquing AI and practicing what I preach, this article and the accompanying illustration were created entirely without AI assistance.
+<p class="intro-note">
+  <strong>Author's note:</strong> In the spirit of fairly critiquing AI and practicing a suggestion I end the article with, this article and the accompanying illustration were created entirely without AI assistance.
+</p>
 
 Agentic coding AI is here, and it’s transforming the software industry. But with agentic coding out now for over a year, has it felt like the software industry has really transformed? From my  from vantage point, although there are some really cool projects that have been built only because of new agentic coding tools, it generally feels like we’re awash in a sea of software slop. Tim Kadlec wrote a great article, [“Losing Focus”](https://timkadlec.com/remembers/2026/05/losing-focus/), that really resonated with me, especially this quote:
 
