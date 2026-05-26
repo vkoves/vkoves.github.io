@@ -5,7 +5,7 @@ title: Anyone Can Make Software Now. So Why's It Mostly Dangerous Crap?
 excerpt: Agentic coding tools have brought AI smashing into the software industry, but despite a year of waiting, there hasn't been a corresponding rise in the quality of software. Welcome to the era of Shovelware 2.0
 skipPostTitle: true
 metadata:
-  image: https://viktorkoves.com/post-assets/ai-shovelware/shovelware-social.png
+  image: https://viktorkoves.com/post-assets/ai-shovelware/ai-shovelware-social.jpg
   description:
     Welcome to Shovelware 2.0
 stylesheets:
