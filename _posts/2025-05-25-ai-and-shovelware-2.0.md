@@ -1,7 +1,7 @@
 ---
 layout: post
 pageClass: 'content-limiter -page -no-padding-top'
-title: Anyone Can Make Software Now. So Why's It Mostly Dangerous Crap?
+title: Anyone Can Make Software Now. But When Does A Side-Project Become Production Ready?
 excerpt: Agentic coding tools have brought AI smashing into the software industry, but despite a year of waiting, there hasn't been a corresponding rise in the quality of software. Welcome to the era of Shovelware 2.0
 skipPostTitle: true
 metadata:
@@ -21,10 +21,10 @@ stylesheets:
   <div class="text content-limiter">
     <h1>
       <div class="line-1">Anyone Can Make Software Now.</div>
-      <div class="line-2">So Why's It Mostly Dangerous Crap?</div>
+      <div class="line-2">But When Does A Side-Project Become Production Ready?</div>
     </h1>
 
-    <div class="subtitle">Welcome to Shovelware 2.0</div>
+    <div class="subtitle">Navigating An Era of Shovelware 2.0</div>
   </div>
 </div>
 
