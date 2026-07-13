@@ -6,12 +6,14 @@ stylesheets:
  - post.css
 ---
 
-<div class="all-posts-cont">
-  <a href="/writing" id="all-posts" class="red-button">Back to All Writing</a>
-</div>
+{% unless page.skipPostTitle %}
+  <div class="all-posts-cont">
+    <a href="/writing" id="all-posts" class="red-button">Back to All Writing</a>
+  </div>
 
-<h1 class="page-title">{{ page.title }}</h1>
-<p class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</p>
+  <h1 class="page-title">{{ page.title }}</h1>
+  <p class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</p>
+{% endunless %}
 
 {% for category in page.categories %}
   <span class="category-pill">{{ category }}</span>
