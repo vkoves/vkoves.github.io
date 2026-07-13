@@ -6,7 +6,7 @@
  * across multiple posts, or for styling we want to apply only to blog posts.
  */
 
-@import 'variables/colors';
+@use 'variables/colors' as *;
 
 main.post {
   .category-pill {

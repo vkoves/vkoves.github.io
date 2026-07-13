@@ -13,7 +13,7 @@ This article should be common knowledge to those well versed in "proper"
 CSS use, but for those who may have learned CSS slowly over time (as I have), I hope this
 can serve as a helfpul resource. It is worth noting that for this piece I'll be dealing
 mostly with SCSS, both because it is the language I use most often, and because it makes
-the styling simpler and more readble. Take a look at the [Sass Manual](http://sass-lang.com/guide)
+the styling simpler and more readble. Take a look at the [Sass Manual](https://sass-lang.com/guide)
 to learn more about SCSS.
 
 To start, let us look at some example HTML for a website's header, with a logo

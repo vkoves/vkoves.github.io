@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Chicago to Galena: A Case Study in Seamless EV Road Tripping"
+title: "Chicago to Mammoth Caves: A Case Study in Seamless EV Road Tripping"
 metadata:
   image:
   description:
-    Taking an EV on a road trip from Chicago to Galena - here's how it went,
-    what charging looked like, and why it was easier than I expected.
+    If you haven't driven electric before, a road trip might sound impossible - but I want to tell
+    you about driving from Chicago to Kentucky to Mammoth Caves.
 stylesheets:
  - articles/ev-road-trip.css
 scripts:
@@ -15,6 +15,8 @@ scripts:
 Intro paragraph here.
 
 ## What I'll Cover
+
+Ionna Lafayette Indiana
 
 ## The Trip
 

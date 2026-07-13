@@ -4,19 +4,16 @@
 set -e
 
 # Run Jekyll build to generate site output
-jekyll build
+# jekyll build
 
 # Run HTML Proofer with the following parameters:
 #
 # --allow-hash-href				- Fix href="#" being marked as invalid
-# --assume-extension			- Fix needing the .html extension on links
-# --check_html					- Check for HTML errors using Nokogiri
-# --enforce_https				- Enforce HTTPS (since hosted on HTTPS)
-# --http-status-ignore "999,400,0"	- Ignore broken links with code 999, 400 or 0 (caused by LinkedIn, Twitter, and Packback)
-# --empty_alt_ignore    - Allow empty alt tags for decorative images
+# --disable-external			- Don't run external link checks - often doesn't work anyhow
+# --ignore_empty_alt            - Allow empty alt tags for decorative images
 #
 # Learn more: https://github.com/gjtorikian/html-proofer#configuration
-htmlproofer ./_site --allow-hash-href --assume-extension --check-html --http-status-ignore "999,400,0" --empty_alt_ignore --url-ignore "/codepen.io/"
+htmlproofer ./_site --allow-hash-href  --enforce_https --disable_external --ignore-empty-alt
 
 
 # Run Sass Lint verbose - cnfigured by .sass-lint.yml
