@@ -12,11 +12,27 @@ scripts:
  - articles/ev-road-trip.js
 ---
 
-Intro paragraph here.
+When people talk about going electric, they are often concerned about road tripping - an EV might be
+fine for my daily commute, but can I still make a long road trip for a summer vacation? I'm here
+to tell you that modern EVs can tackle a road trip incredibly well.
 
 ## What I'll Cover
 
 Ionna Lafayette Indiana
+
+## The Vehicle - The Hyundai IONIQ 5!
+
+For this road trip, I was driving a 2023 Hyundai IONIQ 5 SEL AWD. The IONIQ 5 is a very capable but
+budget-friendly EV. Here's some quick facts on the Ioniq 5 it:
+
+- Starts at around $37,000 ($45,000 for the long-range version)
+- Charges 10% to 80% in about 20 minutes
+- EPA rated range of up to 318 miles
+
+
+Since I was driving a 2023 all wheel drive model, it has an 266 mile EPA range rating - the newer
+model years have a larger battery for the long-range model, adn rear wheel drive models have the
+318 mile range!
 
 ## The Trip
 

@@ -11,8 +11,8 @@ const { createApp, ref, computed, onMounted, onUnmounted } = Vue;
 const STOPS = [
     { label: 'Chicago',  id: 'chicago-start',  day: 1 },
     { label: 'Rockford', id: 'rockford-day1',  day: 1, charging: true },
-    { label: 'Galena',   id: 'galena-arrival', day: 1 },
-    { label: 'Galena',   id: 'galena-day2',    day: 2 },
+    { label: 'Mammoth Caves',   id: 'galena-arrival', day: 1 },
+    { label: 'Mammoth Caves',   id: 'galena-day2',    day: 2 },
     { label: 'Rockford', id: 'rockford-day2',  day: 2, charging: true },
     { label: 'Chicago',  id: 'chicago-return', day: 2 },
 ];
@@ -87,7 +87,7 @@ createApp({
         <img
           class="trip-track__car"
           :style="{ left: carLeftPercent + '%' }"
-          src="/post-assets/chi-gal-ev-roadtrip/tesla-model3.png"
+          src="/post-assets/ev-roadtrip/ioniq5-icon.png"
           alt=""
           aria-hidden="true"
         />
@@ -103,8 +103,8 @@ createApp({
           <img
             class="trip-stop__icon"
             :src="stop.charging
-              ? '/post-assets/chi-gal-ev-roadtrip/ev_station.svg'
-              : '/post-assets/chi-gal-ev-roadtrip/location_on.svg'"
+              ? '/post-assets/ev-roadtrip/ev_station.svg'
+              : '/post-assets/ev-roadtrip/location_on.svg'"
             alt=""
             aria-hidden="true"
           />
