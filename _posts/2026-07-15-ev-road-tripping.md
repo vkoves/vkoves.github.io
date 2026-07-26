@@ -142,7 +142,7 @@ had to eat!
 
 <img src="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-receipt.webp" loading="lazy"
     alt="Screen of an Electrify America charging station showing a completed charging session at
-      97% state of charge and 59.7 kWh delivered over 33 minutes.">
+      97% state of charge and 59.7 kWh delivered over 33 minutes, and a total cost of $30.88">
 
 ## Arriving in Kentucky {#kentucky-arrival}
 
@@ -188,13 +188,26 @@ Pilot Flying J in Waddy, KY - 24% to 82% for $36.16 in 18 minutes
 
 ## Stop 2
 
+Electrify America in Indianapolis, IN - 19% to 65% for $22.92 in 13 minutes.
+
+<img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp" loading="lazy"
+    alt="TODO">
+
+<img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-final-charge.webp" loading="lazy"
+    alt="TODO">
+
+<img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis-receipt.webp" loading="lazy"
+    alt="TODO">
+
+## Stop 3
+
 Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes, thanks to sale and we were eating
 
 <img src="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp" loading="lazy"
     alt="Display screen of an Ionna EV charging station showing a finished session at 100% state of
       charge from 35%, 54.1 kWh delivered in 35 minutes, and a final cost of $11.58.">
 
-## Stop 3 - Only Needed Because We're Renting
+## Stop 4 - Only Needed Because We're Renting
 
 Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
@@ -204,6 +217,44 @@ Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
 ## Back in Chicago {#chicago-return}
 
+
+## Our Final Costs & Time
+
+| Charging Stop                        | Charge     | Energy   | Cost    | Cost/kWh | Time       |
+| ------------------------------------ | ---------- | -------- | ------- | -------- | ---------- |
+| Rosemont, IL (Electrify America)     | 16% → 92%  | 61.7 kWh | $34.49  | $0.56    | 27 min     |
+| Lafayette, IN (Ionna)                | 22% → 99%  | 65.6 kWh | $14.05  | $0.20    | 42 min     |
+| Clarksville, IN (Electrify America)  | 26% → 97%  | 59.7 kWh | $30.88  | $0.52    | 33 min     |
+| Sonora, KY (Pilot Flying J)          | 43% → 86%  | 35.8 kWh | $26.23  | $0.69    | 14 min     |
+| Waddy, KY (Pilot Flying J)           | 24% → 82%  | 49.4 kWh | $36.16  | $0.69    | 18 min     |
+| Indianapolis, IN (Electrify America) | 19% → 65%  | 38.2 kWh | $22.92  | $0.60    | 13 min     |
+| Lafayette, IN (Ionna)                | 35% → 100% | 54.1 kWh | $11.58  | $0.20    | 35 min     |
+| Rosemont, IL (Electrify America)     | 46% → 75%  | 25.8 kWh | $14.39  | $0.56    | 8 min      |
+| Total                                |            |          | $190.70 |          | 3 hr 10 min |
+
+A few caveats here:
+
+1. Because the rental company messed up, we had to make an extra $35 and 27 minute initial charging stop in Rosemont.
+2. Since Budget requires EVs be returned with 70% state of charge, we similarly made a second stop at Rosemont before returning to top up the car.
+
+If you own an EV, you want to charge at home or at slower chargers as much as possible to save money.
+In Chicago with ComEd it's estimated you'll pay around 16 cents per kWh. Since at the two Pilot
+Flying J locations we were paying $0.69/kWh (plus tax) that means **charging at home costs
+_one fourth_ what it cost at our most expensive charger**.
+
+A lot of folks also use [ComEd's hourly pricing program](https://hourlypricing.comed.com/) which
+makes it cheaper to charge overnight, when demand is lower, which can bring the cost to charge
+your EV as low as 8 cents per kWh, meaning we'd only pay $6.24 to fully charge the Ioniq 5 I was
+driving.
+
+In short, **the financial benefits of driving electric comes primarily from home charging** - you
+shouldn't expect to see big savings when you're on a road trip, but prioritizing cheaper fast
+chargers, hotels with cheaper Level 2 chargers, or getting a membership to the charging network you
+use most often can make it a lot cheaper. For example, Electrify America has a Pass+ subscription
+where you pay $84 a year to get a 25% discount on charging. Since I spent $102.68 just at Electrify
+America stations, I could have saved $25 just on this trip, and if I had that membership I'd
+probably try to make each stop at an Electrify America station (except the heavily discounted
+Ionna station).
 
 ## Tips For Renting??? (separate article? end notes)
 
