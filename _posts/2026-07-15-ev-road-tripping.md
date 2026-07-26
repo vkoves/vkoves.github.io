@@ -24,6 +24,10 @@ Ionna Lafayette Indiana
 
 For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
 
+<img src="/post-assets/ev-roadtrip/ioniq5-main.webp" loading="lazy"
+    alt="A matte grey 2023 Hyundai Ioniq 5 parked at a charging station">
+
+
 The Ioniq 5 is a very capable but budget-friendly EV - here's some quick facts:
 
 - Starts at around $37,000 ($45,000 for the long-range version)
@@ -53,13 +57,24 @@ where they had chargers, and they had likely moved the car we were _supposed to 
 it with a car that needed a charge. I'll cover some tips on renting later on, but I was prepared -
 I've rented EVs a lot from the O'Hare, and new
 
-<img src="/post-assets/ev-roadtrip/cargo-haul-4-solar-out.webp" loading="lazy"
-    alt="TODO">
+<img src="/post-assets/ev-roadtrip/ioniq5-at-rental.webp" loading="lazy"
+    alt="The Hyundai Ioniq 5 in the rental parking garage, plugged in next to other EVs">
+
+<img src="/post-assets/ev-roadtrip/ioniq5-initial-charge.webp" loading="lazy"
+    alt="The Ioniq 5 dashboard showing a low 18% state of charge">
+
 
 ## Charging Stops {#charging-day1}
 
 Now that we had a full charge in Rosemont (92%), we were ready to drive to Kentucky! From Rosemont,
 our hotel in Munfordville Kentucky is a 400 mile drive, and we only need to stop to charge twice!
+
+<img src="/post-assets/ev-roadtrip/day1/rosemont-day1-charging-speed.webp" loading="lazy"
+    alt="The Ioniq 5 charging in Rosemont">
+
+<img src="/post-assets/ev-roadtrip/day1/rosemont-day1-receipt.webp" loading="lazy"
+    alt="Charging receipt from Rosemont">
+
 
 Now you might be thinking - if the Ioniq 5 we were driving had a 266 mile EPA range, why did we need
 to stop twice? That's because an EPA range is a mix of city and highway driving, and so exclusively
@@ -102,6 +117,9 @@ were really rushing, we'd hit 80% at keep going, since all EVs (and all battery 
 dramatically slow down their rate of charge over 80%. But since we were eating a late lunch at the
 attached Wawa, we just ate our meal and came back to a fully charged car!
 
+<img src="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-receipt.webp" loading="lazy"
+    alt="Charging receipt from Ionna in Lafayette, Indiana">
+
 ### Stop 2 - Electrify America in Clarksville, Indiana
 
 At 8:25pm Eastern, 171 miles from our charging stop in Lafayette, we ended up at an Electrify America station in
@@ -109,6 +127,9 @@ Clarksville, Indiana with 26% charge left - we stopped in the Walmart, used the 
 some food, and the car got 97% charged, in 33 minutes! Similar to before, we weren't waiting on the
 car, and from 27% to 80% the car itself estimated it would take only 16 minutes to charge - but we
 had to eat!
+
+<img src="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-receipt.webp" loading="lazy"
+    alt="Charging receipt from Electrify America in Clarksville, Indiana">
 
 ## Arriving in Kentucky {#kentucky-arrival}
 
@@ -137,19 +158,31 @@ just 17 miles away!
 
 Pilot Flying J Sonora, Kentucky - 43% to 86% for $26.23 in 14 minutes
 
+<img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-receipt.webp" loading="lazy"
+    alt="Charging receipt from Pilot Flying J in Sonora, Kentucky">
+
 ## Lunch in Lexington (110mi from Sonora)
 
 ## Stop 1
 
 Pilot Flying J in Waddy, KY - 24% to 82% for $36.16 in 18 minutes
 
+<img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-receipt.webp" loading="lazy"
+    alt="Charging receipt from Pilot Flying J in Waddy, Kentucky">
+
 ## Stop 2
 
 Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes, thanks to sale and we were eating
 
+<img src="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp" loading="lazy"
+    alt="Charging receipt from Ionna in Lafayette, Indiana on the return trip">
+
 ## Stop 3 - Only Needed Because We're Renting
 
 Rosemont to finish up 46% to 78% for $14.39 8 minutes
+
+<img src="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp" loading="lazy"
+    alt="Charging receipt from Rosemont on the return trip">
 
 ## Back in Chicago {#chicago-return}
 
