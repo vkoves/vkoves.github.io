@@ -220,21 +220,25 @@ Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
 ## Our Final Costs & Time
 
-| Charging Stop                        | Charge     | Energy   | Cost    | Cost/kWh | Time       |
-| ------------------------------------ | ---------- | -------- | ------- | -------- | ---------- |
-| Rosemont, IL (Electrify America)     | 16% → 92%  | 61.7 kWh | $34.49  | $0.56    | 27 min     |
-| Lafayette, IN (Ionna)                | 22% → 99%  | 65.6 kWh | $14.05  | $0.20    | 42 min     |
-| Clarksville, IN (Electrify America)  | 26% → 97%  | 59.7 kWh | $30.88  | $0.52    | 33 min     |
-| Sonora, KY (Pilot Flying J)          | 43% → 86%  | 35.8 kWh | $26.23  | $0.69    | 14 min     |
-| Waddy, KY (Pilot Flying J)           | 24% → 82%  | 49.4 kWh | $36.16  | $0.69    | 18 min     |
-| Indianapolis, IN (Electrify America) | 19% → 65%  | 38.2 kWh | $22.92  | $0.60    | 13 min     |
-| Lafayette, IN (Ionna)                | 35% → 100% | 54.1 kWh | $11.58  | $0.20    | 35 min     |
-| Rosemont, IL (Electrify America)     | 46% → 75%  | 25.8 kWh | $14.39  | $0.56    | 8 min      |
-| Total                                |            |          | $190.70 |          | 3 hr 10 min |
+<div class="cost-table" markdown="1">
+
+| Charging Stop | Charge | Energy | Cost | Cost/kWh | Time |
+| --- | --- | --- | --- | --- | --- |
+| Electrify America<br><span class="cost-table__location">Rosemont, IL</span> | 16% → 92% | 61.7 kWh | $34.49 | $0.56 | 27 min |
+| Ionna<br><span class="cost-table__location">Lafayette, IN</span> | 22% → 99% | 65.6 kWh | $14.05 | $0.20 | 42 min |
+| Electrify America<br><span class="cost-table__location">Clarksville, IN</span> | 26% → 97% | 59.7 kWh | $30.88 | $0.52 | 33 min |
+| Pilot Flying J<br><span class="cost-table__location">Sonora, KY</span> | 43% → 86% | 35.8 kWh | $26.23 | $0.69 | 14 min |
+| Pilot Flying J<br><span class="cost-table__location">Waddy, KY</span> | 24% → 82% | 49.4 kWh | $36.16 | $0.69 | 18 min |
+| Electrify America<br><span class="cost-table__location">Indianapolis, IN</span> | 19% → 65% | 38.2 kWh | $22.92 | $0.60 | 13 min |
+| Ionna<br><span class="cost-table__location">Lafayette, IN</span> | 35% → 100% | 54.1 kWh | $11.58 | $0.20 | 35 min |
+| Electrify America<br><span class="cost-table__location">Rosemont, IL</span> | 46% → 75% | 25.8 kWh | $14.39 | $0.56 | 8 min |
+| Total | | | $190.70 | | 3 hr 10 min |
+
+</div>
 
 A few caveats here:
 
-1. Because the rental company messed up, we had to make an extra $35 and 27 minute initial charging stop in Rosemont.
+1. Because the rental company messed up, we had to make an extra $35 and 27 minute initial charging stop in Rosemont. Normally you'd start a trip with 70 - 80% charge.
 2. Since Budget requires EVs be returned with 70% state of charge, we similarly made a second stop at Rosemont before returning to top up the car.
 
 If you own an EV, you want to charge at home or at slower chargers as much as possible to save money.

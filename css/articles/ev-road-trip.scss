@@ -4,6 +4,67 @@
 @use 'variables/colors' as *;
 @use 'variables/sizing' as *;
 
+// Horizontal breathing room between the cost table's columns
+$cost-table-cell-padding-x: 1rem;
+// Relative size of the location line beneath each charging brand
+$cost-table-location-font-size: 0.8rem;
+// Vertical padding on the two-line title column to offset its tight line-height
+$cost-table-title-padding-y: 4px;
+
+.cost-table {
+  margin-top: 0.5rem;
+
+  th,
+  td {
+    padding-left: $cost-table-cell-padding-x;
+    padding-right: $cost-table-cell-padding-x;
+  }
+
+  // Left-align the column titles
+  th {
+    text-align: left;
+  }
+
+  // Tighten the two-line brand/location title column and add back a little
+  // vertical breathing room
+  td:first-child {
+    line-height: 1;
+    padding-top: $cost-table-title-padding-y;
+    padding-bottom: $cost-table-title-padding-y;
+  }
+
+  tr:first-child td {
+    padding-bottom: 0.25rem;
+  }
+
+  // Bold the final total row
+  tr:last-child {
+    font-weight: 700;
+  }
+
+  // Charging location shown smaller and faded beneath its brand
+  &__location {
+    font-size: $cost-table-location-font-size;
+    color: var(--text-color-faded);
+  }
+
+  // On desktop the table no longer fits in the narrow article column, so break
+  // it out of the content area and center it against the viewport instead. The
+  // full-bleed trick (100vw + translateX) frees it from the parent's width.
+  @media (min-width: $desktop-min-width) {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    table {
+      width: auto;
+      max-width: $max-cont-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 h2 {
   border-left: 5px solid transparent;
   padding-left: 0.5rem;

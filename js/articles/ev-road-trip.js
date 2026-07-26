@@ -112,7 +112,7 @@ createApp({
           <span class="trip-stop__label">{{ stop.label }}</span>
         </a>
         </div>
-        <span class="trip-days__label">Day 2</span>
+        <span class="trip-days__label">Day 3</span>
       </div>
     </nav>
   `
