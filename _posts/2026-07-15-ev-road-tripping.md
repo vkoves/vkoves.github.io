@@ -25,7 +25,7 @@ Ionna Lafayette Indiana
 For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
 
 <img src="/post-assets/ev-roadtrip/ioniq5-main.webp" loading="lazy"
-    alt="A matte grey 2023 Hyundai Ioniq 5 parked at a charging station">
+    alt="A matte grey 2023 Hyundai Ioniq 5 at an Ionna charging station on a sunny day">
 
 
 The Ioniq 5 is a very capable but budget-friendly EV - here's some quick facts:
@@ -49,31 +49,38 @@ Let's get started! I've made a little progress bar to follow along on our journe
 
 ## Day 1: Departing Chicago {#chicago-start}
 
-We started our adventure at the O'Hare airport Budget location, where we picked our delightful matte grey
-2023 Hyundai Ioniq 5 SEL AWD EV.
+We started our adventure at the O'Hare airport Budget location, where we picked our delightful matte
+grey 2023 Hyundai Ioniq 5 SEL AWD EV.
 
 There was only one problem - due to a mixup at the rental place, they pointed us to a parking spot
 where they had chargers, and they had likely moved the car we were _supposed to get_ out and swapped
-it with a car that needed a charge. I'll cover some tips on renting later on, but I was prepared -
-I've rented EVs a lot from the O'Hare, and new
+it with a car that needed a charge.
 
 <img src="/post-assets/ev-roadtrip/ioniq5-at-rental.webp" loading="lazy"
-    alt="The Hyundai Ioniq 5 in the rental parking garage, plugged in next to other EVs">
+    alt="The Hyundai Ioniq 5 in the rental parking garage, plugged in next to a red Tesla Model Y">
 
 <img src="/post-assets/ev-roadtrip/ioniq5-initial-charge.webp" loading="lazy"
-    alt="The Ioniq 5 dashboard showing a low 18% state of charge">
+    alt="The Ioniq 5 dashboard showing a low 18% state of charge with 40 miles estimated range">
 
+I'll cover some tips on renting later on, but I was prepared - I've rented EVs a lot from the
+O'Hare, and knew that there's an Electrify America fast charging station in Rosemont at
+the Fashion Outlets Mall, just a few minutes and a few miles away from O'Hare. So we drove over
+there, plugged in the car, got some coffee and used the bathroom, and 27 minutes later were back on
+our way!
+
+<img src="/post-assets/ev-roadtrip/day1/rosemont-day1-charging-speed.webp" loading="lazy"
+    alt="The Ioniq 5 dashboard display showing a 16% SOC, a 43 kW current charging rate, and
+    estimated remaining times of 17 minutes to 80% and 47 minutes to 100%.">
+
+<img src="/post-assets/ev-roadtrip/day1/rosemont-day1-receipt.webp" loading="lazy"
+    alt="Display screen on an Electrify America charger showing 27 minutes of charging time,
+    $34.49 cost, 61.7283 kWh energy delivered, and a 92% state of charge.">
 
 ## Charging Stops {#charging-day1}
 
 Now that we had a full charge in Rosemont (92%), we were ready to drive to Kentucky! From Rosemont,
 our hotel in Munfordville Kentucky is a 400 mile drive, and we only need to stop to charge twice!
 
-<img src="/post-assets/ev-roadtrip/day1/rosemont-day1-charging-speed.webp" loading="lazy"
-    alt="The Ioniq 5 charging in Rosemont">
-
-<img src="/post-assets/ev-roadtrip/day1/rosemont-day1-receipt.webp" loading="lazy"
-    alt="Charging receipt from Rosemont">
 
 
 Now you might be thinking - if the Ioniq 5 we were driving had a 266 mile EPA range, why did we need
@@ -95,7 +102,11 @@ it's state of charge, and your destination, and it'll plan out what stops you ne
 to your destination with your desired state of charge! Here's a screenshot of a plan it drew up
 from Rosemont to Mammoth Caves:
 
-<img src="/post-assets/ev-roadtrip/a-better-route-planner.webp" alt="">
+<img src="/post-assets/ev-roadtrip/a-better-route-planner.webp" alt="A map on A Better Route Planner
+  displaying an EV route from Rosemont, Illinois, to Mammoth Cave National Park. The side panel
+  shows a total travel time of 7 hours and 10 minutes over 669 km with two charging stops: a 12
+  minute stop at an IONNA station in Lafayette, Indiana, and a 12 minute stop at a ChargePoint
+  station in Shepherdsville, Kentucky.">
 
 ### Stop 1 - Ionna in Lafayette, Indiana
 
@@ -118,7 +129,8 @@ dramatically slow down their rate of charge over 80%. But since we were eating a
 attached Wawa, we just ate our meal and came back to a fully charged car!
 
 <img src="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-receipt.webp" loading="lazy"
-    alt="Charging receipt from Ionna in Lafayette, Indiana">
+    alt="Display screen of an Ionna EV charging station showing a completed charging session at 99%
+      state of charge, 65.6 kWh delivered in 42 minutes, and a total cost of $14.05.">
 
 ### Stop 2 - Electrify America in Clarksville, Indiana
 
@@ -129,7 +141,8 @@ car, and from 27% to 80% the car itself estimated it would take only 16 minutes 
 had to eat!
 
 <img src="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-receipt.webp" loading="lazy"
-    alt="Charging receipt from Electrify America in Clarksville, Indiana">
+    alt="Screen of an Electrify America charging station showing a completed charging session at
+      97% state of charge and 59.7 kWh delivered over 33 minutes.">
 
 ## Arriving in Kentucky {#kentucky-arrival}
 
@@ -159,7 +172,9 @@ just 17 miles away!
 Pilot Flying J Sonora, Kentucky - 43% to 86% for $26.23 in 14 minutes
 
 <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-receipt.webp" loading="lazy"
-    alt="Charging receipt from Pilot Flying J in Sonora, Kentucky">
+    alt="Digital screen of a Pilot Flying J GM Energy EV charger displaying a finished session
+    reaching 86% state of charge, delivering 35.8 kWh in 14 minutes and 36 seconds for a total
+    cost of $26.23.">
 
 ## Lunch in Lexington (110mi from Sonora)
 
@@ -168,21 +183,24 @@ Pilot Flying J Sonora, Kentucky - 43% to 86% for $26.23 in 14 minutes
 Pilot Flying J in Waddy, KY - 24% to 82% for $36.16 in 18 minutes
 
 <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-receipt.webp" loading="lazy"
-    alt="Charging receipt from Pilot Flying J in Waddy, Kentucky">
+    alt="Digital screen of a Pilot Flying J GM Energy EV charger showing a completed session at
+    82% state of charge, delivering 49.4 kWh in 17 minutes and 52 seconds for a total cost of $36.16.">
 
 ## Stop 2
 
 Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes, thanks to sale and we were eating
 
 <img src="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp" loading="lazy"
-    alt="Charging receipt from Ionna in Lafayette, Indiana on the return trip">
+    alt="Display screen of an Ionna EV charging station showing a finished session at 100% state of
+      charge from 35%, 54.1 kWh delivered in 35 minutes, and a final cost of $11.58.">
 
 ## Stop 3 - Only Needed Because We're Renting
 
 Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
 <img src="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp" loading="lazy"
-    alt="Charging receipt from Rosemont on the return trip">
+    alt="Screen of an Electrify America charging station showing a completed session, reaching 75%
+      state of charge and 25.8 kWh delivered in 8 minutes for a total cost of $14.39.">
 
 ## Back in Chicago {#chicago-return}
 
