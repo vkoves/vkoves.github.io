@@ -40,7 +40,7 @@ model years have a larger battery for the long-range model, and rear wheel drive
 
 ## The Trip
 
-Let's get started! I've made a little progress bar to follow along on our journey
+Let's get started! I've made a little progress bar to follow along on our journey.
 
 <!-- Vue 3 CDN: loaded synchronously so it's available when the deferred component script runs -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
@@ -238,8 +238,15 @@ Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
 A few caveats here:
 
-1. Because the rental company messed up, we had to make an extra $35 and 27 minute initial charging stop in Rosemont. Normally you'd start a trip with 70 - 80% charge.
-2. Since Budget requires EVs be returned with 70% state of charge, we similarly made a second stop at Rosemont before returning to top up the car.
+1. **Except for charging in Rosemont at the start and end of our journey, we almost always needed
+  to stop anyway** - whether to use the bathroom or to eat, I never found that we really had to stop
+  for the car. By the time we were pulling up to the charging station, I usually had to use the
+  bathroom, or me or my brother were hungry.
+1. **Because the rental started with 18% charge, we had to make an extra $35 and 27 minute initial
+  charging stop** - our first stop in Rosemont was only because we got a low charge car. Normally
+  you'd start a trip with 70 - 80% charge.
+2. **Our last charging stop was only because it's a rental** - Since Budget requires EVs be returned
+with 70% state of charge, we similarly made a second stop at Rosemont before returning to top up the car.
 
 If you own an EV, you want to charge at home or at slower chargers as much as possible to save money.
 In Chicago with ComEd it's estimated you'll pay around 16 cents per kWh. Since at the two Pilot
@@ -248,8 +255,8 @@ _one fourth_ what it cost at our most expensive charger**.
 
 A lot of folks also use [ComEd's hourly pricing program](https://hourlypricing.comed.com/) which
 makes it cheaper to charge overnight, when demand is lower, which can bring the cost to charge
-your EV as low as 8 cents per kWh, meaning we'd only pay $6.24 to fully charge the Ioniq 5 I was
-driving.
+your EV as low as 8 cents per kWh, meaning we'd only pay **$6.24 to fully charge the Ioniq 5 I was
+driving at home!**
 
 In short, **the financial benefits of driving electric comes primarily from home charging** - you
 shouldn't expect to see big savings when you're on a road trip, but prioritizing cheaper fast

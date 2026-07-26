@@ -10,19 +10,38 @@ $cost-table-cell-padding-x: 1rem;
 $cost-table-location-font-size: 0.8rem;
 // Vertical padding on the two-line title column to offset its tight line-height
 $cost-table-title-padding-y: 4px;
+// Vertical padding on the header and total band rows
+$cost-table-band-padding-y: 0.5rem;
 
 .cost-table {
   margin-top: 0.5rem;
 
+  // All backgrounds use theme CSS variables so they flip automatically between
+  // light and dark mode.
   th,
   td {
     padding-left: $cost-table-cell-padding-x;
     padding-right: $cost-table-cell-padding-x;
   }
 
-  // Left-align the column titles
+  // Header band: a neutral shade darker than the body rows, bold titles
   th {
     text-align: left;
+    font-weight: 700;
+    padding-top: $cost-table-band-padding-y;
+    padding-bottom: $cost-table-band-padding-y;
+    background: var(--dark-bg-color);
+    color: var(--text-color);
+  }
+
+  // Zebra striping. --light-bg-color and --bg-color differ in both light and
+  // dark mode, so the stripes stay visible in either theme.
+  tbody tr:nth-child(odd) td {
+    background: var(--bg-color);
+  }
+
+  tbody tr:nth-child(even) td {
+    background: var(--light-bg-color);
   }
 
   // Tighten the two-line brand/location title column and add back a little
@@ -37,9 +56,17 @@ $cost-table-title-padding-y: 4px;
     padding-bottom: 0.25rem;
   }
 
-  // Bold the final total row
-  tr:last-child {
+  // Bold the final total row and give it the header band shade to bookend the
+  // table. Placed after the zebra rules so it wins the equal-specificity tie.
+  tbody tr:last-child {
     font-weight: 700;
+
+    td {
+      padding-top: $cost-table-band-padding-y;
+      padding-bottom: $cost-table-band-padding-y;
+      background: var(--dark-bg-color);
+      color: var(--text-color);
+    }
   }
 
   // Charging location shown smaller and faded beneath its brand
@@ -247,6 +274,14 @@ h2.-active-section {
 }
 
 @media (prefers-color-scheme: dark) {
+  // In dark mode --dark-bg-color collapses to the same grey as the odd body
+  // rows' --light-bg-color, so the header/total band would blend in. Use a
+  // near-black shade instead to keep the band distinct.
+  .cost-table th,
+  .cost-table tbody tr:last-child td {
+    background: var(--intense-bg-color);
+  }
+
   .trip-stop__icon {
     filter: invert(1);
   }
