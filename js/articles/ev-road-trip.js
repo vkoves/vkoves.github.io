@@ -10,10 +10,10 @@ const { createApp, ref, computed, onMounted, onUnmounted } = Vue;
 
 const STOPS = [
     { label: 'Chicago',  id: 'chicago-start',  day: 1 },
-    { label: 'Rockford', id: 'rockford-day1',  day: 1, charging: true },
-    { label: 'Mammoth Caves',   id: 'galena-arrival', day: 1 },
-    { label: 'Mammoth Caves',   id: 'galena-day2',    day: 2 },
-    { label: 'Rockford', id: 'rockford-day2',  day: 2, charging: true },
+    { label: 'Charge Stops', id: 'charging-day1',  day: 1, charging: true },
+    { label: 'Mammoth Caves',   id: 'kentucky-arrival', day: 1 },
+    { label: 'Mammoth Caves',   id: 'kentucky-day2',    day: 2 },
+    { label: 'Charge Stops', id: 'charging-day2',  day: 2, charging: true },
     { label: 'Chicago',  id: 'chicago-return', day: 2 },
 ];
 
