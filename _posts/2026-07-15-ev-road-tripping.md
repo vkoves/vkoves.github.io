@@ -22,8 +22,9 @@ Ionna Lafayette Indiana
 
 ## The Vehicle - The Hyundai Ioniq 5!
 
-For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD. The Ioniq 5 is a very capable but
-budget-friendly EV. Here's some quick facts on the Ioniq 5 it:
+For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
+
+The Ioniq 5 is a very capable but budget-friendly EV - here's some quick facts:
 
 - Starts at around $37,000 ($45,000 for the long-range version)
 - Charges 10% to 80% in about 20 minutes
@@ -75,7 +76,9 @@ ready to go, the car was ready to go nine times out of ten.
 
 To find charging stops, I used [A Better Route Planner](https://abetterrouteplanner.com), which is
 widely regarded as the best app for planning out longer road trips - you put in what car you have,
-it's state of charge, and your destination, and it'll plan out what
+it's state of charge, and your destination, and it'll plan out what stops you need to make to get
+to your destination with your desired state of charge! Here's a screenshot of a plan it drew up
+from Rosemont to Mammoth Caves:
 
 <img src="/post-assets/ev-roadtrip/a-better-route-planner.webp" alt="">
 
@@ -92,17 +95,30 @@ February 2024 and [opening their first location in February 2025](https://www.el
 Because they had just opened, Ionna actually had a 20 cent/kWh deal, and we only paid $14.05 for
 that full charge - talk about a deal! Even if gas was let's say $3 a gallon in Indiana (I didn't
 get a photo of gas prices nearby, but in late July after more gas price rises, $3.50 was in the
-area).
+area), that's ~4.5 gallons of gas, only enough for 112 miles in an car of average gas mileage (25 MPG).
+
+We ended up charging for 42 minutes in Lafayette, but that's not because the car needed to - if we
+were really rushing, we'd hit 80% at keep going, since all EVs (and all battery powered devices)
+dramatically slow down their rate of charge over 80%. But since we were eating a late lunch at the
+attached Wawa, we just ate our meal and came back to a fully charged car!
 
 ### Stop 2 - Electrify America in Clarksville, Indiana
 
 At 8:25pm Eastern, 171 miles from our charging stop in Lafayette, we ended up at an Electrify America station in
 Clarksville, Indiana with 26% charge left - we stopped in the Walmart, used the restroom, and ate
-some food, and the car got 97% charged!
+some food, and the car got 97% charged, in 33 minutes! Similar to before, we weren't waiting on the
+car, and from 27% to 80% the car itself estimated it would take only 16 minutes to charge - but we
+had to eat!
 
 ## Arriving in Kentucky {#kentucky-arrival}
 
-We got to our hotel at 9:38pm Eastern time with 68% charge - plenty for our adventures!
+After a 78 mile drive, we then got to our hotel at 9:38pm Eastern time with 68% charge - plenty for
+our adventures! You might notice that's a pretty large range drop for that distance, but I was
+probably driving a little faster than before since we had plenty of charge to get back to the hotel.
+
+**Pro Tip - Speed is a huge factor in EV range!** Gasoline is incredibly energy dense, so we often
+don't realize just how much leeway it gives us. For context, one gallon of gasoline is equivalent to
+33 kWh of energy ([source](https://en.wikipedia.org/wiki/Gasoline_gallon_equivalent#Gasoline_gallon_equivalent_tables)), which means our ioniq 5, with its
 
 ## Mammoth Caves
 
@@ -114,17 +130,26 @@ and ended the day at 51% charge.
 We had to make a detour on our way back home to visit a friend in Lexington, which would add 100
 miles to our journey back. Since the car was at half charge and Lexington was 110 miles away, it
 would have been possible to make it to Lexington, but we would have had very low charge, so we
-looked for a
+looked for the closest charger to our hotel. Turns out even in Kentucky, there was a fast charger
+just 17 miles away!
 
 ## Return Charging Stops {#charging-day2}
 
-Pilot Flying J Sonora, Kentucky
+Pilot Flying J Sonora, Kentucky - 43% to 86% for $26.23 in 14 minutes
 
-Lunch in Lexington
+## Lunch in Lexington (110mi from Sonora)
 
-Pilot Flying J in Waddy, KY
+## Stop 1
 
-Ionna Lafayette, IN
+Pilot Flying J in Waddy, KY - 24% to 82% for $36.16 in 18 minutes
+
+## Stop 2
+
+Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes, thanks to sale and we were eating
+
+## Stop 3 - Only Needed Because We're Renting
+
+Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
 ## Back in Chicago {#chicago-return}
 
