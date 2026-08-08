@@ -13,6 +13,20 @@ $cost-table-title-padding-y: 4px;
 // Vertical padding on the header and total band rows
 $cost-table-band-padding-y: 0.5rem;
 
+// Gap between images in the multi-column image grids
+$image-grid-gap: 1rem;
+// Vertical breathing room above and below an image grid
+$image-grid-margin-y: 1.5rem;
+// Two-column grids hold tall screenshots, so cap them at the site's max content
+// width to keep each image a readable size
+$image-grid-two-col-max-width: 1200px;
+// Three-column grids get more room since each image is only a third as wide
+$image-grid-three-col-max-width: 90vw;
+// Height cap for height-matched grids. Roughly the height a 4:3 charger photo
+// reaches in a three-column grid, so a tall portrait receipt shrinks to sit
+// level with the photos beside it instead of towering over them.
+$image-grid-match-height: 320px;
+
 .cost-table {
   margin-top: 0.5rem;
 
@@ -88,6 +102,67 @@ $cost-table-band-padding-y: 0.5rem;
       max-width: $max-cont-width;
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+}
+
+// Multi-column image layouts. Images stack in a single column on mobile, then
+// break out of the narrow article column on desktop so wide screenshots are
+// actually readable. Column count is set by the -two-col / -three-col modifier.
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $image-grid-gap;
+  margin: $image-grid-margin-y auto;
+
+  // The article's default image shadow only targets images directly inside a
+  // <p>, so re-apply it here to match the rest of the post's images.
+  img {
+    width: 100%;
+    border: solid 1px $grey;
+    box-shadow: 1px 1px 5px $shadow-color;
+    margin: 0 !important;
+  }
+
+  // Same full-bleed trick as .cost-table: escape the narrow article column with
+  // 100vw + translateX, then let each modifier cap its own width. Both stay
+  // centered because the auto side margins split the leftover space evenly.
+  @media (min-width: $desktop-min-width) {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    // Screenshots vary in aspect ratio, so top-align them rather than
+    // stretching every image to the tallest one's height.
+    align-items: start;
+
+    &.-two-col {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: $image-grid-two-col-max-width;
+    }
+
+    &.-three-col {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: $image-grid-three-col-max-width;
+    }
+
+    // Portrait screenshots (like charger receipts) render far taller than the
+    // landscape photos beside them. Size these images by a shared height rather
+    // than a shared width, so each keeps its own aspect ratio and they all sit
+    // level - the portrait ones simply end up narrower. Equal-width grid
+    // columns would strand those narrow images in wide columns, so use a
+    // centered flex row that gives each image only the width its height
+    // implies. Mobile is untouched: images stay stacked and full width there.
+    &.-match-heights {
+      display: flex;
+      justify-content: center;
+
+      img {
+        height: $image-grid-match-height;
+        width: auto;
+        // Without this the flex row would squeeze images narrower than the
+        // width their fixed height calls for, distorting them.
+        flex-shrink: 0;
+      }
     }
   }
 }

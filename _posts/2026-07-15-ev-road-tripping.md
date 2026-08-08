@@ -190,14 +190,16 @@ Pilot Flying J in Waddy, KY - 24% to 82% for $36.16 in 18 minutes
 
 Electrify America in Indianapolis, IN - 19% to 65% for $22.92 in 13 minutes.
 
-<img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp" loading="lazy"
-    alt="TODO">
+<div class="image-grid -three-col -match-heights">
+  <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp" loading="lazy"
+      alt="TODO">
 
-<img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-final-charge.webp" loading="lazy"
-    alt="TODO">
+  <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-final-charge.webp" loading="lazy"
+      alt="TODO">
 
-<img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis-receipt.webp" loading="lazy"
-    alt="TODO">
+  <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis-receipt.webp" loading="lazy"
+      alt="TODO">
+</div>
 
 ## Stop 3
 
@@ -321,19 +323,20 @@ As an example, here's some listings for used Hyundai ioniq 5 EVs, with many unde
 Chevy Bolts, with several under $16,000! These charge more slowly, but still have pretty good (250mi)
 range.
 
-<img src="/post-assets/ev-roadtrip/ioniq5-used-prices.webp" loading="lazy"
-    alt="Edmunds search results for used Hyundai IONIQ 5s near Chicago, Illinois, showing 98
-      listings. Four are visible: a 2024 SE with 24,703 miles for $22,410, a 2024 SEL with 17,000
-      miles for $22,988, a 2024 SEL with 9,953 miles for $25,407, and a 2025 SEL with 5,442 miles
-      for $33,990. A banner advertises $5,100 in IONIQ 5 rebates.">
+<div class="image-grid -two-col">
+  <img src="/post-assets/ev-roadtrip/ioniq5-used-prices.webp" loading="lazy"
+      alt="Edmunds search results for used Hyundai IONIQ 5s near Chicago, Illinois, showing 98
+        listings. Four are visible: a 2024 SE with 24,703 miles for $22,410, a 2024 SEL with 17,000
+        miles for $22,988, a 2024 SEL with 9,953 miles for $25,407, and a 2025 SEL with 5,442 miles
+        for $33,990. A banner advertises $5,100 in IONIQ 5 rebates.">
 
-
-<img src="/post-assets/ev-roadtrip/bolt-used-prices.webp" loading="lazy"
-    alt="Carvana search results for used Chevrolet Bolts, showing 95 cars. Six are visible: a 2023
-      Bolt EV 2LT with 40k miles for $21,590, a 2023 Bolt EUV LT with 100k miles for $15,590, a 2019
-      Bolt EV Premier with 90k miles for $15,990, a 2019 Bolt EV Premier with 74k miles for $15,990,
-      a 2021 Bolt EV LT with 42k miles for $18,590, and a 2021 Bolt EV LT with 100k miles for
-      $14,990.">
+  <img src="/post-assets/ev-roadtrip/bolt-used-prices.webp" loading="lazy"
+      alt="Carvana search results for used Chevrolet Bolts, showing 95 cars. Six are visible: a 2023
+        Bolt EV 2LT with 40k miles for $21,590, a 2023 Bolt EUV LT with 100k miles for $15,590, a
+        2019 Bolt EV Premier with 90k miles for $15,990, a 2019 Bolt EV Premier with 74k miles for
+        $15,990, a 2021 Bolt EV LT with 42k miles for $18,590, and a 2021 Bolt EV LT with 100k miles
+        for $14,990.">
+</div>
 
 #### Check for Rebates
 
