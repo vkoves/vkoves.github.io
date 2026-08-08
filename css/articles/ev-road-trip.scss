@@ -119,7 +119,7 @@ $image-link-hover-transition: 0.2s ease;
 // Multi-column image layouts. Images stack in a single column on mobile, then
 // break out of the narrow article column on desktop so wide screenshots are
 // actually readable. Column count is set by the -two-col / -three-col modifier.
-.image-grid {
+main.post .image-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: $image-grid-gap;
@@ -166,11 +166,22 @@ $image-link-hover-transition: 0.2s ease;
       display: flex;
       justify-content: center;
 
-      // Direct children are the flex items - either a bare image or a
+      // Direct children are the flex items - either a bare image or an
       // .image-link wrapping one - so both need to hold their natural width
       // rather than being squeezed by the row.
       > * {
         flex-shrink: 0;
+      }
+
+      // Here the image's height drives its width, so a wrapping link has to
+      // shrink-wrap that image. Without this the link would stretch to a full
+      // column and the image would size off the link instead, distorting it.
+      .image-link {
+        width: auto;
+
+        img {
+          max-width: none;
+        }
       }
 
       img {

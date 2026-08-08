@@ -225,16 +225,22 @@ Electrify America in Indianapolis, IN - 19% to 65% for $22.92 in 13 minutes.
 
 <div class="image-grid -three-col -match-heights">
   <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp" loading="lazy"
-      alt="TODO">
+      alt="A row of white Electrify America chargers along the edge of a sunny Walmart parking lot,
+        with a silver Kia Niro and the grey Ioniq 5 plugged in side by side and a Polestar EV charging
+        further down the row.">
 
   <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-final-charge.webp" loading="lazy"
-      alt="TODO">
+      alt="The Ioniq 5's dashboard display reading 5:52 PM on Thursday, July 2, showing the battery
+        at 65% with 154 miles of range remaining.">
 
   <a class="image-link -in-grid"
       href="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis-receipt.webp"
       target="_blank" rel="noopener">
     <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis-receipt.webp"
-        loading="lazy" alt="TODO">
+        loading="lazy" alt="An Electrify America receipt from the Walmart in Indianapolis, Indiana,
+          showing a 12 minute 45 second session at $0.60 per kWh that delivered 38.2 kWh to a 65%
+          state of charge at a maximum speed of 190 kW, for $22.92 plus $1.60 sales tax - a total
+          of $24.52.">
   </a>
 </div>
 
