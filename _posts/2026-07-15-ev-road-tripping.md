@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chicago to Mammoth Caves: A Case Study in Seamless EV Road Tripping"
+title: "Chicago to Mammoth Caves: What A Real 950 Mile EV Road Trip Looks Like"
 metadata:
   image:
   description:
@@ -18,7 +18,9 @@ to tell you that modern EVs can tackle a road trip incredibly well.
 
 ## What I'll Cover
 
-Ionna Lafayette Indiana
+- How do you find charging stations?
+- How much does charging an EV cost?
+- What should you know before renting an EV?
 
 ## The Vehicle - The Hyundai Ioniq 5!
 
@@ -80,8 +82,6 @@ our way!
 
 Now that we had a full charge in Rosemont (92%), we were ready to drive to Kentucky! From Rosemont,
 our hotel in Munfordville Kentucky is a 400 mile drive, and we only need to stop to charge twice!
-
-
 
 Now you might be thinking - if the Ioniq 5 we were driving had a 266 mile EPA range, why did we need
 to stop twice? That's because an EPA range is a mix of city and highway driving, and so exclusively
@@ -220,6 +220,9 @@ Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
 ## Our Final Costs & Time
 
+Looking at the car's odometer, which started at 36,082 miles and ended at 37,034 miles, this road
+trip covered a whopping <strong>952 miles!</strong> Let's break down what that cost us.
+
 <div class="cost-table" markdown="1">
 
 | Charging Stop | Charge | Energy | Cost | Cost/kWh | Time |
@@ -232,9 +235,23 @@ Rosemont to finish up 46% to 78% for $14.39 8 minutes
 | Electrify America<br><span class="cost-table__location">Indianapolis, IN</span> | 19% → 65% | 38.2 kWh | $22.92 | $0.60 | 13 min |
 | Ionna<br><span class="cost-table__location">Lafayette, IN</span> | 35% → 100% | 54.1 kWh | $11.58 | $0.20 | 35 min |
 | Electrify America<br><span class="cost-table__location">Rosemont, IL</span> | 46% → 75% | 25.8 kWh | $14.39 | $0.56 | 8 min |
-| Total | | | $190.70 | | 3 hr 10 min |
+| Total | | 390.3 kWh | $190.70 | | 3 hr 10 min |
 
 </div>
+
+### Some Costs To Compare
+
+To cover 952 miles in an average gas car, with 25 MPG, you'd be buying 38 gallons of gas. At the
+current national average of around $4, that's $152 in gas. So our EV roadtrip cost us a bit more than
+driving a gas car the equivalent distance, but with home charging (at the ComEd rate of 15 cents per
+kWh), our <strong>390 kWh could cost just around $58.50 - that's $94 cheaper than the gas
+equivalent, around one third the cost!</strong>
+
+This reflects an important thing about EV ownership: EVs save you money primarily from charging
+cheaply (and more slowly) at home, but the high powered and high tech fast chargers cost a ton of
+money to build and maintain, so they bill you more to charge
+
+### Caveats / Why It Was So Expensive
 
 A few caveats here:
 
@@ -267,13 +284,62 @@ America stations, I could have saved $25 just on this trip, and if I had that me
 probably try to make each stop at an Electrify America station (except the heavily discounted
 Ionna station).
 
-## Tips For Renting??? (separate article? end notes)
-
-- Find a charger near the rental location for return and if they give you a low battery EV
-- Don't expect a home charger - I've had a few
-
-### Used EVs
+## Closing Thoughts
 
 
+
+### Tips For Renting
+
+- **Find A Charger Near The Rental Location** - most rental companies require a car to be returned
+at a certain state of charge (typically over 70% or 80%), and that can be a little hard to game out
+if you're coming from further away. Finding a charger near the rental location makes that easier, and
+can help you charge up the car if they give you one with a low charge and don't have any other ones
+available.
+
+- **Don't Expect A Home Charger** - I've done a bunch of EV rentals now and it was a real toss up
+whether the car came with a charger that you could plug in. If you're renting an EV and want to
+charge it at your house, make sure you check the car you get has one!
+
+- **Check What Charging Port The Car Has** - if you get a Tesla, you know for sure it has the NACS
+port that Tesla invented, but other cars, including the ioniq 5 used to have the CCS port and thus
+require an adapter to charge at Tesla superchargers. Just pop open the charge door when you get your
+rental car and check what charging standard it uses!
+
+### Getting Into An EV
+
+#### Look At The Used Market!
+
+A lot of people talk about EVs being more expensive than gas cars, but <strong>this is only true
+for new EVs!</strong> Because they are still changing a lot, are more tech-forward, and people have
+hesitations around battery longevity, a lot of EVs depreciate faster than their gas counterparts
+right now. But most EVs are warrantied for 100,000 miles on their battery, and last much much longer
+than that. A friend of mine bought a 100,000 mile used Tesla Model 3 several years ago, and has had
+absolutely no issues with it.
+
+As an example, here's some listings for used Hyundai ioniq 5 EVs, with many under $23,000 with only
+24,000 miles on them! And if you just want more of a city car, the deals get even better with used
+Chevy Bolts, with several under $16,000! These charge more slowly, but still have pretty good (250mi)
+range.
+
+<img src="/post-assets/ev-roadtrip/ioniq5-used-prices.webp" loading="lazy"
+    alt="Edmunds search results for used Hyundai IONIQ 5s near Chicago, Illinois, showing 98
+      listings. Four are visible: a 2024 SE with 24,703 miles for $22,410, a 2024 SEL with 17,000
+      miles for $22,988, a 2024 SEL with 9,953 miles for $25,407, and a 2025 SEL with 5,442 miles
+      for $33,990. A banner advertises $5,100 in IONIQ 5 rebates.">
+
+
+<img src="/post-assets/ev-roadtrip/bolt-used-prices.webp" loading="lazy"
+    alt="Carvana search results for used Chevrolet Bolts, showing 95 cars. Six are visible: a 2023
+      Bolt EV 2LT with 40k miles for $21,590, a 2023 Bolt EUV LT with 100k miles for $15,590, a 2019
+      Bolt EV Premier with 90k miles for $15,990, a 2019 Bolt EV Premier with 74k miles for $15,990,
+      a 2021 Bolt EV LT with 42k miles for $18,590, and a 2021 Bolt EV LT with 100k miles for
+      $14,990.">
+
+#### Check for Rebates
+
+A lot of states have rebates for EVs or EV chargers. In Illinois, [ComEd has a rebate for EV
+chargers](https://www.comed.com/about-us/clean-energy/electric-vehicle-charger-and-installation-rebate)
+that can give $750 or $2,500 towards a charger and installation, depending on your income and
+community.
 
 ### Terminology
