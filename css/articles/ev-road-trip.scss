@@ -27,6 +27,16 @@ $image-grid-three-col-max-width: 90vw;
 // level with the photos beside it instead of towering over them.
 $image-grid-match-height: 320px;
 
+// Charger receipts and dashboard shots are mostly a few lines of large text, so
+// they stay readable well below full article width on desktop
+$image-link-max-width: 600px;
+// How far an image lifts when hovered, hinting that it opens the full version
+$image-link-hover-lift: 2px;
+// Shadow under a hovered image, deeper than the resting one to sell the lift
+$image-link-hover-shadow: 2px 4px 10px $shadow-color;
+// Speed of the image link hover transition
+$image-link-hover-transition: 0.2s ease;
+
 .cost-table {
   margin-top: 0.5rem;
 
@@ -156,13 +166,89 @@ $image-grid-match-height: 320px;
       display: flex;
       justify-content: center;
 
+      // Direct children are the flex items - either a bare image or a
+      // .image-link wrapping one - so both need to hold their natural width
+      // rather than being squeezed by the row.
+      > * {
+        flex-shrink: 0;
+      }
+
       img {
         height: $image-grid-match-height;
         width: auto;
-        // Without this the flex row would squeeze images narrower than the
-        // width their fixed height calls for, distorting them.
-        flex-shrink: 0;
+        display: block;
       }
+    }
+  }
+}
+
+// Screenshots (charger receipts, dashboard readouts) wrapped in a link to the
+// full-size image. They are text-heavy shots that don't need full article
+// width, so cap them and center them. The link is a block so it hugs the image
+// rather than spanning the column, keeping the hover target on the image.
+main.post .image-link {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: $image-grid-margin-y auto;
+  transition: transform $image-link-hover-transition;
+
+  img {
+    display: block;
+    max-width: $image-link-max-width;
+    width: 100%;
+    transition: box-shadow $image-link-hover-transition;
+    // The post's default image border/shadow only targets images directly
+    // inside a <p>. Wrapping the image in this link breaks that selector, so
+    // restate the styling here to keep it matching the post's other images.
+    border: solid 1px $grey;
+    box-shadow: 1px 1px 5px $shadow-color;
+  }
+
+  // Lift the image on hover so it reads as clickable. :focus-visible gets the
+  // same treatment so keyboard users see the affordance too. The shadow goes on
+  // the image rather than the link so it hugs the image's actual edges.
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-$image-link-hover-lift);
+
+    img {
+      box-shadow: $image-link-hover-shadow;
+    }
+  }
+
+  // Respect users who have asked for less motion - they still get the shadow
+  // cue, just without the movement.
+  @media (prefers-reduced-motion: reduce) {
+    transition: box-shadow $image-link-hover-transition;
+
+    &:hover,
+    &:focus-visible {
+      transform: none;
+    }
+  }
+
+  // A linked image inside an .image-grid is already sized by the grid, so drop
+  // the standalone width cap and centering margin. The link stretches to fill
+  // its cell (overriding fit-content) so the image inside can size off the
+  // column rather than collapsing to its intrinsic width.
+  &.-in-grid {
+    width: 100%;
+    margin: 0;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  // Detailed images (like a route map with a text side panel) lose too much
+  // legibility at the narrow default width, so let these fill the article
+  // column while keeping the click-to-enlarge affordance.
+  &.-full-width {
+    width: 100%;
+
+    img {
+      max-width: 100%;
     }
   }
 }
