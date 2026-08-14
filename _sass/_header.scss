@@ -1,6 +1,5 @@
 @use 'variables/colors' as *;
-
-$header-mob-height: 65px;
+@use 'variables/sizing' as *;
 
 .site-header {
   position: fixed;

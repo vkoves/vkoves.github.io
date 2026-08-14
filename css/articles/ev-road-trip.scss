@@ -37,6 +37,11 @@ $image-link-hover-shadow: 2px 4px 10px $shadow-color;
 // Speed of the image link hover transition
 $image-link-hover-transition: 0.2s ease;
 
+// Corner rounding for the trip progress bar. Full rounding on all sides while
+// it's in the document flow, flattened on top once it's stuck to the header
+// (see the .-stuck class toggled by ev-road-trip.js)
+$trip-progress-radius: 1rem;
+
 .cost-table {
   margin-top: 0.5rem;
 
@@ -276,13 +281,37 @@ h2.-active-section {
   border-color: $brand-red;
 }
 
+// Vue mounts the .trip-progress nav inside this div (Vue 3 keeps the mount
+// element in place rather than replacing it). Sticky positioning has to live
+// here rather than on .trip-progress itself, because .trip-progress also
+// carries a translateX() for its full-bleed width, and pairing position:
+// sticky with a transform on the *same* element breaks the sticky behavior.
+#trip-progress {
+  position: sticky;
+  top: $header-height;
+  z-index: 100;
+}
+
 .trip-progress {
   background: var(--light-bg-color);
-  border-bottom: 2px solid $mid-grey;
   padding: 0.5rem 1rem 0.75rem;
   margin-bottom: 2rem;
   box-shadow: 0px 2px 3px #0000006b;
-  border-radius: 10rem;
+  border-radius: $trip-progress-radius;
+
+  // Same full-bleed trick as .cost-table: widen past the narrow article column
+  // and re-center with translateX. Clamped to 95vw so it never touches the
+  // viewport edges (can otherwise happen in tablet-width viewports).
+  @media (min-width: $desktop-min-width) {
+    width: min(120%, 95vw);
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// Once stuck to the header, flatten the top corners so it sits flush
+#trip-progress.-stuck .trip-progress {
+  border-radius: 0 0 $trip-progress-radius $trip-progress-radius;
 }
 
 .trip-row {
@@ -471,8 +500,11 @@ h2.-active-section {
 }
 
 @media (max-width: $mobile-max-width) {
+  #trip-progress {
+    top: $header-mob-height;
+  }
+
   .trip-progress {
-    border-radius: 0.5rem;
     margin: 0 -0.7rem;
   }
 

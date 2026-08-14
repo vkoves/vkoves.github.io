@@ -59,7 +59,7 @@ body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
-  padding-top: 60px; // Add padding around header height
+  padding-top: $header-height; // Add padding around header height
   background-color: var(--bg-color);
   line-height: 1.5;
   color: var(--text-color);

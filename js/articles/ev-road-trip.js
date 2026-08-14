@@ -56,13 +56,44 @@ createApp({
             currentStop.value = active;
         }
 
+        // Toggle a .-stuck class on the sticky wrapper once it's actually pinned
+        // against the header, so its top corners can flatten only then. A sticky
+        // element offers no CSS way to detect this, so we watch a 1px sentinel
+        // placed just before it: once the sentinel scrolls past the header's
+        // bottom edge, the wrapper must have reached its stuck position too.
+        let stuckObserver;
+
+        function observeStuckState() {
+            const wrapper = document.getElementById('trip-progress');
+            const sentinel = document.getElementById('trip-progress-sentinel');
+            const header = document.querySelector('.site-header');
+            if (!wrapper || !sentinel || !header) return;
+
+            const headerHeight = header.getBoundingClientRect().height;
+
+            stuckObserver = new IntersectionObserver(
+                ([entry]) => {
+                    // !isIntersecting alone is ambiguous: it's also true before the
+                    // page has been scrolled anywhere near the sentinel. Only treat
+                    // it as "stuck" when the sentinel has specifically scrolled
+                    // above the header line, not when it's still below the fold.
+                    const scrolledPast = entry.boundingClientRect.top < entry.rootBounds.top;
+                    wrapper.classList.toggle('-stuck', !entry.isIntersecting && scrolledPast);
+                },
+                { rootMargin: `-${headerHeight}px 0px 0px 0px`, threshold: 0 }
+            );
+            stuckObserver.observe(sentinel);
+        }
+
         onMounted(() => {
             window.addEventListener('scroll', updateCurrentStop, { passive: true });
             updateCurrentStop();
+            observeStuckState();
         });
 
         onUnmounted(() => {
             window.removeEventListener('scroll', updateCurrentStop);
+            if (stuckObserver) stuckObserver.disconnect();
         });
 
         const carLeftPercent = computed(() =>

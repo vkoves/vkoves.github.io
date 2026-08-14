@@ -46,7 +46,9 @@ Let's get started! I've made a little progress bar to follow along on our journe
 
 <!-- Vue 3 CDN: loaded synchronously so it's available when the deferred component script runs -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-<div id="trip-progress" style="position: sticky; top: 4rem; z-index: 100;"></div>
+<!-- Sentinel used by ev-road-trip.js to detect when #trip-progress becomes stuck -->
+<div id="trip-progress-sentinel"></div>
+<div id="trip-progress"></div>
 
 
 ## Day 1: Departing Chicago {#chicago-start}
