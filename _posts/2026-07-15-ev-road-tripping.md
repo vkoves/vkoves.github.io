@@ -195,7 +195,9 @@ just 17 miles away!
 
 ## Return Charging Stops {#charging-day2}
 
-Pilot Flying J Sonora, Kentucky - 43% to 86% for $26.23 in 14 minutes
+As mentioned above, there was a charger just 17 miles away from our hotel, just a short drive away.
+This was a Pilot Flying J truck stop in Sonora, Kentucky, and we made a very short stop - since we
+arrived with 43% charge, in just 14 minutes we charged to 86% for a cost of $26.23.
 
 <a class="image-link" href="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-receipt.webp"
     target="_blank" rel="noopener">
@@ -207,9 +209,15 @@ Pilot Flying J Sonora, Kentucky - 43% to 86% for $26.23 in 14 minutes
 
 ## Lunch in Lexington (110mi from Sonora)
 
+Next up, our detour - no charging involved, but we drove over to Lexington to meet a coworker,
+eating up 110 miles - we still had plenty of charge in town (around 40%), but that meant we'd need
+to make another stop somewhat shortly.
+
 ## Stop 1
 
-Pilot Flying J in Waddy, KY - 24% to 82% for $36.16 in 18 minutes
+After a nice ride through some countryside to check out some horses, 36 miles away from Lexington
+we got to a Pilot Flying J in Waddy, Kentucky. We charged for 18 minutes, getting from 24% to 82% for
+$36.16.
 
 <a class="image-link" href="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-receipt.webp"
     target="_blank" rel="noopener">
@@ -221,7 +229,11 @@ Pilot Flying J in Waddy, KY - 24% to 82% for $36.16 in 18 minutes
 
 ## Stop 2
 
-Electrify America in Indianapolis, IN - 19% to 65% for $22.92 in 13 minutes.
+146 miles away from our last stop, we got to an Electrify America station on the Southern end of
+Indianapolis (technically in Beech Grove). Since I knew that further North were the new Ionna
+stations with discounted charging, I specifically stopped for as short a time as possible. We
+arrived with 19% charge, but **only stayed for 13 minutes**, getting us 65% charge to get to our
+next stop, for $22.92.
 
 <div class="image-grid -three-col -match-heights">
   <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp" loading="lazy"
@@ -246,7 +258,9 @@ Electrify America in Indianapolis, IN - 19% to 65% for $22.92 in 13 minutes.
 
 ## Stop 3
 
-Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes, thanks to sale and we were eating
+Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes. This was thanks to the
+20 cents per kWh sale for this brand new station, and since and we were eating dinner, we ended up
+letting the car fully charge. So this was a longer charging stop, but not because of the car!
 
 <a class="image-link" href="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp"
     target="_blank" rel="noopener">
@@ -257,7 +271,9 @@ Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes, thanks to sa
 
 ## Stop 4 - Only Needed Because We're Renting
 
-Rosemont to finish up 46% to 78% for $14.39 8 minutes
+Just one last stop! We needed to return the car at over 70% charge, so after 143 miles of driving we
+ended up back at the Electrify America Station in Rosemont at the Fashion Outlets. We arrived with
+46% charge, and we charged up to 78% **in just 8 minutes** for $14.39!
 
 <a class="image-link" href="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp"
     target="_blank" rel="noopener">
@@ -268,6 +284,8 @@ Rosemont to finish up 46% to 78% for $14.39 8 minutes
 
 ## Back in Chicago {#chicago-return}
 
+And voila! A few miles to the airport from Rosemont, and we were back in Chicago with the rental car
+returned!
 
 ## Our Final Costs & Time
 
