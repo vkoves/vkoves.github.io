@@ -205,7 +205,29 @@ don't realize just how much leeway it gives us. For context, one gallon of gasol
 ## Mammoth Caves
 
 During the day, we drove 22 miles from our hotel to the cave visitor center and then 22 miles back,
-and ended the day at 51% charge.
+and ended the day at 51% charge. No charging was involved, but since that was the point of this
+whole road trip, here's a few fun photos!
+
+<div class="image-grid -three-col -match-heights">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/mammoth-3.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/mammoth-3.webp" loading="lazy"
+        alt="A stone sign reading 'Mammoth Cave National Park Visitor Center' in front of the park's
+          visitor center building.">
+  </a>
+
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/mammoth-1.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/mammoth-1.webp" loading="lazy"
+        alt="Illuminated orange stalactites and flowstone formations inside Mammoth Cave.">
+  </a>
+
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/mammoth-2.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/mammoth-2.webp" loading="lazy"
+        alt="Looking out from inside the dark cave toward a sunlit, forested cave entrance.">
+  </a>
+</div>
 
 ## Day 3: Leaving Kentucky {#kentucky-day2}
 
