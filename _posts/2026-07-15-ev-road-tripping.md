@@ -315,7 +315,8 @@ letting the car fully charge. So this was a longer charging stop, but not becaus
         of charge from 35%, 54.1 kWh delivered in 35 minutes, and a final cost of $11.58.">
 </a>
 
-## Stop 5 - Only Needed Because We're Renting
+## Stop 5 - Electrify America in Rosemont
+**Only Because We're Renting**
 
 Just one last stop, but only because this was a rental car! With this rental (and likely most) we
 needed to return the car at over 70% charge, so after 143 miles of driving we ended up back at the
