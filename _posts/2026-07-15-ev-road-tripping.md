@@ -2,7 +2,7 @@
 layout: post
 title: "Chicago to Mammoth Caves: What A Real 950 Mile EV Road Trip Looks Like"
 metadata:
-  image:
+  image: https://viktorkoves.com/post-assets/ev-roadtrip/ev-roadtrip-social-image.png
   description:
     If you haven't driven electric before, a road trip might sound impossible - but I want to tell
     you about driving from Chicago to Kentucky to Mammoth Caves.
