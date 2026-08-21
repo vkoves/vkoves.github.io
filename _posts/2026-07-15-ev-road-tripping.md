@@ -40,6 +40,24 @@ Since I was driving a 2023 all wheel drive model, it has an 266 mile EPA range r
 model years have a larger battery for the long-range model, and rear wheel drive models have the
 318 mile range!
 
+<div class="notice">
+  <strong>Important Note: Road Tripping Isn't Where EVs Save You Money!</strong>
+
+  <p>
+    The purpose of this article is to show you that road-tripping in an EV is easy and doesn't take
+    up a lot of time, but I'll also be sharing the costs to be transparent. But I want to note
+    upfront that a big way EVs save you money is from the cost of electricity vs gas, which comes
+    from <em>home charging</em>. Fast chargers are expensive equipment with expensive high-powered
+    grid connections, and you pay a premium to use them. Most of the time though, you can just plug
+    in at home, and pay a quarter or a sixth of what I paid at most fast chargers.
+  </p>
+
+  <p>
+    <strong>Plus, EVs also save you money on maintenance</strong> - they've got no transmission, no
+    oil changes, and dramatically less brake wear thanks to regenerative braking!
+  </p>
+</div>
+
 ## The Trip
 
 Let's get started! I've made a little progress bar to follow along on our journey.
