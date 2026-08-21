@@ -389,7 +389,7 @@ absolutely no issues with it.
 
 As an example, here's some listings for used Hyundai ioniq 5 EVs, with many under $23,000 with only
 24,000 miles on them! And if you just want more of a city car, the deals get even better with used
-Chevy Bolts, with several under $16,000! These charge more slowly, but still have pretty good (250mi)
+Chevy Bolts, with older models under $16,000! These charge more slowly, but still have pretty good (250mi)
 range.
 
 <div class="image-grid -two-col">
