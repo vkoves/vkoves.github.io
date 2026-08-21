@@ -12,15 +12,17 @@ scripts:
  - articles/ev-road-trip.js
 ---
 
-When people talk about going electric, they are often concerned about road tripping - an EV might be
-fine for my daily commute, but can I still make a long road trip for a summer vacation? I'm here
-to tell you that modern EVs can tackle a road trip incredibly well.
+When people talk about going electric, they are often concerned about road tripping. You might
+think, &ldquo;an EV might be fine for my daily commute, but can I still make a long road trip for a
+summer vacation?&rdquo; I'm here to show you that modern EVs can tackle a road trip incredibly well,
+especially with the ubiquity of charging infrastructure in the US in 2026.
 
 ## What I'll Cover
 
 - How do you find charging stations?
+- How long does charging take?
 - How much does charging an EV cost?
-- What should you know before renting an EV?
+- What should you know before renting or buying an EV?
 
 ## The Vehicle - The Hyundai Ioniq 5!
 
@@ -32,13 +34,13 @@ For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kW
 
 The Ioniq 5 is a very capable but budget-friendly EV - here's some quick facts:
 
-- Starts at around $37,000 ($45,000 for the long-range version)
-- Charges 10% to 80% in about 20 minutes
-- EPA rated range of up to 318 miles
+- **Starting Price of ~$37,000 New** - $45,000 for the long-range version
+- **Charges 10% to 80% in about 20 minutes**
+- **Has An EPA Rated Range of Up to 318 miles** - in a mix of city and highway driving
 
-Since I was driving a 2023 all wheel drive model, it has an 266 mile EPA range rating - the newer
-model years have a larger battery for the long-range model, and rear wheel drive models have the
-318 mile range!
+Since I was driving a 2023 long-range all wheel drive model, it has a 266 mile EPA range rating.
+The newer model years have a larger battery for the long-range model, and rear wheel drive models
+have that 318 mile range I mentioned above.
 
 <div class="notice">
   <strong>Important Note: Road Tripping Isn't Where EVs Save You Money!</strong>
@@ -161,7 +163,7 @@ February 2024 and [opening their first location in February 2025](https://www.el
 Because they had just opened, Ionna actually had a 20 cent/kWh deal, and we only paid $14.05 for
 that full charge - talk about a deal! Even if gas was let's say $3 a gallon in Indiana (I didn't
 get a photo of gas prices nearby, but in late July after more gas price rises, $3.50 was in the
-area), that's ~4.5 gallons of gas, only enough for 112 miles in an car of average gas mileage (25 MPG).
+area), that's ~4.5 gallons of gas, only enough for 112 miles in an car of average gas mileage (25 mpg).
 
 We ended up charging for 42 minutes in Lafayette, but that's not because the car needed to - if we
 were really rushing, we'd hit 80% at keep going, since all EVs (and all battery powered devices)
@@ -215,6 +217,8 @@ just 17 miles away!
 
 ## Return Charging Stops {#charging-day2}
 
+### Stop 1 - Pre-Trip Top Up at Pilot Flying J in Sonora, Kentucky
+
 As mentioned above, there was a charger just 17 miles away from our hotel, just a short drive away.
 This was a Pilot Flying J truck stop in Sonora, Kentucky, and we made a very short stop - since we
 arrived with 43% charge, in just 14 minutes we charged to 86% for a cost of $26.23.
@@ -233,7 +237,7 @@ Next up, our detour - no charging involved, but we drove over to Lexington to me
 eating up 110 miles - we still had plenty of charge in town (around 40%), but that meant we'd need
 to make another stop somewhat shortly.
 
-## Stop 1
+### Stop 2 - Pilot Flying J in Waddy, Kentucky
 
 After a nice ride through some countryside to check out some horses, 36 miles away from Lexington
 we got to a Pilot Flying J in Waddy, Kentucky. We charged for 18 minutes, getting from 24% to 82% for
@@ -247,7 +251,7 @@ $36.16.
       $36.16.">
 </a>
 
-## Stop 2
+### Stop 3 - Electrify America in Indianapolis
 
 146 miles away from our last stop, we got to an Electrify America station on the Southern end of
 Indianapolis (technically in Beech Grove). Since I knew that further North were the new Ionna
@@ -276,7 +280,7 @@ next stop, for $22.92.
   </a>
 </div>
 
-## Stop 3
+## Stop 4 - Ionna in Lafayette, Indiana
 
 Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes. This was thanks to the
 20 cents per kWh sale for this brand new station, and since and we were eating dinner, we ended up
@@ -289,10 +293,11 @@ letting the car fully charge. So this was a longer charging stop, but not becaus
         of charge from 35%, 54.1 kWh delivered in 35 minutes, and a final cost of $11.58.">
 </a>
 
-## Stop 4 - Only Needed Because We're Renting
+## Stop 5 - Only Needed Because We're Renting
 
-Just one last stop! We needed to return the car at over 70% charge, so after 143 miles of driving we
-ended up back at the Electrify America Station in Rosemont at the Fashion Outlets. We arrived with
+Just one last stop, but only because this was a rental car! With this rental (and likely most) we
+needed to return the car at over 70% charge, so after 143 miles of driving we ended up back at the
+Electrify America Station in Rosemont at the Fashion Outlets that we started at. We arrived with
 46% charge, and we charged up to 78% **in just 8 minutes** for $14.39!
 
 <a class="image-link" href="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp"
@@ -304,8 +309,8 @@ ended up back at the Electrify America Station in Rosemont at the Fashion Outlet
 
 ## Back in Chicago {#chicago-return}
 
-And voila! A few miles to the airport from Rosemont, and we were back in Chicago with the rental car
-returned!
+And voila - it was just a few miles to the airport from Rosemont, and we were back in Chicago with
+the rental car returned!
 
 ## Our Final Costs & Time
 
@@ -324,16 +329,16 @@ trip covered a whopping <strong>952 miles!</strong> Let's break down what that c
 | Electrify America<br><span class="cost-table__location">Indianapolis, IN</span> | 19% → 65% | 38.2 kWh | $22.92 | $0.60 | 13 min |
 | Ionna<br><span class="cost-table__location">Lafayette, IN</span> | 35% → 100% | 54.1 kWh | $11.58 | $0.20 | 35 min |
 | Electrify America<br><span class="cost-table__location">Rosemont, IL</span> | 46% → 75% | 25.8 kWh | $14.39 | $0.56 | 8 min |
-| Total | | 390.3 kWh | $190.70 | | 3 hr 10 min |
+| Total | | 390 kWh | $190.70 | | 3 hr 10 min |
 
 </div>
 
 ### Some Costs To Compare
 
-To cover 952 miles in an average gas car, with 25 MPG, you'd be buying 38 gallons of gas. At the
+To cover 952 miles in an average gas car, with 25 mpg, you'd be buying 38 gallons of gas. At the
 current national average of around $4, that's $152 in gas. So our EV roadtrip cost us a bit more than
-driving a gas car the equivalent distance, but with home charging (at the ComEd rate of 15 cents per
-kWh), our <strong>390 kWh could cost just around $58.50 - that's $94 cheaper than the gas
+driving a gas car the equivalent distance, but **with home charging** (at the ComEd rate of 15 cents per
+kWh), our <strong>390 kWh could cost just around $58.50, $94 cheaper than the gas
 equivalent, around one third the cost!</strong>
 
 This reflects an important thing about EV ownership: EVs save you money primarily from charging
@@ -375,7 +380,17 @@ Ionna station).
 
 ## Closing Thoughts
 
+I'm a big numbers guy, so I think having all the data on what a road trip really looks like is
+helpful, and I hope it helps you understand what it was like! But it's also important
+to emphasize the subjective experience here too - **we were very rarely stopping just for the
+car** (except our initial and final charges of each day) and **were rarely waiting on the car**.
+Some people are good at driving for six hours without a break, but that's not really my cup of tea.
+After two hours, especially in the summer heat, I usually need to use the bathroom and appreciate a
+break to stretch my legs. And since the car charged so quickly, using the bathroom and grabbing a
+snack was plenty of the time for the car to charge.
 
+Or put more concisely: **road tripping in a good EV isn't any more inconvenient for most people
+than a typical gas car**.
 
 ### Tips For Renting
 
@@ -395,6 +410,18 @@ require an adapter to charge at Tesla superchargers. Just pop open the charge do
 rental car and check what charging standard it uses!
 
 ### Getting Into An EV
+
+Are you or someone you know ready to get into an electric vehicle? Here's a few tips!
+
+#### Know How You Use Your Car
+
+If you're in a two-car household, maybe you want an EV to replace a commuter car - so you can settle
+for something older with lower range and slower charging speeds, to save money. But if you like road
+tripping, make sure you pay attention to the range as well as the charging speed and _charging time_
+(often cited as the time to charge from 10% - 80%) of the EVs you're interested in.
+
+As an example, our ioniq 5 charged from 10 - 80% in 18 minutes, while an older Chevy Bolt takes 53
+minutes, and their newly redesigned 2026 model takes only 25 minutes!
 
 #### Look At The Used Market!
 
@@ -425,6 +452,29 @@ range.
         for $14,990.">
 </div>
 
+#### Don't Think You Need A Level 2 Charger At Home
+
+Charging an EV on a standard household outlet is called Level 1 charging, while a higher powered
+240V outlet can be used for what's called Level 2 charging. But unless you drive a lot _every day_
+**you probably don't need a Level 2 charger!** Level 1 chargers give you 3 - 5 miles per hour of
+charge, but overnight for say, 10 hours, that means you'll get 30 - 50 miles back.
+
+To learn more, check out this quick video from This Old House, which dives into it more:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_YcnMRSqdtE?si=HSIu_-fSkUei22Nl"
+  title="YouTube Video Player - Electric Vehicle Chargers Explained, This Old House"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+And if you can't charge at home, you can still go electric, but you won't save as much money. Since
+most EVs have 300 miles of range, if you live in a city, you probably will only need to charge say,
+once a week, depending on how much you drive.
+
+**If you do drive daily to work, see if your workplace has or can install a Level 2 EV charger** - many
+parking garages in downtown Chicago have them, for example, letting you charge your car relatively
+affordably during the work day!
+
 #### Check for Rebates
 
 A lot of states have rebates for EVs or EV chargers. In Illinois, [ComEd has a rebate for EV
@@ -432,4 +482,35 @@ chargers](https://www.comed.com/about-us/clean-energy/electric-vehicle-charger-a
 that can give $750 or $2,500 towards a charger and installation, depending on your income and
 community.
 
+#### Talk to An Existing EV Owner
+
+If you have questions or concerns about going electric, the best way to learn more is to talk to a
+neighbor, friend, or family member who already has an electric car. They can tell you about their
+specific vehicle, how they manage charging, and take you for a drive!
+
+## Closing
+
+I hope this deep dive into my road trip was helpful, and shows you just how doable road tripping in
+an EV can be! I've been driving electric for years now, and it's gotten easier every year, as cars
+charge faster and chargers become more commonplace.
+
+And if you found the article helpful, share it with a friend!
+
+## Appendix
+
 ### Terminology
+
+- kilowatt (kW) - a unit of power, roughly equal to the instantenous power draw of a microwave. EV
+charging speeds are in kilowatts, with many modern EVs able to hit over 100 kW on compatible
+chargers.
+
+- kilowatt hour (kWh) - a unit of energy. As a rough heuristic, about the energy it takes to run a
+microwave for an hour. One kWh can usually take you a few miles in an EV. EV batteries often range
+from 40 kWh in smaller cars to up to even 205 kWh in large pickup trucks, and even bigger in larger
+vehicles.
+
+- Level 1/2/3 Charging - categories for EV charging speeds. Level 1 is the slowest charging speed,
+from a common household outlet, while Level 3 is the fastest, found just at dedicated fast charging
+sites, and Level 2 is a middle-ground that requires running a dedicated 240 Volt circuit, but is
+fairly common.
+[Learn more from Car and Driver](https://www.caranddriver.com/features/a70141873/ev-charging-levels-explained/).

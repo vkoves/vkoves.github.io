@@ -55,7 +55,7 @@ $trip-progress-radius: 1rem;
   overflow-x: scroll;
 
   table {
-    width: 800px;
+    width: 850px;
   }
 
   // All backgrounds use theme CSS variables so they flip automatically between
@@ -276,12 +276,19 @@ main.post .image-link {
 }
 
 h2 {
-  border-left: 5px solid transparent;
   padding-left: 0.5rem;
   margin-left: -0.5rem;
   transition: border-color 0.3s ease;
   scroll-margin-top: 300px;
 }
+
+h2, h3 {
+  margin-bottom: 0.5rem;
+}
+
+h4 { margin-bottom: 0.25rem; }
+
+h2 + p, h3 + p, h4 + p { margin-top: 0; }
 
 h2.-active-section {
   border-color: $brand-red;
@@ -545,4 +552,10 @@ h2.-active-section {
     max-width: 90%;
     margin: auto;
   }
+}
+
+iframe {
+  display: block;
+  margin: auto;
+  max-width: 100%;
 }
