@@ -32,14 +32,79 @@ think, &ldquo;an EV might be fine for my daily commute, but can I still make a l
 summer vacation?&rdquo; I'm here to show you that modern EVs can tackle a road trip incredibly well,
 especially with the ubiquity of charging infrastructure in the US in 2026.
 
-## What I'll Cover
+<details class="table-of-contents">
+  <summary>Table of Contents</summary>
+
+  <nav aria-label="Table of contents">
+    <ul>
+      <li><a href="#the-vehicle">The Vehicle - The Hyundai Ioniq 5!</a></li>
+      <li>
+        <a href="#the-trip">The Trip</a>
+        <ul>
+          <li><a href="#chicago-start">Day 1: Departing Chicago</a></li>
+          <li>
+            <a href="#charging-day1">Charging Stops</a>
+            <ul>
+              <li><a href="#finding-charging-stops">How Do You Find Charging Stops?</a></li>
+              <li><a href="#day1-stop1">Stop 1 - Ionna in Lafayette, Indiana</a></li>
+              <li><a href="#day1-stop2">Stop 2 - Electrify America in Clarksville, Indiana</a></li>
+            </ul>
+          </li>
+          <li><a href="#kentucky-arrival">Arriving in Kentucky</a></li>
+          <li><a href="#mammoth-caves">Mammoth Caves</a></li>
+          <li><a href="#kentucky-day2">Day 3: Leaving Kentucky</a></li>
+          <li>
+            <a href="#charging-day2">Return Charging Stops</a>
+            <ul>
+              <li><a href="#day3-stop1">Stop 1 - Pilot Flying J in Sonora, Kentucky</a></li>
+              <li><a href="#lunch-lexington">Lunch in Lexington</a></li>
+              <li><a href="#day3-stop2">Stop 2 - Pilot Flying J in Waddy, Kentucky</a></li>
+              <li><a href="#day3-stop3">Stop 3 - Electrify America in Indianapolis</a></li>
+              <li><a href="#day3-stop4">Stop 4 - Ionna in Lafayette, Indiana</a></li>
+              <li><a href="#day3-stop5">Stop 5 - Electrify America in Rosemont</a></li>
+            </ul>
+          </li>
+          <li><a href="#chicago-return">Back in Chicago</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#final-costs">Our Final Costs &amp; Time</a>
+        <ul>
+          <li><a href="#costs-to-compare">Some Costs To Compare</a></li>
+          <li><a href="#cost-caveats">Caveats / Why It Was So Expensive</a></li>
+        </ul>
+      </li>
+      <li><a href="#what-it-felt-like">What It Actually Felt Like</a></li>
+      <li><a href="#renting-tips">Tips For Renting An EV</a></li>
+      <li>
+        <a href="#getting-into-an-ev">Getting Into An EV</a>
+        <ul>
+          <li><a href="#know-your-usage">Know How You Use Your Car</a></li>
+          <li><a href="#used-market">Look At The Used Market!</a></li>
+          <li><a href="#level-2-at-home">Don't Think You Need A Level 2 Charger At Home</a></li>
+          <li><a href="#rebates">Check for Rebates</a></li>
+          <li><a href="#talk-to-an-owner">Talk to An Existing EV Owner</a></li>
+        </ul>
+      </li>
+      <li><a href="#wrapping-up">Wrapping Up</a></li>
+      <li>
+        <a href="#appendix">Appendix</a>
+        <ul>
+          <li><a href="#terminology">Terminology</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</details>
+
+## What I'll Cover {#what-ill-cover}
 
 - How do you find charging stations?
 - How long does charging take?
 - How much does charging an EV cost?
 - What should you know before renting or buying an EV?
 
-## The Vehicle - The Hyundai Ioniq 5!
+## The Vehicle - The Hyundai Ioniq 5! {#the-vehicle}
 
 For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
 
@@ -75,7 +140,7 @@ have that 318-mile range I mentioned above.
   </p>
 </div>
 
-## The Trip
+## The Trip {#the-trip}
 
 Let's get started! I've made a little progress bar to follow along on our journey.
 
@@ -88,12 +153,12 @@ Let's get started! I've made a little progress bar to follow along on our journe
 
 ## Day 1: Departing Chicago {#chicago-start}
 
-We started our adventure at the O'Hare airport Budget location, where we picked our delightful matte
+We started our adventure at the Budget location at  O'Hare airport, where we picked up our matte
 grey 2023 Hyundai Ioniq 5 SEL AWD EV.
 
-There was only one problem - due to a mixup at the rental place, they pointed us to a parking spot
-where they had chargers, and they had likely moved the car we were _supposed to get_ out and swapped
-it with a car that needed a charge.
+I was very excited to get an Ioniq 5, but there was one problem - due to a mixup at the rental
+place, they pointed us to a parking spot where they had chargers, and they had likely moved the
+car we were _supposed to get_ out and swapped it with a car that needed a charge.
 
 <div class="image-grid -two-col">
   <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/ioniq5-at-rental.webp"
@@ -148,7 +213,7 @@ As you'll see though, with a modern EV (especially an 800-volt car like the Ioni
 are really no problem - and we usually needed to eat or use the bathroom anyway! By the time we were
 ready to go, the car was ready to go nine times out of ten.
 
-### How Do You Find Charging Stops?
+### How Do You Find Charging Stops? {#finding-charging-stops}
 
 To find charging stops, I used [A Better Route Planner](https://abetterrouteplanner.com), which is
 widely regarded as the best app for planning out longer road trips - you put in what car you have,
@@ -165,7 +230,7 @@ from Rosemont to Mammoth Caves:
     station in Shepherdsville, Kentucky.">
 </a>
 
-### Stop 1 - Ionna in Lafayette, Indiana
+### Stop 1 - Ionna in Lafayette, Indiana {#day1-stop1}
 
 143 miles from Rosemont at 4:48pm Eastern, we ended up at a brand new Ionna charging station in
 Lafayette, Indiana with still 22% charge left. This station
@@ -192,7 +257,7 @@ attached Wawa, we just ate our meal and came back to a fully charged car!
         99% state of charge, 65.6 kWh delivered in 42 minutes, and a total cost of $14.05.">
 </a>
 
-### Stop 2 - Electrify America in Clarksville, Indiana
+### Stop 2 - Electrify America in Clarksville, Indiana {#day1-stop2}
 
 At 8:25pm Eastern, 171 miles from our charging stop in Lafayette, we ended up at an Electrify America station in
 Clarksville, Indiana with 26% charge left - we stopped in the Walmart, used the restroom, and ate
@@ -219,7 +284,7 @@ don't realize just how much leeway it gives us. For context, one gallon of gasol
 77.4 kWh battery, was carrying the energy equivalent of just 2.3 gallons of gas, but it can go
 nearly 270 miles on that amount of energy! That's the equivalent of a _whopping 117 MPG_.
 
-## Mammoth Caves
+## Mammoth Caves {#mammoth-caves}
 
 During the day, we drove 22 miles from our hotel to the cave visitor center and then 22 miles back,
 and ended the day at 51% charge. No charging was involved, but since that was the point of this
@@ -256,7 +321,7 @@ just 17 miles away!
 
 ## Return Charging Stops {#charging-day2}
 
-### Stop 1 - Pre-Trip Top Up at Pilot Flying J in Sonora, Kentucky
+### Stop 1 - Pre-Trip Top Up at Pilot Flying J in Sonora, Kentucky {#day3-stop1}
 
 As mentioned above, there was a charger just 17 miles away from our hotel, just a short drive away.
 This was a Pilot Flying J truck stop in Sonora, Kentucky, and we made a very short stop - since we
@@ -270,13 +335,13 @@ arrived with 43% charge, in just 14 minutes we charged to 86% for a cost of $26.
       cost of $26.23.">
 </a>
 
-## Lunch in Lexington (110mi from Sonora)
+### Lunch in Lexington (110mi from Sonora) {#lunch-lexington}
 
 Next up, our detour - no charging involved, but we drove over to Lexington to meet a coworker,
 eating up 110 miles - we still had plenty of charge in town (around 40%), but that meant we'd need
 to make another stop somewhat shortly.
 
-### Stop 2 - Pilot Flying J in Waddy, Kentucky
+### Stop 2 - Pilot Flying J in Waddy, Kentucky {#day3-stop2}
 
 After a nice ride through some countryside to check out some horses, 36 miles away from Lexington
 we got to a Pilot Flying J in Waddy, Kentucky. We charged for 18 minutes, getting from 24% to 82% for
@@ -290,7 +355,7 @@ $36.16.
       $36.16.">
 </a>
 
-### Stop 3 - Electrify America in Indianapolis
+### Stop 3 - Electrify America in Indianapolis {#day3-stop3}
 
 146 miles away from our last stop, we got to an Electrify America station on the Southern end of
 Indianapolis (technically in Beech Grove). Since I knew that further North were the new Ionna
@@ -319,7 +384,7 @@ next stop, for $22.92.
   </a>
 </div>
 
-## Stop 4 - Ionna in Lafayette, Indiana
+### Stop 4 - Ionna in Lafayette, Indiana {#day3-stop4}
 
 Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes. This was thanks to the
 20 cents per kWh sale for this brand new station, and since we were eating dinner, we ended up
@@ -332,7 +397,7 @@ letting the car fully charge. So this was a longer charging stop, but not becaus
         of charge from 35%, 54.1 kWh delivered in 35 minutes, and a final cost of $11.58.">
 </a>
 
-## Stop 5 - Electrify America in Rosemont
+### Stop 5 - Electrify America in Rosemont {#day3-stop5}
 **Only Because We're Renting**
 
 Just one last stop, but only because this was a rental car! With this rental (and likely most) we
@@ -352,7 +417,7 @@ Electrify America Station in Rosemont at the Fashion Outlets that we started at.
 And voila - it was just a few miles to the airport from Rosemont, and we were back in Chicago with
 the rental car returned!
 
-## Our Final Costs & Time
+## Our Final Costs & Time {#final-costs}
 
 Looking at the car's odometer, which started at 36,082 miles and ended at 37,034 miles, this road
 trip covered a whopping <strong>952 miles!</strong> Let's break down what that cost us.
@@ -373,7 +438,7 @@ trip covered a whopping <strong>952 miles!</strong> Let's break down what that c
 
 </div>
 
-### Some Costs To Compare
+### Some Costs To Compare {#costs-to-compare}
 
 To cover 952 miles in an average gas car, with 25 mpg, you'd be buying 38 gallons of gas. At the
 current national average of around $4, that's $152 in gas. So our EV roadtrip cost us a bit more than
@@ -385,7 +450,7 @@ This reflects an important thing about EV ownership: EVs save you money primaril
 cheaply (and more slowly) at home, but the high-powered and high-tech fast chargers cost a ton of
 money to build and maintain, so they bill you more to charge.
 
-### Caveats / Why It Was So Expensive
+### Caveats / Why It Was So Expensive {#cost-caveats}
 
 A few caveats here:
 
@@ -418,7 +483,7 @@ America stations, I could have saved $25 just on this trip, and if I had that me
 probably try to make each stop at an Electrify America station (except the heavily discounted
 Ionna station).
 
-## Closing Thoughts
+## What It Actually Felt Like {#what-it-felt-like}
 
 I'm a big numbers guy, so I think having all the data on what a road trip really looks like is
 helpful, and I hope it helps you understand what it was like! But it's also important
@@ -432,7 +497,7 @@ snack was plenty of the time for the car to charge.
 Or put more concisely: **road tripping in a good EV isn't any more inconvenient for most people
 than a typical gas car**.
 
-### Tips For Renting
+## Tips For Renting An EV {#renting-tips}
 
 - **Find A Charger Near The Rental Location** - most rental companies require a car to be returned
 at a certain state of charge (typically over 70% or 80%), and that can be a little hard to game out
@@ -449,11 +514,11 @@ port that Tesla invented, but other cars, including the Ioniq 5, used to have th
 require an adapter to charge at Tesla superchargers. Just pop open the charge door when you get your
 rental car and check what charging standard it uses!
 
-### Getting Into An EV
+## Getting Into An EV {#getting-into-an-ev}
 
 Are you or someone you know ready to get into an electric vehicle? Here's a few tips!
 
-#### Know How You Use Your Car
+### Know How You Use Your Car {#know-your-usage}
 
 If you're in a two-car household, maybe you want an EV to replace a commuter car - so you can settle
 for something older with lower range and slower charging speeds, to save money. But if you like road
@@ -463,7 +528,7 @@ tripping, make sure you pay attention to the range as well as the charging speed
 As an example, our Ioniq 5 charged from 10 - 80% in 18 minutes, while an older Chevy Bolt takes 53
 minutes, and their newly redesigned 2026 model takes only 25 minutes!
 
-#### Look At The Used Market!
+### Look At The Used Market! {#used-market}
 
 A lot of people talk about EVs being more expensive than gas cars, but <strong>this is only true
 for new EVs!</strong> Because they are still changing a lot, are more tech-forward, and people have
@@ -492,7 +557,7 @@ range.
         for $14,990.">
 </div>
 
-#### Don't Think You Need A Level 2 Charger At Home
+### Don't Think You Need A Level 2 Charger At Home {#level-2-at-home}
 
 Charging an EV on a standard household outlet is called Level 1 charging, while a higher powered
 240V outlet can be used for what's called Level 2 charging. But unless you drive a lot _every day_
@@ -515,20 +580,20 @@ once a week, depending on how much you drive.
 parking garages in downtown Chicago have them, for example, letting you charge your car relatively
 affordably during the work day!
 
-#### Check for Rebates
+### Check for Rebates {#rebates}
 
 A lot of states have rebates for EVs or EV chargers. In Illinois, [ComEd has a rebate for EV
 chargers](https://www.comed.com/about-us/clean-energy/electric-vehicle-charger-and-installation-rebate)
 that can give $750 or $2,500 towards a charger and installation, depending on your income and
 community.
 
-#### Talk to An Existing EV Owner
+### Talk to An Existing EV Owner {#talk-to-an-owner}
 
 If you have questions or concerns about going electric, the best way to learn more is to talk to a
 neighbor, friend, or family member who already has an electric car. They can tell you about their
 specific vehicle, how they manage charging, and take you for a drive!
 
-## Closing
+## Wrapping Up {#wrapping-up}
 
 I hope this deep dive into my road trip was helpful, and shows you just how doable road tripping in
 an EV can be! I've been driving electric for years now, and it's gotten easier every year, as cars
@@ -536,9 +601,9 @@ charge faster and chargers become more commonplace.
 
 And if you found the article helpful, share it with a friend!
 
-## Appendix
+## Appendix {#appendix}
 
-### Terminology
+### Terminology {#terminology}
 
 - kilowatt (kW) - a unit of power, roughly equal to the instantaneous power draw of a microwave. EV
 charging speeds are in kilowatts, with many modern EVs able to hit over 100 kW on compatible

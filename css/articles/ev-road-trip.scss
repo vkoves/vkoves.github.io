@@ -17,6 +17,21 @@ $cost-table-band-padding-y: 0.5rem;
 // line but clearly secondary to the h1 above it
 $post-subtitle-font-size: 1.3125rem;
 
+// Inner padding of the collapsible table of contents panel
+$toc-padding: 1rem;
+// Corner rounding on the table of contents panel, matching the notice panel
+$toc-radius: 15px;
+// Vertical breathing room around the table of contents
+$toc-margin-y: 1.5rem;
+// Indent applied to each nested level of the table of contents list
+$toc-nest-indent: 1.25rem;
+// Gap between table of contents entries, kept tight so a long list stays scannable
+$toc-item-gap: 0.35rem;
+// Hover tint for the table of contents summary. A translucent black rather than
+// a theme color so it darkens the panel in light mode and reads as a subtle
+// lift in dark mode, where the panel's background is already near-black.
+$toc-summary-hover-tint: rgba(0, 0, 0, 0.08);
+
 // Gap between images in the multi-column image grids
 $image-grid-gap: 1rem;
 // Vertical breathing room above and below an image grid
@@ -50,6 +65,72 @@ $trip-progress-radius: 1rem;
   p {
     margin: 0.5rem 0 0 0;
     font-size: 0.875em;
+  }
+}
+
+// Collapsible table of contents. Uses <details>/<summary> so it works without
+// JavaScript - the panel styling lives here rather than in post.scss because
+// that file's .table-of-contents rule assumes a bare list, not a disclosure.
+main.post details.table-of-contents {
+  padding: 0;
+  margin: $toc-margin-y 0;
+  background-color: var(--bit-dark-bg-color);
+  border: solid 1px $light-grey;
+  border-radius: $toc-radius;
+
+  // The padding lives on the summary rather than the details, so the click
+  // target fills the whole panel when closed. Padding on the details would
+  // leave an inert border of dead space around a text-width summary.
+  summary {
+    padding: $toc-padding;
+    font-weight: bold;
+    cursor: pointer;
+    // Match the panel's rounding so the hover/focus highlight doesn't square
+    // off the corners. When open, only the top corners still follow the panel.
+    border-radius: $toc-radius;
+  }
+
+  &[open] summary {
+    border-radius: $toc-radius $toc-radius 0 0;
+  }
+
+  // Now that the target spans the panel, give it a hover cue so it reads as
+  // clickable across its full width rather than only over the label text.
+  // A translucent overlay rather than a theme variable: in dark mode
+  // --bit-dark-bg-color and --dark-bg-color resolve to the same grey, so a
+  // variable-based hover would be invisible there.
+  summary:hover {
+    background-color: $toc-summary-hover-tint;
+  }
+
+  // The nav carries the horizontal padding once open; the summary above it has
+  // already supplied the gap between the two.
+  nav {
+    padding: 0 $toc-padding $toc-padding;
+  }
+
+  ul {
+    // The article's headings aren't numbered or bulleted, so markers here would
+    // imply a structure the content doesn't have. Indentation alone carries the
+    // hierarchy.
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  // Nested levels still need to step inward; only the top level sits flush.
+  ul ul {
+    padding-left: $toc-nest-indent;
+  }
+
+  li + li {
+    margin-top: $toc-item-gap;
+  }
+
+  // post.scss adds spacing between all post list items; the TOC is a dense
+  // navigation list, so keep nested entries as tight as their siblings.
+  li > ul {
+    margin-top: $toc-item-gap;
   }
 }
 
