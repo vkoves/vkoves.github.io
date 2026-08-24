@@ -4,7 +4,7 @@ title: "EV Road Tripping Is Actually Easy Now!"
 skipPostTitle: true
 excerpt:
   When people talk about going electric, they are often concerned about road tripping. I'm here to
-  show you that modern EVs can tackle a road trip incredibly well - here's what a real 950 mile
+  show you that modern EVs can tackle a road trip incredibly well - here's what a real 950-mile
   drive from Chicago to Mammoth Caves actually looked like.
 metadata:
   image: https://viktorkoves.com/post-assets/ev-roadtrip/ev-roadtrip-social-image.png
@@ -23,7 +23,7 @@ scripts:
 
 <h1 class="page-title">EV Road Tripping Is Actually <em>Easy</em> Now!</h1>
 
-<p class="post-subtitle">A 950 Mile EV Road Trip From Chicago to Mammoth Caves</p>
+<p class="post-subtitle">A 950-Mile EV Road Trip From Chicago to Mammoth Caves</p>
 
 <p class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</p>
 
@@ -53,9 +53,9 @@ The Ioniq 5 is a very capable but budget-friendly EV - here's some quick facts:
 - **Charges 10% to 80% in About 20 Minutes**
 - **Has an EPA-Rated Range of up to 318 Miles** - in a mix of city and highway driving
 
-Since I was driving a 2023 long-range all wheel drive model, it has a 266 mile EPA range rating.
-The newer model years have a larger battery for the long-range model, and rear wheel drive models
-have that 318 mile range I mentioned above.
+Since I was driving a 2023 long-range all-wheel drive model, it has a 266-mile EPA range rating.
+The newer model years have a larger battery for the long-range model, and rear-wheel drive models
+have that 318-mile range I mentioned above.
 
 <div class="notice">
   <strong>Important Note: Road Tripping Isn't Where EVs Save You Money!</strong>
@@ -110,7 +110,7 @@ it with a car that needed a charge.
 </div>
 
 I'll cover some tips on renting later on, but I was prepared - I've rented EVs a lot from the
-O'Hare, and knew that there's an Electrify America fast charging station in Rosemont at
+O'Hare, and knew that there's an Electrify America fast-charging station in Rosemont at
 the Fashion Outlets Mall, just a few minutes and a few miles away from O'Hare. So we drove over
 there, plugged in the car, got some coffee and used the bathroom, and 27 minutes later were back on
 our way!
@@ -135,16 +135,16 @@ our way!
 ## Charging Stops {#charging-day1}
 
 Now that we had a full charge in Rosemont (92%), we were ready to drive to Kentucky! From Rosemont,
-our hotel in Munfordville Kentucky is a 400 mile drive, and we only needed to stop to charge twice!
+our hotel in Munfordville, Kentucky is a 400-mile drive, and we only needed to stop to charge twice!
 
-Now you might be thinking - if the Ioniq 5 we were driving had a 266 mile EPA range, why did we need
+Now, you might be thinking - if the Ioniq 5 we were driving had a 266-mile EPA range, why did we need
 to stop twice? That's because an EPA range is a mix of city and highway driving, and so exclusively
 driving on a highway, EVs usually have a roughly 30% range penalty. In my experience, this 2023
-Ioniq 5 SEL AWD got a 200 mile highway range, so to safely make a 400 mile journey (especially since
+Ioniq 5 SEL AWD got a 200-mile highway range, so to safely make a 400-mile journey (especially since
 you rarely recharge an EV fully to 100%) and have charge when we got the hotel, we needed to stop
 twice.
 
-As you'll see though, with a modern EV (especially an 800 volt car like the Ioniq 5) charging stops
+As you'll see though, with a modern EV (especially an 800-volt car like the Ioniq 5) charging stops
 are really no problem - and we usually needed to eat or use the bathroom anyway! By the time we were
 ready to go, the car was ready to go nine times out of ten.
 
@@ -168,7 +168,7 @@ from Rosemont to Mammoth Caves:
 ### Stop 1 - Ionna in Lafayette, Indiana
 
 143 miles from Rosemont at 4:48pm Eastern, we ended up at a brand new Ionna charging station in
-Lafayette Indiana with still 22% charge left. This station
+Lafayette, Indiana with still 22% charge left. This station
 [opened in late June](https://www.wlfi.com/2026/06/24/wawa-lafayette-holds-grand-opening), just a
 week before we got there on July 1st.
 
@@ -181,7 +181,7 @@ get a photo of gas prices nearby, but in late July after more gas price rises, $
 area), that's ~4.5 gallons of gas, only enough for 112 miles in an car of average gas mileage (25 mpg).
 
 We ended up charging for 42 minutes in Lafayette, but that's not because the car needed to - if we
-were really rushing, we'd hit 80% at keep going, since all EVs (and all battery powered devices)
+were really rushing, we'd hit 80% at keep going, since all EVs (and all battery-powered devices)
 dramatically slow down their rate of charge over 80%. But since we were eating a late lunch at the
 attached Wawa, we just ate our meal and came back to a fully charged car!
 
@@ -209,9 +209,9 @@ had to eat!
 
 ## Arriving in Kentucky {#kentucky-arrival}
 
-After a 78 mile drive, we then got to our hotel at 9:38pm Eastern time with 68% charge - plenty for
+After a 78-mile drive, we then got to our hotel at 9:38pm Eastern time with 68% charge - plenty for
 our adventures! You might notice that's a pretty large range drop for that distance, but I was
-probably driving a little faster than before since we had plenty of charge to get back to the hotel.
+probably driving a little faster than before, since we had plenty of charge to get back to the hotel.
 
 **Pro Tip - Speed is a huge factor in EV range!** Gasoline is incredibly energy dense, so we often
 don't realize just how much leeway it gives us. For context, one gallon of gasoline is equivalent to
@@ -382,8 +382,8 @@ kWh), our <strong>390 kWh could cost just around $58.50, $94 cheaper than the ga
 equivalent, around one third the cost!</strong>
 
 This reflects an important thing about EV ownership: EVs save you money primarily from charging
-cheaply (and more slowly) at home, but the high powered and high tech fast chargers cost a ton of
-money to build and maintain, so they bill you more to charge
+cheaply (and more slowly) at home, but the high-powered and high-tech fast chargers cost a ton of
+money to build and maintain, so they bill you more to charge.
 
 ### Caveats / Why It Was So Expensive
 
@@ -469,7 +469,7 @@ A lot of people talk about EVs being more expensive than gas cars, but <strong>t
 for new EVs!</strong> Because they are still changing a lot, are more tech-forward, and people have
 hesitations around battery longevity, a lot of EVs depreciate faster than their gas counterparts
 right now. But most EVs are warrantied for 100,000 miles on their battery, and last much much longer
-than that. A friend of mine bought a 100,000 mile used Tesla Model 3 several years ago, and has had
+than that. A friend of mine bought a 100,000-mile used Tesla Model 3 several years ago, and has had
 absolutely no issues with it.
 
 As an example, here's some listings for used Hyundai Ioniq 5 EVs, with many under $23,000 with only
@@ -550,7 +550,7 @@ from 40 kWh in smaller cars to up to even 205 kWh in large pickup trucks, and ev
 vehicles.
 
 - Level 1/2/3 Charging - categories for EV charging speeds. Level 1 is the slowest charging speed,
-from a common household outlet, while Level 3 is the fastest, found just at dedicated fast charging
-sites, and Level 2 is a middle-ground that requires running a dedicated 240 Volt circuit, but is
+from a common household outlet, while Level 3 is the fastest, found just at dedicated fast-charging
+sites, and Level 2 is a middle-ground that requires running a dedicated 240-Volt circuit, but is
 fairly common.
 [Learn more from Car and Driver](https://www.caranddriver.com/features/a70141873/ev-charging-levels-explained/).
