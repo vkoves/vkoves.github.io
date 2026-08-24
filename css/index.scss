@@ -225,7 +225,8 @@ section.first-sect {
       border-color: $dark-red;
     }
 
-    &:focus { outline-color: $white; }
+    // Recolors the global outline, so it has to match its :focus-visible state
+    &:focus-visible { outline-color: $white; }
   }
 }
 

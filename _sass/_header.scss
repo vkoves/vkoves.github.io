@@ -57,8 +57,9 @@
     &:focus { left: 45px; }
   }
 
-  // Make header links and buttons have clear focus
-  a:focus, button:focus {
+  // White instead of the global red, for contrast against the red header.
+  // Matches the global rule's :focus-visible so both appear together.
+  a:focus-visible, button:focus-visible {
     outline: dashed 3px $white;
   }
 }

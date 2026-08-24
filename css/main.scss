@@ -154,9 +154,11 @@ button { font-family: 'Open Sans', sans-serif; }
 
 }
 
-// Make buttons and links have a nice red dashed outline on focus
-button, a {
-  &:focus { outline: dashed 3px $brand-red; }
+// Give everything focusable the same red dashed outline, rather than listing
+// element types - <summary>, inputs and anything with a tabindex are focusable
+// too and would otherwise fall back to the browser default.
+:focus-visible {
+  outline: dashed 3px $brand-red;
 }
 
 // Make all basic links a dark red without an underline and then switch to
