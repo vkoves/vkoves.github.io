@@ -144,7 +144,7 @@ Ioniq 5 SEL AWD got a 200 mile highway range, so to safely make a 400 mile journ
 you rarely recharge an EV fully to 100%) and have charge when we got the hotel, we needed to stop
 twice.
 
-As you'll see though, with a modern EV (especially an 800 volt car like the ioniq 5) charging stops
+As you'll see though, with a modern EV (especially an 800 volt car like the Ioniq 5) charging stops
 are really no problem - and we usually needed to eat or use the bathroom anyway! By the time we were
 ready to go, the car was ready to go nine times out of ten.
 
@@ -215,7 +215,9 @@ probably driving a little faster than before since we had plenty of charge to ge
 
 **Pro Tip - Speed is a huge factor in EV range!** Gasoline is incredibly energy dense, so we often
 don't realize just how much leeway it gives us. For context, one gallon of gasoline is equivalent to
-33 kWh of energy ([source](https://en.wikipedia.org/wiki/Gasoline_gallon_equivalent#Gasoline_gallon_equivalent_tables)), which means our ioniq 5, with its
+33 kWh of energy ([source](https://en.wikipedia.org/wiki/Gasoline_gallon_equivalent#Gasoline_gallon_equivalent_tables)), which means our Ioniq 5, with its
+77.4 kWh battery, was carrying the energy equivalent of just 2.3 gallons of gas, but it can go
+nearly 270 miles on that amount of energy! That's the equivalent of a _whopping 117 MPG_.
 
 ## Mammoth Caves
 
@@ -443,7 +445,7 @@ whether the car came with a charger that you could plug in. If you're renting an
 charge it at your house, make sure you check the car you get has one!
 
 - **Check What Charging Port The Car Has** - if you get a Tesla, you know for sure it has the NACS
-port that Tesla invented, but other cars, including the ioniq 5 used to have the CCS port and thus
+port that Tesla invented, but other cars, including the Ioniq 5 used to have the CCS port and thus
 require an adapter to charge at Tesla superchargers. Just pop open the charge door when you get your
 rental car and check what charging standard it uses!
 
@@ -458,7 +460,7 @@ for something older with lower range and slower charging speeds, to save money. 
 tripping, make sure you pay attention to the range as well as the charging speed and _charging time_
 (often cited as the time to charge from 10% - 80%) of the EVs you're interested in.
 
-As an example, our ioniq 5 charged from 10 - 80% in 18 minutes, while an older Chevy Bolt takes 53
+As an example, our Ioniq 5 charged from 10 - 80% in 18 minutes, while an older Chevy Bolt takes 53
 minutes, and their newly redesigned 2026 model takes only 25 minutes!
 
 #### Look At The Used Market!
@@ -470,7 +472,7 @@ right now. But most EVs are warrantied for 100,000 miles on their battery, and l
 than that. A friend of mine bought a 100,000 mile used Tesla Model 3 several years ago, and has had
 absolutely no issues with it.
 
-As an example, here's some listings for used Hyundai ioniq 5 EVs, with many under $23,000 with only
+As an example, here's some listings for used Hyundai Ioniq 5 EVs, with many under $23,000 with only
 24,000 miles on them! And if you just want more of a city car, the deals get even better with used
 Chevy Bolts, with older models under $16,000! These charge more slowly, but still have pretty good (250mi)
 range.
