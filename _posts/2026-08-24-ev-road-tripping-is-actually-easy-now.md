@@ -152,7 +152,7 @@ ready to go, the car was ready to go nine times out of ten.
 
 To find charging stops, I used [A Better Route Planner](https://abetterrouteplanner.com), which is
 widely regarded as the best app for planning out longer road trips - you put in what car you have,
-it's state of charge, and your destination, and it'll plan out what stops you need to make to get
+its state of charge, and your destination, and it'll plan out what stops you need to make to get
 to your destination with your desired state of charge! Here's a screenshot of a plan it drew up
 from Rosemont to Mammoth Caves:
 
@@ -181,7 +181,7 @@ get a photo of gas prices nearby, but in late July after more gas price rises, $
 area), that's ~4.5 gallons of gas, only enough for 112 miles in an car of average gas mileage (25 mpg).
 
 We ended up charging for 42 minutes in Lafayette, but that's not because the car needed to - if we
-were really rushing, we'd hit 80% at keep going, since all EVs (and all battery-powered devices)
+were really rushing, we'd hit 80% and keep going, since all EVs (and all battery-powered devices)
 dramatically slow down their rate of charge over 80%. But since we were eating a late lunch at the
 attached Wawa, we just ate our meal and came back to a fully charged car!
 
@@ -322,7 +322,7 @@ next stop, for $22.92.
 ## Stop 4 - Ionna in Lafayette, Indiana
 
 Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes. This was thanks to the
-20 cents per kWh sale for this brand new station, and since and we were eating dinner, we ended up
+20 cents per kWh sale for this brand new station, and since we were eating dinner, we ended up
 letting the car fully charge. So this was a longer charging stop, but not because of the car!
 
 <a class="image-link" href="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp"
@@ -540,7 +540,7 @@ And if you found the article helpful, share it with a friend!
 
 ### Terminology
 
-- kilowatt (kW) - a unit of power, roughly equal to the instantenous power draw of a microwave. EV
+- kilowatt (kW) - a unit of power, roughly equal to the instantaneous power draw of a microwave. EV
 charging speeds are in kilowatts, with many modern EVs able to hit over 100 kW on compatible
 chargers.
 
