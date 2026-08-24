@@ -5,7 +5,7 @@ metadata:
   image: https://viktorkoves.com/post-assets/ev-roadtrip/ev-roadtrip-social-image.png
   description:
     If you haven't driven electric before, a road trip might sound impossible - but I want to tell
-    you about driving from Chicago to Kentucky to Mammoth Caves.
+    you about my road trip from Chicago to Kentucky's Mammoth Caves in a rented EV.
 stylesheets:
  - articles/ev-road-trip.css
 scripts:
@@ -26,7 +26,7 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
 
 ## The Vehicle - The Hyundai Ioniq 5!
 
-For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
+For this road trip, I was driving a rented 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
 
 <img src="/post-assets/ev-roadtrip/ioniq5-main.webp" loading="lazy"
     alt="A matte grey 2023 Hyundai Ioniq 5 at an Ionna charging station on a sunny day">
