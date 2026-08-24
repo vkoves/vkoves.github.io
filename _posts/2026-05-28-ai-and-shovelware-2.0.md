@@ -29,6 +29,8 @@ stylesheets:
   </div>
 </div>
 
+<p class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</p>
+
 <p class="intro-note">
   <strong>Author's note:</strong> In the spirit of fairly critiquing AI and practicing a suggestion I end the article with, this article and the accompanying illustration were created entirely without AI assistance.
 </p>
