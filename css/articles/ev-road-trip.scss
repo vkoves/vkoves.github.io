@@ -60,6 +60,14 @@ $image-grid-match-height: 320px;
 // images' aspect ratios - a fixed height alone overflows narrow screens. The
 // widest row needs ~4.5x its height in width, so 20vw keeps it on screen.
 $image-grid-match-height-vw: 20vw;
+// Taller height cap for the -tall modifier: a two-image row (landscape photo
+// + receipt) has more room per image than a three-photo row, so the default
+// $image-grid-match-height leaves the receipt looking small next to the photo.
+$image-grid-match-height-tall: 400px;
+// Derived the same way as $image-grid-match-height-vw, but for a two-image
+// row - the widest pairing needs ~2.9x its height in width, so 30vw keeps it
+// on screen down to the desktop breakpoint.
+$image-grid-match-height-tall-vw: 30vw;
 
 // Charger receipts and dashboard shots are mostly a few lines of large text, so
 // they stay readable well below full article width on desktop
@@ -327,6 +335,12 @@ main.post .image-grid {
         height: min(#{$image-grid-match-height}, #{$image-grid-match-height-vw});
         width: auto;
         display: block;
+      }
+
+      // Raises the shared height for two-image photo + receipt pairings,
+      // which look cramped at the default height tuned for three-photo rows.
+      &.-tall img {
+        height: min(#{$image-grid-match-height-tall}, #{$image-grid-match-height-tall-vw});
       }
     }
   }
