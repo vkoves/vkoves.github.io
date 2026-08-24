@@ -15,37 +15,40 @@ title: "Writing"
     {% endif %}
 
     <li class="post-listing{% if post.thumbnail %} -with-image{% endif %}">
-      {% comment %}
-        A separate field from metadata.image: that one is the social card, which
-        has the title baked into it and would just repeat the heading here.
-        Decorative and aria-hidden, since the adjacent title link already names
-        the post.
-      {% endcomment %}
-      {% if post.thumbnail %}
-        <a href="{{ post.url }}" class="thumbnail" tabindex="-1" aria-hidden="true">
-          <img src="{{ post.thumbnail }}" alt="" loading="lazy">
-        </a>
-      {% endif %}
+      <div class="post-heading">
+        {% comment %}
+          thumbnail is a separate field from metadata.image: that one is the
+          social card, which has the title baked into it and would just repeat
+          the heading. thumbnailPosition lets a post steer its own crop when the
+          default centre would cut off the subject.
 
-      <div class="post-details">
-        <div class="post-heading">
-          <h2>
-            <a href="{{ post.url }}" class="title">
-              {{ post.title }}
-            </a>
-            {% if post.draft %}
-              <span class="category -draft">Draft</span>
-            {% endif %}
-          </h2>
+          The image is decorative - the title link stretched over it (see
+          .title::after) makes the whole banner clickable, so a second link
+          here would just duplicate it for keyboard and screen reader users.
+        {% endcomment %}
+        {% if post.thumbnail %}
+          <img class="thumbnail" src="{{ post.thumbnail }}" alt="" loading="lazy"
+            {% if post.thumbnailPosition %}
+              style="object-position: {{ post.thumbnailPosition }}"
+            {% endif %}>
+        {% endif %}
 
-          {% for category in post.categories %}
-            <span class="category">{{ category }}</span>
-          {% endfor %}
-        </div>
+        <h2>
+          <a href="{{ post.url }}" class="title">
+            {{ post.title }}
+          </a>
+          {% if post.draft %}
+            <span class="category -draft">Draft</span>
+          {% endif %}
+        </h2>
 
-        <div class="excerpt">
-          {{ post.excerpt }}
-        </div>
+        {% for category in post.categories %}
+          <span class="category">{{ category }}</span>
+        {% endfor %}
+      </div>
+
+      <div class="excerpt">
+        {{ post.excerpt }}
       </div>
     </li>
   {% endfor %}
