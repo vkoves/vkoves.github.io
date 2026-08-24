@@ -4,6 +4,7 @@ pageClass: 'content-limiter -page -no-padding-top'
 title: Anyone Can Make Software Now. But When Does A Side-Project Become Production Ready?
 excerpt: Agentic coding tools have brought AI smashing into the software industry, but despite a year of waiting, there hasn't been a corresponding rise in the quality of software. Welcome to the era of Shovelware 2.0
 skipPostTitle: true
+thumbnail: /post-assets/ai-shovelware/shovelware-header-static.svg
 metadata:
   image: https://viktorkoves.com/post-assets/ai-shovelware/ai-shovelware-social.jpg
   description:
@@ -27,6 +28,8 @@ stylesheets:
     <div class="subtitle">Navigating An Era of Shovelware 2.0</div>
   </div>
 </div>
+
+<p class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</p>
 
 <p class="intro-note">
   <strong>Author's note:</strong> In the spirit of fairly critiquing AI and practicing a suggestion I end the article with, this article and the accompanying illustration were created entirely without AI assistance.

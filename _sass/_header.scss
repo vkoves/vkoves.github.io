@@ -1,11 +1,13 @@
 @use 'variables/colors' as *;
-
-$header-mob-height: 65px;
+@use 'variables/sizing' as *;
 
 .site-header {
   position: fixed;
   top: 0px;
   width: 100%;
+  // Fixed positioning sizes against the viewport, not body, so it needs the
+  // same floor or it detaches from the content when the page scrolls below it
+  min-width: $min-page-width;
   text-align: left;
   background: var(--brand-bg-color);
   z-index: 5;
@@ -55,8 +57,9 @@ $header-mob-height: 65px;
     &:focus { left: 45px; }
   }
 
-  // Make header links and buttons have clear focus
-  a:focus, button:focus {
+  // White instead of the global red, for contrast against the red header.
+  // Matches the global rule's :focus-visible so both appear together.
+  a:focus-visible, button:focus-visible {
     outline: dashed 3px $white;
   }
 }
@@ -69,8 +72,8 @@ $header-mob-height: 65px;
   display: none;
   box-sizing: border-box;
   cursor: pointer;
-  width: 45px;
-  height: 45px;
+  width: $mob-menu-btn-size;
+  height: $mob-menu-btn-size;
   padding: 5px;
   background: none;
   border: none;
@@ -83,20 +86,15 @@ $header-mob-height: 65px;
 }
 
 /**
- * Tablet-ish & mobile styling
+ * Mobile styling - collapses the nav into the hamburger menu
  */
-@media (max-width: 800px) {
+@media (max-width: $mobile-max-width) {
   .header-inside {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
   }
-}
 
-/**
- * Mobile styling
- */
-@media (max-width: 600px) {
   body { padding-top: $header-mob-height !important; }
 
   .mob-menu-btn {
@@ -110,17 +108,20 @@ $header-mob-height: 65px;
     height: $header-mob-height;
     overflow: hidden;
     font-size: 22px;
-    // Setup transparent border for fade in on open
-    border-bottom: solid 3px transparent;
-    // Animate height and border
-    transition: height 0.3s, border-color 0.3s;
+    // No border when closed - a transparent one would still add its width to
+    // the collapsed bar's height
+    border-bottom: solid 0 $white;
+    transition: height 0.3s, border-bottom-width 0.3s;
 
     &:not(.-open) {
       .header-buttons { display: none; }
     }
     &.-open {
-      height: $header-mob-height * 2.75 + 5px;
-      border-color: $white;
+      // Collapsed bar plus the nav list, which is a fixed size and doesn't
+      // scale with the header - deriving it from the header height alone would
+      // under-provision whenever that shrinks.
+      height: $header-mob-height + $header-mob-menu-height;
+      border-bottom-width: $header-mob-border-width;
     }
 
     .header-inside { padding: 0; }
@@ -130,7 +131,10 @@ $header-mob-height: 65px;
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding: 10px 0;
+      // Sized so this row fills the collapsed bar exactly: the 45px menu button
+      // plus this padding has to equal $header-mob-height, or the row overflows
+      // the header and the logo sits off-center.
+      padding: ($header-mob-height - $mob-menu-btn-size) * 0.5 0;
     }
 
     .header-buttons {

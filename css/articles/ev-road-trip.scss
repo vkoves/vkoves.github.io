@@ -1,0 +1,723 @@
+---
+---
+
+@use 'variables/colors' as *;
+@use 'variables/sizing' as *;
+
+// Horizontal breathing room between the cost table's columns
+$cost-table-cell-padding-x: 1rem;
+// Relative size of the location line beneath each charging brand
+$cost-table-location-font-size: 0.8rem;
+// Vertical padding on the two-line title column to offset its tight line-height
+$cost-table-title-padding-y: 4px;
+// Vertical padding on the header and total band rows
+$cost-table-band-padding-y: 0.5rem;
+// Width the cost table needs to show all six columns without cramping
+$cost-table-width: 850px;
+// Below this the table can't fit even with its negative margins, so it stays
+// horizontally scrollable. The article column is 90% of the viewport and the
+// table gains 4rem from those margins, hence the extra headroom.
+$cost-table-full-width-min: 900px;
+
+// Size of the subtitle under the post title, large enough to read as a deck
+// line but clearly secondary to the h1 above it
+$post-subtitle-font-size: 1.3125rem;
+
+// Inner padding of the collapsible table of contents panel
+$toc-padding: 1rem;
+// Corner rounding on the table of contents panel, matching the notice panel
+$toc-radius: 15px;
+// Vertical breathing room around the table of contents
+$toc-margin-y: 1.5rem;
+// Indent applied to each nested level of the table of contents list
+$toc-nest-indent: 1.25rem;
+// Gap between table of contents entries, kept tight so a long list stays scannable
+$toc-item-gap: 0.35rem;
+// Hover tint for the table of contents summary. A translucent black rather than
+// a theme color so it darkens the panel in light mode and reads as a subtle
+// lift in dark mode, where the panel's background is already near-black.
+$toc-summary-hover-tint: rgba(0, 0, 0, 0.08);
+
+// Gap between images in the multi-column image grids
+$image-grid-gap: 1rem;
+// Vertical breathing room above and below an image grid
+$image-grid-margin-y: 1.5rem;
+// Two-column grids hold tall screenshots, so cap them at the site's max content
+// width to keep each image a readable size
+$image-grid-two-col-max-width: 1200px;
+// Three-column grids get more room since each image is only a third as wide
+$image-grid-three-col-max-width: max(90vw, #{$min-page-width});
+// Hard ceiling for any full-bleed element. vw units include the vertical
+// scrollbar, so reserve a fixed gutter wide enough to clear it plus leave a
+// visible margin. Floored at $min-page-width because the page stops reflowing
+// there while vw keeps shrinking, which would detach these from the content.
+$image-grid-max-viewport-width: calc(max(100vw, #{$min-page-width}) - 3rem);
+// Height cap for height-matched grids. Roughly the height a 4:3 charger photo
+// reaches in a three-column grid, so a tall portrait receipt shrinks to sit
+// level with the photos beside it instead of towering over them.
+$image-grid-match-height: 320px;
+// Height-matched rows are sized by height, so their width follows from the
+// images' aspect ratios - a fixed height alone overflows narrow screens. The
+// widest row needs ~4.5x its height in width, so 20vw keeps it on screen.
+$image-grid-match-height-vw: 20vw;
+
+// Charger receipts and dashboard shots are mostly a few lines of large text, so
+// they stay readable well below full article width on desktop
+$image-link-max-width: 600px;
+// How far an image lifts when hovered, hinting that it opens the full version
+$image-link-hover-lift: 2px;
+// Shadow under a hovered image, deeper than the resting one to sell the lift
+$image-link-hover-shadow: 2px 4px 10px $shadow-color;
+// Speed of the image link hover transition
+$image-link-hover-transition: 0.2s ease;
+
+// Corner rounding for the trip progress bar. Full rounding on all sides while
+// it's in the document flow, flattened on top once it's stuck to the header
+// (see the .-stuck class toggled by ev-road-trip.js)
+$trip-progress-radius: 1rem;
+// How far the progress bar spills past the article column. Kept under the
+// 1200px image grids so the bar isn't the widest thing on the page.
+$trip-progress-width: 110%;
+// A fixed gutter rather than a percentage: the margin stays consistent instead
+// of growing with the screen, and it can't be eaten by a scrollbar the way a
+// vw-based width can.
+$trip-progress-mobile-width: calc(max(100vw, #{$min-page-width}) - 20px);
+// Small phones (iPhone SE / Mini and under), where the labels stop fitting
+$trip-progress-small-mobile-max-width: 380px;
+$trip-progress-small-label-font-size: 10px;
+// Small phones need every pixel of track, so trim the gutter and bottom padding
+$trip-progress-small-mobile-width: calc(max(100vw, #{$min-page-width}) - 8px);
+$trip-progress-small-mobile-padding-bottom: 5px;
+// Six stop captions share the mobile track, so each gets ~16vw before they
+// collide. Raising this past the spacing will overlap them.
+$trip-stop-label-mobile-width: min(16vw, 72px);
+$trip-stop-small-label-font-size: 10px;
+$trip-stop-label-desktop-font-size: 14px;
+
+.notice {
+  p {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.875em;
+  }
+}
+
+// Collapsible table of contents. Uses <details>/<summary> so it works without
+// JavaScript - the panel styling lives here rather than in post.scss because
+// that file's .table-of-contents rule assumes a bare list, not a disclosure.
+main.post details.table-of-contents {
+  padding: 0;
+  margin: $toc-margin-y 0;
+  background-color: var(--bit-dark-bg-color);
+  border: solid 1px $light-grey;
+  border-radius: $toc-radius;
+
+  // The padding lives on the summary rather than the details, so the click
+  // target fills the whole panel when closed. Padding on the details would
+  // leave an inert border of dead space around a text-width summary.
+  summary {
+    padding: $toc-padding;
+    font-weight: bold;
+    cursor: pointer;
+    // Match the panel's rounding so the hover/focus highlight doesn't square
+    // off the corners. When open, only the top corners still follow the panel.
+    border-radius: $toc-radius;
+  }
+
+  &[open] summary {
+    border-radius: $toc-radius $toc-radius 0 0;
+  }
+
+  // Now that the target spans the panel, give it a hover cue so it reads as
+  // clickable across its full width rather than only over the label text.
+  // A translucent overlay rather than a theme variable: in dark mode
+  // --bit-dark-bg-color and --dark-bg-color resolve to the same grey, so a
+  // variable-based hover would be invisible there.
+  summary:hover {
+    background-color: $toc-summary-hover-tint;
+  }
+
+  // The nav carries the horizontal padding once open; the summary above it has
+  // already supplied the gap between the two.
+  nav {
+    padding: 0 $toc-padding $toc-padding;
+  }
+
+  ul {
+    // The article's headings aren't numbered or bulleted, so markers here would
+    // imply a structure the content doesn't have. Indentation alone carries the
+    // hierarchy.
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  // Nested levels still need to step inward; only the top level sits flush.
+  ul ul {
+    padding-left: $toc-nest-indent;
+  }
+
+  li + li {
+    margin-top: $toc-item-gap;
+  }
+
+  // post.scss adds spacing between all post list items; the TOC is a dense
+  // navigation list, so keep nested entries as tight as their siblings.
+  li > ul {
+    margin-top: $toc-item-gap;
+  }
+}
+
+main.post .post-subtitle {
+  font-size: $post-subtitle-font-size;
+  margin-top: 0;
+  color: var(--text-color-faded);
+}
+
+.cost-table {
+  margin-top: 0.5rem;
+  margin: 0 -1rem;
+  // auto, not scroll - no empty scrollbar track on the widths where it fits
+  overflow-x: auto;
+
+  table {
+    width: $cost-table-width;
+  }
+
+  // All backgrounds use theme CSS variables so they flip automatically between
+  // light and dark mode.
+  th,
+  td {
+    padding-left: $cost-table-cell-padding-x;
+    padding-right: $cost-table-cell-padding-x;
+  }
+
+  // Header band: a neutral shade darker than the body rows, bold titles
+  th {
+    text-align: left;
+    font-weight: 700;
+    padding-top: $cost-table-band-padding-y;
+    padding-bottom: $cost-table-band-padding-y;
+    background: var(--dark-bg-color);
+    color: var(--text-color);
+  }
+
+  // Zebra striping. --light-bg-color and --bg-color differ in both light and
+  // dark mode, so the stripes stay visible in either theme.
+  tbody tr:nth-child(odd) td {
+    background: var(--bg-color);
+  }
+
+  tbody tr:nth-child(even) td {
+    background: var(--light-bg-color);
+  }
+
+  // Tighten the two-line brand/location title column and add back a little
+  // vertical breathing room
+  td:first-child {
+    line-height: 1;
+    padding-top: $cost-table-title-padding-y;
+    padding-bottom: $cost-table-title-padding-y;
+  }
+
+  tr:first-child td {
+    padding-bottom: 0.25rem;
+  }
+
+  // Bold the final total row and give it the header band shade to bookend the
+  // table. Placed after the zebra rules so it wins the equal-specificity tie.
+  tbody tr:last-child {
+    font-weight: 700;
+
+    td {
+      padding-top: $cost-table-band-padding-y;
+      padding-bottom: $cost-table-band-padding-y;
+      background: var(--dark-bg-color);
+      color: var(--text-color);
+    }
+  }
+
+  // Charging location shown smaller and faded beneath its brand
+  &__location {
+    font-size: $cost-table-location-font-size;
+    color: var(--text-color-faded);
+  }
+
+  // Widen past the narrow article column so the table can show in full. Gated
+  // on the viewport actually being wide enough for $cost-table-width - at the
+  // generic desktop breakpoint the column is still too narrow, and dropping
+  // overflow there lets the table spill out and scroll the whole page.
+  @media (min-width: $cost-table-full-width-min) {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
+    overflow: visible;
+  }
+}
+
+// Multi-column image layouts. Images stack in a single column on mobile, then
+// break out of the narrow article column on desktop so wide screenshots are
+// actually readable. Column count is set by the -two-col / -three-col modifier.
+main.post .image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $image-grid-gap;
+  margin: $image-grid-margin-y auto;
+
+  // The article's default image shadow only targets images directly inside a
+  // <p>, so re-apply it here to match the rest of the post's images.
+  img {
+    width: 100%;
+    border: solid 1px $grey;
+    box-shadow: 1px 1px 5px $shadow-color;
+    margin: 0 !important;
+  }
+
+  // Same full-bleed trick as .cost-table: escape the narrow article column with
+  // a near-viewport width + translateX, then let each modifier cap its own
+  // width. Both stay centered because the auto side margins split the leftover
+  // space evenly.
+  @media (min-width: $desktop-min-width) {
+    width: max(98vw, #{$min-page-width});
+    margin-left: 50%;
+    transform: translateX(-50%);
+    // Screenshots vary in aspect ratio, so top-align them rather than
+    // stretching every image to the tallest one's height.
+    align-items: start;
+
+    &.-two-col {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: min(#{$image-grid-two-col-max-width}, #{$image-grid-max-viewport-width});
+    }
+
+    &.-three-col {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: min(#{$image-grid-three-col-max-width}, #{$image-grid-max-viewport-width});
+    }
+
+    // Portrait screenshots (like charger receipts) render far taller than the
+    // landscape photos beside them. Size these images by a shared height rather
+    // than a shared width, so each keeps its own aspect ratio and they all sit
+    // level - the portrait ones simply end up narrower. Equal-width grid
+    // columns would strand those narrow images in wide columns, so use a
+    // centered flex row that gives each image only the width its height
+    // implies. Mobile is untouched: images stay stacked and full width there.
+    &.-match-heights {
+      display: flex;
+      justify-content: center;
+
+      // Shrink-wrap each image rather than claiming an equal share of the
+      // row, but stay shrinkable so a wide row gives way instead of overflowing.
+      > * {
+        flex: 0 1 auto;
+        min-width: 0;
+      }
+
+      // Here the image's height drives its width, so a wrapping link has to
+      // shrink-wrap that image. Without this the link would stretch to a full
+      // column and the image would size off the link instead, distorting it.
+      .image-link {
+        width: auto;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      img {
+        height: min(#{$image-grid-match-height}, #{$image-grid-match-height-vw});
+        width: auto;
+        display: block;
+      }
+    }
+  }
+}
+
+// Screenshots (charger receipts, dashboard readouts) wrapped in a link to the
+// full-size image. They are text-heavy shots that don't need full article
+// width, so cap them and center them. The link is a block so it hugs the image
+// rather than spanning the column, keeping the hover target on the image.
+main.post .image-link {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: $image-grid-margin-y auto;
+  transition: transform $image-link-hover-transition;
+
+  img {
+    display: block;
+    max-width: $image-link-max-width;
+    width: 100%;
+    transition: box-shadow $image-link-hover-transition;
+    // The post's default image border/shadow only targets images directly
+    // inside a <p>. Wrapping the image in this link breaks that selector, so
+    // restate the styling here to keep it matching the post's other images.
+    border: solid 1px $grey;
+    box-shadow: 1px 1px 5px $shadow-color;
+  }
+
+  // Lift the image on hover so it reads as clickable. :focus-visible gets the
+  // same treatment so keyboard users see the affordance too. The shadow goes on
+  // the image rather than the link so it hugs the image's actual edges.
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-$image-link-hover-lift);
+
+    img {
+      box-shadow: $image-link-hover-shadow;
+    }
+  }
+
+  // Respect users who have asked for less motion - they still get the shadow
+  // cue, just without the movement.
+  @media (prefers-reduced-motion: reduce) {
+    transition: box-shadow $image-link-hover-transition;
+
+    &:hover,
+    &:focus-visible {
+      transform: none;
+    }
+  }
+
+  // A linked image inside an .image-grid is already sized by the grid, so drop
+  // the standalone width cap and centering margin. The link stretches to fill
+  // its cell (overriding fit-content) so the image inside can size off the
+  // column rather than collapsing to its intrinsic width.
+  &.-in-grid {
+    width: 100%;
+    margin: 0;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  // Detailed images (like a route map with a text side panel) lose too much
+  // legibility at the narrow default width, so let these fill the article
+  // column while keeping the click-to-enlarge affordance.
+  &.-full-width {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+h2 {
+  padding-left: 0.5rem;
+  margin-left: -0.5rem;
+  transition: border-color 0.3s ease;
+  scroll-margin-top: 180px;
+}
+
+h2, h3 {
+  margin-bottom: 0.5rem;
+}
+
+h4 { margin-bottom: 0.25rem; }
+
+h2 + p, h3 + p, h4 + p { margin-top: 0; }
+
+h2.-active-section {
+  border-color: $brand-red;
+}
+
+// Vue mounts the .trip-progress nav inside this div (Vue 3 keeps the mount
+// element in place rather than replacing it). Sticky positioning has to live
+// here rather than on .trip-progress itself, because .trip-progress also
+// carries a translateX() for its full-bleed width, and pairing position:
+// sticky with a transform on the *same* element breaks the sticky behavior.
+#trip-progress {
+  position: sticky;
+  top: $header-height;
+  z-index: 2;
+}
+
+.trip-progress {
+  background: var(--light-bg-color);
+  // Not set globally in this project, so declare it here - the widths below are
+  // viewport-relative and its padding would otherwise be added on top of them.
+  box-sizing: border-box;
+  padding: 0.5rem 1rem 0.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 2px 3px #0000006b;
+  border-radius: $trip-progress-radius;
+
+  // Same full-bleed trick as .cost-table: widen past the narrow article column
+  // and re-center with translateX. Shares the image grids' viewport cap so the
+  // full-bleed elements line up.
+  @media (min-width: $desktop-min-width) {
+    width: min($trip-progress-width, #{$image-grid-max-viewport-width});
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// Once stuck to the header, flatten the top corners so it sits flush
+#trip-progress.-stuck .trip-progress {
+  border-radius: 0 0 $trip-progress-radius $trip-progress-radius;
+}
+
+.trip-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.trip-days__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-color-faded);
+  white-space: nowrap;
+}
+
+.trip-track {
+  position: relative;
+  height: 3.75rem;
+  flex: 1;
+
+  // Line sits at the center of the dot row: 20px icon + 4px gap + 10px (half dot) = 34px
+  &__line {
+    position: absolute;
+    top: 33px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--dark-bg-color);
+  }
+
+  &__progress {
+    position: absolute;
+    top: 33px;
+    left: 0;
+    height: 2px;
+    background: $brand-red;
+    transition: width 0.5s ease;
+  }
+
+  &__divider {
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: var(--dark-bg-color);
+    transform: translateX(-50%);
+  }
+
+  &__car {
+    position: absolute;
+    top: 1.45rem;
+    width: 3rem;
+    transform: translateX(-50%);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 3;
+  }
+}
+
+.trip-stop {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: inherit;
+
+  &:focus-visible {
+    outline: 2px solid $brand-red;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 2;
+    transition: filter 0.3s;
+  }
+
+  &:hover .trip-stop__icon {
+    filter: invert(14%) sepia(89%) saturate(4680%) hue-rotate(3deg) brightness(85%) contrast(115%);
+  }
+
+  &__dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--light-bg-color);
+    border: 2px solid var(--dark-bg-color);
+    transition: border-color 0.3s;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__label {
+    font-size: 0.65rem;
+    color: var(--text-color-faded);
+    white-space: nowrap;
+    margin-top: 0.3rem;
+    transition: color 0.3s;
+
+    // Desktop only - the mobile sizes below are tuned to the crowded track.
+    @media (min-width: $desktop-min-width) {
+      font-size: $trip-stop-label-desktop-font-size;
+    }
+  }
+
+  &.-visited {
+    .trip-stop__dot {
+      background: $brand-red;
+      border-color: $brand-red;
+
+      &::after {
+        content: '✓';
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+      }
+    }
+
+    .trip-stop__icon {
+      filter: invert(14%) sepia(89%) saturate(4680%) hue-rotate(3deg) brightness(85%) contrast(115%);
+    }
+
+    .trip-stop__label {
+      color: var(--text-color);
+    }
+  }
+
+  &.-active {
+    .trip-stop__dot {
+      background: $brand-red;
+      border-color: $brand-red;
+      box-shadow: 0 0 0 3px rgba($brand-red, 0.2);
+    }
+
+    .trip-stop__icon {
+      filter: drop-shadow(0 0 3px rgba($brand-red, 0.4)) invert(14%) sepia(89%) saturate(4680%) hue-rotate(3deg) brightness(85%) contrast(115%);
+    }
+
+    .trip-stop__label {
+      font-weight: 700;
+      color: var(--brand-text-color);
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    .trip-stop__label {
+      width: $trip-stop-label-mobile-width;
+      white-space: break-spaces;
+      height: auto;
+      text-align: center;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  // In dark mode --dark-bg-color collapses to the same grey as the odd body
+  // rows' --light-bg-color, so the header/total band would blend in. Use a
+  // near-black shade instead to keep the band distinct.
+  .cost-table th,
+  .cost-table tbody tr:last-child td {
+    background: var(--intense-bg-color);
+  }
+
+  .trip-stop__icon {
+    filter: invert(1);
+  }
+
+  // In dark mode --dark-bg-color == --light-bg-color, so use a lighter color
+  // for lines and borders to create contrast against the dark bar background
+  .trip-track__line,
+  .trip-track__divider {
+    background: var(--text-color-faded);
+  }
+
+  .trip-stop__dot {
+    border-color: var(--text-color-faded);
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  #trip-progress {
+    top: $header-mob-height;
+  }
+
+  .trip-progress {
+    width: $trip-progress-mobile-width;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .trip-track {
+    height: 4.8rem;
+  }
+
+  .trip-row {
+    padding: 0;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .trip-days__label {
+    width: 45%;
+    text-align: center;
+  }
+
+  // Move track below Day 1 & Day 2 labels
+  .trip-track {
+    order: 3;
+    flex-basis: 100%;
+    max-width: 90%;
+    margin: auto;
+  }
+
+  h2 {
+    scroll-margin-top: 225px;
+  }
+}
+
+// Six stop captions across the track run out of room first; the day labels
+// drop with them to stay consistent.
+@media (max-width: $trip-progress-small-mobile-max-width) {
+  // Overrides the width set in the mobile block above, not just a max-width -
+  // that rule sets an explicit width, which a max-width alone wouldn't relax.
+  .trip-progress {
+    width: $trip-progress-small-mobile-width;
+    padding-bottom: $trip-progress-small-mobile-padding-bottom;
+  }
+
+  .trip-days__label {
+    font-size: $trip-progress-small-label-font-size;
+    letter-spacing: 0.04em;
+  }
+
+  .trip-stop__label {
+    font-size: $trip-stop-small-label-font-size;
+  }
+}
+
+iframe {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
