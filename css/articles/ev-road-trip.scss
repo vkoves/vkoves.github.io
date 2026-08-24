@@ -41,10 +41,17 @@ $image-grid-margin-y: 1.5rem;
 $image-grid-two-col-max-width: 1200px;
 // Three-column grids get more room since each image is only a third as wide
 $image-grid-three-col-max-width: 90vw;
+// Hard ceiling for any full-bleed element. Under 100vw, which includes the
+// scrollbar and would itself cause horizontal scroll.
+$image-grid-max-viewport-width: 96vw;
 // Height cap for height-matched grids. Roughly the height a 4:3 charger photo
 // reaches in a three-column grid, so a tall portrait receipt shrinks to sit
 // level with the photos beside it instead of towering over them.
 $image-grid-match-height: 320px;
+// Height-matched rows are sized by height, so their width follows from the
+// images' aspect ratios - a fixed height alone overflows narrow screens. The
+// widest row needs ~4.5x its height in width, so 20vw keeps it on screen.
+$image-grid-match-height-vw: 20vw;
 
 // Charger receipts and dashboard shots are mostly a few lines of large text, so
 // they stay readable well below full article width on desktop
@@ -60,6 +67,18 @@ $image-link-hover-transition: 0.2s ease;
 // it's in the document flow, flattened on top once it's stuck to the header
 // (see the .-stuck class toggled by ev-road-trip.js)
 $trip-progress-radius: 1rem;
+// How far the progress bar spills past the article column. Kept under the
+// 1200px image grids so the bar isn't the widest thing on the page.
+$trip-progress-width: 110%;
+$trip-progress-mobile-width: 90vw;
+// Small phones (iPhone SE / Mini and under), where the labels stop fitting
+$trip-progress-small-mobile-max-width: 380px;
+$trip-progress-small-label-font-size: 10px;
+// Six stop captions share the mobile track, so each gets ~16vw before they
+// collide. Raising this past the spacing will overlap them.
+$trip-stop-label-mobile-width: min(16vw, 72px);
+$trip-stop-small-label-font-size: 10px;
+$trip-stop-label-desktop-font-size: 14px;
 
 .notice {
   p {
@@ -249,12 +268,12 @@ main.post .image-grid {
 
     &.-two-col {
       grid-template-columns: repeat(2, 1fr);
-      max-width: $image-grid-two-col-max-width;
+      max-width: min(#{$image-grid-two-col-max-width}, #{$image-grid-max-viewport-width});
     }
 
     &.-three-col {
       grid-template-columns: repeat(3, 1fr);
-      max-width: $image-grid-three-col-max-width;
+      max-width: min(#{$image-grid-three-col-max-width}, #{$image-grid-max-viewport-width});
     }
 
     // Portrait screenshots (like charger receipts) render far taller than the
@@ -268,11 +287,11 @@ main.post .image-grid {
       display: flex;
       justify-content: center;
 
-      // Direct children are the flex items - either a bare image or an
-      // .image-link wrapping one - so both need to hold their natural width
-      // rather than being squeezed by the row.
+      // Shrink-wrap each image rather than claiming an equal share of the
+      // row, but stay shrinkable so a wide row gives way instead of overflowing.
       > * {
-        flex-shrink: 0;
+        flex: 0 1 auto;
+        min-width: 0;
       }
 
       // Here the image's height drives its width, so a wrapping link has to
@@ -282,12 +301,12 @@ main.post .image-grid {
         width: auto;
 
         img {
-          max-width: none;
+          max-width: 100%;
         }
       }
 
       img {
-        height: $image-grid-match-height;
+        height: min(#{$image-grid-match-height}, #{$image-grid-match-height-vw});
         width: auto;
         display: block;
       }
@@ -404,10 +423,10 @@ h2.-active-section {
   border-radius: $trip-progress-radius;
 
   // Same full-bleed trick as .cost-table: widen past the narrow article column
-  // and re-center with translateX. Clamped to 95vw so it never touches the
-  // viewport edges (can otherwise happen in tablet-width viewports).
+  // and re-center with translateX. Shares the image grids' viewport cap so the
+  // full-bleed elements line up.
   @media (min-width: $desktop-min-width) {
-    width: min(120%, 95vw);
+    width: min($trip-progress-width, #{$image-grid-max-viewport-width});
     margin-left: 50%;
     transform: translateX(-50%);
   }
@@ -530,6 +549,11 @@ h2.-active-section {
     white-space: nowrap;
     margin-top: 0.3rem;
     transition: color 0.3s;
+
+    // Desktop only - the mobile sizes below are tuned to the crowded track.
+    @media (min-width: $desktop-min-width) {
+      font-size: $trip-stop-label-desktop-font-size;
+    }
   }
 
   &.-visited {
@@ -579,7 +603,7 @@ h2.-active-section {
 
   @media (max-width: $mobile-max-width) {
     .trip-stop__label {
-      width: 50px;
+      width: $trip-stop-label-mobile-width;
       white-space: break-spaces;
       height: auto;
       text-align: center;
@@ -618,7 +642,9 @@ h2.-active-section {
   }
 
   .trip-progress {
-    margin: 0 -0.7rem;
+    width: $trip-progress-mobile-width;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
   .trip-track {
@@ -646,6 +672,19 @@ h2.-active-section {
 
   h2 {
     scroll-margin-top: 225px;
+  }
+}
+
+// Six stop captions across the track run out of room first; the day labels
+// drop with them to stay consistent.
+@media (max-width: $trip-progress-small-mobile-max-width) {
+  .trip-days__label {
+    font-size: $trip-progress-small-label-font-size;
+    letter-spacing: 0.04em;
+  }
+
+  .trip-stop__label {
+    font-size: $trip-stop-small-label-font-size;
   }
 }
 
