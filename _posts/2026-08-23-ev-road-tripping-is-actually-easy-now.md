@@ -631,14 +631,14 @@ vehicles.
 
 - **Level 1/2/3 Charging** - categories for EV charging speeds. Level 1 is the slowest charging speed,
 from a common household outlet, while Level 3 is the fastest, found just at dedicated fast-charging
-sites, and Level 2 is a middle-ground that requires running a dedicated 240-Volt circuit, but is
+sites, and Level 2 is a middle-ground that requires running a dedicated 240-volt circuit, but is
 fairly common.
 [Learn more from Car and Driver](https://www.caranddriver.com/features/a70141873/ev-charging-levels-explained/).
 
-- **800 volt architecture** - the voltage an EV's battery system runs at. Most EVs use around 400
+- **800-volt architecture** - the voltage an EV's battery system runs at. Most EVs use around 400
 volts, but a few (like the Hyundai/Kia EVs, including the Ioniq 5, Ioniq 9, EV6, and EV9) use 800
 volts. Higher voltage systems let the car pull more power without more heat, which is why these
-cars can faster than typical 400 Volt cars.
+cars can charge faster than typical 400-volt cars.
 
 - **CCS** (Combined Charging System) - the fast-charging plug most non-Tesla EVs in the US used
 until around 2025 & 2026, when other cars started supporting NACS (the Tesla plug). CCS cars need
