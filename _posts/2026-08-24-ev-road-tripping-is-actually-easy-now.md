@@ -5,14 +5,14 @@ skipPostTitle: true
 excerpt:
   When people talk about going electric, they are often concerned about road tripping. I'm here to
   show you that modern EVs can tackle a road trip incredibly well - here's what a real 950-mile
-  drive from Chicago to Mammoth Caves actually looked like.
+  drive from Chicago to Mammoth Caves actually looked like in a rented EV.
 thumbnail: /post-assets/ev-roadtrip/ioniq5-main.webp
 thumbnailPosition: 0% 100%
 metadata:
   image: https://viktorkoves.com/post-assets/ev-roadtrip/ev-roadtrip-social-image.png
   description:
     If you haven't driven electric before, a road trip might sound impossible - but I want to tell
-    you about driving from Chicago to Kentucky to Mammoth Caves.
+    you about my road trip from Chicago to Kentucky's Mammoth Caves in a rented EV.
 stylesheets:
  - articles/ev-road-trip.css
 scripts:
@@ -48,6 +48,7 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
             <a href="#charging-day1">Charging Stops</a>
             <ul>
               <li><a href="#finding-charging-stops">How Do You Find Charging Stops?</a></li>
+              <li><a href="#pay-for-charging">Do You Need An App To Pay For Charging?</a></li>
             </ul>
           </li>
           <li><a href="#kentucky-arrival">Arriving in Kentucky</a></li>
@@ -99,9 +100,29 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
 - How much does charging an EV cost?
 - What should you know before renting or buying an EV?
 
+### My Previous EV Experiences {#my-ev-experience}
+
+I feel pretty confident in saying I've got more experience with electric cars than most people, but
+even most EV owners, because I've driven a wide variety of different electric cars over the years.
+I've rented Tesla Model 3 and Model Ys, three Ioniq 5s and a Kia Niro EV in Chicago and a Chevy Bolt
+in Washington DC. Plus, I read up on all the latest EV news and understand a lot of the technical
+details on how these cars work and charge, so hopefully I can break it all down!
+
+<div>
+  <img src="/post-assets/ev-roadtrip/rental-cars-montage.webp" loading="lazy"
+      alt="A grid of four EVs I've rented: a white Tesla Model 3 charging at night, a black Hyundai
+        Ioniq 5 with me standing in front of it, a blue Kia Niro EV parked by a park path, and a black
+        Chevy Bolt charging at an Electrify America station.">
+
+  <p class="caption smaller">
+    Four different EVs I've rented over the years. Clockwise from top-left: a Tesla Model 3, a
+    Hyundai Ioniq 5, a Chevy Bolt, and a Kia Niro EV.
+  </p>
+</div>
+
 ## The Vehicle - The Hyundai Ioniq 5! {#the-vehicle}
 
-For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
+For this road trip, I was driving a rented 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
 
 <img src="/post-assets/ev-roadtrip/ioniq5-main.webp" loading="lazy"
     alt="A matte grey 2023 Hyundai Ioniq 5 at an Ionna charging station on a sunny day">
@@ -175,7 +196,14 @@ the Fashion Outlets Mall, just a few minutes and a few miles away from O'Hare. S
 there, plugged in the car, got some coffee and used the bathroom, and 27 minutes later were back on
 our way!
 
-<div class="image-grid -two-col">
+<div class="image-grid -three-col -match-heights">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day1/rosemont-day1-photo.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day1/rosemont-day1-photo.webp" loading="lazy"
+        alt="The Ioniq 5 plugged into an Electrify America charger in the parking garage at the
+        Fashion Outlets of Chicago in Rosemont.">
+  </a>
+
   <a class="image-link -in-grid"
       href="/post-assets/ev-roadtrip/day1/rosemont-day1-charging-speed.webp"
       target="_blank" rel="noopener">
@@ -225,6 +253,17 @@ from Rosemont to Mammoth Caves:
     station in Shepherdsville, Kentucky.">
 </a>
 
+### Do You Need An App To Pay For Charging? {#pay-for-charging}
+
+Nope! Although a lot of Level 2 chargers still often require an app (unfortunately), most fast
+chargers, including all the ones I used on this trip, had standard credit card readers, so you can
+just tap and go.
+
+Some EVs and charging networks also support _plug-and-charge_, where you put payment info into your
+automaker's app, and the charging station automatically bills you through that, so you just plug in
+and the car starts charging. This was first popularized by Tesla (who could do this more easily
+because they built the cars and the chargers) but has slowly spread through standardization.
+
 ### Stop 1 - Ionna in Lafayette, Indiana {#day1-stop1}
 
 143 miles from Rosemont at 4:48pm Eastern, we ended up at a brand new Ionna charging station in
@@ -245,12 +284,21 @@ were really rushing, we'd hit 80% and keep going, since all EVs (and all battery
 dramatically slow down their rate of charge over 80%. But since we were eating a late lunch at the
 attached Wawa, we just ate our meal and came back to a fully charged car!
 
-<a class="image-link" href="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-receipt.webp"
-    target="_blank" rel="noopener">
-  <img src="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-receipt.webp" loading="lazy"
-      alt="Display screen of an Ionna EV charging station showing a completed charging session at
-        99% state of charge, 65.6 kWh delivered in 42 minutes, and a total cost of $14.05.">
-</a>
+<div class="image-grid -two-col -match-heights -tall">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-photo.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-photo.webp" loading="lazy"
+        alt="The Ioniq 5 plugged into a teal Ionna charger at the new Lafayette, Indiana station,
+        parked next to a Chevy Bolt also charging.">
+  </a>
+
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-receipt.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day1/ionna-lafayatte-day1-receipt.webp" loading="lazy"
+        alt="Display screen of an Ionna EV charging station showing a completed charging session at
+          99% state of charge, 65.6 kWh delivered in 42 minutes, and a total cost of $14.05.">
+  </a>
+</div>
 
 ### Stop 2 - Electrify America in Clarksville, Indiana {#day1-stop2}
 
@@ -260,12 +308,20 @@ some food, and the car got 97% charged, in 33 minutes! Similar to before, we wer
 car, and from 27% to 80% the car itself estimated it would take only 16 minutes to charge - but we
 had to eat!
 
-<a class="image-link" href="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-receipt.webp"
-    target="_blank" rel="noopener">
-  <img src="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-receipt.webp" loading="lazy"
-      alt="Screen of an Electrify America charging station showing a completed charging session at
-        97% state of charge and 59.7 kWh delivered over 33 minutes, and a total cost of $30.88">
-</a>
+<div class="image-grid -two-col -match-heights -tall">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-photo.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-photo.webp" loading="lazy"
+        alt="The Ioniq 5 plugged into an Electrify America charger at dusk in Clarksville, Indiana.">
+  </a>
+
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-receipt.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day1/electrifyamerica-day1-receipt.webp" loading="lazy"
+        alt="Screen of an Electrify America charging station showing a completed charging session at
+          97% state of charge and 59.7 kWh delivered over 33 minutes, and a total cost of $30.88">
+  </a>
+</div>
 
 ## Arriving in Kentucky {#kentucky-arrival}
 
@@ -322,13 +378,24 @@ As mentioned above, there was a charger just 17 miles away from our hotel, just 
 This was a Pilot Flying J truck stop in Sonora, Kentucky, and we made a very short stop - since we
 arrived with 43% charge, in just 14 minutes we charged to 86% for a cost of $26.23.
 
-<a class="image-link" href="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-receipt.webp"
-    target="_blank" rel="noopener">
-  <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-receipt.webp" loading="lazy"
-      alt="Digital screen of a Pilot Flying J GM Energy EV charger displaying a finished session
-      reaching 86% state of charge, delivering 35.8 kWh in 14 minutes and 36 seconds for a total
-      cost of $26.23.">
-</a>
+<div class="image-grid -two-col">
+  <a class="image-link -in-grid"
+      href="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-photo.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-photo.webp" loading="lazy"
+        alt="The Ioniq 5 plugged into a Pilot Flying J GM Energy fast charger under a sunny sky in
+        Sonora, Kentucky.">
+  </a>
+
+  <a class="image-link -in-grid"
+      href="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-receipt.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-1-sonora-day-3-receipt.webp" loading="lazy"
+        alt="Digital screen of a Pilot Flying J GM Energy EV charger displaying a finished session
+        reaching 86% state of charge, delivering 35.8 kWh in 14 minutes and 36 seconds for a total
+        cost of $26.23.">
+  </a>
+</div>
 
 ### Lunch in Lexington (110mi from Sonora) {#lunch-lexington}
 
@@ -342,13 +409,24 @@ After a nice ride through some countryside to check out some horses, 36 miles aw
 we got to a Pilot Flying J in Waddy, Kentucky. We charged for 18 minutes, getting from 24% to 82% for
 $36.16.
 
-<a class="image-link" href="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-receipt.webp"
-    target="_blank" rel="noopener">
-  <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-receipt.webp" loading="lazy"
-      alt="Digital screen of a Pilot Flying J GM Energy EV charger showing a completed session at
-      82% state of charge, delivering 49.4 kWh in 17 minutes and 52 seconds for a total cost of
-      $36.16.">
-</a>
+<div class="image-grid -two-col -match-heights -tall">
+  <a class="image-link -in-grid"
+      href="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-photo.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-photo.webp" loading="lazy"
+        alt="A wide shot of the Pilot Flying J canopy in Waddy, Kentucky, with the Ioniq 5 charging
+        underneath.">
+  </a>
+
+  <a class="image-link -in-grid"
+      href="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-receipt.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/pilot-flyingj-2-waddy-day-3-receipt.webp" loading="lazy"
+        alt="Digital screen of a Pilot Flying J GM Energy EV charger showing a completed session at
+        82% state of charge, delivering 49.4 kWh in 17 minutes and 52 seconds for a total cost of
+        $36.16.">
+  </a>
+</div>
 
 ### Stop 3 - Electrify America in Indianapolis {#day3-stop3}
 
@@ -393,12 +471,21 @@ Back at Ionna Lafayette, IN - 35% to 100% for $11.58 in 35 minutes. This was tha
 20 cents per kWh sale for this brand new station, and since we were eating dinner, we ended up
 letting the car fully charge. So this was a longer charging stop, but not because of the car!
 
-<a class="image-link" href="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp"
-    target="_blank" rel="noopener">
-  <img src="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp" loading="lazy"
-      alt="Display screen of an Ionna EV charging station showing a finished session at 100% state
-        of charge from 35%, 54.1 kWh delivered in 35 minutes, and a final cost of $11.58.">
-</a>
+<div class="image-grid -two-col">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day3/ionna-day3-photo.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/ionna-day3-photo.webp" loading="lazy"
+        alt="The Ioniq 5 parked beside a teal Ionna charger at the Lafayette, Indiana station in the
+        evening sun.">
+  </a>
+
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/ionna-day3-receipt.webp" loading="lazy"
+        alt="Display screen of an Ionna EV charging station showing a finished session at 100% state
+          of charge from 35%, 54.1 kWh delivered in 35 minutes, and a final cost of $11.58.">
+  </a>
+</div>
 
 ### Stop 5 - Electrify America in Rosemont {#day3-stop5}
 **Only Because We're Renting**
@@ -408,12 +495,21 @@ needed to return the car at over 70% charge, so after 143 miles of driving we en
 Electrify America Station in Rosemont at the Fashion Outlets that we started at. We arrived with
 46% charge, and we charged up to 75% **in just 8 minutes** for $14.39!
 
-<a class="image-link" href="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp"
-    target="_blank" rel="noopener">
-  <img src="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp" loading="lazy"
-      alt="Screen of an Electrify America charging station showing a completed session, reaching 75%
-        state of charge and 25.8 kWh delivered in 8 minutes for a total cost of $14.39.">
-</a>
+<div class="image-grid -two-col -match-heights -tall">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day3/rosemont-day3-photo.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/rosemont-day3-photo.webp" loading="lazy"
+        alt="The Ioniq 5 plugged into an Electrify America charger in the parking garage back at the
+        Fashion Outlets of Chicago in Rosemont.">
+  </a>
+
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp" loading="lazy"
+        alt="Screen of an Electrify America charging station showing a completed session, reaching 75%
+          state of charge and 25.8 kWh delivered in 8 minutes for a total cost of $14.39.">
+  </a>
+</div>
 
 ## Back in Chicago {#chicago-return}
 
