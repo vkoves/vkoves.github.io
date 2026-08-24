@@ -289,7 +289,7 @@ h2 {
   padding-left: 0.5rem;
   margin-left: -0.5rem;
   transition: border-color 0.3s ease;
-  scroll-margin-top: 300px;
+  scroll-margin-top: 180px;
 }
 
 h2, h3 {
@@ -561,6 +561,10 @@ h2.-active-section {
     flex-basis: 100%;
     max-width: 90%;
     margin: auto;
+  }
+
+  h2 {
+    scroll-margin-top: 225px;
   }
 }
 
