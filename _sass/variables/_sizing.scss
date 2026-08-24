@@ -13,7 +13,20 @@ $min-page-width: 320px;
 
 // Height of the fixed site header
 $header-height: 60px;
-$header-mob-height: 65px;
+$header-mob-height: 55px;
+// Combined height of the fixed header and the footer, subtracted from 100vh so
+// short pages still push the footer to the bottom of the screen. Mobile
+// reserves slightly more for the taller stacked footer.
+$header-footer-height: $header-height + 75px;
+$header-footer-mob-height: $header-mob-height + 81px;
+
+// Space the expanded nav list needs below the collapsed mobile bar. Fixed
+// rather than a multiple of the header, since the list doesn't scale with it.
+$header-mob-menu-height: 129px;
+// Hamburger button, which sets the minimum height of the collapsed mobile bar
+$mob-menu-btn-size: 40px;
+// Divider under the mobile header, shown only while the menu is open
+$header-mob-border-width: 3px;
 
 // Breakpoints
 $tablet-max-width: 1200px;

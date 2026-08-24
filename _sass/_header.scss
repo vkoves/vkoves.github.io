@@ -71,8 +71,8 @@
   display: none;
   box-sizing: border-box;
   cursor: pointer;
-  width: 45px;
-  height: 45px;
+  width: $mob-menu-btn-size;
+  height: $mob-menu-btn-size;
   padding: 5px;
   background: none;
   border: none;
@@ -107,17 +107,20 @@
     height: $header-mob-height;
     overflow: hidden;
     font-size: 22px;
-    // Setup transparent border for fade in on open
-    border-bottom: solid 3px transparent;
-    // Animate height and border
-    transition: height 0.3s, border-color 0.3s;
+    // No border when closed - a transparent one would still add its width to
+    // the collapsed bar's height
+    border-bottom: solid 0 $white;
+    transition: height 0.3s, border-bottom-width 0.3s;
 
     &:not(.-open) {
       .header-buttons { display: none; }
     }
     &.-open {
-      height: $header-mob-height * 2.75 + 5px;
-      border-color: $white;
+      // Collapsed bar plus the nav list, which is a fixed size and doesn't
+      // scale with the header - deriving it from the header height alone would
+      // under-provision whenever that shrinks.
+      height: $header-mob-height + $header-mob-menu-height;
+      border-bottom-width: $header-mob-border-width;
     }
 
     .header-inside { padding: 0; }
@@ -127,7 +130,10 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding: 10px 0;
+      // Sized so this row fills the collapsed bar exactly: the 45px menu button
+      // plus this padding has to equal $header-mob-height, or the row overflows
+      // the header and the logo sits off-center.
+      padding: ($header-mob-height - $mob-menu-btn-size) * 0.5 0;
     }
 
     .header-buttons {

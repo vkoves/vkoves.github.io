@@ -226,7 +226,7 @@ p { margin: 1.5rem 0; }
   box-sizing: border-box;
   // Use min-height to prevent the footer not being at screen bottom on pages
   // with very little content like the homepage or 404
-  min-height: calc(100vh - 135px);
+  min-height: calc(100vh - #{$header-footer-height});
 
   &.-no-padding { padding: 0; }
   &.-no-padding-top { padding-top: 0; }
@@ -236,7 +236,7 @@ p { margin: 1.5rem 0; }
    * offsets the taller $header-mob-height
    */
   @media (max-width: $mobile-max-width) {
-    min-height: calc(100vh - 146px);
+    min-height: calc(100vh - #{$header-footer-mob-height});
   }
 }
 
