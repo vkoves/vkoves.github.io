@@ -7,6 +7,7 @@ excerpt:
   show you that modern EVs can tackle a road trip incredibly well - here's what a real 950-mile
   drive from Chicago to Mammoth Caves actually looked like.
 thumbnail: /post-assets/ev-roadtrip/ioniq5-main.webp
+thumbnailPosition: 0% 100%
 metadata:
   image: https://viktorkoves.com/post-assets/ev-roadtrip/ev-roadtrip-social-image.png
   description:
@@ -47,8 +48,6 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
             <a href="#charging-day1">Charging Stops</a>
             <ul>
               <li><a href="#finding-charging-stops">How Do You Find Charging Stops?</a></li>
-              <li><a href="#day1-stop1">Stop 1 - Ionna in Lafayette, Indiana</a></li>
-              <li><a href="#day1-stop2">Stop 2 - Electrify America in Clarksville, Indiana</a></li>
             </ul>
           </li>
           <li><a href="#kentucky-arrival">Arriving in Kentucky</a></li>
@@ -57,12 +56,7 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
           <li>
             <a href="#charging-day2">Return Charging Stops</a>
             <ul>
-              <li><a href="#day3-stop1">Stop 1 - Pilot Flying J in Sonora, Kentucky</a></li>
               <li><a href="#lunch-lexington">Lunch in Lexington</a></li>
-              <li><a href="#day3-stop2">Stop 2 - Pilot Flying J in Waddy, Kentucky</a></li>
-              <li><a href="#day3-stop3">Stop 3 - Electrify America in Indianapolis</a></li>
-              <li><a href="#day3-stop4">Stop 4 - Ionna in Lafayette, Indiana</a></li>
-              <li><a href="#day3-stop5">Stop 5 - Electrify America in Rosemont</a></li>
             </ul>
           </li>
           <li><a href="#chicago-return">Back in Chicago</a></li>
