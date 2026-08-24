@@ -24,7 +24,26 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
 - How much does charging an EV cost?
 - What should you know before renting or buying an EV?
 
-## The Vehicle - The Hyundai Ioniq 5!
+### My Previous EV Experiences
+
+I feel pretty confident in saying I've got more experience with electric cars than most people, but
+even most EV owners, because I've driven a wide variety of different electric cars over the years.
+I've rented Tesla Model 3 and Model Ys, three Ioniq 5s and a Kia Niro EV in Chicago and a Chevy Bolt
+in Washington DC. Plus, I read up on all the latest EV news and understand a lot of the technical
+details on how these cars work and charge, so hopefully I can break it all down!
+
+<div>
+  <img src="/post-assets/ev-roadtrip/rental-cars-montage.webp" loading="lazy"
+      alt="A grid of four EVs I've rented: a white Tesla Model 3 charging at night, a black Hyundai
+        Ioniq 5 with me standing in front of it, a blue Kia Niro EV parked by a park path, and a black
+        Chevy Bolt charging at an Electrify America station.">
+
+  <p class="caption smaller">
+    Four different EVs I've rented over the years. Clockwise from top-left: a Tesla Model 3, a Hyundai Ioniq 5, a Chevy Bolt, and a Kia Niro EV - four of the different EVs I've rented over the years.
+  </p>
+</div>
+
+## Our Road Trip Vehicle - The Hyundai Ioniq 5!
 
 For this road trip, I was driving a rented 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kWh battery.
 

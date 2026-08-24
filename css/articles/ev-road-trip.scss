@@ -436,6 +436,11 @@ h2.-active-section {
   border-color: $brand-red;
 }
 
+p.caption {
+  margin-top: 0.5rem;
+  font-size: 0.825rem;
+}
+
 // Vue mounts the .trip-progress nav inside this div (Vue 3 keeps the mount
 // element in place rather than replacing it). Sticky positioning has to live
 // here rather than on .trip-progress itself, because .trip-progress also
