@@ -12,8 +12,8 @@ const STOPS = [
     { label: 'Chicago',  id: 'chicago-start',  day: 1 },
     { label: 'Charge Stops', id: 'charging-day1',  day: 1, charging: true },
     { label: 'Mammoth Caves',   id: 'kentucky-arrival', day: 1 },
-    { label: 'Mammoth Caves',   id: 'kentucky-day2',    day: 2 },
-    { label: 'Charge Stops', id: 'charging-day2',  day: 2, charging: true },
+    { label: 'Leaving Kentucky',   id: 'kentucky-day2',    day: 2 },
+    { label: 'Return Charging', id: 'charging-day2',  day: 2, charging: true },
     { label: 'Chicago',  id: 'chicago-return', day: 2 },
 ];
 

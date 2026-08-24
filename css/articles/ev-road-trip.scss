@@ -13,6 +13,10 @@ $cost-table-title-padding-y: 4px;
 // Vertical padding on the header and total band rows
 $cost-table-band-padding-y: 0.5rem;
 
+// Size of the subtitle under the post title, large enough to read as a deck
+// line but clearly secondary to the h1 above it
+$post-subtitle-font-size: 1.3125rem;
+
 // Gap between images in the multi-column image grids
 $image-grid-gap: 1rem;
 // Vertical breathing room above and below an image grid
@@ -47,6 +51,12 @@ $trip-progress-radius: 1rem;
     margin: 0.5rem 0 0 0;
     font-size: 0.875em;
   }
+}
+
+main.post .post-subtitle {
+  font-size: $post-subtitle-font-size;
+  margin-top: 0;
+  color: var(--text-color-faded);
 }
 
 .cost-table {

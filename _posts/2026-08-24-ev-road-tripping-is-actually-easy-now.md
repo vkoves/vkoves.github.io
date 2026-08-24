@@ -1,6 +1,11 @@
 ---
 layout: post
-title: "Chicago to Mammoth Caves: What A Real 950 Mile EV Road Trip Looks Like"
+title: "EV Road Tripping Is Actually Easy Now!"
+skipPostTitle: true
+excerpt:
+  When people talk about going electric, they are often concerned about road tripping. I'm here to
+  show you that modern EVs can tackle a road trip incredibly well - here's what a real 950 mile
+  drive from Chicago to Mammoth Caves actually looked like.
 metadata:
   image: https://viktorkoves.com/post-assets/ev-roadtrip/ev-roadtrip-social-image.png
   description:
@@ -11,6 +16,16 @@ stylesheets:
 scripts:
  - articles/ev-road-trip.js
 ---
+
+<div class="all-posts-cont">
+  <a href="/writing" id="all-posts" class="red-button">Back to All Writing</a>
+</div>
+
+<h1 class="page-title">EV Road Tripping Is Actually <em>Easy</em> Now!</h1>
+
+<p class="post-subtitle">A 950 Mile EV Road Trip From Chicago to Mammoth Caves</p>
+
+<p class="post-date">Published {{ page.date | date: "%B %d, %Y" }}</p>
 
 When people talk about going electric, they are often concerned about road tripping. You might
 think, &ldquo;an EV might be fine for my daily commute, but can I still make a long road trip for a
