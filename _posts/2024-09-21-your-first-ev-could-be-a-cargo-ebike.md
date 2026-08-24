@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Your First EV Could Be A Cargo E-Bike
+thumbnail: /post-assets/ebike/cargo-haul-3-solar.webp
 metadata:
   image: https://viktorkoves.com/post-assets/ebike/ebike-social-image.png
   description:

@@ -45,6 +45,20 @@ hr {
 
 /* Post List Styling on the Posts page */
 
+// Width of a post's thumbnail on desktop. Posts without a thumbnail simply omit
+// it and their text runs full width.
+$post-thumbnail-width: 220px;
+// Thumbnails come from article images with varying aspect ratios, so fix one
+// here and let object-fit crop to it. Quoted so Sass treats it as a CSS ratio
+// rather than a division.
+$post-thumbnail-ratio: '3 / 2';
+// Gap between a thumbnail and the post's title and excerpt
+$post-thumbnail-gap: 20px;
+$post-thumbnail-radius: 8px;
+// Nudges the thumbnail down to sit level with the title text beside it, which
+// starts below the h2's own line spacing
+$post-thumbnail-margin-top: 8px;
+
 .post-list {
   padding-left: 0px;
   padding-top: 15px;
@@ -60,6 +74,32 @@ hr {
 
   h2 { margin: 0; }
 
+  // Only listings with a thumbnail become a row; the rest stay full width
+  &.-with-image {
+    display: flex;
+    gap: $post-thumbnail-gap;
+    align-items: flex-start;
+  }
+
+  .thumbnail {
+    flex: 0 0 $post-thumbnail-width;
+    display: block;
+    margin-top: $post-thumbnail-margin-top;
+    border-radius: $post-thumbnail-radius;
+    overflow: hidden;
+    // The image is a link, but its accessible name comes from the title beside
+    // it, so it takes the same focus treatment rather than its own outline
+    line-height: 0;
+
+    img {
+      width: 100%;
+      aspect-ratio: #{$post-thumbnail-ratio};
+      object-fit: cover;
+    }
+  }
+
+  .post-details { flex: 1; min-width: 0; }
+
   .category {
     position: relative;
     bottom: 4px;
@@ -72,6 +112,14 @@ hr {
   }
 
   .excerpt p { margin: 0px; }
+
+  // Side by side leaves too little room for either on a phone, so stack them
+  // and let the image run the full width of the card
+  @media (max-width: $mobile-max-width) {
+    &.-with-image { flex-direction: column; }
+
+    .thumbnail { flex-basis: auto; width: 100%; }
+  }
 }
 /* End post list styling */
 

@@ -6,6 +6,7 @@ excerpt:
   When people talk about going electric, they are often concerned about road tripping. I'm here to
   show you that modern EVs can tackle a road trip incredibly well - here's what a real 950-mile
   drive from Chicago to Mammoth Caves actually looked like.
+thumbnail: /post-assets/ev-roadtrip/ioniq5-main.webp
 metadata:
   image: https://viktorkoves.com/post-assets/ev-roadtrip/ev-roadtrip-social-image.png
   description:

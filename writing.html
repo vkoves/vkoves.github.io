@@ -14,24 +14,38 @@ title: "Writing"
       {% continue %}
     {% endif %}
 
-    <li class="post-listing">
-      <div class="post-heading">
-        <h2>
-          <a href="{{ post.url }}" class="title">
-            {{ post.title }}
-          </a>
-          {% if post.draft %}
-            <span class="category -draft">Draft</span>
-          {% endif %}
-        </h2>
+    <li class="post-listing{% if post.thumbnail %} -with-image{% endif %}">
+      {% comment %}
+        A separate field from metadata.image: that one is the social card, which
+        has the title baked into it and would just repeat the heading here.
+        Decorative and aria-hidden, since the adjacent title link already names
+        the post.
+      {% endcomment %}
+      {% if post.thumbnail %}
+        <a href="{{ post.url }}" class="thumbnail" tabindex="-1" aria-hidden="true">
+          <img src="{{ post.thumbnail }}" alt="" loading="lazy">
+        </a>
+      {% endif %}
 
-        {% for category in post.categories %}
-          <span class="category">{{ category }}</span>
-        {% endfor %}
-      </div>
+      <div class="post-details">
+        <div class="post-heading">
+          <h2>
+            <a href="{{ post.url }}" class="title">
+              {{ post.title }}
+            </a>
+            {% if post.draft %}
+              <span class="category -draft">Draft</span>
+            {% endif %}
+          </h2>
 
-      <div class="excerpt">
-        {{ post.excerpt }}
+          {% for category in post.categories %}
+            <span class="category">{{ category }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="excerpt">
+          {{ post.excerpt }}
+        </div>
       </div>
     </li>
   {% endfor %}
