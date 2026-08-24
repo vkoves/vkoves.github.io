@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "EV Road Tripping Is Actually Easy Now!"
+title: "EV Road Tripping Is Actually Easy Now"
 skipPostTitle: true
 excerpt:
   When people talk about going electric, they are often concerned about road tripping. I'm here to
@@ -23,7 +23,7 @@ scripts:
   <a href="/writing" id="all-posts" class="red-button">Back to All Writing</a>
 </div>
 
-<h1 class="page-title">EV Road Tripping Is Actually <em>Easy</em> Now!</h1>
+<h1 class="page-title">EV Road Tripping Is Actually <em>Easy</em> Now</h1>
 
 <p class="post-subtitle">A 950-Mile EV Road Trip From Chicago to Mammoth Caves</p>
 
