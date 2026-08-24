@@ -5,6 +5,9 @@
   position: fixed;
   top: 0px;
   width: 100%;
+  // Fixed positioning sizes against the viewport, not body, so it needs the
+  // same floor or it detaches from the content when the page scrolls below it
+  min-width: $min-page-width;
   text-align: left;
   background: var(--brand-bg-color);
   z-index: 5;
@@ -82,20 +85,15 @@
 }
 
 /**
- * Tablet-ish & mobile styling
+ * Mobile styling - collapses the nav into the hamburger menu
  */
-@media (max-width: 800px) {
+@media (max-width: $mobile-max-width) {
   .header-inside {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
   }
-}
 
-/**
- * Mobile styling
- */
-@media (max-width: 600px) {
   body { padding-top: $header-mob-height !important; }
 
   .mob-menu-btn {

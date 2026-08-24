@@ -12,6 +12,12 @@ $cost-table-location-font-size: 0.8rem;
 $cost-table-title-padding-y: 4px;
 // Vertical padding on the header and total band rows
 $cost-table-band-padding-y: 0.5rem;
+// Width the cost table needs to show all six columns without cramping
+$cost-table-width: 850px;
+// Below this the table can't fit even with its negative margins, so it stays
+// horizontally scrollable. The article column is 90% of the viewport and the
+// table gains 4rem from those margins, hence the extra headroom.
+$cost-table-full-width-min: 900px;
 
 // Size of the subtitle under the post title, large enough to read as a deck
 // line but clearly secondary to the h1 above it
@@ -40,10 +46,12 @@ $image-grid-margin-y: 1.5rem;
 // width to keep each image a readable size
 $image-grid-two-col-max-width: 1200px;
 // Three-column grids get more room since each image is only a third as wide
-$image-grid-three-col-max-width: 90vw;
-// Hard ceiling for any full-bleed element. Under 100vw, which includes the
-// scrollbar and would itself cause horizontal scroll.
-$image-grid-max-viewport-width: 96vw;
+$image-grid-three-col-max-width: max(90vw, #{$min-page-width});
+// Hard ceiling for any full-bleed element. vw units include the vertical
+// scrollbar, so reserve a fixed gutter wide enough to clear it plus leave a
+// visible margin. Floored at $min-page-width because the page stops reflowing
+// there while vw keeps shrinking, which would detach these from the content.
+$image-grid-max-viewport-width: calc(max(100vw, #{$min-page-width}) - 3rem);
 // Height cap for height-matched grids. Roughly the height a 4:3 charger photo
 // reaches in a three-column grid, so a tall portrait receipt shrinks to sit
 // level with the photos beside it instead of towering over them.
@@ -70,10 +78,16 @@ $trip-progress-radius: 1rem;
 // How far the progress bar spills past the article column. Kept under the
 // 1200px image grids so the bar isn't the widest thing on the page.
 $trip-progress-width: 110%;
-$trip-progress-mobile-width: 90vw;
+// A fixed gutter rather than a percentage: the margin stays consistent instead
+// of growing with the screen, and it can't be eaten by a scrollbar the way a
+// vw-based width can.
+$trip-progress-mobile-width: calc(max(100vw, #{$min-page-width}) - 20px);
 // Small phones (iPhone SE / Mini and under), where the labels stop fitting
 $trip-progress-small-mobile-max-width: 380px;
 $trip-progress-small-label-font-size: 10px;
+// Small phones need every pixel of track, so trim the gutter and bottom padding
+$trip-progress-small-mobile-width: calc(max(100vw, #{$min-page-width}) - 8px);
+$trip-progress-small-mobile-padding-bottom: 5px;
 // Six stop captions share the mobile track, so each gets ~16vw before they
 // collide. Raising this past the spacing will overlap them.
 $trip-stop-label-mobile-width: min(16vw, 72px);
@@ -162,10 +176,11 @@ main.post .post-subtitle {
 .cost-table {
   margin-top: 0.5rem;
   margin: 0 -1rem;
-  overflow-x: scroll;
+  // auto, not scroll - no empty scrollbar track on the widths where it fits
+  overflow-x: auto;
 
   table {
-    width: 850px;
+    width: $cost-table-width;
   }
 
   // All backgrounds use theme CSS variables so they flip automatically between
@@ -227,9 +242,11 @@ main.post .post-subtitle {
     color: var(--text-color-faded);
   }
 
-  // On desktop the table no longer fits in the narrow article column, so we make it artifically
-  // wider
-  @media (min-width: $desktop-min-width) {
+  // Widen past the narrow article column so the table can show in full. Gated
+  // on the viewport actually being wide enough for $cost-table-width - at the
+  // generic desktop breakpoint the column is still too narrow, and dropping
+  // overflow there lets the table spill out and scroll the whole page.
+  @media (min-width: $cost-table-full-width-min) {
     margin-left: -2rem;
     margin-right: -2rem;
     width: calc(100% + 4rem);
@@ -256,10 +273,11 @@ main.post .image-grid {
   }
 
   // Same full-bleed trick as .cost-table: escape the narrow article column with
-  // 98vw + translateX, then let each modifier cap its own width. Both stay
-  // centered because the auto side margins split the leftover space evenly.
+  // a near-viewport width + translateX, then let each modifier cap its own
+  // width. Both stay centered because the auto side margins split the leftover
+  // space evenly.
   @media (min-width: $desktop-min-width) {
-    width: 98vw;
+    width: max(98vw, #{$min-page-width});
     margin-left: 50%;
     transform: translateX(-50%);
     // Screenshots vary in aspect ratio, so top-align them rather than
@@ -417,6 +435,9 @@ h2.-active-section {
 
 .trip-progress {
   background: var(--light-bg-color);
+  // Not set globally in this project, so declare it here - the widths below are
+  // viewport-relative and its padding would otherwise be added on top of them.
+  box-sizing: border-box;
   padding: 0.5rem 1rem 0.75rem;
   margin-bottom: 2rem;
   box-shadow: 0px 2px 3px #0000006b;
@@ -678,6 +699,13 @@ h2.-active-section {
 // Six stop captions across the track run out of room first; the day labels
 // drop with them to stay consistent.
 @media (max-width: $trip-progress-small-mobile-max-width) {
+  // Overrides the width set in the mobile block above, not just a max-width -
+  // that rule sets an explicit width, which a max-width alone wouldn't relax.
+  .trip-progress {
+    width: $trip-progress-small-mobile-width;
+    padding-bottom: $trip-progress-small-mobile-padding-bottom;
+  }
+
   .trip-days__label {
     font-size: $trip-progress-small-label-font-size;
     letter-spacing: 0.04em;

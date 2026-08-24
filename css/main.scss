@@ -59,6 +59,7 @@ body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
+  min-width: $min-page-width;
   padding-top: $header-height; // Add padding around header height
   background-color: var(--bg-color);
   line-height: 1.5;
@@ -231,9 +232,10 @@ p { margin: 1.5rem 0; }
   &.-no-padding-top { padding-top: 0; }
 
   /**
-   * Mobile styling
+   * Mobile styling - must match the header's mobile breakpoint, since this
+   * offsets the taller $header-mob-height
    */
-  @media (max-width: 600px) {
+  @media (max-width: $mobile-max-width) {
     min-height: calc(100vh - 146px);
   }
 }
