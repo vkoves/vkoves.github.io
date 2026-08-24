@@ -634,3 +634,20 @@ from a common household outlet, while Level 3 is the fastest, found just at dedi
 sites, and Level 2 is a middle-ground that requires running a dedicated 240-Volt circuit, but is
 fairly common.
 [Learn more from Car and Driver](https://www.caranddriver.com/features/a70141873/ev-charging-levels-explained/).
+
+- **800 volt architecture** - the voltage an EV's battery system runs at. Most EVs use around 400
+volts, but a few (like the Hyundai/Kia EVs, including the Ioniq 5, Ioniq 9, EV6, and EV9) use 800
+volts. Higher voltage systems let the car pull more power without more heat, which is why these
+cars can faster than typical 400 Volt cars.
+
+- **CCS** (Combined Charging System) - the fast-charging plug most non-Tesla EVs in the US used
+until around 2025 & 2026, when other cars started supporting NACS (the Tesla plug). CCS cars need
+an adapter to use Tesla Superchargers & home chargers.
+[Learn More About NACS vs CCS](https://evseekers.com/ccs-vs-nacs-what-is-the-difference/).
+
+- **NACS** (North American Charging Standard) - the plug type Tesla invented, now being adopted
+across the industry as the US standard. These are smaller, making cables easier to manage.
+As of late 2026, more and more non-Tesla EVs in North America ship with an NACS port, which also
+often means they can use Tesla Superchargers without an adapter, though Tesla has to add support for
+automakers individually.
+[Learn More About NACS vs CCS](https://evseekers.com/ccs-vs-nacs-what-is-the-difference/).
