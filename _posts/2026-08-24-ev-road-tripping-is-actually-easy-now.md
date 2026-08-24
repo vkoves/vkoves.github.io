@@ -49,9 +49,9 @@ For this road trip, I was driving a 2023 Hyundai Ioniq 5 SEL AWD, with a 77.4 kW
 
 The Ioniq 5 is a very capable but budget-friendly EV - here's some quick facts:
 
-- **Starting Price of ~$37,000 New** - $45,000 for the long-range version
-- **Charges 10% to 80% in about 20 minutes**
-- **Has An EPA Rated Range of Up to 318 miles** - in a mix of city and highway driving
+- **Starting Price of ~$37,000 New** - starting at $45,000 for the long-range version
+- **Charges 10% to 80% in About 20 Minutes**
+- **Has an EPA-Rated Range of up to 318 Miles** - in a mix of city and highway driving
 
 Since I was driving a 2023 long-range all wheel drive model, it has a 266 mile EPA range rating.
 The newer model years have a larger battery for the long-range model, and rear wheel drive models
@@ -135,7 +135,7 @@ our way!
 ## Charging Stops {#charging-day1}
 
 Now that we had a full charge in Rosemont (92%), we were ready to drive to Kentucky! From Rosemont,
-our hotel in Munfordville Kentucky is a 400 mile drive, and we only need to stop to charge twice!
+our hotel in Munfordville Kentucky is a 400 mile drive, and we only needed to stop to charge twice!
 
 Now you might be thinking - if the Ioniq 5 we were driving had a 266 mile EPA range, why did we need
 to stop twice? That's because an EPA range is a mix of city and highway driving, and so exclusively
@@ -400,14 +400,14 @@ A few caveats here:
 with 70% state of charge, we similarly made a second stop at Rosemont before returning to top up the car.
 
 If you own an EV, you want to charge at home or at slower chargers as much as possible to save money.
-In Chicago with ComEd it's estimated you'll pay around 16 cents per kWh. Since at the two Pilot
+In Chicago with ComEd it's estimated you'll pay around 15 cents per kWh. Since at the two Pilot
 Flying J locations we were paying $0.69/kWh (plus tax) that means **charging at home costs
 _one fourth_ what it cost at our most expensive charger**.
 
 A lot of folks also use [ComEd's hourly pricing program](https://hourlypricing.comed.com/) which
 makes it cheaper to charge overnight, when demand is lower, which can bring the cost to charge
 your EV as low as 8 cents per kWh, meaning we'd only pay **$6.24 to fully charge the Ioniq 5 I was
-driving at home!**
+driving if I were charging at home!**
 
 In short, **the financial benefits of driving electric comes primarily from home charging** - you
 shouldn't expect to see big savings when you're on a road trip, but prioritizing cheaper fast
@@ -445,7 +445,7 @@ whether the car came with a charger that you could plug in. If you're renting an
 charge it at your house, make sure you check the car you get has one!
 
 - **Check What Charging Port The Car Has** - if you get a Tesla, you know for sure it has the NACS
-port that Tesla invented, but other cars, including the Ioniq 5 used to have the CCS port and thus
+port that Tesla invented, but other cars, including the Ioniq 5, used to have the CCS port and thus
 require an adapter to charge at Tesla superchargers. Just pop open the charge door when you get your
 rental car and check what charging standard it uses!
 
