@@ -153,7 +153,7 @@ Let's get started! I've made a little progress bar to follow along on our journe
 
 ## Day 1: Departing Chicago {#chicago-start}
 
-We started our adventure at the Budget location at  O'Hare airport, where we picked up our matte
+We started our adventure at the Budget location at O'Hare airport, where we picked up our matte
 grey 2023 Hyundai Ioniq 5 SEL AWD EV.
 
 I was very excited to get an Ioniq 5, but there was one problem - due to a mixup at the rental
@@ -243,7 +243,7 @@ February 2024 and [opening their first location in February 2025](https://www.el
 Because they had just opened, Ionna actually had a 20 cent/kWh deal, and we only paid $14.05 for
 that full charge - talk about a deal! Even if gas was let's say $3 a gallon in Indiana (I didn't
 get a photo of gas prices nearby, but in late July after more gas price rises, $3.50 was in the
-area), that's ~4.5 gallons of gas, only enough for 112 miles in an car of average gas mileage (25 mpg).
+area), that's ~4.7 gallons of gas, only enough for 117 miles in a car of average gas mileage (25 mpg).
 
 We ended up charging for 42 minutes in Lafayette, but that's not because the car needed to - if we
 were really rushing, we'd hit 80% and keep going, since all EVs (and all battery-powered devices)
@@ -282,7 +282,7 @@ probably driving a little faster than before, since we had plenty of charge to g
 don't realize just how much leeway it gives us. For context, one gallon of gasoline is equivalent to
 33 kWh of energy ([source](https://en.wikipedia.org/wiki/Gasoline_gallon_equivalent#Gasoline_gallon_equivalent_tables)), which means our Ioniq 5, with its
 77.4 kWh battery, was carrying the energy equivalent of just 2.3 gallons of gas, but it can go
-nearly 270 miles on that amount of energy! That's the equivalent of a _whopping 117 MPG_.
+nearly 270 miles on that amount of energy! That's the equivalent of a _whopping 115 MPG_.
 
 ## Mammoth Caves {#mammoth-caves}
 
@@ -364,14 +364,22 @@ arrived with 19% charge, but **only stayed for 13 minutes**, getting us 65% char
 next stop, for $22.92.
 
 <div class="image-grid -three-col -match-heights">
-  <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp" loading="lazy"
-      alt="A row of white Electrify America chargers along the edge of a sunny Walmart parking lot,
-        with a silver Kia Niro and the grey Ioniq 5 plugged in side by side and a Polestar EV charging
-        further down the row.">
+  <a class="image-link -in-grid"
+      href="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis.webp" loading="lazy"
+        alt="A row of white Electrify America chargers along the edge of a sunny Walmart parking lot,
+          with a silver Kia Niro and the grey Ioniq 5 plugged in side by side and a Polestar EV
+          charging further down the row.">
+  </a>
 
-  <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-final-charge.webp" loading="lazy"
-      alt="The Ioniq 5's dashboard display reading 5:52 PM on Thursday, July 2, showing the battery
-        at 65% with 154 miles of range remaining.">
+  <a class="image-link -in-grid"
+      href="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-final-charge.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-final-charge.webp" loading="lazy"
+        alt="The Ioniq 5's dashboard display reading 5:52 PM on Thursday, July 2, showing the battery
+          at 65% with 154 miles of range remaining.">
+  </a>
 
   <a class="image-link -in-grid"
       href="/post-assets/ev-roadtrip/day3/electrifyamerica-day3-indianapolis-receipt.webp"
@@ -403,7 +411,7 @@ letting the car fully charge. So this was a longer charging stop, but not becaus
 Just one last stop, but only because this was a rental car! With this rental (and likely most) we
 needed to return the car at over 70% charge, so after 143 miles of driving we ended up back at the
 Electrify America Station in Rosemont at the Fashion Outlets that we started at. We arrived with
-46% charge, and we charged up to 78% **in just 8 minutes** for $14.39!
+46% charge, and we charged up to 75% **in just 8 minutes** for $14.39!
 
 <a class="image-link" href="/post-assets/ev-roadtrip/day3/rosemont-day3-receipt.webp"
     target="_blank" rel="noopener">
@@ -461,13 +469,14 @@ A few caveats here:
 1. **Because the rental started with 18% charge, we had to make an extra $35 and 27 minute initial
   charging stop** - our first stop in Rosemont was only because we got a low charge car. Normally
   you'd start a trip with 70 - 80% charge.
-2. **Our last charging stop was only because it's a rental** - Since Budget requires EVs be returned
-with 70% state of charge, we similarly made a second stop at Rosemont before returning to top up the car.
+1. **Our last charging stop was only because it's a rental** - Since Budget requires EVs be returned
+  with 70% state of charge, we similarly made a second stop at Rosemont before returning to top up
+  the car.
 
 If you own an EV, you want to charge at home or at slower chargers as much as possible to save money.
 In Chicago with ComEd it's estimated you'll pay around 15 cents per kWh. Since at the two Pilot
 Flying J locations we were paying $0.69/kWh (plus tax) that means **charging at home costs
-_one fourth_ what it cost at our most expensive charger**.
+_less than a quarter_ of what it cost at our most expensive charger**.
 
 A lot of folks also use [ComEd's hourly pricing program](https://hourlypricing.comed.com/) which
 makes it cheaper to charge overnight, when demand is lower, which can bring the cost to charge
@@ -539,22 +548,28 @@ absolutely no issues with it.
 
 As an example, here's some listings for used Hyundai Ioniq 5 EVs, with many under $23,000 with only
 24,000 miles on them! And if you just want more of a city car, the deals get even better with used
-Chevy Bolts, with older models under $16,000! These charge more slowly, but still have pretty good (250mi)
+Chevy Bolts, with older models under $14,000! These charge more slowly, but still have a pretty good 250-mile
 range.
 
 <div class="image-grid -two-col">
-  <img src="/post-assets/ev-roadtrip/ioniq5-used-prices.webp" loading="lazy"
-      alt="Edmunds search results for used Hyundai IONIQ 5s near Chicago, Illinois, showing 98
-        listings. Four are visible: a 2024 SE with 24,703 miles for $22,410, a 2024 SEL with 17,000
-        miles for $22,988, a 2024 SEL with 9,953 miles for $25,407, and a 2025 SEL with 5,442 miles
-        for $33,990. A banner advertises $5,100 in IONIQ 5 rebates.">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/ioniq5-used-prices.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/ioniq5-used-prices.webp" loading="lazy"
+        alt="Edmunds search results for used Hyundai IONIQ 5s near Chicago, Illinois, showing 98
+          listings. Four are visible: a 2024 SE with 24,703 miles for $22,410, a 2024 SEL with
+          17,000 miles for $22,988, a 2024 SEL with 9,953 miles for $25,407, and a 2025 SEL with
+          5,442 miles for $33,990. A banner advertises $5,100 in IONIQ 5 rebates.">
+  </a>
 
-  <img src="/post-assets/ev-roadtrip/bolt-used-prices.webp" loading="lazy"
-      alt="Carvana search results for used Chevrolet Bolts, showing 95 cars. Six are visible: a 2023
-        Bolt EV 2LT with 40k miles for $21,590, a 2023 Bolt EUV LT with 100k miles for $15,590, a
-        2019 Bolt EV Premier with 90k miles for $15,990, a 2019 Bolt EV Premier with 74k miles for
-        $15,990, a 2021 Bolt EV LT with 42k miles for $18,590, and a 2021 Bolt EV LT with 100k miles
-        for $14,990.">
+  <a class="image-link -in-grid" href="/post-assets/ev-roadtrip/bolt-used-prices.webp"
+      target="_blank" rel="noopener">
+    <img src="/post-assets/ev-roadtrip/bolt-used-prices.webp" loading="lazy"
+        alt="Edmunds search results for used Chevrolet Bolt EVs near Chicago, Illinois, showing 69
+          listings. Four are visible: a 2020 Bolt EV LT with 59,478 miles for $13,700, a 2018 Bolt
+          EV LT with 78,131 miles for $14,790, a 2017 Bolt EV Premier with 93,510 miles for
+          $15,590, and a 2017 Bolt EV LT with 68,148 miles for $15,990. A banner advertises $5,000
+          in Chevrolet Bolt EV rebates.">
+  </a>
 </div>
 
 ### Don't Think You Need A Level 2 Charger At Home {#level-2-at-home}
@@ -570,7 +585,7 @@ To learn more, check out this quick video from This Old House, which dives into 
   title="YouTube Video Player - Electric Vehicle Chargers Explained, This Old House"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
 
 And if you can't charge at home, you can still go electric, but you won't save as much money. Since
 most EVs have 300 miles of range, if you live in a city, you probably will only need to charge say,
@@ -605,16 +620,16 @@ And if you found the article helpful, share it with a friend!
 
 ### Terminology {#terminology}
 
-- kilowatt (kW) - a unit of power, roughly equal to the instantaneous power draw of a microwave. EV
+- **kilowatt** (kW) - a unit of power, roughly equal to the instantaneous power draw of a microwave. EV
 charging speeds are in kilowatts, with many modern EVs able to hit over 100 kW on compatible
 chargers.
 
-- kilowatt hour (kWh) - a unit of energy. As a rough heuristic, about the energy it takes to run a
+- **kilowatt hour** (kWh) - a unit of energy. As a rough heuristic, about the energy it takes to run a
 microwave for an hour. One kWh can usually take you a few miles in an EV. EV batteries often range
 from 40 kWh in smaller cars to up to even 205 kWh in large pickup trucks, and even bigger in larger
 vehicles.
 
-- Level 1/2/3 Charging - categories for EV charging speeds. Level 1 is the slowest charging speed,
+- **Level 1/2/3 Charging** - categories for EV charging speeds. Level 1 is the slowest charging speed,
 from a common household outlet, while Level 3 is the fastest, found just at dedicated fast-charging
 sites, and Level 2 is a middle-ground that requires running a dedicated 240-Volt circuit, but is
 fairly common.
