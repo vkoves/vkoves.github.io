@@ -104,10 +104,11 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
 
 I feel pretty confident in saying I've got more experience with electric cars than most people, but
 even most EV owners, because I've driven a wide variety of different electric cars over the years.
-From Chicago I've rented several Tesla Model 3 and Model Ys, three Ioniq 5s and a Kia Niro EV, which
-I drove all around the Midwest, and I've also rented a Chevy Bolt in Washington DC. Plus, I read up
-on all the latest EV news and understand a lot of the technical details on how these cars work and
-charge, so hopefully I can break it all down clearly.
+From Chicago, I've rented several Tesla Model 3 and Model Ys, three Ioniq 5s, and a Kia Niro EV,
+which I've taken on trips all around the Midwest. Plus I've also rented a Chevy Bolt in Washington
+DC! On top of all that, I am constantly reading all the latest EV and battery news and understand a
+lot of the technical details on how these cars work and charge, so hopefully I can break it all
+down clearly.
 
 <div>
   <img src="/post-assets/ev-roadtrip/rental-cars-montage.webp" loading="lazy"
