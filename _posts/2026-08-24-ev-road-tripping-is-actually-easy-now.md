@@ -104,9 +104,10 @@ especially with the ubiquity of charging infrastructure in the US in 2026.
 
 I feel pretty confident in saying I've got more experience with electric cars than most people, but
 even most EV owners, because I've driven a wide variety of different electric cars over the years.
-I've rented Tesla Model 3 and Model Ys, three Ioniq 5s and a Kia Niro EV in Chicago and a Chevy Bolt
-in Washington DC. Plus, I read up on all the latest EV news and understand a lot of the technical
-details on how these cars work and charge, so hopefully I can break it all down!
+From Chicago I've rented several Tesla Model 3 and Model Ys, three Ioniq 5s and a Kia Niro EV, which
+I drove all around the Midwest, and I've also rented a Chevy Bolt in Washington DC. Plus, I read up
+on all the latest EV news and understand a lot of the technical details on how these cars work and
+charge, so hopefully I can break it all down clearly.
 
 <div>
   <img src="/post-assets/ev-roadtrip/rental-cars-montage.webp" loading="lazy"
@@ -229,12 +230,12 @@ Now, you might be thinking - if the Ioniq 5 we were driving had a 266-mile EPA r
 to stop twice? That's because an EPA range is a mix of city and highway driving, and so exclusively
 driving on a highway, EVs usually have a roughly 30% range penalty. In my experience, this 2023
 Ioniq 5 SEL AWD got a 200-mile highway range, so to safely make a 400-mile journey (especially since
-you rarely recharge an EV fully to 100%) and have charge when we got the hotel, we needed to stop
+you rarely charge an EV fully to 100%) and have charge when we got the hotel, we needed to stop
 twice.
 
 As you'll see though, with a modern EV (especially an 800-volt car like the Ioniq 5) charging stops
-are really no problem - and we usually needed to eat or use the bathroom anyway! By the time we were
-ready to go, the car was ready to go nine times out of ten.
+are really no problem - and we usually needed to eat or use the bathroom anyway! Nine times out of
+ten, by the time we were ready to go, the car was already charged to 80% like we needed.
 
 ### How Do You Find Charging Stops? {#finding-charging-stops}
 
