@@ -18,14 +18,29 @@
 
 .tool-card {
   display: block;
-  max-width: $thin-width;
-  padding: 1.5rem;
+  // Match the writing page's post-thumbnail width, so the image can sit
+  // edge-to-edge with no padding around it
+  max-width: $card-banner-width;
+  overflow: hidden;
   border: 1px solid var(--dark-bg-color);
   border-radius: 8px;
   background: var(--light-bg-color);
   color: var(--text-color);
   text-decoration: none;
   transition: border-color 0.2s, box-shadow 0.2s;
+
+  // Sized by its own aspect ratio rather than cropped to $card-banner-height:
+  // the demo image already has its text baked in near the bottom edge, so
+  // forcing a mismatched aspect ratio via object-fit: cover would crop into it
+  &-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &-body {
+    padding: 1.5rem;
+  }
 
   h2 {
     font-size: 1.4rem;
@@ -40,7 +55,10 @@
     font-size: 0.95rem;
   }
 
-  &:hover {
+  &:hover, &:focus {
+    // The global `a` hover style underlines everything inside - override it
+    // since the card body isn't itself a link
+    text-decoration: none;
     border-color: var(--brand-bg-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 

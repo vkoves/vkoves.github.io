@@ -28,6 +28,14 @@ $mob-menu-btn-size: 40px;
 // Divider under the mobile header, shown only while the menu is open
 $header-mob-border-width: 3px;
 
+// Fixed size for a card's banner image, e.g. a post thumbnail or tool preview.
+// Capped to the card's own width on narrower screens.
+$card-banner-width: 600px;
+$card-banner-height: 300px;
+$card-banner-radius: 8px;
+// Space between a card banner and the content below it
+$card-banner-margin-bottom: 12px;
+
 // Breakpoints
 $tablet-max-width: 1200px;
 $mobile-max-width:  800px;                    // 800px

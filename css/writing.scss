@@ -45,11 +45,9 @@ hr {
 
 /* Post List Styling on the Posts page */
 
-// Banner image above each post's title. Fixed size so every card in the list
-// matches, capped to the card width on narrower screens.
-$post-banner-width: 600px;
-$post-banner-height: 300px;
-$post-banner-radius: 8px;
+// Banner image above each post's title. Size comes from the shared
+// $card-banner-* variables so it matches other card banners (e.g. tool
+// previews) across the site.
 // Inset of the title from the banner's edges
 $post-banner-text-padding: 16px;
 // Extra room above the title so the gradient has space to fade in from
@@ -64,8 +62,6 @@ $post-banner-scrim: linear-gradient(
   rgba(0, 0, 0, 0.8) 40%,
   rgba(0, 0, 0, 0) 100%
 );
-// Space between the banner and the excerpt below it
-$post-banner-margin-bottom: 12px;
 
 .post-list {
   padding-left: 0px;
@@ -87,17 +83,17 @@ $post-banner-margin-bottom: 12px;
   &.-with-image {
     .post-heading {
       position: relative;
-      margin-bottom: $post-banner-margin-bottom;
-      border-radius: $post-banner-radius;
+      margin-bottom: $card-banner-margin-bottom;
+      border-radius: $card-banner-radius;
       overflow: hidden;
       // Push the title band to the bottom of the banner
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      width: $post-banner-width;
+      width: $card-banner-width;
       // Never wider than the card it sits in
       max-width: 100%;
-      height: $post-banner-height;
+      height: $card-banner-height;
       isolation: isolate;
 
       // The scrim rides on the title band rather than the whole banner, so only
